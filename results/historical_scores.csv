@@ -1,0 +1,17 @@
+model_key,model,protocol,accuracy,accuracy_sd,balanced_accuracy,macro_f1,notes
+xgboost_tabular,XGBoost tabular,random_holdout_80_20,0.8771,0,0.8777,0.8767,Holdout previo; accuracy train .8850.
+xgboost_tabular,XGBoost tabular,random_cv_3fold,0.8748,0.002,0.8754,0.8744,Media ± sd.
+xgboost_tabular,XGBoost tabular,seller_separated_holdout,0.868,0,0.8684,,"Vendedores separados; n=13,512."
+random_forest_tabular,Random Forest tabular,random_holdout_80_20,0.8719,0,0.8717,0.8713,Holdout previo; accuracy train .8909.
+random_forest_tabular,Random Forest tabular,random_cv_3fold,0.8679,0.0027,0.868,0.8674,Media ± sd.
+naive_bayes_title,Naive Bayes título,random_holdout_80_20,0.7969,0,0.7955,0.7957,Comparación inicial.
+svm_tfidf_tabular,SVM lineal TF-IDF + tabular,random_holdout_80_20,0.7889,0,0.7822,0.7841,Comparación inicial.
+svm_tfidf_tabular,TFIDF+LinearSVC,parent_group_cv_3fold,0.8841,0.0052,0.8837,,Features y protocolo agrupado posteriores.
+logistic_tfidf_tabular,Logística TF-IDF + tabular,random_holdout_80_20,0.7879,0,0.7839,0.7852,Comparación inicial.
+logistic_tfidf_tabular,TFIDF+LogReg,parent_group_holdout_30pct,0.8934,0,0.8933,,Holdout agrupado por familia.
+logistic_tfidf_tabular,TFIDF+LogReg,parent_group_cv_3fold,0.8904,0.0004,0.8903,,Media ± sd.
+mlp_tabular,MLP tabular,random_holdout_80_20,0.7112,0,0.6908,0.6768,Comparación inicial; accuracy train .7116.
+baseline_majority,Baseline mayoritario,random_holdout_80_20,0.537,0,0.5,0.3494,Piso de comparación.
+lightgbm_tabular,LightGBM,parent_group_cv_3fold,0.8847,0.0021,0.8842,,Media ± sd.
+catboost_tabular,CatBoost,parent_group_holdout_30pct,0.8958,0,0.8962,,Holdout agrupado por familias.
+catboost_tabular,CatBoost,parent_group_cv_3fold,0.8916,0.0035,0.8921,,Media ± sd.
