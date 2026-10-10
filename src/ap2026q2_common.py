@@ -58,18 +58,43 @@ def processed_dir() -> Path:
     return project_data_dir() / "processed"
 
 
+def _find_competition_files(base_dir: Path) -> tuple[Path | None, Path | None]:
+    """Find the two JSONL files in either the configured folder or ``raw``."""
+    raw_dir = base_dir / "raw"
+    search_dirs = [raw_dir, base_dir] if base_dir != raw_dir else [raw_dir]
+    train_path = test_path = None
+    for folder in search_dirs:
+        if not folder.exists():
+            continue
+        train_path = train_path or next(folder.rglob("train_data.jsonlines"), None)
+        test_path = test_path or next(folder.rglob("test_data.jsonlines"), None)
+    return train_path, test_path
+
+
+def _kaggle_auth_hint() -> str:
+    """Return actionable authentication instructions without exposing credentials."""
+    return (
+        "No hay datos locales y Kaggle no est� autenticado. Opciones:\n"
+        "1) Si ya tienes los JSONL descargados, configura "
+        "AP2026Q2_DATA_DIR apuntando a la carpeta que contiene "
+        "train_data.jsonlines y test_data.jsonlines.\n"
+        "2) En PowerShell, para esta sesi�n: "
+        '$env:KAGGLE_API_TOKEN = "<tu token de Kaggle>" ' 
+        "y vuelve a ejecutar la celda.\n"
+        "3) En Colab, crea un Secret llamado KAGGLE_API_TOKEN y habilita el acceso. "
+        "Tambi�n puedes usar ~/.kaggle/kaggle.json o las variables KAGGLE_USERNAME y KAGGLE_KEY."
+    )
+
+
 def download_competition(force: bool = False) -> Path:
     """Download via KaggleHub, preferring files already in the persistent cache."""
     base_dir = project_data_dir()
     raw_dir = base_dir / "raw"
     if not force:
-        for folder in (raw_dir, base_dir):
-            if folder.exists():
-                train_path = next(folder.rglob("train_data.jsonlines"), None)
-                test_path = next(folder.rglob("test_data.jsonlines"), None)
-                if train_path is not None and test_path is not None:
-                    print("Reutilizo train/test existentes:", folder)
-                    return folder
+        train_path, test_path = _find_competition_files(base_dir)
+        if train_path is not None and test_path is not None:
+            print("Reutilizo train/test existentes:", train_path.parent)
+            return train_path.parent
     raw_dir.mkdir(parents=True, exist_ok=True)
 
     token = os.getenv("KAGGLE_API_TOKEN")
@@ -86,16 +111,29 @@ def download_competition(force: bool = False) -> Path:
     if token:
         os.environ["KAGGLE_API_TOKEN"] = token
 
-    import kagglehub
-
-    folder = Path(
-        kagglehub.competition_download(
-            COMPETITION, output_dir=str(raw_dir), force_download=force
-        )
+    has_legacy_credentials = bool(
+        os.getenv("KAGGLE_USERNAME") and os.getenv("KAGGLE_KEY")
     )
+    kaggle_json = Path.home() / ".kaggle" / "kaggle.json"
+    if not token and not has_legacy_credentials and not kaggle_json.exists():
+        raise RuntimeError(_kaggle_auth_hint())
+
+    try:
+        import kagglehub
+
+        folder = Path(
+            kagglehub.competition_download(
+                COMPETITION, output_dir=str(raw_dir), force_download=force
+            )
+        )
+    except Exception as exc:
+        message = str(exc).lower()
+        if "unauthenticated" in message or "authenticate" in message or "401" in message:
+            raise RuntimeError(_kaggle_auth_hint()) from exc
+        raise
     for required in ("train_data.jsonlines", "test_data.jsonlines"):
         if next(folder.rglob(required), None) is None and next(raw_dir.rglob(required), None) is None:
-            raise FileNotFoundError(f"KaggleHub no dejó {required} dentro de {raw_dir}")
+            raise FileNotFoundError(f"KaggleHub no dej� {required} dentro de {raw_dir}")
     print("Datos disponibles en:", raw_dir)
     return raw_dir
 
@@ -129,7 +167,7 @@ def load_raw_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame | None]:
     if TARGET not in train or TARGET in test:
         raise ValueError("condition debe existir solo en train.")
     if sample is None:
-        print("Aviso: Kaggle no dejó sample_submission.csv; las celdas de submission pedirán el template oficial.")
+        print("Aviso: Kaggle no dej� sample_submission.csv; las celdas de submission pedir�n el template oficial.")
     return train, test, sample
 
 
@@ -561,3 +599,4 @@ def write_submission(model_key: str, predictions, test_ids: pd.Series | None = N
         raise ValueError("Los IDs cambiaron al exportar.")
     print("Submission lista:", path, "| filas:", len(check), "| columnas:", check.columns.tolist())
     return path
+
