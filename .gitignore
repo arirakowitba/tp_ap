@@ -3,3 +3,11 @@ outputs/
 *.pkl
 __pycache__/
 .ipynb_checkpoints/
+optimization/*.npy
+optimization/*.cbm
+optimization/*.sqlite3
+optimization/*_full_train.txt
+results/round_v2/*.npy
+results/round_v2/*.cbm
+results/round_v2/*.sqlite3
+results/round_v2/model_full_*.txt

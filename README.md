@@ -1,5 +1,19 @@
 # Competencia AP 2026 Q2
 
+## Pipeline maestro y explicación visual
+
+- `notebooks/21_maestro_pipeline.ipynb`: auditoría, split por familia, variables, SVM OOF, TPE, selección de ensamble, comprobación congelada, refit y exportación.
+- `notebooks/22_caso_desde_cero.ipynb`: explicación desde cero con 18 figuras (muchas multipanel), ejemplos reales, errores, calibración y formato de submission.
+- Mejor referencia previa: **94,2095%** en selección agrupada; **94,2143%** en comprobación; **94,428% en Kaggle público informado por el usuario**.
+- La copia recuperada de `data.zip` tiene 70.000 filas válidas de train y 30.000 de test. El modo normal bloquea archivos incompletos.
+- Instalar `requirements_optimized.txt` y configurar `AP2026Q2_DATA_DIR` con la carpeta de los JSONLines.
+- Ejecutar todo: abrir el maestro y usar **Run all**. La celda de control impone un límite global de 90 minutos.
+- Revisar resultados sin entrenar: `python src/execute_project_notebooks.py --data-dir RUTA --mode report`.
+- Pruebas: `python -m unittest discover -s tests -v`.
+- Búsquedas complementarias: `relation_features.py`, `cat_native_round.py`, `extended_booster_search.py`. Sus métricas permanecen separadas hasta evaluarse en el mismo holdout.
+
+Se versionan código, notebooks ejecutados, parámetros, auditorías, métricas y submissions. Las matrices, probabilidades intermedias y modelos regenerables quedan fuera de Git. El 95% es la meta; un resultado de selección por sí solo no se declara confirmado.
+
 ## Orden de ejecución
 1. notebooks/00_carga_datos.ipynb localiza o descarga JSONL.
 2. notebooks/01_eda_limpieza.ipynb inspecciona los datos y genera cache.
