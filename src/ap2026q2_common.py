@@ -190,7 +190,7 @@ def load_raw_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame | None]:
     if TARGET not in train or TARGET in test:
         raise ValueError("condition debe existir solo en train.")
     if sample is None:
-        print("Aviso: Kaggle no dejó sample_submission.csv; las celdas de submission pedirán el template oficial.")
+        print("Aviso: Kaggle no dejó sample_submission.csv; se usará la convención validada de IDs 1..N.")
     return train, test, sample
 
 
