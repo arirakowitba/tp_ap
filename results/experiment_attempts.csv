@@ -1,0 +1,12 @@
+attempt,model,accuracy,balanced_accuracy,macro_f1,best_iteration,protocol,notes
+1,CatBoost enriquecido (seller + stock/ventas/fechas),0.922952380952381,0.9234138928283702,0.9226550670300444,450,parent_group_holdout_30pct_seed42,"Agrega seller_id, señales de stock/ventas, estado y fechas; 51 variables."
+2,CatBoost + interacciones seller×category + 75 atributos,0.9251428571428572,0.9256022445096584,0.9248522113978226,626,parent_group_holdout_30pct_seed42,75 IDs de atributos seleccionados solo en desarrollo; target explícito excluido.
+3,LightGBM + target encoding OOF por vendedor/categoría,0.9223809523809524,0.9228110172072361,0.922077726955165,197,parent_group_holdout_30pct_seed42,Target encoding out-of-fold y folds agrupados por familia.
+4,Logística TF-IDF título+atributos + one-hot vendedor,0.8354761904761905,0.8387234205395631,0.8354225848877911,,parent_group_holdout_30pct_seed42,No converge a una representación competitiva en este diseño de alta cardinalidad.
+5,CatBoost + SVD texto 72 + 45 atributos,0.9258095238095239,0.9262442636344521,0.9255179127575863,608,parent_group_holdout_30pct_seed42,TF-IDF título+atributos reducido con SVD; 8.49% varianza explicada.
+6,MLP superficial (96) + seller OOF,0.8954285714285715,0.8965740350670343,0.8951584186848596,35,parent_group_holdout_30pct_seed42,Red profunda grande interrumpida por coste; el score corresponde a la variante superficial.
+7,CatBoost + 75 atributos + target rates seller OOF,0.922952380952381,0.9232723487517637,0.922636442216599,184,parent_group_holdout_30pct_seed42,Target rates seller/category OOF no superan el CTR nativo de CatBoost.
+8,MLP superficial (64) + seller OOF,0.8837619047619047,0.8866090584706907,0.8836771053717207,23,parent_group_holdout_30pct_seed42,Comparación de arquitectura rápida con 705 entradas sparse.
+8,"MLP dos capas (96, 32) + seller OOF",0.8871428571428571,0.8900404261556527,0.8870631190952698,29,parent_group_holdout_30pct_seed42,Regularización L2=0.05 y early stopping; mejora levemente a la red superficial de este intento.
+9,CatBoost + SVD 72 + 75 atributos + interacciones,0.9276190476190476,0.9280000303517195,0.9273266694621309,489,parent_group_holdout_30pct_seed42,Mejor del ciclo; 200 variables. Holdout agrupado reutilizado para selección.
+10,Ensamble fijo 80% intento 9 + 20% intento 1,0.9273809523809524,0.9277924749332007,0.9270915788574375,,parent_group_holdout_30pct_seed42,"Pesos prefijados, sin optimización sobre validación; queda debajo del modelo 9."

@@ -1,0 +1,4 @@
+attempt,model,accuracy,balanced_accuracy,macro_f1,best_iteration,protocol,notes
+6,MLP superficial (96) + seller OOF,0.8954285714285715,0.8965740350670343,0.8951584186848596,35,parent_group_holdout_30pct_seed42,Red profunda grande interrumpida por coste; el score corresponde a la variante superficial.
+8,MLP superficial (64) + seller OOF,0.8837619047619047,0.8866090584706907,0.8836771053717207,23,parent_group_holdout_30pct_seed42,Comparación de arquitectura rápida con 705 entradas sparse.
+8,"MLP dos capas (96, 32) + seller OOF",0.8871428571428571,0.8900404261556527,0.8870631190952698,29,parent_group_holdout_30pct_seed42,Regularización L2=0.05 y early stopping; mejora levemente a la red superficial de este intento.
