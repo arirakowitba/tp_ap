@@ -1,0 +1,25 @@
+{
+  "name": "lgb_ablation_0",
+  "accuracy": 0.9395,
+  "balanced_accuracy": 0.9403095637424824,
+  "macro_f1": 0.939291223446649,
+  "logloss": 0.15714562679593136,
+  "threshold": 0.46,
+  "params": {
+    "n_estimators": 430,
+    "learning_rate": 0.0228919761888824,
+    "num_leaves": 94,
+    "min_child_samples": 30,
+    "reg_lambda": 0.6140703790090526,
+    "reg_alpha": 0.07617361848894641,
+    "colsample_bytree": 0.8889021191105235,
+    "subsample": 0.9638149477566389,
+    "subsample_freq": 1,
+    "max_cat_threshold": 8,
+    "cat_smooth": 22.90498629058358,
+    "n_jobs": 4,
+    "verbosity": -1,
+    "random_state": 42
+  },
+  "feature_set": "ablation"
+}

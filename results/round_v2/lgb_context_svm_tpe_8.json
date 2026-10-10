@@ -1,0 +1,25 @@
+{
+  "name": "lgb_context_svm_tpe_8",
+  "accuracy": 0.9385,
+  "balanced_accuracy": 0.938889501768829,
+  "macro_f1": 0.9382453563020852,
+  "logloss": 0.15615418851783208,
+  "threshold": 0.5150000000000001,
+  "seconds": 9.599590791000082,
+  "params": {
+    "n_estimators": 213,
+    "learning_rate": 0.05965814758862867,
+    "num_leaves": 53,
+    "min_child_samples": 89,
+    "reg_lambda": 0.15834035959114626,
+    "colsample_bytree": 0.6794579778328143,
+    "subsample": 0.9,
+    "subsample_freq": 1,
+    "cat_smooth": 75.28591893049615,
+    "max_cat_threshold": 8,
+    "n_jobs": 4,
+    "verbosity": -1,
+    "random_state": 2026,
+    "reg_alpha": 0.3866144847479123
+  }
+}

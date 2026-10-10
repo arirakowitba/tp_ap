@@ -1,0 +1,15 @@
+numpy==2.3.5
+pandas==2.2.3
+scipy==1.17.0
+scikit-learn==1.8.0
+catboost==1.2.10
+lightgbm==4.7.0
+xgboost==3.4.1
+optuna==5.0.0
+nbformat==5.11.1
+nbclient>=0.10
+ipykernel>=6
+IPython>=8
+matplotlib>=3.8
+seaborn>=0.13
+rapidfuzz==3.14.6

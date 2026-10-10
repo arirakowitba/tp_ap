@@ -1,0 +1,7 @@
+[
+  {
+    "model": "logistic_word_char_tabular_C4",
+    "status": "cancelled",
+    "reason": "C1 completed in 231s at .91914; switched to strictly OOF text stacking without dense numeric conditioning"
+  }
+]

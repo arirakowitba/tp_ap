@@ -1,0 +1,24 @@
+{
+  "name": "lgb_char_svd_3",
+  "accuracy": 0.9372142857142857,
+  "balanced_accuracy": 0.9377455230556815,
+  "macro_f1": 0.9369703219490497,
+  "logloss": 0.16137986590846815,
+  "threshold": 0.49500000000000005,
+  "params": {
+    "n_estimators": 673,
+    "learning_rate": 0.025,
+    "num_leaves": 31,
+    "min_child_samples": 80,
+    "reg_lambda": 5,
+    "colsample_bytree": 0.85,
+    "subsample": 0.92,
+    "subsample_freq": 1,
+    "cat_smooth": 25,
+    "max_cat_threshold": 32,
+    "n_jobs": 4,
+    "verbosity": -1,
+    "random_state": 3029
+  },
+  "feature_set": "char"
+}
