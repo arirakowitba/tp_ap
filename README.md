@@ -8,7 +8,7 @@
 
 Los modelos usan src/ap2026q2_common.py. Transformaciones aprendidas se ajustan dentro de cada split. Holdout aleatorio 80/20, holdout agrupado por familia y CV agrupada son protocolos distintos. Los datos y corridas locales se guardan en data/ap_2026_q_2 y quedan fuera de Git.
 
-En Colab, autentica el repo privado, monta Drive y configura KAGGLE_API_TOKEN como secret. KaggleHub descarga la competencia cuando faltan los JSONL. AP2026Q2_DATA_DIR permite elegir otro directorio. Se necesita el sample_submission.csv oficial para generar archivos: el helper preserva sus encabezados, valida coincidencia exacta de IDs y alinea predicciones por ID. La celda de exportación está apagada por defecto.
+En Colab, autentica el repo privado, monta Drive y configura KAGGLE_API_TOKEN como secret. KaggleHub descarga la competencia cuando faltan los JSONL. AP2026Q2_DATA_DIR permite elegir otro directorio. La competencia acepta submissions con encabezado `ID,condition` y IDs de fila desde 1 hasta N; el helper aplica esa convención automáticamente aunque Kaggle no publique sample_submission.csv. La celda de exportación está apagada por defecto.
 
 En Windows local, si ya tienes los archivos, puedes evitar KaggleHub con `os.environ["AP2026Q2_DATA_DIR"] = r"C:\ruta\a\la\carpeta"` antes de ejecutar `download_competition()`. Si faltan los JSONL y no hay credenciales, el helper detiene el flujo con instrucciones para `KAGGLE_API_TOKEN`, `kaggle.json` o `KAGGLE_USERNAME`/`KAGGLE_KEY`.
 
