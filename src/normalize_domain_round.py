@@ -1,6 +1,6 @@
 """Domain normalization experiment; every vocabulary is fitted inside grouped training folds."""
 from pathlib import Path
-import argparse,json,re,time,signal,unicodedata,os
+import argparse,json,re,time,signal,unicodedata,os,gc
 os.environ.setdefault('OMP_NUM_THREADS','4')
 import numpy as np,pandas as pd
 from sklearn.model_selection import StratifiedGroupKFold
@@ -56,6 +56,7 @@ def run(args):
     cache=Path(args.cache)/'matrices.pkl'
     if not cache.exists():
         print('No base matrices cache: completed direct raw/normalized SVM comparison only.',flush=True);return
+    del raw,a,b;gc.collect()
     d=pd.read_pickle(cache);tr,va=d['tr'].copy(),d['va'].copy()
     if len(tr)!=len(t) or len(va)!=len(v):raise ValueError('Cache split shape mismatch')
     oof=np.zeros(len(t))
@@ -71,9 +72,39 @@ def run(args):
         cfg=json.loads(param_path.read_text());cfg=cfg.get('params',cfg);cfg.update(n_jobs=2,n_estimators=2400)
         model=LGBMClassifier(**cfg);model.fit(tr,y[t],eval_set=[(va,y[v])],eval_metric='binary_logloss',callbacks=[early_stopping(100,verbose=False)])
         cfg['n_estimators']=int(model.best_iteration_);save('normalize_lgb_domain_'+str(i),model.predict_proba(va)[:,1],cfg,'normalized')
+def flags_only(args):
+    if args.deadline:
+        remaining=int(args.deadline-time.time())
+        if remaining<=0:raise SystemExit('Deadline already passed')
+        signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(TimeoutError('Hard deadline reached')));signal.alarm(remaining)
+    out=Path(args.output);d=pd.read_pickle(Path(args.cache)/'matrices.pkl');n=pd.read_pickle(out/'normalize_matrices.pkl')
+    if d['fingerprint']!=n['fingerprint']:raise ValueError('Dataset fingerprint mismatch')
+    tr,va=d['tr'].copy(),d['va'].copy()
+    for c in n['tr']:
+        if c.startswith('norm_'):tr[c]=n['tr'][c];va[c]=n['va'][c]
+    rows=pd.read_csv(Path(args.cache)/'selection_rows.csv');yva=rows.y_used.to_numpy()
+    import json as _json
+    labels=pd.read_csv(Path(args.cache)/'training_rows.csv') if (Path(args.cache)/'training_rows.csv').exists() else None
+    if labels is None:
+        minimal=[]
+        with (Path(args.data_dir)/'train_data.jsonlines').open() as source:
+            for line in source:
+                obj=json.loads(line);minimal.append({k:obj.get(k) for k in ['id','parent_item_id','condition']})
+        raw=pd.DataFrame(minimal);y=(raw.condition=='used').to_numpy('int8');g=groups_for(raw);t,v=split(y,g,42,2);yt=y[t]
+        assert np.array_equal(v,rows.row_index.to_numpy());del raw
+    else:yt=labels.y_used.to_numpy()
+    cfg=json.loads((ROOT/'results/round_v2/lgb_context_svm_tpe_12.json').read_text())['params'];cfg.update(n_jobs=2,n_estimators=2400)
+    model=LGBMClassifier(**cfg);model.fit(tr,yt,eval_set=[(va,yva)],eval_metric='binary_logloss',callbacks=[early_stopping(100,verbose=False)])
+    pred=model.predict_proba(va)[:,1];q=float(max(np.arange(.46,.541,.005),key=lambda q:accuracy_score(yva,pred>=q)))
+    cfg['n_estimators']=int(model.best_iteration_);record=dict(name='normalize_lgb_flags_only',**metrics(yva,pred,q),params=cfg,feature_set='domain_flags_only',split_seed=42,confirmation=None)
+    np.save(out/'normalize_lgb_flags_only.npy',pred);(out/'normalize_lgb_flags_only.json').write_text(json.dumps(record,indent=2));print(record,flush=True)
+    pd.to_pickle(dict(tr=tr,va=va,fingerprint=d['fingerprint']),out/'normalize_flags_matrices.pkl')
+
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--data-dir',required=True);p.add_argument('--output',default=str(ROOT/'results/round_v3'))
     p.add_argument('--cache',default=str(ROOT/'results/round_v3/cache_base'));p.add_argument('--deadline',type=float)
-    args=p.parse_args()
-    try:run(args)
+    p.add_argument('--flags-only',action='store_true');args=p.parse_args()
+    try:
+        if args.flags_only:flags_only(args)
+        else:run(args)
     except TimeoutError as exc:print(str(exc),flush=True);raise SystemExit(124)

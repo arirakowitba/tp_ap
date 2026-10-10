@@ -1,0 +1,18 @@
+{
+  "completed_configurations": 25,
+  "global_selection_accuracy": 0.9394285714285714,
+  "best_name": "category_exact_300_w0.25",
+  "best_selection_accuracy": 0.9396428571428571,
+  "net_improvement_over_global_cases": 3,
+  "validation_rows": 14000,
+  "confirmation": "Not performed here; parent freezes and confirms candidates on seed731",
+  "notes": [
+    "Exact category specialist coverage is about 8.68%. Other rows use the global model.",
+    "KMeans without normalized centroids was highly imbalanced; L2-normalized 8 clusters had 4 substantial groups but reduced accuracy. L2-normalized 16 clusters was still highly imbalanced.",
+    "Tiny 3-case difference is exploratory evidence only; do not promote without alternate confirmation."
+  ],
+  "best_names": [
+    "category_exact_300_w0.25",
+    "category_cluster_8_w0.5"
+  ]
+}

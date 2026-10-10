@@ -1,0 +1,11 @@
+{
+  "split_seed": 42,
+  "holdout_folds": 2,
+  "training_rows": 56000,
+  "validation_rows": 14000,
+  "group_overlap": 0,
+  "routing": "Training-only category text clustering or exact category IDs; missing/unseen/small categories fall back to global model",
+  "expert_training": "Fixed iteration count; no outer holdout early stopping",
+  "confirmation": "Required before promotion; this script only searches seed42",
+  "completed_configurations": 25
+}

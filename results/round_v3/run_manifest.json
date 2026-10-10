@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-10-10T23:13:51.416Z",
+  "deadline_utc": "2026-10-11T00:43:51.416Z",
+  "budget_minutes": 90,
+  "base_commit": "eb03661762a39e15631c4b4e91276a4d143b423a",
+  "public_reference_user_report": 0.94428,
+  "local_goal": 0.95,
+  "selection": {
+    "seed": 42,
+    "holdout_folds": 2,
+    "train_rows": 56000,
+    "validation_rows": 14000
+  },
+  "confirmation": {
+    "seed": 731,
+    "holdout_folds": 2,
+    "train_rows": 56000,
+    "validation_rows": 14000
+  },
+  "confirmation_caveat": "Different grouped split of the same data, reused from prior rounds; not an independent blind test.",
+  "proposed_methods": [
+    "domain normalization",
+    "pretrained title embeddings",
+    "image embeddings",
+    "category specialists",
+    "learned OOF stacking"
+  ],
+  "status": "running"
+}

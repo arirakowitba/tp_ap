@@ -1,0 +1,34 @@
+{
+  "name": "combined_normstack_5",
+  "accuracy": 0.9394285714285714,
+  "balanced_accuracy": 0.9403068345114992,
+  "macro_f1": 0.9392261374131434,
+  "logloss": 0.15450823032898267,
+  "threshold": 0.47500000000000003,
+  "params": {
+    "n_estimators": 192,
+    "learning_rate": 0.05719947378793453,
+    "num_leaves": 59,
+    "min_child_samples": 111,
+    "reg_lambda": 6.190378294705469,
+    "colsample_bytree": 0.6173508561979818,
+    "subsample": 0.9,
+    "subsample_freq": 1,
+    "cat_smooth": 26.956368354888806,
+    "max_cat_threshold": 8,
+    "n_jobs": 2,
+    "verbosity": -1,
+    "random_state": 2026,
+    "reg_alpha": 2.203751436871092
+  },
+  "blocks": {
+    "normalize": true,
+    "embedding": false,
+    "stacking_base": true
+  },
+  "feature_set": "combined",
+  "split_seed": 42,
+  "train_sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf",
+  "confirmation": null,
+  "seconds": 173.67727875709534
+}

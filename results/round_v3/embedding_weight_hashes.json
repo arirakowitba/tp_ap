@@ -1,0 +1,17 @@
+{
+  "model_id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "sha256": {
+    "tokenizer.json": "2c3387be76557bd40970cec13153b3bbf80407865484b209e655e5e4729076b8",
+    "sentence_bert_config.json": "70f4448f31320443fe3557cacea5abf2dcc4915dda8c80646bec9f3bb0aa5a1f",
+    "tokenizer_config.json": "5036ea374ffedd706e3bef33e2e0d6953cb868ef8a490e76e32ba0faa37a6b9b",
+    "1_Pooling/config.json": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23",
+    "onnx/model_quint8_avx2.onnx": "98a01d88b7de996cdea58c32ca71208c09968d143798814b2ea09d3439dc334f"
+  },
+  "dependencies": {
+    "openvino": "2026.4.1",
+    "tokenizers": "0.23.3",
+    "numpy": "2.3.5"
+  },
+  "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+  "inference_backend": "OpenVINO CPU"
+}

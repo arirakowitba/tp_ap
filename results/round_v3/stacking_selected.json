@@ -1,0 +1,44 @@
+{
+  "name": "stacking_probability_C10",
+  "design": "probability",
+  "C": 10,
+  "protocol": "selection_seed42_20pct",
+  "accuracy": 0.9386428571428571,
+  "balanced_accuracy": 0.9390331455047842,
+  "macro_f1": 0.93838880495179,
+  "logloss": 0.17363437593221312,
+  "threshold": 0.46,
+  "base_names": [
+    "text_logistic",
+    "text_svm",
+    "lgb_structured_rates"
+  ],
+  "base_params": {
+    "n_estimators": 650,
+    "learning_rate": 0.03,
+    "num_leaves": 63,
+    "min_child_samples": 40,
+    "reg_lambda": 5,
+    "colsample_bytree": 0.85,
+    "subsample": 0.9,
+    "subsample_freq": 1,
+    "cat_smooth": 20,
+    "max_cat_threshold": 16,
+    "n_jobs": 4,
+    "verbosity": -1,
+    "random_state": 2026
+  },
+  "folds": 3,
+  "training_rows": 70000,
+  "data_sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf",
+  "confirmation": {
+    "accuracy": 0.9401428571428572,
+    "balanced_accuracy": 0.9403872750036342,
+    "macro_f1": 0.9398786964045123,
+    "logloss": 0.16930350287289656,
+    "threshold": 0.46
+  },
+  "status": "confirmed",
+  "runtime_seconds": 758.4567832946777,
+  "prior_overlap": "Earlier optimize_stack.py inserted an OOF Logistic text score into tree features; it did not train a Logistic meta learner over multiple base models."
+}

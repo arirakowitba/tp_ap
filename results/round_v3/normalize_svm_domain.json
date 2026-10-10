@@ -1,0 +1,14 @@
+{
+  "name": "normalize_svm_domain",
+  "accuracy": 0.9077857142857143,
+  "balanced_accuracy": 0.9069962830746884,
+  "macro_f1": 0.9072243644156746,
+  "logloss": 0.25101595447134345,
+  "threshold": 0.5150000000000001,
+  "params": {
+    "C": 0.5
+  },
+  "feature_set": "normalized_svm",
+  "split_seed": 42,
+  "confirmation": null
+}

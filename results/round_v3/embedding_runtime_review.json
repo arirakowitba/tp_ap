@@ -1,0 +1,11 @@
+{
+  "initial_attempt": "automatically_rejected",
+  "reason": "La inferencia autorizada provoca una conexi\u00f3n incidental de telemetr\u00eda a Microsoft; aunque no hay evidencia de contenido de archivos, el destino y los datos enviados no est\u00e1n autorizados expl\u00edcitamente.",
+  "mitigation": "onnxruntime.disable_telemetry_events() called before InferenceSession creation",
+  "old_session": "no longer exists; CTRL-C returned Unknown process id",
+  "new_attempt": "OpenVINO CPU complete smoke test succeeded; real training title inference progressing beyond 20,480/70,000 rows. No further egress rejection occurred.",
+  "telemetry_disabled_attempt": "automatically_rejected",
+  "second_rejection_reason": "Aunque se intent\u00f3 desactivar la telemetr\u00eda, la ejecuci\u00f3n a\u00fan solicita conexi\u00f3n a Microsoft y no hay evidencia de que el destino ni los datos enviados est\u00e9n autorizados; debe verificarse un modo sin esa egress.",
+  "old_telemetry_disabled_session": "no longer exists; CTRL-C returned Unknown process id",
+  "resolution": "Different local CPU backend; ONNXRuntime no longer imported. Optional OpenVINO telemetry package absent."
+}

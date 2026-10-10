@@ -1,0 +1,18 @@
+{
+  "train_sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf",
+  "test_sha256": "05921bd73deba1c4ed5a4d564e0351729eae8f2ef197bc851e10f9099d277460",
+  "models": [
+    "lgb_tpe_2",
+    "cat_enriched_d9",
+    "cat_native_text_d7"
+  ],
+  "weights": [
+    0.6,
+    0.2,
+    0.2
+  ],
+  "threshold": 0.5,
+  "prior_confirmation_accuracy": 0.9421428571428572,
+  "full_submission_agreement": 1.0,
+  "source": "Recovered original optimization/*.npy; preserves baseline probabilities without model-weight dependency"
+}

@@ -1,0 +1,26 @@
+name,corrected_baseline_errors,introduced_errors,net_correct,mcnemar_exact_p,interpretation
+category_cluster_16_w0.25,24,30,-6,0.49661743531793345,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_16_w0.5,44,49,-5,0.6785320136533249,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_16_w0.75,58,69,-11,0.3749570506813299,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_16_w1,50,78,-28,0.016670734269697375,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_8_w0.25,19,24,-5,0.542384011856484,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_8_w0.5,46,43,3,0.8322577540225791,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_8_w0.75,48,60,-12,0.2897982154050608,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_8_w1,68,90,-22,0.09447453522193175,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_exact_300_w0.25,17,14,3,0.720100131817162,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_exact_300_w0.5,19,22,-3,0.755228657504631,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_exact_300_w0.75,22,29,-7,0.4010619910279374,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_exact_300_w1,24,32,-8,0.34968195298368476,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_exact_700_w0.25,2,2,0,1.0,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_exact_700_w0.5,3,6,-3,0.5078125,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_exact_700_w0.75,11,16,-5,0.44206833839416504,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_exact_700_w1,20,25,-5,0.5514843298025198,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_global_baseline,0,0,0,1.0,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_8_l2_w0.25,29,37,-8,0.3890524605477928,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_8_l2_w0.5,48,65,-17,0.13192429082426047,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_8_l2_w0.75,63,94,-31,0.016379446145190237,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_8_l2_w1,85,130,-45,0.0026105317335167124,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_16_l2_w0.25,21,28,-7,0.3916029105474905,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_16_l2_w0.5,45,50,-5,0.6817425059181855,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_16_l2_w0.75,52,62,-10,0.39937318688053774,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.
+category_cluster_16_l2_w1,56,86,-30,0.014656543047830014,Exploratory paired comparison: candidate/threshold selection used this holdout. Not a confirmation.

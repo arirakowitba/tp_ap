@@ -1,0 +1,57 @@
+{
+  "name": "category_cluster_8_w1",
+  "accuracy": 0.9378571428571428,
+  "balanced_accuracy": 0.9380570863189683,
+  "macro_f1": 0.9375793211545156,
+  "logloss": 0.15766869736714972,
+  "threshold": 0.54,
+  "seconds": 112.19987601600008,
+  "feature_set": "category_experts",
+  "global_params": {
+    "n_estimators": 449,
+    "learning_rate": 0.021945374001337975,
+    "num_leaves": 106,
+    "min_child_samples": 88,
+    "reg_lambda": 0.333913107651493,
+    "colsample_bytree": 0.696858079929112,
+    "subsample": 0.9,
+    "subsample_freq": 1,
+    "cat_smooth": 26.956368354888806,
+    "max_cat_threshold": 8,
+    "n_jobs": 2,
+    "verbosity": -1,
+    "random_state": 2026,
+    "reg_alpha": 0.3891178604095862
+  },
+  "expert_weight": 1.0,
+  "covered_fraction": 0.9344285714285714,
+  "min_rows": 1000,
+  "clusters": 8,
+  "experts": [
+    {
+      "route": "6",
+      "training_rows": 55871,
+      "validation_rows": 13082,
+      "new_count": 29972,
+      "used_count": 25899,
+      "params": {
+        "n_estimators": 449,
+        "learning_rate": 0.021945374001337975,
+        "num_leaves": 31,
+        "min_child_samples": 60,
+        "reg_lambda": 5,
+        "colsample_bytree": 0.696858079929112,
+        "subsample": 0.9,
+        "subsample_freq": 1,
+        "cat_smooth": 26.956368354888806,
+        "max_cat_threshold": 8,
+        "n_jobs": 2,
+        "verbosity": -1,
+        "random_state": 2026,
+        "reg_alpha": 0.1
+      }
+    }
+  ],
+  "router_file": "category_cluster_8_router.json",
+  "status": "selection_only"
+}

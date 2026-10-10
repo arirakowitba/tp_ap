@@ -83,6 +83,7 @@ def partition(raw,y,g,t,v,out,seed,deadline):
  assert np.isfinite(oof).all() and (fold_ids>=0).all()
  holdout=base_predictions(raw.iloc[t].reset_index(drop=True),y[t],g[t],raw.iloc[v].reset_index(drop=True),deadline)
  np.savez_compressed(path,oof=oof,holdout=holdout,train_rows=t,holdout_rows=v,fold_ids=fold_ids)
+ pd.DataFrame({'row_index':v,'y_used':y[v],**{name:holdout[:,i] for i,name in enumerate(BASE_NAMES)}}).to_csv(out/f'stacking_seed{seed}_base_predictions.csv',index=False)
  pd.DataFrame({'row_index':t,'fold':fold_ids,'y_used':y[t],**{name:oof[:,i] for i,name in enumerate(BASE_NAMES)}}).to_csv(out/f'stacking_seed{seed}_oof.csv',index=False)
  (out/f'stacking_seed{seed}_oof_partial.csv').unlink(missing_ok=True)
  return oof,holdout
@@ -97,6 +98,11 @@ def main(data_dir,output,deadline,confirm=True):
  out=Path(output);out.mkdir(parents=True,exist_ok=True);start=time.time()
  integrity=audit(Path(data_dir)/'train_data.jsonlines',70000)
  if not integrity['complete']:raise ValueError('Stacking requires all70000 valid labeled rows')
+ manifest_path=out/'stacking_cache_manifest.json'
+ manifest=dict(data_sha256=integrity['sha256'],base_names=BASE_NAMES,base_params=LGB_PARAMS,folds=3)
+ if manifest_path.exists() and json.loads(manifest_path.read_text())!=manifest:raise ValueError('Stacking cache belongs to different data or base configuration; use a new output folder')
+ if not manifest_path.exists() and list(out.glob('stacking_seed*_base.npz')):raise ValueError('Unverifiable legacy stacking cache; use a new output folder')
+ manifest_path.write_text(json.dumps(manifest,indent=2))
  raw=pd.read_json(Path(data_dir)/'train_data.jsonlines',lines=True)
  y=(raw.condition=='used').to_numpy(dtype=np.int8);g=groups_for(raw);t,v=split(y,g,42,2)
  with threadpool_limits(limits=4):

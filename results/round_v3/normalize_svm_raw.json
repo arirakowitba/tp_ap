@@ -1,0 +1,14 @@
+{
+  "name": "normalize_svm_raw",
+  "accuracy": 0.9087857142857143,
+  "balanced_accuracy": 0.9079273817711502,
+  "macro_f1": 0.9082159936316131,
+  "logloss": 0.2513764868492566,
+  "threshold": 0.5150000000000001,
+  "params": {
+    "C": 0.5
+  },
+  "feature_set": "raw_svm",
+  "split_seed": 42,
+  "confirmation": null
+}
