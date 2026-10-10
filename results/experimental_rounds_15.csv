@@ -1,0 +1,16 @@
+round,model,family,protocol,accuracy,balanced_accuracy,macro_f1,status,notes
+1,CatBoost enriquecido (seller + stock/ventas/fechas),CatBoost,parent_group_holdout_30pct_seed42,0.922952,0.923414,0.922655,completed,Mejora incremental sobre variables tabulares
+2,CatBoost + seller x category + 75 atributos,CatBoost,parent_group_holdout_30pct_seed42,0.925143,0.925602,0.924852,completed,Interacciones y atributos filtrados sin ITEM_CONDITION
+3,LightGBM + target encoding OOF,LightGBM,parent_group_holdout_30pct_seed42,0.922381,0.922811,0.922077,completed,Codificacion objetivo agrupada
+4,Logistica TF-IDF + tabular,LogisticRegression,parent_group_holdout_30pct_seed42,0.835476,0.838723,0.835423,completed,Base lineal de texto
+5,CatBoost + SVD de texto,CatBoost,parent_group_holdout_30pct_seed42,0.925810,0.926244,0.925518,completed,72 componentes SVD
+6,MLP superficial + seller OOF,MLP,parent_group_holdout_30pct_seed42,0.895429,0.896574,0.895159,completed,Red neuronal superficial
+7,CatBoost + atributos + target rates,CatBoost,parent_group_holdout_30pct_seed42,0.922952,0.923272,0.922636,completed,Target rates no superan CTR nativo
+8,MLP dos capas (96,32),MLP,parent_group_holdout_30pct_seed42,0.887143,0.890040,0.887063,completed,Regularizacion L2 y early stopping
+9,CatBoost + SVD + 75 atributos + interacciones,CatBoost,parent_group_holdout_30pct_seed42,0.927619,0.928000,0.927327,completed,Mejor score local
+10,Ensamble 80/20 de CatBoost,Ensemble,parent_group_holdout_30pct_seed42,0.927381,0.927793,0.927091,completed,No mejora al ganador
+11,CatBoost target-encoding + SVD,CatBoost,parent_group_holdout_30pct_seed42,0.894667,0.891434,0.893386,completed,Prueba rapida de codificacion numerica
+12,LightGBM target-encoding,LightGBM,parent_group_holdout_30pct_seed42,0.904571,0.904543,0.904138,completed,Alternativa rapida con frecuencias y tasas
+13,LightGBM target-encoding profundo,LightGBM,parent_group_holdout_30pct_seed42,0.903667,0.903813,0.903260,completed,Mas hojas y regularizacion
+14,XGBoost target-encoding,XGBoost,parent_group_holdout_30pct_seed42,0.897143,0.899756,0.897043,completed,Histograma y tasas
+15,XGBoost target-encoding profundo,XGBoost,parent_group_holdout_30pct_seed42,0.898095,0.900359,0.897963,completed,Mayor profundidad no supera CatBoost
