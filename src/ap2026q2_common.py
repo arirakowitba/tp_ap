@@ -571,68 +571,65 @@ def fit_full_and_submit(model_key: str, params: dict | None = None) -> Path:
     return write_submission(model_key, predictions, test_ids)
 
 
-def create_submission_template_from_test(path: str | Path | None = None) -> Path:
-    """Create an inferred Kaggle template when the private competition exposes none.
+def _competition_submission_ids(n_rows: int) -> pd.Series:
+    """Return the identifier convention used by AP_2026Q2.
 
-    The competition target is ``condition`` and the raw test column is ``id``;
-    Kaggle's validator expects the submission identifier header ``ID``. This
-    function preserves the exact test ID values and order, but the template
-    remains inferred rather than official.
+    The competition solution expects a one-based row identifier (1..N), not
+    the MercadoLibre id field contained in test_data.jsonlines. Keeping this
+    rule in one helper prevents individual model notebooks from silently
+    producing incompatible submissions.
+    """
+    if n_rows < 1:
+        raise ValueError("Una submission debe contener al menos una fila.")
+    return pd.Series(np.arange(1, n_rows + 1), dtype="string", name="ID")
+
+
+def create_submission_template_from_test(path: str | Path | None = None) -> Path:
+    """Create the inferred AP_2026Q2 submission template.
+
+    The private competition does not publish sample_submission.csv. Its
+    accepted identifier convention is an uppercase ID column containing
+    the one-based test-row numbers 1..N.
     """
     _, test_path, _ = raw_paths()
     test = pd.read_json(test_path, lines=True)
-    if "id" not in test:
-        raise KeyError("No encuentro la columna id en test para crear el template.")
-    ids = test["id"].astype("string").reset_index(drop=True)
-    if ids.isna().any() or ids.duplicated().any():
-        raise ValueError("Los IDs de test estan vacios o duplicados.")
     output_path = Path(path) if path is not None else project_data_dir() / "sample_submission.csv"
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    ids = _competition_submission_ids(len(test))
     pd.DataFrame({"ID": ids, TARGET: ""}).to_csv(output_path, index=False)
-    print("Template inferido desde test:", output_path, "| filas:", len(ids))
+    print("Template AP_2026Q2 (IDs 1..N):", output_path, "| filas:", len(ids))
     return output_path
 
 
 def write_submission(model_key: str, predictions, test_ids: pd.Series | None = None) -> Path:
     _, test_path, sample_path = raw_paths()
-    if sample_path is None:
-        data_dir = project_data_dir()
-        raise FileNotFoundError(
-            "No se genero submission para evitar inventar IDs: falta el "
-            f"sample_submission.csv oficial de Kaggle en {data_dir} "
-            f"o {data_dir / 'raw'}. Descargalo desde la pestana Data de la competencia "
-            "y dejalo con ese nombre."
-        )
-    sample = pd.read_csv(sample_path, dtype=str)
-    id_col = next((col for col in sample.columns if str(col).strip().lower() == "id"), None)
-    target_col = next((col for col in sample.columns if str(col).strip().lower() == TARGET), None)
-    if id_col is None or target_col is None:
-        raise ValueError(f"Encabezados inesperados en sample_submission: {sample.columns.tolist()}")
-    if test_ids is None:
-        test = pd.read_json(test_path, lines=True)
-        if "id" not in test:
-            raise KeyError("No encuentro id en test.")
-        test_ids = test["id"].astype("string").reset_index(drop=True)
-    official_ids = sample[id_col].astype("string").reset_index(drop=True)
-    test_ids = test_ids.astype("string").reset_index(drop=True)
-    predictions = np.asarray(predictions).astype(str)
-    if len(sample) != len(predictions) or len(test_ids) != len(predictions):
-        raise ValueError("Filas de template, test y predicciones no coinciden.")
-    if official_ids.isna().any() or test_ids.isna().any():
-        raise ValueError("El template o test contiene IDs vacios.")
-    if official_ids.duplicated().any() or test_ids.duplicated().any():
-        raise ValueError("IDs duplicados en sample_submission o en test.")
-    if set(official_ids) != set(test_ids):
-        missing_test = len(set(test_ids) - set(official_ids))
-        extra_sample = len(set(official_ids) - set(test_ids))
-        raise ValueError(
-            f"Los IDs del template no coinciden con test (faltan {missing_test}; "
-            f"sobran {extra_sample}). Usa el sample_submission oficial de esta competencia."
-        )
-    pred_by_id = pd.Series(predictions, index=test_ids)
-    predictions = official_ids.map(pred_by_id).to_numpy()
-    # Preserve the official template's exact header, ID spelling and order.
-    output = sample.copy()
+    predictions = np.asarray(predictions).astype(str).reshape(-1)
+    test = pd.read_json(test_path, lines=True)
+    if len(test) != len(predictions):
+        raise ValueError("Filas de test y predicciones no coinciden.")
+    expected_ids = _competition_submission_ids(len(predictions))
+
+    # If Kaggle ever exposes a sample, use its target/header spelling, but
+    # still require the validated one-based ID convention for this competition.
+    if sample_path is not None:
+        sample = pd.read_csv(sample_path, dtype=str)
+        id_col = next((col for col in sample.columns if str(col).strip().lower() == "id"), None)
+        target_col = next((col for col in sample.columns if str(col).strip().lower() == TARGET), None)
+        if id_col is None or target_col is None:
+            raise ValueError(f"Encabezados inesperados en sample_submission: {sample.columns.tolist()}")
+        sample_ids = sample[id_col].astype("string").reset_index(drop=True)
+        if len(sample) != len(predictions):
+            raise ValueError("Filas de sample_submission y predicciones no coinciden.")
+        if not sample_ids.equals(expected_ids):
+            raise ValueError(
+                "El sample_submission no usa la convención validada de IDs 1..N. "
+                "No se genera una submission ambigua."
+            )
+        output = sample.copy()
+    else:
+        id_col, target_col = "ID", TARGET
+        output = pd.DataFrame({id_col: expected_ids})
+
     output[target_col] = predictions
     if output[target_col].isna().any() or not set(output[target_col].unique()).issubset({"new", "used"}):
         raise ValueError("Predicciones condition invalidas o vacias.")
@@ -641,9 +638,10 @@ def write_submission(model_key: str, predictions, test_ids: pd.Series | None = N
     path = out_dir / f"submission_{model_key}.csv"
     output.to_csv(path, index=False)
     check = pd.read_csv(path, dtype=str)
-    if check.columns.tolist() != sample.columns.tolist() or len(check) != len(sample):
+    if check.columns.tolist() != output.columns.tolist() or len(check) != len(output):
         raise ValueError("El CSV exportado no respeta el formato de Kaggle.")
-    if not check[id_col].astype("string").reset_index(drop=True).equals(official_ids):
+    if not check[id_col].astype("string").reset_index(drop=True).equals(expected_ids):
         raise ValueError("Los IDs cambiaron al exportar.")
     print("Submission lista:", path, "| filas:", len(check), "| columnas:", check.columns.tolist())
     return path
+
