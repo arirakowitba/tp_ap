@@ -1,0 +1,18 @@
+{
+  "completed_new_configurations": 49,
+  "new_best_selection": 0.9403571428571429,
+  "new_frozen_confirmation": {
+    "accuracy": 0.9404285714285714,
+    "balanced_accuracy": 0.9407595995672302,
+    "macro_f1": 0.9401746972622433,
+    "logloss": 0.15027059743891114,
+    "threshold": 0.51
+  },
+  "previous_frozen_confirmation": 0.9421428571428572,
+  "previous_public_user_report": 0.94428,
+  "goal_95_reached": false,
+  "recommended_submission": "submissions/submission_optimized_ensemble.csv",
+  "new_round_promoted": false,
+  "search_status": "stopped",
+  "unconfirmed_blends_are_not_promoted": true
+}

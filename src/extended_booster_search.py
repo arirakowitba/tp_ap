@@ -38,3 +38,4 @@ def run(folder,out,seconds=2400):
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--data-dir',required=True);p.add_argument('--output',default=str(ROOT/'results/round_v2'));p.add_argument('--seconds',type=int,default=2400)
     a=p.parse_args();run(a.data_dir,a.output,a.seconds)
+

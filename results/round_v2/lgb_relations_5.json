@@ -1,0 +1,24 @@
+{
+  "name": "lgb_relations_5",
+  "accuracy": 0.9383571428571429,
+  "balanced_accuracy": 0.9386395616682668,
+  "macro_f1": 0.9380903752316122,
+  "logloss": 0.15964202895725338,
+  "threshold": 0.5250000000000001,
+  "params": {
+    "n_estimators": 428,
+    "learning_rate": 0.025,
+    "num_leaves": 94,
+    "min_child_samples": 50,
+    "reg_lambda": 5,
+    "colsample_bytree": 0.8,
+    "subsample": 0.92,
+    "subsample_freq": 1,
+    "cat_smooth": 25,
+    "max_cat_threshold": 32,
+    "n_jobs": 4,
+    "verbosity": -1,
+    "random_state": 2031
+  },
+  "feature_set": "relations"
+}

@@ -1,0 +1,2 @@
+name,accuracy,balanced_accuracy,macro_f1,logloss,threshold,feature_set
+lgb_ablation_0,0.9395,0.9403095637424824,0.939291223446649,0.15714562679593136,0.46,ablation

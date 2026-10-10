@@ -179,3 +179,4 @@ if __name__=='__main__':
     args=p.parse_args()
     if not args.data_dir:p.error('Configurar --data-dir o AP2026Q2_DATA_DIR')
     search(args.data_dir,args.output,args.trials,allow_partial=args.allow_partial,refit=not args.no_refit)
+

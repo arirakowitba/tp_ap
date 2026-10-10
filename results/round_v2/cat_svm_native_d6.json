@@ -1,0 +1,18 @@
+{
+  "name": "cat_svm_native_d6",
+  "kind": "cat",
+  "feature_set": "native_svm",
+  "accuracy": 0.9382142857142857,
+  "balanced_accuracy": 0.9386128439333792,
+  "macro_f1": 0.9379596006956947,
+  "logloss": 0.16001970186309666,
+  "threshold": 0.5,
+  "params": {
+    "iterations": 413,
+    "depth": 6,
+    "learning_rate": 0.045,
+    "l2_leaf_reg": 8,
+    "random_seed": 2026
+  },
+  "seconds": 114.77447739599984
+}

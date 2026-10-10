@@ -134,3 +134,4 @@ def importance(out):
     if not paths:print('Importancias aún pendientes.');return
     table=pd.read_csv(paths[0]).head(22).iloc[::-1];fig,ax=plt.subplots(figsize=(12,6));ax.barh(table.feature,table.gain,color='#3a9d91')
     ax.set(title='Variables que utiliza el primer LightGBM nuevo',xlabel='Ganancia en splits: no causalidad');show(fig)
+

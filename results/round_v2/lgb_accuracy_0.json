@@ -1,0 +1,30 @@
+{
+  "name": "lgb_accuracy_0",
+  "accuracy": 0.9382857142857143,
+  "balanced_accuracy": 0.9390939068050933,
+  "macro_f1": 0.9380732676795291,
+  "logloss": 0.16421231933156635,
+  "threshold": 0.48500000000000004,
+  "params": {
+    "n_estimators": 674,
+    "learning_rate": 0.025224188321113342,
+    "num_leaves": 131,
+    "min_child_samples": 27,
+    "reg_lambda": 0.12210897216134146,
+    "reg_alpha": 0.18979201186366962,
+    "colsample_bytree": 0.9448278487572005,
+    "subsample": 0.8090678097414754,
+    "subsample_freq": 1,
+    "extra_trees": true,
+    "max_cat_threshold": 16,
+    "cat_smooth": 21.916358219373883,
+    "cat_l2": 2.092045956152878,
+    "min_split_gain": 0,
+    "metric": "binary_error",
+    "n_jobs": 4,
+    "verbosity": -1,
+    "random_state": 2026
+  },
+  "seconds": 192.87601249299996,
+  "feature_set": "context_svm"
+}

@@ -57,3 +57,4 @@ def run(folder,out):
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--data-dir',required=True);p.add_argument('--output',default=str(ROOT/'results/round_v2'))
     a=p.parse_args();run(a.data_dir,a.output)
+

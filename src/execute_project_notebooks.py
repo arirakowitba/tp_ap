@@ -42,3 +42,4 @@ if __name__=='__main__':
     for name in ['21_maestro_pipeline.ipynb','22_caso_desde_cero.ipynb']:
         path=ROOT/'notebooks'/name;nb=nbformat.read(path,as_version=4);execute(nb);nbformat.validate(nb);nbformat.write(nb,path)
         print('EXECUTED',name,flush=True)
+
