@@ -620,12 +620,14 @@ def write_submission(model_key: str, predictions, test_ids: pd.Series | None = N
         sample_ids = sample[id_col].astype("string").reset_index(drop=True)
         if len(sample) != len(predictions):
             raise ValueError("Filas de sample_submission y predicciones no coinciden.")
-        if not sample_ids.equals(expected_ids):
-            raise ValueError(
-                "El sample_submission no usa la convención validada de IDs 1..N. "
-                "No se genera una submission ambigua."
-            )
-        output = sample.copy()
+        if sample_ids.equals(expected_ids):
+            output = sample.copy()
+        else:
+            # A previous inferred template may still contain MLA IDs. Ignore it:
+            # the accepted AP_2026Q2 convention is the validated 1..N sequence.
+            print("Ignoro sample_submission incompatible; uso IDs AP_2026Q2 1..N.")
+            id_col, target_col = "ID", TARGET
+            output = pd.DataFrame({id_col: expected_ids})
     else:
         id_col, target_col = "ID", TARGET
         output = pd.DataFrame({id_col: expected_ids})
