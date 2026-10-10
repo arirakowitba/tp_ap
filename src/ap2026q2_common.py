@@ -574,9 +574,12 @@ def fit_full_and_submit(model_key: str, params: dict | None = None) -> Path:
 def write_submission(model_key: str, predictions, test_ids: pd.Series | None = None) -> Path:
     _, test_path, sample_path = raw_paths()
     if sample_path is None:
+        data_dir = project_data_dir()
         raise FileNotFoundError(
-            "No se genero submission para evitar inventar IDs: falta el sample_submission.csv "
-            "oficial de Kaggle en data/ap_2026_q_2/raw."
+            "No se genero submission para evitar inventar IDs: falta el "
+            f"sample_submission.csv oficial de Kaggle en {data_dir} "
+            f"o {data_dir / 'raw'}. Descargalo desde la pestana Data de la competencia "
+            "y dejalo con ese nombre."
         )
     sample = pd.read_csv(sample_path, dtype=str)
     id_col = next((col for col in sample.columns if str(col).strip().lower() == "id"), None)
