@@ -571,6 +571,28 @@ def fit_full_and_submit(model_key: str, params: dict | None = None) -> Path:
     return write_submission(model_key, predictions, test_ids)
 
 
+def create_submission_template_from_test(path: str | Path | None = None) -> Path:
+    """Create an inferred Kaggle template when the private competition exposes none.
+
+    The competition target is ``condition`` and the raw test column is ``id``;
+    Kaggle's validator expects the submission identifier header ``ID``. This
+    function preserves the exact test ID values and order, but the template
+    remains inferred rather than official.
+    """
+    _, test_path, _ = raw_paths()
+    test = pd.read_json(test_path, lines=True)
+    if "id" not in test:
+        raise KeyError("No encuentro la columna id en test para crear el template.")
+    ids = test["id"].astype("string").reset_index(drop=True)
+    if ids.isna().any() or ids.duplicated().any():
+        raise ValueError("Los IDs de test estan vacios o duplicados.")
+    output_path = Path(path) if path is not None else project_data_dir() / "sample_submission.csv"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame({"ID": ids, TARGET: ""}).to_csv(output_path, index=False)
+    print("Template inferido desde test:", output_path, "| filas:", len(ids))
+    return output_path
+
+
 def write_submission(model_key: str, predictions, test_ids: pd.Series | None = None) -> Path:
     _, test_path, sample_path = raw_paths()
     if sample_path is None:
