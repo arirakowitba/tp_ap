@@ -41,13 +41,36 @@ def find_repo_root(start: str | Path | None = None) -> Path:
     return here
 
 
+def _looks_like_competition_folder(folder: Path) -> bool:
+    """Return whether ``folder`` directly contains both competition JSONL files."""
+    return (
+        (folder / "train_data.jsonlines").exists()
+        and (folder / "test_data.jsonlines").exists()
+    )
+
+
 def project_data_dir() -> Path:
     override = os.getenv("AP2026Q2_DATA_DIR")
     if override:
         return Path(override).expanduser()
+
     drive = Path("/content/drive/MyDrive/Analisis_Predictivo/ap_2026_q_2")
     if drive.exists():
         return drive
+
+    # Notebook kernels are independent processes, so an environment variable
+    # set in 00_carga_datos.ipynb does not automatically reach notebook 01 or
+    # the model notebooks. Detect the standard local OneDrive data folder too.
+    local_candidates = [
+        Path.home() / "OneDrive" / "Documents" / "TP 3 AP",
+        Path.home() / "OneDrive" / "Documents" / "GitHub" / "tp_ap" / "data" / "ap_2026_q_2",
+    ]
+    for candidate in local_candidates:
+        if _looks_like_competition_folder(candidate):
+            return candidate
+        if _looks_like_competition_folder(candidate / "raw"):
+            return candidate
+
     return find_repo_root() / "data" / "ap_2026_q_2"
 
 
