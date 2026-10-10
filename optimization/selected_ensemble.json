@@ -1,0 +1,14 @@
+{
+  "names": [
+    "lgb_tpe_2",
+    "cat_enriched_d9",
+    "cat_native_text_d7"
+  ],
+  "weights": [
+    0.6,
+    0.2,
+    0.2
+  ],
+  "threshold": 0.5,
+  "accuracy": 0.9420952380952381
+}
