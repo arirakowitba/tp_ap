@@ -74,15 +74,15 @@ def _find_competition_files(base_dir: Path) -> tuple[Path | None, Path | None]:
 def _kaggle_auth_hint() -> str:
     """Return actionable authentication instructions without exposing credentials."""
     return (
-        "No hay datos locales y Kaggle no est� autenticado. Opciones:\n"
+        "No hay datos locales y Kaggle no está autenticado. Opciones:\n"
         "1) Si ya tienes los JSONL descargados, configura "
         "AP2026Q2_DATA_DIR apuntando a la carpeta que contiene "
         "train_data.jsonlines y test_data.jsonlines.\n"
-        "2) En PowerShell, para esta sesi�n: "
+        "2) En PowerShell, para esta sesión: "
         '$env:KAGGLE_API_TOKEN = "<tu token de Kaggle>" ' 
         "y vuelve a ejecutar la celda.\n"
         "3) En Colab, crea un Secret llamado KAGGLE_API_TOKEN y habilita el acceso. "
-        "Tambi�n puedes usar ~/.kaggle/kaggle.json o las variables KAGGLE_USERNAME y KAGGLE_KEY."
+        "También puedes usar ~/.kaggle/kaggle.json o las variables KAGGLE_USERNAME y KAGGLE_KEY."
     )
 
 
@@ -133,7 +133,7 @@ def download_competition(force: bool = False) -> Path:
         raise
     for required in ("train_data.jsonlines", "test_data.jsonlines"):
         if next(folder.rglob(required), None) is None and next(raw_dir.rglob(required), None) is None:
-            raise FileNotFoundError(f"KaggleHub no dej� {required} dentro de {raw_dir}")
+            raise FileNotFoundError(f"KaggleHub no dejó {required} dentro de {raw_dir}")
     print("Datos disponibles en:", raw_dir)
     return raw_dir
 
@@ -167,7 +167,7 @@ def load_raw_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame | None]:
     if TARGET not in train or TARGET in test:
         raise ValueError("condition debe existir solo en train.")
     if sample is None:
-        print("Aviso: Kaggle no dej� sample_submission.csv; las celdas de submission pedir�n el template oficial.")
+        print("Aviso: Kaggle no dejó sample_submission.csv; las celdas de submission pedirán el template oficial.")
     return train, test, sample
 
 
@@ -599,4 +599,3 @@ def write_submission(model_key: str, predictions, test_ids: pd.Series | None = N
         raise ValueError("Los IDs cambiaron al exportar.")
     print("Submission lista:", path, "| filas:", len(check), "| columnas:", check.columns.tolist())
     return path
-
