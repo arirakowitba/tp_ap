@@ -1,0 +1,11 @@
+{
+  "checks_passed": [
+    "Frozen baseline14k accuracy and30k public-submission agreement",
+    "3-base fallback preserves global row order, evaluation labels and grouped folds",
+    "4-base fallback preserves global row order, evaluation labels and grouped folds",
+    "5-base fallback preserves global row order, evaluation labels and grouped folds",
+    "Cache fingerprint rejects row reordering",
+    "Search timeout preserves reserved selection and confirmation stages"
+  ],
+  "models_trained": 0
+}

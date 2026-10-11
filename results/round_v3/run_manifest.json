@@ -25,5 +25,7 @@
     "category specialists",
     "learned OOF stacking"
   ],
-  "status": "running"
+  "status": "interrupted_closed_from_durable_checkpoint",
+  "closed_utc": "2026-10-11T01:03:53.263822+00:00",
+  "new_submission": null
 }

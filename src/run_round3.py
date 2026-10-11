@@ -31,22 +31,26 @@ def run(args):
     shared=['--data-dir',str(Path(args.data_dir).resolve()),'--output',str(out),'--deadline',str(search_deadline)]
     cache=out/'cache_base';model=Path(args.model_dir).resolve()
     try:
-        stage('prepare_round3.py',['--data-dir',str(Path(args.data_dir).resolve()),'--output',str(cache),'--deadline',str(search_deadline)],search_deadline)
-        stage('normalize_domain_round.py',shared+['--cache',str(cache)],search_deadline)
-        iso=datetime.datetime.fromtimestamp(search_deadline,datetime.timezone.utc).isoformat()
-        stage('category_experts_round.py',['--data-dir',str(Path(args.data_dir).resolve()),'--output',str(out),'--cache',str(cache/'matrices.pkl'),'--deadline',iso],search_deadline)
-        stage('learned_stacking_round.py',shared+['--no-confirm'],search_deadline)
-        stage('probe_image_access.py',['--data-dir',str(Path(args.data_dir).resolve()),'--output',str(out/'image_access_probe.json')],search_deadline)
-        if importlib.util.find_spec('openvino') and importlib.util.find_spec('tokenizers'):
-            stage('download_embedding_model.py',['--model-dir',str(model)],search_deadline)
-            stage('embedding_round.py',shared+['--model-dir',str(model),'--cache',str(cache)],search_deadline)
-        else:
-            failed.append(dict(script='embedding_round.py',reason='Install requirements_round3.txt to enable the pretrained CPU backend'))
-        if (ROOT/'src/learned_stacking4_round.py').exists():stage('learned_stacking4_round.py',shared+['--no-confirm'],search_deadline)
-        if (ROOT/'src/learned_stacking5_round.py').exists() and (out/'embedding_titles.npy').exists():stage('learned_stacking5_round.py',shared+['--no-confirm'],search_deadline)
-        combined=shared+['--cache',str(cache),'--normalize','--trials',str(args.trials)]
-        if (out/'embedding_titles.npy').exists():combined+=['--embedding']
-        stage('combined_round3_search.py',combined,search_deadline)
+        try:
+            stage('prepare_round3.py',['--data-dir',str(Path(args.data_dir).resolve()),'--output',str(cache),'--deadline',str(search_deadline)],search_deadline)
+            stage('normalize_domain_round.py',shared+['--cache',str(cache)],search_deadline)
+            iso=datetime.datetime.fromtimestamp(search_deadline,datetime.timezone.utc).isoformat()
+            stage('category_experts_round.py',['--data-dir',str(Path(args.data_dir).resolve()),'--output',str(out),'--cache',str(cache/'matrices.pkl'),'--deadline',iso],search_deadline)
+            stage('learned_stacking_round.py',shared+['--no-confirm'],search_deadline)
+            stage('probe_image_access.py',['--data-dir',str(Path(args.data_dir).resolve()),'--output',str(out/'image_access_probe.json')],search_deadline)
+            if importlib.util.find_spec('openvino') and importlib.util.find_spec('tokenizers'):
+                stage('download_embedding_model.py',['--model-dir',str(model)],search_deadline)
+                stage('embedding_round.py',shared+['--model-dir',str(model),'--cache',str(cache)],search_deadline)
+            else:
+                failed.append(dict(script='embedding_round.py',reason='Install requirements_round3.txt to enable the pretrained CPU backend'))
+            if (ROOT/'src/learned_stacking4_round.py').exists():stage('learned_stacking4_round.py',shared+['--no-confirm'],search_deadline)
+            if (ROOT/'src/learned_stacking5_round.py').exists() and (out/'embedding_titles.npy').exists():stage('learned_stacking5_round.py',shared+['--no-confirm'],search_deadline)
+            combined=shared+['--cache',str(cache),'--normalize','--trials',str(args.trials)]
+            if (out/'embedding_titles.npy').exists():combined+=['--embedding']
+            stage('combined_round3_search.py',combined,search_deadline)
+        except (TimeoutError,RuntimeError) as exc:
+            failed.append(dict(phase='search',reason=str(exc)))
+            print('Search incomplete; use reserved time to freeze completed candidates:',str(exc),flush=True)
         final=['--data-dir',str(Path(args.data_dir).resolve()),'--output',str(out),'--deadline',str(deadline),'--model-dir',str(model)]
         stage('finalize_round3.py',final+['--mode','select'])
         stage('finalize_round3.py',final+['--mode','confirm'])
@@ -66,3 +70,4 @@ def run(args):
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--data-dir',required=True);p.add_argument('--output',default=str(ROOT/'results/round_v3'));p.add_argument('--model-dir',default=str(ROOT.parent/'models/title_minilm'));p.add_argument('--minutes',type=float,default=90);p.add_argument('--trials',type=int,default=12);args=p.parse_args()
     raise SystemExit(run(args))
+

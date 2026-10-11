@@ -1,0 +1,51 @@
+{
+  "status": "interrupted_closed_from_durable_checkpoint",
+  "original_deadline_utc": "2026-10-11T00:43:51.416Z",
+  "closed_utc": "2026-10-11T01:03:53.263822+00:00",
+  "last_durable_commit": "c3eb04b92633d7c66401eff4f04435ac80085fd4",
+  "completed_configurations_with_saved_metrics": 57,
+  "best_by_family": [
+    {
+      "family": "stacking",
+      "name": "stacking_base_lgb_structured_rates",
+      "accuracy": 0.9386428571428572
+    },
+    {
+      "family": "category",
+      "name": "category_cluster_8_w0.5",
+      "accuracy": 0.9396428571428572
+    },
+    {
+      "family": "normalize",
+      "name": "normalize_lgb_domain_1",
+      "accuracy": 0.9403571428571428
+    },
+    {
+      "family": "combined",
+      "name": "combined_normstack_6",
+      "accuracy": 0.9405714285714286
+    }
+  ],
+  "stacking_confirmation": {
+    "accuracy": 0.9401428571428572,
+    "balanced_accuracy": 0.9403872750036342,
+    "macro_f1": 0.9398786964045123,
+    "logloss": 0.16930350287289656,
+    "threshold": 0.46
+  },
+  "prior_confirmation_accuracy": 0.9421428571428572,
+  "public_reference_user_report": 0.94428,
+  "goal_met_local": false,
+  "new_submission": null,
+  "retained_submission": "submissions/submission_optimized_ensemble.csv",
+  "missing_artifacts": [
+    "stacking4 final selection/confirmation",
+    "stacking5 results",
+    "joint embeddings TPE results",
+    "final blend confirmation",
+    "new full-data refit"
+  ],
+  "embedding_note": "70k\u00d7384 inference and three text-only LR scores were reported before interruption; prediction/cache artifacts did not reach durable checkpoint. Do not treat missing results as confirmed.",
+  "image_note": "14 image URL requests returned403; no visual model trained.",
+  "verification_note": "Report cells executed after recovery; historical notebook22 outputs retained. Full master training cycle not reexecuted."
+}

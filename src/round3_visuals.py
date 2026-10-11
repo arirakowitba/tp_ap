@@ -23,7 +23,7 @@ def overview(out):
     fig,ax=plt.subplots(figsize=(10,4.5));values=100*best.accuracy.to_numpy()
     ax.barh(best.family,values,color=['#577590','#43aa8b','#f9c74f','#f9844a','#9b5de5'][:len(best)])
     for i,value in enumerate(values):ax.text(value+.02,i,f'{value:.3f}%',va='center')
-    ax.set(xlim=(max(85,values.min()-.8),max(95.2,values.max()+.5)),xlabel='Accuracy de selección (%) · mismo holdout agrupado de14.000 filas',title='Mejor configuración de cada rama · selección, todavía no Kaggle')
+    ax.set(xlim=(max(0,values.min()-2),max(95.2,values.max()+.5)),xlabel='Accuracy de selección (%) · mismo holdout agrupado de14.000 filas',title='Mejor configuración de cada rama · selección, todavía no Kaggle')
     ax.axvline(95,color='#d62828',linestyle='--',label='Objetivo local95%');ax.legend(loc='lower right');ax.grid(axis='x',alpha=.2);fig.tight_layout();plt.show()
     return best[['family','name','accuracy','threshold']]
 
@@ -93,3 +93,13 @@ def frozen_evaluation(out):
     fig.tight_layout();plt.show()
     paired_p=float(binomtest(corrected,corrected+introduced,.5).pvalue) if corrected+introduced else 1.
     return dict(prior_accuracy=float(old_correct.mean()),new_accuracy=float(new_correct.mean()),corrected=corrected,introduced=introduced,net_corrected=corrected-introduced,paired_exact_p=paired_p,threshold_frozen=q,public_kaggle_score=None)
+
+def confirmation_overview(out):
+    cfg=json.loads((Path(out)/'stacking_selected.json').read_text())
+    values=[100*.9421428571428572,100*cfg['confirmation']['accuracy']]
+    fig,ax=plt.subplots(figsize=(8,4));ax.barh(['Ensemble previo','Stacking de3 bases'],values,color=['#577590','#f9844a'])
+    for i,value in enumerate(values):ax.text(value+.025,i,f'{value:.4f}%',va='center')
+    ax.set(xlim=(93.5,95.25),xlabel='Accuracy local (%)',title='Confirmación agrupada731 · entrenamiento56.000, evaluación14.000')
+    ax.axvline(95,ls='--',color='#d62828',label='Objetivo95%');ax.legend();ax.grid(axis='x',alpha=.2)
+    fig.tight_layout();plt.show()
+

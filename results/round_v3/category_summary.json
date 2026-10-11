@@ -14,5 +14,6 @@
   "best_names": [
     "category_exact_300_w0.25",
     "category_cluster_8_w0.5"
-  ]
+  ],
+  "fixed_threshold_caveat": "The +3 selected cases also change threshold .495\u2192.475. At .495 both global and exact300w25 score93.9429%; no net improvement attributable solely to specialization."
 }

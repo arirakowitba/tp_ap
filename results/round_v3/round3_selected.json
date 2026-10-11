@@ -79,8 +79,12 @@
       "accuracy": 0.9402142857142857
     }
   ],
-  "status": "frozen_pending_confirmation",
+  "status": "interim_selection_interrupted_unconfirmed",
   "confirmation": null,
   "prior_selection_accuracy": 0.9402142857142857,
-  "selection_comparison_note": "Same14k evaluation rows; prior trained49k, new candidates56k."
+  "selection_comparison_note": "Same14k evaluation rows; prior trained49k, new candidates56k.",
+  "promote_over_previous": false,
+  "goal_met_local": false,
+  "submission": null,
+  "caution": "Interim blend predates combined trials and uses an imbalanced cluster router. It was never confirmed and is not promoted."
 }

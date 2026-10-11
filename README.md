@@ -39,3 +39,12 @@ results/historical_scores.csv registra métricas previas y su protocolo. Nuevos 
 - `notebooks/modelos/11_redes_neuronales_visual.ipynb`: redes superficiales/profundas, intuición matemática, diagramas de capas, curvas de pérdida y submission MLP.
 
 El mejor score local documentado es **0,927619** (CatBoost + SVD + 75 atributos + interacciones). La meta **0,95** aún no se alcanzó. El holdout de 21.000 filas se reutilizó para selección, por lo que el score puede estar optimista; el siguiente ciclo debe confirmar con un segundo fold agrupado y stacking out-of-fold.
+
+
+## Ronda complementaria del10 de octubre
+
+Estado: **interrumpida**, con57 configuraciones y métricas respaldadas. La búsqueda conjunta llegó a94,0571% de selección; el stacking de3 bases obtuvo94,0143% en confirmación, por debajo del94,2143% local anterior. No hay una nueva submission confirmada ni evidencia de95%. La referencia pública informada por el usuario sigue siendo94,428%.
+
+El cierre, límites y ensayos pendientes están en [results/round_v3/README.md](results/round_v3/README.md). El maestro actualizado usa `AP_RUN_MODE=report` por defecto para inspeccionar evidencia sin entrenar. Para repetir entrenamientos, instalar `requirements_round3.txt`, configurar los datos oficiales y usar `AP_RUN_MODE=full`, con un presupuesto global de90 minutos. El modo full completo no fue reejecutado en la recuperación.
+
+El notebook ilustrativo conserva18 figuras históricas y agrega3 figuras de esta ronda; su apéndice se ejecutó sin errores. Se verificaron la integridad de la submission anterior, la reconstrucción de caches de stacking3/4/5 y la reserva de tiempo para confirmación ante un timeout de búsqueda.
