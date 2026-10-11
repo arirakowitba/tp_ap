@@ -38,6 +38,16 @@ def run(output):
         drift.append(dict(feature=c,train_missing=float(x.isna().mean()),test_missing=float(z.isna().mean()),
                           train_mean=float(x.mean()),test_mean=float(z.mean()),train_unique=int(x.nunique())))
     pd.DataFrame(drift).to_csv(out/'media_train_test_summary.csv',index=False)
+    cache=out/'selection/native.pkl'
+    if cache.exists():
+        data=pd.read_pickle(cache);m=media.loc[data['t']].reset_index(drop=True)
+        base=data['tr'].select_dtypes(include='number');novelty=[]
+        for c in m:
+            x=m[c].to_numpy(dtype=float)
+            duplicates=[b for b in base if np.array_equal(x,base[b].to_numpy(dtype=float),equal_nan=True)]
+            novelty.append(dict(feature=c,constant_in_development=bool(m[c].nunique(dropna=False)<=1),
+                                identical_baseline_columns='|'.join(duplicates)))
+        pd.DataFrame(novelty).to_csv(out/'media_feature_novelty.csv',index=False)
     (out/'media_diagnostic_protocol.json').write_text(json.dumps(dict(
         thresholds_fixed=.5,unit='same labeled row in frozen selection split',
         p_values='exploratory paired exact binomial; not corrected for multiple comparisons',

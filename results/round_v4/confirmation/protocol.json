@@ -1,0 +1,11 @@
+{
+  "fingerprint": {
+    "train_sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf",
+    "seed": 731,
+    "holdout_folds": 2
+  },
+  "train_rows": 56000,
+  "evaluation_rows": 14000,
+  "shared_families": 0,
+  "attribute_ids_fit_on_train": true
+}

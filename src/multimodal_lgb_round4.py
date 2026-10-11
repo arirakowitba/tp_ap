@@ -17,7 +17,14 @@ def run(args):
     tr,va=d['tr'],d['va'];y,vy=d['y_train'],d['y_eval'];t,v=d['t'],d['v']
     for c in d['cats']:
         dtype=pd.CategoricalDtype(categories=pd.Index(tr[c].unique()));tr[c]=tr[c].astype(dtype);va[c]=va[c].astype(dtype)
-    a,b=media_pair(args.media_features,t,v);base=json.loads((ROOT/'optimization/lgb_tpe_2_params.json').read_text())
+    a,b=media_pair(args.media_features,t,v)
+    if args.media_group=='image':columns=[c for c in a if c!='media_has_video']
+    elif args.media_group=='video':columns=['media_has_video']
+    elif args.media_group=='orientation':columns=[c for c in a if any(s in c for s in ('aspect','portrait','landscape','square'))]
+    elif args.media_group=='dimensions':columns=[c for c in a if any(s in c for s in ('width','height','area','resolution'))]
+    else:columns=list(a.columns)
+    a,b=a[columns],b[columns]
+    base=json.loads((ROOT/'optimization/lgb_tpe_2_params.json').read_text())
     base.update(n_estimators=2500,n_jobs=2);rows=[]
     def fit(name,params,use_media,fixed=False):
         if time.time()>=args.deadline:raise TimeoutError('Selection deadline')
@@ -27,7 +34,9 @@ def run(args):
         else:model.fit(x,y,eval_set=[(z,vy)],eval_metric='binary_logloss',callbacks=[early_stopping(100,verbose=False)])
         p=model.predict_proba(z)[:,1];frozen=dict(params,n_estimators=int(params['n_estimators'] if fixed else model.best_iteration_))
         row=dict(name=name,family='lgb',kind='lgb',params=frozen,use_media=use_media,uses_pixels=False,uses_video_frames=False,
-            protocol='selection42_49k_21k',**metrics(vy,p,.5),seconds=time.time()-started)
+            protocol='selection42_49k_21k',media_group=args.media_group,
+            media_columns=columns if use_media else [],fingerprint=d['fingerprint'],
+            **metrics(vy,p,.5),seconds=time.time()-started)
         row['fixed_capacity_ablation']=fixed
         rows.append(row);np.save(out/(name+'.npy'),p);model.booster_.save_model(str(out/(name+'.txt')))
         (out/(name+'.json')).write_text(json.dumps(row,indent=2))
@@ -36,7 +45,9 @@ def run(args):
         print('RESULT',name,row['accuracy'],row['seconds'],flush=True);del model,x,z;gc.collect();return row['accuracy']
     if args.fixed_only:
         base['n_estimators']=430
-        fit('r4_lgb_fixed430_original',base,False,True);fit('r4_lgb_fixed430_media',base,True,True)
+        if args.media_group=='all':fit('r4_lgb_fixed430_original',base,False,True)
+        suffix='' if args.media_group=='all' else '_'+args.media_group
+        fit('r4_lgb_fixed430_media'+suffix,base,True,True)
         return
     fit('r4_lgb_original',base,False);fit('r4_lgb_media',base,True)
     def objective(trial):
@@ -49,5 +60,5 @@ def run(args):
     selected=max(rows,key=lambda r:r['accuracy']);(out/'lgb_round4_selected.json').write_text(json.dumps(selected,indent=2))
     print('BEST',selected['name'],selected['accuracy'],flush=True)
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--cache',required=True);p.add_argument('--media-features',required=True);p.add_argument('--output',required=True);p.add_argument('--trials',type=int,default=12);p.add_argument('--deadline',type=float,required=True);p.add_argument('--fixed-only',action='store_true')
+    p=argparse.ArgumentParser();p.add_argument('--cache',required=True);p.add_argument('--media-features',required=True);p.add_argument('--output',required=True);p.add_argument('--trials',type=int,default=12);p.add_argument('--deadline',type=float,required=True);p.add_argument('--fixed-only',action='store_true');p.add_argument('--media-group',choices=['all','image','video','orientation','dimensions'],default='all')
     run(p.parse_args())

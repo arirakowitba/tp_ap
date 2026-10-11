@@ -186,5 +186,10 @@
   "confirmation_used": false,
   "image_pixels_used": false,
   "video_frames_used": false,
-  "cache": "/workspace/scratch/d7363d2f086f/repo/results/round_v4/selection/native.pkl"
+  "cache": "/workspace/scratch/d7363d2f086f/repo/results/round_v4/selection/native.pkl",
+  "fingerprint": {
+    "train_sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf",
+    "seed": 42,
+    "holdout_folds": 3
+  }
 }

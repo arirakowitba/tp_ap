@@ -1,0 +1,18 @@
+[
+  {
+    "group": "image",
+    "status": "completed"
+  },
+  {
+    "group": "video",
+    "status": "completed"
+  },
+  {
+    "group": "orientation",
+    "status": "completed"
+  },
+  {
+    "group": "dimensions",
+    "status": "completed"
+  }
+]

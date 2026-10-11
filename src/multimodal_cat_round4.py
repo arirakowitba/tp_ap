@@ -178,6 +178,7 @@ def run(args):
 
 
 def main():
+    sys.stdout.reconfigure(line_buffering=True)
     parser = argparse.ArgumentParser()
     parser.add_argument("--cache", required=True)
     parser.add_argument("--output", default=str(ROOT / "results/round_v4"))

@@ -4,6 +4,6 @@
   "p_values": "exploratory paired exact binomial; not corrected for multiple comparisons",
   "video_present": "historical video_id presence; no decoded video frames",
   "photos_present": "historical photo metadata; no decoded images",
-  "diagnostic_pairs": 4,
+  "diagnostic_pairs": 8,
   "drift_features": 50
 }

@@ -1,0 +1,18 @@
+[
+  {
+    "filename": "train_data.jsonlines",
+    "expected_rows": 70000,
+    "valid_rows": 70000,
+    "invalid_lines": [],
+    "sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf",
+    "complete": true
+  },
+  {
+    "filename": "test_data.jsonlines",
+    "expected_rows": 30000,
+    "valid_rows": 30000,
+    "invalid_lines": [],
+    "sha256": "05921bd73deba1c4ed5a4d564e0351729eae8f2ef197bc851e10f9099d277460",
+    "complete": true
+  }
+]

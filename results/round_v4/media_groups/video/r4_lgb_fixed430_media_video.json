@@ -1,0 +1,41 @@
+{
+  "name": "r4_lgb_fixed430_media_video",
+  "family": "lgb",
+  "kind": "lgb",
+  "params": {
+    "n_estimators": 430,
+    "learning_rate": 0.0228919761888824,
+    "num_leaves": 94,
+    "min_child_samples": 30,
+    "reg_lambda": 0.6140703790090526,
+    "reg_alpha": 0.07617361848894641,
+    "colsample_bytree": 0.8889021191105235,
+    "subsample": 0.9638149477566389,
+    "subsample_freq": 1,
+    "max_cat_threshold": 8,
+    "cat_smooth": 22.90498629058358,
+    "n_jobs": 2,
+    "verbosity": -1,
+    "random_state": 42
+  },
+  "use_media": true,
+  "uses_pixels": false,
+  "uses_video_frames": false,
+  "protocol": "selection42_49k_21k",
+  "media_group": "video",
+  "media_columns": [
+    "media_has_video"
+  ],
+  "fingerprint": {
+    "train_sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf",
+    "seed": 42,
+    "holdout_folds": 3
+  },
+  "accuracy": 0.9392380952380952,
+  "balanced_accuracy": 0.9398244328131855,
+  "macro_f1": 0.9390072266648788,
+  "logloss": 0.157837371105253,
+  "threshold": 0.5,
+  "seconds": 31.31196355819702,
+  "fixed_capacity_ablation": true
+}

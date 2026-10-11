@@ -108,10 +108,13 @@ def select(args):
             raise ValueError(f'Training fingerprint mismatch: {name}')
         predictions[name], configs[name] = p, cfg
         group = 'lgb' if cfg['family'] == 'lgb' else cfg['config']
-        candidates.append((group, name, score(y, p, .5)['accuracy']))
+        # Complementarity with the existing best ensemble is a selection objective,
+        # not a confirmation statistic. The 60/40 comparator is fixed in advance.
+        rank=max(float(np.mean((p>=.5)==y)),float(np.mean((.6*prior+.4*p>=.5)==y)))
+        candidates.append((group, name, rank))
     if not candidates:
         raise ValueError('No completed candidate predictions.')
-    # At most one best selection model per architecture: no large unrestricted simplex.
+    # At most one model per architecture, ranked by standalone or fixed 60/40 blend.
     tops = []
     for group in sorted({item[0] for item in candidates}):
         tops.append(sorted([item for item in candidates if item[0] == group], key=lambda x: (-x[2], x[1]))[0][1])
@@ -143,6 +146,7 @@ def select(args):
                   fingerprint=fp, selection_row_sha256=row_hash(rows), selection_rows=len(rows),
                   components={name: configs[name] for name in best['weights']},
                   architectures_considered=tops, trials=len(trials),
+                  architecture_ranking='max standalone or fixed .6prior+.4candidate accuracy at .5 on selection only',
                   selection_baseline=score(y, prior, .5), selection_paired=paired(y, prior, selected_p, best['threshold']),
                   image_pixels_used=False, video_frames_used=False, inputs='text_and_listing_media_metadata',
                   public_accuracy=None, **best)
@@ -164,10 +168,10 @@ def load_frozen(path):
     return frozen
 
 
-def add_media(data, tr, va, args, full):
+def add_media(data, tr, va, args, full, columns=None):
     train = pd.read_csv(args.media_train).set_index('row_index', verify_integrity=True)
     other = pd.read_csv(args.media_test).set_index('row_index', verify_integrity=True) if full else train
-    columns = [c for c in train if c.startswith('media_')]
+    columns = columns or [c for c in train if c.startswith('media_')]
     if not columns or any(c in tr for c in columns):
         raise ValueError('Invalid or duplicate media metadata columns.')
     for frame, media, rows in ((tr, train, data['t']), (va, other, data['v'])):
@@ -188,7 +192,7 @@ def fit_component(cfg, args, full=False):
     tr, va = data['tr'].copy(), data['va'].copy()
     cats = list(data['cats'])
     if cfg.get('use_media', cfg.get('media_metadata', False)):
-        tr, va = add_media(data, tr, va, args, full)
+        tr, va = add_media(data, tr, va, args, full, cfg.get('media_columns'))
     params = dict(cfg['params'])
     if cfg['family'] == 'lgb':
         from lightgbm import LGBMClassifier
@@ -297,7 +301,7 @@ def refit(args):
     p = sum(probabilities[name]*w for name, w in frozen['weights'].items())
     submission = Path(args.submission)
     submission.parent.mkdir(parents=True, exist_ok=True)
-    pd.DataFrame({'ID': ids, 'new/used': np.where(p >= frozen['threshold'], 'used', 'new')}).to_csv(submission, index=False)
+    pd.DataFrame({'ID': ids, 'condition': np.where(p >= frozen['threshold'], 'used', 'new')}).to_csv(submission, index=False)
     pd.DataFrame(dict(ID=ids, probability_used=p)).to_csv(out / 'round4_full_predictions.csv', index=False)
     result = dict(stage='full_refit_completed', selection_digest=frozen['selection_digest'],
         submission=str(submission.resolve()), rows=len(p), threshold=frozen['threshold'],

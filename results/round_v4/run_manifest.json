@@ -23,11 +23,16 @@
     "cat_enriched_d9",
     "cat_native_text_d7"
   ],
-  "media_access_status": "probing",
+  "media_access_status": "blocked_zero_decoded_assets",
   "training_cutoff_utc": "2026-10-11T02:35:50.844Z",
   "notes": [
     "No videos or images will be claimed analyzed unless actual pixels/frames are decoded.",
     "Media metadata ablations are reported separately.",
     "Confirm frozen weights and threshold before generating any new submission."
-  ]
+  ],
+  "accessible_image_pixels": 0,
+  "accessible_video_frames": 0,
+  "media_metadata_features": 50,
+  "visual_pipeline": "local_manifest_clip_optional_not_executed",
+  "checkpoint_commit": "f8deff84d26e63ebfb98f0cb1ad8c4d9600c59a6"
 }
