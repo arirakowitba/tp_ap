@@ -35,7 +35,7 @@ def run(args):
         p=model.predict_proba(z)[:,1];frozen=dict(params,n_estimators=int(params['n_estimators'] if fixed else model.best_iteration_))
         row=dict(name=name,family='lgb',kind='lgb',params=frozen,use_media=use_media,uses_pixels=False,uses_video_frames=False,
             protocol='selection42_49k_21k',media_group=args.media_group,
-            media_columns=columns if use_media else [],fingerprint=d['fingerprint'],
+            media_columns=columns if use_media else [],media_dtype='float64',fingerprint=d['fingerprint'],
             **metrics(vy,p,.5),seconds=time.time()-started)
         row['fixed_capacity_ablation']=fixed
         rows.append(row);np.save(out/(name+'.npy'),p);model.booster_.save_model(str(out/(name+'.txt')))

@@ -162,7 +162,8 @@ def ablation_plot(output):
         for position, value in zip(positions, values):
             axis.text(position, value+.03, f'{value:.3f}%', ha='center', fontsize=9)
     axis.axhline(95, color='#bc4749', ls='--', label='Objetivo 95%')
-    axis.set(xticks=x, xticklabels=complete.modelo, ylabel='Accuracy de selección (%)',
+    labels = complete.modelo.str.replace(' · ', '\n', regex=False).str.replace('CatBoost ', 'CatBoost\n', regex=False)
+    axis.set(xticks=x, xticklabels=labels, ylabel='Accuracy de selección (%)',
              ylim=(max(0, min(min(a), min(b))-1), max(95.4, max(max(a), max(b))+.4)),
              title='Misma partición y umbral: ¿añadir medidas de fotos ayuda?')
     axis.legend(fontsize=8)
@@ -184,7 +185,12 @@ def paired_diagnostics(output):
         if row['estado'] != 'par completo':
             continue
         names = [row['original_name'], row['media_name']]
-        paths = [next(output.rglob(f'{name}_predictions.csv'), output/f'{name}_predictions.csv') for name in names]
+        paths = []
+        for name in names:
+            path = next(output.rglob(f'{name}_predictions.csv'), None)
+            if path is None:
+                path = next(output.rglob(f'{name}_predictions.csv.gz'), output/f'{name}_predictions.csv')
+            paths.append(path)
         if not all(path.exists() for path in paths):
             continue
         original, media = [pd.read_csv(path).sort_values('row_index').reset_index(drop=True) for path in paths]
@@ -216,7 +222,8 @@ def paired_plot(output):
     fig, axis = plt.subplots(figsize=(10, 4))
     axis.bar(x-.18, table.corregidos, .36, color='#2a9d8f', label='Errores corregidos')
     axis.bar(x+.18, table.introducidos, .36, color='#e76f51', label='Errores introducidos')
-    axis.set(xticks=x, xticklabels=table.modelo, ylabel='Publicaciones de selección',
+    labels = table.modelo.str.replace(' · ', '\n', regex=False).str.replace('CatBoost ', 'CatBoost\n', regex=False)
+    axis.set(xticks=x, xticklabels=labels, ylabel='Publicaciones de selección',
              title='Una mejora pequeña puede ocultar muchos cambios de decisión')
     axis.legend()
     axis.grid(axis='y', alpha=.2)
@@ -256,6 +263,38 @@ def group_ablation_plot(output):
     fig.tight_layout()
     plt.show()
     return table
+
+
+def extended_progress_plot(output):
+    """Real selection-only complementarity objective; no confirmation reuse."""
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    rows = []
+    for path in Path(output).glob('extended/r4_lgb_extended_*.json'):
+        row = read_json(path)
+        if 'objective_blend_accuracy' in row:
+            row = dict(row)
+            row['trial'] = int(row['name'].rsplit('_', 1)[-1])
+            rows.append(row)
+    if not rows:
+        print('Búsqueda de complementariedad pendiente; no se dibuja una evolución simulada.')
+        return pd.DataFrame()
+    table = pd.DataFrame(rows).sort_values('trial')
+    objective = 100*table.objective_blend_accuracy
+    fig, axis = plt.subplots(figsize=(11, 4))
+    axis.scatter(table.trial, objective, s=28, color='#227c9d', alpha=.65,
+                 label='Cada prueba: 0,6 referencia + 0,4 nuevo')
+    axis.plot(table.trial, objective.cummax(), color='#2a9d8f', lw=2, label='Mejor objetivo acumulado')
+    if 'prior_accuracy' in table:
+        axis.axhline(100*float(table.prior_accuracy.iloc[0]), ls=':', color='#486581', label='Referencia en selección')
+    axis.axhline(95, ls='--', color='#bc4749', label='Objetivo 95%')
+    axis.set(xlabel='Número real de trial TPE', ylabel='Accuracy de selección (%)',
+             title='Buscar un modelo que complemente a la referencia, con pesos fijos y umbral 0,5')
+    axis.legend(fontsize=8, loc='lower right')
+    axis.grid(alpha=.2)
+    fig.tight_layout()
+    plt.show()
+    return table[['trial', 'media_group', 'accuracy', 'objective_blend_accuracy', 'prior_accuracy']]
 
 
 def evaluation_table(output):
@@ -345,7 +384,7 @@ def finalizer_command(script, mode, values):
     return command
 
 
-def run_training_pipeline(data_dir, output, minutes=120., trials=12, reserve_minutes=40.):
+def run_training_pipeline(data_dir, output, minutes=120., trials=12, reserve_minutes=50., extended_trials=50):
     """Explicitly invoked training path; sequential and globally bounded."""
     output = Path(output).resolve()
     data_dir = Path(data_dir).resolve()
@@ -361,8 +400,15 @@ def run_training_pipeline(data_dir, output, minutes=120., trials=12, reserve_min
                 '--output', str(output/'selection'), '--seed', '42', '--holdout-folds', '3', '--deadline', str(selection_deadline)]),
                 ('lightgbm_selection', common+[str(script/'multimodal_lgb_round4.py'), '--cache', str(output/'selection/stack.pkl'),
                 '--media-features', str(output/'media_features_train.csv'), '--output', str(output), '--trials', str(trials), '--deadline', str(selection_deadline)]),
+                ('fixed_capacity_ablation', common+[str(script/'multimodal_lgb_round4.py'), '--cache', str(output/'selection/stack.pkl'),
+                '--media-features', str(output/'media_features_train.csv'), '--output', str(output/'fixed_ablation'), '--fixed-only', '--deadline', str(selection_deadline)]),
+                ('metadata_group_ablations', common+[str(script/'run_media_groups_round4.py'), '--cache', str(output/'selection/stack.pkl'),
+                '--media-features', str(output/'media_features_train.csv'), '--output', str(output/'media_groups'), '--deadline', str(selection_deadline)]),
                 ('catboost_selection', common+[str(script/'multimodal_cat_round4.py'), '--cache', str(output/'selection/native.pkl'),
-                '--media-features', str(output/'media_features_train.csv'), '--output', str(output), '--deadline', str(selection_deadline)])]
+                '--media-features', str(output/'media_features_train.csv'), '--output', str(output), '--deadline', str(selection_deadline)]),
+                ('extended_complementarity_search', common+[str(script/'multimodal_extended_round4.py'), '--cache', str(output/'selection/stack.pkl'),
+                '--media-features', str(output/'media_features_train.csv'), '--output', str(output/'extended'),
+                '--trials', str(extended_trials), '--deadline', str(selection_deadline)])]
     for name, command in commands:
         result = stage(command, selection_deadline, output/f'{name}_master.log')
         stages.append({'stage': name, **result})
@@ -396,6 +442,20 @@ def run_training_pipeline(data_dir, output, minutes=120., trials=12, reserve_min
                 break
     else:
         stages.append({'stage': 'finalizer', 'status': 'missing_source_or_deadline_no_confirmation_claimed'})
+    verification = script/'verify_round4_artifacts.py'
+    if verification.exists() and all((data_dir/f'{split}_data.jsonlines').exists() for split in ('train', 'test')):
+        result = stage(common+[str(verification), '--data-dir', str(data_dir), '--output', str(output)],
+                       deadline, output/'verify_master.log')
+        stages.append({'stage': 'verify_artifacts', **result})
+    else:
+        stages.append({'stage': 'verify_artifacts', 'status': 'missing_source_or_raw_data'})
+    archive = script/'archive_round4_predictions.py'
+    if archive.exists():
+        result = stage(common+[str(archive), '--output', str(output)], deadline, output/'archive_master.log')
+        stages.append({'stage': 'archive_predictions', **result})
+    report = script/'report_round4.py'
+    result = stage(common+[str(report), '--output', str(output)], deadline, output/'report_master.log')
+    stages.append({'stage': 'report', **result})
     result = {'deadline': deadline, 'finished_utc': dt.datetime.now(dt.timezone.utc).isoformat(), 'stages': stages,
               'training_explicitly_requested': True, 'pixels_claimed_analyzed': False}
     (output/'round4_master_execution.json').write_text(json.dumps(result, indent=2))
@@ -416,7 +476,7 @@ Hay tres clases de información distintas: **texto** (palabras del título y rep
     if master:
         cells.extend([md('''### Ejecutar la ronda completa de forma explícita
 
-Por defecto este bloque solamente muestra el reporte guardado. `AP_ROUND4_RUN_TRAINING=1` habilita acceso acotado, preparación de splits, ablaciones LightGBM/CatBoost, selección congelada, confirmación y refit cuando corresponde. `AP_ROUND4_MINUTES` controla el presupuesto global (120 por defecto). La reproducción usa `results/round_v4_reproduction` o `AP_ROUND4_OUTPUT_DIR`: elegir una carpeta nueva si ya hay una selección congelada. No hay entrenamiento visual mientras no existan assets válidos; la rama opcional de CLIP local está documentada por separado. Caches/modelos grandes se regeneran, no se incorporan al repositorio.'''),
+Por defecto este bloque solamente muestra el reporte guardado. Instalar `requirements_round4.txt`. `AP_ROUND4_RUN_TRAINING=1` habilita acceso acotado, preparación de splits, ablaciones LightGBM/CatBoost, capacidad fija de 430 árboles, cuatro bloques y hasta 50 trials de complementariedad, selección congelada, confirmación y refit cuando corresponde; al terminar verifica los artifacts, comprime las probabilidades guardadas y genera el reporte. `AP_ROUND4_MINUTES` controla el presupuesto global (120 por defecto); se reservan 50 minutos para confirmación/refit. El presupuesto puede interrumpir búsquedas: solo se reportan ejecuciones terminadas. La reproducción usa `results/round_v4_reproduction` o `AP_ROUND4_OUTPUT_DIR`: elegir una carpeta nueva si ya hay una selección congelada. No hay entrenamiento visual mientras no existan assets válidos; la rama opcional de CLIP local está documentada por separado. Caches/modelos grandes se regeneran, no se incorporan al repositorio.'''),
             code('''import os
 from report_round4 import run_training_pipeline
 OUT4=ROOT/'results/round_v4'
@@ -426,20 +486,24 @@ if RUN_ROUND4_TRAINING:
     OUT4=Path(os.getenv('AP_ROUND4_OUTPUT_DIR',str(ROOT/'results/round_v4_reproduction')))
     display(run_training_pipeline(ROUND4_DATA,OUT4,
         minutes=float(os.getenv('AP_ROUND4_MINUTES','120')),
-        trials=int(os.getenv('AP_ROUND4_TRIALS','12'))))
+        trials=int(os.getenv('AP_ROUND4_TRIALS','12')),
+        extended_trials=int(os.getenv('AP_ROUND4_EXTENDED_TRIALS','50')),
+        reserve_minutes=float(os.getenv('AP_ROUND4_RESERVE_MINUTES','50'))))
 else:
     print('Modo reporte: no se descargan assets ni se entrenan modelos.')
 ''')])
     output_setup = "OUT4=globals().get('OUT4',ROOT/'results/round_v4')" if master else "OUT4=ROOT/'results/round_v4'"
     cells.extend([code(output_setup+'''
-from report_round4 import summarize,coverage_plot,ablation_plot,paired_plot,group_ablation_plot,evaluation_plot,frozen_state,frozen_paired_table,read_json
+from report_round4 import summarize,coverage_plot,ablation_plot,paired_plot,group_ablation_plot,extended_progress_plot,evaluation_plot,frozen_state,frozen_paired_table,read_json
 display(coverage_plot(OUT4))
 '''), md('''**Cómo leerlo:** casi todas las filas traen información descriptiva de fotos, pero solamente alrededor de 3% identifica un video. Las barras de píxeles/frames recuperados permanecen en cero. Se comprobó también la migración oficial al CDN actual: cambiar un dominio antiguo por el actual no resolvió el bloqueo. No se inventan fotografías para llenar este faltante.
 
-Construimos 50 medidas numéricas: ancho, alto, área, relación ancho/alto, dispersiones, proporciones de fotos verticales/horizontales y expansión de resolución. Si esos detalles ayudan, podemos añadirlos a los mejores diseños previos de LightGBM y CatBoost. Eso es una prueba de **metadatos**, no de visión artificial.'''),
+Construimos 50 medidas numéricas: ancho, alto, área, relación ancho/alto, dispersiones, proporciones de fotos verticales/horizontales y expansión de resolución. **No son 50 señales nuevas independientes:** sobre las 49.000 filas de desarrollo, una es constante y seis coinciden exactamente con columnas previas (incluida esa constante). El inventario de redundancia queda guardado en `media_feature_novelty.csv`. Si los detalles restantes ayudan, podemos añadirlos a los mejores diseños previos de LightGBM y CatBoost. Eso es una prueba de **metadatos**, no de visión artificial.'''),
         code('''round4_metrics=summarize(OUT4)
 display(round4_metrics[[column for column in ['name','family','accuracy','threshold','use_media','uses_pixels','uses_video_frames'] if column in round4_metrics]])
 display(ablation_plot(OUT4))
+if (OUT4/'media_feature_novelty.csv').exists():
+    display(pd.read_csv(OUT4/'media_feature_novelty.csv'))
 '''), md('''**Experimento pareado:** cada par conserva el algoritmo, la partición de selección y el umbral, y añade las medidas multimedia. La cantidad efectiva de árboles puede cambiar por early stopping; los parámetros base siguen siendo los mismos. Luego, TPE explora configuraciones adicionales. Los mejores resultados de esa búsqueda no sustituyen a la comparación original/metadatos. Las barras son selección local, no Kaggle.'''),
         code('''display(paired_plot(OUT4))
 display(group_ablation_plot(OUT4))
@@ -448,12 +512,14 @@ if (OUT4/'media_paired_diagnostics.csv').exists():
 '''), md('''**Aciertos y errores:** un modelo puede corregir publicaciones que antes confundíamos y, al mismo tiempo, equivocarse en otras. La ganancia neta es corregidos menos introducidos. El p-valor exacto pareado pregunta si esas dos cantidades son compatibles con una diferencia de azar; tras muchas búsquedas no basta para demostrar una mejora general. Por eso congelamos modelo, pesos y umbral antes de la confirmación.
 
 La comparación de bloques usa exactamente 430 árboles y umbral 0,5: pregunta qué pasa al añadir presencia de video, orientación o dimensiones. Es una **ablación de información**, no importancia interna de variables ni prueba de que el modelo vio un video. Los diagnósticos del subconjunto con video presente comparan esa marca histórica, no frames.'''),
+        code('''display(extended_progress_plot(OUT4))
+'''), md('''**Complementariedad:** la búsqueda extendida evalúa cada árbol nuevo mezclado con la referencia previa: 60% referencia + 40% nuevo, con umbral fijo 0,5. Un modelo aislado apenas mejor puede ser útil si corrige errores diferentes. TPE usa solamente la partición de selección para elegir parámetros y bloques. El ranking por arquitectura considera el mayor de su score aislado y ese blend fijo; después se congela el blend final antes de mirar la confirmación. La curva muestra ejecuciones reales terminadas, no trials interrumpidos ni resultados públicos.'''),
         code('''display(evaluation_plot(OUT4))
 display(frozen_paired_table(OUT4))
 round4_state=frozen_state(OUT4)
 display(round4_state)
 display(read_json(OUT4/'run_manifest.json'))
-'''), md('''**Selección, confirmación y objetivo:** selección usa 49.000 filas para aprender y 21.000 para comparar candidatos; confirmación usa otra partición de 56.000/14.000. Las familias se separan por `parent_item_id`. Ambas particiones vienen del mismo dataset ya explorado, no constituyen un test externo intacto. El 94,428% informado por el usuario es una referencia pública de Kaggle y se muestra por separado. No se declara 95% ni una nueva submission hasta que exista evidencia correspondiente.
+'''), md('''**Selección, confirmación y objetivo:** selección usa 49.000 filas para aprender y 21.000 para comparar candidatos; confirmación usa otra partición de 56.000/14.000. Las familias se separan por `parent_item_id` dentro de cada split. **Las filas de evaluación de las semillas 42 y 731 se solapan:** no son dos holdouts disjuntos ni un test externo intacto; ambas particiones vienen del mismo dataset ya explorado. El solapamiento exacto queda registrado en `selection_confirmation_overlap`. El 94,428% informado por el usuario es una referencia pública de Kaggle y se muestra por separado. No se declara 95% ni una nueva submission hasta que exista evidencia correspondiente.
 
 **Continuación visual real:** `local_visual_embeddings_round4.py` acepta un manifest de imágenes/videos locales alineados por fila. Verifica archivos y pesos oficiales CLIP ViT-B/32, obtiene embeddings de imágenes o tres frames reproducibles por video y registra cobertura. En esta sesión solo se verificó su validación/formato y decodificación local de QA; no se ejecutó inferencia sobre la competencia. El deadline y los estados pendientes forman parte del resultado, no se completan con valores simulados.''')])
     return cells
@@ -523,7 +589,7 @@ def main():
               'report_generated_utc': dt.datetime.now(dt.timezone.utc).isoformat()}
     (args.output/'report_state.json').write_text(json.dumps(report, indent=2, default=str))
     text = '# Ronda 4: texto y metadatos multimedia\n\n'
-    text += f'Configuraciones con métricas guardadas: **{len(table)}**. No se recuperaron píxeles de fotos ni frames de la competencia: no hubo entrenamiento visual o temporal. Se probaron 50 medidas de metadatos sobre los mejores diseños previos.\n\n'
+    text += f'Configuraciones con métricas guardadas: **{len(table)}**. No se recuperaron píxeles de fotos ni frames de la competencia: no hubo entrenamiento visual o temporal. Se probaron 50 medidas de metadatos sobre los mejores diseños previos; una es constante y seis coinciden con columnas previas (incluida la constante) en las 49.000 filas de desarrollo. No son 50 señales nuevas independientes.\n\n'
     text += 'Las métricas siguientes son de selección local; no se atribuyen a Kaggle. Referencia pública informada por el usuario: **94,428%**.\n\n'
     text += '```text\n'+table[[c for c in ['name','accuracy','threshold'] if c in table]].to_string(index=False)+'\n```\n\n'
     text += 'Estado congelado/confirmación (un artifact ausente queda pendiente):\n\n```json\n'+json.dumps(state,indent=2,default=str)+'\n```\n\n'

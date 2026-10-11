@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "train_data.jsonlines: SHA256",
+    "test_data.jsonlines: SHA256",
+    "train: 50 metadata features and exact row order",
+    "test: 50 metadata features and exact row order",
+    "original baseline: 21k row/label alignment and recorded accuracy",
+    "26 completed models: probabilities, labels, metrics and input claims"
+  ],
+  "completed_models": 26,
+  "all_passed": true,
+  "training_executed": false,
+  "network_requests": 0
+}

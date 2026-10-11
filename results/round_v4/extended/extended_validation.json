@@ -1,0 +1,29 @@
+{
+  "validated_predictions": 16,
+  "checks": [
+    "unique21k rows",
+    "exact labels",
+    "finite probabilities",
+    "standalone metric recomputed",
+    "fixed blend metric recomputed"
+  ],
+  "all_passed": true,
+  "models": [
+    "r4_lgb_extended_0",
+    "r4_lgb_extended_1",
+    "r4_lgb_extended_10",
+    "r4_lgb_extended_11",
+    "r4_lgb_extended_12",
+    "r4_lgb_extended_13",
+    "r4_lgb_extended_14",
+    "r4_lgb_extended_15",
+    "r4_lgb_extended_2",
+    "r4_lgb_extended_3",
+    "r4_lgb_extended_4",
+    "r4_lgb_extended_5",
+    "r4_lgb_extended_6",
+    "r4_lgb_extended_7",
+    "r4_lgb_extended_8",
+    "r4_lgb_extended_9"
+  ]
+}

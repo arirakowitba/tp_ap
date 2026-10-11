@@ -43,6 +43,8 @@ def worker(args):
     from lightgbm import LGBMClassifier, early_stopping
     from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score, log_loss
     started = time.time()
+    if args.deadline <= started:
+        raise TimeoutError('Worker selection deadline expired.')
     request = json.loads(Path(args.request).read_text())
     data = pd.read_pickle(args.cache)
     fp = data['fingerprint']
@@ -79,7 +81,7 @@ def worker(args):
     blend = .6*prior + .4*p
     name = 'r4_lgb_extended_'+str(request['trial'])
     result = dict(name=name,family='lgb',kind='lgb',params=dict(params,n_estimators=int(model.best_iteration_)),
-        use_media=True,media_columns=cols,media_group=request['media_group'],
+        use_media=True,media_columns=cols,media_group=request['media_group'],media_dtype='float32',
         uses_pixels=False,uses_video_frames=False,image_pixels_used=False,video_frames_used=False,
         fingerprint=fp,protocol='selection42_49k_21k',threshold=.5,
         accuracy=float(accuracy_score(y,p>=.5)),balanced_accuracy=float(balanced_accuracy_score(y,p>=.5)),
@@ -116,6 +118,16 @@ def run(args):
     if args.deadline <= time.time():
         raise TimeoutError('Selection search deadline expired.')
     out = Path(args.output); out.mkdir(parents=True,exist_ok=True)
+    source_protocol = json.loads((Path(args.cache).parent/'protocol.json').read_text())
+    atomic_json(out/'extended_protocol.json',dict(
+        fingerprint=source_protocol['fingerprint'],cache=str(Path(args.cache).resolve()),
+        train_rows=49000,evaluation_rows=21000,objective='accuracy(.6 prior + .4 new >= .5)',
+        media_groups=['all','image','orientation','dimensions'],
+        requested_trials=args.trials,hard_deadline=args.deadline,cpu_threads_per_fit=2,
+        early_stopping='100 iterations, selection binary_logloss',
+        sampler='TPESampler(seed=20261011,n_startup_trials=7)',
+        source_prior=str(Path(args.prior_selection).resolve()),
+        confirmation_used=False,image_pixels_used=False,video_frames_used=False))
     base = json.loads((ROOT/'optimization/lgb_tpe_2_params.json').read_text())
     base.update(n_jobs=2,n_estimators=3500,random_state=2026)
     storage='sqlite:///'+str((out/'study.sqlite').resolve())
@@ -163,10 +175,16 @@ def run(args):
         trial.set_user_attr('best_iteration',result['params']['n_estimators'])
         return result['objective_blend_accuracy']
     def callback(study,trial):
+        # Guarantee image/dimension controls after the exploratory opening.
+        if trial.number == 12:
+            control=json.loads((ROOT/'optimization/lgb_tpe_2_params.json').read_text())
+            keys=('learning_rate','num_leaves','min_child_samples','reg_lambda','reg_alpha','colsample_bytree','max_cat_threshold','cat_smooth')
+            for group in ('image','dimensions'):
+                study.enqueue_trial(dict({k:control[k] for k in keys},media_group=group),skip_if_exists=True)
         refresh(out,study)
         if time.time() >= args.deadline-35 or (trial.value is not None and trial.value >= .95):
             study.stop()
-    study.optimize(objective,n_trials=max(0,args.trials-len(study.trials)),
+    study.optimize(objective,n_trials=max(0,args.trials-sum(t.state.is_finished() for t in study.trials)),
         timeout=max(0,args.deadline-time.time()-5),callbacks=[callback])
     refresh(out,study)
 

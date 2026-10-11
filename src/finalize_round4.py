@@ -38,6 +38,8 @@ def row_hash(rows):
 
 
 def aligned_predictions(path, rows, labels=None):
+    path=Path(path)
+    if not path.exists() and path.with_suffix(path.suffix+'.gz').exists():path=path.with_suffix(path.suffix+'.gz')
     frame = pd.read_csv(path)
     if 'row_index' not in frame or frame.row_index.duplicated().any():
         raise ValueError(f'Invalid row IDs: {path}')
@@ -96,7 +98,7 @@ def select(args):
         if not name or cfg.get('family') not in {'cat', 'lgb'}:
             continue
         prediction_path = path.parent / (name + '_predictions.csv')
-        if not prediction_path.exists():
+        if not prediction_path.exists() and not prediction_path.with_suffix('.csv.gz').exists():
             continue
         # Do not accept incomplete training configurations or visual claims.
         if not cfg.get('params') or any(cfg.get(k, False) for k in
@@ -168,7 +170,7 @@ def load_frozen(path):
     return frozen
 
 
-def add_media(data, tr, va, args, full, columns=None):
+def add_media(data, tr, va, args, full, columns=None, dtype='float32'):
     train = pd.read_csv(args.media_train).set_index('row_index', verify_integrity=True)
     other = pd.read_csv(args.media_test).set_index('row_index', verify_integrity=True) if full else train
     columns = columns or [c for c in train if c.startswith('media_')]
@@ -177,7 +179,7 @@ def add_media(data, tr, va, args, full, columns=None):
     for frame, media, rows in ((tr, train, data['t']), (va, other, data['v'])):
         values = media.loc[rows, columns].reset_index(drop=True)
         for c in columns:
-            frame[c] = pd.to_numeric(values[c], errors='raise').to_numpy(dtype='float32')
+            frame[c] = pd.to_numeric(values[c], errors='raise').to_numpy(dtype=dtype)
     return tr, va
 
 
@@ -192,7 +194,8 @@ def fit_component(cfg, args, full=False):
     tr, va = data['tr'].copy(), data['va'].copy()
     cats = list(data['cats'])
     if cfg.get('use_media', cfg.get('media_metadata', False)):
-        tr, va = add_media(data, tr, va, args, full, cfg.get('media_columns'))
+        default_dtype='float64' if cfg['family']=='lgb' and not cfg['name'].startswith('r4_lgb_extended_') else 'float32'
+        tr, va = add_media(data, tr, va, args, full, cfg.get('media_columns'),cfg.get('media_dtype',default_dtype))
     params = dict(cfg['params'])
     if cfg['family'] == 'lgb':
         from lightgbm import LGBMClassifier
@@ -303,8 +306,10 @@ def refit(args):
     submission.parent.mkdir(parents=True, exist_ok=True)
     pd.DataFrame({'ID': ids, 'condition': np.where(p >= frozen['threshold'], 'used', 'new')}).to_csv(submission, index=False)
     pd.DataFrame(dict(ID=ids, probability_used=p)).to_csv(out / 'round4_full_predictions.csv', index=False)
+    resolved=submission.resolve()
+    portable=str(resolved.relative_to(ROOT)) if resolved.is_relative_to(ROOT) else str(resolved)
     result = dict(stage='full_refit_completed', selection_digest=frozen['selection_digest'],
-        submission=str(submission.resolve()), rows=len(p), threshold=frozen['threshold'],
+        submission=portable, rows=len(p), threshold=frozen['threshold'],
         submission_sha256=hashlib.sha256(submission.read_bytes()).hexdigest(),
         changed_vs_prior=int(np.sum((p >= frozen['threshold']) != (prior >= .5))),
         image_pixels_used=False, video_frames_used=False, public_accuracy=None)

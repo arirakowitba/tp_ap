@@ -194,5 +194,6 @@
     "seed": 42,
     "holdout_folds": 3
   },
-  "cache": "/workspace/scratch/d7363d2f086f/repo/results/round_v4/selection/native.pkl"
+  "cache": "/workspace/scratch/d7363d2f086f/repo/results/round_v4/selection/native.pkl",
+  "media_dtype": "float32"
 }

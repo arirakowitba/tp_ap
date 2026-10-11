@@ -37,5 +37,6 @@
   "logloss": 0.157837371105253,
   "threshold": 0.5,
   "seconds": 31.31196355819702,
-  "fixed_capacity_ablation": true
+  "fixed_capacity_ablation": true,
+  "media_dtype": "float64"
 }

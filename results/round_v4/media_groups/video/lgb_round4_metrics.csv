@@ -1,0 +1,2 @@
+name,family,kind,use_media,uses_pixels,uses_video_frames,protocol,media_group,media_columns,fingerprint,accuracy,balanced_accuracy,macro_f1,logloss,threshold,seconds,fixed_capacity_ablation
+r4_lgb_fixed430_media_video,lgb,lgb,True,False,False,selection42_49k_21k,video,['media_has_video'],"{'train_sha256': 'aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf', 'seed': 42, 'holdout_folds': 3}",0.9392380952380952,0.9398244328131855,0.9390072266648788,0.157837371105253,0.5,31.31196355819702,True

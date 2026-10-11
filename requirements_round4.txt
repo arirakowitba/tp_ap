@@ -1,0 +1,6 @@
+-r requirements_optimized.txt
+Pillow>=10
+
+# Optional local visual branch: official OpenAI CLIP, compatible CPU PyTorch /
+# torchvision and ffmpeg/ffprobe. See results/round_v4/local_visual_pipeline.md.
+# These packages and weights are not needed for metadata models or reports.

@@ -20,6 +20,7 @@ def run(output):
                             (out,'r4_cat_enriched_d9_original','r4_cat_enriched_d9_media'),
                             (out,'r4_cat_native_text_d7_original','r4_cat_native_text_d7_media')]:
         paths=[folder/(name+'_predictions.csv') for name in (base,new)]
+        paths=[p if p.exists() else p.with_suffix('.csv.gz') for p in paths]
         if not all(p.exists() for p in paths):continue
         a,b=[pd.read_csv(p).rename(columns={'y':'y_used','p':'probability_used'}).set_index('row_index') for p in paths]
         if not a.index.is_unique or set(a.index)!=set(b.index):raise ValueError('Ablation row mismatch')

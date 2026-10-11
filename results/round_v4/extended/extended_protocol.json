@@ -1,0 +1,24 @@
+{
+  "fingerprint": {
+    "train_sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf",
+    "seed": 42,
+    "holdout_folds": 3
+  },
+  "train_rows": 49000,
+  "evaluation_rows": 21000,
+  "objective": "accuracy(.6 prior + .4 new >= .5)",
+  "media_groups": [
+    "all",
+    "image",
+    "orientation",
+    "dimensions"
+  ],
+  "requested_trials": 50,
+  "hard_deadline": 1791685850,
+  "cpu_threads_per_fit": 2,
+  "early_stopping": "100 iterations, selection binary_logloss",
+  "sampler": "TPESampler(seed=20261011,n_startup_trials=7)",
+  "confirmation_used": false,
+  "image_pixels_used": false,
+  "video_frames_used": false
+}

@@ -93,6 +93,11 @@ def fit(args):
     gc.collect()
     name = "r4_cat_" + args.config + ("_media" if args.metadata else "_original")
     params = dict(CONFIGS[args.config])
+    if args.variant:
+        if args.variant != "deeper_d8" or args.config != "native_text_d7" or not args.metadata:
+            raise ValueError("The predefined deeper variant requires native text and media metadata.")
+        name += "_deeper_d8"
+        params.update(depth=8, iterations=1600, learning_rate=.035, l2_leaf_reg=12, random_seed=73)
     model = CatBoostClassifier(**params, loss_function="Logloss", eval_metric="Accuracy",
                                thread_count=2, allow_writing_files=False,
                                one_hot_max_size=10, random_strength=.5)
@@ -116,6 +121,7 @@ def fit(args):
                   n_train=len(y_train), n_eval=len(y_eval), n_features=len(tr.columns),
                   params=frozen_params, requested_params=params, feature_sets=feature_sets,
                   config=args.config, media_metadata=bool(args.metadata),
+                  media_dtype="float32", variant=args.variant,
                   cat_features=cats, text_features=texts, seconds=time.monotonic()-start,
                   completed_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                   confirmation_used=False, image_pixels_used=False, video_frames_used=False,
@@ -187,6 +193,7 @@ def main():
     parser.add_argument("--worker", action="store_true")
     parser.add_argument("--config", choices=list(CONFIGS))
     parser.add_argument("--metadata", action="store_true")
+    parser.add_argument("--variant", choices=["deeper_d8"])
     args = parser.parse_args()
     fit(args) if args.worker else run(args)
 
