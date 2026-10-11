@@ -1,0 +1,270 @@
+{
+  "train": {
+    "rows": 70000,
+    "sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf",
+    "nonempty_fields": {
+      "pictures": 69459,
+      "thumbnail": 69459,
+      "secure_thumbnail": 69459,
+      "video_id": 2102
+    },
+    "field_types": {
+      "pictures": {
+        "list": 70000
+      },
+      "thumbnail": {
+        "str": 70000
+      },
+      "secure_thumbnail": {
+        "str": 70000
+      },
+      "video_id": {
+        "NoneType": 67898,
+        "str": 2102
+      }
+    },
+    "picture_count_distribution": {
+      "5": 5224,
+      "1": 23198,
+      "6": 9723,
+      "0": 541,
+      "4": 7279,
+      "2": 12550,
+      "3": 10286,
+      "7": 219,
+      "13": 58,
+      "8": 148,
+      "12": 82,
+      "10": 146,
+      "14": 225,
+      "11": 97,
+      "9": 159,
+      "18": 12,
+      "15": 34,
+      "24": 3,
+      "20": 2,
+      "33": 1,
+      "22": 2,
+      "19": 1,
+      "21": 2,
+      "16": 2,
+      "30": 2,
+      "34": 1,
+      "36": 1,
+      "23": 1,
+      "27": 1
+    },
+    "image_url_hosts": {
+      "mla-s2-p.mlstatic.com": 137186,
+      "a248.e.akamai.net": 274843,
+      "mla-s1-p.mlstatic.com": 137657,
+      "www.mercadolibre.com": 194
+    },
+    "sample_images": [
+      "http://mla-s2-p.mlstatic.com/4005-MLA3911152707_4729-I.jpg",
+      "https://a248.e.akamai.net/mla-s2-p.mlstatic.com/4005-MLA3911152707_4729-I.jpg",
+      "http://mla-s2-p.mlstatic.com/4005-MLA3911152707_4729-O.jpg",
+      "https://a248.e.akamai.net/mla-s2-p.mlstatic.com/4005-MLA3911152707_4729-O.jpg",
+      "http://mla-s2-p.mlstatic.com/4072-MLA3911152707_6415-O.jpg",
+      "https://a248.e.akamai.net/mla-s2-p.mlstatic.com/4072-MLA3911152707_6415-O.jpg",
+      "http://mla-s1-p.mlstatic.com/4038-MLA3911152707_2601-O.jpg",
+      "https://a248.e.akamai.net/mla-s1-p.mlstatic.com/4038-MLA3911152707_2601-O.jpg",
+      "http://mla-s2-p.mlstatic.com/4049-MLA3911152707_3681-O.jpg",
+      "https://a248.e.akamai.net/mla-s2-p.mlstatic.com/4049-MLA3911152707_3681-O.jpg",
+      "http://mla-s1-p.mlstatic.com/4070-MLA3911152707_9535-O.jpg",
+      "https://a248.e.akamai.net/mla-s1-p.mlstatic.com/4070-MLA3911152707_9535-O.jpg"
+    ],
+    "sample_video_urls": [
+      "https://www.youtube.com/embed/1k1dS5Uz5lg",
+      "https://www.youtube.com/embed/oRxwqoVjVxg",
+      "https://www.youtube.com/embed/EVCQuwl7RIE",
+      "https://www.youtube.com/embed/PvtiKRNG3PU",
+      "https://www.youtube.com/embed/1V5rZ_xiBDU",
+      "https://www.youtube.com/embed/QQNfOicE_o8"
+    ],
+    "sample_video_values": [
+      {
+        "row_index": 11,
+        "field": "video_id",
+        "value": "1k1dS5Uz5lg"
+      },
+      {
+        "row_index": 81,
+        "field": "video_id",
+        "value": "oRxwqoVjVxg"
+      },
+      {
+        "row_index": 97,
+        "field": "video_id",
+        "value": "EVCQuwl7RIE"
+      },
+      {
+        "row_index": 106,
+        "field": "video_id",
+        "value": "PvtiKRNG3PU"
+      },
+      {
+        "row_index": 109,
+        "field": "video_id",
+        "value": "1V5rZ_xiBDU"
+      },
+      {
+        "row_index": 114,
+        "field": "video_id",
+        "value": "QQNfOicE_o8"
+      },
+      {
+        "row_index": 117,
+        "field": "video_id",
+        "value": "LzjcdiriakY"
+      },
+      {
+        "row_index": 174,
+        "field": "video_id",
+        "value": "v5Asedlj2cw"
+      },
+      {
+        "row_index": 246,
+        "field": "video_id",
+        "value": "EVCQuwl7RIE"
+      },
+      {
+        "row_index": 260,
+        "field": "video_id",
+        "value": "6w8QCLqOsqU"
+      }
+    ]
+  },
+  "test": {
+    "rows": 30000,
+    "sha256": "05921bd73deba1c4ed5a4d564e0351729eae8f2ef197bc851e10f9099d277460",
+    "nonempty_fields": {
+      "pictures": 29752,
+      "thumbnail": 29752,
+      "secure_thumbnail": 29752,
+      "video_id": 883
+    },
+    "field_types": {
+      "pictures": {
+        "list": 30000
+      },
+      "thumbnail": {
+        "str": 30000
+      },
+      "secure_thumbnail": {
+        "str": 30000
+      },
+      "video_id": {
+        "NoneType": 29117,
+        "str": 883
+      }
+    },
+    "picture_count_distribution": {
+      "2": 5304,
+      "8": 72,
+      "1": 10077,
+      "5": 2228,
+      "6": 4136,
+      "4": 3059,
+      "3": 4452,
+      "0": 248,
+      "9": 49,
+      "14": 120,
+      "7": 80,
+      "10": 53,
+      "12": 36,
+      "11": 32,
+      "13": 25,
+      "15": 18,
+      "19": 1,
+      "20": 2,
+      "27": 1,
+      "18": 2,
+      "28": 1,
+      "29": 1,
+      "36": 1,
+      "25": 1,
+      "16": 1
+    },
+    "image_url_hosts": {
+      "mla-s1-p.mlstatic.com": 58448,
+      "a248.e.akamai.net": 117352,
+      "mla-s2-p.mlstatic.com": 58904,
+      "www.mercadolibre.com": 110
+    },
+    "sample_images": [
+      "http://mla-s1-p.mlstatic.com/19391-MLA8021791613_092014-I.jpg",
+      "https://a248.e.akamai.net/mla-s1-p.mlstatic.com/19391-MLA8021791613_092014-I.jpg",
+      "http://mla-s1-p.mlstatic.com/19391-MLA8021791613_092014-O.jpg",
+      "https://a248.e.akamai.net/mla-s1-p.mlstatic.com/19391-MLA8021791613_092014-O.jpg",
+      "http://mla-s1-p.mlstatic.com/19313-MLA8021791613_092014-O.jpg",
+      "https://a248.e.akamai.net/mla-s1-p.mlstatic.com/19313-MLA8021791613_092014-O.jpg",
+      "http://mla-s2-p.mlstatic.com/22957-MLA8303606049_022015-I.jpg",
+      "https://a248.e.akamai.net/mla-s2-p.mlstatic.com/22957-MLA8303606049_022015-I.jpg",
+      "http://mla-s2-p.mlstatic.com/22957-MLA8303606049_022015-O.jpg",
+      "https://a248.e.akamai.net/mla-s2-p.mlstatic.com/22957-MLA8303606049_022015-O.jpg",
+      "http://mla-s2-p.mlstatic.com/22979-MLA8303606049_022015-O.jpg",
+      "https://a248.e.akamai.net/mla-s2-p.mlstatic.com/22979-MLA8303606049_022015-O.jpg"
+    ],
+    "sample_video_urls": [
+      "https://www.youtube.com/embed/QQNfOicE_o8",
+      "https://www.youtube.com/embed/hMYHkz35CaY",
+      "https://www.youtube.com/embed/Z-sOFozn5-8",
+      "https://www.youtube.com/embed/oRxwqoVjVxg",
+      "https://www.youtube.com/embed/8jaGFzytLsw",
+      "https://www.youtube.com/embed/aBirF9251aY"
+    ],
+    "sample_video_values": [
+      {
+        "row_index": 40,
+        "field": "video_id",
+        "value": "QQNfOicE_o8"
+      },
+      {
+        "row_index": 95,
+        "field": "video_id",
+        "value": "hMYHkz35CaY"
+      },
+      {
+        "row_index": 129,
+        "field": "video_id",
+        "value": "Z-sOFozn5-8"
+      },
+      {
+        "row_index": 167,
+        "field": "video_id",
+        "value": "oRxwqoVjVxg"
+      },
+      {
+        "row_index": 181,
+        "field": "video_id",
+        "value": "8jaGFzytLsw"
+      },
+      {
+        "row_index": 264,
+        "field": "video_id",
+        "value": "aBirF9251aY"
+      },
+      {
+        "row_index": 275,
+        "field": "video_id",
+        "value": "r3sizD_B3GY"
+      },
+      {
+        "row_index": 284,
+        "field": "video_id",
+        "value": "B5LfNBki8Ks"
+      },
+      {
+        "row_index": 340,
+        "field": "video_id",
+        "value": "lY854dbR2N8"
+      },
+      {
+        "row_index": 343,
+        "field": "video_id",
+        "value": "c69gD92EnU0"
+      }
+    ]
+  }
+}

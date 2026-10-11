@@ -1,0 +1,46 @@
+[
+  {
+    "url": "https://http2.mlstatic.com/4005-MLA3911152707_4729-O.jpg",
+    "host": "http2.mlstatic.com",
+    "kind": "image",
+    "status": 403,
+    "accessible_media": false,
+    "error": "HTTP Error 403: Forbidden",
+    "seconds": 7.572,
+    "purpose": "documented_legacy_CDN_migration_same_asset",
+    "migration_source": "https://developers.mercadolibre.com.ar/es_ar/gestiona-preguntas-respuestas/actualizacion-de-dominios-de-imagenes"
+  },
+  {
+    "url": "https://http2.mlstatic.com/D_NQ_NP_4005-MLA3911152707_4729-O.jpg",
+    "host": "http2.mlstatic.com",
+    "kind": "image",
+    "status": 403,
+    "accessible_media": false,
+    "error": "HTTP Error 403: Forbidden",
+    "seconds": 6.342,
+    "purpose": "documented_legacy_CDN_migration_same_asset",
+    "migration_source": "https://developers.mercadolibre.com.ar/es_ar/gestiona-preguntas-respuestas/actualizacion-de-dominios-de-imagenes"
+  },
+  {
+    "url": "https://http2.mlstatic.com/4072-MLA3911152707_6415-O.jpg",
+    "host": "http2.mlstatic.com",
+    "kind": "image",
+    "status": 403,
+    "accessible_media": false,
+    "error": "HTTP Error 403: Forbidden",
+    "seconds": 8.297,
+    "purpose": "documented_legacy_CDN_migration_same_asset",
+    "migration_source": "https://developers.mercadolibre.com.ar/es_ar/gestiona-preguntas-respuestas/actualizacion-de-dominios-de-imagenes"
+  },
+  {
+    "url": "https://http2.mlstatic.com/D_NQ_NP_4072-MLA3911152707_6415-O.jpg",
+    "host": "http2.mlstatic.com",
+    "kind": "image",
+    "status": 403,
+    "accessible_media": false,
+    "error": "HTTP Error 403: Forbidden",
+    "seconds": 8.347,
+    "purpose": "documented_legacy_CDN_migration_same_asset",
+    "migration_source": "https://developers.mercadolibre.com.ar/es_ar/gestiona-preguntas-respuestas/actualizacion-de-dominios-de-imagenes"
+  }
+]

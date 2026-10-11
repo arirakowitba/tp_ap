@@ -1,0 +1,23 @@
+{
+  "feature_count": 50,
+  "predictor_exclusions": [
+    "picture_id",
+    "video_id",
+    "raw_url",
+    "condition",
+    "external_current_item_metadata"
+  ],
+  "features_are": "metadata_only_not_pixel_or_temporal_embeddings",
+  "streaming_extractor": "src/multimodal_access_round4.py",
+  "sources": [
+    "https://github.com/openai/CLIP",
+    "https://arxiv.org/abs/2303.15343",
+    "https://developers.google.com/youtube/v3/getting-started"
+  ],
+  "accessible_pixel_assets": 0,
+  "actual_http_requests_this_session": 26,
+  "visual_model_trained": false,
+  "video_model_trained": false,
+  "migration_checks": 4,
+  "migration_accessible": 0
+}

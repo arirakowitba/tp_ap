@@ -1,0 +1,33 @@
+{
+  "started_utc": "2026-10-11T01:20:50.844Z",
+  "deadline_utc": "2026-10-11T03:20:50.844Z",
+  "budget_minutes": 120,
+  "base_commit": "866c803db3c851744585196ef1401c7d0c39a86b",
+  "public_reference_user_report": 0.94428,
+  "selection": {
+    "seed": 42,
+    "train_rows": 49000,
+    "evaluation_rows": 21000,
+    "holdout_folds": 3
+  },
+  "confirmation": {
+    "seed": 731,
+    "train_rows": 56000,
+    "evaluation_rows": 14000,
+    "holdout_folds": 2
+  },
+  "target": 0.95,
+  "status": "running",
+  "best_existing_models": [
+    "lgb_tpe_2",
+    "cat_enriched_d9",
+    "cat_native_text_d7"
+  ],
+  "media_access_status": "probing",
+  "training_cutoff_utc": "2026-10-11T02:35:50.844Z",
+  "notes": [
+    "No videos or images will be claimed analyzed unless actual pixels/frames are decoded.",
+    "Media metadata ablations are reported separately.",
+    "Confirm frozen weights and threshold before generating any new submission."
+  ]
+}

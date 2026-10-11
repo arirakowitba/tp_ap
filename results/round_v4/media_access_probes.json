@@ -1,0 +1,188 @@
+{
+  "created_at": "2026-10-11T01:25:29.357672+00:00",
+  "max_probes": 20,
+  "actual_probes": 16,
+  "probes": [
+    {
+      "url": "https://www.youtube.com/embed/1k1dS5Uz5lg",
+      "host": "www.youtube.com",
+      "kind": "video",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes_sampled": 4096,
+      "final_url": "https://www.youtube.com/embed/1k1dS5Uz5lg",
+      "sample_sha256": "6905e57ce347e42fb516b1a2ce058213a7d2239cb66644592b4e97bd4e75b629",
+      "accessible_media": false,
+      "image_signature_valid": null,
+      "seconds": 8.119,
+      "split": "train"
+    },
+    {
+      "url": "https://www.youtube.com/embed/oRxwqoVjVxg",
+      "host": "www.youtube.com",
+      "kind": "video",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes_sampled": 4096,
+      "final_url": "https://www.youtube.com/embed/oRxwqoVjVxg",
+      "sample_sha256": "0b0746ee3ebceb14e8a6db068048624a748b209db5dad4edee625d8bd2c0e09c",
+      "accessible_media": false,
+      "image_signature_valid": null,
+      "seconds": 6.292,
+      "split": "train"
+    },
+    {
+      "url": "https://www.youtube.com/embed/QQNfOicE_o8",
+      "host": "www.youtube.com",
+      "kind": "video",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes_sampled": 4096,
+      "final_url": "https://www.youtube.com/embed/QQNfOicE_o8",
+      "sample_sha256": "9a46b1bc805929dd5c190463de09ec247a0af4c6f5d661a72d5d347fa7a0b726",
+      "accessible_media": false,
+      "image_signature_valid": null,
+      "seconds": 6.243,
+      "split": "test"
+    },
+    {
+      "url": "https://www.youtube.com/embed/hMYHkz35CaY",
+      "host": "www.youtube.com",
+      "kind": "video",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes_sampled": 4096,
+      "final_url": "https://www.youtube.com/embed/hMYHkz35CaY",
+      "sample_sha256": "79dbaf693b594e30f931794bb94a0c284732a9bd650c75b064e6b48bb7573ef6",
+      "accessible_media": false,
+      "image_signature_valid": null,
+      "seconds": 7.099,
+      "split": "test"
+    },
+    {
+      "url": "http://mla-s2-p.mlstatic.com/4005-MLA3911152707_4729-I.jpg",
+      "host": "mla-s2-p.mlstatic.com",
+      "kind": "image",
+      "status": 403,
+      "accessible_media": false,
+      "error": "HTTP Error 403: Forbidden",
+      "seconds": 6.115,
+      "split": "train"
+    },
+    {
+      "url": "https://mla-s2-p.mlstatic.com/4005-MLA3911152707_4729-I.jpg",
+      "host": "mla-s2-p.mlstatic.com",
+      "kind": "image",
+      "status": 403,
+      "accessible_media": false,
+      "error": "HTTP Error 403: Forbidden",
+      "seconds": 6.354,
+      "split": "train"
+    },
+    {
+      "url": "https://a248.e.akamai.net/mla-s2-p.mlstatic.com/4005-MLA3911152707_4729-I.jpg",
+      "host": "a248.e.akamai.net",
+      "kind": "image",
+      "status": 403,
+      "accessible_media": false,
+      "error": "HTTP Error 403: Forbidden",
+      "seconds": 6.307,
+      "split": "train"
+    },
+    {
+      "url": "http://mla-s2-p.mlstatic.com/4005-MLA3911152707_4729-O.jpg",
+      "host": "mla-s2-p.mlstatic.com",
+      "kind": "image",
+      "status": 403,
+      "accessible_media": false,
+      "error": "HTTP Error 403: Forbidden",
+      "seconds": 5.851,
+      "split": "train"
+    },
+    {
+      "url": "https://mla-s2-p.mlstatic.com/4005-MLA3911152707_4729-O.jpg",
+      "host": "mla-s2-p.mlstatic.com",
+      "kind": "image",
+      "status": 403,
+      "accessible_media": false,
+      "error": "HTTP Error 403: Forbidden",
+      "seconds": 6.341,
+      "split": "train"
+    },
+    {
+      "url": "https://a248.e.akamai.net/mla-s2-p.mlstatic.com/4005-MLA3911152707_4729-O.jpg",
+      "host": "a248.e.akamai.net",
+      "kind": "image",
+      "status": 403,
+      "accessible_media": false,
+      "error": "HTTP Error 403: Forbidden",
+      "seconds": 6.14,
+      "split": "train"
+    },
+    {
+      "url": "http://mla-s1-p.mlstatic.com/19391-MLA8021791613_092014-I.jpg",
+      "host": "mla-s1-p.mlstatic.com",
+      "kind": "image",
+      "status": 403,
+      "accessible_media": false,
+      "error": "HTTP Error 403: Forbidden",
+      "seconds": 6.246,
+      "split": "test"
+    },
+    {
+      "url": "https://mla-s1-p.mlstatic.com/19391-MLA8021791613_092014-I.jpg",
+      "host": "mla-s1-p.mlstatic.com",
+      "kind": "image",
+      "status": 403,
+      "accessible_media": false,
+      "error": "HTTP Error 403: Forbidden",
+      "seconds": 6.122,
+      "split": "test"
+    },
+    {
+      "url": "https://a248.e.akamai.net/mla-s1-p.mlstatic.com/19391-MLA8021791613_092014-I.jpg",
+      "host": "a248.e.akamai.net",
+      "kind": "image",
+      "status": 403,
+      "accessible_media": false,
+      "error": "HTTP Error 403: Forbidden",
+      "seconds": 5.5,
+      "split": "test"
+    },
+    {
+      "url": "http://mla-s1-p.mlstatic.com/19391-MLA8021791613_092014-O.jpg",
+      "host": "mla-s1-p.mlstatic.com",
+      "kind": "image",
+      "status": 403,
+      "accessible_media": false,
+      "error": "HTTP Error 403: Forbidden",
+      "seconds": 3.171,
+      "split": "test"
+    },
+    {
+      "url": "https://mla-s1-p.mlstatic.com/19391-MLA8021791613_092014-O.jpg",
+      "host": "mla-s1-p.mlstatic.com",
+      "kind": "image",
+      "status": 403,
+      "accessible_media": false,
+      "error": "HTTP Error 403: Forbidden",
+      "seconds": 2.747,
+      "split": "test"
+    },
+    {
+      "url": "https://a248.e.akamai.net/mla-s1-p.mlstatic.com/19391-MLA8021791613_092014-O.jpg",
+      "host": "a248.e.akamai.net",
+      "kind": "image",
+      "status": 403,
+      "accessible_media": false,
+      "error": "HTTP Error 403: Forbidden",
+      "seconds": 4.855,
+      "split": "test"
+    }
+  ],
+  "accessible_media": 0,
+  "image_model_trained": false,
+  "video_model_trained": false,
+  "bulk_download_attempted": false,
+  "policy": "Original stored media URLs and ordinary HTTPS equivalents only; no item/API label lookups, credentials or block evasion."
+}

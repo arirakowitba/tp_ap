@@ -1,0 +1,36 @@
+[
+  {
+    "url": "https://www.youtube.com/embed/1k1dS5Uz5lg",
+    "host": "www.youtube.com",
+    "kind": "video",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes_sampled": 133913,
+    "final_url": "https://www.youtube.com/embed/1k1dS5Uz5lg",
+    "sample_sha256": "3d31c06a5581dadd2e8a0f763fb65e0dda98f7f509d9fbaf374ac64dbaac2917",
+    "accessible_media": false,
+    "image_signature_valid": null,
+    "player_playability_status": null,
+    "player_has_streaming_data": false,
+    "video_frames_retrieved": false,
+    "seconds": 4.746,
+    "purpose": "bounded_player_playability_check"
+  },
+  {
+    "url": "https://www.youtube.com/embed/QQNfOicE_o8",
+    "host": "www.youtube.com",
+    "kind": "video",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes_sampled": 134368,
+    "final_url": "https://www.youtube.com/embed/QQNfOicE_o8",
+    "sample_sha256": "cc376031c93115dfdf1cd183405269829ee460bad8c4db277cc673270ac67c80",
+    "accessible_media": false,
+    "image_signature_valid": null,
+    "player_playability_status": null,
+    "player_has_streaming_data": false,
+    "video_frames_retrieved": false,
+    "seconds": 3.589,
+    "purpose": "bounded_player_playability_check"
+  }
+]
