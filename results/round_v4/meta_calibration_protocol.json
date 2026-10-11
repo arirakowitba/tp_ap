@@ -1,0 +1,12 @@
+{
+  "selection_rows": 21000,
+  "confirmation_rows": 14000,
+  "selection_source": "optimization/holdout_predictions.csv",
+  "confirmation_source": "results/round_v3/prior_confirmation_predictions.csv",
+  "calibration_fit": "seed42 holdout only",
+  "threshold_selection": "seed42 holdout only",
+  "confirmation_used_for_tuning": false,
+  "independent_test_caveat": "Both partitions reuse the same competition train set and prior model family.",
+  "promoted": false,
+  "goal_95_reached": false
+}

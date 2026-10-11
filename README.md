@@ -48,3 +48,8 @@ Estado: **interrumpida**, con57 configuraciones y métricas respaldadas. La bús
 El cierre, límites y ensayos pendientes están en [results/round_v3/README.md](results/round_v3/README.md). El maestro actualizado usa `AP_RUN_MODE=report` por defecto para inspeccionar evidencia sin entrenar. Para repetir entrenamientos, instalar `requirements_round3.txt`, configurar los datos oficiales y usar `AP_RUN_MODE=full`, con un presupuesto global de90 minutos. El modo full completo no fue reejecutado en la recuperación.
 
 El notebook ilustrativo conserva18 figuras históricas y agrega3 figuras de esta ronda; su apéndice se ejecutó sin errores. Se verificaron la integridad de la submission anterior, la reconstrucción de caches de stacking3/4/5 y la reserva de tiempo para confirmación ante un timeout de búsqueda.
+
+
+## Ronda de meta calibración (11 de octubre)
+
+Se agregó `src/meta_calibration_round.py` para ajustar Platt e isotónica con las predicciones agrupadas existentes y evaluarlas en seed 731 sin usar esa confirmación para calibrar. El informe está en `results/round_v4/README.md`. La calibración no alcanzó 95% ni justificó reemplazar el ensamble. No se entrenaron nuevos modelos: el JSONL no está disponible en las carpetas locales y la recuperación del `data.zip` no pudo materializarse en este entorno.
