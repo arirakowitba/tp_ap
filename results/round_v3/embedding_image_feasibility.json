@@ -1,0 +1,81 @@
+{
+  "attempt": "image_embeddings",
+  "status": "blocked_before_inference",
+  "images_downloaded": 0,
+  "image_embeddings_computed": 0,
+  "tested_urls": [
+    {
+      "url": "https://a248.e.akamai.net/mla-s2-p.mlstatic.com/4005-MLA3911152707_4729-O.jpg",
+      "status": 403
+    },
+    {
+      "url": "https://mla-s2-p.mlstatic.com/4005-MLA3911152707_4729-O.jpg",
+      "status": 403
+    },
+    {
+      "url": "https://http2.mlstatic.com/D_NQ_NP_4005-MLA3911152707_4729-O.webp",
+      "status": 403
+    }
+  ],
+  "interpretation": "Three URL variants and eleven original HTTPS dataset photo URLs returned HTTP403. No visual embeddings computed. This establishes failure for the sampled URLs only.",
+  "title_embeddings_status": "real_pretrained_multilingual_ONNX_weights; local OpenVINO CPU inference running",
+  "additional_dataset_urls": [
+    {
+      "url": "https://mla-s2-p.mlstatic.com/4005-MLA3911152707_4729-O.jpg",
+      "error": "HTTP Error 403: Forbidden",
+      "error_type": "HTTPError"
+    },
+    {
+      "url": "https://mla-s1-p.mlstatic.com/653901-MLA1133955308_102015-O.jpg",
+      "error": "HTTP Error 403: Forbidden",
+      "error_type": "HTTPError"
+    },
+    {
+      "url": "https://mla-s1-p.mlstatic.com/111301-MLA3705853907_052015-O.jpg",
+      "error": "HTTP Error 403: Forbidden",
+      "error_type": "HTTPError"
+    },
+    {
+      "url": "https://mla-s2-p.mlstatic.com/307201-MLA2969247306_052015-O.jpg",
+      "error": "HTTP Error 403: Forbidden",
+      "error_type": "HTTPError"
+    },
+    {
+      "url": "https://mla-s2-p.mlstatic.com/22327-MLA1503775151_012015-O.jpg",
+      "error": "HTTP Error 403: Forbidden",
+      "error_type": "HTTPError"
+    },
+    {
+      "url": "https://mla-s1-p.mlstatic.com/798801-MLA3275435456_102015-O.jpg",
+      "error": "HTTP Error 403: Forbidden",
+      "error_type": "HTTPError"
+    },
+    {
+      "url": "https://mla-s2-p.mlstatic.com/20791-MLA8650958560_112014-O.jpg",
+      "error": "HTTP Error 403: Forbidden",
+      "error_type": "HTTPError"
+    },
+    {
+      "url": "https://mla-s1-p.mlstatic.com/4196-MLA4083767684_042012-O.jpg",
+      "error": "HTTP Error 403: Forbidden",
+      "error_type": "HTTPError"
+    },
+    {
+      "url": "https://mla-s1-p.mlstatic.com/370501-MLA7773254020_072015-O.jpg",
+      "error": "HTTP Error 403: Forbidden",
+      "error_type": "HTTPError"
+    },
+    {
+      "url": "https://mla-s2-p.mlstatic.com/21807-MLA4559975053_122014-O.jpg",
+      "error": "HTTP Error 403: Forbidden",
+      "error_type": "HTTPError"
+    },
+    {
+      "url": "https://mla-s2-p.mlstatic.com/17951-MLA8582354300_082014-O.jpg",
+      "error": "HTTP Error 403: Forbidden",
+      "error_type": "HTTPError"
+    }
+  ],
+  "url_request_attempts": 14,
+  "unique_urls_probed": 13
+}

@@ -1,0 +1,18 @@
+{
+  "model_id": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "onnx_file": "onnx/model_quint8_avx2.onnx",
+  "pretrained": true,
+  "embedding_dimensions": 384,
+  "pooling": "attention-masked mean with L2 normalization",
+  "max_tokens": 128,
+  "n_rows": 70000,
+  "train_sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf",
+  "local_inference": true,
+  "external_data_upload": false,
+  "split_seed": 42,
+  "max_inference_threads": 2,
+  "inference_backend": "OpenVINO CPU",
+  "onnxruntime_used": false,
+  "telemetry_package_used": false,
+  "weight_sha256": "98a01d88b7de996cdea58c32ca71208c09968d143798814b2ea09d3439dc334f"
+}

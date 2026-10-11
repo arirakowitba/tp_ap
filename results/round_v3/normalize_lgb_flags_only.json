@@ -1,0 +1,27 @@
+{
+  "name": "normalize_lgb_flags_only",
+  "accuracy": 0.9397142857142857,
+  "balanced_accuracy": 0.9405941219834097,
+  "macro_f1": 0.9395128065762889,
+  "logloss": 0.15557238854012043,
+  "threshold": 0.47000000000000003,
+  "params": {
+    "n_estimators": 429,
+    "learning_rate": 0.021945374001337975,
+    "num_leaves": 106,
+    "min_child_samples": 88,
+    "reg_lambda": 0.333913107651493,
+    "colsample_bytree": 0.696858079929112,
+    "subsample": 0.9,
+    "subsample_freq": 1,
+    "cat_smooth": 26.956368354888806,
+    "max_cat_threshold": 8,
+    "n_jobs": 2,
+    "verbosity": -1,
+    "random_state": 2026,
+    "reg_alpha": 0.3891178604095862
+  },
+  "feature_set": "domain_flags_only",
+  "split_seed": 42,
+  "confirmation": null
+}

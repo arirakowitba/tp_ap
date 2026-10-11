@@ -1,0 +1,14 @@
+numpy==2.3.5
+pandas==2.2.3
+scipy==1.17.0
+scikit-learn==1.8.0
+lightgbm==4.7.0
+catboost==1.2.10
+optuna==5.0.0
+openvino==2026.4.1
+tokenizers==0.23.3
+nbformat>=5
+matplotlib>=3.8
+IPython>=8
+seaborn>=0.13
+
