@@ -1,0 +1,18 @@
+{
+  "checks_passed": [
+    "missing_file",
+    "corrupt_image",
+    "missing_column",
+    "negative_index",
+    "bad_kind",
+    "remote_path",
+    "duplicate",
+    "all_invalid_no_weights_no_ml_import",
+    "valid_image_validate_only_no_weights",
+    "ffprobe_ffmpeg_three_local_frames_and_cache_determinism_no_ml"
+  ],
+  "actual_model_inference_tested": false,
+  "reason": "No accessible competition pixels or local official model weights; only manifest and asset validation were tested.",
+  "model_sha256_from_official_source": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+  "synthetic_video_used_only_for_format_qa": true
+}

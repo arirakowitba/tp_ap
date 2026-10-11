@@ -1,0 +1,5 @@
+original,metadata,subset,n,original_accuracy,metadata_accuracy,corrected,introduced,net_correct,mcnemar_exact_p
+r4_lgb_original,r4_lgb_media,all,21000,0.9381904761904762,0.939952380952381,119,82,37,0.01092642859398938
+r4_lgb_original,r4_lgb_media,video_present,612,0.9607843137254902,0.9575163398692811,1,3,-2,0.625
+r4_lgb_original,r4_lgb_media,video_absent,20388,0.9375122621149696,0.9394251520502256,118,79,39,0.006632928431750216
+r4_lgb_original,r4_lgb_media,photos_present,20858,0.9383929427557771,0.9401188992233196,118,82,36,0.013130355940531569

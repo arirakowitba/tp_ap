@@ -1,0 +1,9 @@
+{
+  "thresholds_fixed": 0.5,
+  "unit": "same labeled row in frozen selection split",
+  "p_values": "exploratory paired exact binomial; not corrected for multiple comparisons",
+  "video_present": "historical video_id presence; no decoded video frames",
+  "photos_present": "historical photo metadata; no decoded images",
+  "diagnostic_pairs": 4,
+  "drift_features": 50
+}

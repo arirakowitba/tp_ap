@@ -1,0 +1,31 @@
+{
+  "name": "r4_lgb_media_tpe_4",
+  "family": "lgb",
+  "kind": "lgb",
+  "params": {
+    "n_estimators": 730,
+    "learning_rate": 0.018400961856997224,
+    "num_leaves": 73,
+    "min_child_samples": 81,
+    "reg_lambda": 4.274300006054062,
+    "reg_alpha": 0.07617361848894641,
+    "colsample_bytree": 0.7047350902755067,
+    "subsample": 0.9638149477566389,
+    "subsample_freq": 1,
+    "max_cat_threshold": 8,
+    "cat_smooth": 22.90498629058358,
+    "n_jobs": 2,
+    "verbosity": -1,
+    "random_state": 2026
+  },
+  "use_media": true,
+  "uses_pixels": false,
+  "uses_video_frames": false,
+  "protocol": "selection42_49k_21k",
+  "accuracy": 0.9395238095238095,
+  "balanced_accuracy": 0.9401471022352437,
+  "macro_f1": 0.9392975830405195,
+  "logloss": 0.15493761504892245,
+  "threshold": 0.5,
+  "seconds": 46.67304015159607
+}

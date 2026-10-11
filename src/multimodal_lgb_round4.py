@@ -19,19 +19,25 @@ def run(args):
         dtype=pd.CategoricalDtype(categories=pd.Index(tr[c].unique()));tr[c]=tr[c].astype(dtype);va[c]=va[c].astype(dtype)
     a,b=media_pair(args.media_features,t,v);base=json.loads((ROOT/'optimization/lgb_tpe_2_params.json').read_text())
     base.update(n_estimators=2500,n_jobs=2);rows=[]
-    def fit(name,params,use_media):
+    def fit(name,params,use_media,fixed=False):
         if time.time()>=args.deadline:raise TimeoutError('Selection deadline')
         x,z=(pd.concat([tr,a],axis=1),pd.concat([va,b],axis=1)) if use_media else (tr,va)
         started=time.time();model=LGBMClassifier(**params)
-        model.fit(x,y,eval_set=[(z,vy)],eval_metric='binary_logloss',callbacks=[early_stopping(100,verbose=False)])
-        p=model.predict_proba(z)[:,1];frozen=dict(params,n_estimators=int(model.best_iteration_))
+        if fixed:model.fit(x,y)
+        else:model.fit(x,y,eval_set=[(z,vy)],eval_metric='binary_logloss',callbacks=[early_stopping(100,verbose=False)])
+        p=model.predict_proba(z)[:,1];frozen=dict(params,n_estimators=int(params['n_estimators'] if fixed else model.best_iteration_))
         row=dict(name=name,family='lgb',kind='lgb',params=frozen,use_media=use_media,uses_pixels=False,uses_video_frames=False,
             protocol='selection42_49k_21k',**metrics(vy,p,.5),seconds=time.time()-started)
+        row['fixed_capacity_ablation']=fixed
         rows.append(row);np.save(out/(name+'.npy'),p);model.booster_.save_model(str(out/(name+'.txt')))
         (out/(name+'.json')).write_text(json.dumps(row,indent=2))
         pd.DataFrame({'row_index':v,'y_used':vy,'probability_used':p}).to_csv(out/(name+'_predictions.csv'),index=False)
         pd.DataFrame([{k:w for k,w in r.items() if k!='params'} for r in rows]).to_csv(out/'lgb_round4_metrics.csv',index=False)
         print('RESULT',name,row['accuracy'],row['seconds'],flush=True);del model,x,z;gc.collect();return row['accuracy']
+    if args.fixed_only:
+        base['n_estimators']=430
+        fit('r4_lgb_fixed430_original',base,False,True);fit('r4_lgb_fixed430_media',base,True,True)
+        return
     fit('r4_lgb_original',base,False);fit('r4_lgb_media',base,True)
     def objective(trial):
         params=dict(base,num_leaves=trial.suggest_int('num_leaves',40,130),min_child_samples=trial.suggest_int('min_child_samples',20,110),
@@ -43,5 +49,5 @@ def run(args):
     selected=max(rows,key=lambda r:r['accuracy']);(out/'lgb_round4_selected.json').write_text(json.dumps(selected,indent=2))
     print('BEST',selected['name'],selected['accuracy'],flush=True)
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--cache',required=True);p.add_argument('--media-features',required=True);p.add_argument('--output',required=True);p.add_argument('--trials',type=int,default=12);p.add_argument('--deadline',type=float,required=True)
+    p=argparse.ArgumentParser();p.add_argument('--cache',required=True);p.add_argument('--media-features',required=True);p.add_argument('--output',required=True);p.add_argument('--trials',type=int,default=12);p.add_argument('--deadline',type=float,required=True);p.add_argument('--fixed-only',action='store_true')
     run(p.parse_args())

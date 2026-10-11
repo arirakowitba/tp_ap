@@ -1,0 +1,2 @@
+name,family,model_type,protocol,accuracy,balanced_accuracy,macro_f1,logloss,threshold,n_train,n_eval,n_features,config,media_metadata,seconds,completed_at,confirmation_used,image_pixels_used,video_frames_used,cache
+r4_cat_enriched_d9_original,cat,cat,selection_seed42_holdout3,0.9388095238095238,0.9394253551260625,0.9385802667863357,0.16133476317401538,0.5,49000,21000,349,enriched_d9,False,480.90031742600013,2026-10-11T01:33:30.858469+00:00,False,False,False,/workspace/scratch/d7363d2f086f/repo/results/round_v4/selection/native.pkl
