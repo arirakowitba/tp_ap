@@ -40,8 +40,9 @@ def prepare_joint(tr,va,stack_oof=None,stack_holdout=None,embedding_pair=None,no
 def run(args):
     out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
     if args.deadline:
-        signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(TimeoutError('Selection deadline reached')))
-        signal.alarm(max(1,int(args.deadline-time.time())))
+        if hasattr(signal, 'SIGALRM'):
+            signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(TimeoutError('Selection deadline reached')))
+            signal.alarm(max(1,int(args.deadline-time.time())))
     titles,y,g,fingerprint=title_data(args.data_dir);del titles;gc.collect()
     t,v=split(y,g,42,2)
     d=pd.read_pickle(Path(args.cache)/'matrices.pkl')

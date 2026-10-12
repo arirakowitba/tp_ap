@@ -60,8 +60,9 @@ def append_embedding_features(tr,va,embeddings,train_rows,valid_rows):
 def run(args):
     out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
     if args.deadline:
-        signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(TimeoutError('Hard deadline reached')))
-        signal.alarm(max(1,int(args.deadline-time.time())))
+        if hasattr(signal, 'SIGALRM'):
+            signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(TimeoutError('Hard deadline reached')))
+            signal.alarm(max(1,int(args.deadline-time.time())))
     titles,y,g,fingerprint=title_data(args.data_dir)
     weight_sha256=hashlib.sha256((Path(args.model_dir)/MODEL_FILE).read_bytes()).hexdigest()
     metadata=dict(model_id=MODEL_ID,onnx_file=MODEL_FILE,weight_sha256=weight_sha256,pretrained=True,embedding_dimensions=384,

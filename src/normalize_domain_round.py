@@ -34,8 +34,9 @@ def run(args):
     if args.deadline:
         remaining=int(args.deadline-time.time())
         if remaining<=0:raise SystemExit('Deadline already passed')
-        signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(TimeoutError('Hard deadline reached')))
-        signal.alarm(remaining)
+        if hasattr(signal, 'SIGALRM'):
+            signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(TimeoutError('Hard deadline reached')))
+            signal.alarm(remaining)
     raw,_,_=load_data(args.data_dir,out);y=(raw.condition=='used').to_numpy('int8');g=groups_for(raw);t,v=split(y,g,42,2)
     a,_=enrich(raw.iloc[t].reset_index(drop=True));b,_=enrich(raw.iloc[v].reset_index(drop=True))
     an=normalize_frame(a,raw.iloc[t].reset_index(drop=True));bn=normalize_frame(b,raw.iloc[v].reset_index(drop=True))
@@ -76,7 +77,9 @@ def flags_only(args):
     if args.deadline:
         remaining=int(args.deadline-time.time())
         if remaining<=0:raise SystemExit('Deadline already passed')
-        signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(TimeoutError('Hard deadline reached')));signal.alarm(remaining)
+        if hasattr(signal, 'SIGALRM'):
+            signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(TimeoutError('Hard deadline reached')))
+            signal.alarm(remaining)
     out=Path(args.output);d=pd.read_pickle(Path(args.cache)/'matrices.pkl');n=pd.read_pickle(out/'normalize_matrices.pkl')
     if d['fingerprint']!=n['fingerprint']:raise ValueError('Dataset fingerprint mismatch')
     tr,va=d['tr'].copy(),d['va'].copy()

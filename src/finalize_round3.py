@@ -28,7 +28,7 @@ def prior_probability(protocol,rows=None):
 
 def collect(out,rows,y):
     result=[dict(name='prior_ensemble',family='prior',threshold=.5,params={},probability=prior_probability('selection_seed42',rows))]
-    for prefix in ['normalize','embedding','category','combined']:
+    for prefix in ['normalize','embedding','category','combined','neural']:
         for p in sorted(out.glob(prefix+'*.json')):
             cfg=json.loads(p.read_text())
             if not ('name' in cfg and 'accuracy' in cfg and (out/(cfg['name']+'.npy')).exists()):continue
@@ -144,6 +144,15 @@ def predict_component(cfg,raw,y,g,other,out,all_embeddings,train_rows,eval_rows,
         from learned_stacking_round import meta_fit
         oof,p=stack_features(raw,y,g,other,out,train_rows,eval_rows,deadline,cfg.get('base_count',3),all_embeddings)
         return meta_fit(oof,y,p,cfg['design'],cfg['C'])[0]
+    if family=='neural':
+        tr,va=core(raw,y,g,other,out)
+        use_embeddings=cfg.get('feature_set')=='tabular_plus_title_embeddings'
+        left,right=(all_embeddings if use_embeddings else (None,None))
+        if cfg.get('model_type')=='tabnet':
+            from tabnet_round import train_predict
+            return train_predict(tr,va,y,left,right,epochs=int(cfg.get('best_epoch',cfg.get('epochs',18))))[0]
+        from neural_round import train_predict
+        return train_predict(tr,va,y,left,right,epochs=int(cfg.get('best_epoch',cfg.get('epochs',12))),seed=int(cfg.get('seed',42)),deadline=deadline)[0]
     if family=='embedding' and name.startswith('embedding_logistic'):
         from sklearn.linear_model import LogisticRegression
         m=LogisticRegression(C=cfg['params']['C'],solver='lbfgs',max_iter=600)
@@ -176,8 +185,9 @@ def predict_component(cfg,raw,y,g,other,out,all_embeddings,train_rows,eval_rows,
 
 def main(args):
     out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
-    signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(TimeoutError('Global deadline')))
-    signal.alarm(max(1,int(args.deadline-time.time())))
+    if hasattr(signal, 'SIGALRM'):
+        signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(TimeoutError('Global deadline')))
+        signal.alarm(max(1,int(args.deadline-time.time())))
     reference=json.loads((ROOT/'results/round_v3/prior_prediction_metadata.json').read_text())
     for filename,key in [('train_data.jsonlines','train_sha256'),('test_data.jsonlines','test_sha256')]:
         with (Path(args.data_dir)/filename).open('rb') as stream:actual=hashlib.file_digest(stream,'sha256').hexdigest()
@@ -200,7 +210,7 @@ def main(args):
         if not selected.get('promote_over_previous'):raise ValueError('Refit requires a confirmed improvement')
         t=np.arange(len(raw));v=np.arange(len(test));fit_raw=raw;other=test;fit_y=y;fit_g=g;protocol='full'
     work=out/protocol;work.mkdir(parents=True,exist_ok=True);emb=None
-    if any(c['family']=='embedding' or c.get('blocks',{}).get('embedding') or c.get('base_count')==5 for c in selected['components']):
+    if any(c['family']=='embedding' or c.get('blocks',{}).get('embedding') or c.get('base_count')==5 or (c.get('family')=='neural' and c.get('feature_set')=='tabular_plus_title_embeddings') for c in selected['components']):
         train_emb=np.load(out/'embedding_titles.npy')
         if protocol=='confirmation':emb=(train_emb[t],train_emb[v])
         else:

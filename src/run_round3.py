@@ -8,7 +8,7 @@ def run(args):
     started=time.time();deadline=started+args.minutes*60
     # Reserve one third of the budget, at most30min, for frozen confirmation/refit.
     search_deadline=deadline-min(30,args.minutes/3)*60
-    completed=[];failed=[]
+    completed=[];failed=[];skipped=[]
     def stage(name,extra,limit=deadline):
         seconds=limit-time.time()
         if seconds<=0:raise TimeoutError('Global stage budget exhausted')
@@ -42,7 +42,19 @@ def run(args):
                 stage('download_embedding_model.py',['--model-dir',str(model)],search_deadline)
                 stage('embedding_round.py',shared+['--model-dir',str(model),'--cache',str(cache)],search_deadline)
             else:
-                failed.append(dict(script='embedding_round.py',reason='Install requirements_round3.txt to enable the pretrained CPU backend'))
+                skipped.append(dict(script='embedding_round.py',reason='Install requirements_round3.txt to enable the pretrained CPU backend'))
+            if importlib.util.find_spec('torch'):
+                neural=['--data-dir',str(Path(args.data_dir).resolve()),'--cache',str(cache/'matrices.pkl'),'--output',str(out),'--epochs','12','--deadline',str(search_deadline)]
+                if (out/'embedding_titles.npy').exists():neural+=['--embeddings',str(out/'embedding_titles.npy')]
+                stage('neural_round.py',neural,search_deadline)
+            else:
+                skipped.append(dict(script='neural_round.py',reason='Install the optional CPU PyTorch requirement to enable the MLP experiment'))
+            if importlib.util.find_spec('pytorch_tabnet'):
+                tabnet=['--data-dir',str(Path(args.data_dir).resolve()),'--cache',str(cache/'matrices.pkl'),'--output',str(out),'--epochs','18']
+                if (out/'embedding_titles.npy').exists():tabnet+=['--embeddings',str(out/'embedding_titles.npy')]
+                stage('tabnet_round.py',tabnet,search_deadline)
+            else:
+                skipped.append(dict(script='tabnet_round.py',reason='Install pytorch-tabnet to enable the TabNet experiment'))
             if (ROOT/'src/learned_stacking4_round.py').exists():stage('learned_stacking4_round.py',shared+['--no-confirm'],search_deadline)
             if (ROOT/'src/learned_stacking5_round.py').exists() and (out/'embedding_titles.npy').exists():stage('learned_stacking5_round.py',shared+['--no-confirm'],search_deadline)
             combined=shared+['--cache',str(cache),'--normalize','--trials',str(args.trials)]
@@ -62,8 +74,8 @@ def run(args):
         status=dict(started_utc=datetime.datetime.fromtimestamp(started,datetime.timezone.utc).isoformat(),
                     deadline_utc=datetime.datetime.fromtimestamp(deadline,datetime.timezone.utc).isoformat(),
                     ended_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),elapsed_seconds=time.time()-started,
-                    budget_minutes=args.minutes,completed_stages=completed,incomplete_stages=failed,
-                    public_reference_user_report=.94428,status='stopped')
+                    budget_minutes=args.minutes,completed_stages=completed,incomplete_stages=failed,skipped_optional_stages=skipped,
+                    public_reference_user_report=.94428,status='completed' if not failed else 'incomplete')
         (out/'master_execution.json').write_text(json.dumps(status,indent=2))
     return 1 if failed else 0
 

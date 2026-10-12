@@ -5,7 +5,7 @@ from competition_pipeline_v2 import load_data,groups_for,matrices
 from optimize_leaderboard import split
 ROOT=Path(__file__).resolve().parents[1]
 p=argparse.ArgumentParser();p.add_argument('--data-dir',default=str(ROOT.parent/'data'));p.add_argument('--output',default=str(ROOT/'results/round_v3/cache_base'));p.add_argument('--deadline',type=float);args=p.parse_args()
-if args.deadline:
+if args.deadline and hasattr(signal, 'SIGALRM'):
     signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(TimeoutError('Global deadline')))
     signal.alarm(max(1,int(args.deadline-time.time())))
 OUT=Path(args.output);OUT.mkdir(parents=True,exist_ok=True)

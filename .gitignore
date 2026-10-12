@@ -11,3 +11,5 @@ results/round_v2/*.npy
 results/round_v2/*.cbm
 results/round_v2/*.sqlite3
 results/round_v2/model_full_*.txt
+models/
+results/round_v5/
