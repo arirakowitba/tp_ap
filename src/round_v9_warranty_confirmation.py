@@ -15,12 +15,15 @@ def metrics(y,p):
 def main(retrain=False):
     import sys
     sys.path.insert(0,str(ROOT/'src'))
-    from optimize_leaderboard import split
     from round_v9_warranty_semantics import warranty_features
     raw=pd.read_json(ROOT/'data/ap_2026_q_2/raw/train_data.jsonlines',lines=True)
     y=(raw.condition=='used').to_numpy(dtype=np.int8)
     groups=raw.parent_item_id.astype('string').fillna('__ROW__'+raw.id.astype(str)).to_numpy()
-    train_rows,valid_rows=split(y,groups,731,2)
+    frozen=pd.read_csv(ROOT/'results/round_v3/prior_confirmation_predictions.csv')
+    valid_rows=frozen.row_index.to_numpy(dtype=np.int64)
+    if not np.array_equal(y[valid_rows],frozen.y_used.to_numpy(dtype=np.int8)):
+        raise ValueError('Frozen confirmation manifest does not match labels')
+    train_rows=np.setdiff1d(np.arange(len(y)),valid_rows)
     if set(groups[train_rows]) & set(groups[valid_rows]):
         raise ValueError('Family leakage in confirmation split')
     cache=pd.read_pickle(ROOT/'results/round_v5/confirmation/normalized_matrices.pkl')
