@@ -1,0 +1,42 @@
+{
+  "split": "frozen seed731",
+  "rows_train": 56000,
+  "rows_valid": 14000,
+  "group_overlap": 0,
+  "baseline": {
+    "0.465": {
+      "threshold": 0.465,
+      "accuracy": 0.9417142857142857,
+      "logloss": 0.14933302873821197
+    },
+    "0.5": {
+      "threshold": 0.5,
+      "accuracy": 0.9419285714285714,
+      "logloss": 0.14933302873821197
+    }
+  },
+  "candidate": {
+    "0.465": {
+      "threshold": 0.465,
+      "accuracy": 0.9418571428571428,
+      "logloss": 0.14964179155101934
+    },
+    "0.5": {
+      "threshold": 0.5,
+      "accuracy": 0.9415714285714286,
+      "logloss": 0.14964179155101934
+    }
+  },
+  "blend_10pct": {
+    "0.465": {
+      "threshold": 0.465,
+      "accuracy": 0.942,
+      "logloss": 0.14918945849025977
+    },
+    "0.5": {
+      "threshold": 0.5,
+      "accuracy": 0.9420714285714286,
+      "logloss": 0.14918945849025977
+    }
+  }
+}
