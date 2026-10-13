@@ -33,3 +33,10 @@ python src/round_v9_warranty_confirmation.py --retrain
 ```
 
 Los resultados están en `results/round_v9_warranty_semantics/summary.json` y `confirmation.json`. El código agrega la idea al flujo experimental; el pipeline/submission de referencia permanece sin cambios porque no hubo una mejora robusta de accuracy.
+
+
+## Comprobación adicional del blend pequeño
+
+En seed 42, el 5% del modelo con garantía añadido al ensamble seleccionado alcanza 94,1000% con umbral 0,50, frente a 94,0714% del mismo ensamble a ese umbral. Al transferir ese blend congelado al seed 731, obtiene 94,1571% a 0,50 y 94,1929% a 0,51; el candidato base logra 94,1714% y 94,1929%, respectivamente. La ventaja de selección no se transfiere, así que se descarta la promoción. El mejor baseline de seed 731 sigue siendo 94,2143% para el ensamble previo.
+
+El valor 94,2214% observado para una mezcla distinta en seed 731 representa un solo caso adicional y no se replicó en el otro split; no se trata como mejora confirmada.
