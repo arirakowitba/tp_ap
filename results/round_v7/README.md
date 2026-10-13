@@ -25,3 +25,16 @@ Ninguna de estas tres modificaciones mejora de forma consistente la accuracy del
 - `round_v7_cv.py`
 
 El código usa los folds y matrices guardadas de `results/round_v6`, recalcula el historial solo con filas de entrenamiento anteriores en fecha y excluye publicaciones de la misma familia del historial de vendedor.
+
+## Cribado por bloques (un fold agrupado)
+
+| Bloque retirado | Variables retiradas | Accuracy vs. baseline | Log-loss vs. baseline |
+|---|---:|---:|---:|
+| Imágenes | 27 | 93,845% vs. 94,011% | 0,16015 vs. 0,15529 |
+| Atributos | 250 | 93,979% vs. 94,011% | 0,15550 vs. 0,15529 |
+| Texto | 25 | 93,400% vs. 94,011% | 0,16496 vs. 0,15529 |
+| Vendedor | 16 | 93,604% vs. 94,011% | 0,16939 vs. 0,15529 |
+
+Este fue un cribado breve en el fold 0 con iteraciones fijadas; ningún bloque retirado superó al baseline, por eso no consumí más folds con esas ablaciones. Se retuvieron todos los bloques en el pipeline.
+
+Reproducción adicional: `round_v7_blocks.py`.

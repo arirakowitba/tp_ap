@@ -1,0 +1,38 @@
+[
+  {
+    "block_removed": "image",
+    "removed_count": 27,
+    "remaining_features": 514,
+    "baseline_accuracy": 0.9401082123533508,
+    "accuracy": 0.9384475277227192,
+    "baseline_logloss": 0.1552896353580474,
+    "logloss": 0.16014977035437808
+  },
+  {
+    "block_removed": "attributes",
+    "removed_count": 250,
+    "remaining_features": 291,
+    "baseline_accuracy": 0.9401082123533508,
+    "accuracy": 0.9397867895216157,
+    "baseline_logloss": 0.1552896353580474,
+    "logloss": 0.155502463872418
+  },
+  {
+    "block_removed": "text",
+    "removed_count": 25,
+    "remaining_features": 516,
+    "baseline_accuracy": 0.9401082123533508,
+    "accuracy": 0.934001178550383,
+    "baseline_logloss": 0.1552896353580474,
+    "logloss": 0.16495787954328872
+  },
+  {
+    "block_removed": "seller",
+    "removed_count": 16,
+    "remaining_features": 525,
+    "baseline_accuracy": 0.9401082123533508,
+    "accuracy": 0.9360368564847056,
+    "baseline_logloss": 0.1552896353580474,
+    "logloss": 0.16939131533807222
+  }
+]
