@@ -1,0 +1,134 @@
+{
+  "rows": {
+    "labeled_train": 70000,
+    "unlabeled_test": 30000
+  },
+  "parent_item_overlap_train_test": {
+    "shared_group_ids": 0,
+    "fraction_eval_rows_with_train_parent": 0.0,
+    "fraction_unique_eval_parents_seen": 0.0
+  },
+  "seller_overlap_train_test": {
+    "shared_group_ids": 7053,
+    "fraction_eval_rows_with_train_parent": 0.7162333333333334,
+    "fraction_unique_eval_parents_seen": 0.46960516678873426
+  },
+  "category_tv_train_test": 0.2189809523809524,
+  "categorical_tv": {
+    "category_id": 0.2189809523809524,
+    "listing_type_id": 0.004533333333333334,
+    "buying_mode": 0.001204761904761918,
+    "status": 0.002895238095238106,
+    "site_id": 0.0
+  },
+  "numeric_ks": {
+    "price": {
+      "statistic": 0.004376190476190478,
+      "train_median": 250.0,
+      "test_median": 250.0
+    },
+    "base_price": {
+      "statistic": 0.004385714285714271,
+      "train_median": 250.0,
+      "test_median": 250.0
+    },
+    "initial_quantity": {
+      "statistic": 0.0027809523809524395,
+      "train_median": 1.0,
+      "test_median": 1.0
+    },
+    "available_quantity": {
+      "statistic": 0.0026857142857142913,
+      "train_median": 1.0,
+      "test_median": 1.0
+    },
+    "sold_quantity": {
+      "statistic": 0.002761904761904743,
+      "train_median": 0.0,
+      "test_median": 0.0
+    }
+  },
+  "missing_rate_gap": {
+    "warranty": {
+      "train": 0.6094,
+      "test": 0.6079333333333333,
+      "gap": -0.0014666666666667272
+    },
+    "original_price": {
+      "train": 0.9985285714285714,
+      "test": 0.9986666666666667,
+      "gap": 0.00013809523809527047
+    },
+    "variations": {
+      "train": 0.0,
+      "test": 0.0,
+      "gap": 0.0
+    },
+    "seller_address": {
+      "train": 0.0,
+      "test": 0.0,
+      "gap": 0.0
+    },
+    "attributes": {
+      "train": 0.0,
+      "test": 0.0,
+      "gap": 0.0
+    },
+    "pictures": {
+      "train": 0.0,
+      "test": 0.0,
+      "gap": 0.0
+    }
+  },
+  "seed42_fold_comparison": [
+    {
+      "fold": 0,
+      "train_rows": 37333,
+      "valid_rows": 18667,
+      "group_overlap": 0,
+      "category_tv_valid_vs_official_test": 0.27993736361850685,
+      "listing_type_tv_valid_vs_test": 0.0043132426206675,
+      "valid_parent_overlap_with_official_test": {
+        "shared_group_ids": 0,
+        "fraction_eval_rows_with_train_parent": 0.0,
+        "fraction_unique_eval_parents_seen": 0.0
+      }
+    },
+    {
+      "fold": 1,
+      "train_rows": 37333,
+      "valid_rows": 18667,
+      "group_overlap": 0,
+      "category_tv_valid_vs_official_test": 0.27954353315119373,
+      "listing_type_tv_valid_vs_test": 0.011041340333208338,
+      "valid_parent_overlap_with_official_test": {
+        "shared_group_ids": 0,
+        "fraction_eval_rows_with_train_parent": 0.0,
+        "fraction_unique_eval_parents_seen": 0.0
+      }
+    },
+    {
+      "fold": 2,
+      "train_rows": 37334,
+      "valid_rows": 18666,
+      "group_overlap": 0,
+      "category_tv_valid_vs_official_test": 0.2767557591342548,
+      "listing_type_tv_valid_vs_test": 0.002996496303439395,
+      "valid_parent_overlap_with_official_test": {
+        "shared_group_ids": 0,
+        "fraction_eval_rows_with_train_parent": 0.0,
+        "fraction_unique_eval_parents_seen": 0.0
+      }
+    }
+  ],
+  "oof_reweighted_to_test_category_mix": {
+    "top_k": 150,
+    "test_mass_top_k": 0.34186666666666665,
+    "test_mass_covered": 1.0,
+    "raw_oof_accuracy": 0.9391428571428572,
+    "test_category_reweighted_oof_accuracy": 0.9393135762142574,
+    "raw_oof_logloss": 0.15869233413023273,
+    "test_category_reweighted_oof_logloss": 0.15833169103644562,
+    "effective_sample_size": 55574.30531428602
+  }
+}

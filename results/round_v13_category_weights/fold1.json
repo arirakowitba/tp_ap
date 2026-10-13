@@ -1,0 +1,27 @@
+{
+  "fold": 1,
+  "train_rows": 37333,
+  "valid_rows": 18667,
+  "group_overlap": 0,
+  "top_k_categories": 150,
+  "test_mass_in_top_categories": 0.34186666666666665,
+  "valid_test_category_mass_covered": 1.0,
+  "weight_clip": [
+    0.25,
+    4.0
+  ],
+  "weight_min": 0.573928079341982,
+  "weight_max": 1.6391733781206603,
+  "weight_ess": 37012.34496584879,
+  "best_iteration": 1095,
+  "baseline_oof": {
+    "accuracy": 0.9397867895216157,
+    "test_category_weighted_accuracy": 0.9402044952247174,
+    "test_category_weighted_logloss": 0.15619412506067867
+  },
+  "category_weighted_candidate": {
+    "accuracy": 0.9379118230031607,
+    "test_category_weighted_accuracy": 0.9383868952123264,
+    "test_category_weighted_logloss": 0.15614926798289028
+  }
+}

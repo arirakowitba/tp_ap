@@ -1,0 +1,60 @@
+{
+  "fold": 1,
+  "train_rows": 37333,
+  "valid_rows": 18667,
+  "group_overlap": 0,
+  "best_iteration": 957,
+  "explicit_imputation_features": [
+    "log_original_price",
+    "deep_shipping_dim_a",
+    "deep_shipping_dim_b",
+    "deep_shipping_weight_g",
+    "deep_variation_price_min",
+    "deep_variation_price_max",
+    "deep_variation_price_mean",
+    "deep_variation_price_std",
+    "deep_variation_stock_min",
+    "deep_variation_stock_max",
+    "deep_variation_stock_mean",
+    "deep_variation_stock_std",
+    "deep_variation_sold_min",
+    "deep_variation_sold_max",
+    "deep_variation_sold_mean",
+    "deep_variation_sold_std",
+    "deep_picture_width_mean",
+    "deep_picture_width_max",
+    "deep_picture_height_mean",
+    "deep_picture_height_max",
+    "deep_picture_max_width_mean",
+    "deep_picture_max_width_max",
+    "deep_picture_max_height_mean",
+    "deep_picture_max_height_max",
+    "deep_picture_large_fraction",
+    "ratio_price_original",
+    "original_price_raw",
+    "image_aspect",
+    "image_max_aspect",
+    "img_secure_fraction",
+    "img_mp_mean",
+    "img_mp_min",
+    "img_mp_std",
+    "img_max_mp_mean",
+    "img_aspect_std",
+    "img_portrait_fraction",
+    "img_square_fraction",
+    "img_landscape_fraction",
+    "img_max_to_current_mp"
+  ],
+  "baseline": {
+    "accuracy": 0.9397867895216157,
+    "logloss": 0.1571256333173814
+  },
+  "candidate": {
+    "accuracy": 0.9386618096105427,
+    "logloss": 0.15674501797305235
+  },
+  "fold_blend_10pct": {
+    "accuracy": 0.9398403599935715,
+    "logloss": 0.15693497228806358
+  }
+}

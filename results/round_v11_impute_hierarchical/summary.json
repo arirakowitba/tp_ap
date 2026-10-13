@@ -1,0 +1,201 @@
+{
+  "rows": 56000,
+  "protocol": "seed42 StratifiedGroupKFold 3 outer folds; predictions cover each of 56,000 rows once",
+  "baseline": {
+    "accuracy": 0.9391428571428572,
+    "logloss": 0.15869233413023273,
+    "correct": 52592
+  },
+  "candidate_imputation_plus_hierarchical_rate": {
+    "accuracy": 0.9384285714285714,
+    "logloss": 0.15872999787012299,
+    "correct": 52552
+  },
+  "blend_10pct": {
+    "accuracy": 0.9390535714285714,
+    "logloss": 0.15854612133974846,
+    "correct": 52587
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "train_rows": 37333,
+      "valid_rows": 18667,
+      "group_overlap": 0,
+      "best_iteration": 920,
+      "explicit_imputation_features": [
+        "log_original_price",
+        "deep_shipping_dim_a",
+        "deep_shipping_dim_b",
+        "deep_shipping_weight_g",
+        "deep_variation_price_min",
+        "deep_variation_price_max",
+        "deep_variation_price_mean",
+        "deep_variation_price_std",
+        "deep_variation_stock_min",
+        "deep_variation_stock_max",
+        "deep_variation_stock_mean",
+        "deep_variation_stock_std",
+        "deep_variation_sold_min",
+        "deep_variation_sold_max",
+        "deep_variation_sold_mean",
+        "deep_variation_sold_std",
+        "deep_picture_width_mean",
+        "deep_picture_width_max",
+        "deep_picture_height_mean",
+        "deep_picture_height_max",
+        "deep_picture_max_width_mean",
+        "deep_picture_max_width_max",
+        "deep_picture_max_height_mean",
+        "deep_picture_max_height_max",
+        "deep_picture_large_fraction",
+        "ratio_price_original",
+        "original_price_raw",
+        "image_aspect",
+        "image_max_aspect",
+        "img_secure_fraction",
+        "img_mp_mean",
+        "img_mp_min",
+        "img_mp_std",
+        "img_max_mp_mean",
+        "img_aspect_std",
+        "img_portrait_fraction",
+        "img_square_fraction",
+        "img_landscape_fraction",
+        "img_max_to_current_mp"
+      ],
+      "baseline": {
+        "accuracy": 0.9401082123533508,
+        "logloss": 0.1552896353580474
+      },
+      "candidate": {
+        "accuracy": 0.9396796485777039,
+        "logloss": 0.15538206098476867
+      },
+      "fold_blend_10pct": {
+        "accuracy": 0.9401082123533508,
+        "logloss": 0.1551435416658037
+      }
+    },
+    {
+      "fold": 1,
+      "train_rows": 37333,
+      "valid_rows": 18667,
+      "group_overlap": 0,
+      "best_iteration": 957,
+      "explicit_imputation_features": [
+        "log_original_price",
+        "deep_shipping_dim_a",
+        "deep_shipping_dim_b",
+        "deep_shipping_weight_g",
+        "deep_variation_price_min",
+        "deep_variation_price_max",
+        "deep_variation_price_mean",
+        "deep_variation_price_std",
+        "deep_variation_stock_min",
+        "deep_variation_stock_max",
+        "deep_variation_stock_mean",
+        "deep_variation_stock_std",
+        "deep_variation_sold_min",
+        "deep_variation_sold_max",
+        "deep_variation_sold_mean",
+        "deep_variation_sold_std",
+        "deep_picture_width_mean",
+        "deep_picture_width_max",
+        "deep_picture_height_mean",
+        "deep_picture_height_max",
+        "deep_picture_max_width_mean",
+        "deep_picture_max_width_max",
+        "deep_picture_max_height_mean",
+        "deep_picture_max_height_max",
+        "deep_picture_large_fraction",
+        "ratio_price_original",
+        "original_price_raw",
+        "image_aspect",
+        "image_max_aspect",
+        "img_secure_fraction",
+        "img_mp_mean",
+        "img_mp_min",
+        "img_mp_std",
+        "img_max_mp_mean",
+        "img_aspect_std",
+        "img_portrait_fraction",
+        "img_square_fraction",
+        "img_landscape_fraction",
+        "img_max_to_current_mp"
+      ],
+      "baseline": {
+        "accuracy": 0.9397867895216157,
+        "logloss": 0.1571256333173814
+      },
+      "candidate": {
+        "accuracy": 0.9386618096105427,
+        "logloss": 0.15674501797305235
+      },
+      "fold_blend_10pct": {
+        "accuracy": 0.9398403599935715,
+        "logloss": 0.15693497228806358
+      }
+    },
+    {
+      "fold": 2,
+      "train_rows": 37334,
+      "valid_rows": 18666,
+      "group_overlap": 0,
+      "best_iteration": 951,
+      "explicit_imputation_features": [
+        "log_original_price",
+        "deep_shipping_dim_a",
+        "deep_shipping_dim_b",
+        "deep_shipping_weight_g",
+        "deep_variation_price_min",
+        "deep_variation_price_max",
+        "deep_variation_price_mean",
+        "deep_variation_price_std",
+        "deep_variation_stock_min",
+        "deep_variation_stock_max",
+        "deep_variation_stock_mean",
+        "deep_variation_stock_std",
+        "deep_variation_sold_min",
+        "deep_variation_sold_max",
+        "deep_variation_sold_mean",
+        "deep_variation_sold_std",
+        "deep_picture_width_mean",
+        "deep_picture_width_max",
+        "deep_picture_height_mean",
+        "deep_picture_height_max",
+        "deep_picture_max_width_mean",
+        "deep_picture_max_width_max",
+        "deep_picture_max_height_mean",
+        "deep_picture_max_height_max",
+        "deep_picture_large_fraction",
+        "ratio_price_original",
+        "original_price_raw",
+        "image_aspect",
+        "image_max_aspect",
+        "img_secure_fraction",
+        "img_mp_mean",
+        "img_mp_min",
+        "img_mp_std",
+        "img_max_mp_mean",
+        "img_aspect_std",
+        "img_portrait_fraction",
+        "img_square_fraction",
+        "img_landscape_fraction",
+        "img_max_to_current_mp"
+      ],
+      "baseline": {
+        "accuracy": 0.9375334833386907,
+        "logloss": 0.16366199994261232
+      },
+      "candidate": {
+        "accuracy": 0.9369441765777349,
+        "logloss": 0.16406320035472197
+      },
+      "fold_blend_10pct": {
+        "accuracy": 0.9372120432872603,
+        "logloss": 0.1635601186675813
+      }
+    }
+  ]
+}

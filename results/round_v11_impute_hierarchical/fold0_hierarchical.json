@@ -1,0 +1,16 @@
+{
+  "variant": "hierarchical",
+  "fold": 0,
+  "train_rows": 37333,
+  "valid_rows": 18667,
+  "group_overlap": 0,
+  "best_iteration": 1011,
+  "baseline": {
+    "accuracy": 0.9401082123533508,
+    "logloss": 0.1552896353580474
+  },
+  "candidate": {
+    "accuracy": 0.9404832056570418,
+    "logloss": 0.1549654088737781
+  }
+}
