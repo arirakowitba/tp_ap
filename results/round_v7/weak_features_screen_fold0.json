@@ -1,0 +1,14 @@
+{
+  "mode": "weak_features",
+  "baseline_fold0": {
+    "accuracy": 0.9401082123533508,
+    "logloss": 0.1552896353580474
+  },
+  "candidate_fold0": {
+    "accuracy": 0.9409653399046446,
+    "logloss": 0.15539966413323175
+  },
+  "features": 433,
+  "iteration": 1013,
+  "removed_features": 108
+}

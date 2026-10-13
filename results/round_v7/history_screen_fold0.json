@@ -1,0 +1,18 @@
+{
+  "mode": "history",
+  "baseline_fold0": {
+    "accuracy": 0.9401082123533508,
+    "logloss": 0.1552896353580474
+  },
+  "candidate_fold0": {
+    "accuracy": 0.9387689505544544,
+    "logloss": 0.15856935016680512
+  },
+  "features": 544,
+  "iteration": 1013,
+  "new_features": [
+    "seller_past_log_count",
+    "seller_past_used_rate",
+    "seller_past_log_used_count"
+  ]
+}

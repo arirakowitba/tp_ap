@@ -1,0 +1,34 @@
+{
+  "candidate": "drop_bottom20_gain",
+  "features": 433,
+  "baseline_accuracy": 0.9391428571428572,
+  "accuracy": 0.9390714285714286,
+  "baseline_logloss": 0.15869233413023273,
+  "logloss": 0.15849702972650306,
+  "folds": [
+    {
+      "fold": 0,
+      "baseline_accuracy": 0.9401082123533508,
+      "accuracy": 0.9409653399046446,
+      "baseline_logloss": 0.1552896353580474,
+      "logloss": 0.15539966510699124,
+      "features": 433
+    },
+    {
+      "fold": 1,
+      "baseline_accuracy": 0.9397867895216157,
+      "accuracy": 0.9390903733861895,
+      "baseline_logloss": 0.1571256333173814,
+      "logloss": 0.15672237830865873,
+      "features": 433
+    },
+    {
+      "fold": 2,
+      "baseline_accuracy": 0.9375334833386907,
+      "accuracy": 0.9371584699453552,
+      "baseline_logloss": 0.16366199994261232,
+      "logloss": 0.16336930677404005,
+      "features": 433
+    }
+  ]
+}
