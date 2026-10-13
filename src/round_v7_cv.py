@@ -1,8 +1,8 @@
 from pathlib import Path
-import json,sys,numpy as np,pandas as pd
+import json,os,sys,numpy as np,pandas as pd
 from lightgbm import LGBMClassifier
 from sklearn.metrics import accuracy_score,log_loss
-ROOT=Path(r'C:\Users\arira\OneDrive\Documents\GitHub\tp_ap');OUT=Path(__file__).resolve().parent/'experiment_outputs_round_v7';OUT.mkdir(parents=True,exist_ok=True)
+ROOT=Path(r'C:\Users\arira\OneDrive\Documents\GitHub\tp_ap');OUT=Path(os.environ.get('AP_ROUND_V7_OUT', str(ROOT/'results/round_v7_runs')));OUT.mkdir(parents=True,exist_ok=True)
 folds=[pd.read_pickle(ROOT/f'results/round_v6/fold_cache/seed42_fold{k}.pkl') for k in range(3)]
 imp=pd.read_csv(ROOT/'results/round_v6/tpe_feature_importance.csv',index_col=0)['mean_gain'];weak=imp.sort_values().index[:int(.20*len(imp))].tolist()
 yall=[]
@@ -18,3 +18,4 @@ for k,f in enumerate(folds):
  np.save(OUT/'weak_features_cv_oof.partial.npy',pred);pd.DataFrame(rows).to_csv(OUT/'weak_features_cv_folds.partial.csv',index=False);print('FOLD',json.dumps(row),flush=True)
 result={'candidate':'drop_bottom20_gain','features':int(len(cols)),'baseline_accuracy':float(accuracy_score(y,base>=.5)),'accuracy':float(accuracy_score(y,pred>=.5)),'baseline_logloss':float(log_loss(y,base)),'logloss':float(log_loss(y,np.clip(pred,1e-7,1-1e-7))),'folds':rows}
 (OUT/'weak_features_cv.json').write_text(json.dumps(result,indent=2));np.save(OUT/'weak_features_cv_oof.npy',pred);print('CV',json.dumps(result),flush=True)
+

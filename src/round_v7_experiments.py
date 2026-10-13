@@ -1,13 +1,13 @@
 """Short, leakage-aware tests for temporal seller priors and error correction."""
 from pathlib import Path
-import argparse, json, sys
+import argparse, json, os, sys
 import numpy as np
 import pandas as pd
 from lightgbm import LGBMClassifier
 from sklearn.metrics import accuracy_score, log_loss
 
 ROOT = Path(r'C:\Users\arira\OneDrive\Documents\GitHub\tp_ap')
-OUT = Path(__file__).resolve().parent / 'experiment_outputs_round_v7'
+OUT = Path(os.environ.get('AP_ROUND_V7_OUT', str(ROOT / 'results/round_v7_runs')))
 OUT.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(ROOT / 'src'))
 from competition_pipeline_v2 import groups_for
@@ -94,3 +94,4 @@ if __name__=='__main__':
     ap=argparse.ArgumentParser();ap.add_argument('--mode',choices=['correction','history','weak_features'],required=True);a=ap.parse_args()
     if a.mode=='correction':run_correction()
     else:run_model(a.mode)
+
