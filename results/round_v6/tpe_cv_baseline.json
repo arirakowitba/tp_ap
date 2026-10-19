@@ -1,0 +1,11 @@
+{
+  "name": "previous_tpe_params",
+  "accuracy": 0.9389107142857143,
+  "logloss": 0.1577385087342286,
+  "threshold": 0.5,
+  "fold_best_iterations": [
+    409,
+    394,
+    365
+  ]
+}

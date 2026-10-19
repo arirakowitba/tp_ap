@@ -1,0 +1,19 @@
+{
+  "n_estimators": 2400,
+  "learning_rate": 0.016760372988889986,
+  "num_leaves": 42,
+  "max_depth": 10,
+  "min_child_samples": 112,
+  "reg_lambda": 3.5799999982931574,
+  "reg_alpha": 0.014236568927435479,
+  "colsample_bytree": 0.7340255072014579,
+  "subsample": 0.7639853203070753,
+  "subsample_freq": 1,
+  "min_split_gain": 0.032202102401922256,
+  "cat_smooth": 61.398015419919815,
+  "cat_l2": 15.195495560053995,
+  "max_cat_threshold": 8,
+  "n_jobs": 2,
+  "verbosity": -1,
+  "random_state": 2026
+}

@@ -1,0 +1,67 @@
+{
+  "features": [
+    "warranty_duration_days_log",
+    "warranty_duration_unit",
+    "warranty_semantic_type",
+    "warranty_explicit_type"
+  ],
+  "folds": [
+    {
+      "fold": 0,
+      "baseline": {
+        "accuracy": 0.9401082123533508,
+        "logloss": 0.1552896353580474
+      },
+      "warranty_model": {
+        "accuracy": 0.9405903466009535,
+        "logloss": 0.15578673915061036
+      },
+      "blend_50": {
+        "accuracy": 0.9401082123533508,
+        "logloss": 0.15516909818186192
+      }
+    },
+    {
+      "fold": 1,
+      "baseline": {
+        "accuracy": 0.9397867895216157,
+        "logloss": 0.1571256333173814
+      },
+      "warranty_model": {
+        "accuracy": 0.9385010981946751,
+        "logloss": 0.15740393046011
+      },
+      "blend_50": {
+        "accuracy": 0.9390903733861895,
+        "logloss": 0.1569457918357913
+      }
+    },
+    {
+      "fold": 2,
+      "baseline": {
+        "accuracy": 0.9375334833386907,
+        "logloss": 0.16366199994261232
+      },
+      "warranty_model": {
+        "accuracy": 0.9368906032358298,
+        "logloss": 0.16366849820354995
+      },
+      "blend_50": {
+        "accuracy": 0.9373727633129755,
+        "logloss": 0.16331295831408102
+      }
+    }
+  ],
+  "baseline_oof": {
+    "accuracy": 0.9391428571428572,
+    "logloss": 0.15869233413023273
+  },
+  "warranty_model_oof": {
+    "accuracy": 0.9386607142857143,
+    "logloss": 0.1589529717337639
+  },
+  "blend_50_oof": {
+    "accuracy": 0.9388571428571428,
+    "logloss": 0.15847586306875303
+  }
+}
