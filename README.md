@@ -4,7 +4,8 @@
 
 - [23_revision_submissions_y_flips.ipynb](notebooks/23_revision_submissions_y_flips.ipynb): notebook ejecutado y didáctico para exponer el historial, los casos dudosos, la inferencia estadística y el plan adaptable de 75 pruebas. Abre con una grilla guiada de 100 filas, muestra unanimidad y desacuerdo, y calcula cuántas pruebas hacen falta para cobertura, ganancia probable o identificación individual.
 - [Datos y guía de actualización](results/revision_submissions/README.md): snapshot ligero y trazabilidad de los resultados; no hace falta entrenar para ejecutar el notebook.
-- Corte documentado: 18 de octubre de 2026. Mejor público observado **94,476%**; control combinado **94,485% inferido, sin score propio**; holdout histórico de referencia **94,3952%**. La submission 10 permanece pendiente mientras no se incorpore su resultado.
+- Corte original del notebook: 18 de octubre de 2026, previo al score de la submission 10. Los gráficos y el snapshot conservan ese corte para poder reproducirlo.
+- [Resultado posterior de la submission 10](results/revision_submissions/feedback_10_observado_20261018.md): **94,500% público observado**, mejor score actual; cinco aciertos netos más que la 07, de los cuales tres corresponden al lote nuevo de 64. El análisis de cuatro bloques y la actualización integral del notebook quedan para la próxima ronda.
 - Los apartados históricos de abajo conservan las métricas de cada ronda. Para la revisión consolidada de submissions, usar el notebook 23 y su snapshot versionado.
 
 

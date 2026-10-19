@@ -5,6 +5,11 @@ Está ejecutado y pensado para exponer desde cero. Incluye ejemplos didácticos
 separados de los datos reales, gráficos, ecuaciones, comprobaciones y un guion
 breve de presentación.
 
+**Resultado recibido luego del corte:** [submission 10 observada](feedback_10_observado_20261018.md),
+score **94,500%**. El notebook y el snapshot reproducen deliberadamente su
+corte previo; el documento posterior fija la evidencia y los cálculos para la
+actualización completa de la siguiente ronda.
+
 El caso guiado inicial representa 100 filas ficticias en una grilla y contrasta
 unanimidad, probabilidad de corrección y dudas. Calcula tres objetivos de
 número de pruebas: cobertura de todos los casos, probabilidad de ganancia bajo
