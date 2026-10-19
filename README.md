@@ -1,5 +1,14 @@
 # Competencia AP 2026 Q2
 
+## Revisión de submissions y diseño de flips
+
+- [23_revision_submissions_y_flips.ipynb](notebooks/23_revision_submissions_y_flips.ipynb): notebook ejecutado y didáctico para exponer el historial, los casos dudosos, la inferencia estadística y el plan adaptable de 75 pruebas. Abre con una grilla guiada de 100 filas, muestra unanimidad y desacuerdo, y calcula cuántas pruebas hacen falta para cobertura, ganancia probable o identificación individual.
+- [Datos y guía de actualización](results/revision_submissions/README.md): snapshot ligero y trazabilidad de los resultados; no hace falta entrenar para ejecutar el notebook.
+- Corte original del notebook: 18 de octubre de 2026, previo al score de la submission 10. Los gráficos y el snapshot conservan ese corte para poder reproducirlo.
+- [Resultado posterior de la submission 10](results/revision_submissions/feedback_10_observado_20261018.md): **94,500% público observado**, mejor score actual; cinco aciertos netos más que la 07, de los cuales tres corresponden al lote nuevo de 64. El análisis de cuatro bloques y la actualización integral del notebook quedan para la próxima ronda.
+- Los apartados históricos de abajo conservan las métricas de cada ronda. Para la revisión consolidada de submissions, usar el notebook 23 y su snapshot versionado.
+
+
 ## Pipeline maestro y explicación visual
 
 - `notebooks/21_maestro_pipeline.ipynb`: auditoría, split por familia, variables, SVM OOF, TPE, selección de ensamble, comprobación congelada, refit y exportación.
@@ -53,3 +62,4 @@ El notebook ilustrativo conserva18 figuras históricas y agrega3 figuras de esta
 ## Ronda de meta calibración (11 de octubre)
 
 Se agregó `src/meta_calibration_round.py` para ajustar Platt e isotónica con las predicciones agrupadas existentes y evaluarlas en seed 731 sin usar esa confirmación para calibrar. El informe está en `results/round_v4/README.md`. La calibración no alcanzó 95% ni justificó reemplazar el ensamble. No se entrenaron nuevos modelos: el JSONL no está disponible en las carpetas locales y la recuperación del `data.zip` no pudo materializarse en este entorno.
+
