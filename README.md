@@ -2,7 +2,7 @@
 
 ## Revisión de submissions y diseño de flips
 
-- [23_revision_submissions_y_flips.ipynb](notebooks/23_revision_submissions_y_flips.ipynb): notebook ejecutado y didáctico para exponer el historial, los casos dudosos, la inferencia estadística y el plan adaptable de 75 pruebas.
+- [23_revision_submissions_y_flips.ipynb](notebooks/23_revision_submissions_y_flips.ipynb): notebook ejecutado y didáctico para exponer el historial, los casos dudosos, la inferencia estadística y el plan adaptable de 75 pruebas. Abre con una grilla guiada de 100 filas, muestra unanimidad y desacuerdo, y calcula cuántas pruebas hacen falta para cobertura, ganancia probable o identificación individual.
 - [Datos y guía de actualización](results/revision_submissions/README.md): snapshot ligero y trazabilidad de los resultados; no hace falta entrenar para ejecutar el notebook.
 - Corte documentado: 18 de octubre de 2026. Mejor público observado **94,476%**; control combinado **94,485% inferido, sin score propio**; holdout histórico de referencia **94,3952%**. La submission 10 permanece pendiente mientras no se incorpore su resultado.
 - Los apartados históricos de abajo conservan las métricas de cada ronda. Para la revisión consolidada de submissions, usar el notebook 23 y su snapshot versionado.

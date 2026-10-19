@@ -1,5 +1,5 @@
 """Meaningful invariants for the aggregate-score review."""
-import sys,unittest
+import sys,unittest,math,itertools
 from pathlib import Path
 import numpy as np
 from scipy.stats import beta
@@ -41,6 +41,16 @@ class SubmissionReviewTests(unittest.TestCase):
         self.assertEqual(differences[0],differences[1])
     def test_one_case_predictive_law(self):
         np.testing.assert_allclose(net_distribution([.5],.7),[.35,.3,.35])
+    def test_guided_case_coverage_is_not_individual_identification(self):
+        real=self.d["counts"]
+        disagreed=sum(r["rows"] for r in self.d["doubt_overlap"] if r["seed_disagreement"])
+        self.assertEqual((real["test_total"]-disagreed,disagreed),(29375,625))
+        batches=[r["proposed_flips"] for r in self.d["plan_schedule"]]
+        self.assertEqual(sum(batches[:15]),real["ambiguous_unverified"])
+        max_outcomes=max(2*b+1 for b in batches)
+        self.assertLess(75*math.log2(max_outcomes),real["ambiguous_unverified"]*math.log2(3))
+        possibilities=[z for z in itertools.product([-1,0,1],repeat=4) if sum(z)==4]
+        self.assertEqual(possibilities,[(1,1,1,1)])
     def test_real_group_milp_bounds(self):
         system=self.d["joint_system"]
         atom=next(r["atom"] for r in self.d["joint_atoms"] if r["rows"]==8 and r["forced_public_net_min"]==4)

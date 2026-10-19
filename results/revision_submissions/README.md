@@ -5,6 +5,13 @@ Está ejecutado y pensado para exponer desde cero. Incluye ejemplos didácticos
 separados de los datos reales, gráficos, ecuaciones, comprobaciones y un guion
 breve de presentación.
 
+El caso guiado inicial representa 100 filas ficticias en una grilla y contrasta
+unanimidad, probabilidad de corrección y dudas. Calcula tres objetivos de
+número de pruebas: cobertura de todos los casos, probabilidad de ganancia bajo
+supuestos explícitos y límite inferior para identificación individual. La
+unanimidad observada entre siete semillas reales se distingue expresamente de
+un acuerdo entre todas las arquitecturas.
+
 ## Corte y resultados
 
 Corte del 18 de octubre de 2026, anterior al score de la submission 10:

@@ -28,7 +28,7 @@ Una explicación desde cero, con ejemplos, cálculos reproducibles y resultados 
 """)
 md("""
 ### Cómo usarlo en una exposición
-- **Historia principal:** secciones 1 a 4, caso real de la sección 7, prueba de 64 casos y estrategia de 75.
+- **Historia principal:** problema, caso guiado de 100 filas, caso real de la sección 7, prueba de 64 casos y estrategia de 75.
 - **Preguntas técnicas:** desarrollo bayesiano, solapamientos, entropía y restricciones enteras.
 - En cada sección distinguimos **dato observado**, **inferencia condicionada a supuestos** y **decisión pendiente**.
 - El código está debajo de cada explicación. Los gráficos y tablas usan el mismo snapshot; no hay cifras copiadas manualmente de presentaciones.
@@ -132,6 +132,219 @@ tabla(pd.DataFrame([
     ("Leaderboard público", "Medir contrastes de predicciones", "Subconjunto de test; etiquetas no visibles"),
     ("Porción oculta", "Evaluar generalización final", "No observamos su accuracy en este corte"),
 ], columns=["Conjunto", "Uso", "Interpretación"]))
+""")
+
+md(r"""
+## Caso guiado: cien celdas para entender el experimento
+
+**Primero una maqueta; después los datos reales.** Imaginemos 100 publicaciones. Siete versiones relacionadas del modelo votan una etiqueta para cada una; otro modelo estima la probabilidad de que *cambiar* la predicción de referencia sea correcto. Para que los patrones se vean, aquí **sobrerrepresentamos deliberadamente** los casos difíciles. Estos 100 casos y sus probabilidades son ficticios.
+
+| Grupo ilustrativo | Celdas | Votos que coinciden | Probabilidad supuesta de que el cambio acierte | ¿Se investiga? |
+|---|---:|---:|---:|---|
+| Consenso lejos del umbral | 70 | 7 de 7 | 0,05 | No por esta regla |
+| Consenso, pero otro modelo duda | 12 | 7 de 7 | 0,55 | Sí: probabilidad ambigua |
+| Discrepancia y probabilidad ambigua | 10 | 4 de 7 | 0,65 | Sí: ambos criterios |
+| Discrepancia con alternativa prometedora | 8 | 5 de 7 | 0,75 | Sí: ambos criterios |
+
+**Lectura visual:** 82 celdas tienen unanimidad de votos; aun así, 12 de ellas son dudosas por el segundo modelo. Hay $12+10+8=30$ filas para investigar. La probabilidad de la tabla es una **hipótesis didáctica sobre acertar al cambiar**, no una etiqueta conocida ni una probabilidad calibrada con el leaderboard.
+
+> En el test real, la unanimidad se puede calcular para **las siete semillas de una familia**: no equivale a afirmar que todas las arquitecturas entrenadas estén de acuerdo. Las semillas comparten entrenamiento y sus votos no son independientes.
+""")
+code(r"""
+from matplotlib.patches import Rectangle, Patch
+from matplotlib.colors import Normalize
+
+rng100 = np.random.default_rng(20261018)
+tipo100 = np.array(["consenso_claro"]*70 + ["consenso_dudoso"]*12 +
+                   ["discrepancia_dudosa"]*10 + ["discrepancia_fuerte"]*8)
+tipo100 = tipo100[rng100.permutation(100)]
+propiedades100 = {
+    "consenso_claro": (7, .05, PALETA["claro"], "Consenso lejos del umbral"),
+    "consenso_dudoso": (7, .55, PALETA["ambar"], "Consenso con duda"),
+    "discrepancia_dudosa": (4, .65, PALETA["azul"], "Votos divididos"),
+    "discrepancia_fuerte": (5, .75, PALETA["verde"], "Votos divididos: primer lote"),
+}
+toy100 = pd.DataFrame({"celda":np.arange(1,101), "grupo":tipo100})
+toy100["votos_iguales"]=[propiedades100[g][0] for g in tipo100]
+toy100["q_supuesta"]=[propiedades100[g][1] for g in tipo100]
+toy100["dudosa"]=toy100.grupo.ne("consenso_claro")
+toy100["primer_lote"]=toy100.grupo.eq("discrepancia_fuerte")
+
+fig,axes=plt.subplots(1,2,figsize=(13.5,6))
+for j,row in toy100.iterrows():
+    x,y=j%10,j//10
+    color=propiedades100[row.grupo][2]
+    axes[0].add_patch(Rectangle((x,y),1,1,facecolor=color,edgecolor="white",linewidth=1.6))
+    axes[0].text(x+.5,y+.5,f"{row.celda:02d}",ha="center",va="center",fontsize=8,
+                 color="white" if row.grupo in ("discrepancia_dudosa","discrepancia_fuerte") else "#263144")
+    axes[1].add_patch(Rectangle((x,y),1,1,facecolor=plt.cm.YlOrBr(row.q_supuesta),
+                                 edgecolor="white",linewidth=1.6))
+    axes[1].text(x+.5,y+.5,f"{row.q_supuesta:.2f}",ha="center",va="center",fontsize=8,
+                 color="white" if row.q_supuesta>.68 else "#263144")
+    if row.primer_lote:
+        axes[1].add_patch(Rectangle((x+.04,y+.04),.92,.92,fill=False,
+                                    edgecolor="#1B2435",linewidth=2.5))
+for ax in axes:
+    ax.set(xlim=(0,10),ylim=(10,0),aspect="equal")
+    ax.set_xticks(np.arange(11));ax.set_yticks(np.arange(11))
+    ax.tick_params(length=0,labelbottom=False,labelleft=False)
+    ax.grid(False)
+axes[0].set_title("100 filas: 82 con unanimidad y 30 dudosas",pad=15)
+axes[1].set_title("Probabilidad supuesta de corrección\nBorde oscuro = los 8 primeros flips",pad=15)
+axes[0].legend(handles=[Patch(facecolor=v[2],label=v[3]) for v in propiedades100.values()],
+               loc="upper center",bbox_to_anchor=(.5,-.035),ncol=2,fontsize=8)
+fig.tight_layout();plt.show()
+assert len(toy100)==100 and toy100.dudosa.sum()==30
+assert (toy100.votos_iguales==7).sum()==82 and toy100.primer_lote.sum()==8
+
+votos_discrepan_real=sum(r["rows"] for r in D["doubt_overlap"] if r["seed_disagreement"])
+unanimidad_real=C["test_total"]-votos_discrepan_real
+tabla(pd.DataFrame([
+    ("Maqueta de 100 celdas",82,100,"82,00%","7 modelos ilustrativos"),
+    ("Test real",unanimidad_real,C["test_total"],pct(unanimidad_real/C["test_total"],2),
+     "7 semillas de una familia, no todas las arquitecturas"),
+],columns=["Conjunto","Unanimidad","Filas","Porcentaje","Alcance"]))
+idea("97,92% de unanimidad entre semillas reales no implica 97,92% de aciertos. El desacuerdo es una señal; la unanimidad tampoco es una prueba de verdad.")
+""")
+
+md(r"""
+### Una celda pintada no dice si la etiqueta es correcta
+
+Elegimos las ocho celdas con borde oscuro para una primera prueba. En la maqueta asumimos que cada alternativa de ese grupo tiene probabilidad $q=0{,}75$ de ser correcta. También usamos $\pi=0{,}70$ como probabilidad aproximada de pertenecer a la parte pública. Son **supuestos de planificación**: ni $q$ ni la membresía pública de cada fila están observados.
+
+¿Qué significa el cambio de score? Para cada una de las ocho filas, $Z_i=+1$ si es pública y corregimos, $Z_i=-1$ si es pública y empeoramos, y $Z_i=0$ si es oculta. El experimento sólo devuelve $D=\sum_{i=1}^8Z_i$. Si viéramos **$D=+4$**, las tres filas de abajo serían configuraciones posibles del *mismo resultado*.
+""")
+code(r"""
+escenarios100=[
+    ("K=4: cuatro públicas",4,4,0,4),
+    ("K=6: seis públicas",6,5,1,2),
+    ("K=8: ocho públicas",8,6,2,0),
+]
+fig,ax=plt.subplots(figsize=(11.2,3.4))
+for r,(titulo,k,s,mal,ocultos) in enumerate(escenarios100):
+    for col,valor in enumerate([1]*s+[-1]*mal+[0]*ocultos):
+        color={1:PALETA["verde"],-1:PALETA["rojo"],0:PALETA["gris"]}[valor]
+        ax.add_patch(Rectangle((col+.07,r+.07),.86,.86,facecolor=color,edgecolor="white"))
+        ax.text(col+.5,r+.5,{1:"+1",-1:"−1",0:"0"}[valor],ha="center",va="center",
+                color="white",fontsize=14,fontweight="bold")
+    ax.text(8.35,r+.5,"suma = +4",ha="left",va="center",fontsize=11,fontweight="bold")
+ax.set(xlim=(0,10),ylim=(3,0),yticks=np.arange(3)+.5,yticklabels=[s[0] for s in escenarios100],
+       title="El mismo score admite varias historias",xlabel="Ocho filas cambiadas")
+ax.set_xticks([]);ax.grid(False)
+fig.tight_layout();plt.show()
+
+post100=cohort_posterior(8,4,pi=.7,a=1,b=1)
+tabla(pd.DataFrame([
+    ("Observado en el ejemplo", "+4 aciertos netos en ocho cambios", "Suma: información exacta del lote"),
+    ("Inferido sin probabilidades", "K ∈ {4, 6, 8}", "Tres posibilidades, ninguna asigna las ocho etiquetas"),
+    ("Posterior si π=0,70 y q ~ Beta(1,1)",pct(post100["theta_mean"],1),
+     "Promedio para una cohorte hipotéticamente intercambiable"),
+    ("Probabilidad de q > 0,5 con esos supuestos",pct(post100["theta_probability_gt_half"],1),
+     "Confianza del modelo estadístico, no certeza por fila"),
+],columns=["Nivel","Resultado","Interpretación"]))
+idea("El score no revela ocho etiquetas. La posterior cambia si cambiamos la probabilidad pública π, la prior o la suposición de que los casos del lote son comparables.")
+""")
+
+md(r"""
+### Una segunda prueba puede convertir una suma en una certeza parcial
+
+Conservamos **el mismo control** y probamos sólo las cuatro primeras filas del grupo anterior. Supongamos que la ganancia medida ahora es $D_{1:4}=+4$. Como cada $Z_i\leq 1$, para sumar cuatro en cuatro filas necesariamente $Z_1=Z_2=Z_3=Z_4=+1$: estas cuatro alternativas son correctas **y públicas**. Por sustracción, las otras cuatro tienen $D_{5:8}=+4-(+4)=0$, pero sus etiquetas individuales todavía son inciertas.
+
+No tuvimos que inventar sus etiquetas ni confiar en las probabilidades para demostrar las cuatro primeras. En una prueba real, esto exige que ambos scores compartan un control auditado y que la conversión del score publicado a aciertos enteros sea inequívoca. Una suma cero **no** significa cuatro errores: pueden compensarse aciertos, errores y filas privadas.
+""")
+code(r"""
+fig,axes=plt.subplots(2,1,figsize=(11.3,3.4),sharex=True)
+for r,ax in enumerate(axes):
+    for col in range(8):
+        seguro=(r==1 and col<4)
+        ax.add_patch(Rectangle((col+.06,.05),.88,.9,
+                               facecolor=PALETA["verde"] if seguro else PALETA["claro"],
+                               edgecolor="white"))
+        ax.text(col+.5,.5,"+1" if seguro else "?",ha="center",va="center",
+                color="white" if seguro else PALETA["gris"],fontsize=16)
+    ax.set(xlim=(0,8),ylim=(0,1),yticks=[],xticks=[])
+    ax.grid(False)
+    ax.set_ylabel("Lote de 8\nD=+4" if r==0 else "Subgrupo de 4\nD=+4",rotation=0,
+                  ha="right",va="center",labelpad=67)
+axes[1].annotate("Primeras 4: certeza exacta",xy=(2,.02),xytext=(2,-.27),
+                 ha="center",color=PALETA["verde"],fontweight="bold",annotation_clip=False)
+axes[1].annotate("Otras 4: neto 0, identidad pendiente",xy=(6,.02),xytext=(6,-.27),
+                 ha="center",color=PALETA["gris"],annotation_clip=False)
+fig.suptitle("Dos resultados bien diseñados pueden resolver una parte del lote",fontweight="bold")
+fig.subplots_adjust(left=.17,bottom=.27,top=.83,hspace=.35)
+plt.show()
+""")
+
+md(r"""
+### ¿Cuántas pruebas hacen falta? Depende de la pregunta
+
+**1. Para tocar cada fila una vez:** si hay $U$ casos y cambiamos como máximo $b$ *casos nuevos y disjuntos* por prueba, hacen falta $n_{\rm cobertura}=\lceil U/b\rceil$. En la maqueta, $\lceil30/8\rceil=4$. En el test, $\lceil2.531/64\rceil=40$ si mantuviéramos 64 casos nuevos en cada envío. Con el **diseño provisional de lotes más grandes**, el primer lote de 64 más otros 14 de tamaños 176–178 cubriría los 2.531 en **15** pruebas, si se conserva el diseño al llegar cada score.
+
+**2. Para favorecer una mejora de score bajo un supuesto:** si las alternativas de un grupo tienen una probabilidad común $q$ de ser correctas y cada fila cae en público con probabilidad $\pi$, entonces, *aproximando filas independientes*,
+
+$$P(Z=+1)=\pi q,\quad P(Z=-1)=\pi(1-q),\quad P(Z=0)=1-\pi;$$
+$$E[D_b]=b\pi(2q-1),\qquad
+\operatorname{Var}(D_b)=b\big[\pi-\pi^2(2q-1)^2\big].$$
+
+Con $q=0{,}65$ y $\pi=0{,}70$, calculamos exactamente la distribución predictiva de $D_b$ bajo ese **modelo de trabajo** y buscamos el primer tamaño con $P(D_b>0)\geq90\%$. Ese cálculo no equivale a 90% de confianza sobre las etiquetas ni promete una mejora real.
+
+**3. Para identificar *todas* las etiquetas sin usar modelos:** hay que responder otra pregunta. Cada uno de $U$ casos puede contribuir $-1$, $0$ o $+1$, y un lote de $b$ devuelve a lo sumo $2b+1$ sumas posibles. Por conteo de posibilidades, una condición necesaria idealizada para distinguir cualquier configuración sería
+
+$$n_{\rm identificación}\;\geq\;
+\left\lceil\frac{U\log_2(3)}{\log_2(2b+1)}\right\rceil.$$
+
+Es un **límite inferior de información**, no una receta suficiente. La precisión del score, los solapamientos y los controles pueden exigir más pruebas. Por eso, con 75 resultados agregados usamos probabilidades de modelos y estructura para orientar decisiones; no prometemos descubrir las 2.531 etiquetas exactas.
+""")
+code(r"""
+from math import ceil,log2
+
+# Convolución exacta dentro del modelo hipotético; no utiliza etiquetas del test.
+q_hipotesis,pi_hipotesis=.65,.70
+pmf=np.ones(1)
+curva=[]
+for b in range(1,266):
+    pmf=np.convolve(pmf,[pi_hipotesis*(1-q_hipotesis),1-pi_hipotesis,pi_hipotesis*q_hipotesis])
+    curva.append(float(pmf[b+1:].sum()))
+minimo_90=next(b for b,p in enumerate(curva,1) if p>=.90)
+max_preview=max(s["proposed_flips"] for s in D["plan_schedule"])
+filas_15=[s["proposed_flips"] for s in D["plan_schedule"][:15]]
+assert sum(filas_15)==C["ambiguous_unverified"]
+
+fig,axes=plt.subplots(1,3,figsize=(15,3.8))
+axes[0].bar(["Maqueta: 30/8","Test: 2.531/64","Plan adaptable"],[4,40,15],
+            color=[PALETA["ambar"],PALETA["azul"],PALETA["verde"]])
+for i,v in enumerate([4,40,15]):axes[0].text(i,v+1,str(v),ha="center",fontweight="bold")
+axes[0].set(title="Pruebas para cubrir casos",ylabel="Número de envíos",ylim=(0,49))
+axes[0].tick_params(axis="x",labelrotation=20)
+axes[1].plot(np.arange(1,266),curva,color=PALETA["azul"],lw=2.4)
+axes[1].axhline(.90,color=PALETA["rojo"],ls="--",label="Objetivo hipotético: 90%")
+axes[1].axvline(minimo_90,color=PALETA["verde"],ls=":",label=f"Primer lote: {minimo_90}")
+axes[1].scatter([8,64,176],[curva[7],curva[63],curva[175]],color=PALETA["ambar"],zorder=3)
+axes[1].set(title="Probabilidad de ganancia si q=0,65",xlabel="Tamaño del lote",
+            ylabel="P(ganancia neta positiva)",ylim=(.4,1.04))
+axes[1].legend(fontsize=8,loc="lower right")
+limite_toy=ceil(30*log2(3)/log2(2*8+1))
+limite_real=ceil(C["ambiguous_unverified"]*log2(3)/log2(2*max_preview+1))
+axes[2].bar(["Maqueta\n30 casos","Test\n2.531 casos"],[limite_toy,limite_real],
+            color=[PALETA["ambar"],PALETA["rojo"]])
+axes[2].axhline(75,color=PALETA["gris"],ls="--",label="Presupuesto real: 75")
+for i,v in enumerate([limite_toy,limite_real]):axes[2].text(i,v+8,str(v),ha="center",fontweight="bold")
+axes[2].set(title="Piso ideal para identificar TODO",ylabel="Pruebas (límite inferior)",
+            ylim=(0,limite_real*1.18))
+axes[2].legend(fontsize=8)
+fig.tight_layout();plt.show()
+
+tabla(pd.DataFrame([
+    ("Cobertura de 30 casos, ocho nuevos por prueba",ceil(30/8),"Garantiza visitar cada caso una vez"),
+    ("Cobertura de 2.531, 64 nuevos por prueba",ceil(2531/64),"No identifica etiquetas por sí sola"),
+    ("Cobertura con lotes previstos 64 + 14×(176–178)",15,"Diseño revisable tras cada score"),
+    ("P(D>0) ≥ 90% si q=0,65 y π=0,70",minimo_90,"Predicción condicional al supuesto, NO confianza empírica"),
+    ("Piso ideal para todas las etiquetas, lotes ≤265",limite_real,
+     "Necessary, nunca suficiente: presupuesto de 75 insuficiente para esta meta"),
+],columns=["Objetivo","Mínimo o plan","Qué concluye realmente"]))
+idea("Cobertura, ganancia probable e identificación individual son tres objetivos distintos. Lotes grandes dan alcance; lotes cruzados o subdivididos dan resolución. La estrategia alterna ambos.")
+assert (unanimidad_real,votos_discrepan_real)==(29375,625)
+assert minimo_90==30 and limite_toy==12 and limite_real==444
 """)
 
 md("""
