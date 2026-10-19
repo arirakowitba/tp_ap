@@ -1,0 +1,16 @@
+{
+  "files_verified": 27,
+  "snapshot_sha256": "9a710af13e9674e23a9e2a5c8e44db8d444ab9f7df0a40962d4c5b702fb54800",
+  "counts": {
+    "test_total": 30000,
+    "scored_submissions": 23,
+    "pending_submissions": 4,
+    "unique_tested_ids": 1102,
+    "raw_ambiguous_union": 2532,
+    "ambiguous_unverified": 2531,
+    "ambiguous_scored": 768,
+    "ambiguous_unscored": 1763,
+    "verified_excluded_from_pool": 1
+  },
+  "bytes": 412740
+}
