@@ -16,14 +16,20 @@ independientes. Conservar exactamente los CSV y hashes del manifiesto.
 | 20 | 0 | 0 | 1 | 1 | 1 | 256 | E: expansión a zonas menos exploradas |
 
 Las 320 filas de A–E son distintas. A y B vienen de dividir la 16 por los
-votos de siete semillas. C favorece el consenso de modelos CatBoost nuevos,
-CatBoost anteriores y, si se terminó su CV agrupada, modelos de texto y
-LightGBM con SVD. D incluye contradicciones entre semillas y modelos. E
-contiene cuatro subgrupos auditados de 32: modelo nuevo, modelo anterior,
-discordancia y extensión. En cada cohorte se equilibran las dos etiquetas
-alternativas, se evitan vendedores repetidos y se limitan a cuatro los casos
-de una misma categoría. Los pesos de selección son **rangos de prioridad**, no
-probabilidades calibradas.
+votos de siete semillas. C son 64 discrepancias donde los modelos nuevos de
+texto y SVD+LightGBM favorecen el flip en promedio (`0.635` y `0.642`),
+mientras el CatBoost anterior y el nuevo lo cuestionan (`0.465` y `0.453`).
+D contrasta votos de semillas anteriores con alternativas poco apoyadas en
+promedio por las arquitecturas actuales (`0.331`–`0.376`); es una prueba
+diagnóstica de 64 filas con mayor riesgo de caer en score. E son 128 filas
+menos cubiertas: texto y LightGBM dan `0.596` y `0.567` de apoyo medio frente
+a `0.366` y `0.349` de los dos CatBoost. Se divide en cuatro subgrupos
+auditados de 32: modelo nuevo, modelo anterior, discordancia y extensión.
+Estas medias son **scores de modelos no calibrados para esos casos**; el
+valor de las pruebas es contrastar familias de señales. En cada cohorte se
+equilibran las dos etiquetas alternativas, se evitan vendedores repetidos y
+se limitan a cuatro los casos de una misma categoría. Los pesos de selección
+son rangos de prioridad, no probabilidades calibradas.
 
 Se entrenaron dos modelos complementarios en tres folds agrupados por
 vendedor: TF-IDF con regresión logística (`0.90933` accuracy OOF) y SVD de
