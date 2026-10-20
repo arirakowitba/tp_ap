@@ -1,5 +1,17 @@
 # Competencia AP 2026 Q2
 
+## Actualización iterativa de scores (20 de octubre)
+
+La [estrategia de competencia](COMPETITION_STRATEGY.md) describe el uso de
+submissions como experimentos de flips para optimizar el resultado final.
+La sección **13.1–13.3** del [notebook 23](notebooks/23_revision_submissions_y_flips.ipynb)
+contiene código ejecutable para incorporar cada score, reconstruir ecuaciones
+conjuntas, estimar confianza de cohortes y exportar una combinación auditada.
+El [registro](results/revision_submissions/feedback_iterativo_20261020.json)
+guarda el 0,94523 observado de la 15; la 16 sigue pendiente. Los archivos
+exactos de ambas pruebas y la auditoría de la 16 están en `submissions/`.
+Los apartados anteriores del notebook y su snapshot preservan su corte histórico.
+
 ## Revisión de submissions y diseño de flips
 
 - [23_revision_submissions_y_flips.ipynb](notebooks/23_revision_submissions_y_flips.ipynb): notebook ejecutado y didáctico para exponer el historial, los casos dudosos, la inferencia estadística y el plan adaptable de 75 pruebas. Abre con una grilla guiada de 100 filas, muestra unanimidad y desacuerdo, y calcula cuántas pruebas hacen falta para cobertura, ganancia probable o identificación individual.
@@ -49,6 +61,17 @@ results/historical_scores.csv registra métricas previas y su protocolo. Nuevos 
 
 El mejor score local documentado es **0,927619** (CatBoost + SVD + 75 atributos + interacciones). La meta **0,95** aún no se alcanzó. El holdout de 21.000 filas se reutilizó para selección, por lo que el score puede estar optimista; el siguiente ciclo debe confirmar con un segundo fold agrupado y stacking out-of-fold.
 
+
+## Pruebas cruzadas del 20 de octubre
+
+La submission 15 obtuvo **0,94523** según el resultado recibido. Se prepararon
+la 16 y cuatro CSV nuevos (17–20) para contrastar y ampliar 320 casos dudosos
+distintos; sus scores aún no se recibieron. Ver
+[estrategia y matriz de pruebas](submissions/20261020/estrategia_cruzada_17_a_20.md),
+[manifiesto reproducible](submissions/20261020/pruebas_17_a_20_manifiesto.json)
+y la sección 13 del [notebook de revisión](notebooks/23_revision_submissions_y_flips.ipynb).
+El optimizador posterior solo trata scores observados como evidencia de
+balances públicos de grupos y descuenta la incertidumbre del 30 % oculto.
 
 ## Ronda complementaria del10 de octubre
 

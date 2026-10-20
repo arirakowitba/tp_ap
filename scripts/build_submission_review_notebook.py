@@ -1171,6 +1171,9 @@ La finalidad es mejorar la submission completa. Una mejora pública aporta evide
 
 Cada score modifica el plan restante. No se interpreta cada prueba de manera aislada.
 """)
+from iterative_notebook_section import append_iterative_section
+append_iterative_section(md, code)
+
 md("""
 ## 14. Guion breve para presentar
 

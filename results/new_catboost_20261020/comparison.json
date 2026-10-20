@@ -1,0 +1,119 @@
+{
+  "date_argentina": "2026-10-20",
+  "rows_train": 70000,
+  "fold_seed": 20261200,
+  "cv": {
+    "previous_average": {
+      "accuracy_05": 0.9331,
+      "log_loss": 0.1670318395149365,
+      "changes_vs_previous": 0
+    },
+    "rich_text_symmetric_v3": {
+      "accuracy_05": 0.9316571428571429,
+      "log_loss": 0.17083980645995195,
+      "changes_vs_previous": 843
+    },
+    "rich_text_depthwise_v3": {
+      "accuracy_05": 0.9336714285714286,
+      "log_loss": 0.16826240017994212,
+      "changes_vs_previous": 570
+    },
+    "old_plus_new_0.10": {
+      "accuracy_05": 0.9331142857142857,
+      "log_loss": 0.16695126240831087,
+      "changes_vs_previous": 47
+    },
+    "old_plus_new_0.25": {
+      "accuracy_05": 0.9332428571428572,
+      "log_loss": 0.16689065275753434,
+      "changes_vs_previous": 106
+    },
+    "old_plus_new_0.40": {
+      "accuracy_05": 0.9332285714285714,
+      "log_loss": 0.16689783989166854,
+      "changes_vs_previous": 179
+    },
+    "old_plus_new_0.55": {
+      "accuracy_05": 0.9333,
+      "log_loss": 0.16697003030157953,
+      "changes_vs_previous": 240
+    }
+  },
+  "folds": {
+    "rich_text_symmetric_v3": [
+      {
+        "fold": 0,
+        "group_overlap": 0,
+        "train_rows": 46666,
+        "valid_rows": 23334,
+        "accuracy_05": 0.9320305134139024,
+        "log_loss": 0.17186435852041304
+      },
+      {
+        "fold": 1,
+        "group_overlap": 0,
+        "train_rows": 46667,
+        "valid_rows": 23333,
+        "accuracy_05": 0.9314704495778511,
+        "log_loss": 0.17195634487404657
+      },
+      {
+        "fold": 2,
+        "group_overlap": 0,
+        "train_rows": 46667,
+        "valid_rows": 23333,
+        "accuracy_05": 0.9314704495778511,
+        "log_loss": 0.16869867207539502
+      }
+    ],
+    "rich_text_depthwise_v3": [
+      {
+        "fold": 0,
+        "group_overlap": 0,
+        "train_rows": 46666,
+        "valid_rows": 23334,
+        "accuracy_05": 0.9337018942315933,
+        "log_loss": 0.16997007032308703
+      },
+      {
+        "fold": 1,
+        "group_overlap": 0,
+        "train_rows": 46667,
+        "valid_rows": 23333,
+        "accuracy_05": 0.9323276046800668,
+        "log_loss": 0.17109799593916947
+      },
+      {
+        "fold": 2,
+        "group_overlap": 0,
+        "train_rows": 46667,
+        "valid_rows": 23333,
+        "accuracy_05": 0.9349847854969356,
+        "log_loss": 0.16371906109066103
+      }
+    ]
+  },
+  "scored_cohort_diagnostics": {
+    "P_strong_cv": {
+      "n": 32,
+      "observed_public_net": 4,
+      "model_mean_p_alternative": {
+        "previous_average": 0.6377262755841591,
+        "rich_text_symmetric_v3": 0.6205619363432012,
+        "rich_text_depthwise_v3": 0.6378893278288444
+      }
+    },
+    "Q_broad_new": {
+      "n": 144,
+      "observed_public_net": -19,
+      "model_mean_p_alternative": {
+        "previous_average": 0.6134699736858603,
+        "rich_text_symmetric_v3": 0.6068281608360868,
+        "rich_text_depthwise_v3": 0.6115731842995298
+      }
+    }
+  },
+  "public_feedback_as_individual_labels": false,
+  "validation_limitation": "Previously reused train labels and folds; not fresh blind validation.",
+  "runtime_seconds": 388.6370151042938
+}

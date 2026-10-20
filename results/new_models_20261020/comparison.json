@@ -1,0 +1,119 @@
+{
+  "date_argentina": "2026-10-20",
+  "n_train": 70000,
+  "n_test": 30000,
+  "folds": [
+    {
+      "fold": 0,
+      "rows_train": 46666,
+      "rows_valid": 23334,
+      "group_overlap": 0,
+      "text_linear": {
+        "accuracy_05": 0.9102597068655182,
+        "log_loss": 0.23054415122986968
+      },
+      "svd_lgbm": {
+        "accuracy_05": 0.9148452901345676,
+        "log_loss": 0.21043714303047723
+      }
+    },
+    {
+      "fold": 1,
+      "rows_train": 46667,
+      "rows_valid": 23333,
+      "group_overlap": 0,
+      "text_linear": {
+        "accuracy_05": 0.9078129687566965,
+        "log_loss": 0.2310487435585249
+      },
+      "svd_lgbm": {
+        "accuracy_05": 0.9165130930441864,
+        "log_loss": 0.20651788373947777
+      }
+    },
+    {
+      "fold": 2,
+      "rows_train": 46667,
+      "rows_valid": 23333,
+      "group_overlap": 0,
+      "text_linear": {
+        "accuracy_05": 0.9099129987571251,
+        "log_loss": 0.2277677242067
+      },
+      "svd_lgbm": {
+        "accuracy_05": 0.9199417134530493,
+        "log_loss": 0.20480828796010184
+      }
+    }
+  ],
+  "metrics": {
+    "old_catboost_average": {
+      "accuracy_05": 0.9331,
+      "log_loss": 0.1670318395149365,
+      "prediction_changes_vs_old": 0
+    },
+    "text_linear": {
+      "accuracy_05": 0.9093285714285714,
+      "log_loss": 0.22978688381662532,
+      "prediction_changes_vs_old": 4474
+    },
+    "svd_lgbm": {
+      "accuracy_05": 0.9171,
+      "log_loss": 0.20725448371056351,
+      "prediction_changes_vs_old": 4638
+    },
+    "new_blend_lgbm_0.25": {
+      "accuracy_05": 0.9172571428571429,
+      "log_loss": 0.21268976546357113,
+      "prediction_changes_vs_old": 4087
+    },
+    "new_blend_lgbm_0.50": {
+      "accuracy_05": 0.9228428571428572,
+      "log_loss": 0.2047605404531379,
+      "prediction_changes_vs_old": 3962
+    },
+    "new_blend_lgbm_0.75": {
+      "accuracy_05": 0.9210142857142857,
+      "log_loss": 0.2024310287914059,
+      "prediction_changes_vs_old": 4254
+    },
+    "old_plus_0.10_new": {
+      "accuracy_05": 0.9341571428571429,
+      "log_loss": 0.1650504913489706,
+      "prediction_changes_vs_old": 224
+    },
+    "old_plus_0.20_new": {
+      "accuracy_05": 0.9347857142857143,
+      "log_loss": 0.1651801500760734,
+      "prediction_changes_vs_old": 500
+    },
+    "old_plus_0.30_new": {
+      "accuracy_05": 0.9358571428571428,
+      "log_loss": 0.16654860648876454,
+      "prediction_changes_vs_old": 801
+    }
+  },
+  "posterior_cohort_diagnostics": {
+    "P_strong_cv": {
+      "n": 32,
+      "observed_public_net": 4,
+      "test_mean_probability_alt": {
+        "old_catboost_average": 0.6377262755841591,
+        "text_linear": 0.5110375060621378,
+        "svd_lgbm": 0.4197751471869955
+      }
+    },
+    "Q_broad_new": {
+      "n": 144,
+      "observed_public_net": -19,
+      "test_mean_probability_alt": {
+        "old_catboost_average": 0.6134699736858603,
+        "text_linear": 0.5032641721082025,
+        "svd_lgbm": 0.37868024626401237
+      }
+    }
+  },
+  "scope": "All supervised fits confined to outer train folds; public group feedback diagnostic only.",
+  "limitation": "The train labels and CV split have been used in past experiments: not a fresh blind test.",
+  "seconds": 493.47660303115845
+}

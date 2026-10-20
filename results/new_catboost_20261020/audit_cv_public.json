@@ -1,0 +1,102 @@
+{
+  "cv_models": {
+    "0": {
+      "accuracy": 0.9331,
+      "correct": 65317,
+      "log_loss": 0.1670318395149365,
+      "changed_predictions_vs_old": 0
+    },
+    "0.25": {
+      "accuracy": 0.9332,
+      "correct": 65324,
+      "log_loss": 0.166791697898445,
+      "changed_predictions_vs_old": 151
+    },
+    "0.4": {
+      "accuracy": 0.9333857142857143,
+      "correct": 65337,
+      "log_loss": 0.16680761566840213,
+      "changed_predictions_vs_old": 242
+    },
+    "0.6": {
+      "accuracy": 0.9337,
+      "correct": 65359,
+      "log_loss": 0.16702649424363994,
+      "changed_predictions_vs_old": 364
+    },
+    "0.75": {
+      "accuracy": 0.9337428571428571,
+      "correct": 65362,
+      "log_loss": 0.16735268163931916,
+      "changed_predictions_vs_old": 431
+    },
+    "1": {
+      "accuracy": 0.9336714285714286,
+      "correct": 65357,
+      "log_loss": 0.16826240017994212,
+      "changed_predictions_vs_old": 570
+    }
+  },
+  "paired_disagreements": {
+    "v3_correct_old_wrong": 305,
+    "old_correct_v3_wrong": 265
+  },
+  "remaining_candidates": 1448,
+  "remaining_support_five": {
+    "0": 1274,
+    "1": 133,
+    "2": 40,
+    "3": 1
+  },
+  "remaining_v3_supports_alt": 39,
+  "cohorts": {
+    "P32": {
+      "size": 32,
+      "public_net_observed": 4,
+      "old_p_alt_mean": 0.6377262755841591,
+      "new_v3_p_alt_mean": 0.6378893278288444,
+      "v3_support_count": 31,
+      "cohort_posterior": {
+        "expected_public_rows": 22.100000000018067,
+        "posterior_mean_p_alt": 0.5837384536531232,
+        "posterior_90pct_interval": [
+          0.41736686207287266,
+          0.7445811492710016
+        ],
+        "caveat": "Exchangeability and 70% random public allocation are assumptions."
+      }
+    },
+    "Q144": {
+      "size": 144,
+      "public_net_observed": -19,
+      "old_p_alt_mean": 0.6134699736858603,
+      "new_v3_p_alt_mean": 0.6115731842995298,
+      "v3_support_count": 127,
+      "cohort_posterior": {
+        "expected_public_rows": 100.50000000000001,
+        "posterior_mean_p_alt": 0.4068606237065658,
+        "posterior_90pct_interval": [
+          0.3276955646872412,
+          0.48689809034821074
+        ],
+        "caveat": "Exchangeability and 70% random public allocation are assumptions."
+      }
+    },
+    "Q4_48": {
+      "size": 48,
+      "public_net_observed": null,
+      "old_p_alt_mean": 0.5990776894605098,
+      "new_v3_p_alt_mean": 0.5909290677042723,
+      "v3_support_count": 43
+    },
+    "Q4_15_top16": {
+      "size": 16,
+      "old_p_alt_mean": 0.5576814853961111,
+      "new_v3_p_alt_mean": 0.5388034464150371,
+      "public_net_observed": null
+    }
+  },
+  "source_15_sha256": "ce425f4f88720ae74e1a415f92b50f75279ae3d26c1deae278c3c7bb13c55891",
+  "score_15": null,
+  "calibration_limitation": "CV reused; public split unknown row membership; prior probe selection affects calibration."
+}

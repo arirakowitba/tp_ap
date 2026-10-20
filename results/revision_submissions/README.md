@@ -1,5 +1,24 @@
 # Revisión consolidada de submissions
 
+**Actualización del 20/10/2026:** la sección 13.1–13.3 del notebook agrega
+un registro de scores posteriores y un optimizador reproducible. Ingresar el
+score nuevo como texto en `feedback_iterativo_20261020.json`; conservar en
+`submissions/` el CSV exacto y la auditoría de las cohortes, y volver a
+ejecutar `python scripts/execute_submission_review.py --in-process`. La 15
+obtuvo 0,94523; la 16 todavía no tiene score registrado. Para exportar el
+resultado condicional, usar `actualizar_submission(salida=ROOT/'submissions/20261020/submission_consolidada.csv')`
+en el notebook. Sin ganancia identificada de un grupo o de un lote combinado,
+conserva la 15.
+
+Las cuatro pruebas 17–20 ya están generadas y auditadas, pendientes de
+evaluación junto con la 16. Sus cohortes A–E, matriz de contrastes, alcance de
+la inferencia y estrategia para explorar casos menos conocidos están en
+[la estrategia cruzada](../../submissions/20261020/estrategia_cruzada_17_a_20.md).
+El manifiesto [17–20](../../submissions/20261020/pruebas_17_a_20_manifiesto.json)
+registra hashes y filas. Reproducir la generación con
+`python scripts/compose_four_information_probes_20261020.py`; los scores
+pendientes se dejan en `null` hasta recibirlos.
+
 Abrir [el notebook 23](../../notebooks/23_revision_submissions_y_flips.ipynb).
 Está ejecutado y pensado para exponer desde cero. Incluye ejemplos didácticos
 separados de los datos reales, gráficos, ecuaciones, comprobaciones y un guion
