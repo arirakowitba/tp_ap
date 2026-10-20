@@ -83,3 +83,22 @@ El generador reproducible es
 `../../scripts/compose_four_information_probes_20261020.py`; los archivos de
 auditoría, hashes y lista exacta de IDs figuran en
 `pruebas_17_a_20_manifiesto.json`.
+
+## Presupuesto tentativo de 15 días
+
+Si efectivamente quedan 15 días a cinco envíos por día, el máximo teórico
+es 75 evaluaciones; el calendario y los cupos reales se revisan al recibir
+cada resultado. Este presupuesto permite aprender sin agotar pronto los
+casos más inciertos:
+
+| Ventana | Envíos | Uso principal |
+|---|---:|---|
+| Días 1–3 | 15 | Matriz 16–20 (5); hasta diez contrastes para separar E y repetir patrones con IDs nuevos |
+| Días 4–10 | 35 | 14 extensiones/validaciones de cohortes, 14 contrastes en zonas nuevas, 7 controles consolidados |
+| Días 11–13 | 15 | 6 pruebas dirigidas, 6 contrastes nuevos, 3 candidatos consolidados |
+| Días 14–15 | 10 | 4 confirmaciones en IDs independientes, 4 candidatos finales, 2 reservas según hallazgos |
+
+Cada tanda se rediseña con los scores observados y la validación de modelos;
+no se preasignan etiquetas a los 30.000 casos. Si la 16 todavía no se presentó,
+subirla antes de interpretar la matriz 17–20. Con solo cuatro cupos disponibles
+en esa situación, usar 16–19 y dejar la 20 para el siguiente cupo.
