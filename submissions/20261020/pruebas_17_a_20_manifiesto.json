@@ -5,7 +5,13 @@
   "reference_sha256": "ce425f4f88720ae74e1a415f92b50f75279ae3d26c1deae278c3c7bb13c55891",
   "public_fraction_hypothesis": 0.7,
   "public_rows_hypothesis": 21000,
-  "scores_observed_16_to_20": null,
+  "scores_observed_16_to_20": {
+    "16": "0.94500",
+    "17": "0.94447",
+    "18": "0.94404",
+    "19": "0.94409",
+    "20": "0.94285"
+  },
   "cohorts": {
     "A": 32,
     "B": 32,
@@ -402,5 +408,6 @@
       "to_used": 128,
       "to_new": 128
     }
-  }
+  },
+  "result_analysis": "results/revision_submissions/resultados_cruzados_16_a_20.json"
 }

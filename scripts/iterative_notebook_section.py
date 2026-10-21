@@ -8,9 +8,10 @@ def append_iterative_section(md, code):
     El relato previo conserva su corte histórico del 18 de octubre. Aquí se
     incorpora un registro independiente: la submission **15 obtuvo 0,94523**.
     Con la hipótesis de 21.000 filas públicas (70 % de 30.000) y truncamiento
-    a cinco decimales, corresponde a **19.850 aciertos públicos**. La 16 tiene
-    64 flips nuevos sobre la 15 y sigue pendiente. Tampoco recibimos el score
-    de la 14; no se le atribuye ninguna ganancia.
+    a cinco decimales, corresponde a **19.850 aciertos públicos**. Ya recibimos
+    los scores de la 16 a la 20: 0,94500; 0,94447; 0,94404; 0,94409; 0,94285.
+    El score de la 14 sigue sin suministrarse. La sección 13.4 presenta el
+    resultado real; las secciones anteriores conservan su corte histórico.
 
     El objetivo es maximizar el score final de la competencia: probar flips,
     buscar nuevas arquitecturas, mejorar representaciones y estudiar fuentes
@@ -57,7 +58,7 @@ def append_iterative_section(md, code):
     contienen 64 IDs nuevos cada una; E amplía la cobertura en 128 filas,
     particionadas en cuatro subgrupos de 32. Sus CSV y auditorías se generan
     con `compose_four_information_probes_20261020.py`. La matriz siguiente
-    describe archivos **preparados**, todavía sin scores recibidos:
+    describe los archivos exactos **presentados y puntuados**:
 
     | Prueba sobre la 15 | A | B | C | D | E | Ganancia pública |
     |---|---:|---:|---:|---:|---:|---|
@@ -125,8 +126,8 @@ def append_iterative_section(md, code):
     0,5). El ranking enumera combinaciones disjuntas. La consolidación
     automática exige un efecto público positivo **identificado por grupo o
     para la combinación exacta probada**; si gana A+B se puede conservar
-    entero aunque no sepamos qué aportó cada parte. Con la 16 sin score
-    conserva la 15. Una prueba exploratoria nueva se
+    entero aunque no sepamos qué aportó cada parte. Antes de recibir los scores
+    conservaba la 15; ahora selecciona **solo A**. Una prueba exploratoria nueva se
     diseña aparte para obtener información, según el presupuesto restante.
     Repetir con previas Beta(1,1), Beta(2,2) y una previa calibrada por
     CV agrupada, y factores de transferencia entre cero y uno.
@@ -174,4 +175,79 @@ def append_iterative_section(md, code):
     if registro['scores']['16'] is None:
         assert int(ranking.iloc[0].flips) == 0  # no inventar evidencia pendiente
     print('Diseño, archivos y evidencia observada comprobados.')
+    """)
+    md(r"""
+    ### 13.4 Resultados observados: separar saldos y confianza
+
+    Con los cinco resultados, las ganancias respecto de la 15 son
+    $(-5,-16,-25,-24,-50)$. Al resolver las ecuaciones obtenemos
+    **A: +2; B: −7; C: −18; D: −17; E: −15** aciertos públicos netos.
+    La 16 perdió porque mezclaba A y B; conservar solo A añade dos aciertos.
+    La candidata `submission_consolidada_A32_sobre15_no_enviada.csv` tiene
+    32 flips y score público **inferido 0,94533**, aún sin medir directamente.
+
+    El gráfico izquierdo es un saldo identificado bajo máscara fija de 21.000
+    filas y truncamiento. El derecho es una inferencia probabilística diferente:
+    estima la tasa de acierto de flips dentro de cada cohorte con Beta(2,2),
+    integrando la cantidad desconocida de filas públicas. No identifica cada ID.
+    En A la media es 0,539 pero el intervalo del 95 % va de 0,349 a 0,724:
+    **la pequeña mejora pública todavía deja mucha incertidumbre de transferencia**.
+    El beneficio oculto esperado es +0,79 aciertos; su intervalo predictivo del
+    95 % es [−6,+8]. Son supuestos de intercambiabilidad, no resultados ocultos.
+    Las marginales de máscara se aproximan como independientes entre cohortes.
+    """)
+    code(r"""
+    resultados = json.loads((ROOT/'results/revision_submissions/resultados_cruzados_16_a_20.json').read_text(encoding='utf-8'))
+    tabla(pd.DataFrame(resultados['observed_submissions']))
+    confianzas = pd.DataFrame(resultados['cohort_posterior'])
+    tabla(confianzas[['cohort','n','public_gain_identified','mean_flip_correctness',
+                     'flip_correctness_ci_low','flip_correctness_ci_high',
+                     'expected_hidden_gain','prob_hidden_gain_positive']])
+    import matplotlib.pyplot as plt
+    fig, axes = plt.subplots(1, 2, figsize=(12, 4.3))
+    colores = ['#23875b' if x > 0 else '#c65a50' for x in confianzas.public_gain_identified]
+    axes[0].bar(confianzas.cohort, confianzas.public_gain_identified, color=colores)
+    axes[0].axhline(0, color='#555555', lw=1)
+    axes[0].set(title='Saldo público identificado por cohorte', xlabel='Cohorte', ylabel='Aciertos netos al aplicar flips')
+    for i, fila in confianzas.iterrows():
+        axes[0].text(i, fila.public_gain_identified + (1 if fila.public_gain_identified > 0 else -1),
+                     f'{fila.public_gain_identified:+d}', ha='center',
+                     va='bottom' if fila.public_gain_identified > 0 else 'top')
+    medias = confianzas.mean_flip_correctness.to_numpy()
+    axes[1].errorbar(medias, np.arange(len(medias)),
+        xerr=np.vstack([medias-confianzas.flip_correctness_ci_low,
+                        confianzas.flip_correctness_ci_high-medias]), fmt='o', capsize=5, color='#356ca1')
+    axes[1].set_yticks(np.arange(len(medias)), confianzas.cohort)
+    axes[1].axvline(.5, color='#777777', linestyle='--', label='50 %')
+    axes[1].set(xlim=(0,1), title='Tasa de acierto: posterior e intervalo 95 %',
+                xlabel='Probabilidad de acertar el flip (modelo de cohorte)', ylabel='Cohorte')
+    axes[1].invert_yaxis()
+    fig.tight_layout()
+    plt.show()
+    candidata = resultados['conditional_candidate']
+    candidata_path = ROOT/candidata['file']
+    assert sha256(candidata_path.read_bytes()).hexdigest() == candidata['sha256']
+    assert candidata['public_score_observed'] is None
+    assert candidata['public_score_inferred'] == '0.94533'
+    assert pd.read_csv(candidata_path).equals(mejor_condicional)
+    print('Candidata condicional:', candidata_path.name, '| 32 flips | score inferido, no medido.')
+    """)
+    md(r"""
+    ### 13.5 Próxima tanda: resolver heterogeneidad y probar transferencia
+
+    C y D fueron negativos; su apoyo de modelos no bastó para estos flips.
+    E fue negativo como agregado, pero sus cuatro subgrupos de 32 siguen
+    sin separar. Propuesta todavía **sin generar CSV**: probar A+E1+E2,
+    A+E1+E3 y A+E1+E4, siempre sobre la 15. Si $h_i=g_i-a$ y $e=-15$,
+    entonces $e_1=(h_1+h_2+h_3-e)/2$ y los otros efectos se obtienen por
+    diferencia. Tres scores nuevos más el total conocido identifican los
+    cuatro saldos de E.
+
+    La cuarta prueba se reserva para una cohorte F con IDs nuevos y señales
+    semejantes a A, auditada antes de generarla: comprueba si la relación se
+    extiende. La quinta consolida después de observar esas cuatro pruebas.
+    Esta es una propuesta adaptable: no conocemos aún los scores 21–25 ni
+    la composición factible de F. Seguir mejorando modelos y datos; el
+    ensamble de mejor CV no se convierte automáticamente en una política
+    de flips fiable para todos los casos dudosos.
     """)

@@ -14,7 +14,8 @@ from itertools import product
 import numpy as np
 import pandas as pd
 from scipy.special import betaln, logsumexp
-from scipy.stats import betabinom, hypergeom
+from scipy.optimize import brentq
+from scipy.stats import beta, betabinom, hypergeom
 
 from ap2026q2_submission_review import score_count_candidates
 
@@ -57,6 +58,58 @@ def cohort_prior(n: int, a: float = 2., b: float = 2.,
     result["probability"] = np.exp(result.log_mass - logsumexp(result.log_mass))
     assert np.isclose(result.probability.sum(), 1)
     return result.sort_values("gain").reset_index(drop=True)
+
+
+def cohort_confidence(n: int, gain: int, a: float = 2., b: float = 2.,
+                      test_total: int = 30000, public_total: int = 21000,
+                      credible_level: float = .95) -> dict[str, float]:
+    """Condition on an identified public balance, retaining mask uncertainty.
+
+    The beta mixture describes an exchangeable cohort, not observed row labels.
+    Hidden gains integrate both parameter and finite-count predictive uncertainty.
+    Public/hidden transfer and the beta prior remain modeling assumptions.
+    """
+    if (not 0 < n <= test_total or not 0 < public_total < test_total or
+            a <= 0 or b <= 0 or not 0 < credible_level < 1 or
+            int(gain) != gain or abs(gain) > n):
+        raise ValueError("invalid cohort confidence parameters")
+    states = []
+    for m in range(max(0, n - test_total + public_total), min(n, public_total) + 1):
+        if (m + gain) % 2:
+            continue
+        k = (m + gain) // 2
+        if 0 <= k <= m:
+            states.append((m, k, hypergeom.logpmf(m, test_total, public_total, n)
+                           + betabinom.logpmf(k, m, a, b)))
+    if not states:
+        raise ValueError("no mask can explain the public balance")
+    ms, ks, log_weights = np.array(states, dtype=float).T
+    weights = np.exp(log_weights - logsumexp(log_weights))
+    aa, bb = a + ks, b + ms - ks
+    tail = (1 - credible_level) / 2
+    quantile = lambda q: brentq(lambda p: float(weights @ beta.cdf(p, aa, bb)) - q, 0, 1)
+    distribution = np.zeros(2 * n + 1)
+    support = np.arange(-n, n + 1)
+    for m, k, w in zip(ms.astype(int), ks.astype(int), weights):
+        hidden = n - m
+        successes = np.arange(hidden + 1)
+        distribution[2 * successes - hidden + n] += w * betabinom.pmf(
+            successes, hidden, a + k, b + m - k)
+    distribution /= distribution.sum()
+    cdf = distribution.cumsum()
+    return {
+        "mean_flip_correctness": float(weights @ (aa / (aa + bb))),
+        "flip_correctness_ci_low": float(quantile(tail)),
+        "flip_correctness_ci_high": float(quantile(1 - tail)),
+        "prob_flip_rate_above_half": float(weights @ beta.sf(.5, aa, bb)),
+        "expected_public_rows": float(weights @ ms),
+        "expected_hidden_gain": float(distribution @ support),
+        "prob_hidden_gain_positive": float(distribution[support > 0].sum()),
+        "prob_hidden_gain_zero": float(distribution[support == 0].sum()),
+        "prob_hidden_gain_negative": float(distribution[support < 0].sum()),
+        "hidden_gain_ci_low": int(support[np.searchsorted(cdf, tail)]),
+        "hidden_gain_ci_high": int(support[np.searchsorted(cdf, 1 - tail)]),
+    }
 
 
 def infer_cohorts(sizes: dict[str, int], experiments: dict[str, list[str]],

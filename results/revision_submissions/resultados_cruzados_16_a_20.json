@@ -1,0 +1,222 @@
+{
+  "source": "Five scores 16-20 explicitly supplied by the user after submission.",
+  "assumptions": {
+    "public_rows": 21000,
+    "test_rows": 30000,
+    "display": "truncate",
+    "fixed_public_mask": true,
+    "prior": "Beta(2,2)",
+    "transfer_limitation": "Cohort exchangeability is unverified on hidden rows. Marginal mask priors are used independently across cohorts."
+  },
+  "baseline": {
+    "name": "15",
+    "score": "0.94523",
+    "file": "submissions/20261019/submission_15_top16_Q4_sobre_mejor11.csv",
+    "sha256": "ce425f4f88720ae74e1a415f92b50f75279ae3d26c1deae278c3c7bb13c55891"
+  },
+  "observed_submissions": [
+    {
+      "submission": "16",
+      "score_observed": "0.94500",
+      "public_correct_assuming_21000": 19845,
+      "public_gain_vs_15": -5,
+      "flips": 64
+    },
+    {
+      "submission": "17",
+      "score_observed": "0.94447",
+      "public_correct_assuming_21000": 19834,
+      "public_gain_vs_15": -16,
+      "flips": 96
+    },
+    {
+      "submission": "18",
+      "score_observed": "0.94404",
+      "public_correct_assuming_21000": 19825,
+      "public_gain_vs_15": -25,
+      "flips": 96
+    },
+    {
+      "submission": "19",
+      "score_observed": "0.94409",
+      "public_correct_assuming_21000": 19826,
+      "public_gain_vs_15": -24,
+      "flips": 96
+    },
+    {
+      "submission": "20",
+      "score_observed": "0.94285",
+      "public_correct_assuming_21000": 19800,
+      "public_gain_vs_15": -50,
+      "flips": 256
+    }
+  ],
+  "identified_public_gains": {
+    "A": 2,
+    "B": -7,
+    "C": -18,
+    "D": -17,
+    "E": -15
+  },
+  "cohort_posterior": [
+    {
+      "cohort": "A",
+      "n": 32,
+      "public_gain_identified": 2,
+      "mean_flip_correctness": 0.5386959664268414,
+      "flip_correctness_ci_low": 0.34916759100384465,
+      "flip_correctness_ci_high": 0.7236979830784603,
+      "prob_flip_rate_above_half": 0.6552253987937979,
+      "expected_public_rows": 22.116778716415567,
+      "expected_hidden_gain": 0.7861095827325861,
+      "prob_hidden_gain_positive": 0.4757271076737778,
+      "prob_hidden_gain_zero": 0.21244352527658675,
+      "prob_hidden_gain_negative": 0.3118293670496355,
+      "hidden_gain_ci_low": -6,
+      "hidden_gain_ci_high": 8
+    },
+    {
+      "cohort": "B",
+      "n": 32,
+      "public_gain_identified": -7,
+      "mean_flip_correctness": 0.3648677130516137,
+      "flip_correctness_ci_low": 0.1906095480610543,
+      "flip_correctness_ci_high": 0.55503473208855,
+      "prob_flip_rate_above_half": 0.08051550102079809,
+      "expected_public_rows": 22.171039574251214,
+      "expected_hidden_gain": -2.729524660283809,
+      "prob_hidden_gain_positive": 0.22580668337071774,
+      "prob_hidden_gain_zero": 0.0,
+      "prob_hidden_gain_negative": 0.7741933166292824,
+      "hidden_gain_ci_low": -9,
+      "hidden_gain_ci_high": 5
+    },
+    {
+      "cohort": "C",
+      "n": 64,
+      "public_gain_identified": -18,
+      "mean_flip_correctness": 0.31379452136367336,
+      "flip_correctness_ci_low": 0.18791042647488693,
+      "flip_correctness_ci_high": 0.4513368589023219,
+      "prob_flip_rate_above_half": 0.0042910067528467155,
+      "expected_public_rows": 44.616062432402856,
+      "expected_hidden_gain": -7.323945094540415,
+      "prob_hidden_gain_positive": 0.05236728176976798,
+      "prob_hidden_gain_zero": 0.05722480979005625,
+      "prob_hidden_gain_negative": 0.8904079084401758,
+      "hidden_gain_ci_low": -18,
+      "hidden_gain_ci_high": 2
+    },
+    {
+      "cohort": "D",
+      "n": 64,
+      "public_gain_identified": -17,
+      "mean_flip_correctness": 0.3240876786417739,
+      "flip_correctness_ci_low": 0.19704888418768032,
+      "flip_correctness_ci_high": 0.4621234430063459,
+      "prob_flip_rate_above_half": 0.0065568565619108865,
+      "expected_public_rows": 44.602420840954295,
+      "expected_hidden_gain": -6.924075704718769,
+      "prob_hidden_gain_positive": 0.08924585444581368,
+      "prob_hidden_gain_zero": 0.0,
+      "prob_hidden_gain_negative": 0.9107541455541863,
+      "hidden_gain_ci_low": -17,
+      "hidden_gain_ci_high": 3
+    },
+    {
+      "cohort": "E",
+      "n": 128,
+      "public_gain_identified": -15,
+      "mean_flip_correctness": 0.41938043939842046,
+      "flip_correctness_ci_low": 0.32074929289980153,
+      "flip_correctness_ci_high": 0.5205841823570243,
+      "prob_flip_rate_above_half": 0.05896584055419918,
+      "expected_public_rows": 89.32136566892129,
+      "expected_hidden_gain": -6.283563998817022,
+      "prob_hidden_gain_positive": 0.19700176006930645,
+      "prob_hidden_gain_zero": 0.0,
+      "prob_hidden_gain_negative": 0.8029982399306936,
+      "hidden_gain_ci_low": -21,
+      "hidden_gain_ci_high": 9
+    }
+  ],
+  "conditional_candidate": {
+    "file": "submissions/20261020/submission_consolidada_A32_sobre15_no_enviada.csv",
+    "sha256": "95e08ee06a10e61e09f788cd5be8351328828ba49023a6ec157f3f08c006b9a9",
+    "cohorts": [
+      "A"
+    ],
+    "flips": 32,
+    "public_correct_inferred": 19852,
+    "public_score_inferred": "0.94533",
+    "public_score_observed": null,
+    "status": "not_submitted",
+    "expected_hidden_gain_beta22": 0.7861095827325861,
+    "IDs": [
+      521,
+      771,
+      1383,
+      1387,
+      1413,
+      1864,
+      2162,
+      2568,
+      4918,
+      5122,
+      5132,
+      6142,
+      7048,
+      7214,
+      12251,
+      12524,
+      12922,
+      13583,
+      14089,
+      14461,
+      14680,
+      14999,
+      15275,
+      16850,
+      22031,
+      22299,
+      22549,
+      23291,
+      24010,
+      25646,
+      26115,
+      27141
+    ]
+  },
+  "remaining_unknown": "Individual labels and public membership of all rows; E1-E4 separate effects; actual hidden performance.",
+  "next_round_design_only": {
+    "status": "not_generated",
+    "anchor_A_gain": 2,
+    "known_E_total_gain": -15,
+    "experiments": {
+      "21": [
+        "A",
+        "E1",
+        "E2"
+      ],
+      "22": [
+        "A",
+        "E1",
+        "E3"
+      ],
+      "23": [
+        "A",
+        "E1",
+        "E4"
+      ],
+      "24": [
+        "A",
+        "F_new_independent"
+      ],
+      "25": [
+        "consolidate_after_21_to_24"
+      ]
+    },
+    "E1_formula": "(g21+g22+g23 - 3*a - e)/2",
+    "F_requirement": "Choose IDs only after auditing available fresh candidates and independent model support."
+  }
+}

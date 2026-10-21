@@ -29,6 +29,14 @@ def sha(path: Path) -> str:
 
 def main() -> None:
     assert sha(CONTROL) == CONTROL_SHA
+    manifest_path = DEST / "prueba_16_manifiesto.json"
+    if manifest_path.exists():
+        recorded = json.loads(manifest_path.read_text(encoding="utf8"))
+        if recorded.get("score_16") is not None:
+            assert sha(DEST / recorded["submission"]) == recorded["submission_sha256"]
+            assert sha(DEST / recorded["audit"]) == recorded["audit_sha256"]
+            print(json.dumps({"frozen_scored_probe": "16", "score": recorded["score_16"]}))
+            return
     base = pd.read_csv(CONTROL)
     assert base.shape == (30000, 2) and list(base.columns) == ["ID", "condition"]
     assert np.array_equal(base.ID.to_numpy(), np.arange(1, 30001))

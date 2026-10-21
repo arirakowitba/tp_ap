@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from ap2026q2_submission_review import displayed_score
 from ap2026q2_iterative_submissions import (
-    choose_combination, infer_cohorts, public_correct, validate_baseline,
+    choose_combination, cohort_confidence, infer_cohorts, public_correct, validate_baseline,
 )
 
 
@@ -74,6 +74,27 @@ class IterativeEvidenceTest(unittest.TestCase):
         self.assertEqual(len(joint), 1)
         self.assertEqual([int(joint.iloc[0][g]) for g in sizes], list(effects.values()))
         self.assertTrue(summary.feasible_public_gains.eq(1).all())
+
+    def test_observed_round_identifies_only_a_as_positive(self):
+        import json
+        record = json.loads((ROOT / "results/revision_submissions/feedback_iterativo_20261020.json").read_text())
+        sizes = dict(A=32, B=32, C=64, D=64, E=128)
+        summary, joint = infer_cohorts(sizes, record["experiments"], record["scores"],
+                                       record["baseline"]["score"])
+        self.assertEqual(len(joint), 1)
+        self.assertEqual([int(joint.iloc[0][g]) for g in sizes], [2, -7, -18, -17, -15])
+        self.assertEqual(public_correct("0.94533"), 19852)
+        self.assertEqual(summary.loc[summary.expected_public_gain.gt(0), "cohort"].tolist(), ["A"])
+
+    def test_hidden_prediction_remains_uncertain_after_public_gain(self):
+        confidence = cohort_confidence(32, 2)
+        self.assertLess(confidence["flip_correctness_ci_low"], .5)
+        self.assertGreater(confidence["flip_correctness_ci_high"], .5)
+        self.assertLess(confidence["prob_hidden_gain_positive"], .75)
+        self.assertGreater(confidence["prob_hidden_gain_negative"], .1)
+        finite = cohort_confidence(1, 1)
+        self.assertEqual(finite["expected_hidden_gain"], 0)
+        self.assertEqual(finite["prob_hidden_gain_zero"], 1)
 
 
 if __name__ == "__main__":

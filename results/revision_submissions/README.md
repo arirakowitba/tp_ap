@@ -1,23 +1,26 @@
 # Revisión consolidada de submissions
 
-**Actualización del 20/10/2026:** la sección 13.1–13.3 del notebook agrega
+**Actualización del 20/10/2026:** la sección 13.1-13.5 del notebook agrega
 un registro de scores posteriores y un optimizador reproducible. Ingresar el
 score nuevo como texto en `feedback_iterativo_20261020.json`; conservar en
 `submissions/` el CSV exacto y la auditoría de las cohortes, y volver a
 ejecutar `python scripts/execute_submission_review.py --in-process`. La 15
-obtuvo 0,94523; la 16 todavía no tiene score registrado. Para exportar el
+obtuvo 0,94523; ya se recibieron los scores de la 16 a la 20. Para exportar el
 resultado condicional, usar `actualizar_submission(salida=ROOT/'submissions/20261020/submission_consolidada.csv')`
 en el notebook. Sin ganancia identificada de un grupo o de un lote combinado,
-conserva la 15.
+conserva la 15. Con la evidencia actual selecciona solo A, 32 flips y score
+público inferido 0,94533, todavía sin enviar. Ver los
+[resultados y sus límites](resultados_cruzados_16_a_20.md).
 
-Las cuatro pruebas 17–20 ya están generadas y auditadas, pendientes de
-evaluación junto con la 16. Sus cohortes A–E, matriz de contrastes, alcance de
+Las cuatro pruebas 17–20 y la 16 están auditadas y puntuadas. Sus cohortes
+A–E, matriz de contrastes, alcance de
 la inferencia y estrategia para explorar casos menos conocidos están en
 [la estrategia cruzada](../../submissions/20261020/estrategia_cruzada_17_a_20.md).
 El manifiesto [17–20](../../submissions/20261020/pruebas_17_a_20_manifiesto.json)
-registra hashes y filas. Reproducir la generación con
-`python scripts/compose_four_information_probes_20261020.py`; los scores
-pendientes se dejan en `null` hasta recibirlos.
+registra hashes, filas y scores. Reproducir el análisis con
+`python scripts/analyze_crossed_results_20261020.py`. El generador original
+queda congelado y verifica hashes al volver a ejecutarlo. Los scores futuros
+desconocidos se dejan en `null` hasta recibirlos.
 
 Abrir [el notebook 23](../../notebooks/23_revision_submissions_y_flips.ipynb).
 Está ejecutado y pensado para exponer desde cero. Incluye ejemplos didácticos

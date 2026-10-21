@@ -64,9 +64,11 @@ El mejor score local documentado es **0,927619** (CatBoost + SVD + 75 atributos 
 
 ## Pruebas cruzadas del 20 de octubre
 
-La submission 15 obtuvo **0,94523** según el resultado recibido. Se prepararon
-la 16 y cuatro CSV nuevos (17–20) para contrastar y ampliar 320 casos dudosos
-distintos; sus scores aún no se recibieron. Ver
+La submission 15 obtuvo **0,94523**. Ya se recibieron los cinco resultados de
+16–20: los saldos públicos identificados son **A:+2, B:−7, C:−18, D:−17, E:−15**,
+bajo la hipótesis de 21.000 filas públicas fijas y truncamiento. La candidata
+con solo A infiere **0,94533** público; aún no se envió y la transferencia al
+oculto sigue incierta. Ver [resultados y próxima tanda](results/revision_submissions/resultados_cruzados_16_a_20.md),
 [estrategia y matriz de pruebas](submissions/20261020/estrategia_cruzada_17_a_20.md),
 [manifiesto reproducible](submissions/20261020/pruebas_17_a_20_manifiesto.json)
 y la sección 13 del [notebook de revisión](notebooks/23_revision_submissions_y_flips.ipynb).

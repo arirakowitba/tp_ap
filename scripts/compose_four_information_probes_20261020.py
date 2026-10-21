@@ -65,6 +65,18 @@ def choose(pool: pd.DataFrame, n: int, score: pd.Series,
 
 def main() -> None:
     assert sha(BASE15) == EXPECTED15
+    # Scored artifacts are evidence: never rewrite them with newly trained models.
+    feedback_path = STAGE / "results/revision_submissions/feedback_iterativo_20261020.json"
+    if feedback_path.exists():
+        feedback = json.loads(feedback_path.read_text(encoding="utf8"))
+        observed = {k: v for k, v in feedback["scores"].items() if v is not None}
+        if observed:
+            frozen = json.loads((DAY / "pruebas_17_a_20_manifiesto.json").read_text(encoding="utf8"))
+            for item in (*frozen["submissions"].values(), *frozen["audits"].values()):
+                assert sha(DAY / item["file"]) == item["sha256"], "scored artifact changed"
+            print(json.dumps({"frozen_scored_round": True, "observed_scores": observed,
+                              "action": "Run analyze_crossed_results_20261020.py; design future probes under new filenames."}))
+            return
     base = pd.read_csv(BASE15)
     assert list(base.columns) == ["ID", "condition"] and len(base) == 30000
     assert np.array_equal(base.ID.to_numpy(), np.arange(1, 30001))

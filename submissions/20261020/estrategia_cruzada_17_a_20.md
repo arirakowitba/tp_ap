@@ -1,7 +1,14 @@
 # Pruebas 17 a 20: medir, contrastar y explorar
 
-**Estado 20/10/2026:** score de la 15 recibido: `0.94523`. La 16 y las
-17–20 están preparadas; no se recibieron scores de ninguna de ellas. El
+**Actualización después de los resultados:** ya se recibieron 16–20. Sus
+saldos públicos por cohorte son A:+2, B:−7, C:−18, D:−17, E:−15 bajo la
+hipótesis de máscara pública fija de 21.000 filas y truncamiento. Ver
+[el análisis completo y próximo diseño](../../results/revision_submissions/resultados_cruzados_16_a_20.md).
+La candidata 15+A infiere 0,94533 público, aún no medido. Las secciones que
+siguen conservan la planificación anterior a recibir los scores.
+
+**Estado al diseñar las pruebas, 20/10/2026:** score de la 15 recibido:
+`0.94523`; todavía no se habían recibido resultados de 16–20. El
 objetivo es aprender durante las próximas rondas para mejorar el score final,
 incluido el 30 % oculto. Todas las pruebas comparan contra **el mismo CSV 15**;
 no se deben sumar scores de dos pruebas distintas como si midieran filas

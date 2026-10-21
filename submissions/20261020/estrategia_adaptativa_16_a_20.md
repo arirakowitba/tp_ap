@@ -1,4 +1,4 @@
-> Actualizacion posterior (20/10): la 15 obtuvo 0,94523 (19.850 aciertos publicos bajo truncamiento y 21.000 filas). La 16 sigue pendiente. La matriz de pruebas cruzadas y el calculo posterior ejecutable estan en la seccion 13 del notebook 23 y en feedback_iterativo_20261020.json. Las propuestas 17-19 de este documento son historicas y se revisan al obtener cada score.
+> Actualizacion despues de recibir 16-20: las ganancias publicas de A/B/C/D/E son +2/-7/-18/-17/-15 bajo 21.000 filas publicas y truncamiento. Ver `../../results/revision_submissions/resultados_cruzados_16_a_20.md` y la seccion 13.4 del notebook. El contenido de este documento conserva la planificacion historica previa a esos resultados.
 
 # Estrategia adaptativa: submissions 16 a 20
 
