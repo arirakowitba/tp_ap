@@ -45,3 +45,42 @@ El usuario define este trabajo como **reward hacking del score final de la compe
 La parte publica representa el 70 % del test segun informo el usuario. Trabajar con 21.000 filas publicas y 9.000 ocultas entre 30.000 es una **hipotesis de calculo** que se revisa si contradice los resultados. Un score solo impone restricciones agregadas sobre las filas afectadas. Analizar conjuntamente cohortes que reaparecen en varias pruebas; no declarar etiquetas individuales. El beneficio oculto se extrapola con incertidumbre y se contrasta con CV agrupada y senales independientes.
 
 El calculo iterativo reproducible vive en la seccion 13 del `notebooks/23_revision_submissions_y_flips.ipynb`, generado por `scripts/build_submission_review_notebook.py` y `scripts/iterative_notebook_section.py`; la inferencia esta en `src/ap2026q2_iterative_submissions.py`. Actualizar `results/revision_submissions/feedback_iterativo_20261020.json` con cada score. La submission 15 obtuvo 0,94523. Ya se recibieron 16:0,94500; 17:0,94447; 18:0,94404; 19:0,94409; 20:0,94285. Sus saldos de cohortes son A:+2, B:-7, C:-18, D:-17, E:-15 bajo 21.000 filas publicas fijas y truncamiento. Solo A suma, con confianza de transferencia aun limitada; 15+A infiere 0,94533 publico, no medido. E1-E4 e IDs individuales siguen sin resolver. Priorizar la validacion de A con casos nuevos y contrastes que separen E; conservar modelos complementarios, evaluando su politica de flips en el subconjunto dudoso. Guardar en el repositorio CSV exactos, hashes, auditorias, patrones, resultados y origen del control. Ver `results/revision_submissions/resultados_cruzados_16_a_20.md`.
+
+## Generalizacion y meta hasta el cierre
+
+Actualizacion explicita del usuario posterior a los resultados 16-20. La meta
+es maximizar el resultado al cierre, con horizonte aproximado de 15 dias y
+una aspiracion de **95-96 % de accuracy publica**, cuidando tambien el 30 %
+oculto. No es un resultado ya alcanzado ni una garantia de que esos niveles
+sean posibles en esta particion. Bajo el denominador publico de 21.000 filas,
+pasar de la 15 al 95 % requiere 100 aciertos netos adicionales; al 96 %, 310.
+La candidata no enviada 15+A reduce esas brechas a 98 y 308.
+
+**No es necesario probar todos los flips ni identificar cada caso dudoso.**
+Se pueden corregir casos nunca incluidos en un probe mediante relaciones
+aprendidas de modelos fuertes, predicciones fuera de fold, similitud entre
+casos, distribuciones y evidencia agregada de pruebas anteriores. Registrar
+esas correcciones como inferencias con incertidumbre y auditar su origen;
+no convertirlas en etiquetas verdaderas para entrenamiento supervisado.
+
+Cada ronda debe combinar entrenamiento y ensambles, tratamientos de datos,
+calibracion y umbrales por segmento, analisis de distribuciones y feedback
+posterior de los probes. Evaluar nuevas relaciones en folds agrupados y en
+los subconjuntos donde se aplicaran, incluyendo clase, categoria, vendedor,
+margen y tipo de desacuerdo. Incorporar la evidencia agregada a la politica
+de seleccion y a sus confianzas, y comprobar su extension a IDs distintos.
+Una familia que falla como regla de flips en un segmento puede seguir
+aportando a un ensamble general: medir ambos usos.
+
+Elegir los probes por su valor para la decision final: cuanto pueden cambiar
+el ranking de predicciones y la confianza transferible a casos no probados,
+ademas de la mejora de score esperada. Evitar objetivos de cobertura total
+o fuerza bruta por si mismos. Mantener exploracion de relaciones nuevas y
+validacion de hallazgos anteriores junto con consolidaciones progresivas.
+
+La proxima tanda prevista tiene cinco envios: cuatro pruebas adaptativas
+que combinen validacion, nueva informacion y extensiones inferidas; la
+quinta se decide **despues** de recibir los cuatro scores. Los tres cruces
+propuestos para separar E1-E4 son una opcion, no una agenda obligatoria:
+reemplazarlos si otra prueba o modelo tiene mayor valor esperado para el
+cierre. Conservar el codigo, registros, auditorias y resultados en el repo.

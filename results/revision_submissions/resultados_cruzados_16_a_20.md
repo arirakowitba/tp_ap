@@ -63,7 +63,11 @@ validar con IDs distintos antes de extrapolarlo.
 
 ## Diseño propuesto para la siguiente tanda
 
-Todavía no hay CSV 21–25 generados. Manteniendo la 15 como control y A como
+Todavía no hay CSV 21–25 generados. Esta propuesta es adaptable: tras la
+actualización de la metodología en `COMPETITION_STRATEGY.md`, se prioriza la
+ganancia esperada al cierre y la generalización a casos sin probar. No es
+obligatorio dedicar tres cupos a separar E si nuevos modelos, tratamientos
+o relaciones entre segmentos ofrecen más valor informativo. Manteniendo la 15 como control y A como
 ancla de aporte conocido `a=+2`:
 
 | Propuesta | Flips | Información |
