@@ -102,6 +102,13 @@ def run():
     features, y, groups, raw = load_data()
     folds = list(StratifiedGroupKFold(n_splits=3, shuffle=True,
                                      random_state=20261200).split(np.zeros(len(y)), y, groups))
+    sellers = raw.seller.iloc[:len(y)].astype(str).to_numpy()
+    validation_protocol = {
+        "n_rows": len(y), "unique_group_ids": int(np.unique(groups).size),
+        "seller_seen_in_fit_fraction_by_fold": [float(pd.Series(sellers[va]).isin(set(sellers[tr])).mean())
+                                                 for tr, va in folds],
+        "note": "Group-ID separation alone does not imply seller separation; sample-unique groups give row-level validation."}
+    say("VALIDATION_PROTOCOL", json.dumps(validation_protocol))
     olddir = ROOT / "experiment_outputs_hour_20261017_2200" / "rotated_cv"
     old = (np.load(olddir / "RichDepthwise_oof_predictions.npz")["oof"]
            + np.load(olddir / "RichPlain_oof_predictions.npz")["oof"]) / 2
@@ -222,6 +229,7 @@ def run():
                                          + np.load(olddir / "RichPlain_oof_predictions.npz")["test"]) / 2,
                                         **test_preds}.items()}}
     result = {"date_argentina": "2026-10-20", "n_train": 70000, "n_test": 30000,
+              "validation_protocol_audit": validation_protocol,
               "folds": reports, "metrics": summary, "posterior_cohort_diagnostics": diagnostics,
               "scope": "All supervised fits confined to outer train folds; public group feedback diagnostic only.",
               "limitation": "The train labels and CV split have been used in past experiments: not a fresh blind test.",

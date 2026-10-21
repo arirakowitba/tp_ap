@@ -1,0 +1,61 @@
+{
+  "n_train": 70000,
+  "n_test": 30000,
+  "training_sellers": 27949,
+  "test_seen_seller_rows": 21487,
+  "test_unseen_seller_rows": 8513,
+  "test_seen_seller_fraction": 0.7162333333333334,
+  "cv_seen_seller_fraction": 0.6737714285714286,
+  "unique_cv_groups": 70000,
+  "groups_all_distinct": true,
+  "seller_disjoint_validation": false,
+  "folds": [
+    {
+      "fold": 0,
+      "rows": 23334,
+      "seller_seen_rows": 15712,
+      "seller_seen_fraction": 0.6733521899374304
+    },
+    {
+      "fold": 1,
+      "rows": 23333,
+      "seller_seen_rows": 15764,
+      "seller_seen_fraction": 0.6756096515664509
+    },
+    {
+      "fold": 2,
+      "rows": 23333,
+      "seller_seen_rows": 15688,
+      "seller_seen_fraction": 0.6723524621780311
+    }
+  ],
+  "metrics": {
+    "old_catboost": {
+      "oof_accuracy": 0.9331,
+      "seen_seller_accuracy": 0.9595878212195742,
+      "unseen_seller_accuracy": 0.8783937642319145,
+      "test_mix_reweighted_accuracy_hypothesis": 0.9365476543150426
+    },
+    "text_linear": {
+      "oof_accuracy": 0.9093285714285714,
+      "seen_seller_accuracy": 0.9329149351200068,
+      "unseen_seller_accuracy": 0.8606148187073043,
+      "test_mix_reweighted_accuracy_hypothesis": 0.9123985720859622
+    },
+    "svd_lgbm": {
+      "oof_accuracy": 0.9171,
+      "seen_seller_accuracy": 0.9367314053091341,
+      "unseen_seller_accuracy": 0.876554562970748,
+      "test_mix_reweighted_accuracy_hypothesis": 0.9196552233482448
+    },
+    "old_70_new_30": {
+      "oof_accuracy": 0.9358571428571428,
+      "seen_seller_accuracy": 0.9611568145195488,
+      "unseen_seller_accuracy": 0.8836048344718865,
+      "test_mix_reweighted_accuracy_hypothesis": 0.9391501476480238
+    }
+  },
+  "source_groups_file": "experiment_outputs_complementary_architectures_20261017/groups_all.npy",
+  "source_raw_sha256": "0bda446f315d329acfd1cff01e2abb599211823f90cbe6cc5e1859ddefc63dbd",
+  "interpretation": "The historical groups are all distinct. Existing CV holds out rows, not sellers. Reweighting assumes conditional accuracy is unchanged and is not a hidden-score observation or confidence bound."
+}

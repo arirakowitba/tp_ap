@@ -178,6 +178,8 @@ def run():
         np.savez_compressed(OUT / f"{name}_grouped_cv_predictions.npz",
                             oof=pooled[name], test=predicted[name])
     report = {"date_argentina": "2026-10-20", "rows_train": len(y),
+              "validation_protocol_audit": {"unique_group_ids": int(np.unique(g).size),
+                  "n_rows": len(g), "note": "Sample-unique group IDs do not enforce seller-disjoint validation."},
               "fold_seed": 20261200, "cv": comparison, "folds": summaries,
               "scored_cohort_diagnostics": cohorts,
               "public_feedback_as_individual_labels": False,

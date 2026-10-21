@@ -115,5 +115,11 @@
   },
   "scope": "All supervised fits confined to outer train folds; public group feedback diagnostic only.",
   "limitation": "The train labels and CV split have been used in past experiments: not a fresh blind test.",
-  "seconds": 493.47660303115845
+  "seconds": 493.47660303115845,
+  "validation_protocol_audit": {
+    "reference": "results/global_target_96/validation_distribution_audit.json",
+    "unique_groups_in_70000_rows": 70000,
+    "seller_blocking_enforced_by_group_ids": false,
+    "note": "A zero overlap of sample-unique group IDs does not establish seller-disjoint CV. Original numerical metrics are preserved."
+  }
 }

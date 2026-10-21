@@ -38,8 +38,13 @@ equilibran las dos etiquetas alternativas, se evitan vendedores repetidos y
 se limitan a cuatro los casos de una misma categoría. Los pesos de selección
 son rangos de prioridad, no probabilidades calibradas.
 
-Se entrenaron dos modelos complementarios en tres folds agrupados por
-vendedor: TF-IDF con regresión logística (`0.90933` accuracy OOF) y SVD de
+Se entrenaron dos modelos complementarios en tres folds con
+`StratifiedGroupKFold`: la auditoría posterior encontró 70.000 grupos
+distintos para 70.000 filas, por lo que **no separaban vendedores**. Esta
+corrección mantiene las métricas numéricas y modifica su interpretación:
+son predicciones fuera de fila en una mezcla de vendedores vistos/nuevos.
+Ver `../../results/global_target_96/validation_distribution_audit.json`.
+Los modelos fueron TF-IDF con regresión logística (`0.90933` accuracy OOF) y SVD de
 texto más LightGBM (`0.91710`). El CatBoost anterior alcanza `0.93310` en
 esos folds; combinar 70 % de ese CatBoost con 30 % de las señales nuevas
 alcanza `0.93586` OOF. Son medidas internas reutilizadas para selección y

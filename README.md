@@ -75,6 +75,13 @@ y la sección 13 del [notebook de revisión](notebooks/23_revision_submissions_y
 El optimizador posterior solo trata scores observados como evidencia de
 balances públicos de grupos y descuenta la incertidumbre del 30 % oculto.
 
+La meta actualizada es **96 % global** sobre las 30.000 filas. Ver
+[escenarios, auditoría de vendedores y estrategia con margen](results/global_target_96/README.md)
+y la sección 13.6 del notebook. El cálculo ponderado exige más que 95–96 %
+público si el oculto queda por debajo de 96 %. La auditoría corrigió además
+la descripción de la CV anterior: sus grupos únicos por fila no separaban
+vendedores. Se conservan las métricas y se documenta su alcance real.
+
 ## Ronda complementaria del10 de octubre
 
 Estado: **interrumpida**, con57 configuraciones y métricas respaldadas. La búsqueda conjunta llegó a94,0571% de selección; el stacking de3 bases obtuvo94,0143% en confirmación, por debajo del94,2143% local anterior. No hay una nueva submission confirmada ni evidencia de95%. La referencia pública informada por el usuario sigue siendo94,428%.

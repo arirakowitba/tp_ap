@@ -251,3 +251,74 @@ def append_iterative_section(md, code):
     ensamble de mejor CV no se convierte automáticamente en una política
     de flips fiable para todos los casos dudosos.
     """)
+    md(r"""
+    ### 13.6 Meta actualizada: 96 % global en las 30.000 filas
+
+    La identidad solicitada es $A_{global}=0.7P+0.3H$.
+    Con $P=0.95$ y un $H=0.94523$ **hipotético**, da 94,8569 %, no 96 %.
+    Para llegar al 96 % con ese oculto se requieren 20.293 aciertos públicos,
+    96,6333 %. El score de la 15 ya incorpora feedback: no es una evaluación
+    independiente del oculto. La igualdad de calidad entre segmentos es un
+    supuesto de ese escenario, no una etiqueta observada.
+
+    La meta operativa con margen es **97 % público y 95 % oculto central**:
+    96,4 % global. Para hablar de alta confianza exigiremos
+    $\Pr(C_{pub}+C_{hid}\ge 28800\mid D)\ge0.95$ con un modelo predictivo
+    conjunto validado. Con 97 % público, un límite predictivo inferior oculto
+    de 94 % deja 96,1 % global. **Ese criterio no está demostrado hoy**;
+    las tablas son escenarios y presupuestos, no garantías de alcanzar la meta.
+
+    Una auditoría corrigió la descripción de la CV anterior: sus 70.000
+    grupos son distintos, por lo que no separan vendedores. Las métricas
+    son OOF por fila; aproximadamente 67,4 % de validación tiene vendedor visto,
+    frente a 71,6 % del test. La próxima evaluación debe medir vendedores
+    vistos y nuevos y la transferencia de todo el procedimiento 70/30.
+    El ensamble actual obtuvo 96,12 % OOF en vistos y 88,36 % en nuevos:
+    este último segmento ofrece un frente concreto de mejora, sin que esos
+    números sean scores observados del test.
+    """)
+    code(r"""
+    from ap2026q2_global_objective import global_accuracy, required_public_correct, required_hidden_correct
+    global_dir = ROOT/'results/global_target_96'
+    plan_global = json.loads((global_dir/'global_plan.json').read_text(encoding='utf-8'))
+    escenarios = pd.read_csv(global_dir/'scenarios.csv')
+    mezcla = json.loads((global_dir/'validation_distribution_audit.json').read_text(encoding='utf-8'))
+    tabla(escenarios)
+    tabla(pd.DataFrame(mezcla['metrics']).T)
+    print('Criterio de confianza establecido:', plan_global['confidence_gate']['gate_established'])
+    assert not plan_global['confidence_gate']['gate_established']
+    assert required_public_correct(.94523) == 20293
+    assert required_hidden_correct(20370) == 8430
+    assert np.isclose(global_accuracy(.95,.94523),.948569)
+    assert mezcla['unique_cv_groups'] == 70000 and not mezcla['seller_disjoint_validation']
+    fig, axes = plt.subplots(1, 2, figsize=(12.8, 4.8))
+    publico = np.linspace(.94,.985,300)
+    oculto_minimo = (.96-.7*publico)/.3
+    axes[0].plot(publico, oculto_minimo, color='#356ca1', label='Frontera de 96 % global')
+    axes[0].fill_between(publico, oculto_minimo, 1, color='#73b98a', alpha=.18)
+    for x,y,texto,color in [(.95,.94523,'95 % público: global 94,86 %','#c65a50'),
+                            (.97,.95,'Meta central: global 96,4 %','#23875b'),
+                            (.97,.94,'Umbral oculto propuesto: 96,1 %','#ac7d24')]:
+        axes[0].scatter([x],[y],color=color,s=50,zorder=4)
+        axes[0].annotate(texto,(x,y),xytext=(-6 if x>=.965 else 6,6),
+                         ha='right' if x>=.965 else 'left',textcoords='offset points',fontsize=8)
+    axes[0].set(xlim=(.94,.985),ylim=(.925,.975),xlabel='Accuracy pública',ylabel='Accuracy oculta',
+                title='El objetivo global exige las dos partes')
+    axes[0].xaxis.set_major_formatter(PercentFormatter(1))
+    axes[0].yaxis.set_major_formatter(PercentFormatter(1))
+    axes[0].legend(loc='lower left',fontsize=8)
+    conocidos = np.array([mezcla['cv_seen_seller_fraction'],mezcla['test_seen_seller_fraction']])
+    axes[1].bar(['CV histórica','Test real'],conocidos,color='#356ca1',label='Vendedor visto en entrenamiento')
+    axes[1].bar(['CV histórica','Test real'],1-conocidos,bottom=conocidos,color='#c2cfda',label='Vendedor nuevo')
+    for i,valor in enumerate(conocidos):
+        axes[1].text(i,valor/2,f'{valor:.1%}',ha='center',color='white',fontsize=12)
+    axes[1].set(ylim=(0,1),ylabel='Proporción de filas',title='Mezcla a reproducir en validación')
+    axes[1].yaxis.set_major_formatter(PercentFormatter(1))
+    axes[1].legend(loc='lower left',fontsize=8)
+    fig.tight_layout()
+    fig.savefig(global_dir/'global_frontier_and_validation.png',dpi=160,bbox_inches='tight')
+    plt.show()
+    tabla(pd.read_csv(global_dir/'flip_budget.csv'))
+    print('Filas nuevas del ranking anterior:',plan_global['remaining_ranked_unprobed_rows'])
+    print('La estrategia y las metas pendientes están en results/global_target_96/README.md')
+    """)

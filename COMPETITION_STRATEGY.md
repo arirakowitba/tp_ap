@@ -84,3 +84,41 @@ quinta se decide **despues** de recibir los cuatro scores. Los tres cruces
 propuestos para separar E1-E4 son una opcion, no una agenda obligatoria:
 reemplazarlos si otra prueba o modelo tiene mayor valor esperado para el
 cierre. Conservar el codigo, registros, auditorias y resultados en el repo.
+
+## Objetivo actualizado: 96 % global con margen y confianza
+
+El objetivo explicito posterior del usuario es **96 % sobre las 30.000 filas
+completas**, con margen y alta confianza, usando todas las tecnicas anteriores.
+La identidad es A_global = 0.7*A_publica + 0.3*A_oculta. Con 95 % publico y
+un oculto hipotetico de 94,523 %, el global seria 94,8569 %. Con ese oculto
+fijo se necesita aproximadamente 96,633 % publico para llegar a 96 % global.
+La score 15 contiene ajustes con feedback: no mide por si sola la calidad
+oculta de un modelo sin ajustes. La igualdad entre segmentos es una hipotesis.
+
+Meta operativa propuesta: **97 % publico y 95 % oculto central = 96,4 % global**.
+Exigir una distribucion predictiva conjunta validada con probabilidad al menos
+95 % de superar 28.800 aciertos globales; buscar ademas un limite predictivo
+inferior oculto de 94 %, que con 97 % publico da 96,1 % global. Estas son
+metas y criterios, no resultados obtenidos ni confianza ya acreditada.
+
+Auditoria importante: los 70.000 grupos usados en la CV historica son todos
+distintos. Sus folds no separaban vendedores, aunque asi se describieron
+antes. Las metricas OOF se conservan; corregir su interpretacion. El 71,6233 %
+del test pertenece a vendedores vistos, frente a aproximadamente 67,4 % en
+la validacion actual. Preparar protocolos para vendedores vistos y nuevos,
+ponderarlos segun el test y simular un publico 70 % con un 30 % sellado para
+validar la transferencia del procedimiento adaptativo completo.
+El ensamble actual obtuvo 96,1157 % OOF en vendedores vistos y 88,3605 %
+en nuevos. Priorizar representaciones, datos y politicas que mejoren este
+ultimo segmento sin perjudicar el primero. Cada punto porcentual ganado
+en nuevos equivaldria a unos 85 aciertos del test si transfiriera. Un
+escenario objetivo de 98 % en vistos y 92,5 % en nuevos daria 96,4393 %
+global con la mezcla actual; sigue siendo una meta por validar.
+
+Priorizar mejoras de base, datos, ensambles y politicas de correccion por
+segmento, actualizadas con feedback agregado y aplicables a filas no probadas.
+Los probes deben descubrir y confirmar reglas utiles para muchas predicciones.
+No alcanzar confianza aparente suponiendo independencia entre errores ni
+convertir inferencias en etiquetas verdaderas. El detalle y las cuentas
+reproducibles estan en `results/global_target_96/README.md`, el modulo
+`src/ap2026q2_global_objective.py` y la seccion 13.6 del notebook de revision.

@@ -115,5 +115,11 @@
   },
   "public_feedback_as_individual_labels": false,
   "validation_limitation": "Previously reused train labels and folds; not fresh blind validation.",
-  "runtime_seconds": 388.6370151042938
+  "runtime_seconds": 388.6370151042938,
+  "validation_protocol_audit": {
+    "reference": "results/global_target_96/validation_distribution_audit.json",
+    "unique_groups_in_70000_rows": 70000,
+    "seller_blocking_enforced_by_group_ids": false,
+    "note": "A zero overlap of sample-unique group IDs does not establish seller-disjoint CV. Original numerical metrics are preserved."
+  }
 }

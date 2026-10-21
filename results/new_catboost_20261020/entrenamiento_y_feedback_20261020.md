@@ -1,6 +1,8 @@
 # Entrenamiento y feedback posterior: 20/10/2026
 
-**Estado:** la submission 16, con 64 flips sobre la 15, ya está en Library. Esta ronda entrenó modelos nuevos antes de recibir su score. La imagen que comunica el score de la 15 fue recibida, pero el valor numérico de su OCR es ambiguo: falta transcribirlo literalmente para convertirlo a aciertos públicos. No se supone ninguna etiqueta individual de test.
+**Corte histórico previo a recibir los scores 16–20.** Los resultados posteriores están en `../revision_submissions/resultados_cruzados_16_a_20.md`. La auditoría de `../global_target_96/validation_distribution_audit.json` corrigió además la descripción de la CV: los 70.000 grupos son únicos por fila, de modo que no separaban vendedores. Las métricas numéricas se conservan con ese alcance. El texto siguiente describe el estado al escribir este informe.
+
+La submission 16, con 64 flips sobre la 15, ya estaba preparada. Esta ronda entrenó modelos nuevos antes de recibir su score. La imagen del score 15 todavía no tenía transcripción inequívoca al escribir el corte; después el usuario informó `0.94523`. No se supone ninguna etiqueta individual de test.
 
 ## Cambios evaluados
 

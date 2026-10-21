@@ -1,0 +1,43 @@
+{
+  "objective": "96 percent global accuracy over all 30000 test rows; not a claim about the competition's final ranking metric",
+  "public_rows": 21000,
+  "hidden_rows": 9000,
+  "target_global_correct": 28800,
+  "baseline_public_correct": 19850,
+  "reference_hidden_rate_is_hypothetical": 0.94523,
+  "global_with_95_public_reference_hidden": 0.948569,
+  "reference_score_is_post_feedback_not_clean_hidden_validation": true,
+  "operating_target": {
+    "public_accuracy": 0.97,
+    "public_correct": 20370,
+    "public_gain_vs_15": 520,
+    "hidden_mean_accuracy_target": 0.95,
+    "global_mean_target": 0.964,
+    "minimum_hidden_correct_for_96_global": 8430,
+    "hidden_lower_predictive_target": 0.94,
+    "global_at_that_lower_bound": 0.961
+  },
+  "confidence_gate": {
+    "prob_global_at_least_96_required": 0.95,
+    "predictive_draws_available": false,
+    "gate_established": false,
+    "requirements": "Joint seller/category-aware predictive draws, selection-aware shadow 70/30 validation and distribution stress tests; no independent-row certainty from a public score."
+  },
+  "remaining_ranked_unprobed_rows": 1192,
+  "seller_regime_targets_aspirational": {
+    "seen_accuracy": 0.98,
+    "unseen_accuracy": 0.925,
+    "global_at_measured_test_mix": 0.9643928333333334,
+    "test_correct_gain_per_1pp_unseen_improvement": 85.13
+  },
+  "flip_correctness_needed_if_all_remaining_rows_used_for_public_gain_520": 0.8116011505273251,
+  "allocation_75_slots_provisional": {
+    "model_data_policy_probes": 24,
+    "relationship_segment_probes": 24,
+    "fresh_extension_confirmations": 12,
+    "adaptive_consolidations": 15
+  },
+  "scenario_file": "scenarios.csv",
+  "budget_file": "flip_budget.csv",
+  "validation_audit_file": "validation_distribution_audit.json"
+}

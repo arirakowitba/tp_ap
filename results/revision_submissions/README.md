@@ -1,5 +1,12 @@
 # Revisión consolidada de submissions
 
+**Meta posterior actualizada:** 96 % global sobre las 30.000 filas. La
+[estrategia y auditoría de validación](../global_target_96/README.md) y la
+sección 13.6 calculan escenarios, márgenes y un criterio de confianza todavía
+pendiente de validar. Los folds históricos no separaban vendedores: sus
+70.000 IDs de grupo eran todos distintos. Las cifras OOF se mantienen con esa
+interpretación corregida.
+
 **Actualización del 20/10/2026:** la sección 13.1-13.5 del notebook agrega
 un registro de scores posteriores y un optimizador reproducible. Ingresar el
 score nuevo como texto en `feedback_iterativo_20261020.json`; conservar en
