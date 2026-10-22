@@ -1,0 +1,31 @@
+{
+  "weight_deep": 0.5,
+  "threshold": 0.51,
+  "grid": [
+    {
+      "threshold": 0.475,
+      "reweighted_accuracy": 0.9386397727272726
+    },
+    {
+      "threshold": 0.49,
+      "reweighted_accuracy": 0.9385996212121211
+    },
+    {
+      "threshold": 0.5,
+      "reweighted_accuracy": 0.9391360606060606
+    },
+    {
+      "threshold": 0.51,
+      "reweighted_accuracy": 0.939305303030303
+    },
+    {
+      "threshold": 0.525,
+      "reweighted_accuracy": 0.9381721969696968
+    }
+  ],
+  "selection": "Fixed50/50, thresholdselectedtuneonly. Exploratory design after individual confirms, not independent confirmation.",
+  "confirmation": {
+    "accuracy": 0.9431428571428572,
+    "log_loss": 0.14640213017357706
+  }
+}

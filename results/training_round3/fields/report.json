@@ -1,0 +1,67 @@
+{
+  "lock": {
+    "trees": 722,
+    "threshold": 0.475,
+    "config": {
+      "title": {
+        "ngram": [
+          3,
+          5
+        ],
+        "max_features": 30000
+      },
+      "warranty": {
+        "ngram": [
+          2,
+          5
+        ],
+        "max_features": 15000
+      },
+      "C": 4,
+      "seed": 20261023,
+      "folds": 3,
+      "NB_ratio": true
+    },
+    "catboost_params": {
+      "depth": 7,
+      "iterations": 722,
+      "learning_rate": 0.06,
+      "l2_leaf_reg": 15,
+      "random_strength": 0.8,
+      "rsm": 0.8,
+      "border_count": 64,
+      "thread_count": 2,
+      "random_seed": 20261023,
+      "verbose": 200,
+      "allow_writing_files": true,
+      "save_snapshot": true,
+      "snapshot_interval": 30,
+      "loss_function": "Logloss"
+    },
+    "selection": "Tune early-stop logloss and tune accuracy threshold, before confirmation",
+    "nfeatures": 120
+  },
+  "confirmation": {
+    "accuracy": 0.9436428571428571,
+    "logloss": 0.14595413694059411,
+    "seen_accuracy": 0.9644142754293942,
+    "new_accuracy": 0.8964227262099602
+  },
+  "native": {
+    "accuracy": 0.9315714285714286,
+    "logloss": 0.16996148570636524,
+    "seen_accuracy": 0.9584490383626453,
+    "new_accuracy": 0.8704699555763385
+  },
+  "scope": "Inherited row holdouts reused. All field teachers strictly OOF per training stage; no test/public labels. Combined teacher reused from parent. No confirmation weight search.",
+  "historical_common": {
+    "n": 4147,
+    "historical_accuracy_at0505": 0.9397154569568362,
+    "candidate_accuracy": 0.9440559440559441,
+    "fixed_blend_accuracy_at0505": 0.9406800096455269
+  },
+  "full_refit": "complete: locked configuration, all70000 labels, each training teacher strictly3foldOOF",
+  "seconds": 316.1748650074005,
+  "test_rows": 30000,
+  "total_seconds_with_export": 523.2286899089813
+}

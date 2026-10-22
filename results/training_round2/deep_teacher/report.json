@@ -1,0 +1,46 @@
+{
+  "lock": {
+    "trees": 749,
+    "threshold": 0.51,
+    "teacher": "3fold OOF NB, vocab30kword+30kchar, C4fixed",
+    "catboost_params": {
+      "depth": 7,
+      "iterations": 749,
+      "learning_rate": 0.06,
+      "l2_leaf_reg": 15,
+      "random_strength": 0.8,
+      "rsm": 0.8,
+      "border_count": 64,
+      "thread_count": 2,
+      "random_seed": 20261023,
+      "verbose": 200,
+      "allow_writing_files": true,
+      "loss_function": "Logloss",
+      "save_snapshot": true,
+      "snapshot_interval": 30
+    },
+    "selection": "Trees early-stop logloss tune; threshold tune accuracy; no confirmation selection."
+  },
+  "confirmation": {
+    "accuracy": 0.9423571428571429,
+    "log_loss": 0.14657573005312205,
+    "seen_accuracy": 0.9632829373650108,
+    "new_accuracy": 0.894786064998831
+  },
+  "native": {
+    "accuracy": 0.9315714285714286,
+    "log_loss": 0.16996148570636524,
+    "seen_accuracy": 0.9584490383626453,
+    "new_accuracy": 0.8704699555763385
+  },
+  "scope": "Reused original row partitions, teacher strictly OOF inside each fit; no public/test labels. Not a virgin holdout.",
+  "seconds": 630.6439929008484,
+  "historical_common_diagnostic": {
+    "n": 4147,
+    "historical_accuracy_at0505": 0.9397154569568362,
+    "candidate_accuracy": 0.9428502531950808,
+    "fixed_blend_accuracy_at0505": 0.9404388714733543,
+    "scope": "Fixed .85historical/.15candidate diagnostic; no weight selection."
+  },
+  "full_refit": "complete"
+}

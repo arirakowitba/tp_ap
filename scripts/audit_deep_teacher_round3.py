@@ -30,7 +30,7 @@ for teachername in ['confirm_teacher_model.joblib','full_teacher_model.joblib']:
  if f.exists():
   try:
    import joblib
-   obj=joblib.load(f);audit['checks'][teachername]={'reload':'ok','keys':list(obj)}
+   obj=joblib.load(f);expected=dev if teachername.startswith('confirm') else np.arange(70000);audit['checks'][teachername]={'reload':'ok','keys':list(obj),'training_rows_match':bool(np.array_equal(obj['training_rows'],expected)),'classes':obj['model'].classes_.tolist(),'feature_width_matches':sum(len(v.get_feature_names_out()) for v in obj['vectorizers'])==len(obj['ratio'])==obj['model'].coef_.shape[1]}
   except Exception as e:audit['checks'][teachername]={'reload':'failed','error':str(e)}
 if (D/'test.npz').exists():
  z=np.load(D/'test.npz');audit['checks']['test_vector']={'n':len(z['p']),'finite':bool(np.isfinite(z['p']).all()),'range_ok':bool(((z['p']>=0)&(z['p']<=1)).all())}

@@ -1,0 +1,13 @@
+{
+  "field_accuracy": 0.9436428571428571,
+  "parent_accuracy": 0.9423571428571429,
+  "gains": 73,
+  "losses": 55,
+  "net": 18,
+  "paired_p_unadjusted": 0.1326248013249822,
+  "scope": "Exploratory paired diagnostic on reused14k. The .85parent/.15fields blend was preregistered while fields confirmation was fitting; no weight search.",
+  "predeclared_parent_blend": {
+    "accuracy": 0.9427142857142857,
+    "logloss": 0.14623477348141026
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "n_common": 4147,
+  "threshold": 0.475,
+  "historical_threshold": 0.505,
+  "candidate_accuracy": 0.9421268386785628,
+  "historical_accuracy": 0.9397154569568362,
+  "candidate_logloss": 0.14904654749897678,
+  "historical_logloss": 0.155061343187239,
+  "gains": 67,
+  "losses": 57,
+  "net": 10,
+  "paired_p_unadjusted": 0.41907374251663493,
+  "scope": "Diagnostic inherited common4147; no historical/public labels or coefficients used in dropout fit. No model/weight selection on these rows."
+}

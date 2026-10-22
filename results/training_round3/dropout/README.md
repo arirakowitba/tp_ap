@@ -15,3 +15,8 @@ The experiment tests whether reducing seller identity dependence improves transf
 These inherited row partitions and earlier model designs have been repeatedly used. This is an exploratory ablation, not historically virgin confirmation. A change in weighted accuracy may trade seen-seller accuracy for unseen-seller performance.
 
 A post-launch code change added retry handling for partially written teacher NPZ files; it does not alter learning parameters or inputs. The initial executed script hash remains recorded in source_integrity.json.
+
+## Result
+Selected20% dropout,746trees,threshold0.475. Confirm94.250% vs deep94.2357%: only+2net(109fix/107break), pairedp0.946. Dropoutlogloss0.14896 worsens vsdeep0.14658. Treat as complementary candidate, not a demonstrated improvement.
+Against historical without-public on4147common,94.2127% vs93.9715%, +10net,p0.419. Reused validation and no public result.
+Full70k model/test exported with shared parent full teacher; CatBoost reload verified and30000finite probabilities. Use lockedthreshold0.475 for standalone decisions, not0.5.

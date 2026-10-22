@@ -22,3 +22,17 @@ Estado al revisar: los checkpoints de profesor para ajuste están completos; el 
 6. La comparación histórica apropiada usa `refit49k_without_public` con umbral 0,505. La producción histórica es híbrida (base refit70k y algunos auxiliares congelados); no afirmar que todos sus componentes fueron entrenados con 70k.
 
 El script `scripts/audit_deep_teacher_round3.py` regenera el JSON de comprobaciones y, cuando estén disponibles, compara confirm en las 4.147 filas comunes sin buscar pesos o umbrales nuevos.
+
+## Resultado de confirmación reanudada
+
+Se cerró selección en tune antes de confirmar: 749 árboles y umbral 0,51 (accuracy de tune 93,6857%). El profesor de dev56k pasó las mismas comprobaciones de exclusión, cobertura, identidad y coincidencia numérica OOF. Su archivo joblib se recargó correctamente.
+
+En confirm14k el candidato obtuvo 94,2357%, logloss0,146576, vistos96,3283% y nuevos89,4786%. Mejora al CatBoost nativo de referencia, pero ese baseline es más débil que la composición histórica.
+
+En las4.147 filas comunes mutuamente excluidas, el histórico `without_public` a0,505 obtuvo93,9715%; el candidato a0,51 obtuvo94,2850%:70correcciones y57errores nuevos, saldo+13, p pareado noajustado≈0,287. Logloss pasó de0,155061 a0,146291. La mezcla fija85%histórico/15%candidato obtuvo94,0439%.
+
+La mejora de accuracy frente al histórico es pequeña y no concluyente; no se buscó un peso nuevo sobre estas filas. El `.cbm` de confirmación recargó correctamente con749árboles. El refit completo y sus predicciones de test estaban en marcha al actualizar esta sección.
+
+## Cierre del refit completo
+
+El refit completo terminó correctamente. El profesor completo cubre70.000 filas OOF sin duplicados y predice únicamente las30.000 filas de test. El profesor joblib de confirm y el de full recargan, sus filas de entrenamiento y anchuras de vocabulario/ratio/modelo coinciden, y conservan clases[0,1]. El modelo CatBoost final recarga con749árboles y el vector test contiene30.000 probabilidades finitas dentro de[0,1]. No se observaron cambios de mapping, identidad o fuga entre etapas. Los mapas de contexto aún se recomputan desde raw/cache.

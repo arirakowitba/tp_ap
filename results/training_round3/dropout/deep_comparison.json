@@ -1,0 +1,14 @@
+{
+  "deep_threshold": 0.51,
+  "deep_accuracy": 0.9423571428571429,
+  "dropout_accuracy": 0.9425,
+  "deep_testmix_accuracy": 0.9438298256130156,
+  "dropout_testmix_accuracy": 0.9439481527005078,
+  "gains": 109,
+  "losses": 107,
+  "net": 2,
+  "p_unadjusted": 0.9457736301231238,
+  "dropout_logloss": 0.14896175382529078,
+  "deep_logloss": 0.14657573005312205,
+  "interpretation": "Near tie. No evidence that seller dropout improves deep base reliably; complete full artifacts only as complementary candidate."
+}

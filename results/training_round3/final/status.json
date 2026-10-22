@@ -1,0 +1,8 @@
+{
+  "stage": "waiting_tune",
+  "utc": "2026-10-22T10:43:00Z",
+  "missing": [
+    "results/training_round3/tpe/tune.npz",
+    "results/training_round3/tpe/selection_lock.json"
+  ]
+}

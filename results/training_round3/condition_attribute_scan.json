@@ -1,0 +1,113 @@
+{
+  "counts": [
+    {
+      "source": "train_data.jsonlines",
+      "attribute": "mla1466-estado estado del inmueble",
+      "n": 133
+    },
+    {
+      "source": "train_data.jsonlines",
+      "attribute": "mla1472-estado estado del inmueble",
+      "n": 194
+    },
+    {
+      "source": "train_data.jsonlines",
+      "attribute": "mla50545-estado estado",
+      "n": 16
+    },
+    {
+      "source": "train_data.jsonlines",
+      "attribute": "mla79242-estado estado",
+      "n": 24
+    },
+    {
+      "source": "train_data.jsonlines",
+      "attribute": "mla1475-estado estado del inmueble",
+      "n": 11
+    },
+    {
+      "source": "train_data.jsonlines",
+      "attribute": "mla1496-estadocasc estado del casco",
+      "n": 4
+    },
+    {
+      "source": "train_data.jsonlines",
+      "attribute": "mla105179-estado estado del inmueble",
+      "n": 16
+    },
+    {
+      "source": "train_data.jsonlines",
+      "attribute": "mla50547-estado estado",
+      "n": 9
+    },
+    {
+      "source": "train_data.jsonlines",
+      "attribute": "mla1892-estado estado",
+      "n": 10
+    },
+    {
+      "source": "train_data.jsonlines",
+      "attribute": "mla50538-estado estado",
+      "n": 19
+    },
+    {
+      "source": "test_data.jsonlines",
+      "attribute": "mla1475-estado estado del inmueble",
+      "n": 6
+    },
+    {
+      "source": "test_data.jsonlines",
+      "attribute": "mla1472-estado estado del inmueble",
+      "n": 91
+    },
+    {
+      "source": "test_data.jsonlines",
+      "attribute": "mla79242-estado estado",
+      "n": 6
+    },
+    {
+      "source": "test_data.jsonlines",
+      "attribute": "mla50547-estado estado",
+      "n": 7
+    },
+    {
+      "source": "test_data.jsonlines",
+      "attribute": "mla1466-estado estado del inmueble",
+      "n": 64
+    },
+    {
+      "source": "test_data.jsonlines",
+      "attribute": "mla105179-estado estado del inmueble",
+      "n": 4
+    },
+    {
+      "source": "test_data.jsonlines",
+      "attribute": "mla50538-estado estado",
+      "n": 4
+    },
+    {
+      "source": "test_data.jsonlines",
+      "attribute": "mla50545-estado estado",
+      "n": 10
+    },
+    {
+      "source": "test_data.jsonlines",
+      "attribute": "mla1892-estado estado",
+      "n": 4
+    },
+    {
+      "source": "test_data.jsonlines",
+      "attribute": "mla1496-estadocasc estado del casco",
+      "n": 1
+    }
+  ],
+  "examples": [
+    {
+      "source": "train_data.jsonlines",
+      "id": "MLA1466-ESTADO",
+      "name": "Estado del inmueble",
+      "value": "muy bueno"
+    }
+  ],
+  "scope": "Declared physical state attributes may be target proxies depending on intended information set, not proof of leakage. Air-conditioning substring false matches excluded."
+}

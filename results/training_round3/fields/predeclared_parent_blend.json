@@ -1,0 +1,7 @@
+{
+  "deep_teacher_weight": 0.85,
+  "fields_weight": 0.15,
+  "threshold": "parent deep_teacher selection_lock threshold",
+  "declared_utc": "2026-10-22T10:38:05.746621+00:00",
+  "purpose": "Diagnostic complementarity only; declared while fields confirmation fit still running, no weight search."
+}

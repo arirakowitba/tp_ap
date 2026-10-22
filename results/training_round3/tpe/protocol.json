@@ -1,0 +1,14 @@
+{
+  "data_fingerprint": {
+    "train_data.jsonlines": {
+      "bytes": 199602227,
+      "sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf"
+    },
+    "test_data.jsonlines": {
+      "bytes": 85048471,
+      "sha256": "05921bd73deba1c4ed5a4d564e0351729eae8f2ef197bc851e10f9099d277460"
+    }
+  },
+  "features_sha256": "6fb4a7dfd3f4c07b3d30cb1b14b68d13382f101dec0cdfcbe363a5101934c681",
+  "protocol": "6serialTPE trials,2threads, fixed teacherOOF. Tune weightedaccuracy .716seen/.284new and threshold grid. Logloss only tie-break after trials. Confirmation not selected on. Reused splits."
+}

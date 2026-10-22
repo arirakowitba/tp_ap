@@ -15,20 +15,125 @@
       "fold_union_exact": true,
       "fold_union_unique": true
     },
-    "confirm_teacher": "pending",
-    "full_teacher": "pending",
+    "confirm_teacher": {
+      "train_rows_match": true,
+      "eval_rows_match": true,
+      "all_finite": true,
+      "train_eval_disjoint": true,
+      "fold0_eval_disjoint": true,
+      "fold0_matches_stage_oof": true,
+      "fold1_eval_disjoint": true,
+      "fold1_matches_stage_oof": true,
+      "fold2_eval_disjoint": true,
+      "fold2_matches_stage_oof": true,
+      "fold_union_exact": true,
+      "fold_union_unique": true
+    },
+    "full_teacher": {
+      "train_rows_match": true,
+      "eval_rows_match": true,
+      "all_finite": true,
+      "train_eval_disjoint": true,
+      "fold0_eval_disjoint": true,
+      "fold0_matches_stage_oof": true,
+      "fold1_eval_disjoint": true,
+      "fold1_matches_stage_oof": true,
+      "fold2_eval_disjoint": true,
+      "fold2_matches_stage_oof": true,
+      "fold_union_exact": true,
+      "fold_union_unique": true
+    },
     "base_feature_shape": [
       100000,
       101
     ],
-    "suspicious_columns": []
+    "suspicious_columns": [],
+    "confirmation_model.cbm": {
+      "reload": "ok",
+      "trees": 749
+    },
+    "model.cbm": {
+      "reload": "ok",
+      "trees": 749
+    },
+    "confirm_teacher_model.joblib": {
+      "reload": "ok",
+      "keys": [
+        "vectorizers",
+        "ratio",
+        "model",
+        "training_rows"
+      ],
+      "training_rows_match": true,
+      "classes": [
+        0,
+        1
+      ],
+      "feature_width_matches": true
+    },
+    "full_teacher_model.joblib": {
+      "reload": "ok",
+      "keys": [
+        "vectorizers",
+        "ratio",
+        "model",
+        "training_rows"
+      ],
+      "training_rows_match": true,
+      "classes": [
+        0,
+        1
+      ],
+      "feature_width_matches": true
+    },
+    "test_vector": {
+      "n": 30000,
+      "finite": true,
+      "range_ok": true
+    }
   },
   "limitations": [
     "Caches identify rows but not source bytes/configuration; invalidate before future parameter/data changes.",
-    "Teacher vectorizers/models and context price mappings are not serialized; CBM alone is not a standalone scorer. Reproduction requires raw data/script or cached teacher vectors.",
+    "Confirm/full teacher vectorizers and NB model are serialized when those stages are recomputed; context price mappings still require raw/cache. CBM alone is not a standalone scorer.",
     "OOF teacher sees 2/3 train rows whereas eval teacher sees all training rows; standard stacking refit distribution shift remains.",
     "Production historical reference is hybrid: base refitted70k, some auxiliary models frozen on development.",
     "Condition is removed before features; top-level condition attributes filtered. Variation attribute values enter only aggregate counts, not direct value encodings."
   ],
-  "historical_common": "pending confirmation"
+  "selection_lock": {
+    "trees": 749,
+    "threshold": 0.51,
+    "teacher": "3fold OOF NB, vocab30kword+30kchar, C4fixed",
+    "catboost_params": {
+      "depth": 7,
+      "iterations": 750,
+      "learning_rate": 0.06,
+      "l2_leaf_reg": 15,
+      "random_strength": 0.8,
+      "rsm": 0.8,
+      "border_count": 64,
+      "thread_count": 2,
+      "random_seed": 20261023,
+      "verbose": 200,
+      "allow_writing_files": true,
+      "loss_function": "Logloss",
+      "save_snapshot": true,
+      "snapshot_interval": 30
+    },
+    "selection": "Trees early-stop logloss tune; threshold tune accuracy; no confirmation selection."
+  },
+  "historical_common": {
+    "n": 4147,
+    "baseline_threshold": 0.505,
+    "candidate_threshold": 0.51,
+    "historical_accuracy": 0.9397154569568362,
+    "candidate_accuracy": 0.9428502531950808,
+    "historical_logloss": 0.155061343187239,
+    "candidate_logloss": 0.14629113640696384,
+    "gains": 70,
+    "losses": 57,
+    "net": 13,
+    "paired_p_unadjusted": 0.2869146072030987,
+    "fixed_blend_85historical_accuracy": 0.9404388714733543,
+    "fixed_blend_logloss": 0.1506561469493792
+  }
 }

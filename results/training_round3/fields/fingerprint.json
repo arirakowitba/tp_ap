@@ -1,0 +1,34 @@
+{
+  "signature": "d34152c2fc6cb4b34979c61349d14202fc69e3b585a02e1adb870b1a9ffb95c3",
+  "config": {
+    "title": {
+      "ngram": [
+        3,
+        5
+      ],
+      "max_features": 30000
+    },
+    "warranty": {
+      "ngram": [
+        2,
+        5
+      ],
+      "max_features": 15000
+    },
+    "C": 4,
+    "seed": 20261023,
+    "folds": 3,
+    "NB_ratio": true
+  },
+  "data": {
+    "train_data.jsonlines": {
+      "bytes": 199602227,
+      "sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf"
+    },
+    "test_data.jsonlines": {
+      "bytes": 85048471,
+      "sha256": "05921bd73deba1c4ed5a4d564e0351729eae8f2ef197bc851e10f9099d277460"
+    }
+  },
+  "parent_features_sha256": "6fb4a7dfd3f4c07b3d30cb1b14b68d13382f101dec0cdfcbe363a5101934c681"
+}
