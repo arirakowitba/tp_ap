@@ -1,0 +1,21 @@
+{
+  "protocol": "Tune-only C selection; inherited row partitions, not a historically virgin holdout. No public feedback labels used.",
+  "predeclared_blend_native_weight": 0.85,
+  "trials": [
+    {
+      "C": 0.25,
+      "accuracy": 0.835,
+      "log_loss": 0.39513246662334256
+    },
+    {
+      "C": 1,
+      "accuracy": 0.8477142857142858,
+      "log_loss": 0.35524903652028844
+    },
+    {
+      "C": 4,
+      "accuracy": 0.8532857142857143,
+      "log_loss": 0.33715964493852374
+    }
+  ]
+}
