@@ -1,13 +1,5 @@
 {
-  "stage": "trial_fit",
-  "elapsed_seconds": 263.3135838508606,
-  "number": 3,
-  "params": {
-    "depth": 8,
-    "learning_rate": 0.04133751460154413,
-    "l2_leaf_reg": 13.219833627019163,
-    "random_strength": 1.047448236462017,
-    "rsm": 0.7129386478592081,
-    "bagging_temperature": 0.4466993284553643
-  }
+  "stage": "done",
+  "elapsed_seconds": 798.9277815818787,
+  "full_refit": "complete"
 }

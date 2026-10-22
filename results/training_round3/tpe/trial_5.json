@@ -1,0 +1,21 @@
+{
+  "trial": 5,
+  "params": {
+    "depth": 8,
+    "learning_rate": 0.07452720378253548,
+    "l2_leaf_reg": 8.167726517953948,
+    "random_strength": 0.776304264944244,
+    "rsm": 0.9056501886386723,
+    "bagging_temperature": 0.22877981788752205
+  },
+  "trees": 395,
+  "threshold": 0.51,
+  "tune": {
+    "accuracy": 0.9365714285714286,
+    "seen_accuracy": 0.95875,
+    "new_accuracy": 0.8881818181818182,
+    "test_mix_accuracy": 0.9387086363636363,
+    "log_loss": 0.15961663658499342
+  },
+  "elapsed_seconds": 557.8011963367462
+}

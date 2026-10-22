@@ -1,0 +1,58 @@
+{
+  "C": 1,
+  "n_tune": 2098,
+  "threshold": 0.5,
+  "trials": [
+    {
+      "C": 0.01,
+      "accuracy_mean": 0.939459029435163,
+      "fold_accuracies": [
+        0.9404761904761905,
+        0.95,
+        0.9428571428571428,
+        0.9355608591885441,
+        0.9284009546539379
+      ]
+    },
+    {
+      "C": 0.1,
+      "accuracy_mean": 0.9408887373565177,
+      "fold_accuracies": [
+        0.9404761904761905,
+        0.95,
+        0.9476190476190476,
+        0.9331742243436754,
+        0.9331742243436754
+      ]
+    },
+    {
+      "C": 1,
+      "accuracy_mean": 0.9418468007728149,
+      "fold_accuracies": [
+        0.9380952380952381,
+        0.95,
+        0.9428571428571428,
+        0.9403341288782816,
+        0.9379474940334129
+      ]
+    }
+  ],
+  "input_names": [
+    "historical_without_public",
+    "deep",
+    "dropout",
+    "fields",
+    "tpe",
+    "nb"
+  ],
+  "source_hashes": {
+    "deep": "022d2d2ecd2d00fbe1884783910723383ec2b2eb732db2764c4f1b018ec1332d",
+    "dropout": "bc891364ab2007b0f68795c586a7d8e98ded6fd100ed6630dfe53a60a3627bee",
+    "fields": "78428bb2ba195e4a4fce4e4413eddcd0e7e3f98ce55a7a07de415931fa4264bb",
+    "tpe": "33798d9ef1cb27831d1d1c762009d880ae511a701d9ab702464c1cf8f4748459",
+    "nb": "8ca754b3368d0f36342573e8d1dc1379243a9a2de615fb0110825483a7ec51f7",
+    "historical_holdout": "62e985c634cc05bfedd20dceba5a28e3b68822c9222299d4ef35cc139980cf9f"
+  },
+  "selection": "5-fold tune CV accuracy; ties prefer smaller C. No confirm vectors opened before both locks. Families predeclared and evaluated separately, not selected on confirm.",
+  "limits": "Base hyperparameters previously selected on tune, holdouts historically reused; CV is conditional selection machinery, not unbiased end-to-end validation."
+}

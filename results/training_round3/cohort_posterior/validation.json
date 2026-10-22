@@ -1,0 +1,15 @@
+{
+  "toy_N": 8,
+  "toy_K": 4,
+  "toy_union": 5,
+  "label_configurations": 32,
+  "mask_configurations": 70,
+  "max_absolute_posterior_error_vs_bruteforce": 3.3306690738754696e-16,
+  "evidence_absolute_error_vs_bruteforce": 1.1102230246251565e-16,
+  "dp_mask_count_identity": "passed",
+  "rejected_invalid_inputs": [
+    "overlap",
+    "balance",
+    "fixed_mask_impossible"
+  ]
+}

@@ -1,8 +1,20 @@
 {
-  "stage": "waiting_tune",
-  "utc": "2026-10-22T10:43:00Z",
-  "missing": [
-    "results/training_round3/tpe/tune.npz",
-    "results/training_round3/tpe/selection_lock.json"
-  ]
+  "stage": "done",
+  "utc": "2026-10-22T10:51:34Z",
+  "new_only": {
+    "candidate": "candidate_new_only_model_only.csv",
+    "n": 30000,
+    "sha256": "6ea7682cbc799ae8e9f7845bf1aa1a78b7d339def74fc963d0aa5d1f57bc09b6",
+    "differences_vs26": 708,
+    "public_score_observed": null,
+    "scope": "Candidate model only, no flips overlaid. Historical input (if present) is production selected with base70k and frozen auxiliary models; all new bases full70k."
+  },
+  "with_history": {
+    "candidate": "candidate_with_history_model_only.csv",
+    "n": 30000,
+    "sha256": "a15e5f41b58efd8ab6e39e38004c7993b35abc6775f629185e466561da129686",
+    "differences_vs26": 636,
+    "public_score_observed": null,
+    "scope": "Candidate model only, no flips overlaid. Historical input (if present) is production selected with base70k and frozen auxiliary models; all new bases full70k."
+  }
 }

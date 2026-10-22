@@ -1,0 +1,49 @@
+{
+  "selected": {
+    "trial": 4,
+    "params": {
+      "depth": 8,
+      "learning_rate": 0.04152939585691776,
+      "l2_leaf_reg": 9.050788347753185,
+      "random_strength": 0.4072090504310519,
+      "rsm": 0.9287958418865199,
+      "bagging_temperature": 0.6230759022684491
+    },
+    "trees": 684,
+    "threshold": 0.51,
+    "tune": {
+      "accuracy": 0.9388571428571428,
+      "seen_accuracy": 0.9589583333333334,
+      "new_accuracy": 0.895,
+      "test_mix_accuracy": 0.9407941666666666,
+      "log_loss": 0.15848423025408254
+    },
+    "elapsed_seconds": 488.6957595348358
+  },
+  "completed_trials": 6,
+  "selection": "Maximum weighted tuneaccuracy, then minimumtuneLogloss. No confirm consulted.",
+  "protocol": "6serialTPE trials,2threads, fixed teacherOOF. Tune weightedaccuracy .716seen/.284new and threshold grid. Logloss only tie-break after trials. Confirmation not selected on. Reused splits.",
+  "confirmation": {
+    "accuracy": 0.9420714285714286,
+    "seen_accuracy": 0.9632829373650108,
+    "new_accuracy": 0.8938508300210428,
+    "test_mix_accuracy": 0.9435642188793238,
+    "log_loss": 0.146895635130681
+  },
+  "parent_confirmation": {
+    "accuracy": 0.9423571428571429,
+    "log_loss": 0.14657573005312205,
+    "seen_accuracy": 0.9632829373650108,
+    "new_accuracy": 0.894786064998831
+  },
+  "scope": "Exploratory search on reused partitions, no public labels and no confirm tuning.",
+  "parent_tune": {
+    "accuracy": 0.9368571428571428,
+    "seen_accuracy": 0.9597916666666667,
+    "new_accuracy": 0.8868181818181818,
+    "test_mix_accuracy": 0.9390671969696969,
+    "log_loss": 0.15776728141612933
+  },
+  "full_refit": "complete",
+  "seconds": 798.9268238544464
+}
