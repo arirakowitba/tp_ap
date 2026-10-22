@@ -1,0 +1,37 @@
+{
+  "C": 0.1,
+  "n_tune_common": 2098,
+  "trials": [
+    {
+      "C": 0.01,
+      "cv_accuracy": 0.938514603932265
+    },
+    {
+      "C": 0.1,
+      "cv_accuracy": 0.9442334356176838
+    },
+    {
+      "C": 1,
+      "cv_accuracy": 0.9428037276963291
+    }
+  ],
+  "historical_column": "refit49k_without_public",
+  "scope": "No public coefficients. Inner CV on common tune rows; historically reused holdouts. Confirmation not consulted for selection. Base fitting excludes corresponding predictions. Historical coefficient selection itself used historical development.",
+  "n_confirm_common": 4147,
+  "historical_at_05": {
+    "accuracy": 0.939956595129009,
+    "log_loss": 0.155061343187239
+  },
+  "historical_accuracy_at_locked_threshold_0505": 0.9397154569568362,
+  "stacker": {
+    "accuracy": 0.9435736677115988,
+    "log_loss": 0.15095827781773044
+  },
+  "gain": 52,
+  "loss": 36,
+  "net": 16,
+  "paired_p_unadjusted": 0.1092954297773143,
+  "test_export": "complete: historical production full70k selected no-public coefficients; 5 new bases full70k",
+  "production_scope": "Historical production base refitted70k, some auxiliary historical models remain frozen development fits. New five branches full70k. No direct public label locks in production selected column.",
+  "validation_limit": "Repeated historical holdouts; comparison diagnostic and multiple model design revisions. Not independent confirmation of score improvement."
+}

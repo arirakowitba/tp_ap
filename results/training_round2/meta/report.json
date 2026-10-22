@@ -1,0 +1,911 @@
+{
+  "selected_config": {
+    "family": "logistic6",
+    "C": 1
+  },
+  "n_common_tune": 2098,
+  "all_inner_results": [
+    {
+      "family": "history_05",
+      "config_index": 0,
+      "accuracy": 0.938512869399428,
+      "log_loss": 0.15019178112950876
+    },
+    {
+      "family": "history_052",
+      "config_index": 1,
+      "accuracy": 0.9380362249761678,
+      "log_loss": 0.14999171316679838
+    },
+    {
+      "family": "sigmoid",
+      "C": 0.01,
+      "config_index": 2,
+      "accuracy": 0.9399428026692088,
+      "log_loss": 0.2736973208949014
+    },
+    {
+      "family": "sigmoid",
+      "C": 0.1,
+      "config_index": 3,
+      "accuracy": 0.9399428026692088,
+      "log_loss": 0.16799456531938883
+    },
+    {
+      "family": "sigmoid",
+      "C": 1,
+      "config_index": 4,
+      "accuracy": 0.9380362249761678,
+      "log_loss": 0.15103524960325135
+    },
+    {
+      "family": "sigmoid",
+      "C": 10,
+      "config_index": 5,
+      "accuracy": 0.9375595805529076,
+      "log_loss": 0.1504067918459331
+    },
+    {
+      "family": "logistic6",
+      "C": 0.01,
+      "config_index": 6,
+      "accuracy": 0.9370829361296473,
+      "log_loss": 0.19644037434341108
+    },
+    {
+      "family": "logistic6",
+      "C": 0.1,
+      "config_index": 7,
+      "accuracy": 0.9418493803622497,
+      "log_loss": 0.15823460622069246
+    },
+    {
+      "family": "logistic6",
+      "C": 1,
+      "config_index": 8,
+      "accuracy": 0.9432793136320305,
+      "log_loss": 0.1478172215749279
+    },
+    {
+      "family": "logistic6",
+      "C": 10,
+      "config_index": 9,
+      "accuracy": 0.9418493803622497,
+      "log_loss": 0.14697038983873684
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        1
+      ],
+      "weights": [
+        0.05
+      ],
+      "config_index": 10,
+      "accuracy": 0.9389895138226882,
+      "log_loss": 0.1501243137248994
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        1
+      ],
+      "weights": [
+        0.1
+      ],
+      "config_index": 11,
+      "accuracy": 0.9399428026692088,
+      "log_loss": 0.15032536065557045
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        1
+      ],
+      "weights": [
+        0.2
+      ],
+      "config_index": 12,
+      "accuracy": 0.9399428026692088,
+      "log_loss": 0.15132877286317695
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        1
+      ],
+      "weights": [
+        0.35
+      ],
+      "config_index": 13,
+      "accuracy": 0.940419447092469,
+      "log_loss": 0.15404628883070376
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        1
+      ],
+      "weights": [
+        0.5
+      ],
+      "config_index": 14,
+      "accuracy": 0.940419447092469,
+      "log_loss": 0.15807255975467807
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        2
+      ],
+      "weights": [
+        0.05
+      ],
+      "config_index": 15,
+      "accuracy": 0.9389895138226882,
+      "log_loss": 0.15274092190945107
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        2
+      ],
+      "weights": [
+        0.1
+      ],
+      "config_index": 16,
+      "accuracy": 0.9389895138226882,
+      "log_loss": 0.1566273232976038
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        2
+      ],
+      "weights": [
+        0.2
+      ],
+      "config_index": 17,
+      "accuracy": 0.9399428026692088,
+      "log_loss": 0.1666865501296538
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        2
+      ],
+      "weights": [
+        0.35
+      ],
+      "config_index": 18,
+      "accuracy": 0.9375595805529076,
+      "log_loss": 0.18575943377062176
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        2
+      ],
+      "weights": [
+        0.5
+      ],
+      "config_index": 19,
+      "accuracy": 0.932793136320305,
+      "log_loss": 0.20892226154865395
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        3
+      ],
+      "weights": [
+        0.05
+      ],
+      "config_index": 20,
+      "accuracy": 0.938512869399428,
+      "log_loss": 0.15011575139917283
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        3
+      ],
+      "weights": [
+        0.1
+      ],
+      "config_index": 21,
+      "accuracy": 0.9399428026692088,
+      "log_loss": 0.15033605180119716
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        3
+      ],
+      "weights": [
+        0.2
+      ],
+      "config_index": 22,
+      "accuracy": 0.938512869399428,
+      "log_loss": 0.15142754207059383
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        3
+      ],
+      "weights": [
+        0.35
+      ],
+      "config_index": 23,
+      "accuracy": 0.9418493803622497,
+      "log_loss": 0.1543457477518339
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        3
+      ],
+      "weights": [
+        0.5
+      ],
+      "config_index": 24,
+      "accuracy": 0.9413727359389895,
+      "log_loss": 0.15861496524192265
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        4
+      ],
+      "weights": [
+        0.05
+      ],
+      "config_index": 25,
+      "accuracy": 0.938512869399428,
+      "log_loss": 0.15693418074866683
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        4
+      ],
+      "weights": [
+        0.1
+      ],
+      "config_index": 26,
+      "accuracy": 0.9380362249761678,
+      "log_loss": 0.1670304940046536
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        4
+      ],
+      "weights": [
+        0.2
+      ],
+      "config_index": 27,
+      "accuracy": 0.9370829361296473,
+      "log_loss": 0.19062079112792987
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        4
+      ],
+      "weights": [
+        0.35
+      ],
+      "config_index": 28,
+      "accuracy": 0.936606291706387,
+      "log_loss": 0.23149364738026776
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        4
+      ],
+      "weights": [
+        0.5
+      ],
+      "config_index": 29,
+      "accuracy": 0.9313632030505243,
+      "log_loss": 0.2778188081448338
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        5
+      ],
+      "weights": [
+        0.05
+      ],
+      "config_index": 30,
+      "accuracy": 0.9399428026692088,
+      "log_loss": 0.14975847175841178
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        5
+      ],
+      "weights": [
+        0.1
+      ],
+      "config_index": 31,
+      "accuracy": 0.9389895138226882,
+      "log_loss": 0.149878506900528
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        5
+      ],
+      "weights": [
+        0.2
+      ],
+      "config_index": 32,
+      "accuracy": 0.9399428026692088,
+      "log_loss": 0.15123359110857476
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        5
+      ],
+      "weights": [
+        0.35
+      ],
+      "config_index": 33,
+      "accuracy": 0.9389895138226882,
+      "log_loss": 0.15531641118121411
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        5
+      ],
+      "weights": [
+        0.5
+      ],
+      "config_index": 34,
+      "accuracy": 0.9361296472831268,
+      "log_loss": 0.16150868416604464
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        1,
+        2
+      ],
+      "weights": [
+        0.1,
+        0.1
+      ],
+      "config_index": 35,
+      "accuracy": 0.9394661582459485,
+      "log_loss": 0.15741501997522497
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        1,
+        2
+      ],
+      "weights": [
+        0.2,
+        0.2
+      ],
+      "config_index": 36,
+      "accuracy": 0.9408960915157293,
+      "log_loss": 0.16959280597601417
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        1,
+        3
+      ],
+      "weights": [
+        0.1,
+        0.1
+      ],
+      "config_index": 37,
+      "accuracy": 0.9399428026692088,
+      "log_loss": 0.1513298263727522
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        1,
+        3
+      ],
+      "weights": [
+        0.2,
+        0.2
+      ],
+      "config_index": 38,
+      "accuracy": 0.9418493803622497,
+      "log_loss": 0.1552864871007501
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        1,
+        4
+      ],
+      "weights": [
+        0.1,
+        0.1
+      ],
+      "config_index": 39,
+      "accuracy": 0.938512869399428,
+      "log_loss": 0.16804252567349987
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        1,
+        4
+      ],
+      "weights": [
+        0.2,
+        0.2
+      ],
+      "config_index": 40,
+      "accuracy": 0.9394661582459485,
+      "log_loss": 0.19407776141285663
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        1,
+        5
+      ],
+      "weights": [
+        0.1,
+        0.1
+      ],
+      "config_index": 41,
+      "accuracy": 0.9389895138226882,
+      "log_loss": 0.1509157221166585
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        1,
+        5
+      ],
+      "weights": [
+        0.2,
+        0.2
+      ],
+      "config_index": 42,
+      "accuracy": 0.9413727359389895,
+      "log_loss": 0.1551516817934924
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        2,
+        3
+      ],
+      "weights": [
+        0.1,
+        0.1
+      ],
+      "config_index": 43,
+      "accuracy": 0.9394661582459485,
+      "log_loss": 0.1574902389334121
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        2,
+        3
+      ],
+      "weights": [
+        0.2,
+        0.2
+      ],
+      "config_index": 44,
+      "accuracy": 0.9418493803622497,
+      "log_loss": 0.1698258948800432
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        2,
+        4
+      ],
+      "weights": [
+        0.1,
+        0.1
+      ],
+      "config_index": 45,
+      "accuracy": 0.9375595805529076,
+      "log_loss": 0.17733604296774588
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        2,
+        4
+      ],
+      "weights": [
+        0.2,
+        0.2
+      ],
+      "config_index": 46,
+      "accuracy": 0.9361296472831268,
+      "log_loss": 0.21674939514773836
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        2,
+        5
+      ],
+      "weights": [
+        0.1,
+        0.1
+      ],
+      "config_index": 47,
+      "accuracy": 0.9399428026692088,
+      "log_loss": 0.15733636089727226
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        2,
+        5
+      ],
+      "weights": [
+        0.2,
+        0.2
+      ],
+      "config_index": 48,
+      "accuracy": 0.9408960915157293,
+      "log_loss": 0.17004633213341916
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        3,
+        4
+      ],
+      "weights": [
+        0.1,
+        0.1
+      ],
+      "config_index": 49,
+      "accuracy": 0.938512869399428,
+      "log_loss": 0.1681801208149423
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        3,
+        4
+      ],
+      "weights": [
+        0.2,
+        0.2
+      ],
+      "config_index": 50,
+      "accuracy": 0.9394661582459485,
+      "log_loss": 0.19437427431427437
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        3,
+        5
+      ],
+      "weights": [
+        0.1,
+        0.1
+      ],
+      "config_index": 51,
+      "accuracy": 0.9389895138226882,
+      "log_loss": 0.15101210528540968
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        3,
+        5
+      ],
+      "weights": [
+        0.2,
+        0.2
+      ],
+      "config_index": 52,
+      "accuracy": 0.9418493803622497,
+      "log_loss": 0.1554394544646753
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        4,
+        5
+      ],
+      "weights": [
+        0.1,
+        0.1
+      ],
+      "config_index": 53,
+      "accuracy": 0.938512869399428,
+      "log_loss": 0.16826361440960433
+    },
+    {
+      "family": "sparse_mix",
+      "partners": [
+        4,
+        5
+      ],
+      "weights": [
+        0.2,
+        0.2
+      ],
+      "config_index": 54,
+      "accuracy": 0.9399428026692088,
+      "log_loss": 0.1951083496529692
+    }
+  ],
+  "nested_summary": {
+    "history_05": {
+      "repeat_accuracy": [
+        0.938512869399428,
+        0.938512869399428,
+        0.938512869399428
+      ],
+      "mean_accuracy": 0.9385128693994279,
+      "repeat_log_loss": [
+        0.15019178112950876,
+        0.15019178112950876,
+        0.15019178112950876
+      ]
+    },
+    "history_052": {
+      "repeat_accuracy": [
+        0.9380362249761678,
+        0.9380362249761678,
+        0.9380362249761678
+      ],
+      "mean_accuracy": 0.9380362249761678,
+      "repeat_log_loss": [
+        0.14999171316679838,
+        0.14999171316679838,
+        0.14999171316679838
+      ]
+    },
+    "logistic6": {
+      "repeat_accuracy": [
+        0.9437559580552908,
+        0.9413727359389895,
+        0.9418493803622497
+      ],
+      "mean_accuracy": 0.94232602478551,
+      "repeat_log_loss": [
+        0.15011677573937926,
+        0.1485627528110323,
+        0.14831209180636107
+      ]
+    },
+    "sigmoid": {
+      "repeat_accuracy": [
+        0.9370829361296473,
+        0.938512869399428,
+        0.9394661582459485
+      ],
+      "mean_accuracy": 0.9383539879250079,
+      "repeat_log_loss": [
+        0.19765449285849254,
+        0.2046070385454065,
+        0.20397515750362674
+      ]
+    },
+    "sparse_mix": {
+      "repeat_accuracy": [
+        0.9375595805529076,
+        0.9380362249761678,
+        0.9399428026692088
+      ],
+      "mean_accuracy": 0.9385128693994281,
+      "repeat_log_loss": [
+        0.1616886779076157,
+        0.1593657061094417,
+        0.16201116246548644
+      ]
+    },
+    "selected_procedure": {
+      "repeat_accuracy": [
+        0.9408960915157293,
+        0.9380362249761678,
+        0.9413727359389895
+      ],
+      "mean_accuracy": 0.9401016841436288,
+      "repeat_log_loss": [
+        0.1553877204185877,
+        0.15366971241845898,
+        0.15084049504722888
+      ]
+    }
+  },
+  "outer_locks": [
+    {
+      "repeat": 0,
+      "fold": 0,
+      "selected_config": {
+        "family": "sparse_mix",
+        "partners": [
+          2,
+          3
+        ],
+        "weights": [
+          0.2,
+          0.2
+        ]
+      }
+    },
+    {
+      "repeat": 0,
+      "fold": 1,
+      "selected_config": {
+        "family": "sparse_mix",
+        "partners": [
+          3,
+          5
+        ],
+        "weights": [
+          0.2,
+          0.2
+        ]
+      }
+    },
+    {
+      "repeat": 0,
+      "fold": 2,
+      "selected_config": {
+        "family": "logistic6",
+        "C": 0.1
+      }
+    },
+    {
+      "repeat": 0,
+      "fold": 3,
+      "selected_config": {
+        "family": "logistic6",
+        "C": 10
+      }
+    },
+    {
+      "repeat": 0,
+      "fold": 4,
+      "selected_config": {
+        "family": "logistic6",
+        "C": 1
+      }
+    },
+    {
+      "repeat": 1,
+      "fold": 0,
+      "selected_config": {
+        "family": "logistic6",
+        "C": 1
+      }
+    },
+    {
+      "repeat": 1,
+      "fold": 1,
+      "selected_config": {
+        "family": "sparse_mix",
+        "partners": [
+          2
+        ],
+        "weights": [
+          0.2
+        ]
+      }
+    },
+    {
+      "repeat": 1,
+      "fold": 2,
+      "selected_config": {
+        "family": "logistic6",
+        "C": 1
+      }
+    },
+    {
+      "repeat": 1,
+      "fold": 3,
+      "selected_config": {
+        "family": "logistic6",
+        "C": 10
+      }
+    },
+    {
+      "repeat": 1,
+      "fold": 4,
+      "selected_config": {
+        "family": "logistic6",
+        "C": 1
+      }
+    },
+    {
+      "repeat": 2,
+      "fold": 0,
+      "selected_config": {
+        "family": "logistic6",
+        "C": 1
+      }
+    },
+    {
+      "repeat": 2,
+      "fold": 1,
+      "selected_config": {
+        "family": "logistic6",
+        "C": 1
+      }
+    },
+    {
+      "repeat": 2,
+      "fold": 2,
+      "selected_config": {
+        "family": "logistic6",
+        "C": 1
+      }
+    },
+    {
+      "repeat": 2,
+      "fold": 3,
+      "selected_config": {
+        "family": "logistic6",
+        "C": 1
+      }
+    },
+    {
+      "repeat": 2,
+      "fold": 4,
+      "selected_config": {
+        "family": "sparse_mix",
+        "partners": [
+          3
+        ],
+        "weights": [
+          0.35
+        ]
+      }
+    }
+  ],
+  "scope": "All family/parameter choices use 2098 common tune only. Existing base models and hyperparameters had already been selected using tune; nested meta CV is conditional, not fresh end-to-end validation. 4147 confirm historically reused.",
+  "n_common_confirm": 4147,
+  "confirmation_selected": {
+    "accuracy": 0.9421268386785628,
+    "log_loss": 0.14875873093210704
+  },
+  "confirmation_history05": {
+    "accuracy": 0.939233180612491,
+    "log_loss": 0.15280993403735355
+  },
+  "confirmation_history052": {
+    "accuracy": 0.9389920424403183,
+    "log_loss": 0.15280993403735355
+  },
+  "paired_vs_history05": {
+    "gain": 33,
+    "loss": 21,
+    "net": 12,
+    "p_unadjusted": 0.13367423536410522
+  },
+  "paired_vs_history052": {
+    "gain": 36,
+    "loss": 23,
+    "net": 13,
+    "p_unadjusted": 0.11747735024505848
+  },
+  "test_export": "DIAGNOSTIC ONLY: inherited historical component is 49k; not a verified full70k production equivalent",
+  "provenance_correction": "See meta_production_consistent_round2.py, fixed LR6 C1; do not submit original test.npz"
+}

@@ -1,0 +1,12 @@
+{
+  "C": 1,
+  "n_tune_common": 2098,
+  "trials": [
+    {
+      "C": 1,
+      "cv_accuracy": 0.9428037276963291
+    }
+  ],
+  "historical_column": "refit49k_without_public",
+  "scope": "Provenance correction after matched/core evaluation. LR6 C1 fixed from earlier tune choice; no family/C change using confirmation. without_public historical threshold .505; full70k selected production test counterpart supplied by provenance audit. Historically reused holdout; not new confirmation."
+}
