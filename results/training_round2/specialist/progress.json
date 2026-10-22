@@ -1,0 +1,38 @@
+{
+  "protocol": "Specialist qty<=1, model config selected subset tune accuracy then logloss. For quantity>1 native is always retained. Fixed .5 specialist/native blend predeclared before confirm. Historical row split reused; no public/test labels.",
+  "specs": [
+    {
+      "depth": 6,
+      "iterations": 1000,
+      "learning_rate": 0.06,
+      "l2_leaf_reg": 10
+    },
+    {
+      "depth": 8,
+      "iterations": 1200,
+      "learning_rate": 0.06,
+      "l2_leaf_reg": 30
+    }
+  ],
+  "n_fit_specialist": 34390,
+  "n_tune_specialist": 4964,
+  "0": {
+    "trees": 1000,
+    "subset_tune": {
+      "accuracy": 0.8986704270749396,
+      "log_loss": 0.24158355305186227
+    },
+    "gate_tune": {
+      "accuracy": 0.9215714285714286,
+      "log_loss": 0.19307153427959767,
+      "seen_accuracy": 0.9514583333333333,
+      "new_accuracy": 0.8563636363636363
+    },
+    "fixed_blend_tune": {
+      "accuracy": 0.924,
+      "log_loss": 0.18780587008118269,
+      "seen_accuracy": 0.9529166666666666,
+      "new_accuracy": 0.860909090909091
+    }
+  }
+}

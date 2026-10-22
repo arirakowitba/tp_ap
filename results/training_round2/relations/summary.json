@@ -1,0 +1,8 @@
+{
+  "n_train": 70000,
+  "exact_context_groups": 69687,
+  "mixed_context_groups": 4,
+  "rows_in_mixed_contexts": 21,
+  "minority_labels_in_mixed_contexts": 6,
+  "interpretation": "These are collisions under selected observed fields, not proof of noisy labels or an irreducible error ceiling; omitted attributes may distinguish rows."
+}

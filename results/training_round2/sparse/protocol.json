@@ -1,0 +1,4 @@
+{
+  "protocol": "All transforms fit-only; target stats OOF; select standalone config on tune only. Fixed native weight .85 preregistered, no blend selection on confirm. Inherited/reused partitions.",
+  "fixed_native_weight": 0.85
+}

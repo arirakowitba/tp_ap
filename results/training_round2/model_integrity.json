@@ -1,0 +1,12 @@
+[
+  {
+    "path": "tp_ap/results/new_models_20261021/seller_native.cbm",
+    "status": "reload_ok",
+    "trees": 648
+  },
+  {
+    "path": "tp_ap/results/training_next/rich/model.cbm",
+    "status": "reload_ok",
+    "trees": 1099
+  }
+]

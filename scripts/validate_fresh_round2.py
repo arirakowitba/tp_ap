@@ -45,7 +45,7 @@ def data():
   else:X[c]=X[c].astype(float).fillna(-1)
  docs=np.array(docs,dtype=object);y=np.array(ys,dtype=np.int8);seller=np.array(seller);qty=np.array(qty);listing=np.array(listing);X.to_pickle(cache);np.savez_compressed(aux,docs=docs,y=y,seller=seller,qty=qty,listing=listing);return X,docs,y,seller,qty,listing
 def metrics(y,p,seen):
- return {'accuracy':float(accuracy_score(y,p>=.5)),'log_loss':float(log_loss(y,p)),'seen_accuracy':float(accuracy_score(y[seen],p[seen]>=.5)),'unseen_accuracy':float(accuracy_score(y[~seen],p[~seen]>=.5)),'n_seen':int(seen.sum()),'n_unseen':int((~seen).sum())}
+ return {'accuracy':float(accuracy_score(y,p>=.5)),'log_loss':float(log_loss(y,p)),'seen_accuracy':float(accuracy_score(y[seen],p[seen]>=.5)),'unseen_accuracy':float(accuracy_score(y[~seen],p[~seen]>=.5)),'n_seen':int(seen.sum()),'n_unseen':int((~seen).sum()),'brier':float(np.mean((p-y)**2)),'uncertain_40_60':int(((p>.4)&(p<.6)).sum()),'confident_errors_90':int((((p>=.5)!=y)&(np.maximum(p,1-p)>=.9)).sum())}
 def meta_x(pc,pn,rows,seller,qty,listing,reference):
  l=logit(np.clip(np.column_stack([pc,pn]),1e-5,1-1e-5));seen=np.isin(seller[rows],seller[reference]);q1=qty[rows]<=1;free=listing[rows]=='free';delta=l[:,1]-l[:,0]
  return np.column_stack([l,seen,q1,free,delta*seen,delta*q1,delta*free]),seen

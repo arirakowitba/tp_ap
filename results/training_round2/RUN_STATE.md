@@ -8,3 +8,5 @@ Meta coherent selectedC.1 tune3CV da94.3574 vs93.9715 sobre4147(+16neto), LL.150
 Antes de gastar cupo candidato, validar robustez nueva partición. Submission26 sigue preparada (0.94547inferido). No hay nuevos scoresKaggle. No labelsrecuperados ni saldosindividuales enfit.
 
 Persistir code/report en rama checkpoint/training-20261022; main última actualización rechazada porautoreview. Modelos/arrays guardar checkpointLibrary archivo existente libfile_50719e31e274819185c823b430bb1564, última versión1antes deestatanda.
+
+NB checkpoint fue reparado por stream truncado; nbsvm/checkpoint_integrity.json verifica recarga y maxabsdiff test=0.0. Modelo ahora4.35MB. Incluir versión reparada en siguiente ZIP. Nuevarama sparse texto+tabular sinSVD corre training_round2/sparse.
