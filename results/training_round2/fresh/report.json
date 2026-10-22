@@ -1,0 +1,51 @@
+{
+  "protocol": "Second deterministic random row split; baseline and NB fully refit. No historical predictions, test/public labels, or old meta weights. All hyperparameters fixed. Same70k data historically used, so not a virgin holdout.",
+  "seed": 20261023,
+  "native": {
+    "accuracy": 0.9267857142857143,
+    "log_loss": 0.17724890353646727,
+    "seen_accuracy": 0.9560326143048818,
+    "unseen_accuracy": 0.8610531199257713,
+    "n_seen": 9689,
+    "n_unseen": 4311
+  },
+  "nb": {
+    "accuracy": 0.8605714285714285,
+    "log_loss": 0.32955293438522076,
+    "seen_accuracy": 0.8860563525647641,
+    "unseen_accuracy": 0.8032938993273022,
+    "n_seen": 9689,
+    "n_unseen": 4311
+  },
+  "fixed_blend85native": {
+    "accuracy": 0.9294285714285714,
+    "log_loss": 0.18162459556646635,
+    "seen_accuracy": 0.9567550830839096,
+    "unseen_accuracy": 0.8680120621665507,
+    "n_seen": 9689,
+    "n_unseen": 4311
+  },
+  "meta_fixed_C01": {
+    "accuracy": 0.9324285714285714,
+    "log_loss": 0.16790331550954432,
+    "seen_accuracy": 0.9566518732583342,
+    "unseen_accuracy": 0.8779865460450011,
+    "n_seen": 9689,
+    "n_unseen": 4311
+  },
+  "paired": {
+    "fixed_blend": {
+      "gains": 66,
+      "losses": 29,
+      "net": 37,
+      "p_unadjusted": 0.00018640192629177998
+    },
+    "meta": {
+      "gains": 191,
+      "losses": 112,
+      "net": 79,
+      "p_unadjusted": 6.6348381759116595e-06
+    }
+  },
+  "seconds": 1335.7867341041565
+}

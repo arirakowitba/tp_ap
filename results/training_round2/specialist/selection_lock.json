@@ -1,0 +1,7 @@
+{
+  "config": 1,
+  "trees": 1199,
+  "selection": "Subset tune accuracy, tie logloss",
+  "gate": "qty<=1 pure specialist else native",
+  "fixed_blend_weight": 0.5
+}

@@ -1,0 +1,6 @@
+{
+  "script_sha256": "ebb3919343fa2da344eaffb42bdffd9fe8d6fc3e8219ef9177ea879cc8e9148d",
+  "source_feature_sha256": "6fb4a7dfd3f4c07b3d30cb1b14b68d13382f101dec0cdfcbe363a5101934c681",
+  "source_tune_teacher_sha256": "c63ad18925356e9d35b9c7d1c213097dfe78925f1081a839498a6563aef5482c",
+  "snapshots": "Per config/stage snapshot every30s; caches and deterministic masks unchanged."
+}

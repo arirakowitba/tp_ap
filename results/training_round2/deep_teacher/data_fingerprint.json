@@ -1,0 +1,10 @@
+{
+  "train_data.jsonlines": {
+    "bytes": 199602227,
+    "sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf"
+  },
+  "test_data.jsonlines": {
+    "bytes": 85048471,
+    "sha256": "05921bd73deba1c4ed5a4d564e0351729eae8f2ef197bc851e10f9099d277460"
+  }
+}

@@ -40,16 +40,19 @@ def matrix(base,keys,docs,y,tr,va):
  x=hstack(xs,format='csr');z=hstack(vs,format='csr');log('MATRIX',x.shape,z.shape,'nnz',x.nnz);return x,z,{'onehot':encoder,'vectors':vec,'numeric_cols':nums,'categorical_cols':cats}
 
 def main():
- start=time.time();base,keys,docs,y,seller=read();part=np.load(R/'results/new_models_20261021/partitions.npz');fit,tune,conf=[part[k] for k in ['fit','tune','confirm']];dev=np.r_[fit,tune];x,z,_=matrix(base,keys,docs,y,fit,tune);seen=np.isin(seller[tune],seller[fit]);specs=[dict(num_leaves=15,min_child_samples=80,reg_lambda=20),dict(num_leaves=31,min_child_samples=150,reg_lambda=50)];trials=[]
+ start=time.time();base,keys,docs,y,seller=read();part=np.load(R/'results/new_models_20261021/partitions.npz');fit,tune,conf=[part[k] for k in ['fit','tune','confirm']];dev=np.r_[fit,tune];x,z,_=matrix(base,keys,docs,y,fit,tune);seen=np.isin(seller[tune],seller[fit]);specs=[dict(num_leaves=15,min_child_samples=80,reg_lambda=20)];trials=[];m=None
  # Fixed .85 native+.15 sparse mixture is declared here before confirmation access.
- report={'protocol':'All transforms fit-only; target stats OOF; select standalone config on tune only. Fixed native weight .85 preregistered, no blend selection on confirm. Inherited/reused partitions.','fixed_native_weight':.85}
+ report={'search_budget':'Closed after config0 before confirmation because sparse training cost consumed budget. Config1 interrupted, never inspected.', 'protocol':'All transforms fit-only; target stats OOF; select standalone config on tune only. Fixed native weight .85 preregistered, no blend selection on confirm. Inherited/reused partitions.','fixed_native_weight':.85}
  (O/'protocol.json').write_text(json.dumps(report,indent=2))
  for i,s in enumerate(specs):
-  m=lgb.LGBMClassifier(n_estimators=600,learning_rate=.05,n_jobs=2,verbosity=-1,random_state=20261022,max_bin=31,subsample=.9,colsample_bytree=.8,**s);m.fit(x,y[fit],eval_set=[(z,y[tune])],callbacks=[lgb.early_stopping(80,verbose=False)]);p=m.predict_proba(z)[:,1];np.savez_compressed(O/f'tune_{i}.npz',rows=tune,p=p);rec={'config':i,'params':s,'trees':m.best_iteration_,'metrics':metrics(y[tune],p,seen)};trials.append(rec);(O/'progress.json').write_text(json.dumps(trials,indent=2));log('TUNE',rec)
+  if (O/f'tune_{i}.npz').exists() and (O/'progress.json').exists():
+   saved=json.loads((O/'progress.json').read_text());match=[q for q in saved if q['config']==i]
+   if match:trials.append(match[0]);log('RESUME TUNE',match[0]);continue
+  m=lgb.LGBMClassifier(n_estimators=600,learning_rate=.05,n_jobs=2,verbosity=-1,random_state=20261022,max_bin=31,subsample=.9,colsample_bytree=.8,**s);m.fit(x,y[fit],eval_set=[(z,y[tune])],callbacks=[lgb.early_stopping(80,verbose=False),lgb.log_evaluation(100)]);p=m.predict_proba(z)[:,1];np.savez_compressed(O/f'tune_{i}.npz',rows=tune,p=p);rec={'config':i,'params':s,'trees':m.best_iteration_,'metrics':metrics(y[tune],p,seen)};trials.append(rec);(O/'progress.json').write_text(json.dumps(trials,indent=2));log('TUNE',rec)
  best=max(trials,key=lambda q:(q['metrics']['accuracy'],-q['metrics']['log_loss']));(O/'selection_lock.json').write_text(json.dumps(best,indent=2));del x,z,m;gc.collect();x,z,_=matrix(base,keys,docs,y,dev,conf);m=lgb.LGBMClassifier(n_estimators=best['trees'],learning_rate=.05,n_jobs=2,verbosity=-1,random_state=20261022,max_bin=31,subsample=.9,colsample_bytree=.8,**best['params']);m.fit(x,y[dev]);p=m.predict_proba(z)[:,1];seen=np.isin(seller[conf],seller[dev]);n=np.load(R/'results/new_models_20261021/seller_native_confirm.npz');assert np.array_equal(n['rows'],conf);native=n['p'];blend=.85*native+.15*p;np.savez_compressed(O/'confirm.npz',rows=conf,p=p,y=y[conf],seen=seen);m.booster_.save_model(str(O/'confirm_model.txt'));report.update(selected=best,confirmation=metrics(y[conf],p,seen),native=metrics(y[conf],native,seen),fixed_blend=metrics(y[conf],blend,seen));log('CONFIRM',report)
  del x,z,m;gc.collect()
- if report['fixed_blend']['accuracy']>report['native']['accuracy']:
+ if report['fixed_blend']['accuracy']>report['native']['accuracy'] and os.environ.get('SPARSE_SKIP_FULL')!='1':
   x,z,transforms=matrix(base,keys,docs,y,np.arange(70000),np.arange(70000,100000));m=lgb.LGBMClassifier(n_estimators=best['trees'],learning_rate=.05,n_jobs=2,verbosity=-1,random_state=20261022,max_bin=31,subsample=.9,colsample_bytree=.8,**best['params']);m.fit(x,y);p=m.predict_proba(z)[:,1];np.savez_compressed(O/'test.npz',p=p);m.booster_.save_model(str(O/'full_model.txt'));report['full_refit']='complete'
- else:report['full_refit']='skipped no fixed blend gain'
+ else:report['full_refit']='skipped budget cap' if os.environ.get('SPARSE_SKIP_FULL')=='1' else 'skipped no fixed blend gain'
  report['seconds']=time.time()-start;(O/'report.json').write_text(json.dumps(report,indent=2));log('DONE',report)
 if __name__=='__main__':main()

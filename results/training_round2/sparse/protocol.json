@@ -1,4 +1,5 @@
 {
+  "search_budget": "Closed after config0 before confirmation because sparse training cost consumed budget. Config1 interrupted, never inspected.",
   "protocol": "All transforms fit-only; target stats OOF; select standalone config on tune only. Fixed native weight .85 preregistered, no blend selection on confirm. Inherited/reused partitions.",
   "fixed_native_weight": 0.85
 }

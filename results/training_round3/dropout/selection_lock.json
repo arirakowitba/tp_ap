@@ -1,0 +1,48 @@
+{
+  "choice": {
+    "dropout_fraction": 0.2,
+    "iterations": 746,
+    "threshold": 0.475,
+    "tune": {
+      "accuracy": 0.935,
+      "log_loss": 0.16102380623688617,
+      "seen_accuracy": 0.956875,
+      "new_accuracy": 0.8872727272727273,
+      "test_mix_accuracy": 0.9371079545454545,
+      "n_seen": 4800,
+      "n_new": 2200
+    }
+  },
+  "trials": [
+    {
+      "dropout_fraction": 0.2,
+      "iterations": 746,
+      "threshold": 0.475,
+      "tune": {
+        "accuracy": 0.935,
+        "log_loss": 0.16102380623688617,
+        "seen_accuracy": 0.956875,
+        "new_accuracy": 0.8872727272727273,
+        "test_mix_accuracy": 0.9371079545454545,
+        "n_seen": 4800,
+        "n_new": 2200
+      }
+    },
+    {
+      "dropout_fraction": 0.5,
+      "iterations": 710,
+      "threshold": 0.475,
+      "tune": {
+        "accuracy": 0.9324285714285714,
+        "log_loss": 0.16619326472189286,
+        "seen_accuracy": 0.9533333333333334,
+        "new_accuracy": 0.8868181818181818,
+        "test_mix_accuracy": 0.9344430303030302,
+        "n_seen": 4800,
+        "n_new": 2200
+      }
+    }
+  ],
+  "protocol": "Dropout train-only .2/.5. Teacher OOF unchanged. Test mixture .716seen/.284new. Config/threshold selected tune only, no public labels. Reused partitions, not virgin validation.",
+  "seller_stat_mask": "Price mean/std/count -> -1; relativeprice -> logprice+1, exactly unseen fallback. Geography remains observed."
+}

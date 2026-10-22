@@ -1,0 +1,34 @@
+{
+  "scope": "Read-only code and artifact audit. Existing inherited holdouts repeatedly reused; comparisons are diagnostic. No weight/threshold selected here.",
+  "checks": {
+    "tune_teacher": {
+      "train_rows_match": true,
+      "eval_rows_match": true,
+      "all_finite": true,
+      "train_eval_disjoint": true,
+      "fold0_eval_disjoint": true,
+      "fold0_matches_stage_oof": true,
+      "fold1_eval_disjoint": true,
+      "fold1_matches_stage_oof": true,
+      "fold2_eval_disjoint": true,
+      "fold2_matches_stage_oof": true,
+      "fold_union_exact": true,
+      "fold_union_unique": true
+    },
+    "confirm_teacher": "pending",
+    "full_teacher": "pending",
+    "base_feature_shape": [
+      100000,
+      101
+    ],
+    "suspicious_columns": []
+  },
+  "limitations": [
+    "Caches identify rows but not source bytes/configuration; invalidate before future parameter/data changes.",
+    "Teacher vectorizers/models and context price mappings are not serialized; CBM alone is not a standalone scorer. Reproduction requires raw data/script or cached teacher vectors.",
+    "OOF teacher sees 2/3 train rows whereas eval teacher sees all training rows; standard stacking refit distribution shift remains.",
+    "Production historical reference is hybrid: base refitted70k, some auxiliary models frozen on development.",
+    "Condition is removed before features; top-level condition attributes filtered. Variation attribute values enter only aggregate counts, not direct value encodings."
+  ],
+  "historical_common": "pending confirmation"
+}

@@ -1,0 +1,27 @@
+{
+  "alpha": 100,
+  "n_common_tune": 2098,
+  "trials": [
+    {
+      "alpha": 1,
+      "cv_accuracy": 0.9418493803622497,
+      "cv_logloss": 0.15111514164780257
+    },
+    {
+      "alpha": 10,
+      "cv_accuracy": 0.9413727359389895,
+      "cv_logloss": 0.15067567481991628
+    },
+    {
+      "alpha": 100,
+      "cv_accuracy": 0.9418493803622497,
+      "cv_logloss": 0.15078846243940827
+    },
+    {
+      "alpha": 1000,
+      "cv_accuracy": 0.9408960915157293,
+      "cv_logloss": 0.15071891708180665
+    }
+  ],
+  "scope": "Offset historical logit coefficient fixed1, Gaussian penalty on correction and intercept. Common tune CV selection only. Reused holdouts, exploratory comparison."
+}

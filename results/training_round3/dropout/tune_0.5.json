@@ -1,0 +1,14 @@
+{
+  "dropout_fraction": 0.5,
+  "iterations": 710,
+  "threshold": 0.475,
+  "tune": {
+    "accuracy": 0.9324285714285714,
+    "log_loss": 0.16619326472189286,
+    "seen_accuracy": 0.9533333333333334,
+    "new_accuracy": 0.8868181818181818,
+    "test_mix_accuracy": 0.9344430303030302,
+    "n_seen": 4800,
+    "n_new": 2200
+  }
+}

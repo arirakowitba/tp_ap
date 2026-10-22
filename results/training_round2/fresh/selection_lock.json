@@ -1,0 +1,47 @@
+{
+  "seed": 20261023,
+  "baseline_params": {
+    "depth": 7,
+    "iterations": 650,
+    "learning_rate": 0.065,
+    "l2_leaf_reg": 20,
+    "loss_function": "Logloss",
+    "thread_count": 2,
+    "random_seed": 20261021,
+    "verbose": 200,
+    "allow_writing_files": false,
+    "one_hot_max_size": 20,
+    "tokenizers": [
+      {
+        "tokenizer_id": "Space",
+        "separator_type": "ByDelimiter",
+        "delimiter": " "
+      }
+    ],
+    "dictionaries": [
+      {
+        "dictionary_id": "Word",
+        "max_dictionary_size": "2500",
+        "occurrence_lower_bound": "5"
+      }
+    ],
+    "feature_calcers": [
+      "BoW",
+      "NaiveBayes"
+    ]
+  },
+  "nb_C": 4,
+  "meta_C": 0.1,
+  "blend_weight_native": 0.85,
+  "selection": "All hyperparameters fixed before this second split confirmation; meta fitted only7k tune predictions.",
+  "feature_names": [
+    "native_logit",
+    "nb_logit",
+    "seen",
+    "quantity_le1",
+    "listing_free",
+    "delta_x_seen",
+    "delta_x_quantity_le1",
+    "delta_x_listing_free"
+  ]
+}

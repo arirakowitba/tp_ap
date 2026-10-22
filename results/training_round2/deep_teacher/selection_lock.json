@@ -1,0 +1,22 @@
+{
+  "trees": 749,
+  "threshold": 0.51,
+  "teacher": "3fold OOF NB, vocab30kword+30kchar, C4fixed",
+  "catboost_params": {
+    "depth": 7,
+    "iterations": 750,
+    "learning_rate": 0.06,
+    "l2_leaf_reg": 15,
+    "random_strength": 0.8,
+    "rsm": 0.8,
+    "border_count": 64,
+    "thread_count": 2,
+    "random_seed": 20261023,
+    "verbose": 200,
+    "allow_writing_files": true,
+    "loss_function": "Logloss",
+    "save_snapshot": true,
+    "snapshot_interval": 30
+  },
+  "selection": "Trees early-stop logloss tune; threshold tune accuracy; no confirmation selection."
+}

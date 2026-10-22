@@ -1,0 +1,340 @@
+{
+  "scope": "All evidence uses train labels. The two partitions share rows and sellers; do not pool as independent trials. Different meta definitions prevent direct replication claim for meta. Same fixed85/15 blend does replicate directional contribution.",
+  "partitions": {
+    "first": {
+      "n": 14000,
+      "meta_definition": "Five logits (native,NB,rich,retrieval,context) + interactions; C selected innerCV tune.",
+      "models": {
+        "native": {
+          "all": {
+            "n": 14000,
+            "accuracy": 0.9315714285714286,
+            "logloss": 0.16996148570636524,
+            "brier": 0.050251912477632624
+          },
+          "seen": {
+            "n": 9723,
+            "accuracy": 0.9584490383626453,
+            "logloss": 0.11139166155782448,
+            "brier": 0.03128817611797479
+          },
+          "unseen": {
+            "n": 4277,
+            "accuracy": 0.8704699555763385,
+            "logloss": 0.3031095802109857,
+            "brier": 0.09336259955384331
+          },
+          "paired_vs_native": {
+            "fixes": 0,
+            "breaks": 0,
+            "net": 0
+          }
+        },
+        "nb": {
+          "all": {
+            "n": 14000,
+            "accuracy": 0.8557857142857143,
+            "logloss": 0.3336669964548312,
+            "brier": 0.10320204260524997
+          },
+          "seen": {
+            "n": 9723,
+            "accuracy": 0.8817237478144606,
+            "logloss": 0.29306952327321506,
+            "brier": 0.08843092917425727
+          },
+          "unseen": {
+            "n": 4277,
+            "accuracy": 0.7968202010755202,
+            "logloss": 0.4259581425256408,
+            "brier": 0.13678154596965073
+          },
+          "paired_vs_native": {
+            "fixes": 456,
+            "breaks": 1517,
+            "net": -1061
+          }
+        },
+        "blend85_15": {
+          "all": {
+            "n": 14000,
+            "accuracy": 0.9335,
+            "logloss": 0.17633353369631807,
+            "brier": 0.05003146261511012
+          },
+          "seen": {
+            "n": 9723,
+            "accuracy": 0.958860434022421,
+            "logloss": 0.12323038056793902,
+            "brier": 0.03214497588216058
+          },
+          "unseen": {
+            "n": 4277,
+            "accuracy": 0.8758475566986206,
+            "logloss": 0.2970541223956938,
+            "brier": 0.09069321396055519
+          },
+          "paired_vs_native": {
+            "fixes": 73,
+            "breaks": 46,
+            "net": 27
+          }
+        },
+        "meta": {
+          "all": {
+            "n": 14000,
+            "accuracy": 0.9350714285714286,
+            "logloss": 0.16102275931195656,
+            "brier": 0.04791520873055023
+          },
+          "seen": {
+            "n": 9723,
+            "accuracy": 0.9575233981281498,
+            "logloss": 0.10829185859135915,
+            "brier": 0.031075184410472693
+          },
+          "unseen": {
+            "n": 4277,
+            "accuracy": 0.884030862754267,
+            "logloss": 0.28089709826598247,
+            "brier": 0.08619801360876253
+          },
+          "paired_vs_native": {
+            "fixes": 214,
+            "breaks": 165,
+            "net": 49
+          }
+        }
+      },
+      "seller_bootstrap": {
+        "blend85_15": {
+          "seller_groups": 8335,
+          "repetitions": 1500,
+          "accuracy_delta": 0.0019285714285714286,
+          "ci95": [
+            0.000456742860579937,
+            0.003329390545725116
+          ],
+          "scope": "Cluster conditional on fitted models; excludes selection uncertainty and repeated dataset reuse."
+        },
+        "meta": {
+          "seller_groups": 8335,
+          "repetitions": 1500,
+          "accuracy_delta": 0.0035,
+          "ci95": [
+            0.000722796202592364,
+            0.0061552474065797195
+          ],
+          "scope": "Cluster conditional on fitted models; excludes selection uncertainty and repeated dataset reuse."
+        }
+      }
+    },
+    "second": {
+      "n": 14000,
+      "meta_definition": "Two logits (native,NB) + predefined gates, C=.1 fixed.",
+      "models": {
+        "native": {
+          "all": {
+            "n": 14000,
+            "accuracy": 0.9267857142857143,
+            "logloss": 0.17724890353646727,
+            "brier": 0.05289989231202211
+          },
+          "seen": {
+            "n": 9689,
+            "accuracy": 0.9560326143048818,
+            "logloss": 0.11615788729177384,
+            "brier": 0.03292996982733074
+          },
+          "unseen": {
+            "n": 4311,
+            "accuracy": 0.8610531199257713,
+            "logloss": 0.3145513522478647,
+            "brier": 0.09778242048510835
+          },
+          "paired_vs_native": {
+            "fixes": 0,
+            "breaks": 0,
+            "net": 0
+          }
+        },
+        "nb": {
+          "all": {
+            "n": 14000,
+            "accuracy": 0.8605714285714285,
+            "logloss": 0.32955293438522076,
+            "brier": 0.10180913879617474
+          },
+          "seen": {
+            "n": 9689,
+            "accuracy": 0.8860563525647641,
+            "logloss": 0.28676153998997966,
+            "brier": 0.08645953235374956
+          },
+          "unseen": {
+            "n": 4311,
+            "accuracy": 0.8032938993273022,
+            "logloss": 0.42572686625613027,
+            "brier": 0.1363074771911313
+          },
+          "paired_vs_native": {
+            "fixes": 517,
+            "breaks": 1444,
+            "net": -927
+          }
+        },
+        "blend85_15": {
+          "all": {
+            "n": 14000,
+            "accuracy": 0.9294285714285714,
+            "logloss": 0.18162459556646635,
+            "brier": 0.05204031508689895
+          },
+          "seen": {
+            "n": 9689,
+            "accuracy": 0.9567550830839096,
+            "logloss": 0.12609126089192513,
+            "brier": 0.03330060597475201
+          },
+          "unseen": {
+            "n": 4311,
+            "accuracy": 0.8680120621665507,
+            "logloss": 0.3064361194963271,
+            "brier": 0.09415793085762304
+          },
+          "paired_vs_native": {
+            "fixes": 66,
+            "breaks": 29,
+            "net": 37
+          }
+        },
+        "meta": {
+          "all": {
+            "n": 14000,
+            "accuracy": 0.9324285714285714,
+            "logloss": 0.16790331550954432,
+            "brier": 0.050020351067826485
+          },
+          "seen": {
+            "n": 9689,
+            "accuracy": 0.9566518732583342,
+            "logloss": 0.11328973313373494,
+            "brier": 0.0323860248433024
+          },
+          "unseen": {
+            "n": 4311,
+            "accuracy": 0.8779865460450011,
+            "logloss": 0.29064769028087745,
+            "brier": 0.0896536117473472
+          },
+          "paired_vs_native": {
+            "fixes": 191,
+            "breaks": 112,
+            "net": 79
+          }
+        }
+      },
+      "seller_bootstrap": {
+        "blend85_15": {
+          "seller_groups": 8309,
+          "repetitions": 1500,
+          "accuracy_delta": 0.002642857142857143,
+          "ci95": [
+            0.001299701184517054,
+            0.0040590481970091555
+          ],
+          "scope": "Cluster conditional on fitted models; excludes selection uncertainty and repeated dataset reuse."
+        },
+        "meta": {
+          "seller_groups": 8309,
+          "repetitions": 1500,
+          "accuracy_delta": 0.005642857142857143,
+          "ci95": [
+            0.00312543069400681,
+            0.008074637028895956
+          ],
+          "scope": "Cluster conditional on fitted models; excludes selection uncertainty and repeated dataset reuse."
+        }
+      }
+    }
+  },
+  "dependence": {
+    "overlap_confirm_rows": 2909,
+    "overlap_sellers": 3594,
+    "first_unique_sellers": 8335,
+    "second_unique_sellers": 8309,
+    "caution": "Overlap not the only dependence; models share most train data and history informed all designs."
+  },
+  "historical_comparison_uncertainty": {
+    "n_groups": 3103,
+    "repetitions": 2000,
+    "accuracy_delta": 0.003858210754762479,
+    "accuracy_delta_ci95": [
+      -0.00073710979684431,
+      0.008173076923076924
+    ],
+    "brier_delta": -0.0016841389586780442,
+    "brier_delta_ci95": [
+      -0.003398318260733073,
+      1.309911543936451e-05
+    ],
+    "logloss_delta": -0.004103065369508518,
+    "logloss_delta_ci95": [
+      -0.009109842110912515,
+      0.000744892548915487
+    ]
+  },
+  "historical_meta_calibration": {
+    "historical": {
+      "all": {
+        "brier": 0.045379207602702164,
+        "logloss": 0.155061343187239,
+        "ece_10_equal_width": 0.009940687016201481
+      },
+      "seen": {
+        "brier": 0.030081999624850857,
+        "logloss": 0.1060496599717178,
+        "ece_10_equal_width": 0.007180408767160784
+      },
+      "unseen": {
+        "brier": 0.0797979255528676,
+        "logloss": 0.2653376304221616,
+        "ece_10_equal_width": 0.019293510406178004
+      }
+    },
+    "meta": {
+      "all": {
+        "brier": 0.043695068644024115,
+        "logloss": 0.15095827781773044,
+        "ece_10_equal_width": 0.01510427811196245
+      },
+      "seen": {
+        "brier": 0.02879196674497478,
+        "logloss": 0.10220608609760028,
+        "ece_10_equal_width": 0.012142324157310973
+      },
+      "unseen": {
+        "brier": 0.07722704791688513,
+        "logloss": 0.2606507091880233,
+        "ece_10_equal_width": 0.034846869354983594
+      }
+    }
+  },
+  "next_experiments": [
+    {
+      "name": "seller dropout on strong deep teacher",
+      "rationale": "Replicated fixed-blend gains concentrate on unseen sellers, while removing seller entirely previously harmed known sellers. Dropout can preserve known-seller value while improving fallback. Already in progress; prioritize its tune-only locked result.",
+      "validation": "Compare seller dropout versus same deep baseline, especially new-seller quantity1. Use same rows, locked test-mix weighting and final untouched-by-selection comparison."
+    },
+    {
+      "name": "field-specific text teacher with explicit negation context",
+      "rationale": "All-title NB is useful as complement but poor standalone. Used/new mentions are context-dependent; split title and warranty teachers can distinguish \"nuevo modelo\" from \"sin uso\" and counter noisy warranty text.",
+      "validation": "Cross-fit every teacher inside fit/development, then lock a small model family on tune. Do not choose regex or field weights from public flip outcomes."
+    },
+    {
+      "name": "seller-disjoint outer check of the chosen strong stack",
+      "rationale": "Row splits reproduce marginal test mixture but still permit seller lookup for known sellers. A seller-disjoint outer split can test whether new-seller gains are transferable rather than an idiosyncratic row-split artifact.",
+      "validation": "Fixed strongest architecture, no broad hyperparameter search on outer seller split; report separately and reweight only as sensitivity, not a substitute for actual test performance."
+    }
+  ]
+}

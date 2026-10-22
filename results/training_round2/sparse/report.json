@@ -1,0 +1,40 @@
+{
+  "search_budget": "Closed after config0 before confirmation because sparse training cost consumed budget. Config1 interrupted, never inspected.",
+  "protocol": "All transforms fit-only; target stats OOF; select standalone config on tune only. Fixed native weight .85 preregistered, no blend selection on confirm. Inherited/reused partitions.",
+  "fixed_native_weight": 0.85,
+  "selected": {
+    "config": 0,
+    "params": {
+      "num_leaves": 15,
+      "min_child_samples": 80,
+      "reg_lambda": 20
+    },
+    "trees": 599,
+    "metrics": {
+      "accuracy": 0.9207142857142857,
+      "log_loss": 0.1973524677072992,
+      "seen_accuracy": 0.9477083333333334,
+      "new_accuracy": 0.8618181818181818
+    }
+  },
+  "confirmation": {
+    "accuracy": 0.9233571428571429,
+    "log_loss": 0.1806198273140656,
+    "seen_accuracy": 0.9527923480407282,
+    "new_accuracy": 0.856441430909516
+  },
+  "native": {
+    "accuracy": 0.9315714285714286,
+    "log_loss": 0.16996148570636524,
+    "seen_accuracy": 0.9584490383626453,
+    "new_accuracy": 0.8704699555763385
+  },
+  "fixed_blend": {
+    "accuracy": 0.9314285714285714,
+    "log_loss": 0.16809831927050026,
+    "seen_accuracy": 0.9580376427028695,
+    "new_accuracy": 0.8709375730652327
+  },
+  "full_refit": "skipped budget cap",
+  "seconds": 364.5580859184265
+}
