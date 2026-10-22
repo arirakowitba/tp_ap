@@ -1,0 +1,96 @@
+{
+  "generated_utc": "2026-10-22T03:42:43.649563+00:00",
+  "public_best_observed": 0.94533,
+  "submission26_public_expected_not_observed": 0.94547,
+  "experiments": [
+    {
+      "experiment": "training_next/stacker",
+      "report": "results/training_next/stacker/report.json",
+      "result": {
+        "accuracy": 0.9350714285714286,
+        "log_loss": 0.16102275931195656,
+        "seen_accuracy": 0.9575233981281498,
+        "unseen_accuracy": 0.884030862754267
+      },
+      "scope": "Meta trained ONLY on7k tune predictions from49k base fits. Bases refitted56k for14k confirmation; base-refit distribution shift applies. Existing splits repeatedly reused and base parameters previously tuned on tune. No public labels or flip labels; no weights chosen on confirmation."
+    },
+    {
+      "experiment": "training_next/historical_stacker",
+      "report": "results/training_next/historical_stacker/report.json",
+      "result": {
+        "accuracy": 0.9421268386785628,
+        "log_loss": 0.14875873093210704
+      },
+      "scope": "No public coefficients. Inner CV on common tune rows; historically reused holdouts. Confirmation not consulted for selection. Base fitting excludes corresponding predictions. Historical coefficient selection itself used historical development."
+    },
+    {
+      "experiment": "training_next/nbsvm",
+      "report": "results/training_next/nbsvm/report.json",
+      "result": {
+        "accuracy": 0.8557857142857143,
+        "log_loss": 0.3336669964548312,
+        "seen_accuracy": 0.8817237478144606,
+        "unseen_accuracy": 0.7968202010755202
+      },
+      "scope": "Tune-only C selection; inherited row partitions, not a historically virgin holdout. No public feedback labels used."
+    },
+    {
+      "experiment": "training_next/retrieval",
+      "report": "results/training_next/retrieval/report.json",
+      "result": null,
+      "scope": "Fit49k/tune7k; standalone selected on tune; refit56k/confirm14k. Weight .1 fixed before confirmation analysis because baseline tune reproduction OOM. No test/probe labels. Text vocabulary and neighbor labels trained only on fit/dev. Confirmation historically reused by previous work, not virgin."
+    },
+    {
+      "experiment": "training_next/rich",
+      "report": "results/training_next/rich/report.json",
+      "result": {
+        "accuracy": 0.9277142857142857,
+        "logloss": 0.17524243161003242,
+        "seen_accuracy": 0.9548493263396071,
+        "new_accuracy": 0.8660275894318448
+      },
+      "scope": "Existing fit49k/tune7k, select tune then refit56k/confirm14k. Label-free stats fit scoped. No test labels."
+    },
+    {
+      "experiment": "training_round2/historical_gated",
+      "report": "results/training_round2/historical_gated/report.json",
+      "result": {
+        "accuracy": 0.938509766095973,
+        "log_loss": 0.15210796825019424
+      },
+      "scope": "No public coefficients. Inner CV on common tune rows; historically reused holdouts. Confirmation not consulted for selection. Base fitting excludes corresponding predictions. Historical coefficient selection itself used historical development."
+    },
+    {
+      "experiment": "training_round2/meta",
+      "report": "results/training_round2/meta/report.json",
+      "result": {
+        "accuracy": 0.9421268386785628,
+        "log_loss": 0.14875873093210704
+      },
+      "scope": "All family/parameter choices use 2098 common tune only. Existing base models and hyperparameters had already been selected using tune; nested meta CV is conditional, not fresh end-to-end validation. 4147 confirm historically reused."
+    },
+    {
+      "experiment": "training_round2/meta_production_consistent",
+      "report": "results/training_round2/meta_production_consistent/report.json",
+      "result": {
+        "accuracy": 0.9409211478176995,
+        "log_loss": 0.1495587240514334
+      },
+      "scope": "Provenance correction after matched/core evaluation. LR6 C1 fixed from earlier tune choice; no family/C change using confirmation. without_public historical threshold .505; full70k selected production test counterpart supplied by provenance audit. Historically reused holdout; not new confirmation."
+    },
+    {
+      "experiment": "training_round2/historical_fullaligned",
+      "report": "results/training_round2/historical_fullaligned/report.json",
+      "result": {
+        "accuracy": 0.9435736677115988,
+        "log_loss": 0.15095827781773044
+      },
+      "scope": "No public coefficients. Inner CV on common tune rows; historically reused holdouts. Confirmation not consulted for selection. Base fitting excludes corresponding predictions. Historical coefficient selection itself used historical development."
+    }
+  ],
+  "running": [
+    "quantity_specialist",
+    "fresh_split_20261023"
+  ],
+  "active_public_submission_unchanged": true
+}

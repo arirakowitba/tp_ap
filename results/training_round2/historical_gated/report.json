@@ -1,0 +1,35 @@
+{
+  "C": 1,
+  "n_tune_common": 2098,
+  "trials": [
+    {
+      "C": 0.01,
+      "cv_accuracy": 0.9389930673940221
+    },
+    {
+      "C": 0.1,
+      "cv_accuracy": 0.9399488578247528
+    },
+    {
+      "C": 1,
+      "cv_accuracy": 0.9413751562677577
+    }
+  ],
+  "historical_column": "refit49k_without_public",
+  "scope": "No public coefficients. Inner CV on common tune rows; historically reused holdouts. Confirmation not consulted for selection. Base fitting excludes corresponding predictions. Historical coefficient selection itself used historical development.",
+  "n_confirm_common": 4147,
+  "historical_at_05": {
+    "accuracy": 0.939956595129009,
+    "log_loss": 0.155061343187239
+  },
+  "historical_accuracy_at_locked_threshold_0505": 0.9397154569568362,
+  "stacker": {
+    "accuracy": 0.938509766095973,
+    "log_loss": 0.15210796825019424
+  },
+  "gain": 35,
+  "loss": 40,
+  "net": -5,
+  "paired_p_unadjusted": 0.6444639138942256,
+  "test_export": "complete: historical production full70k selected no-public coefficients; 5 new bases full70k"
+}
