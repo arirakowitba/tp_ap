@@ -75,7 +75,7 @@ def main():
  np.savez_compressed(OUT/'selected_confirm.npz',rows=confirm,p=p,retrieval_p=pc[best['key']],y=y[confirm],seen=seen)
  (OUT/'report.json').write_text(json.dumps(report,indent=2));say('REPORT',report)
  if report['blend_confirm']['accuracy']>report['baseline_confirm']['accuracy']:
-  ptest=retrieve(raw,y,np.arange(70000),np.arange(70000,100000),'test');native=np.load(ROOT/'results/new_models_20261021/seller_native_test.npz')['test'];p=(1-weight)*native+weight*ptest[best['key']];pd.DataFrame({'ID':np.arange(1,30001),'p_used':p}).to_csv(OUT/'selected_test_predictions.csv',index=False)
+  ptest=retrieve(raw,y,np.arange(70000),np.arange(70000,100000),'test');np.savez_compressed(OUT/'selected_retrieval_test.npz',p=ptest[best['key']],rows=np.arange(70000,100000),ID=np.arange(1,30001));native=np.load(ROOT/'results/new_models_20261021/seller_native_test.npz')['test'];p=(1-weight)*native+weight*ptest[best['key']];pd.DataFrame({'ID':np.arange(1,30001),'p_used':p}).to_csv(OUT/'selected_test_predictions.csv',index=False)
  else:say('No full refit: blend does not improve baseline confirmation accuracy')
  (OUT/'status.json').write_text(json.dumps({'stage':'complete','full_refit':report['blend_confirm']['accuracy']>report['baseline_confirm']['accuracy']},indent=2))
  del train,test,raw,pt,pc

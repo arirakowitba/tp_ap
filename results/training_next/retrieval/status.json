@@ -1,9 +1,4 @@
 {
-  "stage": "tune retrieval complete, waiting for baseline_reproduction/seller_native_tune.npz",
-  "standalone_tune_accuracy": {
-    "global_k128_pow2": 0.80729,
-    "seller_1": 0.79529
-  },
-  "train_only_features": true,
-  "next": "Choose blend on tune then evaluate confirm once. Background process session92290."
+  "stage": "complete",
+  "full_refit": true
 }

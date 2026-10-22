@@ -1,5 +1,5 @@
 {
-  "stage": "waiting_for_native_tune",
-  "time_utc": "2026-10-22T00:36:12Z",
-  "remaining_seconds": 509
+  "stage": "done",
+  "time_utc": "2026-10-22T00:40:46Z",
+  "test_export": "Complete, full70k five base models with tune7k meta weights unchanged"
 }

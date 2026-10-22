@@ -1,0 +1,130 @@
+{
+  "selected_C": 1,
+  "trials": [
+    {
+      "C": 0.01,
+      "cv_accuracy_mean": 0.9302857142857143,
+      "cv_scores": [
+        0.9278571428571428,
+        0.93,
+        0.9314285714285714,
+        0.9278571428571428,
+        0.9342857142857143
+      ]
+    },
+    {
+      "C": 0.1,
+      "cv_accuracy_mean": 0.9318571428571427,
+      "cv_scores": [
+        0.9271428571428572,
+        0.9328571428571428,
+        0.935,
+        0.9307142857142857,
+        0.9335714285714286
+      ]
+    },
+    {
+      "C": 1,
+      "cv_accuracy_mean": 0.932,
+      "cv_scores": [
+        0.9257142857142857,
+        0.9357142857142857,
+        0.9335714285714286,
+        0.9321428571428572,
+        0.9328571428571428
+      ]
+    }
+  ],
+  "feature_names": [
+    "logit_native",
+    "logit_nb",
+    "logit_retrieval",
+    "logit_rich",
+    "logit_context",
+    "seen_seller",
+    "quantity_le1",
+    "listing_free",
+    "log_quantity",
+    "nb_minus_native_x_seen",
+    "nb_minus_native_x_qty1",
+    "nb_minus_native_x_free",
+    "retrieval_minus_native_x_seen",
+    "retrieval_minus_native_x_qty1",
+    "retrieval_minus_native_x_free",
+    "rich_minus_native_x_seen",
+    "rich_minus_native_x_qty1",
+    "rich_minus_native_x_free",
+    "context_minus_native_x_seen",
+    "context_minus_native_x_qty1",
+    "context_minus_native_x_free"
+  ],
+  "confirmation": {
+    "accuracy": 0.9350714285714286,
+    "log_loss": 0.16102275931195656,
+    "seen_accuracy": 0.9575233981281498,
+    "unseen_accuracy": 0.884030862754267
+  },
+  "bases_confirmation": {
+    "native": {
+      "accuracy": 0.9315714285714286,
+      "log_loss": 0.16996148570636524,
+      "seen_accuracy": 0.9584490383626453,
+      "unseen_accuracy": 0.8704699555763385
+    },
+    "nb": {
+      "accuracy": 0.8557857142857143,
+      "log_loss": 0.3336669964548312,
+      "seen_accuracy": 0.8817237478144606,
+      "unseen_accuracy": 0.7968202010755202
+    },
+    "rich": {
+      "accuracy": 0.9277142857142857,
+      "log_loss": 0.17524243161003242,
+      "seen_accuracy": 0.9548493263396071,
+      "unseen_accuracy": 0.8660275894318448
+    },
+    "retrieval": {
+      "accuracy": 0.818,
+      "log_loss": 0.46195074224480476,
+      "seen_accuracy": 0.8500462820117248,
+      "unseen_accuracy": 0.7451484685527239
+    },
+    "context": {
+      "accuracy": 0.9201428571428572,
+      "log_loss": 0.19264314870361612,
+      "seen_accuracy": 0.9534094415303919,
+      "unseen_accuracy": 0.8445171849427169
+    }
+  },
+  "scope": "Meta trained ONLY on7k tune predictions from49k base fits. Bases refitted56k for14k confirmation; base-refit distribution shift applies. Existing splits repeatedly reused and base parameters previously tuned on tune. No public labels or flip labels; no weights chosen on confirmation.",
+  "paired_vs_native": {
+    "gain": 214,
+    "loss": 165,
+    "net": 49,
+    "p_unadjusted": 0.01357326294061218
+  },
+  "coefficients": {
+    "logit_native": 1.2220642956071461,
+    "logit_nb": 1.1904222612335056,
+    "logit_retrieval": 0.0028078821475373793,
+    "logit_rich": 1.1998506383639052,
+    "logit_context": 1.6519238133123297,
+    "seen_seller": -0.12425119935290514,
+    "quantity_le1": -0.3947433086647497,
+    "listing_free": 0.16161859086146538,
+    "log_quantity": -0.08167563696388447,
+    "nb_minus_native_x_seen": -0.4280794719936184,
+    "nb_minus_native_x_qty1": 0.3983182448818997,
+    "nb_minus_native_x_free": -0.016374629294973454,
+    "retrieval_minus_native_x_seen": -0.06665560965330145,
+    "retrieval_minus_native_x_qty1": 0.30639129315595887,
+    "retrieval_minus_native_x_free": -0.4062919015363234,
+    "rich_minus_native_x_seen": 0.18065984304518712,
+    "rich_minus_native_x_qty1": -0.2290682027556842,
+    "rich_minus_native_x_free": 0.004231001424513065,
+    "context_minus_native_x_seen": 0.3779247673516375,
+    "context_minus_native_x_qty1": -0.324224853881311,
+    "context_minus_native_x_free": 0.11454726098992912
+  },
+  "test_export": "Complete, full70k five base models with tune7k meta weights unchanged"
+}

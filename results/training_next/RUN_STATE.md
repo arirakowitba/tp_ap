@@ -14,3 +14,8 @@ Pendiente: reproducir native_tune (script reproduce_native_tune_next.py). Primer
 Repo: checkpoints código y métricas autorizados en main. Auto-review bloqueó binarios arrays por exigir permiso adicional; no afirmar que están en GitHub. Conservar modelos/NPZ en checkpoint descargable completo. Los CSV21–26 se guardaron en main, F8 retirado excluido.
 
 Fuentes primarias: https://aclanthology.org/P12-2018/ ; https://catboost.ai/docs/en/references/text-processing__feature_calcers ; https://arxiv.org/abs/2307.14338 . Retrieval inspirado en vecinos, no implementación de TabR.
+
+## Cierre actualizado
+Todos los procesos de entrenamiento de esta tanda terminaron. Baseline tune reproducido correctamente tras primer OOM. Stacker nuevo93.507% confirm14k pero pierde frente histórico sobre intersección.
+Nuevo histórico+5ramas: meta LR C1 elegido innerCV5 sobre2098 filas tune mutuamente fuera de entrenamiento; confirm4147 histórico93.923%->94.213%, +12netos(33ganancias/21pérdidas), logloss .15281->.14876, p pareado .1337 noajustado. Es prometedor, no concluyente ni score Kaggle observado. Predicciones test y modelo guardados en historical_stacker/.
+Próximos pasos: validar estabilidad en otra partición/CV antes reemplazar referencia; separar desempeño vistos/nuevos y política quantity1; luego diseñar prueba informativa de candidato según valor esperado. No elegir pesos usando confirm. Mantener submission26 prevista (0.94547 inferido, no observado).

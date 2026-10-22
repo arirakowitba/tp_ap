@@ -11,3 +11,5 @@ Meta logistic regression is standardized inside the five-fold inner tune CV. C i
 The inner CV score is selection machinery, not an unbiased validation estimate: individual base hyperparameters already used tune labels. Confirmation is inherited and has been reused for prior experiments. No public-original labels or inferred flip labels are permitted.
 
 Test probabilities are exported only when all five full70k base vectors exist. Otherwise the model and exact pending dependency are checkpointed.
+
+Resume: rerun the training script if waiting timed out. If meta_model.joblib/report.json already exist and only retrieval full-test was missing, run `python scripts/export_regularized_stacker_next.py`; it exports without retuning or reevaluating confirmation.

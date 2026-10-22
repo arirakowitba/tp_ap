@@ -1,0 +1,26 @@
+{
+  "n_common": 4147,
+  "scope": "Diagnostic intersection excluded from both base training sets. Reused holdouts and tune overlap prevent a virgin confirmation claim. No coefficient selected here.",
+  "stacker": {
+    "accuracy": 0.9336870026525199,
+    "log_loss": 0.16008919117519269
+  },
+  "historical": {
+    "refit49k_matched_without_public": {
+      "accuracy": 0.939233180612491,
+      "log_loss": 0.15280993403735355,
+      "stacker_gains": 69,
+      "stacker_losses": 92,
+      "net": -23,
+      "paired_p_unadjusted": 0.082625822716493
+    },
+    "refit49k_without_public": {
+      "accuracy": 0.939956595129009,
+      "log_loss": 0.155061343187239,
+      "stacker_gains": 73,
+      "stacker_losses": 99,
+      "net": -26,
+      "paired_p_unadjusted": 0.05630366806880823
+    }
+  }
+}

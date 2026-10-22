@@ -1,0 +1,62 @@
+{
+  "C": 1,
+  "trials": [
+    {
+      "C": 0.01,
+      "cv_accuracy_mean": 0.9302857142857143,
+      "cv_scores": [
+        0.9278571428571428,
+        0.93,
+        0.9314285714285714,
+        0.9278571428571428,
+        0.9342857142857143
+      ]
+    },
+    {
+      "C": 0.1,
+      "cv_accuracy_mean": 0.9318571428571427,
+      "cv_scores": [
+        0.9271428571428572,
+        0.9328571428571428,
+        0.935,
+        0.9307142857142857,
+        0.9335714285714286
+      ]
+    },
+    {
+      "C": 1,
+      "cv_accuracy_mean": 0.932,
+      "cv_scores": [
+        0.9257142857142857,
+        0.9357142857142857,
+        0.9335714285714286,
+        0.9321428571428572,
+        0.9328571428571428
+      ]
+    }
+  ],
+  "feature_names": [
+    "logit_native",
+    "logit_nb",
+    "logit_retrieval",
+    "logit_rich",
+    "logit_context",
+    "seen_seller",
+    "quantity_le1",
+    "listing_free",
+    "log_quantity",
+    "nb_minus_native_x_seen",
+    "nb_minus_native_x_qty1",
+    "nb_minus_native_x_free",
+    "retrieval_minus_native_x_seen",
+    "retrieval_minus_native_x_qty1",
+    "retrieval_minus_native_x_free",
+    "rich_minus_native_x_seen",
+    "rich_minus_native_x_qty1",
+    "rich_minus_native_x_free",
+    "context_minus_native_x_seen",
+    "context_minus_native_x_qty1",
+    "context_minus_native_x_free"
+  ],
+  "scope": "Tune-only selection. Inner CV conditional on previously selected base hyperparameters; not unbiased validation."
+}
