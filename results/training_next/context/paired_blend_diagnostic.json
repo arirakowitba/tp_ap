@@ -1,0 +1,7 @@
+{
+  "fixed": 51,
+  "broken": 39,
+  "net": 12,
+  "mcnemar_exact_two_sided_p": 0.24610644971627807,
+  "scope": "Exploratory fixed blend; not independent of the diagnostic confirmation already inspected. No significance claim."
+}

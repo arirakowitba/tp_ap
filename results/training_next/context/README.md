@@ -9,3 +9,5 @@ Seller and seller×category targets:5-fold cross-fitted fit encodings; held-out 
 Fixed diagnostic blend:85% CatBoost native+15% context. Gate for full70k refit: standalone or this fixed blend exceeds native confirmation accuracy. No public score selection. No corrections from probes.
 
 Every tune config saves probabilities, booster and report; selected config/policy is locked before confirmation; confirmation predictions/model/report saved before optional full refit.
+
+Completed result: context92.0143%; fixed85/15 blend93.2429% versus native93.1571% (+12/14000,51fixed/39broken, exact paired p=.246). New sellers87.2574% vs87.0470%. Small diagnostic complementarity, not robust independent improvement. Native tune vector unavailable at selection time; configs selected by standalone tune only. Full70k model and30k test probabilities saved. Runtime72.3seconds.

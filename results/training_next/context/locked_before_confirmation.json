@@ -8,5 +8,5 @@
   },
   "iterations": 317,
   "policy": "standalone",
-  "selection": "Maximum of standalone/context and fixed .85native+.15context on tune only; ties choose standalone. Confirmation inspected once."
+  "selection": "Standalone tune accuracy only: native tune vector unavailable at selection time; fixed85/15 blend is separately predeclared diagnostic. Confirmation inspected once."
 }

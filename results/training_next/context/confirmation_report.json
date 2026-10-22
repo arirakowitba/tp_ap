@@ -9,7 +9,7 @@
     },
     "iterations": 317,
     "policy": "standalone",
-    "selection": "Maximum of standalone/context and fixed .85native+.15context on tune only; ties choose standalone. Confirmation inspected once."
+    "selection": "Standalone tune accuracy only: native tune vector unavailable at selection time; fixed85/15 blend is separately predeclared diagnostic. Confirmation inspected once."
   },
   "confirmation_context": {
     "accuracy": 0.9201428571428572,
@@ -37,6 +37,7 @@
   },
   "context_fixes_native": 210,
   "context_breaks_native": 370,
-  "elapsed_seconds": 54.25749945640564,
-  "public_labels_used": false
+  "elapsed_seconds": 72.28546738624573,
+  "public_labels_used": false,
+  "full_refit": "complete"
 }
