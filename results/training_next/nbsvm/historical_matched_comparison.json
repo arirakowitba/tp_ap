@@ -1,0 +1,105 @@
+{
+  "n_common": 4147,
+  "historical_source": "recovered/mercadolibre_checkpoint_20261017/mercadolibre_recovery_20261017/prior_results/warranty/results/composition/holdout_predictions.csv",
+  "weight_predeclared": 0.85,
+  "primary_historical_column": "refit49k_matched_without_public",
+  "scope": "Intersection confirmation and historical holdout excluded from both training sets. Old holdout repeatedly reused; NB hyperparameters were chosen on tune rows that overlap old development/holdout. Diagnostic only, no confirmation weight tuning. Seller segmentation relative to NB56k, not historical49k.",
+  "models": {
+    "primary": {
+      "historical": {
+        "accuracy": 0.939233180612491,
+        "log_loss": 0.15280993403735355,
+        "seen": {
+          "n": 2871,
+          "accuracy": 0.9599442702890979
+        },
+        "unseen": {
+          "n": 1276,
+          "accuracy": 0.8926332288401254
+        }
+      },
+      "blend": {
+        "accuracy": 0.939956595129009,
+        "log_loss": 0.1610683363081982,
+        "seen": {
+          "n": 2871,
+          "accuracy": 0.9599442702890979
+        },
+        "unseen": {
+          "n": 1276,
+          "accuracy": 0.8949843260188087
+        }
+      },
+      "gains": 14,
+      "losses": 11,
+      "net": 3,
+      "paired_p_unadjusted": 0.6900379657745361
+    },
+    "historical_without_public": {
+      "historical": {
+        "accuracy": 0.939956595129009,
+        "log_loss": 0.155061343187239,
+        "seen": {
+          "n": 2871,
+          "accuracy": 0.9602925809822361
+        },
+        "unseen": {
+          "n": 1276,
+          "accuracy": 0.8942006269592476
+        }
+      },
+      "blend": {
+        "accuracy": 0.939956595129009,
+        "log_loss": 0.1624589711036676,
+        "seen": {
+          "n": 2871,
+          "accuracy": 0.9602925809822361
+        },
+        "unseen": {
+          "n": 1276,
+          "accuracy": 0.8942006269592476
+        }
+      },
+      "gains": 9,
+      "losses": 9,
+      "net": 0,
+      "paired_p_unadjusted": 1.0
+    },
+    "native": {
+      "accuracy": 0.931516759102966,
+      "log_loss": 0.17007576954979958,
+      "seen": {
+        "n": 2871,
+        "accuracy": 0.956461163357715
+      },
+      "unseen": {
+        "n": 1276,
+        "accuracy": 0.8753918495297806
+      }
+    },
+    "nb_standalone": {
+      "accuracy": 0.8538702676633712,
+      "log_loss": 0.33587211814828893,
+      "seen": {
+        "n": 2871,
+        "accuracy": 0.8808777429467085
+      },
+      "unseen": {
+        "n": 1276,
+        "accuracy": 0.7931034482758621
+      }
+    },
+    "native_nb_fixed_blend": {
+      "accuracy": 0.9341692789968652,
+      "log_loss": 0.17602421174586913,
+      "seen": {
+        "n": 2871,
+        "accuracy": 0.9568094740508534
+      },
+      "unseen": {
+        "n": 1276,
+        "accuracy": 0.8832288401253918
+      }
+    }
+  }
+}

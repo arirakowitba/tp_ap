@@ -10,6 +10,7 @@ from scipy.sparse import hstack
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import normalize
 from sklearn.metrics import accuracy_score,log_loss
+from scipy.stats import binomtest
 from threadpoolctl import threadpool_limits
 threadpool_limits(2)
 ROOT=Path(__file__).resolve().parents[1]
@@ -53,23 +54,29 @@ def retrieve(raw,y,tr,qr,label):
  np.savez_compressed(OUT/(label+'_candidates.npz'),rows=qr,**ps)
  say(label,'done',time.time()-t)
  return ps
+def load_minimal(path):
+ cols=['title','warranty','category_id','seller_id','condition']
+ with path.open() as f:
+  return pd.DataFrame([{k:r.get(k) for k in cols} for r in map(json.loads,f)])
 def main():
- train=pd.read_json(ROOT.parent/'recovered/data/train_data.jsonlines',lines=True);test=pd.read_json(ROOT.parent/'recovered/data/test_data.jsonlines',lines=True)
+ train=load_minimal(ROOT.parent/'recovered/data/train_data.jsonlines');test=load_minimal(ROOT.parent/'recovered/data/test_data.jsonlines')
  raw=pd.concat([train,test],ignore_index=True);y=train.condition.eq('used').to_numpy(dtype=int)
  split=np.load(ROOT/'results/new_models_20261021/partitions.npz');fit,tune,confirm=[split[k] for k in ['fit','tune','confirm']];dev=np.r_[fit,tune]
- pt=retrieve(raw,y,fit,tune,'tune');baseline_path=ROOT/'results/training_next/baseline_reproduction/seller_native_tune.npz'
- while not baseline_path.exists():
-  say('Waiting for fold-safe baseline tune');time.sleep(10)
- base=np.load(baseline_path);assert np.array_equal(base['rows'],tune)
- seen=np.isin(raw.seller_id.iloc[tune],raw.seller_id.iloc[fit]);grid=[]
- for key,p in pt.items():
-  for w in [0,.05,.1,.2,.35,.5,1]:
-   pp=(1-w)*base['p']+w*p;m=metrics(y[tune],pp,seen);grid.append({'key':key,'weight':w,**m})
- best=max(grid,key=lambda z:(z['accuracy'],-z['log_loss']));(OUT/'tune_selection.json').write_text(json.dumps({'selected':best,'grid':grid},indent=2));say('SELECTED',best)
+ pt=retrieve(raw,y,fit,tune,'tune')
+ seen=np.isin(raw.seller_id.iloc[tune],raw.seller_id.iloc[fit]);grid=[{'key':k,**metrics(y[tune],p,seen)} for k,p in pt.items()]
+ best=max(grid,key=lambda z:(z['accuracy'],-z['log_loss']));weight=.1
+ declaration={'selected_standalone_on_tune':best,'grid':grid,'baseline_reproduction':'Failed OOM exit137. No baseline tune vector available.','blend_weight':weight,'selection_policy':'Select standalone by tune accuracy, logloss tiebreak. Blend weight .1 fixed before reading confirmation labels; not selected on confirmation.'}
+ (OUT/'tune_selection.json').write_text(json.dumps(declaration,indent=2));say('PREDECLARED',declaration)
  pc=retrieve(raw,y,dev,confirm,'confirm');bc=np.load(ROOT/'results/new_models_20261021/seller_native_confirm.npz');assert np.array_equal(bc['rows'],confirm)
- p=(1-best['weight'])*bc['p']+best['weight']*pc[best['key']];seen=np.isin(raw.seller_id.iloc[confirm],raw.seller_id.iloc[dev]);report={'selection':best,'baseline_confirm':metrics(y[confirm],bc['p'],seen),'blend_confirm':metrics(y[confirm],p,seen),'candidates_confirm':{k:metrics(y[confirm],v,seen) for k,v in pc.items()},'protocol':'Fit49k/tune7k; weights selected on tune; refit56k/confirm14k. No test/probe labels. Text vocabulary and neighbor labels trained only on fit/dev. Confirmation historically reused by previous work, not virgin.'}
- np.savez_compressed(OUT/'selected_confirm.npz',rows=confirm,p=p,y=y[confirm],seen=seen)
+ p=(1-weight)*bc['p']+weight*pc[best['key']];seen=np.isin(raw.seller_id.iloc[confirm],raw.seller_id.iloc[dev])
+ report={'selection':declaration,'baseline_confirm':metrics(y[confirm],bc['p'],seen),'standalone_confirm':metrics(y[confirm],pc[best['key']],seen),'blend_confirm':metrics(y[confirm],p,seen),'protocol':'Fit49k/tune7k; standalone selected on tune; refit56k/confirm14k. Weight .1 fixed before confirmation analysis because baseline tune reproduction OOM. No test/probe labels. Text vocabulary and neighbor labels trained only on fit/dev. Confirmation historically reused by previous work, not virgin.'}
+ a=(bc['p']>=.5)==y[confirm];c=(p>=.5)==y[confirm];gain=int((~a&c).sum());loss=int((a&~c).sum())
+ report['paired_diagnostic']={'corrected':gain,'broken':loss,'net':gain-loss,'mcnemar_exact_two_sided_p':float(binomtest(gain,gain+loss).pvalue) if gain+loss else 1.,'scope':'Descriptive only: reused confirmation and many project experiments. No proof of public or hidden improvement.'}
+ np.savez_compressed(OUT/'selected_confirm.npz',rows=confirm,p=p,retrieval_p=pc[best['key']],y=y[confirm],seen=seen)
  (OUT/'report.json').write_text(json.dumps(report,indent=2));say('REPORT',report)
- if report['blend_confirm']['accuracy']>=report['baseline_confirm']['accuracy'] and best['weight']>0:
-  ptest=retrieve(raw,y,np.arange(70000),np.arange(70000,100000),'test');native=np.load(ROOT/'results/new_models_20261021/seller_native_test.npz')['test'];p=(1-best['weight'])*native+best['weight']*ptest[best['key']];pd.DataFrame({'ID':np.arange(1,30001),'p_used':p}).to_csv(OUT/'selected_test_predictions.csv',index=False)
+ if report['blend_confirm']['accuracy']>report['baseline_confirm']['accuracy']:
+  ptest=retrieve(raw,y,np.arange(70000),np.arange(70000,100000),'test');native=np.load(ROOT/'results/new_models_20261021/seller_native_test.npz')['test'];p=(1-weight)*native+weight*ptest[best['key']];pd.DataFrame({'ID':np.arange(1,30001),'p_used':p}).to_csv(OUT/'selected_test_predictions.csv',index=False)
+ else:say('No full refit: blend does not improve baseline confirmation accuracy')
+ (OUT/'status.json').write_text(json.dumps({'stage':'complete','full_refit':report['blend_confirm']['accuracy']>report['baseline_confirm']['accuracy']},indent=2))
+ del train,test,raw,pt,pc
 if __name__=='__main__':main()

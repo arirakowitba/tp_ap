@@ -1,0 +1,12 @@
+{
+  "config": 1,
+  "params": {
+    "num_leaves": 63,
+    "min_child_samples": 100,
+    "colsample_bytree": 0.8,
+    "reg_lambda": 25
+  },
+  "iterations": 317,
+  "policy": "standalone",
+  "selection": "Maximum of standalone/context and fixed .85native+.15context on tune only; ties choose standalone. Confirmation inspected once."
+}

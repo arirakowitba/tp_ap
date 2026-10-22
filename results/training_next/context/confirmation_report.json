@@ -1,0 +1,42 @@
+{
+  "locked": {
+    "config": 1,
+    "params": {
+      "num_leaves": 63,
+      "min_child_samples": 100,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 25
+    },
+    "iterations": 317,
+    "policy": "standalone",
+    "selection": "Maximum of standalone/context and fixed .85native+.15context on tune only; ties choose standalone. Confirmation inspected once."
+  },
+  "confirmation_context": {
+    "accuracy": 0.9201428571428572,
+    "log_loss": 0.19264314870361612,
+    "seen_accuracy": 0.9534094415303919,
+    "new_accuracy": 0.8445171849427169
+  },
+  "confirmation_blend85native": {
+    "accuracy": 0.9324285714285714,
+    "log_loss": 0.16949430420393183,
+    "seen_accuracy": 0.9587575851074771,
+    "new_accuracy": 0.8725742342763619
+  },
+  "confirmation_selected": {
+    "accuracy": 0.9201428571428572,
+    "log_loss": 0.19264314870361612,
+    "seen_accuracy": 0.9534094415303919,
+    "new_accuracy": 0.8445171849427169
+  },
+  "native_reference": {
+    "accuracy": 0.9315714285714286,
+    "log_loss": 0.16996148570636524,
+    "seen_accuracy": 0.9584490383626453,
+    "new_accuracy": 0.8704699555763385
+  },
+  "context_fixes_native": 210,
+  "context_breaks_native": 370,
+  "elapsed_seconds": 54.25749945640564,
+  "public_labels_used": false
+}

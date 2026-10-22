@@ -1,0 +1,159 @@
+{
+  "selection": {
+    "selected_standalone_on_tune": {
+      "key": "global_k128_pow2",
+      "accuracy": 0.8072857142857143,
+      "log_loss": 0.47430059748312087,
+      "seen_accuracy": 0.8458333333333333,
+      "unseen_accuracy": 0.7231818181818181
+    },
+    "grid": [
+      {
+        "key": "global_k8_pow2",
+        "accuracy": 0.7977142857142857,
+        "log_loss": 0.5080325821519319,
+        "seen_accuracy": 0.8327083333333334,
+        "unseen_accuracy": 0.7213636363636363
+      },
+      {
+        "key": "global_k8_pow6",
+        "accuracy": 0.6075714285714285,
+        "log_loss": 0.646008593346804,
+        "seen_accuracy": 0.6179166666666667,
+        "unseen_accuracy": 0.585
+      },
+      {
+        "key": "global_k32_pow2",
+        "accuracy": 0.8068571428571428,
+        "log_loss": 0.4771514039438167,
+        "seen_accuracy": 0.8427083333333333,
+        "unseen_accuracy": 0.7286363636363636
+      },
+      {
+        "key": "global_k32_pow6",
+        "accuracy": 0.6177142857142857,
+        "log_loss": 0.6407033088231698,
+        "seen_accuracy": 0.628125,
+        "unseen_accuracy": 0.595
+      },
+      {
+        "key": "global_k128_pow2",
+        "accuracy": 0.8072857142857143,
+        "log_loss": 0.47430059748312087,
+        "seen_accuracy": 0.8458333333333333,
+        "unseen_accuracy": 0.7231818181818181
+      },
+      {
+        "key": "global_k128_pow6",
+        "accuracy": 0.6195714285714286,
+        "log_loss": 0.6387573850857887,
+        "seen_accuracy": 0.6304166666666666,
+        "unseen_accuracy": 0.5959090909090909
+      },
+      {
+        "key": "category_k8_pow2",
+        "accuracy": 0.648,
+        "log_loss": 0.6144157028529148,
+        "seen_accuracy": 0.6616666666666666,
+        "unseen_accuracy": 0.6181818181818182
+      },
+      {
+        "key": "category_k8_pow6",
+        "accuracy": 0.5638571428571428,
+        "log_loss": 0.6690115216225517,
+        "seen_accuracy": 0.57125,
+        "unseen_accuracy": 0.5477272727272727
+      },
+      {
+        "key": "category_k32_pow2",
+        "accuracy": 0.679,
+        "log_loss": 0.5936024284048934,
+        "seen_accuracy": 0.6995833333333333,
+        "unseen_accuracy": 0.634090909090909
+      },
+      {
+        "key": "category_k32_pow6",
+        "accuracy": 0.5671428571428572,
+        "log_loss": 0.6664624969282813,
+        "seen_accuracy": 0.5758333333333333,
+        "unseen_accuracy": 0.5481818181818182
+      },
+      {
+        "key": "category_k128_pow2",
+        "accuracy": 0.6992857142857143,
+        "log_loss": 0.5801516418478435,
+        "seen_accuracy": 0.725625,
+        "unseen_accuracy": 0.6418181818181818
+      },
+      {
+        "key": "category_k128_pow6",
+        "accuracy": 0.5684285714285714,
+        "log_loss": 0.6657101935098831,
+        "seen_accuracy": 0.5772916666666666,
+        "unseen_accuracy": 0.5490909090909091
+      },
+      {
+        "key": "seller_1",
+        "accuracy": 0.7952857142857143,
+        "log_loss": 0.3835266188420154,
+        "seen_accuracy": 0.9191666666666667,
+        "unseen_accuracy": 0.525
+      },
+      {
+        "key": "seller_5",
+        "accuracy": 0.7952857142857143,
+        "log_loss": 0.4485386079752344,
+        "seen_accuracy": 0.9191666666666667,
+        "unseen_accuracy": 0.525
+      },
+      {
+        "key": "seller_20",
+        "accuracy": 0.7647142857142857,
+        "log_loss": 0.527996516622823,
+        "seen_accuracy": 0.8745833333333334,
+        "unseen_accuracy": 0.525
+      },
+      {
+        "key": "category_prior",
+        "accuracy": 0.7635714285714286,
+        "log_loss": 0.5195399295761397,
+        "seen_accuracy": 0.8016666666666666,
+        "unseen_accuracy": 0.6804545454545454
+      }
+    ],
+    "baseline_reproduction": "Failed OOM exit137. No baseline tune vector available.",
+    "blend_weight": 0.1,
+    "selection_policy": "Select standalone by tune accuracy, logloss tiebreak. Blend weight .1 fixed before reading confirmation labels; not selected on confirmation."
+  },
+  "baseline_confirm": {
+    "accuracy": 0.9315714285714286,
+    "log_loss": 0.16996148570636524,
+    "seen_accuracy": 0.9584490383626453,
+    "unseen_accuracy": 0.8704699555763385
+  },
+  "standalone_confirm": {
+    "accuracy": 0.818,
+    "log_loss": 0.46195074224480476,
+    "seen_accuracy": 0.8500462820117248,
+    "unseen_accuracy": 0.7451484685527239
+  },
+  "blend_confirm": {
+    "accuracy": 0.9325,
+    "log_loss": 0.1850776727611526,
+    "seen_accuracy": 0.9587575851074771,
+    "unseen_accuracy": 0.8728080430208089
+  },
+  "protocol": "Fit49k/tune7k; standalone selected on tune; refit56k/confirm14k. Weight .1 fixed before confirmation analysis because baseline tune reproduction OOM. No test/probe labels. Text vocabulary and neighbor labels trained only on fit/dev. Confirmation historically reused by previous work, not virgin.",
+  "paired_diagnostic": {
+    "corrected": 26,
+    "broken": 13,
+    "net": 13,
+    "mcnemar_exact_two_sided_p": 0.05325191409792752,
+    "accuracy_delta": 0.0009285714285714286,
+    "approx_95pct_delta_interval": [
+      5.437580572773633e-05,
+      0.0018027670514151207
+    ],
+    "scope": "Descriptive only, reused confirmation and many project experiments. Not proof of public or hidden improvement."
+  }
+}

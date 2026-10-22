@@ -1,0 +1,8 @@
+{
+  "fixed_blend_gains": 73,
+  "fixed_blend_losses": 46,
+  "net": 27,
+  "changed_predictions": 119,
+  "mcnemar_exact_two_sided_p": 0.01678632911847825,
+  "scope": "Unadjusted fixed-blend diagnostic; no multiple-experiment correction, inherited holdout."
+}

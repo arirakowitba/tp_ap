@@ -1,0 +1,34 @@
+[
+  {
+    "config": 0,
+    "params": {
+      "num_leaves": 31,
+      "min_child_samples": 60,
+      "colsample_bytree": 0.85,
+      "reg_lambda": 10
+    },
+    "iterations": 463,
+    "standalone": {
+      "accuracy": 0.9152857142857143,
+      "log_loss": 0.2103008415057923,
+      "seen_accuracy": 0.949375,
+      "new_accuracy": 0.8409090909090909
+    }
+  },
+  {
+    "config": 1,
+    "params": {
+      "num_leaves": 63,
+      "min_child_samples": 100,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 25
+    },
+    "iterations": 317,
+    "standalone": {
+      "accuracy": 0.9157142857142857,
+      "log_loss": 0.21118000967833406,
+      "seen_accuracy": 0.9489583333333333,
+      "new_accuracy": 0.8431818181818181
+    }
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "excluded_condition_attributes": {},
+  "protocol": "Existing fit49k/tune7k, select tune then refit56k/confirm14k. Label-free stats fit scoped. No test labels.",
+  "0": {
+    "spec": {
+      "depth": 7,
+      "iterations": 900,
+      "learning_rate": 0.06,
+      "l2_leaf_reg": 12
+    },
+    "trees": 900,
+    "tune": {
+      "accuracy": 0.925,
+      "logloss": 0.18752362433103312,
+      "seen_accuracy": 0.9541666666666667,
+      "new_accuracy": 0.8613636363636363
+    }
+  },
+  "1": {
+    "spec": {
+      "depth": 6,
+      "iterations": 1100,
+      "learning_rate": 0.05,
+      "l2_leaf_reg": 25
+    },
+    "trees": 1099,
+    "tune": {
+      "accuracy": 0.9254285714285714,
+      "logloss": 0.19072723027089036,
+      "seen_accuracy": 0.9541666666666667,
+      "new_accuracy": 0.8627272727272727
+    }
+  },
+  "selected": 1,
+  "confirmation": {
+    "accuracy": 0.9277142857142857,
+    "logloss": 0.17524243161003242,
+    "seen_accuracy": 0.9548493263396071,
+    "new_accuracy": 0.8660275894318448
+  },
+  "baseline_confirmation": {
+    "accuracy": 0.9315714285714286,
+    "logloss": 0.16996148570636524,
+    "seen_accuracy": 0.9584490383626453,
+    "new_accuracy": 0.8704699555763385
+  },
+  "elapsed_seconds": 1257.1477100849152
+}

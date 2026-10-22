@@ -1,0 +1,44 @@
+{
+  "protocol": "Tune-only C selection; inherited row partitions, not a historically virgin holdout. No public feedback labels used.",
+  "predeclared_blend_native_weight": 0.85,
+  "trials": [
+    {
+      "C": 0.25,
+      "accuracy": 0.835,
+      "log_loss": 0.39513246662334256
+    },
+    {
+      "C": 1,
+      "accuracy": 0.8477142857142858,
+      "log_loss": 0.35524903652028844
+    },
+    {
+      "C": 4,
+      "accuracy": 0.8532857142857143,
+      "log_loss": 0.33715964493852374
+    }
+  ],
+  "selected_C": 4,
+  "blend_selection": "Native tune vector unavailable; fixed 0.85 native weight preregistered before confirmation",
+  "native_weight": 0.85,
+  "confirmation": {
+    "accuracy": 0.8557857142857143,
+    "log_loss": 0.3336669964548312,
+    "seen_accuracy": 0.8817237478144606,
+    "unseen_accuracy": 0.7968202010755202
+  },
+  "native_confirmation": {
+    "accuracy": 0.9315714285714286,
+    "log_loss": 0.16996148570636524,
+    "seen_accuracy": 0.9584490383626453,
+    "unseen_accuracy": 0.8704699555763385
+  },
+  "blend_confirmation": {
+    "accuracy": 0.9335,
+    "log_loss": 0.17633353369631807,
+    "seen_accuracy": 0.958860434022421,
+    "unseen_accuracy": 0.8758475566986206
+  },
+  "seconds": 175.81899738311768,
+  "full_refit": "Complete"
+}
