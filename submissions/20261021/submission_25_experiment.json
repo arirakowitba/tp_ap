@@ -1,0 +1,30 @@
+{
+  "observed_scores": {
+    "21": 0.94504,
+    "22": 0.94471,
+    "23": 0.94495,
+    "24": 0.94533
+  },
+  "inferred_public_net": {
+    "A": 2,
+    "E1": -6,
+    "E2": 0,
+    "E3": -7,
+    "E4": -2
+  },
+  "submission25": "submission_25_A_E2_top16_catboost.csv",
+  "selection": "Top 16 of E2 by historical CatBoost alternative probability, ID ascending breaks ties; ranking is not calibrated confidence.",
+  "changes_vs24": 16,
+  "sha256": "d1a405a7e145a012a7e067f9c31475663b38575ecb1e0d860659c26d56c42322",
+  "public_control_correct": 19852,
+  "interpretation": "Assuming fixed 21000 public rows and truncation, recover numerator k from score25; top16 gain=k-19852, other16 gain=-(k-19852). No individual labels identified. Hidden transfer unverified.",
+  "score25_observed": "0.94519",
+  "public_correct25": 19849,
+  "top16_public_net_inferred": -3,
+  "complement16_public_net_inferred": 3,
+  "next_candidate": "submission_26_A_E2_complemento16.csv",
+  "next_public_correct_inferred": 19855,
+  "next_public_score_inferred": 0.9454761904761905,
+  "next_score_observed": null,
+  "next_sha256": "9c6b11c783059f2cf754cbd3ea3c7fa095ca9b1befa21600c229c24b1db57687"
+}

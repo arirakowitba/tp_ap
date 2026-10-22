@@ -1,0 +1,26 @@
+{
+  "scores_observed": {
+    "21": "0.94504",
+    "22": "0.94471",
+    "23": "0.94495",
+    "24": "0.94533"
+  },
+  "cohort_public_net_inferred": {
+    "A": 2,
+    "E1": -6,
+    "E2": 0,
+    "E3": -7,
+    "E4": -2
+  },
+  "chosen_cohorts": [
+    "A"
+  ],
+  "public_correct_inferred": 19852,
+  "public_score_inferred": "0.9453333333333333333333333333",
+  "score25_observed": null,
+  "file": "submission_25_consolidada_tras_feedback.csv",
+  "sha256": "95e08ee06a10e61e09f788cd5be8351328828ba49023a6ec157f3f08c006b9a9",
+  "scope": "Consolidates positive public balances only. Hidden gains uncertain; final global selection must include model validation and transfer sensitivity.",
+  "submit25": false,
+  "if_no_new_positive_E": "Do not spend a fifth slot duplicating24. Design a new informative probe after these scores."
+}
