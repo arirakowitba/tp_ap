@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-22",
+  "score_observed": 0.94571,
+  "baseline_submission": 26,
+  "baseline_score": 0.94547,
+  "changed_rows": 32,
+  "assumed_public_rows": 21000,
+  "inferred_public_net_gain": 5,
+  "interpretation": "G1 improves the public segment by five net correct predictions under the established 21000-row/truncation interpretation. It does not identify which rows are correct and does not establish hidden-set improvement.",
+  "next_action": "Submit30, which tests a disjoint group of32 changes against26. If positive, form the union of confirmed positive groups on a later submission. Keep29 as current best."
+}
