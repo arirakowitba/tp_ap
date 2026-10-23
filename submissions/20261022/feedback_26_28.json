@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-22",
+  "source": "Scores informados por el usuario",
+  "scores": {
+    "26": 0.94547,
+    "27": 0.94228,
+    "28": 0.944
+  },
+  "best_observed": {
+    "submission": 26,
+    "score": 0.94547
+  },
+  "assumed_public_rows": 21000,
+  "inferred_correct": {
+    "26": 19855,
+    "27": 19788,
+    "28": 19824
+  },
+  "inferred_net_vs26": {
+    "27": -67,
+    "28": -31
+  },
+  "interpretation": "26 coincide con inferencia previa. Compatible con21000filas y truncamiento, no prueba única de esos supuestos. Nuevos modelos no reemplazan26. Las mejoras de validación no se reprodujeron públicamente. No inferir etiquetas individuales de diferencias agregadas.",
+  "next": "Probar29 sobre26; conservar30 como siguiente grupo disjunto pendiente y revisar tras feedback29. Los modelos débiles globalmente aún pueden aportar cambios locales, sin garantía.",
+  "pending": [
+    29,
+    30
+  ]
+}
