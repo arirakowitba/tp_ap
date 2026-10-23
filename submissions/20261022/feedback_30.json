@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-22",
+  "score_observed": 0.94561,
+  "baseline_submission": 26,
+  "baseline_score": 0.94547,
+  "changed_rows": 32,
+  "assumed_public_rows": 21000,
+  "inferred_public_net_gain": 3,
+  "combined_with_G1": {
+    "groups_disjoint": true,
+    "changes_vs26": 64,
+    "inferred_public_net_gain": 8,
+    "predicted_score": 0.9458571428571428,
+    "file": "submission_31_union_G1_G2_64_sobre26.csv"
+  },
+  "limitations": "The additive public prediction follows from disjoint changes against the same base. It does not identify individual labels or estimate hidden-set improvement."
+}
