@@ -10,7 +10,7 @@ La meta operativa es mejorar la generalización y buscar 96% público durante lo
 | 32 | 0.94561 | — | — | — | Ídem |
 | 33 | 0.94614 | 0 | — | — | Base exacta en `base33_labels_1_to_30000.txt` |
 | 34 | 0.94580 | — | — | — | Score del checkpoint; CSV no incorporado aquí |
-| 35 | 0.94609 | — | — | — | CSV exacto pendiente de recuperación |
+| 35 | 0.94609 | 13 | consultar inventario | consultar inventario | CSV exacto recuperado en Library; delta en `flips_11_14_27_35.tsv` |
 | 36 | 0.94571 | 18 | 18 | 0 | 14 hacia new, 4 hacia used |
 | 37 | 0.94490 | 146 | 6 | 140 | Consenso con margen 0.30 |
 | 38 | 0.94423 | 201 | 6 | 195 | Los 146 de 37 más 55 vistos |
@@ -38,4 +38,4 @@ Los deltas publicados tienen resolución de cinco decimales y exposición parcia
 4. Usar la 41 como siguiente prueba diagnóstica. Si mejora, comprobar en tune/confirm y explorar ampliaciones con una regla predefinida. Si empeora, probar otra familia independiente; no declarar erróneos sus seis IDs.
 5. Evaluar nuevos modelos y características bajo splits por vendedor y un confirm reservado. Priorizar evidencia de generalización al oculto; el umbral 96% público no justifica etiquetar filas de test ni perseguir el leaderboard sin validación.
 
-Las rondas previas hasta la 20 constan en los notebooks y `results/revision_submissions/` existentes. Los checkpoints 21–30 y los CSV 31–35 necesitan backfill detallado en el repositorio: este registro no afirma cubrir IDs que no pudieron verificarse. Ninguna submission se envió como parte de este cambio.
+El inventario completo de 01–41 y la cobertura actualizada están en `inventario_01_41.md`. Se recuperaron predicciones exactas de 04–09, 11–41; faltan los CSV 01–03 y 10. Los scores 26–30 permanecen por verificar. Los experimentos locales de entrenamiento tienen documentación separada. Ninguna submission se envió como parte de este cambio.
