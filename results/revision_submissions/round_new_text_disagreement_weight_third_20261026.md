@@ -4,4 +4,4 @@ Se congeló la regla de peso 1.75 descrita en la ronda previa y se evaluó en el
 
 Se recuperaron predicciones de CatBoost entrenado en el mismo fit de cada corte y se alinearon por índice/etiqueta/probabilidad FastText. Están preservadas solo para los desacuerdos HistGB/FastText en confirm, no para holdout completo. En esos subconjuntos la variante obtuvo +3/254, +6/293 y +14/273 frente a CatBoost (umbral .5). Esto es un análisis segmentado posterior: no demuestra que supere CatBoost globalmente ni a la política exacta de 48. No promover submission.
 
-Checkpoint de pares, script y reporte: Library [pending]. Los tres cortes reutilizan train históricamente. No se usaron scores Kaggle como etiquetas.
+Checkpoint de pares, script y reporte: Library libfile_81e2f454b2508191997052f7e893d28d. Los tres cortes reutilizan train históricamente. No se usaron scores Kaggle como etiquetas.
