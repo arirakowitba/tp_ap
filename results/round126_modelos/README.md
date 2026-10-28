@@ -33,6 +33,8 @@ Código en `src/round126_modelos/`. Configurar `AP2026Q2_DATA_DIR` con la carpet
 | `cat_d6_s24` / `cat_d4_s25` | 0,9498 / 0,9506 | otras semillas de profundidad 6 y 4 |
 | `ens_d5x` | 0,9507 | promedio de 7 CatBoost profundidad 5; logloss 0,1272, la mejor |
 | `ens_all` | 0,9508 | promedio de 11 CatBoost profundidad 4–6 |
+| `lgb_l2` | 0,9495 | 2.º nivel con `ens_d5x` + media de su predicción en otros avisos del vendedor: no mejora |
+| `cat_l2_d5` | 0,9520* | *no confiable: un fold eligió 1 iteración y logloss 0,212 |
 | `ens_shallow` | 0,9505 | promedio de d5, d5 lr .03, d5 l2 10, d4, d6; mejor logloss (0,1279). Base para las pruebas del 28-10 |
 
 Árboles más bajos generalizan mejor (profundidad 8 → 0,947; 4–6 → 0,950–0,951). La variación entre semillas (~0,1 punto) iguala las diferencias entre profundidades 4–6; promediar modelos no supera 0,9509. Siguiente: `knn_price.py`, precio relativo a los vecinos de título separados por etiqueta.
@@ -42,3 +44,7 @@ Errores de cat/v1 concentrados en vendedores con un solo aviso en train (11 % de
 ## Contraste con las pruebas públicas
 
 `probe_eval.py` cruza cada predicción de test con la posterior de la ronda 125. `cat_v1` difiere de 48 en 1.175 IDs: 610 ya probados (saldo público esperado −112 según la posterior) y 565 nunca probados. Esa cifra depende de la previa común q≈1/3 estimada sobre desacuerdos de modelos anteriores; para un modelo más fuerte puede ser pesimista. La forma directa de calibrar OOF→público es enviar una predicción pura del mejor modelo y comparar con 48.
+
+## Sesgo de selección de iteración
+
+Hasta `cat_l2_d5`, CatBoost usaba `eval_metric="Accuracy"` con `use_best_model` sobre el mismo fold que se reporta: la mejor iteración se elige con la métrica ruidosa sobre el fold de evaluación, lo que infla algo los OOF. Desde ahora `CAT_OD_METRIC=Logloss` (`cat_d5_ll*`) corta por logloss, métrica más suave; la diferencia entre ambos mide el sesgo.

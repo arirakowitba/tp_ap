@@ -75,7 +75,7 @@ for k, (a, b) in enumerate(folds):
             for c in catc: X[c] = X[c].astype(str)
             return Pool(X, yy, cat_features=catc, text_features=TEXTC or None)
         m = CatBoostClassifier(iterations=6000, learning_rate=float(os.environ.get("CAT_LR", "0.04")), depth=int(os.environ.get("CAT_DEPTH", "8")),
-                               l2_leaf_reg=float(os.environ.get("CAT_L2", "5")), eval_metric="Accuracy", od_type="Iter", od_wait=400,
+                               l2_leaf_reg=float(os.environ.get("CAT_L2", "5")), eval_metric=os.environ.get("CAT_OD_METRIC", "Accuracy"), od_type="Iter", od_wait=400,
                                random_seed=SEED + k, thread_count=2, verbose=0, one_hot_max_size=8, train_dir=D + "catboost_info")
         m.fit(pool(Xtr.iloc[a], y[a]), eval_set=pool(Xtr.iloc[b], y[b]), use_best_model=True)
         oof[b] = m.predict_proba(pool(Xtr.iloc[b]))[:, 1]; tep += m.predict_proba(pool(Xte))[:, 1] / 5; its.append(m.get_best_iteration())
@@ -84,5 +84,5 @@ acc = ((oof > .5) == y).mean()
 ll = -np.mean(y * np.log(np.clip(oof, 1e-6, 1)) + (1 - y) * np.log(np.clip(1 - oof, 1e-6, 1)))
 print(f"{name} OOF acc {acc:.5f} logloss {ll:.5f}", flush=True)
 np.savez(D + f"pred_{name}.npz", oof=oof, te=tep)
-json.dump({"name": name, "algo": algo, "stacks": stacks, "extras": extras, "env": {k: os.environ.get(k) for k in ["CAT_TEXT", "SEED", "CAT_LR", "CAT_DEPTH", "CAT_L2"]}, "oof_acc": acc, "logloss": ll, "iters": its, "n_features": len(cols)},
+json.dump({"name": name, "algo": algo, "stacks": stacks, "extras": extras, "env": {k: os.environ.get(k) for k in ["CAT_TEXT", "SEED", "CAT_LR", "CAT_DEPTH", "CAT_L2", "CAT_OD_METRIC"]}, "oof_acc": acc, "logloss": ll, "iters": its, "n_features": len(cols)},
           open(D + f"report_{name}.json", "w"))
