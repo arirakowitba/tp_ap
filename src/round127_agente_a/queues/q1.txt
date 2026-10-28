@@ -1,0 +1,3 @@
+a_cq_raw_mat|AFEATS=a_feats_raw.pkl,a_feats_mat.pkl CAT_LR=0.15 FOLDS=0,2 SEED=8201|cat|sparse_all,nbsvm|knn_title.pkl
+a_cq_raw_ctr|AFEATS=a_feats_raw.pkl CAT_CTR=1 CAT_LR=0.15 FOLDS=0,2 SEED=8201|cat|sparse_all,nbsvm|knn_title.pkl
+a_cat_raw_lr03_s83|AFEATS=a_feats_raw.pkl CAT_LR=0.03 SEED=8301|cat|sparse_all,nbsvm|knn_title.pkl

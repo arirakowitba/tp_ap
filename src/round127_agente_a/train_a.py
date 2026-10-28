@@ -66,6 +66,10 @@ F = F.copy()
 drop += ["seller_id"] if algo == "lgb" else []
 cols = [c for c in F.columns if c not in drop]
 Xtr, Xte = F[cols].iloc[:ntr], F[cols].iloc[ntr:]
+CTRKW = {}
+if os.environ.get("CAT_CTR") == "1":   # sugerencia del coordinador: CTR con contadores sobre train+test
+    CTRKW = dict(simple_ctr=["Borders:Prior=0.5", "Borders:Prior=1", "Counter:CtrBorderCount=15"], combinations_ctr=["Borders:Prior=0.5", "Counter"],
+                 counter_calc_method="Full", max_ctr_complexity=int(os.environ.get("CAT_MAXCTR", "4")))
 use = [int(k) for k in os.environ.get("FOLDS", "0,1,2,3,4").split(",")]
 oof = np.full(ntr, np.nan); tep = np.zeros(len(Xte)); t0 = time.time(); its = []
 for k, (a, b) in enumerate(folds):
@@ -88,7 +92,7 @@ for k, (a, b) in enumerate(folds):
             return Pool(X, yy, cat_features=catc)
         m = CatBoostClassifier(iterations=int(os.environ.get("CAT_ITERS", "6000")), learning_rate=float(os.environ.get("CAT_LR", "0.06")), depth=int(os.environ.get("CAT_DEPTH", "5")),
                                l2_leaf_reg=float(os.environ.get("CAT_L2", "5")), eval_metric=os.environ.get("CAT_OD_METRIC", "Logloss"), od_type="Iter", od_wait=400,
-                               random_seed=SEED + k, thread_count=1, verbose=0, one_hot_max_size=8, train_dir="/tmp/claude-0/-home-claude/1a5c469d-8bb8-5f89-a1a0-ae2cd8debc8c/scratchpad/catboost_info")
+                               random_seed=SEED + k, thread_count=1, verbose=0, one_hot_max_size=8, **CTRKW, train_dir="/tmp/claude-0/-home-claude/1a5c469d-8bb8-5f89-a1a0-ae2cd8debc8c/scratchpad/catboost_info")
         m.fit(pool(Xtr.iloc[a], y[a]), eval_set=pool(Xtr.iloc[b], y[b]), use_best_model=True)
         oof[b] = m.predict_proba(pool(Xtr.iloc[b]))[:, 1]; tep += m.predict_proba(pool(Xte))[:, 1] / 5; its.append(m.get_best_iteration())
     pb = oof[b]; llb = -np.mean(y[b] * np.log(np.clip(pb, 1e-6, 1)) + (1 - y[b]) * np.log(np.clip(1 - pb, 1e-6, 1)))

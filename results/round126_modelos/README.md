@@ -14,6 +14,9 @@ python average.py ens_ll8 cat_d5_ll cat_d5_ll_b cat_d5_ll_c cat_d5_ll_lr03 cat_d
 python build_band_probes.py ens_ll8 ../../submissions/20261028 59 "0.85,1.01" "0.7,0.85" "0.6,0.7" "0.5,0.6"
 ``` Las predicciones OOF/test quedan en `preds/pred_<modelo>.npz` (`oof` en orden de train, `te` en orden de ID 1..30000).
 
+
+> **Aviso (28-10, hallazgo del agente B):** la columna `stk_sellerother_*` que agrega `train_gbm.py` filtra la etiqueta propia en el OOF (la predicción OOF de un compañero de vendedor viene de un modelo entrenado con y_i). Las cifras OOF de los modelos de esta ronda que la usan, incluido `ens_ll8` (0,9519), están **infladas**; en test no hay fuga. Sin esa columna, CatBoost d5 da 0,9520–0,9524 con un solo modelo (`b_cat_noso*`, ronda 127). Ver `results/round127_agente_b/README.md`.
+
 ## Resultados OOF (accuracy, 5 folds)
 
 | Modelo | OOF acc | Notas |

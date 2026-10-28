@@ -8,6 +8,18 @@ name, algo = sys.argv[1], sys.argv[2]
 STK = os.environ.get("STACKS", "sparse_all,nbsvm").split(","); EXT = [e for e in os.environ.get("EXTRAS", "knn_title.pkl").split(",") if e]
 o = build(tuple(STK), tuple(EXT)); F, y, ntr, CAT = o["F"], o["y"], o["ntr"], o["CAT"]
 fo = folds(y)
+F = F.copy()
+SO = os.environ.get("SELLEROTHER", "orig")
+if SO != "orig":
+    codes = pd.factorize(F.seller_id.astype(str))[0]; ns = codes.max() + 1
+    def mates_mean(v):
+        sm = np.bincount(codes, v, ns); sc = np.bincount(codes, None, ns)
+        return np.where(sc[codes] > 1, (sm[codes] - v) / np.maximum(sc[codes] - 1, 1), np.nan)
+    for s in STK:
+        if SO == "none": F = F.drop(columns=["stk_sellerother_" + s]); continue
+        PF = np.load(D + f"b_perfold_{s}.npy").astype(float); v = np.full(len(F), np.nan)
+        for kk, (aa, bb) in enumerate(fo): v[bb] = mates_mean(PF[kk])[bb]
+        v[ntr:] = mates_mean(PF.mean(0))[ntr:]; F["stk_sellerother_" + s] = v
 drop = ["seller_id"]
 if os.environ.get("DROP_HICARD", "1") == "1": drop += ["category_id", "city"]
 cols = [c for c in F.columns if c not in drop]
@@ -39,5 +51,5 @@ for k, (a, b) in enumerate(fo):
     print(f"{name} fold {k} acc {((oof[b] > .5) == y[b]).mean():.4f} it {its[-1]} t {time.time()-t0:.0f}s", flush=True)
 acc, ll = ev(y, oof); print(f"{name} OOF acc {acc:.5f} logloss {ll:.5f}", flush=True)
 save_pred(name, oof, te)
-json.dump({"name": name, "algo": algo, "env": {k: v for k, v in os.environ.items() if k in ["SEED", "LR", "LEAVES", "MAXD", "MCS", "FF", "L2", "L1", "MCW", "DROP_HICARD", "STACKS", "EXTRAS", "PSMOOTH"]},
+json.dump({"name": name, "algo": algo, "env": {k: v for k, v in os.environ.items() if k in ["SEED", "LR", "LEAVES", "MAXD", "MCS", "FF", "L2", "L1", "MCW", "DROP_HICARD", "STACKS", "EXTRAS", "PSMOOTH", "SELLEROTHER"]},
            "oof_acc": acc, "logloss": ll, "iters": its}, open(D + f"report_{name}.json", "w"))

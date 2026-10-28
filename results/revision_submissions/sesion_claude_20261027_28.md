@@ -47,6 +47,14 @@ Cuatro agentes trabajan en paralelo con el mismo protocolo (5 folds, semilla 202
 
 Regla de integridad para D: no descargar ni usar datasets etiquetados que puedan contener los ítems de test; solo registrarlos para que el equipo decida con la cátedra.
 
+### Resultados parciales (09:50)
+
+- **Fuga encontrada por B:** `stk_sellerother_*` filtraba la etiqueta propia en el OOF; `ens_ll8` (0,9519) está inflado. Sin esa columna CatBoost d5 da 0,9520–0,9524 con un solo modelo.
+- **B:** apilado honesto 2 CatBoost sin fuga + `b_cat_pf` + XGBoost → 0,9542 / 0,1214 (mejor en los 5 folds).
+- **C (terminó):** red tabular con embeddings y codificación por tramos (`c_nn_avg4`, 0,9401 sola) suma en el apilado: [2 CatBoost sin fuga] + red → 0,9536 / 0,1223. ExtraTrees, k-NN, propagación de etiquetas, pseudo-etiquetas y ResNet no aportan.
+- **D (terminó):** soluciones públicas del desafío MLA new/used llegan a 0,88–0,89. El dataset original etiquetado (`MLA_100k`) es público y probablemente contiene el test: no se abrió ni se usó; consultar a la cátedra. Las reglas de la competencia no se pudieron leer (requieren login).
+- Las pruebas 59–62 armadas con `ens_ll8` se regeneran al cierre con el ensamble honesto final.
+
 ## 6. Pendientes
 
 - Recibir scores 59–62, recalcular la posterior y armar la consolidación del día.
