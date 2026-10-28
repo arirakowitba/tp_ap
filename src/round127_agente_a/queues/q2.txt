@@ -1,0 +1,3 @@
+a_cat_base_s81|SEED=8101 CAT_LR=0.06|cat|sparse_all,nbsvm|knn_title.pkl
+a_cat_min_s81|AFEATS=a_feats_min.pkl SEED=8101 CAT_LR=0.06|cat|sparse_all,nbsvm|knn_title.pkl
+a_cat_sraw_s81|SEED=8101 CAT_LR=0.06|cat|sparse_all,nbsvm,a_sparse_raw|knn_title.pkl

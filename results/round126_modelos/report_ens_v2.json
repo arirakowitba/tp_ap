@@ -1,0 +1,1 @@
+{"name": "ens_v2", "models": ["cat_d5_ll", "cat_d5_ll_b", "cat_v7_d5", "cat_d5_s21", "cat_d5_s22", "cat_v10_d5lr03"], "oof_acc": 0.9512, "logloss": 0.12601465705918324}

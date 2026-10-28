@@ -13,3 +13,5 @@ results/round_v2/*.sqlite3
 results/round_v2/model_full_*.txt
 models/
 results/round_v5/
+catboost_info/
+src/round127_agente_*/logs/

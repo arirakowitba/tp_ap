@@ -1,0 +1,5 @@
+# Rondas 115–117 — categoría sobre historial de vendedor con suavizado 1
+
+Probé otra vez la señal leave-one-out vendedor–categoría, ahora sobre el modelo de vendedor de suavizado 1 que produce la candidata 53. Comparé modelos reentrenados en los mismos cortes. En el corte por filas 20261048/49, vendedor–categoría ganó +12 aciertos en tune y +12 en confirm respecto del vendedor simple, pero el bootstrap por vendedor del delta confirm fue [−3,+27]. En el corte temporal, perdió 18 en tune y 4 en confirm frente al vendedor simple; bootstrap confirm [−22,+12]. Las probabilidades también fueron mejores en el temporal para el modelo simple: log loss .109166 frente a .109680 en vendedores vistos.
+
+Por tanto **no se incorpora categoría a la candidata 53**. La ganancia del corte aleatorio no resistió la prueba temporal. Ambos modelos mantienen HistGB+FastText para vendedores nuevos. Los cortes se solapan y no se usaron etiquetas del test ni scores públicos como labels. Checkpoint reproducible con código, pares y hashes: Library `libfile_f3c736daa4688191a61afe53f1b48f96`, SHA-256 `1f3886a33ce1c5cb511d401db201cfe3943abe483cb94d0d4b4bac665f26afb5`.

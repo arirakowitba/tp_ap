@@ -1,0 +1,7 @@
+# Rondas 83–84 — arquitecturas alternativas
+
+R83 sustituyó los predictores word/char LogisticRegression por SGDClassifier modified_huber, elasticnet .15, alpha 1e-5, OOF seller-group. Mantuvo los embeddings y HistGB de segunda etapa. Frente a HistGB+FastText: corte a tune −25, confirm +18, log loss confirm .210628→.210648; corte b tune −1, confirm −11, log loss .205913→.207937. Tune falló en ambos; no se ejecutó c.
+
+R84 mantuvo los predictores OOF y embeddings originales, pero sustituyó HistGB por AdaBoost con 240 árboles de profundidad 3 y mínimo 50 hojas. Corte a tune −247, confirm 164 fixes/557 breaks = −393, IC bootstrap vendedor [−599,−239], log loss .210628→.370792. El segundo entrenamiento se interrumpió al evidenciarse el fallo amplio en tune. Se descarta esta configuración sin buscar umbral en confirm.
+
+Los cortes a/b son históricos y solapados. No se infieren etiquetas de test de scores públicos. Checkpoint `round83_84_alternative_architectures_checkpoint_20261027.zip`, Library `libfile_67138be85adc8191abf3dc9244f40138`, SHA256 `a405dfa28290b6f1c6ccec881d63d586b1f91e5dfc0a9cc52f0787e7020c718f`, con código, pares, métricas, bootstrap y manifiesto. No hubo submission ni consumo Kaggle.

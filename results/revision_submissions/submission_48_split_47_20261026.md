@@ -1,0 +1,5 @@
+# Submission 48 — dividir la 47
+
+Base 41 score 0.94628. La 47 añadió cuatro used→new y empató 0.94628; los cuatro podrían tener efectos opuestos agregados. La 48 cambia solo los dos con mayor confianza mínima de los tres modelos de la auditoría ronda49: 13583 (.77343) y 25426 (.73937), ambos used→new y vendedor nuevo. Los otros dos de 47, 22635 (.71872) y 8532 (.71506), se obtienen por diferencia agregada 47−48; no requieren submission separada. SHA256 CSV 3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722; Library libfile_303d0e81e43c81918056e99f3ee88309. Archivo de 30000 IDs únicos, dos cambios exactos vs 41. Score pendiente.
+
+La elección por confianza fue posterior al score de 47; es exploratoria. No inferir etiquetas individuales de 48 ni asignar aciertos por ID. Subir 48 primero, comparar con 41 y 47, elegir los siguientes dos cupos tras conocer score. La mejora máxima de dos flips es pequeña y el objetivo de ampliar ganancia exige modelos nuevos con validación relevante.

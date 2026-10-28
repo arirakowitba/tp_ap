@@ -1,0 +1,1 @@
+{"name": "lgb_v3", "algo": "lgb", "stacks": ["sparse_all", "nbsvm", "cat_v1"], "extras": ["knn_title.pkl"], "env": {"CAT_TEXT": null, "SEED": "7071", "CAT_LR": null, "CAT_DEPTH": null, "CAT_L2": null}, "oof_acc": 0.9468, "logloss": 0.13560055661551848, "iters": [351, 402, 386, 309, 395], "n_features": 173}

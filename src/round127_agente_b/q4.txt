@@ -1,0 +1,2 @@
+b_lgb_noso|LR=0.05 SELLEROTHER=none|python tab_gbm.py b_lgb_noso lgb
+b_cat_noso_lr03|SELLEROTHER=none SEED=5252 CAT_LR=0.03|python cat_b.py b_cat_noso_lr03

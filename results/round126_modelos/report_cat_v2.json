@@ -1,0 +1,1 @@
+{"name": "cat_v2", "algo": "cat", "stacks": ["sparse_all", "nbsvm"], "extras": ["knn_title.pkl"], "oof_acc": 0.9474428571428571, "logloss": 0.13706624237962522, "iters": [1565, 964, 628, 1484, 829], "n_features": 172}

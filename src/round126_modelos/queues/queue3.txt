@@ -1,0 +1,2 @@
+cat_l2_d5|SEED=3131 CAT_DEPTH=5 CAT_LR=0.05|cat|sparse_all,nbsvm,ens_d5x|knn_title.pkl
+lgb_l2|SEED=3232|lgb|sparse_all,nbsvm,ens_d5x|knn_title.pkl
