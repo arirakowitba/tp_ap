@@ -1,1 +1,1 @@
-b_mlp|SEED=3|python mlp_tab.py b_mlp
+b_cat_noso_d|SELLEROTHER=none SEED=6161 CAT_LR=0.06|python cat_b.py b_cat_noso_d

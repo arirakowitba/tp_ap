@@ -51,3 +51,5 @@ Ideas del coordinador (proxy CatBoost lr 0,15, folds 0+2, seed 8201; referencia 
 | `a_cq_raw_mat` | + "madurez" del vendedor (`a_feats_mat.pkl`: orden del aviso en el vendedor por fecha, avisos el mismo día, span de fechas, títulos duplicados, n en test) | 0,95014 | 0,12704 | −0,10 / +0,0017 | empeora |
 | `a_cq_raw_ctr` | CTR CatBoost `Borders:Prior=0.5/1 + Counter`, `counter_calc_method=Full`, `max_ctr_complexity=4` | 0,94929 | 0,13171 | −0,18 / +0,0064 | empeora claro |
 | — | `parent_item_id` | — | — | sin señal (47 % vs 45 % usados, número sin relación con fecha) | descartado sin modelo |
+| `a_cat_raw_lr03_s83` | + `a_feats_raw.pkl`, lr 0,03 (seed 8301) | 0,95053 | 0,12725 | peor que los 3 `cat_d5_ll_lr03*` (0,9511–0,9513 / 0,1254–0,1260) | **no confirma**: la mejora de `s81` era ruido de semilla |
+| `a_sparse_raw` | stack lineal: título palabra + garantía + tokens crudos (atributo=valor, variaciones, tags, tamaños de foto, envío) + one-hot de `F`+`raw` binneados (`sparse_raw.py`, sin char n-gramas por memoria) | 0,92474 | 0,19413 | `sparse_all` 0,9273 / 0,1894; corr. 0,990 | aporta poco: logística sobre logits sa+nb 0,1831 → sa+nb+raw 0,1809 |

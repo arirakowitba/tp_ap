@@ -55,6 +55,22 @@ Regla de integridad para D: no descargar ni usar datasets etiquetados que puedan
 - **D (terminó):** soluciones públicas del desafío MLA new/used llegan a 0,88–0,89. El dataset original etiquetado (`MLA_100k`) es público y probablemente contiene el test: no se abrió ni se usó; consultar a la cátedra. Las reglas de la competencia no se pudieron leer (requieren login).
 - Las pruebas 59–62 armadas con `ens_ll8` se regeneran al cierre con el ensamble honesto final.
 
+### Cierre del 28-10 (20 hs)
+
+Los agentes A y B se detuvieron a las ~10 hs por límite de uso de la API y no se reanudaron; C y D habían terminado. Resultados honestos (sin `stk_sellerother`):
+
+| Modelo | OOF acc | logloss |
+|---|---:|---:|
+| `b_cat_noso_b` (mejor CatBoost individual) | 0,9526 | 0,1244 |
+| `fin_cat5` = promedio de 5 CatBoost sin fuga (B) | 0,9527 | 0,1232 |
+| `b_xgb_noso` (XGBoost prof. 5) | 0,9430 | 0,1457 |
+| `c_nn_avg4` (red tabular, C) | 0,9401 | 0,1532 |
+| **`fin_stack`** = logística anidada [fin_cat5, b_xgb_noso, c_nn_avg4] | **0,9548** | **0,1191** |
+
+Agente A (features crudas del JSON, CTR) dejó `a_cat_*` entre 0,9497 y 0,9516; no se incluyen porque no está verificado que excluyan `stk_sellerother`. Script del apilado final: `src/round127_agente_b/final_stack_coordinador.py`; predicciones en `results/round127_final/preds/`.
+
+Pruebas 59–62 regeneradas con `fin_stack` sobre los 887 desacuerdos nunca probados (67 / 252 / 252 / 316 flips) y 63 = modelo puro. Ver `submissions/20261028/estrategia_bandas_28_10.md`.
+
 ## 6. Pendientes
 
 - Recibir scores 59–62, recalcular la posterior y armar la consolidación del día.
