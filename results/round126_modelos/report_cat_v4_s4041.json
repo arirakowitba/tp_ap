@@ -1,0 +1,1 @@
+{"name": "cat_v4_s4041", "algo": "cat", "stacks": ["sparse_all", "nbsvm"], "extras": ["knn_title.pkl"], "env": {"CAT_TEXT": null, "SEED": "4041", "CAT_LR": null, "CAT_DEPTH": null, "CAT_L2": null}, "oof_acc": 0.9473714285714285, "logloss": 0.13663776682395704, "iters": [854, 491, 1761, 1271, 1763], "n_features": 172}

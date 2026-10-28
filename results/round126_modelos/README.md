@@ -15,6 +15,16 @@ Código en `src/round126_modelos/`. Configurar `AP2026Q2_DATA_DIR` con la carpet
 | `blend_a` | 0,9423 | Logística sobre logits de v1, lgb_v2, sparse_all, nbsvm |
 | **`cat_v1`** | **0,9472** | CatBoost profundidad 8, `seller_id`/categoría/ciudad como categóricas, TE OOF, stacks `sparse_all`+`nbsvm` |
 | `blend_b` | 0,9471 | cat_v1 domina la mezcla |
+| `cat_v2` | 0,9474 | + vecinos por título (`knn_title.py`) |
+| `cat_v4_s4041` | 0,9474 | cat_v2, otra semilla |
+| `cat_v5_d6` | 0,9494 | profundidad 6, lr 0,05 |
+| `cat_v9_d6s` | 0,9507 | profundidad 6, otra semilla |
+| `lgb_v3` | 0,9468 | LightGBM con stack de cat_v1 |
+| `cat_v8_d4` | 0,9504 | profundidad 4, lr 0,08 |
+| `cat_v10_d5lr03` | 0,9507 | profundidad 5, lr 0,03 |
+| **`cat_v7_d5`** | **0,9509** | **profundidad 5, lr 0,06; logloss 0,1285** |
+
+Árboles más bajos generalizan mejor (profundidad 8 → 0,947; 4–6 → 0,950–0,951). La variación entre semillas (~0,1 punto) iguala las diferencias entre profundidades 4–6; promediar modelos no supera 0,9509. Siguiente: `knn_price.py`, precio relativo a los vecinos de título separados por etiqueta.
 
 Errores de cat/v1 concentrados en vendedores con un solo aviso en train (11 % de error en v1, 28 % de las filas) y en `buying_mode` auction/classified.
 
