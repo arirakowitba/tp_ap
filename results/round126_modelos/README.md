@@ -26,6 +26,8 @@ Código en `src/round126_modelos/`. Configurar `AP2026Q2_DATA_DIR` con la carpet
 | `cat_v11_d5l2` | 0,9505 | profundidad 5, l2 10 |
 | `cat_v12_d3` | 0,9495 | profundidad 3 |
 | `cat_v13_d5kp` | 0,9493 | + `knn_price.py`; peor logloss (0,1315): se descarta |
+| `cat_d5_s21` / `cat_d5_s22` | 0,9509 / 0,9510 | profundidad 5, otras semillas: la configuración es estable |
+| `cat_d5_nostk` | 0,9475 | sin stacks de texto: los stacks valen ~0,35 puntos → `text_models.py` agrega cinco vistas de texto separadas |
 | `ens_shallow` | 0,9505 | promedio de d5, d5 lr .03, d5 l2 10, d4, d6; mejor logloss (0,1279). Base para las pruebas del 28-10 |
 
 Árboles más bajos generalizan mejor (profundidad 8 → 0,947; 4–6 → 0,950–0,951). La variación entre semillas (~0,1 punto) iguala las diferencias entre profundidades 4–6; promediar modelos no supera 0,9509. Siguiente: `knn_price.py`, precio relativo a los vecinos de título separados por etiqueta.
