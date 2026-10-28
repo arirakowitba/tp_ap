@@ -34,7 +34,20 @@ Probado sin mejora: vecinos de precio por título, siete vistas de texto separad
 
 `submissions/20261028/`: cuatro pruebas disjuntas sobre la 48 con los **493 IDs donde `ens_ll8` contradice a 48 y que nunca se probaron**, por banda de confianza del modelo (59: ≥0,85, 24 flips; 60: 0,70–0,85, 91; 61: 0,60–0,70, 140; 62: 0,50–0,60, 238). Miden directamente con qué frecuencia un modelo de 95 % OOF le gana a 48. El orden adaptativo está en [estrategia_bandas_28_10.md](../../submissions/20261028/estrategia_bandas_28_10.md). Cada score nuevo se agrega a `posterior_flips_20261027/assemble.py`.
 
-## 5. Pendientes
+## 5. Agentes del 28-10 (06:15–18:30)
+
+Cuatro agentes trabajan en paralelo con el mismo protocolo (5 folds, semilla 2026) para que todo sea comparable y mezclable con `ens_ll8`. La máquina tiene 2 núcleos: A y B usan uno cada uno; C corre con prioridad baja (`nice`); D no entrena.
+
+| Agente | Línea de trabajo | Código / registro |
+|---|---|---|
+| A | Información nueva en features: vendedores sin historial, campos JSON no usados, contexto de categoría | `src/round127_agente_a/`, `results/round127_agente_a/` |
+| B | XGBoost/LightGBM bien ajustados, texto neuronal desde cero, ensamblado con CV anidada | `src/round127_agente_b/`, `results/round127_agente_b/` |
+| C | Arquitecturas distintas a GBM (MLP con embeddings, k-NN, semi-supervisado) para diversidad del ensamble | `src/round127_agente_c/`, `results/round127_agente_c/` |
+| D | Búsqueda de información pública (soluciones del desafío MLA new/used, técnicas, reglas de la competencia) | `results/round127_agente_d/` |
+
+Regla de integridad para D: no descargar ni usar datasets etiquetados que puedan contener los ítems de test; solo registrarlos para que el equipo decida con la cátedra.
+
+## 6. Pendientes
 
 - Recibir scores 59–62, recalcular la posterior y armar la consolidación del día.
 - Si las bandas altas dan positivo, extender a los 614 desacuerdos ya probados con la posterior como filtro.
