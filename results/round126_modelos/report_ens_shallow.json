@@ -1,0 +1,1 @@
+{"name": "ens_shallow", "models": ["cat_v7_d5", "cat_v10_d5lr03", "cat_v11_d5l2", "cat_v8_d4", "cat_v9_d6s"], "oof_acc": 0.9505285714285714, "logloss": 0.12788774220523919}

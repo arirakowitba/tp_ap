@@ -1,0 +1,1 @@
+{"name": "cat_v13_d5kp", "algo": "cat", "stacks": ["sparse_all", "nbsvm"], "extras": ["knn_title.pkl", "knn_price.pkl"], "env": {"CAT_TEXT": null, "SEED": "1311", "CAT_LR": "0.06", "CAT_DEPTH": "5", "CAT_L2": null}, "oof_acc": 0.9493285714285714, "logloss": 0.1315411623961476, "iters": [2847, 2262, 1786, 1258, 1073], "n_features": 196}
