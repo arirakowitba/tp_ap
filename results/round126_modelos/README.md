@@ -58,5 +58,7 @@ Resultado: cortar por logloss entrena más iteraciones (1.800–4.400) y **mejor
 | `cat_d6_ll` / `cat_d4_ll` | 0,9499 / 0,9506 | 0,1290 / 0,1273 |
 | **`ens_ll5`** (4 × profundidad 5) | **0,9519** | **0,1246** |
 | `ens_ll_all` (+ prof. 4 y 6) | 0,9514 | 0,1249 |
+| `cat_d5_ll_d` / `_e` / `_lr03b` / `_lr03c` | 0,9507 / 0,9506 / 0,9512 / 0,9511 | 0,1268 / 0,1273 / 0,1254 / 0,1256 |
+| **`ens_ll8`** (8 × profundidad 5) | **0,9519** | **0,1244** |
 
-`ens_ll5` es la base de las pruebas del 28-10 (`submissions/20261028/`).
+`ens_ll8` es la base de las pruebas del 28-10 (`submissions/20261028/`): misma accuracy que `ens_ll5` con menor varianza de semilla en test.
