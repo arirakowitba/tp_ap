@@ -49,6 +49,11 @@ for s in stacks:
 for e in extras:
     E = pd.read_pickle(D + e)
     for c in E.columns: F[c] = E[c].values
+CAT_TEXT = os.environ.get("CAT_TEXT", "0") == "1"
+TEXTC = []
+if CAT_TEXT and algo == "cat":
+    F["title_raw"] = P["text"]; F["warranty_raw"] = P["warranty"]; TEXTC = ["title_raw", "warranty_raw"]
+SEED = int(os.environ.get("SEED", "2026"))
 F = F.copy()
 drop = ["seller_id"] if algo == "lgb" else []
 cols = [c for c in F.columns if c not in drop]
@@ -58,7 +63,7 @@ for k, (a, b) in enumerate(folds):
     if algo == "lgb":
         import lightgbm as lgb
         params = dict(objective="binary", learning_rate=0.02, num_leaves=63, min_child_samples=30, feature_fraction=0.5, bagging_fraction=0.8,
-                      bagging_freq=1, lambda_l2=3.0, cat_smooth=30, cat_l2=10, max_cat_to_onehot=8, verbose=-1, seed=2026 + k, num_threads=2)
+                      bagging_freq=1, lambda_l2=3.0, cat_smooth=30, cat_l2=10, max_cat_to_onehot=8, verbose=-1, seed=SEED + k, num_threads=2)
         m = lgb.train(params, lgb.Dataset(Xtr.iloc[a], y[a]), 8000, valid_sets=[lgb.Dataset(Xtr.iloc[b], y[b])],
                       callbacks=[lgb.early_stopping(300, verbose=False)])
         oof[b] = m.predict(Xtr.iloc[b], num_iteration=m.best_iteration); tep += m.predict(Xte, num_iteration=m.best_iteration) / 5; its.append(m.best_iteration)
@@ -68,9 +73,10 @@ for k, (a, b) in enumerate(folds):
         def pool(X, yy=None):
             X = X.copy()
             for c in catc: X[c] = X[c].astype(str)
-            return Pool(X, yy, cat_features=catc)
-        m = CatBoostClassifier(iterations=6000, learning_rate=0.04, depth=8, l2_leaf_reg=5, eval_metric="Accuracy", od_type="Iter", od_wait=400,
-                               random_seed=2026 + k, thread_count=2, verbose=0, one_hot_max_size=8)
+            return Pool(X, yy, cat_features=catc, text_features=TEXTC or None)
+        m = CatBoostClassifier(iterations=6000, learning_rate=float(os.environ.get("CAT_LR", "0.04")), depth=int(os.environ.get("CAT_DEPTH", "8")),
+                               l2_leaf_reg=float(os.environ.get("CAT_L2", "5")), eval_metric="Accuracy", od_type="Iter", od_wait=400,
+                               random_seed=SEED + k, thread_count=2, verbose=0, one_hot_max_size=8)
         m.fit(pool(Xtr.iloc[a], y[a]), eval_set=pool(Xtr.iloc[b], y[b]), use_best_model=True)
         oof[b] = m.predict_proba(pool(Xtr.iloc[b]))[:, 1]; tep += m.predict_proba(pool(Xte))[:, 1] / 5; its.append(m.get_best_iteration())
     print(f"{name} fold {k} acc {((oof[b] > .5) == y[b]).mean():.4f} it {its[-1]} t {time.time()-t0:.0f}s", flush=True)
@@ -78,5 +84,5 @@ acc = ((oof > .5) == y).mean()
 ll = -np.mean(y * np.log(np.clip(oof, 1e-6, 1)) + (1 - y) * np.log(np.clip(1 - oof, 1e-6, 1)))
 print(f"{name} OOF acc {acc:.5f} logloss {ll:.5f}", flush=True)
 np.savez(D + f"pred_{name}.npz", oof=oof, te=tep)
-json.dump({"name": name, "algo": algo, "stacks": stacks, "extras": extras, "oof_acc": acc, "logloss": ll, "iters": its, "n_features": len(cols)},
+json.dump({"name": name, "algo": algo, "stacks": stacks, "extras": extras, "env": {k: os.environ.get(k) for k in ["CAT_TEXT", "SEED", "CAT_LR", "CAT_DEPTH", "CAT_L2"]}, "oof_acc": acc, "logloss": ll, "iters": its, "n_features": len(cols)},
           open(D + f"report_{name}.json", "w"))
