@@ -1,0 +1,4 @@
+cat_d5_ll_d|SEED=6161 CAT_DEPTH=5 CAT_LR=0.06 CAT_OD_METRIC=Logloss|cat|sparse_all,nbsvm|knn_title.pkl
+cat_d5_ll_lr03b|SEED=6262 CAT_DEPTH=5 CAT_LR=0.03 CAT_OD_METRIC=Logloss|cat|sparse_all,nbsvm|knn_title.pkl
+cat_d5_ll_e|SEED=6363 CAT_DEPTH=5 CAT_LR=0.06 CAT_OD_METRIC=Logloss|cat|sparse_all,nbsvm|knn_title.pkl
+cat_d5_ll_lr03c|SEED=6464 CAT_DEPTH=5 CAT_LR=0.03 CAT_OD_METRIC=Logloss|cat|sparse_all,nbsvm|knn_title.pkl

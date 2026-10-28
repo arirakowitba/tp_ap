@@ -1,0 +1,2 @@
+b_lgb_pf|LR=0.05 SELLEROTHER=perfold|python tab_gbm.py b_lgb_pf lgb
+b_xgb_pf|LR=0.04 MAXD=5 SELLEROTHER=perfold|python tab_gbm.py b_xgb_pf xgb

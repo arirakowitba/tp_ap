@@ -1,0 +1,1 @@
+{"name": "cat_d5_nostk", "algo": "cat", "stacks": [], "extras": [], "env": {"CAT_TEXT": null, "SEED": "2323", "CAT_LR": "0.06", "CAT_DEPTH": "5", "CAT_L2": null}, "oof_acc": 0.9474714285714285, "logloss": 0.13805007898702412, "iters": [1830, 3748, 897, 1599, 1223], "n_features": 148}

@@ -1,0 +1,4 @@
+b_xgb_noso|LR=0.04 MAXD=5 SELLEROTHER=none|python tab_gbm.py b_xgb_noso xgb
+b_cat_noso_b|SELLEROTHER=none SEED=4242 CAT_LR=0.06|python cat_b.py b_cat_noso_b
+b_xgb_noso_d7|LR=0.03 MAXD=7 MCW=10 SELLEROTHER=none SEED=11|python tab_gbm.py b_xgb_noso_d7 xgb
+b_cat_noso_c|SELLEROTHER=none SEED=5151 CAT_LR=0.06|python cat_b.py b_cat_noso_c

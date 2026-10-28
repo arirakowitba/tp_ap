@@ -1,0 +1,1 @@
+{"name": "cat_v9_d6s", "algo": "cat", "stacks": ["sparse_all", "nbsvm"], "extras": ["knn_title.pkl"], "env": {"CAT_TEXT": null, "SEED": "9191", "CAT_LR": "0.05", "CAT_DEPTH": "6", "CAT_L2": null}, "oof_acc": 0.9507142857142857, "logloss": 0.12913800696619665, "iters": [1767, 1677, 1191, 1945, 2652], "n_features": 172}
