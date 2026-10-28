@@ -76,7 +76,7 @@ for k, (a, b) in enumerate(folds):
             return Pool(X, yy, cat_features=catc, text_features=TEXTC or None)
         m = CatBoostClassifier(iterations=6000, learning_rate=float(os.environ.get("CAT_LR", "0.04")), depth=int(os.environ.get("CAT_DEPTH", "8")),
                                l2_leaf_reg=float(os.environ.get("CAT_L2", "5")), eval_metric="Accuracy", od_type="Iter", od_wait=400,
-                               random_seed=SEED + k, thread_count=2, verbose=0, one_hot_max_size=8)
+                               random_seed=SEED + k, thread_count=2, verbose=0, one_hot_max_size=8, train_dir=D + "catboost_info")
         m.fit(pool(Xtr.iloc[a], y[a]), eval_set=pool(Xtr.iloc[b], y[b]), use_best_model=True)
         oof[b] = m.predict_proba(pool(Xtr.iloc[b]))[:, 1]; tep += m.predict_proba(pool(Xte))[:, 1] / 5; its.append(m.get_best_iteration())
     print(f"{name} fold {k} acc {((oof[b] > .5) == y[b]).mean():.4f} it {its[-1]} t {time.time()-t0:.0f}s", flush=True)
