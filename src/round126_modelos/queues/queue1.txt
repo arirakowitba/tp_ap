@@ -1,0 +1,11 @@
+cat_v4_s4041|SEED=4041|cat|sparse_all,nbsvm|knn_title.pkl
+cat_v5_d6|SEED=5051 CAT_DEPTH=6 CAT_LR=0.05|cat|sparse_all,nbsvm|knn_title.pkl
+cat_v6_d10|SEED=6061 CAT_DEPTH=10 CAT_LR=0.03 CAT_L2=8|cat|sparse_all,nbsvm|knn_title.pkl
+lgb_v3|SEED=7071|lgb|sparse_all,nbsvm,cat_v1|knn_title.pkl
+cat_v7_d5|SEED=7171 CAT_DEPTH=5 CAT_LR=0.06|cat|sparse_all,nbsvm|knn_title.pkl
+cat_v8_d4|SEED=8181 CAT_DEPTH=4 CAT_LR=0.08|cat|sparse_all,nbsvm|knn_title.pkl
+cat_v9_d6s|SEED=9191 CAT_DEPTH=6 CAT_LR=0.05|cat|sparse_all,nbsvm|knn_title.pkl
+cat_v10_d5lr03|SEED=1011 CAT_DEPTH=5 CAT_LR=0.03|cat|sparse_all,nbsvm|knn_title.pkl
+cat_v11_d5l2|SEED=1111 CAT_DEPTH=5 CAT_LR=0.06 CAT_L2=10|cat|sparse_all,nbsvm|knn_title.pkl
+cat_v12_d3|SEED=1211 CAT_DEPTH=3 CAT_LR=0.1|cat|sparse_all,nbsvm|knn_title.pkl
+cat_v13_d5kp|SEED=1311 CAT_DEPTH=5 CAT_LR=0.06|cat|sparse_all,nbsvm|knn_title.pkl,knn_price.pkl

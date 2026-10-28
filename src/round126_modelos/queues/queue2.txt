@@ -1,0 +1,7 @@
+cat_d5_s21|SEED=2121 CAT_DEPTH=5 CAT_LR=0.06|cat|sparse_all,nbsvm|knn_title.pkl
+cat_d5_s22|SEED=2222 CAT_DEPTH=5 CAT_LR=0.06|cat|sparse_all,nbsvm|knn_title.pkl
+cat_d5_nostk|SEED=2323 CAT_DEPTH=5 CAT_LR=0.06|cat||
+cat_d6_s24|SEED=2424 CAT_DEPTH=6 CAT_LR=0.05|cat|sparse_all,nbsvm|knn_title.pkl
+cat_d4_s25|SEED=2525 CAT_DEPTH=4 CAT_LR=0.08|cat|sparse_all,nbsvm|knn_title.pkl
+cat_d5_txt7|SEED=2626 CAT_DEPTH=5 CAT_LR=0.06|cat|sparse_all,nbsvm,txt_title_word,txt_title_char,txt_warranty,txt_attr,txt_combo|knn_title.pkl
+cat_d5_txt7b|SEED=2727 CAT_DEPTH=5 CAT_LR=0.06|cat|sparse_all,nbsvm,txt_title_word,txt_title_char,txt_warranty,txt_attr,txt_combo|knn_title.pkl

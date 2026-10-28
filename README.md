@@ -1,5 +1,12 @@
 # Competencia AP 2026 Q2
 
+## Actualización 27–28 de octubre (branch `claude/posterior-y-modelos-20261027`)
+
+Resumen de la sesión: [sesion_claude_20261027_28.md](results/revision_submissions/sesion_claude_20261027_28.md).
+- Posterior exacta de flips sobre la 48 con 45 scores ([ronda 125](results/revision_submissions/round125_posterior_flips_57_58_20261027.md)); 57 y 58 empataron 0,94633 y la evidencia de 04–58 quedó agotada.
+- Nueva familia de modelos desde los JSONL oficiales ([ronda 126](results/round126_modelos/README.md)): ensamble de 8 CatBoost de profundidad 5, **0,9519 OOF** en CV aleatoria de 5 folds.
+- Tanda propuesta del 28-10 en `submissions/20261028/`: bandas de confianza del ensamble sobre los desacuerdos nunca probados con la 48.
+
 ## Actualización iterativa de scores (20 de octubre)
 
 La [estrategia de competencia](COMPETITION_STRATEGY.md) describe el uso de

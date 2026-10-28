@@ -2,7 +2,17 @@
 
 Datos: `train_data.jsonlines` (70.000 filas, 53,7 % new) y `test_data.jsonlines` (30.000), recibidos de Hugo el 27-10. Mismo rango de fechas en train y test (2013-05-21 a 2015-10-15) y 71,6 % de las filas de test con vendedor visto en train. Por eso la validación principal es **CV estratificada aleatoria de 5 folds (semilla 2026)**, compartida por todos los modelos para poder mezclar sus OOF. Es más optimista que el holdout agrupado por vendedor/familia del repo; no comparar cifras entre protocolos.
 
-Código en `src/round126_modelos/`. Configurar `AP2026Q2_DATA_DIR` con la carpeta de los JSONL. Orden: `feats.py` → `sparse_all.py`, `nbsvm.py`, `knn_title.py` → `train_gbm.py` → `blend.py` → `probe_eval.py`. Las predicciones OOF/test quedan en `preds/pred_<modelo>.npz` (`oof` en orden de train, `te` en orden de ID 1..30000).
+Código en `src/round126_modelos/`. Configurar `AP2026Q2_DATA_DIR` con la carpeta de los JSONL. Orden: `feats.py` → `sparse_all.py`, `nbsvm.py`, `knn_title.py` (y opcionalmente `text_models.py`, `knn_price.py`) → `train_gbm.py` (o `run_queue.sh queues/queueN.txt LOGDIR`, una línea por experimento) → `average.py` / `blend.py` → `probe_eval.py` → `build_band_probes.py`.
+
+Reproducir el mejor ensamble:
+
+```
+export AP2026Q2_DATA_DIR=/ruta/a/los/jsonl
+python feats.py && python sparse_all.py 1.0 && python nbsvm.py && python knn_title.py
+bash run_queue.sh queues/queue4.txt logs && bash run_queue.sh queues/queue5.txt logs && bash run_queue.sh queues/queue6.txt logs
+python average.py ens_ll8 cat_d5_ll cat_d5_ll_b cat_d5_ll_c cat_d5_ll_lr03 cat_d5_ll_d cat_d5_ll_lr03b cat_d5_ll_e cat_d5_ll_lr03c
+python build_band_probes.py ens_ll8 ../../submissions/20261028 59 "0.85,1.01" "0.7,0.85" "0.6,0.7" "0.5,0.6"
+``` Las predicciones OOF/test quedan en `preds/pred_<modelo>.npz` (`oof` en orden de train, `te` en orden de ID 1..30000).
 
 ## Resultados OOF (accuracy, 5 folds)
 
@@ -60,5 +70,7 @@ Resultado: cortar por logloss entrena más iteraciones (1.800–4.400) y **mejor
 | `ens_ll_all` (+ prof. 4 y 6) | 0,9514 | 0,1249 |
 | `cat_d5_ll_d` / `_e` / `_lr03b` / `_lr03c` | 0,9507 / 0,9506 / 0,9512 / 0,9511 | 0,1268 / 0,1273 / 0,1254 / 0,1256 |
 | **`ens_ll8`** (8 × profundidad 5) | **0,9519** | **0,1244** |
+| `cat_d5_ll_lr02` | 0,9503 | 0,1278 |
+| `cat_d5_ll_txt7` (lr 0,03, 7 stacks de texto) | 0,9497 | 0,1279 |
 
 `ens_ll8` es la base de las pruebas del 28-10 (`submissions/20261028/`): misma accuracy que `ens_ll5` con menor varianza de semilla en test.
