@@ -1,0 +1,1 @@
+{"name": "lgb_v2", "algo": "lgb", "stacks": ["sparse_all"], "oof_acc": 0.939, "logloss": 0.15360379866800453, "iters": [391, 423, 514, 474, 481], "n_features": 149}

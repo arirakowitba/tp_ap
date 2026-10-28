@@ -1,0 +1,1 @@
+{"name": "cat_v1", "algo": "cat", "stacks": ["sparse_all", "nbsvm"], "oof_acc": 0.9472, "logloss": 0.13720405208928596, "iters": [2623, 795, 1339, 2936, 774], "n_features": 152}
