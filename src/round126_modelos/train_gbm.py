@@ -63,7 +63,7 @@ for k, (a, b) in enumerate(folds):
     if algo == "lgb":
         import lightgbm as lgb
         params = dict(objective="binary", learning_rate=0.02, num_leaves=63, min_child_samples=30, feature_fraction=0.5, bagging_fraction=0.8,
-                      bagging_freq=1, lambda_l2=3.0, cat_smooth=30, cat_l2=10, max_cat_to_onehot=8, verbose=-1, seed=SEED + k, num_threads=2)
+                      bagging_freq=1, lambda_l2=3.0, cat_smooth=30, cat_l2=10, max_cat_to_onehot=8, verbose=-1, seed=SEED + k, num_threads=int(os.environ.get("THREADS", "2")))
         m = lgb.train(params, lgb.Dataset(Xtr.iloc[a], y[a]), 8000, valid_sets=[lgb.Dataset(Xtr.iloc[b], y[b])],
                       callbacks=[lgb.early_stopping(300, verbose=False)])
         oof[b] = m.predict(Xtr.iloc[b], num_iteration=m.best_iteration); tep += m.predict(Xte, num_iteration=m.best_iteration) / 5; its.append(m.best_iteration)
@@ -76,7 +76,7 @@ for k, (a, b) in enumerate(folds):
             return Pool(X, yy, cat_features=catc, text_features=TEXTC or None)
         m = CatBoostClassifier(iterations=6000, learning_rate=float(os.environ.get("CAT_LR", "0.04")), depth=int(os.environ.get("CAT_DEPTH", "8")),
                                l2_leaf_reg=float(os.environ.get("CAT_L2", "5")), eval_metric=os.environ.get("CAT_OD_METRIC", "Accuracy"), od_type="Iter", od_wait=400,
-                               random_seed=SEED + k, thread_count=2, verbose=0, one_hot_max_size=8, train_dir=D + "catboost_info")
+                               random_seed=SEED + k, thread_count=int(os.environ.get("THREADS", "2")), verbose=0, one_hot_max_size=8, train_dir=D + "catboost_info")
         m.fit(pool(Xtr.iloc[a], y[a]), eval_set=pool(Xtr.iloc[b], y[b]), use_best_model=True)
         oof[b] = m.predict_proba(pool(Xtr.iloc[b]))[:, 1]; tep += m.predict_proba(pool(Xte))[:, 1] / 5; its.append(m.get_best_iteration())
     print(f"{name} fold {k} acc {((oof[b] > .5) == y[b]).mean():.4f} it {its[-1]} t {time.time()-t0:.0f}s", flush=True)
