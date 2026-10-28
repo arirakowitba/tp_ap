@@ -48,3 +48,15 @@ Errores de cat/v1 concentrados en vendedores con un solo aviso en train (11 % de
 ## Sesgo de selección de iteración
 
 Hasta `cat_l2_d5`, CatBoost usaba `eval_metric="Accuracy"` con `use_best_model` sobre el mismo fold que se reporta: la mejor iteración se elige con la métrica ruidosa sobre el fold de evaluación, lo que infla algo los OOF. Desde ahora `CAT_OD_METRIC=Logloss` (`cat_d5_ll*`) corta por logloss, métrica más suave; la diferencia entre ambos mide el sesgo.
+
+Resultado: cortar por logloss entrena más iteraciones (1.800–4.400) y **mejora**; el sesgo de accuracy no inflaba las cifras.
+
+| Modelo (corte por logloss) | OOF acc | logloss |
+|---|---:|---:|
+| `cat_d5_ll` / `_b` / `_c` | 0,9511 / 0,9512 / 0,9509 | 0,1267 / 0,1261 / 0,1261 |
+| `cat_d5_ll_lr03` | 0,9513 | 0,1260 |
+| `cat_d6_ll` / `cat_d4_ll` | 0,9499 / 0,9506 | 0,1290 / 0,1273 |
+| **`ens_ll5`** (4 × profundidad 5) | **0,9519** | **0,1246** |
+| `ens_ll_all` (+ prof. 4 y 6) | 0,9514 | 0,1249 |
+
+`ens_ll5` es la base de las pruebas del 28-10 (`submissions/20261028/`).

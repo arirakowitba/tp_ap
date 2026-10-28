@@ -1,4 +1,4 @@
-# Tanda del 28-10: bandas de confianza del ensamble `ens_shallow` sobre 48 (BORRADOR)
+# Tanda del 28-10: bandas de confianza del ensamble `ens_ll5` sobre 48 (BORRADOR)
 
 Estado: **borrador**. Se regenera con el ensamble final de la ronda 126 antes de enviar; los hashes del manifiesto pueden cambiar. Ningún archivo fue enviado por el asistente.
 
@@ -6,14 +6,14 @@ Estado: **borrador**. Se regenera con el ensamble final de la ronda 126 antes de
 
 Tras 57 y 58 (ambas 0,94633) la posterior de la ronda 125 no tiene filas con ganancia esperada apreciable: la evidencia de 04–58 está agotada. La posterior tampoco discrimina por confianza del modelo: en filas probadas, P(48 mal) pasa solo de 0,30 a 0,36 entre la banda más baja y la más alta de `blend_c`, porque está dominada por la previa común q≈1/3. Falta medir directamente con qué frecuencia un modelo de 95 % OOF le gana a 48 según su confianza.
 
-`ens_shallow` (promedio de cinco CatBoost de profundidad 4–6, OOF 0,9505, logloss 0,1279) contradice a 48 en 1.132 IDs; 628 ya fueron probados por rondas anteriores y quedan fuera. Las cuatro pruebas usan solo los **504 IDs nunca probados**, disjuntos entre sí, todos sobre la 48 exacta.
+`ens_ll5` (promedio de cuatro CatBoost de profundidad 5 con corte por logloss, OOF 0,9519, logloss 0,1246) contradice a 48 en 1.102 IDs; 606 ya fueron probados por rondas anteriores y quedan fuera. Las cuatro pruebas usan solo los **496 IDs nunca probados**, disjuntos entre sí, todos sobre la 48 exacta.
 
 | N.º | P(48 mal) según modelo | Flips | →used | →new |
 |---:|---|---:|---:|---:|
-| 59 | ≥ 0,85 | 23 | 19 | 4 |
-| 60 | 0,70–0,85 | 83 | 50 | 33 |
-| 61 | 0,60–0,70 | 145 | 71 | 74 |
-| 62 | 0,50–0,60 | 253 | 95 | 158 |
+| 59 | ≥ 0,85 | 26 | 21 | 5 |
+| 60 | 0,7–0,85 | 96 | 53 | 43 |
+| 61 | 0,6–0,7 | 132 | 55 | 77 |
+| 62 | 0,5–0,6 | 242 | 100 | 142 |
 
 ## Orden y lectura
 
