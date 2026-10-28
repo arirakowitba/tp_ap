@@ -1,0 +1,6 @@
+b_lgb_t1 fold 0 acc 0.9426 it 460 t 27s
+b_lgb_t1 fold 1 acc 0.9449 it 435 t 51s
+b_lgb_t1 fold 2 acc 0.9432 it 447 t 77s
+b_lgb_t1 fold 3 acc 0.9439 it 574 t 107s
+b_lgb_t1 fold 4 acc 0.9444 it 376 t 132s
+b_lgb_t1 OOF acc 0.94383 logloss 0.14315
