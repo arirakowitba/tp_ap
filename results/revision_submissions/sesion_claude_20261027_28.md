@@ -75,8 +75,10 @@ Pruebas 59–62 regeneradas con `fin_stack` sobre los 887 desacuerdos nunca prob
 
 Ariel envió cinco pruebas con `fin_stack`; todas perdieron frente a 48 (−3 a −79 aciertos). Diagnóstico en [round140_diagnostico_fin_stack_20261028.md](round140_diagnostico_fin_stack_20261028.md): los pesos negativos del apilado invertían la señal de XGBoost y la red, y aun la CatBoost sola pierde la mayoría de sus desacuerdos con 48. `fin_stack` y 60–63 quedan descartadas; 48 sigue como mejor pública.
 
+Sesión cerrada a las 23:30 del 28-10 por pedido de Hugo; no quedan entrenamientos corriendo.
+
 ## 6. Pendientes
 
-- Recibir scores 59–62, recalcular la posterior y armar la consolidación del día.
+- Validación seller-group sin fuga (TE y stacks dentro de cada fold externo) según round139, antes de cualquier flip nuevo.
 - Si las bandas altas dan positivo, extender a los 614 desacuerdos ya probados con la posterior como filtro.
 - Mejoras de modelo con información nueva (no más semillas): vendedores sin historial, texto.
