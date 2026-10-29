@@ -19,13 +19,13 @@ submission_67_probe2_new_sellers_to_used.csv,5857,new,used,new->used,0,0.8665,0.
 submission_67_probe2_new_sellers_to_used.csv,13629,new,used,new->used,0,0.8633,0.3633,160.0,Las Cuentas Pendientes - Martín Redrado - 2da Edición- Nuevo,100% UNPROBED VIRGIN
 submission_67_probe2_new_sellers_to_used.csv,17658,new,used,new->used,0,0.8624,0.3624,16990.0,"Apple Macbook Pro 13.3 Con Garantia, Nuevos/sellado Belgrano",100% UNPROBED VIRGIN
 submission_67_probe2_new_sellers_to_used.csv,9733,new,used,new->used,0,0.8614,0.3614,125.0,Método Para Guitarra Técnicas De Velocidad Cd De Regalo!,100% UNPROBED VIRGIN
-submission_68_probe3_seen_sellers_to_used.csv,12726,new,used,new->used,1,0.9317,0.4317,60.0,El Cambio Del Poder - Alvin Toffler Plaza & Janes,100% UNPROBED VIRGIN
-submission_68_probe3_seen_sellers_to_used.csv,16846,new,used,new->used,1,0.9189,0.4189,50.0,Tasha Alexander - Herencia De Sangre,100% UNPROBED VIRGIN
-submission_68_probe3_seen_sellers_to_used.csv,22499,new,used,new->used,1,0.9035,0.4035,200.0,Los Condenados De La Tierra   Frantz Fanon,100% UNPROBED VIRGIN
-submission_68_probe3_seen_sellers_to_used.csv,16358,new,used,new->used,1,0.8317,0.3317,160.0,Muffins Magdalenas Y Otros Pastelitos,100% UNPROBED VIRGIN
-submission_68_probe3_seen_sellers_to_used.csv,4060,new,used,new->used,1,0.7947,0.2947,139.9,Nine Stones Close - One Eye On The Sunrise (rock Progresivo),100% UNPROBED VIRGIN
-submission_68_probe3_seen_sellers_to_used.csv,12228,new,used,new->used,1,0.7855,0.2855,90.0,La Extraña - Sándor Márai,100% UNPROBED VIRGIN
-submission_68_probe3_seen_sellers_to_used.csv,7753,new,used,new->used,1,0.731,0.231,50.0,Los Deseantes Juan Jose Burzi Nuevo,100% UNPROBED VIRGIN
+submission_68_probe3_uncertainty_flips.csv,8227,new,used,new->used,1,0.9565,0.4565,78.0,Motherboard Biostar P4m900-m7 Se    No Funciona,100% UNPROBED VIRGIN
+submission_68_probe3_uncertainty_flips.csv,16660,used,new,used->new,1,0.044,0.456,85.0,Adrián Y Pato Ortiz - Tocate Un Tango ( Nvo ),100% UNPROBED VIRGIN
+submission_68_probe3_uncertainty_flips.csv,19853,new,used,new->used,1,0.9547,0.4547,300.0,1970 Antigua Tortuga Con Hijo A Cuerda En Caja Original,100% UNPROBED VIRGIN
+submission_68_probe3_uncertainty_flips.csv,5390,new,used,new->used,1,0.9524,0.4524,99.0,Churchill: Obras Escogidas. Aguilar Tomo 1. Usado,100% UNPROBED VIRGIN
+submission_68_probe3_uncertainty_flips.csv,29668,used,new,used->new,1,0.0664,0.4336,199.0,Cómo Crecer Cuando Ya Has Crecido Dra. Nancy O¿connor Nuevo,100% UNPROBED VIRGIN
+submission_68_probe3_uncertainty_flips.csv,15392,new,used,new->used,1,0.9295,0.4295,1200.0,Lampara Antigua Vitro Para Colgar O Aplique,100% UNPROBED VIRGIN
+submission_68_probe3_uncertainty_flips.csv,25060,new,used,new->used,1,0.9295,0.4295,400.0,Auto Antiguo Dinamo Ford T (642),100% UNPROBED VIRGIN
 submission_69_probe4_unanimous_consensus.csv,7252,used,new,used->new,1,0.0149,0.4851,33.99,El Relato Peronista - Silvia Mercado - Libro Digital Oferta,100% UNPROBED VIRGIN
 submission_69_probe4_unanimous_consensus.csv,560,used,new,used->new,1,0.0153,0.4847,200.0,Ars Hispaniae - Precio Por Unidad - Tomos 1 A 9 Y 15 (11),100% UNPROBED VIRGIN
 submission_69_probe4_unanimous_consensus.csv,11244,used,new,used->new,1,0.0162,0.4838,150.0,Vino Separado Bodega Nanini Y Vaso Para Decorar,100% UNPROBED VIRGIN

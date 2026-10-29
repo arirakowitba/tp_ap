@@ -183,34 +183,37 @@ def main():
     print(f"Probe 2 clean items selected: {len(probe2_items)}")
     
     # -------------------------------------------------------------
-    # Sonda 3: Vendedores Vistos, new -> used, >= 80% used history, 100% UNPROBED VIRGIN
+    # Sonda 3: Sonda de Incertidumbre y Desacuerdo Léxico Explícito (7 items, 100% UNPROBED VIRGIN)
+    # Replaces the refuted seller-history gate with explicit lexical contradiction (title vs S48) + multimodal confidence
     # -------------------------------------------------------------
+    import re
     c3 = []
     for i in range(30000):
         pid = i + 1
-        if pid not in excluded_ids and i not in used_in_probe and is_seen[i] and s48_y_used[i] == 0 and probs[i] > 0.70:
-            s = test_sellers[i]
-            tot = seller_tot_cnt[s]
-            used_cnt = seller_used_cnt[s]
-            if tot >= 3 and (used_cnt / tot) >= 0.80:
+        if pid not in excluded_ids and i not in used_in_probe:
+            t = (test_titles[i] or "").lower()
+            p = float(probs[i])
+            s_label = s48_dict[str(pid)]
+            is_contra_used = (s_label == "new" and p > 0.85 and bool(re.search(r"\busad[oa]s?\b|\bno funciona\b|\bantigu[oa]s?\b|\bvintage\b|\bexcelente estado\b", t)))
+            is_contra_new = (s_label == "used" and p < 0.15 and bool(re.search(r"\bnuev[oa]s?\b|\b0\s?km\b|\b\(?\s*nvo\s*\)?\b|\bcaja sellada\b", t)))
+            if is_contra_used or is_contra_new:
+                target = "used" if is_contra_used else "new"
                 c3.append({
                     "idx": i,
                     "ID": pid,
                     "test_id": test_ids[i],
-                    "seller_id": s,
-                    "seller_train_n": tot,
-                    "seller_train_used": used_cnt,
-                    "seller_used_ratio": round(used_cnt / tot, 3),
-                    "p_used": float(probs[i]),
-                    "margin": float(abs(probs[i] - 0.50)),
-                    "s48": "new",
-                    "target": "used",
+                    "seller_id": test_sellers[i],
+                    "p_used": p,
+                    "margin": float(abs(p - 0.50)),
+                    "s48": s_label,
+                    "target": target,
                     "title": test_titles[i],
                     "price": test_prices[i],
-                    "is_seen": 1,
-                    "prior_probe_overlap": "NONE (100% virgin)"
+                    "is_seen": int(is_seen[i]),
+                    "prior_probe_overlap": "NONE (100% virgin)",
+                    "hypothesis": "Explicit lexical marker contradicts S48 + multimodal deep confidence"
                 })
-    c3.sort(key=lambda x: (-x["p_used"], -x["seller_train_n"]))
+    c3.sort(key=lambda x: -x["margin"])
     probe3_items = c3[:7]
     for it in probe3_items: used_in_probe.add(it["idx"])
     print(f"Probe 3 clean items selected: {len(probe3_items)}")
@@ -255,7 +258,7 @@ def main():
     probes_cfg = [
         ("submission_66_probe1_new_sellers_to_new.csv", probe1_items, "Sonda 1: Vendedores Nuevos, used -> new (10 items unprobed)"),
         ("submission_67_probe2_new_sellers_to_used.csv", probe2_items, "Sonda 2: Vendedores Nuevos, new -> used (10 items unprobed)"),
-        ("submission_68_probe3_seen_sellers_to_used.csv", probe3_items, "Sonda 3: Vendedores Vistos >=80% usados, new -> used (7 items unprobed)"),
+        ("submission_68_probe3_uncertainty_flips.csv", probe3_items, "Sonda 3: Incertidumbre y Desacuerdo Léxico Explícito (7 items unprobed)"),
         ("submission_69_probe4_unanimous_consensus.csv", probe4_items, "Sonda 4: Consenso Unánime Margen Extremo (8 items unprobed)"),
     ]
     

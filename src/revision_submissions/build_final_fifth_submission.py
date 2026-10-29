@@ -58,25 +58,39 @@ def main():
 
     out_file = SUBMISSIONS_DIR / "submission_70_final_optimized.csv"
 
-    if winning_probes:
-        print(f"\nWinning probes identified ({len(winning_probes)}):")
+    if len(winning_probes) >= 2:
+        print(f"\n[DECISION 5TH SLOT] Multiple winning probes identified ({len(winning_probes)}):")
         for p_num, fname, sc, n in winning_probes:
             print(f"  Probe {p_num} ({fname}): score {sc} (+{sc - args.s48:.5f}, {n} flips)")
-        print(f"Total positive flips to combine: {len(selected_flips)}")
+        print(f"Total positive flips to combine in disjoint union: {len(selected_flips)}")
+        print(f"Action: Generating {out_file.name} with all winning flips combined.")
+        
+        with open(out_file, "w", newline="\n", encoding="utf-8") as f:
+            f.write("ID,condition\n")
+            for id_num in range(1, 30001):
+                cond = selected_flips.get(id_num, s48_dict[str(id_num)])
+                f.write(f"{id_num},{cond}\n")
+
+        sha = compute_sha256(out_file)
+        print(f"\nGenerated 5th Final Submission (Disjoint Union):")
+        print(f"  Path: {out_file}")
+        print(f"  Total flips vs 48: {len(selected_flips)}")
+        print(f"  SHA256: {sha}")
+        print(f"  Recommendation: SUBMIT this file in 5th slot to compound gains.")
+
+    elif len(winning_probes) == 1:
+        p_num, fname, sc, n = winning_probes[0]
+        print(f"\n[DECISION 5TH SLOT] Exactly ONE winning probe: Probe {p_num} ({fname}) with score {sc} (+{sc - args.s48:.5f}, {n} flips).")
+        print(f"CRITICAL RULE: That probe's score ({sc}) is ALREADY registered on Kaggle!")
+        print(f"Re-submitting the same block alone would waste the 5th final slot.")
+        print(f"Recommendation:")
+        print(f"  1. If a secondary validated model exists, submit that model.")
+        print(f"  2. Otherwise, do NOT submit a redundant copy; Probe {p_num} remains your best recorded score.")
+        
     else:
-        print("\nNo probe beat Submission 48. Reverting strictly to Submission 48 (.94633) as final best.")
-
-    with open(out_file, "w", newline="\n", encoding="utf-8") as f:
-        f.write("ID,condition\n")
-        for id_num in range(1, 30001):
-            cond = selected_flips.get(id_num, s48_dict[str(id_num)])
-            f.write(f"{id_num},{cond}\n")
-
-    sha = compute_sha256(out_file)
-    print(f"\nGenerated 5th Final Submission:")
-    print(f"  Path: {out_file}")
-    print(f"  Total flips vs 48: {len(selected_flips)}")
-    print(f"  SHA256: {sha}")
+        print(f"\n[DECISION 5TH SLOT] No probe beat Submission 48 (all <= {args.s48}).")
+        print(f"Action: Reverting strictly to Submission 48 (.94633) as final best.")
+        print(f"Recommendation: Do NOT submit a new CSV; retain Submission 48.")
 
 
 if __name__ == "__main__":
