@@ -1,0 +1,233 @@
+{
+  "candidate_file": "submission_71_strong_ensemble_candidate.csv",
+  "sha256": "e2866c5a3f12105d9b2a1d5b800d5975d32aab88b0793e0dccf6e76ecb3f0a91",
+  "baseline": "submission_48_best_known (.94633)",
+  "total_flips": 1338,
+  "flips_seen_sellers": 815,
+  "flips_new_sellers": 523,
+  "flips_used_to_new": 663,
+  "flips_new_to_used": 675,
+  "top_margin_flips": [
+    {
+      "ID": 1083,
+      "s48": "used",
+      "ens": "new",
+      "direction": "used->new",
+      "is_seen": 0,
+      "p_ens": 0.008877703764813467,
+      "margin": 0.49112229623518655,
+      "price": 1750.0,
+      "title": "Gps Garmin Nuvi 805 Series C/ Remoto Volante Nuevo !"
+    },
+    {
+      "ID": 7252,
+      "s48": "used",
+      "ens": "new",
+      "direction": "used->new",
+      "is_seen": 1,
+      "p_ens": 0.012637416657893641,
+      "margin": 0.48736258334210636,
+      "price": 33.99,
+      "title": "El Relato Peronista - Silvia Mercado - Libro Digital Oferta"
+    },
+    {
+      "ID": 9327,
+      "s48": "used",
+      "ens": "new",
+      "direction": "used->new",
+      "is_seen": 1,
+      "p_ens": 0.01263826288796506,
+      "margin": 0.48736173711203495,
+      "price": 2399.0,
+      "title": "Pantalla Lcd Display Apple Imac G5 20 1.8 2.0 2.1 Ghz"
+    },
+    {
+      "ID": 16725,
+      "s48": "used",
+      "ens": "new",
+      "direction": "used->new",
+      "is_seen": 0,
+      "p_ens": 0.021285651094401337,
+      "margin": 0.47871434890559866,
+      "price": 90.0,
+      "title": "Sons Of Anarchy 7ma Temp Final En Dvd"
+    },
+    {
+      "ID": 28453,
+      "s48": "used",
+      "ens": "new",
+      "direction": "used->new",
+      "is_seen": 0,
+      "p_ens": 0.025635649932761045,
+      "margin": 0.474364350067239,
+      "price": 250.0,
+      "title": "Camisa Sin Mangas. Musculosa Negro/ Azul - Espalda Moño"
+    },
+    {
+      "ID": 19999,
+      "s48": "used",
+      "ens": "new",
+      "direction": "used->new",
+      "is_seen": 1,
+      "p_ens": 0.030792709238475626,
+      "margin": 0.4692072907615244,
+      "price": 110.0,
+      "title": "Sobre Primer Día - Filatelia  Estampilla Nacional Argentina"
+    },
+    {
+      "ID": 7575,
+      "s48": "used",
+      "ens": "new",
+      "direction": "used->new",
+      "is_seen": 1,
+      "p_ens": 0.032702697743189846,
+      "margin": 0.46729730225681015,
+      "price": 55.0,
+      "title": "Hojita Block N°31 De Argentina"
+    },
+    {
+      "ID": 26707,
+      "s48": "used",
+      "ens": "new",
+      "direction": "used->new",
+      "is_seen": 1,
+      "p_ens": 0.042572665285829696,
+      "margin": 0.4574273347141703,
+      "price": 75.0,
+      "title": "Copa De Agua 11,5 Cm X 6 Cm Oferta !!!"
+    },
+    {
+      "ID": 24419,
+      "s48": "used",
+      "ens": "new",
+      "direction": "used->new",
+      "is_seen": 1,
+      "p_ens": 0.043717068837407724,
+      "margin": 0.4562829311625923,
+      "price": 180.0,
+      "title": "Inverter Original Notebook Hp Pavillion Dv6000 (as0231720d2)"
+    },
+    {
+      "ID": 28605,
+      "s48": "new",
+      "ens": "used",
+      "direction": "new->used",
+      "is_seen": 1,
+      "p_ens": 0.95474549832991,
+      "margin": 0.45474549832990996,
+      "price": 250.0,
+      "title": "Cd Enrique Guzman Y Los Teen Tops Impecable"
+    },
+    {
+      "ID": 12877,
+      "s48": "new",
+      "ens": "used",
+      "direction": "new->used",
+      "is_seen": 0,
+      "p_ens": 0.9533184924084703,
+      "margin": 0.45331849240847033,
+      "price": 290000.0,
+      "title": "Volkswagen Vento 2.0 115 Cv Advance Manual+summer Package"
+    },
+    {
+      "ID": 22084,
+      "s48": "new",
+      "ens": "used",
+      "direction": "new->used",
+      "is_seen": 1,
+      "p_ens": 0.9532003988290056,
+      "margin": 0.45320039882900565,
+      "price": 500.0,
+      "title": "Chaleco Gamuzado Con Piel Sintetica Super Abrigado Impecable"
+    },
+    {
+      "ID": 26469,
+      "s48": "new",
+      "ens": "used",
+      "direction": "new->used",
+      "is_seen": 1,
+      "p_ens": 0.9516586171055518,
+      "margin": 0.4516586171055518,
+      "price": 130.0,
+      "title": "Disco De Los Playeros"
+    },
+    {
+      "ID": 22226,
+      "s48": "used",
+      "ens": "new",
+      "direction": "used->new",
+      "is_seen": 1,
+      "p_ens": 0.0487434970709096,
+      "margin": 0.4512565029290904,
+      "price": 199.0,
+      "title": "Puerto Replicador Hp Serie Pr1000 Para Compaq Evo, Pavilion"
+    },
+    {
+      "ID": 19545,
+      "s48": "new",
+      "ens": "used",
+      "direction": "new->used",
+      "is_seen": 1,
+      "p_ens": 0.9509095628230153,
+      "margin": 0.4509095628230153,
+      "price": 600.0,
+      "title": "Top Cover Dell Inspiron 14r N4110 Dpn 0xjcyj"
+    },
+    {
+      "ID": 8920,
+      "s48": "used",
+      "ens": "new",
+      "direction": "used->new",
+      "is_seen": 1,
+      "p_ens": 0.049119667878373185,
+      "margin": 0.4508803321216268,
+      "price": 35000.0,
+      "title": "Aro Solitario De Oro Blanco Y Brillante Para Hombre"
+    },
+    {
+      "ID": 20396,
+      "s48": "new",
+      "ens": "used",
+      "direction": "new->used",
+      "is_seen": 0,
+      "p_ens": 0.9507708712940038,
+      "margin": 0.45077087129400384,
+      "price": 115000.0,
+      "title": "Dueño Vende 3 Ambientes Inmejorable Ubicacion"
+    },
+    {
+      "ID": 3619,
+      "s48": "used",
+      "ens": "new",
+      "direction": "used->new",
+      "is_seen": 0,
+      "p_ens": 0.05065538985639949,
+      "margin": 0.4493446101436005,
+      "price": 8500.0,
+      "title": "Ipad Mini Retina 16 Gb + Funda Teclado Zagg + Heapods Nuevos"
+    },
+    {
+      "ID": 25890,
+      "s48": "new",
+      "ens": "used",
+      "direction": "new->used",
+      "is_seen": 1,
+      "p_ens": 0.9489323604058482,
+      "margin": 0.44893236040584816,
+      "price": 600.0,
+      "title": "Vendo Morza"
+    },
+    {
+      "ID": 28826,
+      "s48": "used",
+      "ens": "new",
+      "direction": "used->new",
+      "is_seen": 1,
+      "p_ens": 0.05410689870788751,
+      "margin": 0.44589310129211246,
+      "price": 55.0,
+      "title": "Banderin Del Club Atlético Independiente Vectorizado"
+    }
+  ],
+  "note": "Candidate model prepared for Codex inspection. Not submitted to Kaggle."
+}
