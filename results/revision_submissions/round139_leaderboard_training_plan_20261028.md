@@ -29,3 +29,17 @@ La CV estratificada aleatoria .9548/.1191 no es prueba de traslado a test ni val
 5. Explorar una nueva base con información complementaria y sin datos externos etiquetados; preferir selección de iteraciones e hiperparámetros en tune interno. Conservar predicciones pareadas por ID, semillas, config, hashes de entradas y manifiesto de filas en checkpoint. Promover un CSV de test sólo tras confirm no seleccionado o como prueba explícitamente diagnóstica. Ariel controla las submissions.
 
 La caída pública no implica que todo el trabajo de Claude sea inútil: los modelos pueden aportar en un segmento o como calibración. Hace falta distinguir ese aporte con etiquetas reales y una validación que reproduzca la mezcla seen/new del test.
+
+## Objetivo de la próxima jornada (pedido de Ariel)
+
+Preparar una **última submission de explotación** para la noche del 29-10 que maximice la estimación de score y ayude a recuperar posiciones. No prometer que supere 48=.94633: los cinco resultados recientes mostraron que la aparente confianza del stack podía ser contraproducente. Distinguir pruebas diagnósticas tempranas de la decisión final, sin gastar cupos desde este proceso.
+
+Plan secuencial y condición de promoción:
+
+1. Antes de cualquier CSV nuevo, ejecutar validación etiquetada de baselines y candidatos sobre los **mismos IDs**, con fit/tune/confirm externos y seller-group; registrar para visto/nuevo accuracy, logloss, fixes/breaks, IC bootstrap vendedor y solapamiento de cortes. Repetir el mecanismo de historial de vendedor frente a modelo fuerte, no frente al título débil.
+2. Auditar el stack de Claude: TE, sellerother, dependencia OOF entre folds, selección de iteraciones y pesos negativos; ejecutar ablations en confirm externo sin selección retrospectiva. Si no hay ventaja robusta, no usar `fin_stack` como predictor de flips.
+3. Si aparece una mejora estable en confirm que también supera una proxy razonable de política 48, entrenar en 70k y generar predicción completa de test con manifiesto por ID y SHA256. Comparar diferencias con la 48 por segmento, dirección, conteo vendedor y probabilidad; no convertir los scores públicos de los cinco bloques en etiquetas individuales.
+4. Para la última submission, elegir con regla escrita **antes** de observar su score: candidata con mayor ganancia conservadora confirmada y exposición pública controlada; si ninguna supera esa barra, preservar 48 como elección competitiva y sólo recomendar un diagnóstico acotado si su valor informativo para el cierre justifica el riesgo. La 48 ya puede seleccionarse como submission final sin volver a consumir cupo si la competencia retiene el mejor envío.
+5. Guardar código, predicciones pareadas, CSV final, hash y checkpoint; informar a Ariel archivo exacto, diferencias frente a 48, evidencia a favor y límite. Ariel decide y sube a Kaggle.
+
+La meta es mejorar el score base mediante train, y reservar las pruebas públicas para verificar una hipótesis ya fundada. El ranking actualizado no altera etiquetas ni justifica buscar flips de IDs por score.
