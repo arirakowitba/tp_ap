@@ -12,3 +12,9 @@ La predicción pura 63 difiere de 48 en 1518 filas: 809 de vendedores vistos y 7
 Ambos tienen 30.000 IDs únicos y encabezado oficial. Código de reconstrucción: `submissions/20261028/build_fin_stack_segment_samples.py`.
 
 Interpretación: enviar nuevo primero, luego visto si se decide usar ambos cupos para estimar heterogeneidad del modelo. Comparar cada score con 48; no inferir labels por ID. Un resultado positivo de una muestra no valida automáticamente el resto de la banda, porque el IC por vendedor puede ser amplio. Si ambas caen, no enviar 63 ni ampliar las bandas Claude; volver a entrenamientos con TE y stacks sin fuga, tune/confirm seller-group y bootstrap por vendedor. La mejor pública permanece 48=.94633 hasta que una submission la supere. No se enviaron archivos a Kaggle desde este trabajo.
+
+## Resultado público de la muestra de vendedores nuevos
+
+Ariel informó `probe_fin_stack_new_unprobed150_sobre48.csv` = **0,94495** frente a la base 48 = **0,94633**. Diferencia redondeada −0,00138, aproximadamente −29 aciertos si la partición pública tiene 21.000 filas. Corresponde al bloque conjunto de 150 flips (63→used, 87→new), SHA256 `ebb365337aa674d5ce099b763b4917089348539bf1b3b8e5f509e7950cfcf67a`. No identifica etiquetas individuales ni separa el saldo por dirección. El muestreo determinista del pool de 353 desacuerdos de vendedores nuevos de bandas 60–62 da evidencia desfavorable para ampliar ese segmento; no consolidar el bloque ni enviar 63 puro.
+
+La muestra de 150 vendedores vistos es disjunta y sigue sin score. Su envío, sólo si se prioriza gastar el último cupo para medir otro segmento, evaluaría una hipótesis distinta; tiene 132 cambios →new y, por la pérdida previa de vistos→new en banda 59, el riesgo de caída es alto. La mejor pública sigue siendo 48=.94633.
