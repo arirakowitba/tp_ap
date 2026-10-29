@@ -17,6 +17,18 @@ Tune: 2026 +50 (79/29), 314159 +60 (87/27). Bootstrap por vendedor sobre neto co
 
 La mejora sobre un modelo tabular de dos etapas es real en estos cortes y tiene menor tamaño que la mejora sobre texto solo. **La base sigue siendo débil (~.88) frente a modelos principales (~.95 en sus CV distintas)**. Las métricas no se comparan directamente porque tampoco comparten folds, features ni preparación; este experimento no autoriza un CSV para Kaggle. La asimetría pública de `fin_stack` en vistos→new es compatible con un problema de historial, pero no prueba que esta regla corrija ese stack. La siguiente prueba decisiva es exactamente la misma comparación pareada con probabilidades externas de HistGB+FastText/CatBoost y una proxy etiquetada de 48. Evitar añadir una regla basada en seller a la 48 sólo por estos resultados.
 
-## Bloqueo de comparación directa con ronda 13
+## Corrección de alineación y contraste decisivo con ronda 13
 
-Se materializó `round13_checkpoint_20261024.zip` y se revisaron sus arrays `hist.npz`/`cat.npz` (14.000 filas con índices, p, y, seen). Sus índices **no corresponden al orden de** `train_data.jsonlines` del archivo original: la comprobación `y_original[rows] == y_checkpoint` falla. El código de ronda 13 lee `gemini_full_compact_100k.csv` y ordena/alinea otra representación. Por integridad, **no** se unió un prior de vendedor por índice ni se presentó una comparación falsa. Para usar estos pares hay que reconstruir el mapeo por ID original desde el compacto y verificar unicidad, labels y seller de cada fila antes del análisis. Los resultados de este informe sí están alineados al JSON original, y sus pares contienen IDs explícitos.
+La afirmación previa de que los índices de ronda 13 no coincidían con el JSON era **errónea**: el chequeo había invertido la clase positiva. El compacto original del Google Sheet `1O0MY-uSIh1SBBNhxWqNOuqVst8la0fBnqfOqz-_7NhE` usa `y=1` para **used**; nuestro JSON auxiliar había codificado `y=1` para **new**. Se exportó el Sheet original, se recorrieron sus 70.000 filas train y se cotejaron `row_id`, `seller_id` y `y=(condition=='used')` contra el JSON original: **0 discrepancias en las tres columnas**. Además, los 14.000 `rows/y/seen` de los tres NPZ de ronda 13 coinciden con el JSON y el fit de `partition.npz`. La ordenación por índice es válida para esta fuente verificada; el código y la evidencia están en el checkpoint indicado abajo.
+
+Se aplicó la misma regla predeclarada de este informe (prior de vendedor fit con alpha=3, n>=3, distancia >=.30, contradicción, mezcla .6/.4) a probabilidades **fuertes** de ronda 13 en el tercer corte 56k/14k, sin usar etiquetas de valid para construir el prior. Resultado:
+
+| Base fuerte | Filas activadas | Fix/break | Neto | Accuracy antes→después | Logloss antes→después | IC95 neto bootstrap vendedor |
+|---|---:|---:|---:|---:|---:|---:|
+| HistGB | 59 | 4/53 | −49 | .943571→.940071 | .148187→.150658 | [−77,−28] |
+| LightGBM | 60 | 5/52 | −47 | .943500→.940143 | .147307→.149700 | [−74,−26] |
+| CatBoost | 56 | 3/51 | −48 | .944214→.940786 | .147403→.149819 | [−76,−27] |
+
+**Descartar la regla para los modelos fuertes.** Su aparente mejora sobre bases .79–.89 era dependiente del comparador: al contradecir a modelos ~.94, el historial del vendedor casi siempre rompe un acierto. No generar submission ni sumar esta regla a la 48. Este corte histórico está solapado con otros cortes y no es confirm virgen; la pérdida es suficientemente grande para detener esta hipótesis, no una estimación precisa del test.
+
+Código: `src/revision_submissions/round13_strong_gate_20261028.py`. Pares por ID y métricas en checkpoint Library `libfile_e56b30045cc88191a8921667d2f2366d`. Fuente del compacto: Sheet original, no reconstrucción de ronda 9. El score público no se usó como etiqueta.
