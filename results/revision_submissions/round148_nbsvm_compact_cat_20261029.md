@@ -1,6 +1,6 @@
 # Ronda 148: NB-SVM OOF en CatBoost del compacto original (29-10-2026)
 
-Motivación: validar la señal de Antigravity en la misma partición histórica de ronda 13 y contrastar con una base más fuerte. Fuente Sheet original íntegro, 70k train, `y=used=1`, fit 56k/valid14k con índices y etiquetas cotejados con NPZ. Se generan 13 TE y profesores word/char con folds internos por vendedor dentro de fit; NB-SVM word1–2 de 100k features, log-count ratio **recalculado en cada GroupKFold**. Dos CatBoost idénticos (700 iter, depth6, lr .045, L2 12) sobre esas features; sólo el segundo recibe NB-SVM OOF. Sin scores públicos como etiquetas.
+Motivación: validar la señal de Antigravity en la misma partición histórica de ronda 13 y contrastar con una base más fuerte. Fuente Sheet original íntegro, 70k train, `y=used=1`, fit 56k/valid14k con índices y etiquetas cotejados con NPZ. Se generan 11 claves TE y profesores word/char con folds internos por vendedor dentro de fit; NB-SVM word1–2 de 100k features, log-count ratio **recalculado en cada GroupKFold**. Dos CatBoost idénticos (700 iter, depth6, lr .045, L2 12) sobre esas features; sólo el segundo recibe NB-SVM OOF. Sin scores públicos como etiquetas.
 
 | Modelo, mismos 14k | Accuracy | Log loss | Seen | New |
 |---|---:|---:|---:|---:|
