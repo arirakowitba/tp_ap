@@ -1,0 +1,52 @@
+[
+  {
+    "seed": 2026,
+    "n_confirm": 12905,
+    "th_base": 0.47000000000000003,
+    "th_dual": 0.49,
+    "acc_base": 0.9239054629988377,
+    "acc_dual": 0.9245253777605579,
+    "ll_base": 0.1876378137337403,
+    "ll_dual": 0.18791462365625194,
+    "fixes": 91,
+    "breaks": 83,
+    "net": 8,
+    "ci_95": [
+      -20.0,
+      35.0
+    ],
+    "seen_n": 3903,
+    "seen_net": 2,
+    "seen_fixes": 21,
+    "seen_breaks": 19,
+    "new_n": 9002,
+    "new_net": 6,
+    "new_fixes": 70,
+    "new_breaks": 64
+  },
+  {
+    "seed": 314159,
+    "n_confirm": 12843,
+    "th_base": 0.535,
+    "th_dual": 0.53,
+    "acc_base": 0.9201899867632173,
+    "acc_dual": 0.9201121233356693,
+    "ll_base": 0.1955843726108174,
+    "ll_dual": 0.19469592959258958,
+    "fixes": 115,
+    "breaks": 116,
+    "net": -1,
+    "ci_95": [
+      -34.0,
+      32.0
+    ],
+    "seen_n": 3838,
+    "seen_net": -10,
+    "seen_fixes": 13,
+    "seen_breaks": 23,
+    "new_n": 9005,
+    "new_net": 9,
+    "new_fixes": 102,
+    "new_breaks": 93
+  }
+]
