@@ -71,6 +71,10 @@ Agente A (features crudas del JSON, CTR) dejó `a_cat_*` entre 0,9497 y 0,9516; 
 
 Pruebas 59–62 regeneradas con `fin_stack` sobre los 887 desacuerdos nunca probados (67 / 252 / 252 / 316 flips) y 63 = modelo puro. Ver `submissions/20261028/estrategia_bandas_28_10.md`.
 
+### Resultado público (noche del 28-10)
+
+Ariel envió cinco pruebas con `fin_stack`; todas perdieron frente a 48 (−3 a −79 aciertos). Diagnóstico en [round140_diagnostico_fin_stack_20261028.md](round140_diagnostico_fin_stack_20261028.md): los pesos negativos del apilado invertían la señal de XGBoost y la red, y aun la CatBoost sola pierde la mayoría de sus desacuerdos con 48. `fin_stack` y 60–63 quedan descartadas; 48 sigue como mejor pública.
+
 ## 6. Pendientes
 
 - Recibir scores 59–62, recalcular la posterior y armar la consolidación del día.
