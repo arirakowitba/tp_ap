@@ -1,0 +1,36 @@
+Probe,ID,s48_label,probe_target,direction,is_seen,model_p_used,margin,price,title,historical_status
+submission_66_probe1_new_sellers_to_new.csv,29262,used,new,used->new,0,0.0232,0.4768,4000.0,Juego De Tubos 3/8 Power Fist 32 Piezas,100% UNPROBED VIRGIN
+submission_66_probe1_new_sellers_to_new.csv,23563,used,new,used->new,0,0.0371,0.4629,650.0,Valijas Carrito De Cabina ,100% UNPROBED VIRGIN
+submission_66_probe1_new_sellers_to_new.csv,16148,used,new,used->new,0,0.0491,0.4509,10000.0,Butacas De Cuero Para Vw Vento,100% UNPROBED VIRGIN
+submission_66_probe1_new_sellers_to_new.csv,3250,used,new,used->new,0,0.0503,0.4497,1600.0,Carenado Cbr 600 F2,100% UNPROBED VIRGIN
+submission_66_probe1_new_sellers_to_new.csv,29312,used,new,used->new,0,0.0552,0.4448,108.98,Fernet Branca De 1 Litro - Mayorista Zona Flores,100% UNPROBED VIRGIN
+submission_66_probe1_new_sellers_to_new.csv,15613,used,new,used->new,0,0.0561,0.4439,7499.0,Lente Canon Ef Usm 85 Mm F/1.8 - Envios - Tomo Equipos,100% UNPROBED VIRGIN
+submission_66_probe1_new_sellers_to_new.csv,28453,used,new,used->new,0,0.0563,0.4437,250.0,Camisa Sin Mangas. Musculosa Negro/ Azul - Espalda Moño,100% UNPROBED VIRGIN
+submission_66_probe1_new_sellers_to_new.csv,8207,used,new,used->new,0,0.0578,0.4422,2200.0,Hermoso Conjunto De Pulsera Y Aros Plata 900 Detalles En Oro,100% UNPROBED VIRGIN
+submission_66_probe1_new_sellers_to_new.csv,16725,used,new,used->new,0,0.0631,0.4369,90.0,Sons Of Anarchy 7ma Temp Final En Dvd,100% UNPROBED VIRGIN
+submission_66_probe1_new_sellers_to_new.csv,25379,used,new,used->new,0,0.0726,0.4274,1.0,Sabanas Y Cortinas  Umbrella Beach,100% UNPROBED VIRGIN
+submission_67_probe2_new_sellers_to_used.csv,10705,new,used,new->used,0,0.9049,0.4049,1000.0,Fotografia De Famoso Artista Del Ballet De Maurice Bejart,100% UNPROBED VIRGIN
+submission_67_probe2_new_sellers_to_used.csv,1823,new,used,new->used,0,0.8979,0.3979,80.0,La Ciberpolítica Y Los Nuevos Ciudadanos - G. Martinez Pandi,100% UNPROBED VIRGIN
+submission_67_probe2_new_sellers_to_used.csv,20611,new,used,new->used,0,0.8934,0.3934,10.0,Busco Figuritas Torneo Argentino 2014,100% UNPROBED VIRGIN
+submission_67_probe2_new_sellers_to_used.csv,20259,new,used,new->used,0,0.8914,0.3914,120.0,Lote De Dos Muñecos Avatar Coleccion Mc Donalds 2009,100% UNPROBED VIRGIN
+submission_67_probe2_new_sellers_to_used.csv,3190,new,used,new->used,0,0.8888,0.3888,380.0,Sacapunta Antiguo Sin Uso,100% UNPROBED VIRGIN
+submission_67_probe2_new_sellers_to_used.csv,5585,new,used,new->used,0,0.8804,0.3804,200.0,"Syd Barrett, Dibujo",100% UNPROBED VIRGIN
+submission_67_probe2_new_sellers_to_used.csv,5857,new,used,new->used,0,0.8665,0.3665,7999.99,Samsung Galaxy S5 Sm-g900m 2.5 Ghz 16gb Libre 3g 4g Nuevo,100% UNPROBED VIRGIN
+submission_67_probe2_new_sellers_to_used.csv,13629,new,used,new->used,0,0.8633,0.3633,160.0,Las Cuentas Pendientes - Martín Redrado - 2da Edición- Nuevo,100% UNPROBED VIRGIN
+submission_67_probe2_new_sellers_to_used.csv,17658,new,used,new->used,0,0.8624,0.3624,16990.0,"Apple Macbook Pro 13.3 Con Garantia, Nuevos/sellado Belgrano",100% UNPROBED VIRGIN
+submission_67_probe2_new_sellers_to_used.csv,9733,new,used,new->used,0,0.8614,0.3614,125.0,Método Para Guitarra Técnicas De Velocidad Cd De Regalo!,100% UNPROBED VIRGIN
+submission_68_probe3_seen_sellers_to_used.csv,12726,new,used,new->used,1,0.9317,0.4317,60.0,El Cambio Del Poder - Alvin Toffler Plaza & Janes,100% UNPROBED VIRGIN
+submission_68_probe3_seen_sellers_to_used.csv,16846,new,used,new->used,1,0.9189,0.4189,50.0,Tasha Alexander - Herencia De Sangre,100% UNPROBED VIRGIN
+submission_68_probe3_seen_sellers_to_used.csv,22499,new,used,new->used,1,0.9035,0.4035,200.0,Los Condenados De La Tierra   Frantz Fanon,100% UNPROBED VIRGIN
+submission_68_probe3_seen_sellers_to_used.csv,16358,new,used,new->used,1,0.8317,0.3317,160.0,Muffins Magdalenas Y Otros Pastelitos,100% UNPROBED VIRGIN
+submission_68_probe3_seen_sellers_to_used.csv,4060,new,used,new->used,1,0.7947,0.2947,139.9,Nine Stones Close - One Eye On The Sunrise (rock Progresivo),100% UNPROBED VIRGIN
+submission_68_probe3_seen_sellers_to_used.csv,12228,new,used,new->used,1,0.7855,0.2855,90.0,La Extraña - Sándor Márai,100% UNPROBED VIRGIN
+submission_68_probe3_seen_sellers_to_used.csv,7753,new,used,new->used,1,0.731,0.231,50.0,Los Deseantes Juan Jose Burzi Nuevo,100% UNPROBED VIRGIN
+submission_69_probe4_unanimous_consensus.csv,7252,used,new,used->new,1,0.0149,0.4851,33.99,El Relato Peronista - Silvia Mercado - Libro Digital Oferta,100% UNPROBED VIRGIN
+submission_69_probe4_unanimous_consensus.csv,560,used,new,used->new,1,0.0153,0.4847,200.0,Ars Hispaniae - Precio Por Unidad - Tomos 1 A 9 Y 15 (11),100% UNPROBED VIRGIN
+submission_69_probe4_unanimous_consensus.csv,11244,used,new,used->new,1,0.0162,0.4838,150.0,Vino Separado Bodega Nanini Y Vaso Para Decorar,100% UNPROBED VIRGIN
+submission_69_probe4_unanimous_consensus.csv,19313,used,new,used->new,1,0.0211,0.4789,50.0,Antigua Tapa Luz Aluminio Vintage 3 Teclas Plateado Brillo,100% UNPROBED VIRGIN
+submission_69_probe4_unanimous_consensus.csv,9327,used,new,used->new,1,0.0254,0.4746,2399.0,Pantalla Lcd Display Apple Imac G5 20 1.8 2.0 2.1 Ghz,100% UNPROBED VIRGIN
+submission_69_probe4_unanimous_consensus.csv,7914,new,used,new->used,1,0.9688,0.4688,280.0,Lote De 23 Libros,100% UNPROBED VIRGIN
+submission_69_probe4_unanimous_consensus.csv,14405,new,used,new->used,1,0.9665,0.4665,55.0,Modelos Economicos Y Finan.con Exel 2000- Garcia-rialeconomi,100% UNPROBED VIRGIN
+submission_69_probe4_unanimous_consensus.csv,11239,new,used,new->used,1,0.9658,0.4658,50.0,"Tango - Y El Ayer Floreció, Castex & Russo. $50",100% UNPROBED VIRGIN

@@ -1,0 +1,167 @@
+[
+  {
+    "ID": 18423,
+    "probe": "submission_66_probe1_new_sellers_to_new.csv",
+    "probe_direction": "used->new",
+    "tested_in": "sub_63",
+    "tested_file": "submission_63_fin_stack_modelo_puro.csv",
+    "tested_direction": "used->new",
+    "tested_result": "fin_stack modelo puro (dropped)",
+    "title": "Telar Con Peine De Madera + Funda + 5 Pares De Agujas",
+    "price": 900.0
+  },
+  {
+    "ID": 1083,
+    "probe": "submission_66_probe1_new_sellers_to_new.csv",
+    "probe_direction": "used->new",
+    "tested_in": "sub_57",
+    "tested_file": "submission_57_posterior_sobre48.csv",
+    "tested_direction": "used->new",
+    "tested_result": "0.94633 (tied)",
+    "title": "Gps Garmin Nuvi 805 Series C/ Remoto Volante Nuevo !",
+    "price": 1750.0
+  },
+  {
+    "ID": 18790,
+    "probe": "submission_66_probe1_new_sellers_to_new.csv",
+    "probe_direction": "used->new",
+    "tested_in": "sub_63",
+    "tested_file": "submission_63_fin_stack_modelo_puro.csv",
+    "tested_direction": "used->new",
+    "tested_result": "fin_stack modelo puro (dropped)",
+    "title": "Auricular Monster Beats By. Dr Dre Studio Original Importado",
+    "price": 1500.0
+  },
+  {
+    "ID": 7755,
+    "probe": "submission_66_probe1_new_sellers_to_new.csv",
+    "probe_direction": "used->new",
+    "tested_in": "sub_63",
+    "tested_file": "submission_63_fin_stack_modelo_puro.csv",
+    "tested_direction": "used->new",
+    "tested_result": "fin_stack modelo puro (dropped)",
+    "title": "Gran Alfombra 160x220mm",
+    "price": 1300.0
+  },
+  {
+    "ID": 12877,
+    "probe": "submission_67_probe2_new_sellers_to_used.csv",
+    "probe_direction": "new->used",
+    "tested_in": "sub_63",
+    "tested_file": "submission_63_fin_stack_modelo_puro.csv",
+    "tested_direction": "new->used",
+    "tested_result": "fin_stack modelo puro (dropped)",
+    "title": "Volkswagen Vento 2.0 115 Cv Advance Manual+summer Package",
+    "price": 290000.0
+  },
+  {
+    "ID": 14589,
+    "probe": "submission_67_probe2_new_sellers_to_used.csv",
+    "probe_direction": "new->used",
+    "tested_in": "sub_63",
+    "tested_file": "submission_63_fin_stack_modelo_puro.csv",
+    "tested_direction": "new->used",
+    "tested_result": "fin_stack modelo puro (dropped)",
+    "title": "Par De Antiguas Mesas De Luz Francesas Patinadas En Blanco",
+    "price": 1000.0
+  },
+  {
+    "ID": 18735,
+    "probe": "submission_67_probe2_new_sellers_to_used.csv",
+    "probe_direction": "new->used",
+    "tested_in": "sub_63",
+    "tested_file": "submission_63_fin_stack_modelo_puro.csv",
+    "tested_direction": "new->used",
+    "tested_result": "fin_stack modelo puro (dropped)",
+    "title": "Chevrolet Cruze4p Ltz 0km Financiado",
+    "price": 370000.0
+  },
+  {
+    "ID": 25040,
+    "probe": "submission_67_probe2_new_sellers_to_used.csv",
+    "probe_direction": "new->used",
+    "tested_in": "sub_63",
+    "tested_file": "submission_63_fin_stack_modelo_puro.csv",
+    "tested_direction": "new->used",
+    "tested_result": "fin_stack modelo puro (dropped)",
+    "title": "Reloj Bulova 98h51 Essencial Caballero - Nuevo - Oportunidad",
+    "price": 2899.99
+  },
+  {
+    "ID": 20534,
+    "probe": "submission_67_probe2_new_sellers_to_used.csv",
+    "probe_direction": "new->used",
+    "tested_in": "sub_63",
+    "tested_file": "submission_63_fin_stack_modelo_puro.csv",
+    "tested_direction": "new->used",
+    "tested_result": "fin_stack modelo puro (dropped)",
+    "title": "Eco Sport 4*4 Freestyle 2.0 !!oferta!! Okm Zona Oeste",
+    "price": 271100.0
+  },
+  {
+    "ID": 25747,
+    "probe": "submission_67_probe2_new_sellers_to_used.csv",
+    "probe_direction": "new->used",
+    "tested_in": "sub_63",
+    "tested_file": "submission_63_fin_stack_modelo_puro.csv",
+    "tested_direction": "new->used",
+    "tested_result": "fin_stack modelo puro (dropped)",
+    "title": "Batido Herbalife Tortuguitas! Plan Mensual Avanzado!",
+    "price": 2270.0
+  },
+  {
+    "ID": 20714,
+    "probe": "submission_67_probe2_new_sellers_to_used.csv",
+    "probe_direction": "new->used",
+    "tested_in": "sub_63",
+    "tested_file": "submission_63_fin_stack_modelo_puro.csv",
+    "tested_direction": "new->used",
+    "tested_result": "fin_stack modelo puro (dropped)",
+    "title": "Servicio De Caniche Gratis!!!!!!! Experiencia Garantizada",
+    "price": 500.0
+  },
+  {
+    "ID": 449,
+    "probe": "submission_67_probe2_new_sellers_to_used.csv",
+    "probe_direction": "new->used",
+    "tested_in": "sub_63",
+    "tested_file": "submission_63_fin_stack_modelo_puro.csv",
+    "tested_direction": "new->used",
+    "tested_result": "fin_stack modelo puro (dropped)",
+    "title": "Pantalon Nieve Betty Rides Importado Nuevo Xl",
+    "price": 1500.0
+  },
+  {
+    "ID": 7639,
+    "probe": "submission_67_probe2_new_sellers_to_used.csv",
+    "probe_direction": "new->used",
+    "tested_in": "sub_63",
+    "tested_file": "submission_63_fin_stack_modelo_puro.csv",
+    "tested_direction": "new->used",
+    "tested_result": "fin_stack modelo puro (dropped)",
+    "title": "Cooler Para Hp Nc - Nx - Nw -8220 - 8230 - 8240",
+    "price": 300.0
+  },
+  {
+    "ID": 2204,
+    "probe": "submission_68_probe3_seen_sellers_to_used.csv",
+    "probe_direction": "new->used",
+    "tested_in": "sub_63",
+    "tested_file": "submission_63_fin_stack_modelo_puro.csv",
+    "tested_direction": "new->used",
+    "tested_result": "fin_stack modelo puro (dropped)",
+    "title": "Antiguas Palomitas De Yeso Para Decorar Tortas",
+    "price": 70.0
+  },
+  {
+    "ID": 23586,
+    "probe": "submission_69_probe4_unanimous_consensus.csv",
+    "probe_direction": "used->new",
+    "tested_in": "sub_63",
+    "tested_file": "submission_63_fin_stack_modelo_puro.csv",
+    "tested_direction": "used->new",
+    "tested_result": "fin_stack modelo puro (dropped)",
+    "title": "Bandeja Adicional Hp Cb518a Cb518 Original 500 Hp 4015 4014",
+    "price": 600.0
+  }
+]

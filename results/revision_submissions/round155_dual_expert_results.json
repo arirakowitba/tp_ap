@@ -1,0 +1,54 @@
+[
+  {
+    "seed": 2026,
+    "n_confirm": 12905,
+    "best_w_new": 0.2,
+    "th_base": 0.47000000000000003,
+    "th_dual": 0.51,
+    "acc_base": 0.9239054629988377,
+    "acc_dual": 0.924835335141418,
+    "ll_base": 0.1876378137337403,
+    "ll_dual": 0.18567383487974187,
+    "fixes": 56,
+    "breaks": 44,
+    "net": 12,
+    "ci_95": [
+      -13.0,
+      43.0
+    ],
+    "seen_n": 3903,
+    "seen_net": -5,
+    "seen_fixes": 10,
+    "seen_breaks": 15,
+    "new_n": 9002,
+    "new_net": 17,
+    "new_fixes": 46,
+    "new_breaks": 29
+  },
+  {
+    "seed": 314159,
+    "n_confirm": 12843,
+    "best_w_new": 0.0,
+    "th_base": 0.54,
+    "th_dual": 0.54,
+    "acc_base": 0.919956396480573,
+    "acc_dual": 0.919956396480573,
+    "ll_base": 0.1955843726108174,
+    "ll_dual": 0.1955843726108174,
+    "fixes": 0,
+    "breaks": 0,
+    "net": 0,
+    "ci_95": [
+      0.0,
+      0.0
+    ],
+    "seen_n": 3838,
+    "seen_net": 0,
+    "seen_fixes": 0,
+    "seen_breaks": 0,
+    "new_n": 9005,
+    "new_net": 0,
+    "new_fixes": 0,
+    "new_breaks": 0
+  }
+]

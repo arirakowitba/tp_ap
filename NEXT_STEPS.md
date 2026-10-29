@@ -20,10 +20,10 @@ Para las 4 pruebas adaptativas de Ariel antes del cupo final:
 
 | Sonda | Archivo CSV | Flips | Segmento | Dirección | Certeza Modelo | Hash SHA256 |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| **1** | `submission_66_probe1_new_sellers_to_new.csv` | 10 | Vendedores Nuevos | `used` $\to$ `new` | $p < 0.059$ | `082a7e2566919bdc8dc0661884b8f878e8855d63bcb046e4553a8da6c9caf172` |
-| **2** | `submission_67_probe2_new_sellers_to_used.csv` | 10 | Vendedores Nuevos | `new` $\to$ `used` | $p > 0.902$ | `b3ec2a0d00153ced6b7fd3f6083e760b3b8767e474278c3bc834bfdeecc4f439` |
-| **3** | `submission_68_probe3_seen_sellers_to_used.csv` | 7 | Vendedores Vistos ($\ge 80\%$ used) | `new` $\to$ `used` | $p > 0.750$ | `270dea10bc6dc5a15b8bfe0b324f8dc8796d195b4f55436d1aae56980f419dc0` |
-| **4** | `submission_69_probe4_unanimous_consensus.csv` | 8 | Consenso Unánime | Mixto | $\|p-0.5\| > 0.46$ | `2028620b12a038415de9b2f03cc59dfceb3aed16ae39682fb5f0c5f13df49994` |
+| **1** | `submission_66_probe1_new_sellers_to_new.csv` | 10 | Vendedores Nuevos | `used` $\to$ `new` | $p < 0.08$ | `24e2381246d556f4b3d86e5c3b2282292562d5b5547138e5efdfcb8a11bf1d84` |
+| **2** | `submission_67_probe2_new_sellers_to_used.csv` | 10 | Vendedores Nuevos | `new` $\to$ `used` | $p > 0.82$ | `2718112f2dabb9ce8bb136e61368ca03fdc6951d392eb2420b722a09feb6b8ae` |
+| **3** | `submission_68_probe3_seen_sellers_to_used.csv` | 7 | Vendedores Vistos ($\ge 80\%$ used) | `new` $\to$ `used` | $p > 0.70$ | `c546636a3ce1e0acbead2c5f06c9c030d7345875c0861dc2caf29584ea940994` |
+| **4** | `submission_69_probe4_unanimous_consensus.csv` | 8 | Consenso Unánime | Mixto | $\|p-0.5\| > 0.44$ | `8993a3a803b1bc47be8ab639466e7895f4b4c4087377977ce47223943bde8991` |
 
 *Nota: Los 35 IDs modificados son 100% disjuntos entre las 4 sondas.*
 

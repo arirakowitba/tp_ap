@@ -2,8 +2,8 @@
   {
     "file": "submission_66_probe1_new_sellers_to_new.csv",
     "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\20261029\\submission_66_probe1_new_sellers_to_new.csv",
-    "sha256": "082a7e2566919bdc8dc0661884b8f878e8855d63bcb046e4553a8da6c9caf172",
-    "description": "Sonda 1: Vendedores Nuevos, used -> new (10 items)",
+    "sha256": "24e2381246d556f4b3d86e5c3b2282292562d5b5547138e5efdfcb8a11bf1d84",
+    "description": "Sonda 1: Vendedores Nuevos, used -> new (10 items unprobed)",
     "n_flips": 10,
     "items": [
       {
@@ -16,19 +16,9 @@
         "s48": "used",
         "target": "new",
         "title": "Juego De Tubos 3/8 Power Fist 32 Piezas",
-        "price": 4000.0
-      },
-      {
-        "idx": 18422,
-        "ID": 18423,
-        "test_id": "MLA9024434810",
-        "seller_id": "7217818482",
-        "p_used": 0.03059133748889792,
-        "margin": 0.4694086625111021,
-        "s48": "used",
-        "target": "new",
-        "title": "Telar Con Peine De Madera + Funda + 5 Pares De Agujas",
-        "price": 900.0
+        "price": 4000.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 23562,
@@ -40,19 +30,9 @@
         "s48": "used",
         "target": "new",
         "title": "Valijas Carrito De Cabina ",
-        "price": 650.0
-      },
-      {
-        "idx": 1082,
-        "ID": 1083,
-        "test_id": "MLA3038002579",
-        "seller_id": "7741437698",
-        "p_used": 0.03885778628884884,
-        "margin": 0.46114221371115116,
-        "s48": "used",
-        "target": "new",
-        "title": "Gps Garmin Nuvi 805 Series C/ Remoto Volante Nuevo !",
-        "price": 1750.0
+        "price": 650.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 16147,
@@ -64,7 +44,9 @@
         "s48": "used",
         "target": "new",
         "title": "Butacas De Cuero Para Vw Vento",
-        "price": 10000.0
+        "price": 10000.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 3249,
@@ -76,31 +58,9 @@
         "s48": "used",
         "target": "new",
         "title": "Carenado Cbr 600 F2",
-        "price": 1600.0
-      },
-      {
-        "idx": 18789,
-        "ID": 18790,
-        "test_id": "MLA2415704953",
-        "seller_id": "6931538258",
-        "p_used": 0.05040868174821241,
-        "margin": 0.4495913182517876,
-        "s48": "used",
-        "target": "new",
-        "title": "Auricular Monster Beats By. Dr Dre Studio Original Importado",
-        "price": 1500.0
-      },
-      {
-        "idx": 7754,
-        "ID": 7755,
-        "test_id": "MLA9416524880",
-        "seller_id": "7562450229",
-        "p_used": 0.05485450639567428,
-        "margin": 0.4451454936043257,
-        "s48": "used",
-        "target": "new",
-        "title": "Gran Alfombra 160x220mm",
-        "price": 1300.0
+        "price": 1600.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 29311,
@@ -112,7 +72,9 @@
         "s48": "used",
         "target": "new",
         "title": "Fernet Branca De 1 Litro - Mayorista Zona Flores",
-        "price": 108.98
+        "price": 108.98,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 15612,
@@ -124,125 +86,75 @@
         "s48": "used",
         "target": "new",
         "title": "Lente Canon Ef Usm 85 Mm F/1.8 - Envios - Tomo Equipos",
-        "price": 7499.0
+        "price": 7499.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 28452,
+        "ID": 28453,
+        "test_id": "MLA6618258028",
+        "seller_id": "1851861180",
+        "p_used": 0.056338286836776046,
+        "margin": 0.44366171316322395,
+        "s48": "used",
+        "target": "new",
+        "title": "Camisa Sin Mangas. Musculosa Negro/ Azul - Espalda Mo\u00f1o",
+        "price": 250.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 8206,
+        "ID": 8207,
+        "test_id": "MLA9781904339",
+        "seller_id": "5882399706",
+        "p_used": 0.05777351423492903,
+        "margin": 0.44222648576507095,
+        "s48": "used",
+        "target": "new",
+        "title": "Hermoso Conjunto De Pulsera Y Aros Plata 900 Detalles En Oro",
+        "price": 2200.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 16724,
+        "ID": 16725,
+        "test_id": "MLA2559219743",
+        "seller_id": "5781446361",
+        "p_used": 0.06307182809568972,
+        "margin": 0.43692817190431027,
+        "s48": "used",
+        "target": "new",
+        "title": "Sons Of Anarchy 7ma Temp Final En Dvd",
+        "price": 90.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 25378,
+        "ID": 25379,
+        "test_id": "MLA8085528202",
+        "seller_id": "3831461100",
+        "p_used": 0.07262181144059501,
+        "margin": 0.427378188559405,
+        "s48": "used",
+        "target": "new",
+        "title": "Sabanas Y Cortinas  Umbrella Beach",
+        "price": 1.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
       }
     ]
   },
   {
     "file": "submission_67_probe2_new_sellers_to_used.csv",
     "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\20261029\\submission_67_probe2_new_sellers_to_used.csv",
-    "sha256": "b3ec2a0d00153ced6b7fd3f6083e760b3b8767e474278c3bc834bfdeecc4f439",
-    "description": "Sonda 2: Vendedores Nuevos, new -> used (10 items)",
+    "sha256": "2718112f2dabb9ce8bb136e61368ca03fdc6951d392eb2420b722a09feb6b8ae",
+    "description": "Sonda 2: Vendedores Nuevos, new -> used (10 items unprobed)",
     "n_flips": 10,
     "items": [
-      {
-        "idx": 12876,
-        "ID": 12877,
-        "test_id": "MLA8642285216",
-        "seller_id": "7805803746",
-        "p_used": 0.9839973515268772,
-        "margin": 0.4839973515268772,
-        "s48": "new",
-        "target": "used",
-        "title": "Volkswagen Vento 2.0 115 Cv Advance Manual+summer Package",
-        "price": 290000.0
-      },
-      {
-        "idx": 14588,
-        "ID": 14589,
-        "test_id": "MLA9365055645",
-        "seller_id": "9863851644",
-        "p_used": 0.9462070997057739,
-        "margin": 0.4462070997057739,
-        "s48": "new",
-        "target": "used",
-        "title": "Par De Antiguas Mesas De Luz Francesas Patinadas En Blanco",
-        "price": 1000.0
-      },
-      {
-        "idx": 18734,
-        "ID": 18735,
-        "test_id": "MLA3206018982",
-        "seller_id": "2694754426",
-        "p_used": 0.9376211889108117,
-        "margin": 0.4376211889108117,
-        "s48": "new",
-        "target": "used",
-        "title": "Chevrolet Cruze4p Ltz 0km Financiado",
-        "price": 370000.0
-      },
-      {
-        "idx": 25039,
-        "ID": 25040,
-        "test_id": "MLA4516291397",
-        "seller_id": "9086360997",
-        "p_used": 0.9360963743127372,
-        "margin": 0.4360963743127372,
-        "s48": "new",
-        "target": "used",
-        "title": "Reloj Bulova 98h51 Essencial Caballero - Nuevo - Oportunidad",
-        "price": 2899.99
-      },
-      {
-        "idx": 20533,
-        "ID": 20534,
-        "test_id": "MLA8712628398",
-        "seller_id": "1910500263",
-        "p_used": 0.9339458071354555,
-        "margin": 0.4339458071354555,
-        "s48": "new",
-        "target": "used",
-        "title": "Eco Sport 4*4 Freestyle 2.0 !!oferta!! Okm Zona Oeste",
-        "price": 271100.0
-      },
-      {
-        "idx": 25746,
-        "ID": 25747,
-        "test_id": "MLA4976830557",
-        "seller_id": "8604863400",
-        "p_used": 0.9304898345454051,
-        "margin": 0.4304898345454051,
-        "s48": "new",
-        "target": "used",
-        "title": "Batido Herbalife Tortuguitas! Plan Mensual Avanzado!",
-        "price": 2270.0
-      },
-      {
-        "idx": 20713,
-        "ID": 20714,
-        "test_id": "MLA7274388392",
-        "seller_id": "9531581871",
-        "p_used": 0.9157344555648882,
-        "margin": 0.4157344555648882,
-        "s48": "new",
-        "target": "used",
-        "title": "Servicio De Caniche Gratis!!!!!!! Experiencia Garantizada",
-        "price": 500.0
-      },
-      {
-        "idx": 448,
-        "ID": 449,
-        "test_id": "MLA9920092187",
-        "seller_id": "4015646617",
-        "p_used": 0.9126386108157045,
-        "margin": 0.4126386108157045,
-        "s48": "new",
-        "target": "used",
-        "title": "Pantalon Nieve Betty Rides Importado Nuevo Xl",
-        "price": 1500.0
-      },
-      {
-        "idx": 7638,
-        "ID": 7639,
-        "test_id": "MLA2130274953",
-        "seller_id": "9015695664",
-        "p_used": 0.9051313306187402,
-        "margin": 0.4051313306187402,
-        "s48": "new",
-        "target": "used",
-        "title": "Cooler Para Hp Nc - Nx - Nw -8220 - 8230 - 8240",
-        "price": 300.0
-      },
       {
         "idx": 10704,
         "ID": 10705,
@@ -253,15 +165,143 @@
         "s48": "new",
         "target": "used",
         "title": "Fotografia De Famoso Artista Del Ballet De Maurice Bejart",
-        "price": 1000.0
+        "price": 1000.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 1822,
+        "ID": 1823,
+        "test_id": "MLA8538989067",
+        "seller_id": "4469881150",
+        "p_used": 0.897886072463666,
+        "margin": 0.39788607246366603,
+        "s48": "new",
+        "target": "used",
+        "title": "La Ciberpol\u00edtica Y Los Nuevos Ciudadanos - G. Martinez Pandi",
+        "price": 80.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 20610,
+        "ID": 20611,
+        "test_id": "MLA7749690668",
+        "seller_id": "9297501306",
+        "p_used": 0.8933628036762196,
+        "margin": 0.39336280367621956,
+        "s48": "new",
+        "target": "used",
+        "title": "Busco Figuritas Torneo Argentino 2014",
+        "price": 10.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 20258,
+        "ID": 20259,
+        "test_id": "MLA2353125246",
+        "seller_id": "3451689265",
+        "p_used": 0.8914033358966076,
+        "margin": 0.3914033358966076,
+        "s48": "new",
+        "target": "used",
+        "title": "Lote De Dos Mu\u00f1ecos Avatar Coleccion Mc Donalds 2009",
+        "price": 120.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 3189,
+        "ID": 3190,
+        "test_id": "MLA6744124817",
+        "seller_id": "9992552010",
+        "p_used": 0.8887991142134762,
+        "margin": 0.38879911421347624,
+        "s48": "new",
+        "target": "used",
+        "title": "Sacapunta Antiguo Sin Uso",
+        "price": 380.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 5584,
+        "ID": 5585,
+        "test_id": "MLA9485934673",
+        "seller_id": "1829607965",
+        "p_used": 0.8803968840792034,
+        "margin": 0.38039688407920336,
+        "s48": "new",
+        "target": "used",
+        "title": "Syd Barrett, Dibujo",
+        "price": 200.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 5856,
+        "ID": 5857,
+        "test_id": "MLA8471128014",
+        "seller_id": "3706777228",
+        "p_used": 0.8665247903088297,
+        "margin": 0.3665247903088297,
+        "s48": "new",
+        "target": "used",
+        "title": "Samsung Galaxy S5 Sm-g900m 2.5 Ghz 16gb Libre 3g 4g Nuevo",
+        "price": 7999.99,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 13628,
+        "ID": 13629,
+        "test_id": "MLA1806202644",
+        "seller_id": "8661763526",
+        "p_used": 0.8632914147957753,
+        "margin": 0.3632914147957753,
+        "s48": "new",
+        "target": "used",
+        "title": "Las Cuentas Pendientes - Mart\u00edn Redrado - 2da Edici\u00f3n- Nuevo",
+        "price": 160.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 17657,
+        "ID": 17658,
+        "test_id": "MLA1392815624",
+        "seller_id": "1381422916",
+        "p_used": 0.8624309616511849,
+        "margin": 0.36243096165118494,
+        "s48": "new",
+        "target": "used",
+        "title": "Apple Macbook Pro 13.3 Con Garantia, Nuevos/sellado Belgrano",
+        "price": 16990.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 9732,
+        "ID": 9733,
+        "test_id": "MLA7390412287",
+        "seller_id": "6532402932",
+        "p_used": 0.8613616175662412,
+        "margin": 0.3613616175662412,
+        "s48": "new",
+        "target": "used",
+        "title": "M\u00e9todo Para Guitarra T\u00e9cnicas De Velocidad Cd De Regalo!",
+        "price": 125.0,
+        "is_seen": 0,
+        "prior_probe_overlap": "NONE (100% virgin)"
       }
     ]
   },
   {
     "file": "submission_68_probe3_seen_sellers_to_used.csv",
     "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\20261029\\submission_68_probe3_seen_sellers_to_used.csv",
-    "sha256": "270dea10bc6dc5a15b8bfe0b324f8dc8796d195b4f55436d1aae56980f419dc0",
-    "description": "Sonda 3: Vendedores Vistos 100% usados, new -> used (8 items)",
+    "sha256": "c546636a3ce1e0acbead2c5f06c9c030d7345875c0861dc2caf29584ea940994",
+    "description": "Sonda 3: Vendedores Vistos >=80% usados, new -> used (7 items unprobed)",
     "n_flips": 7,
     "items": [
       {
@@ -277,7 +317,9 @@
         "s48": "new",
         "target": "used",
         "title": "El Cambio Del Poder - Alvin Toffler Plaza & Janes",
-        "price": 60.0
+        "price": 60.0,
+        "is_seen": 1,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 16845,
@@ -292,7 +334,9 @@
         "s48": "new",
         "target": "used",
         "title": "Tasha Alexander - Herencia De Sangre",
-        "price": 50.0
+        "price": 50.0,
+        "is_seen": 1,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 22498,
@@ -307,7 +351,9 @@
         "s48": "new",
         "target": "used",
         "title": "Los Condenados De La Tierra   Frantz Fanon",
-        "price": 200.0
+        "price": 200.0,
+        "is_seen": 1,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 16357,
@@ -322,22 +368,9 @@
         "s48": "new",
         "target": "used",
         "title": "Muffins Magdalenas Y Otros Pastelitos",
-        "price": 160.0
-      },
-      {
-        "idx": 2203,
-        "ID": 2204,
-        "test_id": "MLA5078530916",
-        "seller_id": "3944830873",
-        "seller_train_n": 3,
-        "seller_train_used": 3,
-        "seller_used_ratio": 1.0,
-        "p_used": 0.8026140471995546,
-        "margin": 0.30261404719955465,
-        "s48": "new",
-        "target": "used",
-        "title": "Antiguas Palomitas De Yeso Para Decorar Tortas",
-        "price": 70.0
+        "price": 160.0,
+        "is_seen": 1,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 4059,
@@ -352,7 +385,9 @@
         "s48": "new",
         "target": "used",
         "title": "Nine Stones Close - One Eye On The Sunrise (rock Progresivo)",
-        "price": 139.9
+        "price": 139.9,
+        "is_seen": 1,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 12227,
@@ -367,30 +402,36 @@
         "s48": "new",
         "target": "used",
         "title": "La Extra\u00f1a - S\u00e1ndor M\u00e1rai",
-        "price": 90.0
+        "price": 90.0,
+        "is_seen": 1,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 7752,
+        "ID": 7753,
+        "test_id": "MLA9196474068",
+        "seller_id": "4527505466",
+        "seller_train_n": 27,
+        "seller_train_used": 24,
+        "seller_used_ratio": 0.889,
+        "p_used": 0.7309809656358836,
+        "margin": 0.23098096563588355,
+        "s48": "new",
+        "target": "used",
+        "title": "Los Deseantes Juan Jose Burzi Nuevo",
+        "price": 50.0,
+        "is_seen": 1,
+        "prior_probe_overlap": "NONE (100% virgin)"
       }
     ]
   },
   {
     "file": "submission_69_probe4_unanimous_consensus.csv",
     "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\20261029\\submission_69_probe4_unanimous_consensus.csv",
-    "sha256": "2028620b12a038415de9b2f03cc59dfceb3aed16ae39682fb5f0c5f13df49994",
-    "description": "Sonda 4: Consenso Un\u00e1nime Margen Extremo (8 items)",
+    "sha256": "8993a3a803b1bc47be8ab639466e7895f4b4c4087377977ce47223943bde8991",
+    "description": "Sonda 4: Consenso Un\u00e1nime Margen Extremo (8 items unprobed)",
     "n_flips": 8,
     "items": [
-      {
-        "idx": 23585,
-        "ID": 23586,
-        "test_id": "MLA4627297906",
-        "seller_id": "8755000958",
-        "is_seen": 1,
-        "p_used": 0.012653056850081475,
-        "margin": 0.4873469431499185,
-        "s48": "used",
-        "target": "new",
-        "title": "Bandeja Adicional Hp Cb518a Cb518 Original 500 Hp 4015 4014",
-        "price": 600.0
-      },
       {
         "idx": 7251,
         "ID": 7252,
@@ -402,7 +443,8 @@
         "s48": "used",
         "target": "new",
         "title": "El Relato Peronista - Silvia Mercado - Libro Digital Oferta",
-        "price": 33.99
+        "price": 33.99,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 559,
@@ -415,7 +457,8 @@
         "s48": "used",
         "target": "new",
         "title": "Ars Hispaniae - Precio Por Unidad - Tomos 1 A 9 Y 15 (11)",
-        "price": 200.0
+        "price": 200.0,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 11243,
@@ -428,7 +471,8 @@
         "s48": "used",
         "target": "new",
         "title": "Vino Separado Bodega Nanini Y Vaso Para Decorar",
-        "price": 150.0
+        "price": 150.0,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 19312,
@@ -441,7 +485,8 @@
         "s48": "used",
         "target": "new",
         "title": "Antigua Tapa Luz Aluminio Vintage 3 Teclas Plateado Brillo",
-        "price": 50.0
+        "price": 50.0,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 9326,
@@ -454,7 +499,8 @@
         "s48": "used",
         "target": "new",
         "title": "Pantalla Lcd Display Apple Imac G5 20 1.8 2.0 2.1 Ghz",
-        "price": 2399.0
+        "price": 2399.0,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 7913,
@@ -467,7 +513,8 @@
         "s48": "new",
         "target": "used",
         "title": "Lote De 23 Libros",
-        "price": 280.0
+        "price": 280.0,
+        "prior_probe_overlap": "NONE (100% virgin)"
       },
       {
         "idx": 14404,
@@ -480,7 +527,22 @@
         "s48": "new",
         "target": "used",
         "title": "Modelos Economicos Y Finan.con Exel 2000- Garcia-rialeconomi",
-        "price": 55.0
+        "price": 55.0,
+        "prior_probe_overlap": "NONE (100% virgin)"
+      },
+      {
+        "idx": 11238,
+        "ID": 11239,
+        "test_id": "MLA4640662954",
+        "seller_id": "3929084843",
+        "is_seen": 1,
+        "p_used": 0.9657704341230489,
+        "margin": 0.46577043412304886,
+        "s48": "new",
+        "target": "used",
+        "title": "Tango - Y El Ayer Floreci\u00f3, Castex & Russo. $50",
+        "price": 50.0,
+        "prior_probe_overlap": "NONE (100% virgin)"
       }
     ]
   }
