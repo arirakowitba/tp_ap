@@ -7,7 +7,10 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.model_selection import GroupKFold
 from sklearn.metrics import log_loss, accuracy_score
-from seller_diagnostic import load, split, prior
+try:
+    from seller_diagnostic_20261028 import load, split, prior
+except ImportError:
+    from seller_diagnostic import load, split, prior
 
 def transform(rows, indices, cats):
     out=[]
