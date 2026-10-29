@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-10-29",
+  "n_train": 70000,
+  "n_test": 30000,
+  "train_oof_sparse_acc": 0.8898714285714285,
+  "train_oof_nbsvm_acc": 0.8073857142857143,
+  "n_flips_pure": 1774,
+  "n_flips_seen": 1188,
+  "n_flips_new": 586,
+  "flips_used_to_new": 799,
+  "flips_new_to_used": 975,
+  "candidate_pure": {
+    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\20261029\\submission_64_dual_catboost_pure.csv",
+    "sha256": "e96d204f6e88b09780437a91903d151bdca53f85448377a192e329351dc4927a",
+    "flips": 1774
+  },
+  "candidate_conservative_new": {
+    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\20261029\\submission_65_dual_catboost_new_sellers_top_margin.csv",
+    "sha256": "33e03d6ffe4d983c70e5b18159b66648b15df21108dd1a487290ecea13ead867",
+    "flips": 141,
+    "flips_used_to_new": 62,
+    "flips_new_to_used": 79
+  }
+}
