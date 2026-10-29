@@ -1,0 +1,150 @@
+[
+  {
+    "file": "submission_66_probe1_new_sellers_to_new_size5.csv",
+    "sha256": "6972345c8b98d964c4c3ae323bba32c98df9c06a6421b9f70ae0c20be3d136bb",
+    "n_flips": 5,
+    "direction": "used->new",
+    "segment": "new_sellers",
+    "rationale": "Sonda 1 tama\u00f1o reducido (5 flips): menor exposici\u00f3n al riesgo (-0.00024 m\u00e1x) para testear polaridad used->new",
+    "ids": [
+      29262,
+      23563,
+      16148,
+      3250,
+      29312
+    ]
+  },
+  {
+    "file": "submission_66_probe1_new_sellers_to_new_size15.csv",
+    "sha256": "0f6be89ac4fcb29802250d8d5d1bf1153145664e69c7cdcf245d30cf99649e36",
+    "n_flips": 15,
+    "direction": "used->new",
+    "segment": "new_sellers",
+    "rationale": "Sonda 1 tama\u00f1o ampliado (15 flips): mayor poder estad\u00edstico (+/-0.00071) para confirmar direcci\u00f3n",
+    "ids": [
+      3250,
+      8207,
+      15613,
+      16148,
+      16725,
+      23563,
+      25379,
+      28453,
+      29262,
+      29312,
+      3619,
+      10915,
+      6027,
+      25940,
+      24090
+    ]
+  },
+  {
+    "file": "submission_67_probe2_new_sellers_to_used_size5.csv",
+    "sha256": "c2bdbceefea7adf022c7b3760af32a6ed08ee7717f97e6ef9f196e224aa8fbe1",
+    "n_flips": 5,
+    "direction": "new->used",
+    "segment": "new_sellers",
+    "rationale": "Sonda 2 tama\u00f1o reducido (5 flips): menor riesgo en new sellers new->used",
+    "ids": [
+      10705,
+      1823,
+      20611,
+      20259,
+      3190
+    ]
+  },
+  {
+    "file": "submission_67_probe2_new_sellers_to_used_size15.csv",
+    "sha256": "4d45d4e2bc5ba4592cd8c9016a834cd6f57a010191ffa2afe796642123dfa184",
+    "n_flips": 15,
+    "direction": "new->used",
+    "segment": "new_sellers",
+    "rationale": "Sonda 2 tama\u00f1o ampliado (15 flips): mayor resoluci\u00f3n para medir falsos nuevos de S48",
+    "ids": [
+      1823,
+      3190,
+      5585,
+      5857,
+      9733,
+      10705,
+      13629,
+      17658,
+      20259,
+      20611,
+      12877,
+      29386,
+      25252,
+      23376,
+      23605
+    ]
+  },
+  {
+    "file": "submission_68_probe3_virgin_lexical_size5.csv",
+    "sha256": "557f50cf919b7006d0487985b845b44be93973c13e905008dd12881588f4702a",
+    "n_flips": 5,
+    "direction": "new->used",
+    "segment": "virgin_lexical",
+    "rationale": "Sonda 3 tama\u00f1o reducido (5 flips virgenes): validaci\u00f3n de alta precisi\u00f3n de pistas l\u00e9xicas 'libro/vintage/colecci\u00f3n'",
+    "ids": [
+      1795,
+      2269,
+      2613,
+      9055,
+      10123
+    ]
+  },
+  {
+    "file": "submission_68_probe3_virgin_lexical_size10.csv",
+    "sha256": "a2e7d48744daf4a4cd05ba23c21ce3525ada493f487ff6bb33d6a1d7ecee26a5",
+    "n_flips": 10,
+    "direction": "new->used",
+    "segment": "virgin_lexical",
+    "rationale": "Sonda 3 tama\u00f1o ampliado (10 flips virgenes): ampl\u00eda se\u00f1al l\u00e9xica independiente",
+    "ids": [
+      1795,
+      2269,
+      2613,
+      9055,
+      10123,
+      10127,
+      14917,
+      2204,
+      2249,
+      3190
+    ]
+  },
+  {
+    "file": "submission_69_probe4_consensus_size4.csv",
+    "sha256": "38b1f17c86cc33633bfc61042642d7a8c5d82f72b46195705fe86ce93af4edc8",
+    "n_flips": 4,
+    "direction": "balanced (2 u->n, 2 n->u)",
+    "segment": "seen_consensus",
+    "rationale": "Sonda 4 tama\u00f1o reducido (4 flips ultra-seguros): balance exacto de direcci\u00f3n con m\u00e1xima confianza",
+    "ids": [
+      1795,
+      10127,
+      2269,
+      2613
+    ]
+  },
+  {
+    "file": "submission_69_probe4_consensus_size12.csv",
+    "sha256": "f500d71f2a83e0f098646a7a7da5f5f77132f44c63cfe732d8578c05ae2ea55f",
+    "n_flips": 9,
+    "direction": "balanced (6 u->n, 6 n->u)",
+    "segment": "seen_consensus",
+    "rationale": "Sonda 4 tama\u00f1o ampliado (12 flips balanceados): consenso extremo ampliado",
+    "ids": [
+      1795,
+      2269,
+      2613,
+      9055,
+      10123,
+      10127,
+      14917,
+      19545,
+      22084
+    ]
+  }
+]
