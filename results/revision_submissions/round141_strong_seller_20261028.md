@@ -31,4 +31,4 @@ Se aplicó la misma regla predeclarada de este informe (prior de vendedor fit co
 
 **Descartar la regla para los modelos fuertes.** Su aparente mejora sobre bases .79–.89 era dependiente del comparador: al contradecir a modelos ~.94, el historial del vendedor casi siempre rompe un acierto. No generar submission ni sumar esta regla a la 48. Este corte histórico está solapado con otros cortes y no es confirm virgen; la pérdida es suficientemente grande para detener esta hipótesis, no una estimación precisa del test.
 
-Código: `src/revision_submissions/round13_strong_gate_20261028.py`. Pares por ID y métricas en checkpoint Library `CHECKPOINT_ID`. Fuente del compacto: Sheet original, no reconstrucción de ronda 9. El score público no se usó como etiqueta.
+Código: `src/revision_submissions/round13_strong_gate_20261028.py`. Pares por ID y métricas en checkpoint Library `libfile_e56b30045cc88191a8921667d2f2366d`. Fuente del compacto: Sheet original, no reconstrucción de ronda 9. El score público no se usó como etiqueta.
