@@ -1,0 +1,23 @@
+{
+  "mode": "split",
+  "seed": 2026,
+  "n_dev": 57095,
+  "n_confirm": 12905,
+  "b10_acc": 0.9279349089500194,
+  "b10_ll": 0.18738939118284856,
+  "A_hist_acc": 0.9239054629988377,
+  "fixes": 327,
+  "breaks": 275,
+  "elapsed_sec": 4337,
+  "env": {
+    "catboost": "1.2.10",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "python": "3.13.18",
+    "threads": 1
+  },
+  "note": "dev = 70k minus confirm (fit+tune); threshold 0.5 frozen from selected_ensemble.json"
+}

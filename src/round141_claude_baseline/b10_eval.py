@@ -19,7 +19,8 @@ import confirm_and_submit as cs
 from optimize_leaderboard import enrich, data_folder
 from sklearn.metrics import accuracy_score, log_loss
 
-tag = "full" if mode == "full" else f"seed{seed}"
+FITONLY = os.environ.get("B10_DEV", "fit+tune") == "fit"
+tag = "full" if mode == "full" else (f"seed{seed}_fit" if FITONLY else f"seed{seed}")
 od = out / tag; od.mkdir(parents=True, exist_ok=True)
 # frozen config copied (read-only use) so outputs never touch the shared optimization/ folder
 for f in ["selected_ensemble.json", "metrics.csv", "lgb_tpe_2_params.json", "cat_enriched_d9_params.json", "cat_native_text_d7_params.json"]:
@@ -56,7 +57,7 @@ else:
     tu = pd.read_csv(ag / f"preds_A_hist_seed{seed}_tune.csv.gz"); co = pd.read_csv(ag / f"preds_A_hist_seed{seed}_confirm.csv.gz")
     assert (raw.id.values[tu.row_idx] == tu.item_id.values).all() and (raw.id.values[co.row_idx] == co.item_id.values).all()
     assert (y[co.row_idx] == co.y_used.values).all()
-    conf = co.row_idx.to_numpy(); dev = np.setdiff1d(np.arange(len(raw)), conf)
+    conf = co.row_idx.to_numpy(); dev = np.setdiff1d(np.arange(len(raw)), np.r_[conf, tu.row_idx.to_numpy()] if FITONLY else conf)
     assert len(np.intersect1d(conf, tu.row_idx)) == 0
     x, ids = enrich(raw.iloc[dev].reset_index(drop=True)); z, _ = enrich(raw.iloc[conf].reset_index(drop=True), ids); del raw
     p = cs.fit_models(x, y[dev], groups[dev], z, selected, f"split_seed{seed}", y[conf])
@@ -65,5 +66,5 @@ else:
     yy = y[conf]; b = p >= .5; a = co.pred.values.astype(bool)
     rep = dict(mode="split", seed=seed, n_dev=len(dev), n_confirm=len(conf), b10_acc=float(accuracy_score(yy, b)), b10_ll=float(log_loss(yy, p)),
                A_hist_acc=float(accuracy_score(yy, a)), fixes=int(((b == yy) & (a != yy)).sum()), breaks=int(((b != yy) & (a == yy)).sum()),
-               elapsed_sec=round(time.time() - t0), env=env, note="dev = 70k minus confirm (fit+tune); threshold 0.5 frozen from selected_ensemble.json")
+               elapsed_sec=round(time.time() - t0), env=env, note=("dev = fit only (70k minus tune minus confirm), same training rows as A_hist/CB_Bag3" if FITONLY else "dev = 70k minus confirm (fit+tune)") + "; iterations and threshold 0.5 frozen from historical selected_ensemble.json/metrics.csv")
 (od / "report.json").write_text(json.dumps(rep, indent=2)); print(json.dumps(rep, indent=2), flush=True)

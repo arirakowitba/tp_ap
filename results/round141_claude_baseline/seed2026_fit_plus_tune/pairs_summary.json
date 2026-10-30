@@ -1,0 +1,79 @@
+{
+  "2026": {
+    "n": 12905,
+    "n_seen": 3903,
+    "n_new": 9002,
+    "metrics@0.5": {
+      "B10": {
+        "acc": 0.92793,
+        "acc_seen": 0.9649,
+        "acc_new": 0.91191,
+        "logloss": 0.18739,
+        "ll_seen": 0.10036,
+        "ll_new": 0.22512
+      },
+      "A_hist": {
+        "acc": 0.92437,
+        "acc_seen": 0.95593,
+        "acc_new": 0.91069,
+        "logloss": 0.18764,
+        "ll_seen": 0.1179,
+        "ll_new": 0.21787
+      },
+      "CB_Bag3": {
+        "acc": 0.92631,
+        "acc_seen": 0.95875,
+        "acc_new": 0.91224,
+        "logloss": 0.1861,
+        "ll_seen": 0.1176,
+        "ll_new": 0.2158
+      },
+      "Blend075_Bag3": {
+        "acc": 0.92747,
+        "acc_seen": 0.95798,
+        "acc_new": 0.91424,
+        "logloss": 0.18354,
+        "ll_seen": 0.11438,
+        "ll_new": 0.21352
+      }
+    },
+    "pairs_B10_vs": {
+      "A_hist": {
+        "fixes": 328,
+        "breaks": 282,
+        "net": 46,
+        "net_seen": 35,
+        "net_new": 11,
+        "seller_boot_ci95": [
+          -32.025,
+          135.02499999999986
+        ],
+        "P(net>0)": 0.875
+      },
+      "CB_Bag3": {
+        "fixes": 310,
+        "breaks": 289,
+        "net": 21,
+        "net_seen": 24,
+        "net_new": -3,
+        "seller_boot_ci95": [
+          -55.025,
+          108.0
+        ],
+        "P(net>0)": 0.676
+      },
+      "Blend075_Bag3": {
+        "fixes": 290,
+        "breaks": 284,
+        "net": 6,
+        "net_seen": 27,
+        "net_new": -21,
+        "seller_boot_ci95": [
+          -61.025,
+          82.0
+        ],
+        "P(net>0)": 0.549
+      }
+    }
+  }
+}

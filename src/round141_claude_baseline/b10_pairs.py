@@ -11,7 +11,8 @@ def boot(y, a, b, sellers, n=2000, seed=42):
     return [float(np.percentile(bs, 2.5)), float(np.percentile(bs, 97.5))], float((bs > 0).mean())
 out = {}
 for s in seeds:
-    p = pd.read_csv(b10 / f"seed{s}" / f"paired_b10_vs_A_hist_seed{s}.csv.gz")
+    sub = __import__("os").environ.get("B10_SUB", "")
+    p = pd.read_csv(b10 / f"seed{s}{sub}" / f"paired_b10_vs_A_hist_seed{s}.csv.gz")
     a = pd.read_csv(ag / f"paired_all_{s}.csv.gz")
     m = p.merge(a[["row_idx", "p_CB_Bag3_hist", "p_Blend075_Bag3_hist", "y_true", "is_seen"]], on="row_idx", suffixes=("", "_ag"))
     assert len(m) == len(p) == len(a) and (m.y_used == m.y_true).all() and (m.is_seen == m.is_seen_ag).all()
