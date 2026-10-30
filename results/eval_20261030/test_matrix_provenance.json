@@ -1,0 +1,337 @@
+{
+  "id": {
+    "description": "Kaggle submission ID (1 to 30000 sequential)",
+    "source": "test line index"
+  },
+  "item_id": {
+    "description": "MercadoLibre item ID MLA...",
+    "source": "test_data.jsonlines",
+    "sha256": "05921bd73deba1c4ed5a4d564e0351729eae8f2ef197bc851e10f9099d277460"
+  },
+  "seller_id": {
+    "description": "Seller ID",
+    "source": "test_data.jsonlines"
+  },
+  "category_id": {
+    "description": "Product category ID",
+    "source": "test_data.jsonlines"
+  },
+  "is_seen": {
+    "description": "1 if seller appears in 70k train, 0 if new seller",
+    "source": "train_data.jsonlines",
+    "sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf"
+  },
+  "pred_48": {
+    "description": "Submission 48 condition (benchmark .94633)",
+    "source": "s48.json",
+    "sha256": "57c8173bf2347f0205e62b018462d36c2a6b1aecc0784624b63125fd758001d2"
+  },
+  "p_pipeline_A_used": {
+    "description": "P(used=1) from Restored Pipeline A Benchmark (Full 70k)",
+    "source": "test_probs_pipeline_A.npy",
+    "sha256": "c6453e51dbfd381867220be1d6c1c4fbd2cf9ea64f0b57f258c8012a0bbcfed5"
+  },
+  "p_complementary_used": {
+    "description": "P(used=1) from Restored Complementary Ensemble (CB+LGB, Full 70k)",
+    "source": "test_probs_complementary.npy",
+    "sha256": "27c419f45a8fc57c3877602bb0d75b983ccd3d881268e122b6d962fe83422e87"
+  },
+  "p_dual_catboost_used": {
+    "description": "P(used=1) from Dual CatBoost R150",
+    "source": "dual_catboost_test_probs.npy",
+    "sha256": "28c803782a740fd50aa5ab9a75d9bf81e9684bf36eae1e0400613d71f23ee13a"
+  },
+  "p_strong_ensemble_used": {
+    "description": "P(used=1) from Strong Ensemble R157",
+    "source": "strong_ensemble_test_probs.npy",
+    "sha256": "357c34390bb3bb542b765a1d082e53b44301386861c8d652e980fc4f3cbb780b"
+  },
+  "p_posterior_mcmc_used": {
+    "description": "P(used=1) from MCMC posterior where tested historically",
+    "source": "posterior_por_id.csv",
+    "sha256": "c5d98de5d810412b39d4aefb61b3145cef83ece3c98b0fc5e8683d05121ace60"
+  },
+  "block_pub_7": {
+    "description": "1 if flipped vs 48 in public submission 7 (Score: 0.94476, Delta: -0.00157)",
+    "n_flips": 231,
+    "status": "loss"
+  },
+  "block_pub_15": {
+    "description": "1 if flipped vs 48 in public submission 15 (Score: 0.94523, Delta: -0.00110)",
+    "n_flips": 149,
+    "status": "loss"
+  },
+  "block_pub_33": {
+    "description": "1 if flipped vs 48 in public submission 33 (Score: 0.94614, Delta: -0.00019)",
+    "n_flips": 8,
+    "status": "loss"
+  },
+  "block_pub_4": {
+    "description": "1 if flipped vs 48 in public submission 4 (Score: 0.94457, Delta: -0.00176)",
+    "n_flips": 242,
+    "status": "loss"
+  },
+  "block_pub_5": {
+    "description": "1 if flipped vs 48 in public submission 5 (Score: 0.94447, Delta: -0.00186)",
+    "n_flips": 245,
+    "status": "loss"
+  },
+  "block_pub_6": {
+    "description": "1 if flipped vs 48 in public submission 6 (Score: 0.94457, Delta: -0.00176)",
+    "n_flips": 242,
+    "status": "loss"
+  },
+  "block_pub_11": {
+    "description": "1 if flipped vs 48 in public submission 11 (Score: 0.94519, Delta: -0.00114)",
+    "n_flips": 161,
+    "status": "loss"
+  },
+  "block_pub_12": {
+    "description": "1 if flipped vs 48 in public submission 12 (Score: 0.94419, Delta: -0.00214)",
+    "n_flips": 279,
+    "status": "loss"
+  },
+  "block_pub_13": {
+    "description": "1 if flipped vs 48 in public submission 13 (Score: 0.94428, Delta: -0.00205)",
+    "n_flips": 269,
+    "status": "loss"
+  },
+  "block_pub_29": {
+    "description": "1 if flipped vs 48 in public submission 29 (Score: 0.94571, Delta: -0.00062)",
+    "n_flips": 71,
+    "status": "loss"
+  },
+  "block_pub_30": {
+    "description": "1 if flipped vs 48 in public submission 30 (Score: 0.94561, Delta: -0.00072)",
+    "n_flips": 71,
+    "status": "loss"
+  },
+  "block_pub_31": {
+    "description": "1 if flipped vs 48 in public submission 31 (Score: 0.94585, Delta: -0.00048)",
+    "n_flips": 39,
+    "status": "loss"
+  },
+  "block_pub_32": {
+    "description": "1 if flipped vs 48 in public submission 32 (Score: 0.94561, Delta: -0.00072)",
+    "n_flips": 69,
+    "status": "loss"
+  },
+  "block_pub_34": {
+    "description": "1 if flipped vs 48 in public submission 34 (Score: 0.9458, Delta: -0.00053)",
+    "n_flips": 53,
+    "status": "loss"
+  },
+  "block_pub_35": {
+    "description": "1 if flipped vs 48 in public submission 35 (Score: 0.94609, Delta: -0.00024)",
+    "n_flips": 21,
+    "status": "loss"
+  },
+  "block_pub_16": {
+    "description": "1 if flipped vs 48 in public submission 16 (Score: 0.945, Delta: -0.00133)",
+    "n_flips": 151,
+    "status": "loss"
+  },
+  "block_pub_17": {
+    "description": "1 if flipped vs 48 in public submission 17 (Score: 0.94447, Delta: -0.00186)",
+    "n_flips": 181,
+    "status": "loss"
+  },
+  "block_pub_18": {
+    "description": "1 if flipped vs 48 in public submission 18 (Score: 0.94404, Delta: -0.00229)",
+    "n_flips": 243,
+    "status": "loss"
+  },
+  "block_pub_19": {
+    "description": "1 if flipped vs 48 in public submission 19 (Score: 0.94409, Delta: -0.00224)",
+    "n_flips": 243,
+    "status": "loss"
+  },
+  "block_pub_20": {
+    "description": "1 if flipped vs 48 in public submission 20 (Score: 0.94285, Delta: -0.00348)",
+    "n_flips": 369,
+    "status": "loss"
+  },
+  "block_pub_21": {
+    "description": "1 if flipped vs 48 in public submission 21 (Score: 0.94504, Delta: -0.00129)",
+    "n_flips": 151,
+    "status": "loss"
+  },
+  "block_pub_22": {
+    "description": "1 if flipped vs 48 in public submission 22 (Score: 0.94471, Delta: -0.00162)",
+    "n_flips": 183,
+    "status": "loss"
+  },
+  "block_pub_23": {
+    "description": "1 if flipped vs 48 in public submission 23 (Score: 0.94495, Delta: -0.00138)",
+    "n_flips": 183,
+    "status": "loss"
+  },
+  "block_pub_24": {
+    "description": "1 if flipped vs 48 in public submission 24 (Score: 0.94533, Delta: -0.00100)",
+    "n_flips": 119,
+    "status": "loss"
+  },
+  "block_pub_25": {
+    "description": "1 if flipped vs 48 in public submission 25 (Score: 0.94519, Delta: -0.00114)",
+    "n_flips": 135,
+    "status": "loss"
+  },
+  "block_pub_26": {
+    "description": "1 if flipped vs 48 in public submission 26 (Score: 0.94547, Delta: -0.00086)",
+    "n_flips": 103,
+    "status": "loss"
+  },
+  "block_pub_36": {
+    "description": "1 if flipped vs 48 in public submission 36 (Score: 0.94571, Delta: -0.00062)",
+    "n_flips": 26,
+    "status": "loss"
+  },
+  "block_pub_37": {
+    "description": "1 if flipped vs 48 in public submission 37 (Score: 0.9449, Delta: -0.00143)",
+    "n_flips": 142,
+    "status": "loss"
+  },
+  "block_pub_38": {
+    "description": "1 if flipped vs 48 in public submission 38 (Score: 0.94423, Delta: -0.00210)",
+    "n_flips": 197,
+    "status": "loss"
+  },
+  "block_pub_40": {
+    "description": "1 if flipped vs 48 in public submission 40 (Score: 0.94595, Delta: -0.00038)",
+    "n_flips": 12,
+    "status": "loss"
+  },
+  "block_pub_41": {
+    "description": "1 if flipped vs 48 in public submission 41 (Score: 0.94628, Delta: -0.00005)",
+    "n_flips": 2,
+    "status": "loss"
+  },
+  "block_pub_42": {
+    "description": "1 if flipped vs 48 in public submission 42 (Score: 0.94614, Delta: -0.00019)",
+    "n_flips": 21,
+    "status": "loss"
+  },
+  "block_pub_43": {
+    "description": "1 if flipped vs 48 in public submission 43 (Score: 0.94614, Delta: -0.00019)",
+    "n_flips": 42,
+    "status": "loss"
+  },
+  "block_pub_44": {
+    "description": "1 if flipped vs 48 in public submission 44 (Score: 0.94619, Delta: -0.00014)",
+    "n_flips": 5,
+    "status": "loss"
+  },
+  "block_pub_45": {
+    "description": "1 if flipped vs 48 in public submission 45 (Score: 0.94623, Delta: -0.00010)",
+    "n_flips": 10,
+    "status": "loss"
+  },
+  "block_pub_46": {
+    "description": "1 if flipped vs 48 in public submission 46 (Score: 0.94623, Delta: -0.00010)",
+    "n_flips": 5,
+    "status": "loss"
+  },
+  "block_pub_47": {
+    "description": "1 if flipped vs 48 in public submission 47 (Score: 0.94628, Delta: -0.00005)",
+    "n_flips": 2,
+    "status": "loss"
+  },
+  "block_pub_49": {
+    "description": "1 if flipped vs 48 in public submission 49 (Score: 0.94628, Delta: -0.00005)",
+    "n_flips": 11,
+    "status": "loss"
+  },
+  "block_pub_50": {
+    "description": "1 if flipped vs 48 in public submission 50 (Score: 0.94628, Delta: -0.00005)",
+    "n_flips": 5,
+    "status": "loss"
+  },
+  "block_pub_57": {
+    "description": "1 if flipped vs 48 in public submission 57 (Score: 0.94633, Delta: +0.00000)",
+    "n_flips": 20,
+    "status": "tie"
+  },
+  "block_pub_58": {
+    "description": "1 if flipped vs 48 in public submission 58 (Score: 0.94633, Delta: +0.00000)",
+    "n_flips": 2,
+    "status": "tie"
+  },
+  "block_pub_59_full": {
+    "description": "1 if flipped vs 48 in public submission 59_full (Score: 0.94576, Delta: -0.00057)",
+    "n_flips": 67,
+    "status": "loss"
+  },
+  "block_pub_fin_stack_seen150": {
+    "description": "1 if flipped vs 48 in public submission fin_stack_seen150 (Score: 0.94257, Delta: -0.00376)",
+    "n_flips": 150,
+    "status": "loss"
+  },
+  "block_pub_fin_stack_new150": {
+    "description": "1 if flipped vs 48 in public submission fin_stack_new150 (Score: 0.94495, Delta: -0.00138)",
+    "n_flips": 150,
+    "status": "loss"
+  },
+  "block_pub_72": {
+    "description": "1 if flipped vs 48 in public submission 72 (Score: 0.94623, Delta: -0.00010)",
+    "n_flips": 8,
+    "status": "loss"
+  },
+  "block_pub_73": {
+    "description": "1 if flipped vs 48 in public submission 73 (Score: 0.946, Delta: -0.00033)",
+    "n_flips": 7,
+    "status": "loss"
+  },
+  "block_pub_74": {
+    "description": "1 if flipped vs 48 in public submission 74 (Score: 0.94614, Delta: -0.00019)",
+    "n_flips": 8,
+    "status": "loss"
+  },
+  "block_pub_75": {
+    "description": "1 if flipped vs 48 in public submission 75 (Score: 0.94633, Delta: +0.00000)",
+    "n_flips": 5,
+    "status": "tie"
+  },
+  "draft_sub64_dual_cb_pure": {
+    "description": "1 if flipped vs 48 in offline draft submission_64_dual_catboost_pure.csv",
+    "n_flips": 1774,
+    "sha256": "4be738fa219de46b352f8ac8ddb138f16e328a3f8877ee04f8d188485755d096"
+  },
+  "draft_sub65_dual_cb_new_margin": {
+    "description": "1 if flipped vs 48 in offline draft submission_65_dual_catboost_new_sellers_top_margin.csv",
+    "n_flips": 141,
+    "sha256": "d148912472f1bfea5f67677da6adbbd496c449654206382ecf570aa0f3f8f218"
+  },
+  "draft_sub66_probe1_new_to_new": {
+    "description": "1 if flipped vs 48 in offline draft submission_66_probe1_new_sellers_to_new.csv",
+    "n_flips": 10,
+    "sha256": "24e2381246d556f4b3d86e5c3b2282292562d5b5547138e5efdfcb8a11bf1d84"
+  },
+  "draft_sub67_probe2_new_to_used": {
+    "description": "1 if flipped vs 48 in offline draft submission_67_probe2_new_sellers_to_used.csv",
+    "n_flips": 10,
+    "sha256": "2718112f2dabb9ce8bb136e61368ca03fdc6951d392eb2420b722a09feb6b8ae"
+  },
+  "draft_sub68_probe3_virgin_lexical": {
+    "description": "1 if flipped vs 48 in offline draft submission_68_probe3_alt_virgin_lexical.csv",
+    "n_flips": 7,
+    "sha256": "da52ad285898ecf3e07cda30624ff1c88277a27b7cc8a28b04b67f9dd1ff8f8c"
+  },
+  "draft_sub68_probe3_refuted_seller": {
+    "description": "1 if flipped vs 48 in offline draft submission_68_probe3_seen_sellers_to_used.csv",
+    "n_flips": 7,
+    "sha256": "a32b43a58cb8b46010b37d2b4be79976a4d0ffaf313e991609208bb5af174bab"
+  },
+  "draft_sub69_probe4_unanimous": {
+    "description": "1 if flipped vs 48 in offline draft submission_69_probe4_unanimous_consensus.csv",
+    "n_flips": 8,
+    "sha256": "8993a3a803b1bc47be8ab639466e7895f4b4c4087377977ce47223943bde8991"
+  },
+  "draft_sub71_strong_ensemble": {
+    "description": "1 if flipped vs 48 in offline draft submission_71_strong_ensemble_candidate.csv",
+    "n_flips": 1338,
+    "sha256": "e2866c5a3f12105d9b2a1d5b800d5975d32aab88b0793e0dccf6e76ecb3f0a91"
+  },
+  "availability_mask": {
+    "description": "String flags indicating which model test probabilities are present"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "model": "Complementary Ensemble (0.75 Deep CatBoost + 0.25 Leaf-Wise LightGBM)",
+  "train_rows": 70000,
+  "test_rows": 30000,
+  "weights": {
+    "catboost": 0.75,
+    "lightgbm": 0.25
+  },
+  "threshold": 0.48,
+  "n_flips_vs_s48": 1044,
+  "flips_seen": 684,
+  "flips_new": 360,
+  "flips_new_to_used": 610,
+  "flips_used_to_new": 434,
+  "test_probs_sha256": "27c419f45a8fc57c3877602bb0d75b983ccd3d881268e122b6d962fe83422e87",
+  "elapsed_seconds": 29.6
+}

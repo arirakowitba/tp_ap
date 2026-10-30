@@ -1,0 +1,7 @@
+seed,pipeline,split,features,te_alpha,tune_acc,confirm_acc,confirm_ll
+2026,Pipeline A (R151 Base),R151 split_seller_groups,R151 full deep (101 feats),5.0,0.9280917977050573,0.9239054629988377,0.1876378137337403
+2026,Pipeline A (on R157 split),R157 canonical_split,R151 full deep (101 feats),5.0,0.9281767955801105,0.9238338757167209,0.19016279529157015
+2026,Pipeline A (TE alpha=10),R151 split_seller_groups,R151 full deep (101 feats),10.0,0.9275818104547386,0.9242929097249128,0.18843403030554662
+314159,Pipeline A (R151 Base),R151 split_seller_groups,R151 full deep (101 feats),5.0,0.9328950533151608,0.9201899867632173,0.1955843726108174
+314159,Pipeline A (on R157 split),R157 canonical_split,R151 full deep (101 feats),5.0,0.9313717630080975,0.9201183431952663,0.1974874010817314
+314159,Pipeline A (TE alpha=10),R151 split_seller_groups,R151 full deep (101 feats),10.0,0.9316122825302654,0.9215915284590828,0.19654241595490193

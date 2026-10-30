@@ -1,0 +1,13 @@
+{
+  "model": "Pipeline A (Deep CatBoost R151 Base)",
+  "train_rows": 70000,
+  "test_rows": 30000,
+  "threshold": 0.47,
+  "n_flips_vs_s48": 1118,
+  "flips_seen": 728,
+  "flips_new": 390,
+  "flips_new_to_used": 670,
+  "flips_used_to_new": 448,
+  "test_probs_sha256": "c6453e51dbfd381867220be1d6c1c4fbd2cf9ea64f0b57f258c8012a0bbcfed5",
+  "elapsed_seconds": 130.6
+}
