@@ -1,0 +1,15 @@
+{
+  "seed": 314159,
+  "n_fit": 44684,
+  "n_tune": 12473,
+  "n_confirm": 12843,
+  "inner_oof_acc": 0.9375839226568794,
+  "flagged": {
+    "0.05": 490,
+    "0.1": 840,
+    "0.2": 1402
+  },
+  "elapsed_sec": 869,
+  "threads": 2,
+  "note": "confirm probabilities saved but not evaluated here; selection uses tune only (hcl_select.py)"
+}
