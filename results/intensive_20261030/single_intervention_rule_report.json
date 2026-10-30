@@ -1,82 +1,544 @@
 {
   "rule_specification": {
-    "name": "Single_Frozen_Consensus_Seen_Margin006",
-    "condition": "is_seen == 1 AND pred_cb_bag3 != base AND pred_lgb_bag3 != base AND pred_cb_bag3 == pred_lgb_bag3 AND |p_blend - 0.50| >= 0.06",
+    "rule_id": "B4_Single_Frozen_Consensus_Seen_Margin006",
+    "target_segment": "is_seen == 1",
+    "models": [
+      "CB_Bag3",
+      "LGB_Bag3",
+      "Blend075_Bag3"
+    ],
+    "blend_weights": {
+      "CB_Bag3": 0.75,
+      "LGB_Bag3": 0.25
+    },
+    "polarity": "used=1, new=0",
+    "decision_threshold": 0.5,
     "margin_threshold": 0.06,
-    "train_baseline_proxy": "A_hist (Deep CatBoost Base with tune threshold)",
-    "test_reference": "submission_48_reference.csv (.94633)",
-    "epistemological_status": "EXPLORATORY_TRANSFER_PROBE_AGAINST_48",
-    "epistemological_disclaimer": "Esta prueba explora transferencia contra submission_48 y NO est\u00e1 validada vs 48, debido a que 48 incluye microflips manuales hist\u00f3ricos no mapeables a train y fue evaluada contra el proxy A_hist."
+    "rule_config_sha256": "0d37a38776ccf710ea1a5d44469ce01497daffe2b7946370f83c17499ab0c100",
+    "train_baseline_within_family": "A_hist (Deep CatBoost R151)",
+    "train_baseline_cross_family_proxy": "R156_Ensemble (Historical Ensemble on Seeds 2026 & 314159)",
+    "test_within_family_reference": "A_hist_inductive_70k@0.50",
+    "test_submission_reference": "submission_48_reference.csv (.94633)",
+    "epistemological_status": "UNVALIDATED_EXPLORATORY_TRANSFER_PROBE_AGAINST_48_DO_NOT_PROMOTE",
+    "non_independence_notice": "Seeds 2026, 314159, and 20261030 overlap in confirm (~18.1%-18.6% pairwise). Counts across seeds MUST NOT be summed or treated as independent observations.",
+    "why_453_flips_on_test_vs_confirm_explanation": "When applied on the 30k test set (21,487 seen rows) against its own baseline family (A_hist_inductive_70k@0.50), the frozen Bag3 rule produces only 26 flips (1.21 per 1,000 seen rows), matching the within-family confirm rate (0.52 to 3.84 per 1,000 seen rows). The jump to 453 flips (21.08 per 1,000 seen rows) when applied against submission_48 occurs because submission_48 comes from a different historical model family that disagrees with A_hist_inductive_70k on 1,081 test rows (712 seen rows = 33.14 per 1,000 seen rows). On confirm, applying the exact same Bag3 rule against the historical R156_Ensemble produces 22.29 and 21.37 flips per 1,000 seen rows (87 and 82 flips). Because neither A_hist nor R156_Ensemble is submission_48, B4 remains unvalidated against submission_48 and is NOT approved as a demonstrated improvement."
   },
   "confirm_evaluation": {
-    "2026": {
-      "n_confirm": 12905,
-      "n_seen": 3903,
-      "n_flips": 12,
-      "fixes": 9,
-      "breaks": 3,
-      "net": 6,
-      "flip_precision": 0.75,
-      "acc_base": 0.92391,
-      "acc_rule": 0.92437,
-      "delta_acc": 0.00046,
-      "logloss_base": 0.18764,
-      "logloss_rule": 0.18754,
-      "delta_logloss": -0.0001,
-      "bootstrap_seller_ci95": [
-        0.0,
-        13.0
-      ]
+    "canonical_bag3_vs_A_hist_tuned": {
+      "2026": {
+        "n_confirm": 12905,
+        "n_seen": 3903,
+        "n_flips": 15,
+        "rate_per_1k_seen": 3.84,
+        "to_used": 3,
+        "to_new": 12,
+        "margin_bands": {
+          "0.06_to_0.10": 10,
+          "0.10_to_0.20": 5,
+          "0.20_plus": 0
+        },
+        "fixes": 11,
+        "breaks": 4,
+        "net": 7,
+        "flip_precision": 0.7333,
+        "acc_base": 0.92391,
+        "acc_rule": 0.92445,
+        "delta_acc": 0.00054,
+        "logloss_base": 0.18764,
+        "logloss_rule": 0.18753,
+        "delta_logloss": -0.00011,
+        "bootstrap_seller_ci95": [
+          0.0,
+          14.02
+        ]
+      },
+      "314159": {
+        "n_confirm": 12843,
+        "n_seen": 3838,
+        "n_flips": 4,
+        "rate_per_1k_seen": 1.04,
+        "to_used": 4,
+        "to_new": 0,
+        "margin_bands": {
+          "0.06_to_0.10": 2,
+          "0.10_to_0.20": 2,
+          "0.20_plus": 0
+        },
+        "fixes": 3,
+        "breaks": 1,
+        "net": 2,
+        "flip_precision": 0.75,
+        "acc_base": 0.91996,
+        "acc_rule": 0.92011,
+        "delta_acc": 0.00016,
+        "logloss_base": 0.19552,
+        "logloss_rule": 0.19549,
+        "delta_logloss": -4e-05,
+        "bootstrap_seller_ci95": [
+          -2.0,
+          6.0
+        ]
+      },
+      "20261030": {
+        "n_confirm": 12881,
+        "n_seen": 3740,
+        "n_flips": 9,
+        "rate_per_1k_seen": 2.41,
+        "to_used": 0,
+        "to_new": 9,
+        "margin_bands": {
+          "0.06_to_0.10": 6,
+          "0.10_to_0.20": 3,
+          "0.20_plus": 0
+        },
+        "fixes": 5,
+        "breaks": 4,
+        "net": 1,
+        "flip_precision": 0.5556,
+        "acc_base": 0.9292,
+        "acc_rule": 0.92928,
+        "delta_acc": 8e-05,
+        "logloss_base": 0.17039,
+        "logloss_rule": 0.17038,
+        "delta_logloss": -0.0,
+        "bootstrap_seller_ci95": [
+          -5.0,
+          7.0
+        ]
+      }
     },
-    "314159": {
-      "n_confirm": 12843,
-      "n_seen": 3838,
-      "n_flips": 4,
-      "fixes": 3,
-      "breaks": 1,
-      "net": 2,
-      "flip_precision": 0.75,
-      "acc_base": 0.91996,
-      "acc_rule": 0.92011,
-      "delta_acc": 0.00016,
-      "logloss_base": 0.19552,
-      "logloss_rule": 0.19549,
-      "delta_logloss": -4e-05,
-      "bootstrap_seller_ci95": [
-        -2.0,
-        6.0
-      ]
+    "canonical_bag3_vs_A_hist_050": {
+      "2026": {
+        "n_confirm": 12905,
+        "n_seen": 3903,
+        "n_flips": 14,
+        "rate_per_1k_seen": 3.59,
+        "to_used": 8,
+        "to_new": 6,
+        "margin_bands": {
+          "0.06_to_0.10": 9,
+          "0.10_to_0.20": 5,
+          "0.20_plus": 0
+        },
+        "fixes": 11,
+        "breaks": 3,
+        "net": 8,
+        "flip_precision": 0.7857,
+        "acc_base": 0.92437,
+        "acc_rule": 0.92499,
+        "delta_acc": 0.00062,
+        "logloss_base": 0.18764,
+        "logloss_rule": 0.18752,
+        "delta_logloss": -0.00012,
+        "bootstrap_seller_ci95": [
+          0.0,
+          16.0
+        ]
+      },
+      "314159": {
+        "n_confirm": 12843,
+        "n_seen": 3838,
+        "n_flips": 2,
+        "rate_per_1k_seen": 0.52,
+        "to_used": 2,
+        "to_new": 0,
+        "margin_bands": {
+          "0.06_to_0.10": 0,
+          "0.10_to_0.20": 2,
+          "0.20_plus": 0
+        },
+        "fixes": 2,
+        "breaks": 0,
+        "net": 2,
+        "flip_precision": 1.0,
+        "acc_base": 0.92089,
+        "acc_rule": 0.92105,
+        "delta_acc": 0.00016,
+        "logloss_base": 0.19552,
+        "logloss_rule": 0.19549,
+        "delta_logloss": -3e-05,
+        "bootstrap_seller_ci95": [
+          0.0,
+          5.0
+        ]
+      },
+      "20261030": {
+        "n_confirm": 12881,
+        "n_seen": 3740,
+        "n_flips": 2,
+        "rate_per_1k_seen": 0.53,
+        "to_used": 1,
+        "to_new": 1,
+        "margin_bands": {
+          "0.06_to_0.10": 1,
+          "0.10_to_0.20": 1,
+          "0.20_plus": 0
+        },
+        "fixes": 1,
+        "breaks": 1,
+        "net": 0,
+        "flip_precision": 0.5,
+        "acc_base": 0.93137,
+        "acc_rule": 0.93137,
+        "delta_acc": 0.0,
+        "logloss_base": 0.17039,
+        "logloss_rule": 0.17039,
+        "delta_logloss": -0.0,
+        "bootstrap_seller_ci95": [
+          -3.0,
+          2.0
+        ]
+      }
     },
-    "20261030": {
-      "n_confirm": 12881,
-      "n_seen": 3740,
-      "n_flips": 8,
-      "fixes": 5,
-      "breaks": 3,
-      "net": 2,
-      "flip_precision": 0.625,
-      "acc_base": 0.9292,
-      "acc_rule": 0.92935,
-      "delta_acc": 0.00016,
-      "logloss_base": 0.17039,
-      "logloss_rule": 0.17037,
-      "delta_logloss": -2e-05,
-      "bootstrap_seller_ci95": [
-        -3.0,
-        8.0
-      ]
+    "legacy_single_lgb_vs_A_hist_tuned_cx0011_comparison": {
+      "2026": {
+        "n_confirm": 12905,
+        "n_seen": 3903,
+        "n_flips": 12,
+        "rate_per_1k_seen": 3.07,
+        "to_used": 2,
+        "to_new": 10,
+        "margin_bands": {
+          "0.06_to_0.10": 7,
+          "0.10_to_0.20": 5,
+          "0.20_plus": 0
+        },
+        "fixes": 9,
+        "breaks": 3,
+        "net": 6,
+        "flip_precision": 0.75,
+        "acc_base": 0.92391,
+        "acc_rule": 0.92437,
+        "delta_acc": 0.00046,
+        "logloss_base": 0.18764,
+        "logloss_rule": 0.18754,
+        "delta_logloss": -0.0001,
+        "bootstrap_seller_ci95": [
+          0.0,
+          13.0
+        ]
+      },
+      "314159": {
+        "n_confirm": 12843,
+        "n_seen": 3838,
+        "n_flips": 4,
+        "rate_per_1k_seen": 1.04,
+        "to_used": 4,
+        "to_new": 0,
+        "margin_bands": {
+          "0.06_to_0.10": 2,
+          "0.10_to_0.20": 2,
+          "0.20_plus": 0
+        },
+        "fixes": 3,
+        "breaks": 1,
+        "net": 2,
+        "flip_precision": 0.75,
+        "acc_base": 0.91996,
+        "acc_rule": 0.92011,
+        "delta_acc": 0.00016,
+        "logloss_base": 0.19552,
+        "logloss_rule": 0.19549,
+        "delta_logloss": -4e-05,
+        "bootstrap_seller_ci95": [
+          -2.0,
+          6.0
+        ]
+      },
+      "20261030": {
+        "n_confirm": 12881,
+        "n_seen": 3740,
+        "n_flips": 8,
+        "rate_per_1k_seen": 2.14,
+        "to_used": 0,
+        "to_new": 8,
+        "margin_bands": {
+          "0.06_to_0.10": 5,
+          "0.10_to_0.20": 3,
+          "0.20_plus": 0
+        },
+        "fixes": 5,
+        "breaks": 3,
+        "net": 2,
+        "flip_precision": 0.625,
+        "acc_base": 0.9292,
+        "acc_rule": 0.92935,
+        "delta_acc": 0.00016,
+        "logloss_base": 0.17039,
+        "logloss_rule": 0.17037,
+        "delta_logloss": -2e-05,
+        "bootstrap_seller_ci95": [
+          -3.0,
+          8.0
+        ]
+      }
+    },
+    "cross_family_bag3_vs_R156_Ensemble": {
+      "2026": {
+        "n_confirm": 12905,
+        "n_seen": 3903,
+        "n_flips": 87,
+        "rate_per_1k_seen": 22.29,
+        "to_used": 52,
+        "to_new": 35,
+        "margin_bands": {
+          "0.06_to_0.10": 7,
+          "0.10_to_0.20": 29,
+          "0.20_plus": 51
+        },
+        "fixes": 72,
+        "breaks": 15,
+        "net": 57,
+        "flip_precision": 0.8276,
+        "acc_base": 0.90926,
+        "acc_rule": 0.91368,
+        "delta_acc": 0.00442,
+        "logloss_base": 0.22177,
+        "logloss_rule": 0.21818,
+        "delta_logloss": -0.00359,
+        "bootstrap_seller_ci95": [
+          38.0,
+          78.0
+        ]
+      },
+      "314159": {
+        "n_confirm": 12843,
+        "n_seen": 3838,
+        "n_flips": 82,
+        "rate_per_1k_seen": 21.37,
+        "to_used": 45,
+        "to_new": 37,
+        "margin_bands": {
+          "0.06_to_0.10": 8,
+          "0.10_to_0.20": 19,
+          "0.20_plus": 55
+        },
+        "fixes": 64,
+        "breaks": 18,
+        "net": 46,
+        "flip_precision": 0.7805,
+        "acc_base": 0.90508,
+        "acc_rule": 0.90867,
+        "delta_acc": 0.00358,
+        "logloss_base": 0.22882,
+        "logloss_rule": 0.22526,
+        "delta_logloss": -0.00356,
+        "bootstrap_seller_ci95": [
+          28.0,
+          65.0
+        ]
+      }
+    },
+    "external_cuts_bag3": {
+      "disjoint_3seed_20261101": {
+        "vs_cb_single_tuned": {
+          "n_confirm": 9592,
+          "n_seen": 4202,
+          "n_flips": 15,
+          "rate_per_1k_seen": 3.57,
+          "to_used": 3,
+          "to_new": 12,
+          "margin_bands": {
+            "0.06_to_0.10": 8,
+            "0.10_to_0.20": 7,
+            "0.20_plus": 0
+          },
+          "fixes": 8,
+          "breaks": 7,
+          "net": 1,
+          "flip_precision": 0.5333,
+          "acc_base": 0.92462,
+          "acc_rule": 0.92473,
+          "delta_acc": 0.0001,
+          "logloss_base": 0.19694,
+          "logloss_rule": 0.197,
+          "delta_logloss": 5e-05,
+          "bootstrap_seller_ci95": [
+            -7.0,
+            9.0
+          ]
+        },
+        "vs_cb_single_050": {
+          "n_confirm": 9592,
+          "n_seen": 4202,
+          "n_flips": 11,
+          "rate_per_1k_seen": 2.62,
+          "to_used": 8,
+          "to_new": 3,
+          "margin_bands": {
+            "0.06_to_0.10": 8,
+            "0.10_to_0.20": 3,
+            "0.20_plus": 0
+          },
+          "fixes": 5,
+          "breaks": 6,
+          "net": -1,
+          "flip_precision": 0.4545,
+          "acc_base": 0.92598,
+          "acc_rule": 0.92588,
+          "delta_acc": -0.0001,
+          "logloss_base": 0.19694,
+          "logloss_rule": 0.19697,
+          "delta_logloss": 2e-05,
+          "bootstrap_seller_ci95": [
+            -8.0,
+            6.0
+          ]
+        }
+      },
+      "nested_outer_777001": {
+        "vs_cb_single_tuned": {
+          "n_confirm": 12803,
+          "n_seen": 3836,
+          "n_flips": 4,
+          "rate_per_1k_seen": 1.04,
+          "to_used": 2,
+          "to_new": 2,
+          "margin_bands": {
+            "0.06_to_0.10": 3,
+            "0.10_to_0.20": 1,
+            "0.20_plus": 0
+          },
+          "fixes": 4,
+          "breaks": 0,
+          "net": 4,
+          "flip_precision": 1.0,
+          "acc_base": 0.92705,
+          "acc_rule": 0.92736,
+          "delta_acc": 0.00031,
+          "logloss_base": 0.18844,
+          "logloss_rule": 0.18837,
+          "delta_logloss": -7e-05,
+          "bootstrap_seller_ci95": [
+            1.0,
+            8.0
+          ]
+        },
+        "vs_cb_single_050": {
+          "n_confirm": 12803,
+          "n_seen": 3836,
+          "n_flips": 4,
+          "rate_per_1k_seen": 1.04,
+          "to_used": 2,
+          "to_new": 2,
+          "margin_bands": {
+            "0.06_to_0.10": 3,
+            "0.10_to_0.20": 1,
+            "0.20_plus": 0
+          },
+          "fixes": 4,
+          "breaks": 0,
+          "net": 4,
+          "flip_precision": 1.0,
+          "acc_base": 0.92689,
+          "acc_rule": 0.9272,
+          "delta_acc": 0.00031,
+          "logloss_base": 0.18844,
+          "logloss_rule": 0.18837,
+          "delta_logloss": -7e-05,
+          "bootstrap_seller_ci95": [
+            1.0,
+            8.0
+          ]
+        }
+      },
+      "nested_outer_777002": {
+        "vs_cb_single_tuned": {
+          "n_confirm": 13259,
+          "n_seen": 3815,
+          "n_flips": 14,
+          "rate_per_1k_seen": 3.67,
+          "to_used": 0,
+          "to_new": 14,
+          "margin_bands": {
+            "0.06_to_0.10": 5,
+            "0.10_to_0.20": 9,
+            "0.20_plus": 0
+          },
+          "fixes": 10,
+          "breaks": 4,
+          "net": 6,
+          "flip_precision": 0.7143,
+          "acc_base": 0.92398,
+          "acc_rule": 0.92443,
+          "delta_acc": 0.00045,
+          "logloss_base": 0.19777,
+          "logloss_rule": 0.19767,
+          "delta_logloss": -0.0001,
+          "bootstrap_seller_ci95": [
+            -1.0,
+            13.0
+          ]
+        },
+        "vs_cb_single_050": {
+          "n_confirm": 13259,
+          "n_seen": 3815,
+          "n_flips": 8,
+          "rate_per_1k_seen": 2.1,
+          "to_used": 5,
+          "to_new": 3,
+          "margin_bands": {
+            "0.06_to_0.10": 6,
+            "0.10_to_0.20": 2,
+            "0.20_plus": 0
+          },
+          "fixes": 7,
+          "breaks": 1,
+          "net": 6,
+          "flip_precision": 0.875,
+          "acc_base": 0.92533,
+          "acc_rule": 0.92579,
+          "delta_acc": 0.00045,
+          "logloss_base": 0.19777,
+          "logloss_rule": 0.19765,
+          "delta_logloss": -0.00012,
+          "bootstrap_seller_ci95": [
+            1.0,
+            12.0
+          ]
+        }
+      }
     }
-  },
-  "confirm_aggregate": {
-    "total_flips": 24,
-    "total_fixes": 17,
-    "total_breaks": 7,
-    "total_net": 10,
-    "aggregate_precision": 0.7083
   },
   "test_candidate": {
     "candidate_file": "candidate_single_intervention_rule_on_48.csv",
+    "id_range_verified": "1..30000",
     "sha256": "51ea764c8b69745001eed43f33f79ad960ca8553707294f69e4086d21d9da534",
+    "rule_config_sha256": "0d37a38776ccf710ea1a5d44469ce01497daffe2b7946370f83c17499ab0c100",
+    "n_test_total": 30000,
+    "n_test_seen": 21487,
+    "n_test_new": 8513,
+    "baseline_disagreement_A_hist_70k_vs_S48": {
+      "total_disagreements_30k": 1081,
+      "seen_seller_disagreements": 705,
+      "seen_disagreement_rate_per_1k": 32.81
+    },
+    "within_family_vs_A_hist_inductive_70k_050": {
+      "bag3_flips": 26,
+      "bag3_rate_per_1k_seen": 1.21,
+      "bag3_to_used": 8,
+      "bag3_to_new": 18,
+      "bag3_margin_bands": {
+        "0.06_to_0.10": 16,
+        "0.10_to_0.20": 10,
+        "0.20_plus": 0
+      },
+      "single_lgb_flips": 26,
+      "single_lgb_rate_per_1k_seen": 1.21
+    },
+    "cross_family_transfer_vs_submission_48": {
+      "bag3_flips": 453,
+      "bag3_rate_per_1k_seen": 21.08,
+      "bag3_to_used": 257,
+      "bag3_to_new": 196,
+      "bag3_margin_bands": {
+        "0.06_to_0.10": 48,
+        "0.10_to_0.20": 149,
+        "0.20_plus": 256
+      },
+      "single_lgb_flips": 451,
+      "single_lgb_rate_per_1k_seen": 20.99
+    },
     "total_flips_vs_48": 453,
     "to_used": 257,
     "to_new": 196,
@@ -84,7 +546,7 @@
     "new_sellers_count": 0,
     "guard_passed": true,
     "guard_message": {
-      "file": "candidate_single_intervention_rule_on_48.csv",
+      "file": ".candidate_single_intervention_rule_on_48.csv.38376.tmp",
       "valid": true,
       "n_rows": 30000,
       "n_flips_vs_48": 453,

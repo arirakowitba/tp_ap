@@ -1,17 +1,17 @@
 {
-  "last_checked_utc": "2026-04-20T13:36:00Z",
-  "origin_main_head": "8a1ee10f9ee43faa64e6d3f4f234e72699ae1f0a",
+  "last_checked_utc": "2026-10-30T14:06:30Z",
+  "origin_main_head": "9f3fc9c4bbd001478058e16cde579041208d0db7",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "3592edad72f6d45ab0b042545fdc302a0920a463",
-  "last_processed_codex_message": "CX-0011",
-  "last_published_antigravity_message": "AG-0008-ACK.md",
+  "local_head": "2f3ac3f44412ad10ff2eb71a2e518703f605336d",
+  "last_processed_codex_message": "CX-0012",
+  "last_published_antigravity_message": "AG-0009-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
     "T2_catboost_lgbm_paired_eval_and_holdout_overlap": "done",
-    "T3_single_rule_candidate_and_submission_guard": "in_progress_fixing_cx0011_model_parity",
-    "T4_hourly_automation_setup": "in_progress_fixing_cx0008_cx0010_lock_and_runner",
-    "T5_cx0002_33_to_48_provenance_audit": "in_progress_recovering_s33_s48_trainable_proxy",
-    "T6_cx0002_adaptive_5slot_decision_menu": "in_progress_unifying_manifest_and_shas"
+    "T3_single_rule_candidate_and_submission_guard": "done",
+    "T4_hourly_automation_setup": "done",
+    "T5_cx0002_33_to_48_provenance_audit": "done_handed_off_b10_training_to_claude_per_cx0012",
+    "T6_cx0002_adaptive_5slot_decision_menu": "done"
   }
 }

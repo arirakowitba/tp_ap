@@ -553,6 +553,7 @@ def main():
             "p_Blend075_valname": p_blend_v_co.astype(np.float32),
             "pred_Blend075_valname_tuned": (p_blend_v_co >= th_blend_v).astype(int),
             "p_CB_Bag3_hist": bag_h["p_cb_bag_co"].astype(np.float32),
+            "p_LGB_Bag3_hist": bag_h["p_lgb_bag_co"].astype(np.float32),
             "p_Blend075_Bag3_hist": bag_h["p_blend_bag_co"].astype(np.float32),
             "pred_Blend075_Bag3_hist_tuned": (bag_h["p_blend_bag_co"] >= th_blend_bag_h).astype(int),
         })

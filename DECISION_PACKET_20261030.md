@@ -1,8 +1,8 @@
-# Decision Packet & Multi-Agent Consolidation (`2026-10-30`, Revisión CX-0005, CX-0006 & CX-0007)
+# Decision Packet & Multi-Agent Consolidation (`2026-10-30`, Revisión CX-0008 a CX-0012)
 
 **Rama de trabajo:** `antigravity/overnight-recovery-coordination-20261030`  
-**En respuesta a:** [`CX-0001.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0001.md), [`CX-0002.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0002.md), [`CX-0003.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0003.md), [`CX-0004.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0004.md), [`CX-0005.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0005.md), [`CX-0006.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0006.md) y [`CX-0007.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0007.md) (`origin/main` `582aa5860f40f13ebdea6128910fedb9be6c450f`)  
-**Benchmark público demostrado:** `submission_48` = **`.94633`** (SHA256 `3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722`, `submissions/20261030/submission_48_reference.csv`).
+**En respuesta a:** [`CX-0001.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0001.md) a [`CX-0012.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0012.md) (`origin/main` `c15fdd86a60ea02bf3bab2d5cbe5ce78973b6977`)  
+**Benchmark público demostrado:** `submission_48` = **`.94633`** (SHA256 canónico LF y archivo local: `3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722`, `submissions/20261030/submission_48_reference.csv`). *(Nota: la cadena `3f8d08e0a29ef...` que apareció en un reporte previo fue una errata de transcripción manual del prefijo `3f8d08e0...`; el único SHA256 real y verificado de `submission_48` y `submission_76` es `3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722`).*
 
 ---
 
@@ -39,13 +39,27 @@ Se corrigen de forma estricta las declaraciones erróneas previas sobre el estad
 5. **Envíos 01–03 y 10:** Scores conocidos en bitácora (`01: .94433, 02: .94419, 03: .94447, 10: .94500`), pero CSVs 30k exactos no identificados localmente. Estado: `enviado-score-conocido-CSV-no-identificado`.
 6. **Aclaración sobre afirmaciones de novedad:** La afirmación de que ciertos IDs son "inéditos" se reformula estrictamente como **"sin intersección en vectores verificados disponibles en disco"**, reconociendo la falta de vectores fila a fila de 01–03, 10, 53, 54 y 55.
 
-### 1.2 Auditoría de Procedencia de `submission_48` y Proxy Entrenable Fuerte
+### 1.2 Mapa Completo de Procedencia (`31 -> 33 -> 41 -> 48`), Archivos Presentes/Faltantes y Proxies (CX-0008..CX-0012)
 
 - **Regla estricta sobre scores públicos:** Los scores públicos son evidencia agregada sobre bloques enteros; **jamás** se convierten en etiquetas individuales por ID ni en conteos enteros exactos sin conocer el denominador público exacto.
-- **Rutas auditadas y componentes faltantes para reproducción estricta:**
-  1. *Linaje histórico:* `base33` (.94614) incorporó ajustes empíricos tempranos sobre HistGB+FastText; `41` añadió 6 decisiones manuales de test (`round49_proxy41_fidelity_20261025.md`); `48` seleccionó los 2 cambios de mayor confianza en test (`submission_48_split_47_20261026.md`).
-  2. *Auditorías de proxy previas:* En R49, `text_deep_cat_oof_fresh` obtuvo 98.16% de acuerdo con 41 en test (552 discrepancias), pero la auditoría concluyó que no existe una función aprendible de features que regenere las decisiones manuales de test en train. En R50 (`round50_gate_vs_cat_proxy_20261026.md`), CatBoost como proxy arquitectónico perdió contra baseline al transferir compuertas.
-  3. *Proxy entrenable fuerte disponible:* La arquitectura supervisada profunda `A_hist` (Deep CatBoost Base de R151, con 101 features + TE OOF + TF-IDF OOF `txt_sparse_p`) tiene **96.40% de concordancia con 48 en test (1,081 discrepancias)**. Se adopta como el **proxy entrenable fuerte de referencia en train**. Cualquier regla optimizada contra `A_hist` en train y aplicada a `submission_48` en test se clasifica formalmente como **exploración de transferencia contra 48**, no como validada vs 48.
+- **Reconstrucción exacta de 66 submissions históricas de 30,000 filas ([`provenance_map_31_33_41_48.json`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/provenance_map_31_33_41_48.json)):**
+  - Combinando `base{07,15,33}_labels_1_to_30000.txt`, `flips_04_09.tsv`, `flips_11_14_27_35.tsv`, `flips_16_26.tsv`, `flips_36_41.tsv`, `fasttext_submission_batch_manifest.json` (`42, 43`), `batch_41_44_direction_probe_20261025.md` (`44`), `submission_45_gate8_new_sellers_20261025.md` (`45`), `submissions_46_47_consensus_20261026.md` (`46, 47`), `submission_49_exploration_20261026.md` (`49`), `submission_50_final_probe_20261026.md` (`50`), `submissions/20261027/` (`57, 58`), `submissions/20261028/` (`59..71`) y `submissions/20261029/` (`72..76`), se reconstruyen byte a byte **66 de las 76 submissions (`04..09`, `11..50`, `57..76`)**.
+  - Sólo carecen de vector completo de 30,000 filas en el repositorio **10 submissions**: `[1, 2, 3, 10, 51, 52, 53, 54, 55, 56]`.
+- **Cadena exacta `31 -> 33 -> 41 -> 48`:**
+  1. **`31` (`.94585`) -> `33` (`.94614`):** `31` cambios en test (`19 new->used`, `12 used->new`; `19` vendedores nuevos y `12` vistos). Según [`round38_dart_group_20261025.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/revision_submissions/round38_dart_group_20261025.md) y [`round44_transfer_head_proxy33_20261025.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/revision_submissions/round44_transfer_head_proxy33_20261025.md), no existe en los artefactos preservados una función determinista que traslade esos 31 cambios manuales de test a train.
+  2. **`33` (`.94614`) -> `41` (`.94628`):** `6` cambios en vendedores nuevos de test (`new->used`: `1219, 8862, 22148`; `used->new`: `18412, 26663, 26668`).
+  3. **`41` (`.94628`) -> `48` (`.94633`):** `2` cambios `used->new` en vendedores nuevos de test (`13583` y `25426`), subconjunto de mayor confianza mínima de `47` (`8532, 13583, 22635, 25426`).
+- **Archivos presentes vs. faltantes de la arquitectura Round 30/31 (`text_deep_cat_oof_fresh` / `text_deep_oof`):**
+  - *Código fuente preservado en Git:* [`src/round31_seller_balanced_source.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/src/round31_seller_balanced_source.py) y [`src/round31_seller_balanced_group.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/src/round31_seller_balanced_group.py).
+  - *Archivos externos referenciados por `round31_seller_balanced_source.py` que NO están en Git:* `gemini_bundle/gemini_full_compact_100k.csv`, `recovery/extracted/tp_ap/results/training_round2/deep_teacher/features.pkl`, `recovery/extracted/results/training_round2/fresh/partitions.npz`, y `tp_ap/results/training_round5/text_deep_cat_oof_fresh/test.npz` (que difería de `33` en 558 filas y de `41` en 552 filas = 98.16% acuerdo).
+  - *Señales recuperables desde `round31_seller_balanced_source.py` sobre `data/MLA_100k.jsonlines` (compartido para coordinación con Claude `CC-0001`):* (a) TE OOF `alpha=20` + `log1p(count)` sobre 8 claves base + 3 interacciones (`seller_id|category_id`, `seller_id|listing_type_id`, `category_id|listing_type_id`); (b) teachers OOF `LogisticRegression(C=2.0, solver='liblinear')` sobre `word(1,2)`, `char_wb(2,5)` y `extra_docs` (`attributes` + `variations`); (c) features temporales de IDs de fotos `pictures[*]['id']` (`img_oldest_month`, `img_newest_month`, `img_age_months`, `img_date_spread`, `img_first_prefix_log`); (d) ponderación por frecuencia de vendedor `np.clip(1/sqrt(seller_freq), 0.2, 1.0)`.
+- **Concordancia en Test (`30,000` filas) de los Modelos Completos Preservados en el Repo vs `33`, `41` y `48`:**
+  - `Blend075_Bag3_inductive_70k` (`Option_A`): **96.557% de acuerdo con `48`** (`1,033` discrepancias vs `48`: `664 seen`, `369 new`; `1,039` vs `33`; coincide con `6/6` de los flips `33->41`!).
+  - `A_hist_inductive_70k` (`CatBoost Single`): **96.397% de acuerdo con `48`** (`1,081` discrepancias vs `48`: `705 seen`, `376 new`).
+  - `CB_Bag3_inductive_70k`: **96.393% de acuerdo con `48`** (`1,082` discrepancias vs `48`: `700 seen`, `382 new`).
+  - `LGB_Bag3_inductive_70k`: **96.100% de acuerdo con `48`** (`1,170` discrepancias vs `48`: `715 seen`, `455 new`).
+  - `R156_Strong_Ensemble_70k`: **95.623% de acuerdo con `48`** (`1,313` discrepancias vs `48`).
+  - `R155_Dual_CatBoost_70k`: **94.087% de acuerdo con `48`** (`1,774` discrepancias vs `48`).
 
 ---
 
@@ -125,47 +139,61 @@ Se corrigen de forma estricta las declaraciones erróneas previas sobre el estad
 
 ---
 
-## 3. Agente 6 — Menú Revisado de Candidatos y Auditoría Completa de Submissions Históricas (`01–76`)
+## 3. Agente 6 — Manifiesto Único de Candidatos y Auditoría Completa de 66 Submissions Históricas (`01–76`)
 
-- **Reporte completo:** [`agent6_decision_package_report.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent6_decision_package_report.md) | **Auditoría cruzada 01–76:** [`agent6_historical_submissions_cross_audit.csv`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent6_historical_submissions_cross_audit.csv) | **Menú JSON:** [`agent6_decision_menu.json`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent6_decision_menu.json)
+- **Manifiesto único JSON:** [`unified_candidate_manifest_20261030.json`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/unified_candidate_manifest_20261030.json) | **Auditoría `B4` JSON:** [`single_intervention_rule_report.json`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/single_intervention_rule_report.json)
 
-### Matriz de Auditoría Cruzada contra las 33 Submissions Históricas Disponibles
+### 3.1 Tabla Única de los 10 Archivos en `submissions/20261030/` (IDs `1..30000` Verificados)
 
-| Código | Clase | Archivo en `submissions/20261030/` | SHA256 | Flips vs `48` | `Seen` / `New` | Solape Sondas `72–75` | Solape `Sub 64` (1,774) | Solape `Sub 71` (1,338) | Solape `Sub 65` (141) | Clasificación Epistemológica |
-| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`Option_A`** | **A** (Predicción Completa Modelo Inductivo 70k) | `candidate_optionA_full_inductive_blend_bag3.csv` | `d93af8e75bde...` | **`1,033`** | `664 / 369` | `13` (`0/1/7/5`) | `658` (`63.7%`) | `784` (`75.9%`) | `61` | Modelo Completo (Development-Grade) |
-| **`Option_B1`** | **B** (Intervención Acotada — Core 15 Seen Sellers) | `candidate_sub80_seen_sellers_conservative_unprobed.csv` | `23415a6147e0...` | **`15`** | `15 / 0` | **`0`** | `15` (`100%`) | `13` (`86.7%`) | `0` | Intervención Candidata Exploratoria |
-| **`Option_B2`** | **B** (Intervención Acotada — Disjoint 15 Consensus) | `candidate_sub78_consensus_disjoint15_unprobed.csv` | `98e1913752df...` | **`15`** | `10 / 5` | **`0`** | `15` (`100%`) | `15` (`100%`) | `5` | Intervención Candidata Exploratoria |
-| **`Option_B3`** | **B** (Intervención Acotada — Consenso Cross-Pipeline) | `candidate_optionB_inductive_unanimous_consensus.csv` | `03d88c4aa23e...` | **`18`** | `17 / 1` | **`0`** | `18` (`100%`) | `18` (`100%`) | `1` | Intervención Candidata Exploratoria |
-| **`Option_B4`** | **B** (Regla de Intervención Idéntica Train/Test Congelada) | `candidate_single_intervention_rule_on_48.csv` | `51ea764c8b69...` | **`453`** | `453 / 0` | `13` (`0/1/7/5`) | `453` (`100%`) | `432` (`95.4%`) | `0` | Exploración de Transferencia vs `48` |
-| **`Option_C1`** | **C** (Sonda Exploratoria — 20 New Sellers Texto Limpio) | `candidate_sub79_new_sellers_clean_text.csv` | `81ef2f8dc4c7...` | **`20`** | `0 / 20` | **`0`** | **`0` (`0%`)** | **`0` (`0%`)** | **`0`** | Sonda Diagnóstica (Sin solape en vectores locales) |
-| **`Option_C2`** | **C** (Sonda Exploratoria — 5 Flips Margen Frontera) | `candidate_sub77_nested_margin5_unprobed.csv` | `9b07f45caaf9...` | **`5`** | `2 / 3` | **`0`** | `5` (`100%`) | `5` (`100%`) | `3` | Sonda Diagnóstica Exploratoria |
-| **`Option_D`** | **D** (Constructor Contingente / Respaldo `48`) | `src/eval_20261030/build_from_scores.py` | En runtime | Según bloques | Según bloques | **`0`** | Según bloques | Según bloques | Según bloques | Constructor Algorítmico Verificado (9/9 PASS) |
+| Código Canónico | Archivo en `submissions/20261030/` | SHA256 Archivo (`raw`) | SHA256 Canónico (`LF`) | Flips vs `48` | `to_used` / `to_new` | `Seen` / `New` | Solape `72–75` | Solape `Sub 64` (1,774) | Solape `Sub 71` (1,338) | Clasificación Epistemológica |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **`Reference_48`** | `submission_48_reference.csv` | `3f8d08e0e618...` | `3f8d08e0e618...` | **`0`** | `0 / 0` | `0 / 0` | `0` | `0` | `0` | **Respaldo de Seguridad (`.94633`)** |
+| **`Option_A`** | `candidate_optionA_full_inductive_blend_bag3.csv` | `d93af8e75bde...` | `d93af8e75bde...` | **`1,033`** | `559 / 474` | `664 / 369` | `13` (`0/1/7/5`) | `658` (`63.7%`) | `784` (`75.9%`) | Modelo Completo Inductivo 70k (Development-Grade) |
+| **`Option_B1`** | `candidate_sub80_seen_sellers_conservative_unprobed.csv` | `23415a6147e0...` | `643b1b55c52f...` | **`15`** | `6 / 9` | `15 / 0` | **`0`** | `15` (`100%`) | `13` (`86.7%`) | Intervención Candidata Exploratoria |
+| **`Option_B2`** | `candidate_sub78_consensus_disjoint15_unprobed.csv` | `98e1913752df...` | `4b13b67e5b8e...` | **`15`** | `5 / 10` | `10 / 5` | **`0`** | `15` (`100%`) | `15` (`100%`) | Intervención Candidata Exploratoria |
+| **`Option_B3`** | `candidate_optionB_inductive_unanimous_consensus.csv` | `03d88c4aa23e...` | `03d88c4aa23e...` | **`18`** | `8 / 10` | `17 / 1` | **`0`** | `18` (`100%`) | `18` (`100%`) | Intervención Exploratoria (Desclasificada CX-0002) |
+| **`Option_B4`** | `candidate_single_intervention_rule_on_48.csv` | `51ea764c8b69...` | `51ea764c8b69...` | **`453`** | `257 / 196` | `453 / 0` | `12` (`0/0/7/5`) | `332` (`73.3%`) | `390` (`86.1%`) | **Sonda de Transferencia No Validada vs `48` (NO Aprobada)** |
+| **`Option_C1`** | `candidate_sub79_new_sellers_clean_text.csv` | `81ef2f8dc4c7...` | `6a75fd3389c2...` | **`20`** | `2 / 18` | `0 / 20` | **`0`** | **`0` (`0%`)** | **`0` (`0%`)** | Sonda Diagnóstica New-Seller (1 ID en `27/39`; 0 en `57–75`) |
+| **`Option_C2`** | `candidate_sub77_nested_margin5_unprobed.csv` | `9b07f45caaf9...` | `e0890d0b7e6b...` | **`5`** | `2 / 3` | `2 / 3` | **`0`** | `5` (`100%`) | `5` (`100%`) | Sonda Diagnóstica Exploratoria |
+| *`Legacy_77`* | `candidate_sub77_dual_cb_high_margin_unprobed.csv` | `a1eb6c51c07f...` | `3770adeea626...` | `20` | `8 / 12` | `17 / 3` | `0` | `20` | `18` | **OBSOLETO — Reemplazado por `Option_B1 + Option_C2`** |
+| *`Legacy_78`* | `candidate_sub78_model_consensus_unprobed.csv` | `d70148d30eca...` | `e00f535b1e79...` | `25` | `8 / 17` | `19 / 6` | `0` | `25` | `25` | **OBSOLETO — Reemplazado por `Option_B2`** |
 
-> [!NOTE]
-> - **Aclaración sobre "unprobed" y desglose de envíos históricos (CX-0004 & CX-0006):**
->   1. **Distinción entre archivos físicos y envíos puntuados:** En el repositorio existen **33 archivos `.csv` físicos** de 30k en `submissions/`. Mediante reconstrucción formal desde deltas históricos y vectores canónicos ([`src/eval_20261030/build_scored_registry.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/src/eval_20261030/build_scored_registry.py)), se dispone del registro canónico de **58 envíos puntuados efectivamente** ([`results/eval_20261030/scored_registry.json`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/eval_20261030/scored_registry.json)). Esto incluye la corrección explícita de `Sub 53` (.94114), `Sub 54` (.94457), `Sub 55` (.94514), y las 5 variantes de fin_stack (`59_full`, `probe_59_new_seller`, `probe_59_seen_to_new`, `fin_stack_new150`, `fin_stack_seen150`).
->   2. **Solapamiento real de `Option_C1`:** Contra los 33 archivos locales tenía 0% de solapamiento. Sin embargo, contra las submissions puntuadas históricas reconstruidas, **`Option_C1` solapa en 1 ID (`ID 1653`)** con las submissions puntuadas `27` (score 0.94228) y `39` (score 0.92976). Los restantes **19 IDs están libres de intersección en vectores verificados disponibles en disco** (aclarando que no se disponen vectores fila a fila de 01–03, 10, 53, 54, 55).
->   3. **Regla de Intervención Idéntica Train/Test (Option B4):**
->      - Regla algorítmica: `is_seen == 1 AND pred_cb_bag3 != base AND pred_lgb_bag3 != base AND pred_cb_bag3 == pred_lgb_bag3 AND |p_blend - 0.50| >= 0.06`.
->      - Validación en `confirm` contra el proxy entrenable fuerte `A_hist`: neta positiva en las 3 semillas (`+6`, `+2`, `+2` = `+10` netos acumulados, precisión 70.8%, reducción de LogLoss).
->      - Aplicación en `test` partiendo de `submission_48`: 453 flips, 100% en vendedores vistos (257 `used`, 196 `new`).
->      - *Declaración epistemológica obligatoria:* **Esta prueba explora transferencia contra submission_48 y NO está validada vs 48.**
->   4. **Reclasificación de B3:** B3 deriva de la unión B1 U B2 filtrada por el refit inductivo 70k y contiene 1 new seller; no equivale a la regla de margen estricta de `confirm`. Se clasifica como intervención exploratoria acotada.
+### 3.2 Cierre de la Auditoría de `Option_B4` sin Confundir Modelos (`CX-0008`, `CX-0009`, `CX-0011`, `CX-0012`)
+
+1. **Corrección de Paridad de Modelo (`LGB_Bag3` en `confirm` y `test`):**
+   - Se corrigió el defecto detectado en `CX-0011` donde `evaluate_rule_on_confirm()` leía `p_LGB_hist` (1 semilla) mientras que `apply_rule_to_test()` leía `p_lgb_bag3` (3 semillas). Ambos usan ahora exactamente `CB_Bag3`, `LGB_Bag3` y `Blend075_Bag3 = 0.75 * CB_Bag3 + 0.25 * LGB_Bag3` a umbral `0.50` y margen `|p_blend - 0.50| >= 0.06` sobre `is_seen == 1`.
+   - Se verificó también que `candidate_single_intervention_rule_on_48.csv` ya poseía en disco `ID = 1..30000` y SHA256 `51ea764c8b69745001eed43f33f79ad960ca8553707294f69e4086d21d9da534` (la mención a `0..29999` en `AG-0007` fue un error de redacción del texto, no del archivo).
+2. **Descomposición Cuantitativa de la Tasa de Intervención por cada `1,000` Filas `Seen` (Por Qué `453` Flips en Test vs `Confirm`):**
+   - **Prohibido sumar semillas solapadas:** Las 3 semillas de `confirm` (`2026`, `314159`, `20261030`) solapan ~18.1%–18.6% entre sí; jamás se suman sus conteos como observaciones independientes.
+
+| Dominio y Corte | Referencia Base (`pred_base`) | Variante LGB | Filas `Seen` | Flips | Tasa / `1,000 Seen` | `to_used` / `to_new` | Fixes / Breaks (**Neto**, IC 95%) |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **`Confirm 2026`** (Dentro de familia) | `A_hist_tuned` (`th=0.470`) | `LGB_Bag3` *(LGB_single)* | `3,903` | **`15`** *(12)* | **`3.84 / 1k`** *(3.07)* | `12 / 3` | `11 / 4 =` **`+7`** `[0.0, +14.0]` *(+6)* |
+| **`Confirm 314159`** (Dentro de familia) | `A_hist_tuned` (`th=0.535`) | `LGB_Bag3` *(LGB_single)* | `3,838` | **`4`** *(4)* | **`1.04 / 1k`** *(1.04)* | `2 / 2` | `3 / 1 =` **`+2`** `[-2.0, +6.0]` *(+2)* |
+| **`Confirm 20261030`** (Dentro de familia) | `A_hist_tuned` (`th=0.515`) | `LGB_Bag3` *(LGB_single)* | `3,740` | **`9`** *(8)* | **`2.41 / 1k`** *(2.14)* | `0 / 9` | `5 / 4 =` **`+1`** `[-5.0, +7.0]` *(+2)* |
+| **`Confirm 2026`** (Dentro de familia) | `A_hist@0.50` | `LGB_Bag3` | `3,903` | **`14`** | **`3.59 / 1k`** | `8 / 6` | `11 / 3 =` **`+8`** `[+1.0, +15.0]` |
+| **`Confirm 314159`** (Dentro de familia) | `A_hist@0.50` | `LGB_Bag3` | `3,838` | **`2`** | **`0.52 / 1k`** | `2 / 0` | `2 / 0 =` **`+2`** `[0.0, +4.0]` |
+| **`Confirm 20261030`** (Dentro de familia) | `A_hist@0.50` | `LGB_Bag3` | `3,740` | **`2`** | **`0.53 / 1k`** | `0 / 2` | `1 / 1 =` **`+0`** `[-2.0, +2.0]` |
+| **`Test 30k`** (**Dentro de familia**) | **`A_hist_inductive_70k@0.50`** | **`LGB_Bag3`** *(LGB_single)* | **`21,487`** | **`26`** *(26)* | **`1.21 / 1k`** *(1.21)* | `8 / 18` | *Sin etiquetas de test* |
+| **`Confirm 2026`** (Entre familias) | `R156_Ensemble` | `LGB_Bag3` | `3,903` | **`87`** | **`22.29 / 1k`** | `42 / 45` | `72 / 15 =` **`+57`** `[+38.0, +78.0]` |
+| **`Confirm 314159`** (Entre familias) | `R156_Ensemble` | `LGB_Bag3` | `3,838` | **`82`** | **`21.37 / 1k`** | `39 / 43` | `64 / 18 =` **`+46`** `[+28.0, +65.0]` |
+| **`Test 30k`** (**Entre familias vs 48**) | **`submission_48`** (`.94633`) | **`LGB_Bag3`** *(LGB_single)* | **`21,487`** | **`453`** *(451)* | **`21.08 / 1k`** *(20.99)* | `257 / 196` | *Sonda de transferencia no validada vs 48* |
+
+   - **Explicación demostrada:** Cuando la regla congelada se aplica en `test` (`21,487` filas `seen`) contra **su propia familia de referencia (`A_hist_inductive_70k@0.50`)**, produce únicamente **`26` flips (`1.21 / 1,000` filas `seen`)**, exactamente dentro del rango observado en `confirm` (`0.52` a `3.84 / 1,000`). El salto a **`453` flips (`21.08 / 1,000` filas `seen`)** ocurre exclusivamente al cambiar la referencia de `A_hist` a `submission_48` (que pertenece a otra familia histórica de modelos y discrepa de `A_hist_inductive_70k` en `705` filas `seen` = `32.81 / 1,000`). En `confirm`, aplicar la misma regla contra otra familia (`R156_Ensemble`) produce una tasa casi idéntica (`22.29` y `21.37 / 1,000`). Como ni `A_hist` ni `R156_Ensemble` son `submission_48`, **`Option_B4` permanece NO aprobada como mejora demostrada**.
 
 ---
 
-## 4. Estado de Automatización y Protocolo Operativo (CX-0003, CX-0004, CX-0006 & CX-0007)
+## 4. Estado de Automatización, Concurrencia Real y Protocolo Operativo (CX-0008, CX-0010, CX-0011 & CX-0012)
 
-1. **Deduplicación de Disparadores Horarios:** Se verificó la eliminación de cualquier cron redundante en la sesión activa (`manage_task` lista 0 tareas de fondo). Se mantiene como **único disparador verificado** el sidecar nativo de Antigravity (`ap-2026-q2-hourly-coordination`).
-2. **Lock Atómico de Exclusión Mutua (`src/coordination_lock.py`):**
-   - Implementado cerrojo a nivel de proyecto mediante creación atómica de directorio (`os.mkdir("coordination/.project_lock")`).
-   - Registra de forma inmutable: `owner_id`, `host_pid`, `host_create_time`, inicio (`started_at_utc/local`) y heartbeat.
-   - Verificación de vitalidad por proceso: antes de declarar un lock obsoleto, se consulta `psutil.Process(pid)` y se verifica el tiempo de creación del proceso host. Si el proceso está activo, el cerrojo **no se roba**.
-   - Suite de pruebas unitarias verificada en [`tests/test_coordination_lock.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/tests/test_coordination_lock.py) (6/6 PASS). Verificada independientemente en Linux aislado por Codex (CX-0007: 6 tests, 0.058s, OK).
-   - `.gitignore` actualizado para ignorar cerrojos temporales locales.
-3. **Auditoría de Integración Real del Lock en el Scheduler:**
-   - Creado y verificado el entrypoint ejecutable [`src/run_coordination_check.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/src/run_coordination_check.py).
-   - Adquiere atómicamente el cerrojo del proyecto al iniciar, ejecuta la sincronización con origin, verifica mensajes y mantiene el lock activo con heartbeats hasta la finalización completa del ciclo de coordinación, evitando liberaciones prematuras por procesos auxiliares.
-4. **Regla de Cero Subidas:** Ninguna submission se sube a Kaggle. Todos los artefactos quedan versionados localmente y pusheados a la rama de coordinación para la revisión y decisión final de Ariel y Codex.
+1. **Corrección de la Race Condition de `CX-0010` en [`src/coordination_lock.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/src/coordination_lock.py):**
+   - Mantiene un bloqueo exclusivo de descriptor de archivo del sistema operativo (`msvcrt.locking` en Windows / `fcntl.flock` en POSIX sobre `.project_lock.oslock`) abierto durante **toda** la sección crítica, más registro en memoria por `instance_token` UUID.
+   - Si un proceso muere o cae abruptamente (`kill`), el kernel del SO libera automáticamente el bloqueo de archivo.
+   - **Prohibido borrar directorios vacíos en inicialización:** Si `lock_info.json` aún no existe y el directorio está dentro de su ventana de gracia (`empty_dir_stale_seconds`), ningún contendiente puede borrarlo. Además, `lock_info.json` se escribe atómicamente mediante archivo temporal + `os.replace`, y `release()` valida `self._acquired`, `host_pid`, `owner_id` e `instance_token`.
+2. **Runner Sincronizado [`src/run_coordination_check.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/src/run_coordination_check.py):**
+   - Inspecciona mensajes remotos directamente desde `origin/main` mediante `git ls-tree origin/main coordination/codex_to_antigravity/` y `git show origin/main:...` (`utf-8`), sin depender del árbol de trabajo local tras `git fetch`.
+   - Ejecuta el comando científico autorizado (`--task-cmd`, `--task-id`) **dentro** de la sección crítica protegida por `ProjectLock`, emitiendo heartbeats periódicos, evitando ejecuciones duplicadas de un mismo `task_id`, y registrando inicio, fin, HEADs observados y código de salida en `results/intensive_20261030/coordination_runner_log.jsonl`.
+3. **Suite de Pruebas Unitarias y Multiproceso ([`tests/test_coordination_lock.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/tests/test_coordination_lock.py) y [`tests/test_single_intervention_rule.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/tests/test_single_intervention_rule.py)):**
+   - `11/11` tests en `test_coordination_lock.py` (`OK`), incluyendo la regresión determinística exacta de `CX-0010`, contención multiproceso real + recuperación tras `proc.kill()`, y dos procesos concurrentes de `run_coordination_check.py` ejecutando una sección crítica real.
+   - `1/1` test en `test_single_intervention_rule.py` (`OK`), verificando que si `submission_guard` falla, el archivo temporal se elimina y no se escribe ningún CSV final.
+4. **Regla de Cero Subidas:** Ninguna submission se sube a Kaggle. `submission_48` (`.94633`) se mantiene como respaldo obligatorio.
 
