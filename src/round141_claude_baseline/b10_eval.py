@@ -20,7 +20,8 @@ from optimize_leaderboard import enrich, data_folder
 from sklearn.metrics import accuracy_score, log_loss
 
 FITONLY = os.environ.get("B10_DEV", "fit+tune") == "fit"
-tag = "full" if mode == "full" else (f"seed{seed}_fit" if FITONLY else f"seed{seed}")
+EVAL_TUNE = os.environ.get("B10_EVAL", "confirm") == "tune+confirm"
+tag = "full" if mode == "full" else (f"seed{seed}_fit" if FITONLY else f"seed{seed}") + ("_tc" if EVAL_TUNE else "")
 od = out / tag; od.mkdir(parents=True, exist_ok=True)
 # frozen config copied (read-only use) so outputs never touch the shared optimization/ folder
 for f in ["selected_ensemble.json", "metrics.csv", "lgb_tpe_2_params.json", "cat_enriched_d9_params.json", "cat_native_text_d7_params.json"]:
@@ -59,6 +60,14 @@ else:
     assert (y[co.row_idx] == co.y_used.values).all()
     conf = co.row_idx.to_numpy(); dev = np.setdiff1d(np.arange(len(raw)), np.r_[conf, tu.row_idx.to_numpy()] if FITONLY else conf)
     assert len(np.intersect1d(conf, tu.row_idx)) == 0
+    if EVAL_TUNE:
+        tu_rows = tu.row_idx.to_numpy(); ev = np.r_[tu_rows, conf]
+        x, ids = enrich(raw.iloc[dev].reset_index(drop=True)); z, _ = enrich(raw.iloc[ev].reset_index(drop=True), ids); del raw
+        pz = cs.fit_models(x, y[dev], groups[dev], z, selected, f"split_seed{seed}_tc", None)
+        pd.DataFrame({"row_idx": ev, "split": ["tune"] * len(tu_rows) + ["confirm"] * len(conf), "p_b10": pz}).to_csv(od / f"b10_tune_confirm_seed{seed}.csv.gz", index=False)
+        rep = dict(mode="split_tc", seed=seed, n_dev=len(dev), n_tune=len(tu_rows), n_confirm=len(conf), elapsed_sec=round(time.time() - t0), env=env,
+                   note="fit-only training; predicts tune and confirm with the same fitted models; no metrics computed here")
+        (od / "report.json").write_text(json.dumps(rep, indent=2)); print(json.dumps(rep), flush=True); sys.exit(0)
     x, ids = enrich(raw.iloc[dev].reset_index(drop=True)); z, _ = enrich(raw.iloc[conf].reset_index(drop=True), ids); del raw
     p = cs.fit_models(x, y[dev], groups[dev], z, selected, f"split_seed{seed}", y[conf])
     pd.DataFrame({"row_idx": conf, "item_id": co.item_id.values, "seller_id": co.seller_id.values, "y_used": y[conf],
