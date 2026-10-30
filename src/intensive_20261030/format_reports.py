@@ -98,7 +98,7 @@ def format_agent3_report():
         return
     d = json.loads(p.read_text(encoding="utf-8"))
     lines = [
-        "# Agente 3 — Validación Externa al Proceso de Selección y Transporte a la Mezcla de Test",
+        "# Agente 3 — Validación Externa al Proceso de Selección y Transporte a la Mezcla de Test (Revisión CX-0002)",
         "",
         f"**Fecha:** {d['timestamp']}  ",
         f"**Tiempo total de ejecución:** {d['total_runtime_seconds']}s  ",
@@ -109,32 +109,38 @@ def format_agent3_report():
         "",
         "---",
         "",
-        "## 1. Tamaños, Hashes y Proporciones `Seen / New` de los Cortes Externos Estrictamente Inductivos",
+        "## 1. Tamaños, Hashes y Solapamiento Histórico de los Cortes Externos Inductivos",
         "",
-        "| Corte Externo | Semilla | `N_fit` | `N_tune` | `N_confirm` | `Seen` Confirm | `New` Confirm | SHA256 Split | SHA256 Paired CSV |",
+        "| Corte Externo | Semilla | `N_fit` | `N_tune` | `N_confirm` | `Seen` Confirm | `New` Confirm | Solape 18 Holdouts Históricos | SHA256 Paired CSV |",
         "| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |",
     ]
     for cname, c in d["cuts"].items():
         sz = c["sizes"]
         hs = c["hashes"]
+        ov = c.get("historical_holdouts_overlap", {}).get("UNION_All_Reconstructed_Holdouts", {})
+        ov_str = f"{ov.get('overlap_rows_pct', 'N/A')}% ({ov.get('overlap_rows', 'N/A'):,} filas)" if ov else "N/A"
         lines.append(
             f"| **`{cname}`** | `{c['seed']}` | {sz['fit']:,} | {sz['tune']:,} | {sz['confirm']:,} | "
             f"{sz['confirm_seen']:,} ({sz['confirm_seen_pct']}%) | {sz['confirm_new']:,} ({sz['confirm_new_pct']}%) | "
-            f"`{hs['split_sha256'][:12]}...` | `{hs['paired_csv_sha256'][:12]}...` |"
+            f"`{ov_str}` | `{hs['paired_csv_sha256'][:12]}...` |"
         )
 
     lines.extend([
         "",
-        "## 2. Resultados Observados vs. Estimación Transportada a la Mezcla `Seen/New` de Test (`71.623% Seen / 28.377% New`)",
+        "---",
         "",
-        "| Corte Externo | Régimen Umbral | Acc Base | Acc Blend | Fixes | Breaks | Neto Obs | IC 95% Vendedor Obs | Seen Net | New Net | $\\Delta$ Acc Transportado | Neto Esperado 30k Test | IC 95% Transportado 30k | $\\Delta$ Log Loss |",
+        "## 2. Comparación Exacta: Single Blend vs. Bag3 Blend y Aporte Marginal de Bag3",
+        "",
+        "### A. Blend Bag3 vs. Base CatBoost (Configuración de Option A en Cortes Externos)",
+        "",
+        "| Corte Externo | Régimen Umbral | Acc Base | Acc Bag3 | Fixes | Breaks | Neto Obs | IC 95% Vendedor Obs | Seen Net | New Net | $\\Delta$ Acc Transp | Neto 30k Test | IC 95% 30k Test | $\\Delta$ Log Loss |",
         "| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |",
     ])
 
     for cname, c in d["cuts"].items():
-        for rkey, rlabel in [("common_threshold_050", "Común 0.500"), ("policy_tuned_threshold", "Política tune")]:
-            pm = c[rkey]["paired_metrics"]
-            tr = c[rkey]["transported_test_mixture"]
+        for rkey, rlabel in [("common_th_050", "Común 0.500"), ("policy_tuned_th", "Política tune")]:
+            pm = c["blend_bag3_vs_base_cb"][rkey]["paired_metrics"]
+            tr = c["blend_bag3_vs_base_cb"][rkey]["transported_test_mixture"]
             ci_obs = pm["bootstrap_seller_ci95"]
             ci_tr = tr["transported_30k_bootstrap_ci95"]
             lines.append(
@@ -147,6 +153,52 @@ def format_agent3_report():
 
     lines.extend([
         "",
+        "### B. Single Blend vs. Base CatBoost (Un solo modelo por arquitectura)",
+        "",
+        "| Corte Externo | Régimen Umbral | Acc Base | Acc Single | Fixes | Breaks | Neto Obs | IC 95% Vendedor Obs | Seen Net | New Net | $\\Delta$ Acc Transp | Neto 30k Test | IC 95% 30k Test | $\\Delta$ Log Loss |",
+        "| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |",
+    ])
+
+    for cname, c in d["cuts"].items():
+        for rkey, rlabel in [("common_th_050", "Común 0.500"), ("policy_tuned_th", "Política tune")]:
+            pm = c["blend_single_vs_base_cb"][rkey]["paired_metrics"]
+            tr = c["blend_single_vs_base_cb"][rkey]["transported_test_mixture"]
+            ci_obs = pm["bootstrap_seller_ci95"]
+            ci_tr = tr["transported_30k_bootstrap_ci95"]
+            lines.append(
+                f"| **`{cname}`** | {rlabel} | {pm['accuracy_base']:.5f} | {pm['accuracy_cand']:.5f} | "
+                f"{pm['fixes']} | {pm['breaks']} | **{pm['net']:+d}** | [{ci_obs[0]:+.1f}, {ci_obs[1]:+.1f}] | "
+                f"{pm['seen_sellers']['net']:+d} | {pm['new_sellers']['net']:+d} | "
+                f"`{tr['delta_acc_transported_to_test_mix']:+.5f}` | **{tr['expected_net_items_30k_test_mix']:+.1f}** | "
+                f"[{ci_tr[0]:+.1f}, {ci_tr[1]:+.1f}] | `{pm['delta_logloss']:+.5f}` |"
+            )
+
+    lines.extend([
+        "",
+        "### C. Aporte Marginal Directo: Blend Bag3 vs. Single Blend",
+        "",
+        "| Corte Externo | Régimen Umbral | Acc Single | Acc Bag3 | Fixes | Breaks | Neto Obs | IC 95% Vendedor Obs | Seen Net | New Net | $\\Delta$ Acc Transp | Neto 30k Test | IC 95% 30k Test | $\\Delta$ Log Loss |",
+        "| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |",
+    ])
+
+    for cname, c in d["cuts"].items():
+        for rkey, rlabel in [("common_th_050", "Común 0.500"), ("policy_tuned_th", "Política tune")]:
+            pm = c["marginal_bag3_vs_blend_single"][rkey]["paired_metrics"]
+            tr = c["marginal_bag3_vs_blend_single"][rkey]["transported_test_mixture"]
+            ci_obs = pm["bootstrap_seller_ci95"]
+            ci_tr = tr["transported_30k_bootstrap_ci95"]
+            lines.append(
+                f"| **`{cname}`** | {rlabel} | {pm['accuracy_base']:.5f} | {pm['accuracy_cand']:.5f} | "
+                f"{pm['fixes']} | {pm['breaks']} | **{pm['net']:+d}** | [{ci_obs[0]:+.1f}, {ci_obs[1]:+.1f}] | "
+                f"{pm['seen_sellers']['net']:+d} | {pm['new_sellers']['net']:+d} | "
+                f"`{tr['delta_acc_transported_to_test_mix']:+.5f}` | **{tr['expected_net_items_30k_test_mix']:+.1f}** | "
+                f"[{ci_tr[0]:+.1f}, {ci_tr[1]:+.1f}] | `{pm['delta_logloss']:+.5f}` |"
+            )
+
+    lines.extend([
+        "",
+        "---",
+        "",
         "## 3. Supuestos Explícitos de Transportabilidad",
         "",
     ])
@@ -155,13 +207,13 @@ def format_agent3_report():
 
     lines.extend([
         "",
-        "## 4. Análisis de Regresiones por Banda de Margen (`|p_base - 0.50|`)",
+        "## 4. Análisis de Regresiones de Bag3 por Banda de Margen (`|p_base - 0.50|`)",
         "",
         "| Corte Externo | Banda de Margen `|p_base - 0.50|` | Filas | Fixes | Breaks | Neto |",
         "| :--- | :---: | :---: | :---: | :---: | :---: |",
     ])
     for cname, c in d["cuts"].items():
-        for b in c["regression_analysis_at_050"]["by_margin_band"]:
+        for b in c["regression_analysis_bag3_at_050"]["by_margin_band"]:
             lines.append(
                 f"| `{cname}` | `{b['margin_band']}` | {b['n_rows']:,} | {b['fixes']} | {b['breaks']} | **{b['net']:+d}** |"
             )

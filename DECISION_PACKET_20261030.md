@@ -1,7 +1,7 @@
-# Decision Packet & Multi-Agent Consolidation (`2026-10-30`)
+# Decision Packet & Multi-Agent Consolidation (`2026-10-30`, Revisión CX-0002)
 
 **Rama de trabajo:** `antigravity/overnight-recovery-coordination-20261030`  
-**En respuesta a:** [`CX-0001.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0001.md) (`origin/main` `97c5d38e0be09dbce6965ec867249f8e8a97edc5`)  
+**En respuesta a:** [`CX-0001.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0001.md) y [`CX-0002.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0002.md) (`origin/main` `2f83c8714c7571fa91082ead6de46537e0e90c6c`)  
 **Benchmark público demostrado:** `submission_48` = **`.94633`** (SHA256 `3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722`, `submissions/20261030/submission_48_reference.csv`).
 
 ---
@@ -17,10 +17,11 @@
 | **`76`** | `.94633` | `0.00000` | `0` | Duplicado exacto de `48` (`3f8d08e0...`) | Prohibido repetir en el quinto cupo |
 
 - **Regla estricta sobre scores públicos:** Los scores públicos son evidencia agregada sobre bloques enteros; **jamás** se convierten en etiquetas individuales por ID ni en conteos enteros exactos sin conocer el denominador público exacto.
+- **Transparencia sobre la reproducibilidad de `submission_48`:** Tal como documenta la auditoría histórica de Ronda 49 ([`round49_proxy41_fidelity_20261025.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/revision_submissions/round49_proxy41_fidelity_20261025.md)), la cadena que originó `48` proviene de `41` (que incorporó intervenciones manuales de test sobre `33`) dividida en `47` y `48` por ranking de confianza exploratorio ([`submission_48_split_47_20261026.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/revision_submissions/submission_48_split_47_20261026.md)). Por diseño histórico, **no existe una regla de entrenamiento puro 100% autónoma que regenere las etiquetas exactas de `48` en `train`**. El CSV de `48` se preserva como benchmark empírico inmutable fijado por hash SHA256 (`3f8d08e0...`) y respaldo operativo; las ganancias reportadas frente a baselines reproducibles (`A_hist`, `A_valname`, o `CB_single`) demuestran avance metodológico inductivo, pero no constituyen garantía matemática de batir a `48` en test sin validación empírica.
 
 ---
 
-## 2. Resumen Ejecutivo de los Seis Agentes
+## 2. Resumen Ejecutivo de los Seis Agentes (Actualizado CX-0002)
 
 ### Agente 1 — Integridad, Procedencia y Reproducción Exacta
 - **Reporte completo:** [`agent1_integrity_provenance_report.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent1_integrity_provenance_report.md) | **Manifiesto:** [`agent1_integrity_manifest.json`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent1_integrity_manifest.json)
@@ -45,43 +46,65 @@
 | **`20261030`** (`12,881`) | `Blend075_Bag3_hist` vs `A_hist` | `65/70 =` **`-5`** `[-31, +18]` | **`+11`** `[-10, +31]` | `65/47 =` **`+18`** `[-5, +40]` | `+2 / +16` | **`-0.00244`** |
 | **`20261030`** (`12,881`) | `Blend075_valname` vs `A_valname` | `54/39 =` **`+15`** `[-3, +34]` | **`+9`** `[-10, +27]` | `51/47 =` **`+4`** `[-15, +24]` | `+3 / +1` | **`-0.00240`** |
 
-- **Explicación de los netos previos `+26/+56/+4`:** Provienen de evaluar `Blend075_valname` en el régimen de umbral de `tune`, pero en Semilla 314159 `A_valname` selecciona en `tune` un umbral inestable (`0.455`, cayendo `-23` ítems frente a `0.500`), lo que infla artificialmente el contraste a `+50`/`+56`. Contra el baseline histórico `A_hist` o a umbral común, la ganancia real es de `+22` a `+46` en las semillas 2026 y 314159, y de `-9` (común `0.500`) a `+18` (`th_tune`) en la semilla 20261030, con mejoras de Log Loss en **todos** los cortes (`-0.00164` a `-0.00410`).
-
-### Agente 3 — Validación Externa Estrictamente Inductiva, Auditoría de TODOS los Holdouts Históricos y Transporte a Mezcla de Test
+### Agente 3 — Validación Externa Estrictamente Inductiva, Auditoría de Holdouts y Medición de Bag3
 - **Reporte completo:** [`agent3_external_validation_report.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent3_external_validation_report.md) | **Auditoría de holdouts:** [`all_historical_holdouts_overlap_audit.json`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/all_historical_holdouts_overlap_audit.json)
-- **Hallazgo metodológico crítico sobre solapamiento histórico:**
-  * La unión de los 18 holdouts históricos reconstruibles en el repositorio cubre **67,007 de las 70,000 filas de `train` (`95.72%`)** y **27,008 de los 27,949 vendedores (`96.63%`)** (y `68,103 / 70,000` filas = `97.29%` al incluir los archivos de `round11_12` y `round13` documentados en `round62`).
-  * Aunque `disjoint_3seed_20261101` tiene `0.0%` de solapamiento con la unión de los 3 `confirm` recientes (`2026 U 314159 U 20261030`), solapa en **53.49% (`5,131 / 9,592`)** con la unión de `tune + confirm` de esas 3 semillas y en **92.39% (`8,862 / 9,592`)** con la unión de todos los holdouts históricos del repositorio. **Ningún corte sobre `train` 70k es “virgen”.**
-- **Resultados en los 3 cortes externos estrictamente inductivos (sin fuga de `group_features`, `TE` ni `txt_sparse_p`):**
-  * **`disjoint_3seed_20261101` (`N=9,592`):** Umbral común `0.500` **+21 netos** (`[+2.0, +40.0]`, `Seen +2 / New +19`, **+40.2 netos transportados a test 30k** `[-11.5, +95.7]`); Política `tune` **+15 netos** (`[-4.0, +33.0]`, **+27.2 transportados** `[-34.4, +89.2]`), `Delta LL = -0.00323`.
-  * **`nested_outer_777001` (`N=12,803`):** Umbral común `0.500` **+33 netos** (`[+10.0, +54.0]`, `Seen +8 / New +25`, **+68.5 netos transportados a test 30k** `[+18.2, +117.9]`); Política `tune` **+30 netos** (`[+9.0, +51.0]`, **+42.4 transportados** `[-7.3, +93.4]`), `Delta LL = -0.00457`.
-  * **`nested_outer_777002` (`N=13,259`):** Umbral común `0.500` **+11 netos** (`[-10.0, +32.0]`, `Seen +4 / New +7`, **+28.8 netos transportados a test 30k** `[-30.8, +87.8]`); Política `tune` **+9 netos** (`[-11.0, +28.0]`, **+8.1 transportados** `[-36.0, +53.5]`), `Delta LL = -0.00270`.
+- **Correcciones metodológicas aplicadas según CX-0002:**
+  1. Se eliminó la condición asimétrica de refit TF-IDF: los tres cortes externos ejecutan refit estricto de vocabulario/IDF fold a fold dentro de `fit`.
+  2. El corte `disjoint_3seed_20261101` se desclasificó de virgen: solapa en **92.39% (`8,862 / 9,592` filas)** con la unión de los 18 holdouts históricos que cubre el **95.72% (`67,007 / 70,000`)** de `train`.
+  3. Se evaluó de forma separada el ensamble exacto `Bag3` (`Blend_Bag3`) vs. el modelo individual (`Blend_Single`), midiendo el aporte marginal directo de `Bag3`.
+- **Resultados en los 3 cortes externos con refit inductivo uniforme y ensamble Bag3 exacto:**
+
+| Corte Externo | Arquitectura / Ensamble | Umbral Común `0.500` (Fixes/Breaks = **Neto**, IC 95%) | Neto Transportado 30k Test (IC 95%) | Política `tune` (**Neto**, IC 95%) | `Seen` / `New` (`th_tune`) | $\Delta$ Log Loss |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **`disjoint_3seed_20261101`** (`N=9,592`) | `Blend_Single` vs `CB_base` | `37/39 =` **`-2`** `[-18, +13]` | `-10.2` `[-64.3, +44.6]` | **`-1`** `[-16, +14]` | `-2 / +1` | `-0.00282` |
+| **`disjoint_3seed_20261101`** (`N=9,592`) | `Blend_Bag3` vs `CB_base` | `36/36 =` **`+0`** `[-15, +17]` | `+0.0` `[-65.6, +64.8]` | `58/43 =` **`+15`** `[-6, +33]` | `-3 / +18` | **`-0.00385`** |
+| **`disjoint_3seed_20261101`** (`N=9,592`) | **Aporte Marginal `Bag3` vs `Single`** | `26/24 =` **`+2`** `[-7, +11]` | `+10.2` `[-29.8, +49.1]` | `27/24 =` **`+3`** `[-7, +12]` | `+0 / +3` | **`-0.00103`** |
+| **`nested_outer_777001`** (`N=12,803`) | `Blend_Single` vs `CB_base` | `54/53 =` **`+1`** `[-16, +19]` | `+38.2` `[-12.5, +89.8]` | **`-2`** `[-19, +17]` | `+8 / -10` | `-0.00253` |
+| **`nested_outer_777001`** (`N=12,803`) | `Blend_Bag3` vs `CB_base` | `61/52 =` **`+9`** `[-9, +28]` | **`+59.7`** `[+6.3, +116.5]` | `65/61 =` **`+4`** `[-15, +22]` | `+10 / -6` | **`-0.00257`** |
+| **`nested_outer_777001`** (`N=12,803`) | **Aporte Marginal `Bag3` vs `Single`** | `24/16 =` **`+8`** `[-1, +18]` | `+21.5` `[-18.5, +60.9]` | `22/16 =` **`+6`** `[-2, +16]` | `+2 / +4` | **`-0.00005`** |
+| **`nested_outer_777002`** (`N=13,259`) | `Blend_Single` vs `CB_base` | `66/53 =` **`+13`** `[-7, +31]` | `+30.6` `[-30.4, +88.6]` | **`+15`** `[-5, +36]` | `+5 / +10` | `-0.00269` |
+| **`nested_outer_777002`** (`N=13,259`) | `Blend_Bag3` vs `CB_base` | `88/52 =` **`+36`** `[+12, +58]` | **`+65.6`** `[-1.9, +134.1]` | `116/59 =` **`+57`** `[+29, +84]` | `+9 / +48` | **`-0.00414`** |
+| **`nested_outer_777002`** (`N=13,259`) | **Aporte Marginal `Bag3` vs `Single`** | `42/19 =` **`+23`** `[+8, +38]` | `+35.0` `[-6.4, +75.9]` | `58/20 =` **`+38`** `[+19, +57]` | `+4 / +34` | **`-0.00145`** |
+
+- **Conclusiones clave de Bag3:**
+  - `Bag3` supera a `Single Blend` de forma consistente en los tres cortes inductivos (+2, +8 y +23 netos a umbral 0.500; Delta LogLoss adicional de `-0.00005` a `-0.00145`).
+  - La ganancia en `seen_sellers` es positiva en ambos cortes anidados (+11 y +7 a 0.500; +10 y +9 a policy) y neutra en disjoint (+0).
 
 ### Agente 4 — Investigación Complementaria Acotada (Auditoría y Parada de MLP Disperso)
 - **Reporte completo:** [`agent4_complementary_report.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent4_complementary_report.md)
-- Alineación por ID verificada (`100%`). El `+7` anterior mezclaba cambio de umbral (`-6` por sí solo) y mezcla de probabilidades (`+8` a umbral común `0.515`), deteriorando `LogLoss` en `+0.00582`. Con ajuste estrictamente inductivo por fold, el MLP obtiene `Acc = 0.80430` (`LL = 0.43689`) y peso óptimo `w_mlp = 0.000` en `tune`. **Línea cerrada y cómputo liberado para boosting.**
+- Alineación por ID verificada (`100%`). El MLP disperso sin SVD obtiene `Acc = 0.80430` (`LL = 0.43689`) y peso óptimo `w_mlp = 0.000` en `tune`. Línea detenida; cómputo liberado.
 
 ### Agente 5 — Constructor Verificado `build_from_scores.py` y Suite de Tests Unitarios (`9/9 PASS`)
 - **Reporte completo:** [`agent5_builder_verification.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent5_builder_verification.md) | **Código:** [`build_from_scores.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/src/eval_20261030/build_from_scores.py) | **Tests:** [`test_build_from_scores.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/src/eval_20261030/test_build_from_scores.py)
-- Eliminadas todas las heurísticas por nombre de archivo (`"78" in f.name`, etc.). Identificación exclusivamente por SHA256 y mapa exacto `{ID: (baseline_cond, candidate_cond)}` contra `submission_48`.
-- Bloquea bloques con solapamiento parcial no anidado (contraejemplo `O+U` y `O+R` de `round158_overlap_counterexample_20261030.md`), bloquea extracción de subconjuntos no validados y bloquea duplicados exactos. *(Nota: los 9 tests aprobados son evidencia útil de verificación local; la implementación queda sujeta a revisión por Codex).*
+- Identificación exclusivamente por SHA256 y mapa exacto `{ID: (baseline_cond, candidate_cond)}`. Bloquea solapamientos no anidados y duplicados. Preservado para revisión de Codex sin merge automático.
 
 ---
 
-## 3. Agente 6 — Menú Estructurado de Candidatos (`A`, `B`, `C`, `D`) y Matriz de Intersecciones
+## 3. Agente 6 — Menú Revisado de Candidatos y Auditoría Completa de Submissions Históricas (`01–76`)
 
-- **Reporte completo:** [`agent6_decision_package_report.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent6_decision_package_report.md) | **Menú JSON:** [`agent6_decision_menu.json`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent6_decision_menu.json) | **Tabla por ID:** [`agent6_per_id_audit_table.csv`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent6_per_id_audit_table.csv)
+- **Reporte completo:** [`agent6_decision_package_report.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent6_decision_package_report.md) | **Auditoría cruzada 01–76:** [`agent6_historical_submissions_cross_audit.csv`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent6_historical_submissions_cross_audit.csv) | **Menú JSON:** [`agent6_decision_menu.json`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent6_decision_menu.json)
 
-| Código | Clase | Archivo en `submissions/20261030/` | SHA256 | Flips vs `48` | `Seen` / `New` | `u->n` / `n->u` | Solapamiento con `72–75` | Relación entre Bloques |
-| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`Option_A`** | **A** (Predicción Completa Modelo Inductivo 70k) | `candidate_optionA_full_inductive_blend_bag3.csv` | `d93af8e75bde55f6cdf8b90ca61da19ccf5ad7f0b1d32ee479b86bd1a7fb02db` | **`1,033`** | `664 / 369` | `474 / 559` | `13` (`0/1/7/5`) | Superconjunto de `B3` (`B3 ⊂ A`) |
-| **`Option_B1`** | **B** (Intervención Validada — Core 15 Seen Sellers) | `candidate_sub80_seen_sellers_conservative_unprobed.csv` | `23415a6147e0363a30d73a9d360d766f2492e689780046c91831c8733e1dc9f7` | **`15`** | `15 / 0` | `9 / 6` | **`0`** | **100% disjunto** de `B2`, `C1`, `C2` |
-| **`Option_B2`** | **B** (Intervención Validada — Disjoint 15 Consensus) | `candidate_sub78_consensus_disjoint15_unprobed.csv` | `98e1913752df6da3bae48d33d1d7017148f2a3dfd7a546d701520e90c1b56704` | **`15`** | `10 / 5` | `10 / 5` | **`0`** | **100% disjunto** de `B1`, `C1`, `C2` |
-| **`Option_B3`** | **B** (Intervención Validada — Consenso Unánime 6 Modelos) | `candidate_optionB_inductive_unanimous_consensus.csv` | `03d88c4aa23eee39deaf178e147a6a2ad001d4412292296ede39f7d4251e8a87` | **`18`** | `17 / 1` | `10 / 8` | **`0`** | `11` de `B1` + `7` de `B2`; **100% disjunto** de `C1`, `C2` |
-| **`Option_C1`** | **C** (Sonda Exploratoria — 20 New Sellers Texto Limpio) | `candidate_sub79_new_sellers_clean_text.csv` | `81ef2f8dc4c724b0983cfed49aa008be9166320881ddff64c2aa1c926e6012ff` | **`20`** | `0 / 20` | `18 / 2` | **`0`** | **100% disjunto** de `A`, `B1`, `B2`, `B3`, `C2` |
-| **`Option_C2`** | **C** (Sonda Exploratoria — 5 Flips Margen Frontera) | `candidate_sub77_nested_margin5_unprobed.csv` | `9b07f45caaf9d6cdf063b65e35ba90187e38471c45f5511f905ea8a088a2cc92` | **`5`** | `2 / 3` | `3 / 2` | **`0`** | **100% disjunto** de `B1`, `B2`, `B3`, `C1` |
-| **`Option_D`** | **D** (Constructor Contingente / Respaldo `submission_48`) | `src/eval_20261030/build_from_scores.py` | Verificado en runtime | Unión disjunta de bloques con `delta > 0` | Según bloques ganadores | Según bloques ganadores | **`0`** | Rechaza solapes no anidados y duplicados |
+### Matriz de Auditoría Cruzada contra las 33 Submissions Históricas Disponibles
 
-### Recomendación para el Primer Envío (sujeta a decisión final de Codex y Ariel)
-- **Opción recomendada para el Cupo 1:** **`Option_B1` (`candidate_sub80_seen_sellers_conservative_unprobed.csv`, `15` flips en `seen_sellers`)** o **`Option_B3` (`candidate_optionB_inductive_unanimous_consensus.csv`, `18` flips con unanimidad entre modelos históricos y nuevos inductivos 70k)**.
-- **Justificación:** La compuerta de consenso en `seen_sellers` obtiene ganancia neta positiva en las 3 semillas de `confirm` (`+5` en 2026 con `64.7%` de precisión de flips, `+5` en 314159 con `77.8%` de precisión, `+3` en 20261030 con `61.5%` de precisión), opera en el estrato donde `seen_sellers` representa el `71.62%` del test y donde todos los cortes externos son positivos, tiene `0%` de solapamiento con `72–75`, y evita el riesgo de varianza de umbral en `new_sellers` que afecta al reemplazo completo de `1,033` ítems (`Option_A`). Si se elige `B1`, puede componerse limpiamente con `B2` (`15` flips 100% disjuntos), `C1` (`20` flips disjuntos) y `C2` (`5` flips disjuntos) en `build_from_scores.py`.
+| Código | Clase | Archivo en `submissions/20261030/` | SHA256 | Flips vs `48` | `Seen` / `New` | Solape Sondas `72–75` | Solape `Sub 64` (1,774) | Solape `Sub 71` (1,338) | Solape `Sub 65` (141) | Clasificación Epistemológica |
+| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **`Option_A`** | **A** (Predicción Completa Modelo Inductivo 70k) | `candidate_optionA_full_inductive_blend_bag3.csv` | `d93af8e75bde...` | **`1,033`** | `664 / 369` | `13` (`0/1/7/5`) | `658` (`63.7%`) | `784` (`75.9%`) | `61` | Modelo Completo (Development-Grade) |
+| **`Option_B1`** | **B** (Intervención Acotada — Core 15 Seen Sellers) | `candidate_sub80_seen_sellers_conservative_unprobed.csv` | `23415a6147e0...` | **`15`** | `15 / 0` | **`0`** | `15` (`100%`) | `13` (`86.7%`) | `0` | Intervención Candidata Exploratoria |
+| **`Option_B2`** | **B** (Intervención Acotada — Disjoint 15 Consensus) | `candidate_sub78_consensus_disjoint15_unprobed.csv` | `98e1913752df...` | **`15`** | `10 / 5` | **`0`** | `15` (`100%`) | `15` (`100%`) | `5` | Intervención Candidata Exploratoria |
+| **`Option_B3`** | **B** (Intervención Acotada — Consenso Cross-Pipeline) | `candidate_optionB_inductive_unanimous_consensus.csv` | `03d88c4aa23e...` | **`18`** | `17 / 1` | **`0`** | `18` (`100%`) | `18` (`100%`) | `1` | Intervención Candidata Exploratoria |
+| **`Option_C1`** | **C** (Sonda Exploratoria — 20 New Sellers Texto Limpio) | `candidate_sub79_new_sellers_clean_text.csv` | `81ef2f8dc4c7...` | **`20`** | `0 / 20` | **`0`** | **`0` (`0%`)** | **`0` (`0%`)** | **`0`** | Sonda Diagnóstica 100% Inédita |
+| **`Option_C2`** | **C** (Sonda Exploratoria — 5 Flips Margen Frontera) | `candidate_sub77_nested_margin5_unprobed.csv` | `9b07f45caaf9...` | **`5`** | `2 / 3` | **`0`** | `5` (`100%`) | `5` (`100%`) | `3` | Sonda Diagnóstica Exploratoria |
+| **`Option_D`** | **D** (Constructor Contingente / Respaldo `48`) | `src/eval_20261030/build_from_scores.py` | En runtime | Según bloques | Según bloques | **`0`** | Según bloques | Según bloques | Según bloques | Constructor Algorítmico Verificado |
+
+> [!NOTE]
+> - **Aclaración sobre "unprobed":** Las opciones B1, B2, B3 y C2 son 100% disjuntas de las pequeñas sondas aisladas `72–75`, pero sus flips están contenidos en las corridas de modelo completo previas `Sub 64` y `Sub 71`. Únicamente `Option_C1` tiene 0% de solapamiento con todas las 33 submissions históricas del repositorio.
+> - **Reclasificación de B3:** B3 deriva de la unión B1 U B2 filtrada por el refit inductivo 70k y contiene 1 new seller; no equivale a la regla de margen estricta de `confirm`. Se clasifica como intervención exploratoria acotada.
+
+---
+
+## 4. Estado de Automatización y Protocolo Operativo
+
+1. **Monitoreo y Revisión:** La sincronización periódica se efectúa en cada ciclo activo del entorno Antigravity / shell powershell.
+2. **Concurrencia:** Controlada mediante `coordination/CHECKPOINT_STATE.json` y `results/intensive_20261030/active_training_lock.json`.
+3. **Regla de Cero Subidas:** Ninguna submission se sube a Kaggle. Todos los artefactos quedan versionados localmente y pusheados a la rama de coordinación para la revisión y decisión final de Ariel y Codex.
+
