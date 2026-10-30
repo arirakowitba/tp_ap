@@ -1,0 +1,127 @@
+{
+  "timestamp_utc": "2026-10-30T18:20:00Z",
+  "seeds": [
+    2026,
+    314159,
+    20261030
+  ],
+  "variants": [
+    "variant_a_baseline_group_te",
+    "variant_b_row_oof_seller_te",
+    "variant_c_cb_native_cat_seller",
+    "variant_d_row_oof_te_plus_cat_seller"
+  ],
+  "results": {
+    "variant_a_baseline_group_te": {
+      "2026": {
+        "confirm_acc_050": 0.92553,
+        "confirm_seen_acc_050": 0.95772,
+        "confirm_new_acc_050": 0.91158,
+        "confirm_log_loss": 0.18552,
+        "std_fit_seller": 0.0,
+        "n_uniq_fit_seller": 1
+      },
+      "314159": {
+        "confirm_acc_050": 0.92723,
+        "confirm_seen_acc_050": 0.95748,
+        "confirm_new_acc_050": 0.91435,
+        "confirm_log_loss": 0.18206,
+        "std_fit_seller": 0.0,
+        "n_uniq_fit_seller": 1
+      },
+      "20261030": {
+        "confirm_acc_050": 0.92733,
+        "confirm_seen_acc_050": 0.95982,
+        "confirm_new_acc_050": 0.91319,
+        "confirm_log_loss": 0.18134,
+        "std_fit_seller": 0.0,
+        "n_uniq_fit_seller": 1
+      }
+    },
+    "variant_b_row_oof_seller_te": {
+      "2026": {
+        "confirm_acc_050": 0.92522,
+        "confirm_seen_acc_050": 0.9567,
+        "confirm_new_acc_050": 0.91158,
+        "confirm_log_loss": 0.18585,
+        "std_fit_seller": 0.2113,
+        "n_uniq_fit_seller": 748
+      },
+      "314159": {
+        "confirm_acc_050": 0.92738,
+        "confirm_seen_acc_050": 0.95774,
+        "confirm_new_acc_050": 0.91446,
+        "confirm_log_loss": 0.18224,
+        "std_fit_seller": 0.212,
+        "n_uniq_fit_seller": 743
+      },
+      "20261030": {
+        "confirm_acc_050": 0.92749,
+        "confirm_seen_acc_050": 0.96034,
+        "confirm_new_acc_050": 0.91319,
+        "confirm_log_loss": 0.18167,
+        "std_fit_seller": 0.21245,
+        "n_uniq_fit_seller": 737
+      }
+    },
+    "variant_c_cb_native_cat_seller": {
+      "2026": {
+        "confirm_acc_050": 0.92553,
+        "confirm_seen_acc_050": 0.95772,
+        "confirm_new_acc_050": 0.91158,
+        "confirm_log_loss": 0.18552,
+        "std_fit_seller": 0.0,
+        "n_uniq_fit_seller": 1
+      },
+      "314159": {
+        "confirm_acc_050": 0.92723,
+        "confirm_seen_acc_050": 0.95748,
+        "confirm_new_acc_050": 0.91435,
+        "confirm_log_loss": 0.18206,
+        "std_fit_seller": 0.0,
+        "n_uniq_fit_seller": 1
+      },
+      "20261030": {
+        "confirm_acc_050": 0.92733,
+        "confirm_seen_acc_050": 0.95982,
+        "confirm_new_acc_050": 0.91319,
+        "confirm_log_loss": 0.18134,
+        "std_fit_seller": 0.0,
+        "n_uniq_fit_seller": 1
+      }
+    },
+    "variant_d_row_oof_te_plus_cat_seller": {
+      "2026": {
+        "confirm_acc_050": 0.92522,
+        "confirm_seen_acc_050": 0.9567,
+        "confirm_new_acc_050": 0.91158,
+        "confirm_log_loss": 0.18585,
+        "std_fit_seller": 0.2113,
+        "n_uniq_fit_seller": 748
+      },
+      "314159": {
+        "confirm_acc_050": 0.92738,
+        "confirm_seen_acc_050": 0.95774,
+        "confirm_new_acc_050": 0.91446,
+        "confirm_log_loss": 0.18224,
+        "std_fit_seller": 0.212,
+        "n_uniq_fit_seller": 743
+      },
+      "20261030": {
+        "confirm_acc_050": 0.92749,
+        "confirm_seen_acc_050": 0.96034,
+        "confirm_new_acc_050": 0.91319,
+        "confirm_log_loss": 0.18167,
+        "std_fit_seller": 0.21245,
+        "n_uniq_fit_seller": 737
+      }
+    }
+  },
+  "conclusion": {
+    "mean_delta_acc_variant_b_vs_a": 0.0,
+    "mean_delta_log_loss_variant_b_vs_a": 0.00033,
+    "variant_c_identical_to_variant_a": true,
+    "variant_d_identical_to_variant_b": true,
+    "recommendation": "DO_NOT_PROMOTE_ROW_OOF_SELLER_TE: zero net accuracy gain across 3 seeds and consistent log loss degradation (+0.00033). Explains Sub 53 regression."
+  }
+}
