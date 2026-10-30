@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-10-30 01:49:14",
-  "runtime_seconds": 4.24,
+  "timestamp": "2026-10-30 05:59:18",
+  "runtime_seconds": 5.21,
   "baseline_s48_sha256": "3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722",
   "historical_submissions_audit": {
     "total_available": 33,
@@ -1853,6 +1853,665 @@
         29552
       ]
     },
+    "Option_B4_Single_Frozen_Intervention_Rule": {
+      "option_class": "B (Single Frozen Algorithmic Intervention Rule on Seen Sellers)",
+      "path": "submissions/20261030/candidate_single_intervention_rule_on_48.csv",
+      "sha256": "51ea764c8b69745001eed43f33f79ad960ca8553707294f69e4086d21d9da534",
+      "baseline_reference": "submission_48 (.94633, 3f8d08e0...)",
+      "hypothesis": "Single frozen algorithmic consensus rule (is_seen == 1 AND pred_cb_bag3 != s48 AND pred_lgb_bag3 != s48 AND pred_cb_bag3 == pred_lgb_bag3 AND |p_blend - 0.50| >= 0.06). Evaluated in confirm with net gains across all 3 seeds (+6, +2, +2 = +10, 70.8% precision). Epistemological status: EXPLORATORY_TRANSFER_PROBE_AGAINST_48 (not validated vs 48).",
+      "epistemological_status": "EXPLORATORY_TRANSFER_PROBE_AGAINST_48",
+      "n_flips_vs_s48": 453,
+      "seen_seller_flips": 453,
+      "new_seller_flips": 0,
+      "used_to_new": 196,
+      "new_to_used": 257,
+      "overlap_with_probes_72_75_count": 12,
+      "overlap_with_probes_72_75_ids": [
+        560,
+        5390,
+        7252,
+        7914,
+        8227,
+        9327,
+        11239,
+        14405,
+        15392,
+        19313,
+        19853,
+        25060
+      ],
+      "historical_cross_audit": {
+        "sub_15": {
+          "historical_flips_vs_48": 149,
+          "shared_flips_on_48": 17,
+          "shared_pct_of_candidate": 3.75,
+          "total_disagreements_30k": 568,
+          "shared_ids": [
+            3081,
+            6534,
+            7252,
+            9112,
+            10961,
+            12786,
+            12922,
+            13037,
+            14405,
+            15902,
+            21122,
+            22031,
+            24056,
+            25185,
+            27141,
+            27683,
+            29896
+          ]
+        },
+        "sub_16": {
+          "historical_flips_vs_48": 151,
+          "shared_flips_on_48": 16,
+          "shared_pct_of_candidate": 3.53,
+          "total_disagreements_30k": 572,
+          "shared_ids": [
+            3081,
+            6534,
+            7252,
+            9112,
+            10961,
+            12786,
+            13037,
+            14405,
+            15184,
+            15902,
+            21122,
+            24056,
+            25185,
+            27683,
+            28054,
+            29896
+          ]
+        },
+        "sub_17": {
+          "historical_flips_vs_48": 181,
+          "shared_flips_on_48": 30,
+          "shared_pct_of_candidate": 6.62,
+          "total_disagreements_30k": 574,
+          "shared_ids": [
+            18,
+            1398,
+            3081,
+            6534,
+            7252,
+            8428,
+            9112,
+            10961,
+            12786,
+            13037,
+            14405,
+            15902,
+            15948,
+            17027,
+            20720,
+            21122,
+            22226,
+            22352,
+            22398,
+            22485
+          ]
+        },
+        "sub_18": {
+          "historical_flips_vs_48": 243,
+          "shared_flips_on_48": 35,
+          "shared_pct_of_candidate": 7.73,
+          "total_disagreements_30k": 626,
+          "shared_ids": [
+            18,
+            1398,
+            3081,
+            6534,
+            7252,
+            8428,
+            9112,
+            10961,
+            12786,
+            12922,
+            13037,
+            14405,
+            15184,
+            15902,
+            15948,
+            17027,
+            20720,
+            21122,
+            22031,
+            22226
+          ]
+        },
+        "sub_19": {
+          "historical_flips_vs_48": 243,
+          "shared_flips_on_48": 26,
+          "shared_pct_of_candidate": 5.74,
+          "total_disagreements_30k": 644,
+          "shared_ids": [
+            3081,
+            4218,
+            6534,
+            7252,
+            7715,
+            9112,
+            10961,
+            12786,
+            12922,
+            13037,
+            14405,
+            15184,
+            15902,
+            19318,
+            21122,
+            22031,
+            24056,
+            24447,
+            25185,
+            26178
+          ]
+        },
+        "sub_20": {
+          "historical_flips_vs_48": 369,
+          "shared_flips_on_48": 54,
+          "shared_pct_of_candidate": 11.92,
+          "total_disagreements_30k": 714,
+          "shared_ids": [
+            18,
+            1398,
+            2454,
+            4049,
+            4218,
+            6299,
+            6534,
+            7252,
+            7715,
+            8381,
+            8428,
+            8461,
+            9112,
+            10889,
+            10961,
+            12414,
+            12720,
+            12786,
+            12922,
+            13037
+          ]
+        },
+        "sub_21": {
+          "historical_flips_vs_48": 151,
+          "shared_flips_on_48": 20,
+          "shared_pct_of_candidate": 4.42,
+          "total_disagreements_30k": 564,
+          "shared_ids": [
+            2454,
+            4049,
+            6534,
+            7252,
+            8381,
+            8461,
+            9112,
+            10961,
+            12414,
+            12786,
+            13037,
+            14405,
+            15902,
+            19313,
+            19657,
+            21122,
+            23341,
+            25895,
+            26323,
+            27013
+          ]
+        },
+        "sub_22": {
+          "historical_flips_vs_48": 183,
+          "shared_flips_on_48": 25,
+          "shared_pct_of_candidate": 5.52,
+          "total_disagreements_30k": 586,
+          "shared_ids": [
+            2454,
+            3081,
+            4049,
+            6299,
+            6534,
+            7252,
+            8381,
+            8461,
+            9112,
+            10889,
+            10961,
+            12414,
+            12786,
+            13037,
+            14405,
+            15902,
+            19657,
+            21122,
+            23341,
+            24056
+          ]
+        },
+        "sub_23": {
+          "historical_flips_vs_48": 183,
+          "shared_flips_on_48": 27,
+          "shared_pct_of_candidate": 5.96,
+          "total_disagreements_30k": 582,
+          "shared_ids": [
+            2454,
+            3081,
+            4049,
+            6534,
+            7252,
+            8381,
+            8461,
+            9112,
+            10961,
+            12414,
+            12720,
+            12786,
+            13037,
+            13460,
+            14212,
+            14405,
+            15902,
+            16846,
+            19657,
+            20657
+          ]
+        },
+        "sub_24": {
+          "historical_flips_vs_48": 119,
+          "shared_flips_on_48": 14,
+          "shared_pct_of_candidate": 3.09,
+          "total_disagreements_30k": 544,
+          "shared_ids": [
+            3081,
+            6534,
+            7252,
+            9112,
+            10961,
+            12786,
+            13037,
+            14405,
+            15902,
+            21122,
+            24056,
+            25185,
+            27683,
+            29896
+          ]
+        },
+        "sub_25": {
+          "historical_flips_vs_48": 135,
+          "shared_flips_on_48": 17,
+          "shared_pct_of_candidate": 3.75,
+          "total_disagreements_30k": 554,
+          "shared_ids": [
+            3081,
+            6534,
+            7252,
+            9112,
+            10961,
+            12786,
+            13037,
+            14405,
+            15902,
+            19313,
+            21122,
+            24056,
+            25185,
+            25895,
+            27013,
+            27683,
+            29896
+          ]
+        },
+        "sub_26": {
+          "historical_flips_vs_48": 103,
+          "shared_flips_on_48": 9,
+          "shared_pct_of_candidate": 1.99,
+          "total_disagreements_30k": 538,
+          "shared_ids": [
+            6534,
+            7252,
+            9112,
+            10961,
+            12786,
+            13037,
+            14405,
+            15902,
+            21122
+          ]
+        },
+        "sub_48": {
+          "historical_flips_vs_48": 0,
+          "shared_flips_on_48": 0,
+          "shared_pct_of_candidate": 0.0,
+          "total_disagreements_30k": 453,
+          "shared_ids": []
+        },
+        "sub_57": {
+          "historical_flips_vs_48": 20,
+          "shared_flips_on_48": 0,
+          "shared_pct_of_candidate": 0.0,
+          "total_disagreements_30k": 473,
+          "shared_ids": []
+        },
+        "sub_58": {
+          "historical_flips_vs_48": 2,
+          "shared_flips_on_48": 0,
+          "shared_pct_of_candidate": 0.0,
+          "total_disagreements_30k": 455,
+          "shared_ids": []
+        },
+        "sub_59": {
+          "historical_flips_vs_48": 67,
+          "shared_flips_on_48": 2,
+          "shared_pct_of_candidate": 0.44,
+          "total_disagreements_30k": 516,
+          "shared_ids": [
+            9631,
+            29967
+          ]
+        },
+        "sub_60": {
+          "historical_flips_vs_48": 252,
+          "shared_flips_on_48": 12,
+          "shared_pct_of_candidate": 2.65,
+          "total_disagreements_30k": 681,
+          "shared_ids": [
+            1760,
+            2114,
+            2159,
+            3005,
+            6237,
+            8901,
+            14123,
+            14157,
+            14475,
+            15754,
+            25287,
+            27879
+          ]
+        },
+        "sub_61": {
+          "historical_flips_vs_48": 252,
+          "shared_flips_on_48": 8,
+          "shared_pct_of_candidate": 1.77,
+          "total_disagreements_30k": 689,
+          "shared_ids": [
+            11548,
+            11952,
+            15393,
+            19457,
+            23453,
+            24129,
+            27020,
+            28259
+          ]
+        },
+        "sub_62": {
+          "historical_flips_vs_48": 316,
+          "shared_flips_on_48": 3,
+          "shared_pct_of_candidate": 0.66,
+          "total_disagreements_30k": 763,
+          "shared_ids": [
+            48,
+            3766,
+            13618
+          ]
+        },
+        "sub_63": {
+          "historical_flips_vs_48": 1518,
+          "shared_flips_on_48": 161,
+          "shared_pct_of_candidate": 35.54,
+          "total_disagreements_30k": 1649,
+          "shared_ids": [
+            18,
+            48,
+            887,
+            1343,
+            1398,
+            1578,
+            1734,
+            1760,
+            1936,
+            2040,
+            2057,
+            2114,
+            2159,
+            2454,
+            2506,
+            3005,
+            3069,
+            3081,
+            3644,
+            3647
+          ]
+        },
+        "sub_64": {
+          "historical_flips_vs_48": 1774,
+          "shared_flips_on_48": 332,
+          "shared_pct_of_candidate": 73.29,
+          "total_disagreements_30k": 1563,
+          "shared_ids": [
+            18,
+            377,
+            406,
+            560,
+            638,
+            1163,
+            1232,
+            1398,
+            1555,
+            1556,
+            1578,
+            1734,
+            1795,
+            1936,
+            2057,
+            2114,
+            2349,
+            2454,
+            2503,
+            2506
+          ]
+        },
+        "sub_65": {
+          "historical_flips_vs_48": 141,
+          "shared_flips_on_48": 0,
+          "shared_pct_of_candidate": 0.0,
+          "total_disagreements_30k": 594,
+          "shared_ids": []
+        },
+        "sub_66": {
+          "historical_flips_vs_48": 10,
+          "shared_flips_on_48": 0,
+          "shared_pct_of_candidate": 0.0,
+          "total_disagreements_30k": 463,
+          "shared_ids": []
+        },
+        "sub_67": {
+          "historical_flips_vs_48": 10,
+          "shared_flips_on_48": 0,
+          "shared_pct_of_candidate": 0.0,
+          "total_disagreements_30k": 463,
+          "shared_ids": []
+        },
+        "sub_68": {
+          "historical_flips_vs_48": 7,
+          "shared_flips_on_48": 6,
+          "shared_pct_of_candidate": 1.32,
+          "total_disagreements_30k": 448,
+          "shared_ids": [
+            5390,
+            8227,
+            15392,
+            19853,
+            25060,
+            29668
+          ]
+        },
+        "sub_69": {
+          "historical_flips_vs_48": 8,
+          "shared_flips_on_48": 7,
+          "shared_pct_of_candidate": 1.55,
+          "total_disagreements_30k": 447,
+          "shared_ids": [
+            560,
+            7252,
+            7914,
+            9327,
+            11239,
+            14405,
+            19313
+          ]
+        },
+        "sub_70": {
+          "historical_flips_vs_48": 20,
+          "shared_flips_on_48": 0,
+          "shared_pct_of_candidate": 0.0,
+          "total_disagreements_30k": 473,
+          "shared_ids": []
+        },
+        "sub_71": {
+          "historical_flips_vs_48": 1338,
+          "shared_flips_on_48": 390,
+          "shared_pct_of_candidate": 86.09,
+          "total_disagreements_30k": 1011,
+          "shared_ids": [
+            18,
+            47,
+            377,
+            406,
+            560,
+            626,
+            638,
+            1163,
+            1232,
+            1343,
+            1398,
+            1555,
+            1556,
+            1578,
+            1734,
+            1760,
+            1795,
+            1936,
+            2057,
+            2114
+          ]
+        },
+        "sub_72": {
+          "historical_flips_vs_48": 8,
+          "shared_flips_on_48": 0,
+          "shared_pct_of_candidate": 0.0,
+          "total_disagreements_30k": 461,
+          "shared_ids": []
+        },
+        "sub_73": {
+          "historical_flips_vs_48": 7,
+          "shared_flips_on_48": 0,
+          "shared_pct_of_candidate": 0.0,
+          "total_disagreements_30k": 460,
+          "shared_ids": []
+        },
+        "sub_74": {
+          "historical_flips_vs_48": 8,
+          "shared_flips_on_48": 7,
+          "shared_pct_of_candidate": 1.55,
+          "total_disagreements_30k": 447,
+          "shared_ids": [
+            560,
+            7252,
+            7914,
+            9327,
+            11239,
+            14405,
+            19313
+          ]
+        },
+        "sub_75": {
+          "historical_flips_vs_48": 5,
+          "shared_flips_on_48": 5,
+          "shared_pct_of_candidate": 1.1,
+          "total_disagreements_30k": 448,
+          "shared_ids": [
+            5390,
+            8227,
+            15392,
+            19853,
+            25060
+          ]
+        },
+        "sub_76": {
+          "historical_flips_vs_48": 0,
+          "shared_flips_on_48": 0,
+          "shared_pct_of_candidate": 0.0,
+          "total_disagreements_30k": 453,
+          "shared_ids": []
+        }
+      },
+      "flipped_ids_1based": [
+        18,
+        47,
+        48,
+        377,
+        406,
+        560,
+        626,
+        638,
+        762,
+        887,
+        1163,
+        1232,
+        1343,
+        1398,
+        1464,
+        1555,
+        1556,
+        1578,
+        1734,
+        1760,
+        1795,
+        1936,
+        2040,
+        2057,
+        2114,
+        2159,
+        2220,
+        2349,
+        2454,
+        2503,
+        2506,
+        2584,
+        2783,
+        2832,
+        2874,
+        3005,
+        3056,
+        3069,
+        3081,
+        3118,
+        3238,
+        3251,
+        3290,
+        3302,
+        3417,
+        3487,
+        3562,
+        3644,
+        3647,
+        3766
+      ]
+    },
     "Option_C1_Exploratory_NewSellers20_Sub79": {
       "option_class": "C (Exploratory Diagnostic Probe \u2014 20 New Sellers Clean Text)",
       "path": "submissions\\20261030\\candidate_sub79_new_sellers_clean_text.csv",
@@ -2423,6 +3082,13 @@
       "is_disjoint": false,
       "is_nested": true
     },
+    "Option_A_Full_Inductive_Blend_Bag3__vs__Option_B4_Single_Frozen_Intervention_Rule": {
+      "n_first": 1033,
+      "n_second": 453,
+      "n_intersection": 453,
+      "is_disjoint": false,
+      "is_nested": true
+    },
     "Option_A_Full_Inductive_Blend_Bag3__vs__Option_C1_Exploratory_NewSellers20_Sub79": {
       "n_first": 1033,
       "n_second": 20,
@@ -2451,6 +3117,13 @@
       "is_disjoint": false,
       "is_nested": false
     },
+    "Option_B1_Seen15_Consensus_Sub80__vs__Option_B4_Single_Frozen_Intervention_Rule": {
+      "n_first": 15,
+      "n_second": 453,
+      "n_intersection": 10,
+      "is_disjoint": false,
+      "is_nested": false
+    },
     "Option_B1_Seen15_Consensus_Sub80__vs__Option_C1_Exploratory_NewSellers20_Sub79": {
       "n_first": 15,
       "n_second": 20,
@@ -2472,6 +3145,13 @@
       "is_disjoint": false,
       "is_nested": false
     },
+    "Option_B2_Disjoint15_Consensus_Sub78__vs__Option_B4_Single_Frozen_Intervention_Rule": {
+      "n_first": 15,
+      "n_second": 453,
+      "n_intersection": 6,
+      "is_disjoint": false,
+      "is_nested": false
+    },
     "Option_B2_Disjoint15_Consensus_Sub78__vs__Option_C1_Exploratory_NewSellers20_Sub79": {
       "n_first": 15,
       "n_second": 20,
@@ -2486,6 +3166,13 @@
       "is_disjoint": true,
       "is_nested": false
     },
+    "Option_B3_Inductive_CrossPipeline_Consensus__vs__Option_B4_Single_Frozen_Intervention_Rule": {
+      "n_first": 18,
+      "n_second": 453,
+      "n_intersection": 16,
+      "is_disjoint": false,
+      "is_nested": false
+    },
     "Option_B3_Inductive_CrossPipeline_Consensus__vs__Option_C1_Exploratory_NewSellers20_Sub79": {
       "n_first": 18,
       "n_second": 20,
@@ -2498,6 +3185,20 @@
       "n_second": 5,
       "n_intersection": 0,
       "is_disjoint": true,
+      "is_nested": false
+    },
+    "Option_B4_Single_Frozen_Intervention_Rule__vs__Option_C1_Exploratory_NewSellers20_Sub79": {
+      "n_first": 453,
+      "n_second": 20,
+      "n_intersection": 0,
+      "is_disjoint": true,
+      "is_nested": false
+    },
+    "Option_B4_Single_Frozen_Intervention_Rule__vs__Option_C2_Exploratory_Margin5_Sub77": {
+      "n_first": 453,
+      "n_second": 5,
+      "n_intersection": 1,
+      "is_disjoint": false,
       "is_nested": false
     },
     "Option_C1_Exploratory_NewSellers20_Sub79__vs__Option_C2_Exploratory_Margin5_Sub77": {

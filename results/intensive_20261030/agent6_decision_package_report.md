@@ -1,6 +1,6 @@
 # Agente 6 — Paquete de Decisión y Auditoría Cruzada de Submissions Históricas (CX-0002)
 
-**Fecha:** 2026-10-30 01:49:14  
+**Fecha:** 2026-10-30 05:59:18  
 **Referencia base (`submission_48`):** `.94633` | SHA256 `3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722`  
 **Manifiesto JSON:** [`agent6_decision_menu.json`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent6_decision_menu.json)  
 **Auditoría cruzada 01–76:** [`agent6_historical_submissions_cross_audit.csv`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent6_historical_submissions_cross_audit.csv)  
@@ -26,6 +26,7 @@
 | **`Option_B1_Seen15_Consensus_Sub80`** | **`15`** | `15 / 0` | `0` | `15` (`100.0%`) | `13` (`86.7%`) | `0` | `EXPLORATORY_CANDIDATE_INTERVENTION` |
 | **`Option_B2_Disjoint15_Consensus_Sub78`** | **`15`** | `10 / 5` | `0` | `15` (`100.0%`) | `15` (`100.0%`) | `5` | `EXPLORATORY_CANDIDATE_INTERVENTION` |
 | **`Option_B3_Inductive_CrossPipeline_Consensus`** | **`18`** | `17 / 1` | `0` | `18` (`100.0%`) | `18` (`100.0%`) | `1` | `EXPLORATORY_CANDIDATE_INTERVENTION` |
+| **`Option_B4_Single_Frozen_Intervention_Rule`** | **`453`** | `453 / 0` | `12` | `332` (`73.3%`) | `390` (`86.1%`) | `0` | `EXPLORATORY_TRANSFER_PROBE_AGAINST_48` |
 | **`Option_C1_Exploratory_NewSellers20_Sub79`** | **`20`** | `0 / 20` | `0` | `0` (`0.0%`) | `0` (`0.0%`) | `0` | `EXPLORATORY_DIAGNOSTIC_PROBE` |
 | **`Option_C2_Exploratory_Margin5_Sub77`** | **`5`** | `2 / 3` | `0` | `5` (`100.0%`) | `5` (`100.0%`) | `3` | `EXPLORATORY_DIAGNOSTIC_PROBE` |
 
@@ -48,5 +49,6 @@
 | **`Option_B1_Seen15_Consensus_Sub80`** | B (Restricted Candidate Intervention — Core 15 Seen Sellers) | `submissions\20261030\candidate_sub80_seen_sellers_conservative_unprobed.csv` | `23415a6147e0...` | **`15`** | `15 / 0` | `9 / 6` | `EXPLORATORY_CANDIDATE_INTERVENTION` |
 | **`Option_B2_Disjoint15_Consensus_Sub78`** | B (Restricted Candidate Intervention — Disjoint 15 Consensus) | `submissions\20261030\candidate_sub78_consensus_disjoint15_unprobed.csv` | `98e1913752df...` | **`15`** | `10 / 5` | `10 / 5` | `EXPLORATORY_CANDIDATE_INTERVENTION` |
 | **`Option_B3_Inductive_CrossPipeline_Consensus`** | B (Restricted Candidate Intervention — Cross-Pipeline Consensus, 18 Flips) | `submissions\20261030\candidate_optionB_inductive_unanimous_consensus.csv` | `03d88c4aa23e...` | **`18`** | `17 / 1` | `10 / 8` | `EXPLORATORY_CANDIDATE_INTERVENTION` |
+| **`Option_B4_Single_Frozen_Intervention_Rule`** | B (Single Frozen Algorithmic Intervention Rule on Seen Sellers) | `submissions/20261030/candidate_single_intervention_rule_on_48.csv` | `51ea764c8b69...` | **`453`** | `453 / 0` | `196 / 257` | `EXPLORATORY_TRANSFER_PROBE_AGAINST_48` |
 | **`Option_C1_Exploratory_NewSellers20_Sub79`** | C (Exploratory Diagnostic Probe — 20 New Sellers Clean Text) | `submissions\20261030\candidate_sub79_new_sellers_clean_text.csv` | `81ef2f8dc4c7...` | **`20`** | `0 / 20` | `18 / 2` | `EXPLORATORY_DIAGNOSTIC_PROBE` |
 | **`Option_C2_Exploratory_Margin5_Sub77`** | C (Exploratory Diagnostic Probe — 5 Boundary Flips) | `submissions\20261030\candidate_sub77_nested_margin5_unprobed.csv` | `9b07f45caaf9...` | **`5`** | `2 / 3` | `3 / 2` | `EXPLORATORY_DIAGNOSTIC_PROBE` |

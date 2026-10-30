@@ -257,6 +257,18 @@ def main():
             ),
             "epistemological_status": "EXPLORATORY_CANDIDATE_INTERVENTION",
         },
+        "Option_B4_Single_Frozen_Intervention_Rule": {
+            "option_class": "B (Single Frozen Algorithmic Intervention Rule on Seen Sellers)",
+            "path": "submissions/20261030/candidate_single_intervention_rule_on_48.csv",
+            "conds": load_sub_csv(CAND_DIR / "candidate_single_intervention_rule_on_48.csv"),
+            "hypothesis": (
+                "Single frozen algorithmic consensus rule (is_seen == 1 AND pred_cb_bag3 != s48 AND pred_lgb_bag3 != s48 "
+                "AND pred_cb_bag3 == pred_lgb_bag3 AND |p_blend - 0.50| >= 0.06). "
+                "Evaluated in confirm with net gains across all 3 seeds (+6, +2, +2 = +10, 70.8% precision). "
+                "Epistemological status: EXPLORATORY_TRANSFER_PROBE_AGAINST_48 (not validated vs 48)."
+            ),
+            "epistemological_status": "EXPLORATORY_TRANSFER_PROBE_AGAINST_48",
+        },
         "Option_C1_Exploratory_NewSellers20_Sub79": {
             "option_class": "C (Exploratory Diagnostic Probe — 20 New Sellers Clean Text)",
             "path": str(c1_path.relative_to(ROOT)),

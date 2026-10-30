@@ -13,6 +13,7 @@ import datetime
 import json
 import os
 import shutil
+import stat
 import sys
 import time
 from dataclasses import asdict, dataclass
@@ -25,6 +26,28 @@ except ImportError:
     psutil = None
 
 DEFAULT_LOCK_DIR = Path(__file__).resolve().parent.parent / "coordination" / ".project_lock"
+
+
+def _force_rmdir(path: Path) -> None:
+    """Removes a directory tree, clearing read-only attributes if needed (e.g. OneDrive on Windows)."""
+    if not path.exists():
+        return
+
+    def _handle_remove_readonly(func, p, exc_info):
+        try:
+            os.chmod(p, stat.S_IWRITE)
+            func(p)
+        except Exception:
+            pass
+
+    try:
+        os.chmod(path, stat.S_IWRITE)
+    except Exception:
+        pass
+    try:
+        shutil.rmtree(path, onerror=_handle_remove_readonly)
+    except Exception:
+        pass
 
 
 def _now_iso_utc() -> str:
@@ -196,6 +219,10 @@ class ProjectLock:
 
         try:
             if self.info_file.exists():
+                try:
+                    os.chmod(self.info_file, stat.S_IWRITE)
+                except Exception:
+                    pass
                 self.info_file.unlink(missing_ok=True)
             if self.lock_dir.exists():
                 os.rmdir(self.lock_dir)
@@ -204,7 +231,7 @@ class ProjectLock:
         except Exception:
             # Fallback cleanup
             try:
-                shutil.rmtree(self.lock_dir, ignore_errors=True)
+                _force_rmdir(self.lock_dir)
                 self._acquired = False
                 return True
             except Exception:
@@ -213,9 +240,13 @@ class ProjectLock:
     def _clean_stale_and_retry(self) -> bool:
         try:
             if self.info_file.exists():
+                try:
+                    os.chmod(self.info_file, stat.S_IWRITE)
+                except Exception:
+                    pass
                 self.info_file.unlink(missing_ok=True)
             if self.lock_dir.exists():
-                shutil.rmtree(self.lock_dir, ignore_errors=True)
+                _force_rmdir(self.lock_dir)
         except Exception:
             return False
 
