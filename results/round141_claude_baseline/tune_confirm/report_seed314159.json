@@ -1,0 +1,19 @@
+{
+  "mode": "split_tc",
+  "seed": 314159,
+  "n_dev": 44684,
+  "n_tune": 12473,
+  "n_confirm": 12843,
+  "elapsed_sec": 2013,
+  "env": {
+    "catboost": "1.2.10",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "python": "3.13.18",
+    "threads": 2
+  },
+  "note": "fit-only training; predicts tune and confirm with the same fitted models; no metrics computed here"
+}
