@@ -1,0 +1,5680 @@
+{
+  "timestamp": "2026-10-30 00:55:59",
+  "total_runtime_seconds": 861.75,
+  "frozen_reference_config": "0.75 CatBoost + 0.25 LightGBM",
+  "non_independence_notice": "Seeds 2026, 314159, and 20261030 share training rows and overlap in confirm rows (~18.1%-18.6% pairwise confirm overlap). Gains across seeds MUST NOT be summed or treated as independent trials.",
+  "seeds": {
+    "2026": {
+      "seed": 2026,
+      "n_confirm": 12905,
+      "n_seen": 3903,
+      "n_new": 9002,
+      "selected_lgb_hist": "lgb_deep",
+      "selected_lgb_valname": "lgb_deep",
+      "paired_file": "results\\intensive_20261030\\paired_all_models_seed_2026_confirm.csv.gz",
+      "paired_file_sha256": "a184fab755b085c39a2f7ecd6fc2e91360d677bce2bcb1a8c7e0e432fab7007e",
+      "baseline_A_hist": {
+        "th_tune": 0.47000000000000003,
+        "acc_050": 0.9243703990701279,
+        "acc_tuned": 0.9239054629988377,
+        "logloss": 0.1876378137337403
+      },
+      "baseline_A_valname": {
+        "th_tune": 0.515,
+        "acc_050": 0.9244478884153429,
+        "acc_tuned": 0.924912824486633,
+        "logloss": 0.18773050411259962
+      },
+      "comparisons_vs_A_hist": {
+        "A_valname_vs_A_hist": {
+          "th_base_tune": 0.47000000000000003,
+          "th_cand_tune": 0.515,
+          "common_th_050": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9243703990701279,
+            "accuracy_cand": 0.9244478884153429,
+            "delta_accuracy": 7.748934521500939e-05,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.18773050411259962,
+            "delta_logloss": 9.269037885931142e-05,
+            "fixes": 94,
+            "breaks": 93,
+            "net": 1,
+            "bootstrap_seller_ci95": [
+              -32.0,
+              30.0
+            ],
+            "bootstrap_seller_mean": 1.104,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9559313348706123,
+              "acc_cand": 0.9577248270561107,
+              "delta_acc": 0.001793492185498402,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11907248699846679,
+              "fixes": 21,
+              "breaks": 14,
+              "net": 7
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.910686514107976,
+              "acc_cand": 0.910019995556543,
+              "delta_acc": -0.0006665185514329597,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.2174985824059189,
+              "fixes": 73,
+              "breaks": 79,
+              "net": -6
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 97,
+                "fixes": 48,
+                "breaks": 49,
+                "net": -1,
+                "precision": 0.4948453608247423
+              },
+              "new_to_used": {
+                "count": 90,
+                "fixes": 46,
+                "breaks": 44,
+                "net": 2,
+                "precision": 0.5111111111111111
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9235955056179775,
+            "delta_accuracy": -0.00030995738086014857,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.18773050411259962,
+            "delta_logloss": 9.269037885931142e-05,
+            "fixes": 93,
+            "breaks": 97,
+            "net": -4,
+            "bootstrap_seller_ci95": [
+              -33.0,
+              24.0
+            ],
+            "bootstrap_seller_mean": -3.9925,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9554189085318986,
+              "delta_acc": -0.001537279016141424,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11907248699846679,
+              "fixes": 18,
+              "breaks": 24,
+              "net": -6
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.9097978227060654,
+              "delta_acc": 0.00022217285047765323,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.2174985824059189,
+              "fixes": 75,
+              "breaks": 73,
+              "net": 2
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 96,
+                "fixes": 51,
+                "breaks": 45,
+                "net": 6,
+                "precision": 0.53125
+              },
+              "new_to_used": {
+                "count": 94,
+                "fixes": 42,
+                "breaks": 52,
+                "net": -10,
+                "precision": 0.44680851063829785
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.924912824486633,
+            "delta_accuracy": 0.001007361487795344,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.18773050411259962,
+            "delta_logloss": 9.269037885931142e-05,
+            "fixes": 113,
+            "breaks": 100,
+            "net": 13,
+            "bootstrap_seller_ci95": [
+              -19.0,
+              45.0
+            ],
+            "bootstrap_seller_mean": 13.1645,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9582372533948245,
+              "delta_acc": 0.001281065846784446,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11907248699846679,
+              "fixes": 23,
+              "breaks": 18,
+              "net": 5
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.9104643412574983,
+              "delta_acc": 0.0008886914019106129,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.2174985824059189,
+              "fixes": 90,
+              "breaks": 82,
+              "net": 8
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 164,
+                "fixes": 90,
+                "breaks": 74,
+                "net": 16,
+                "precision": 0.5487804878048781
+              },
+              "new_to_used": {
+                "count": 49,
+                "fixes": 23,
+                "breaks": 26,
+                "net": -3,
+                "precision": 0.46938775510204084
+              }
+            }
+          }
+        },
+        "LGB_hist_vs_A_hist": {
+          "th_base_tune": 0.47000000000000003,
+          "th_cand_tune": 0.51,
+          "common_th_050": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9243703990701279,
+            "accuracy_cand": 0.9249903138318482,
+            "delta_accuracy": 0.0006199147617202971,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.20529915551271263,
+            "delta_logloss": 0.017661341778972328,
+            "fixes": 190,
+            "breaks": 182,
+            "net": 8,
+            "bootstrap_seller_ci95": [
+              -42.0,
+              68.0
+            ],
+            "bootstrap_seller_mean": 7.975,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9559313348706123,
+              "acc_cand": 0.9551626953625416,
+              "delta_acc": -0.000768639508070712,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.12199622324986434,
+              "fixes": 36,
+              "breaks": 39,
+              "net": -3
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.910686514107976,
+              "acc_cand": 0.9119084647856032,
+              "delta_acc": 0.0012219506776272038,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.24141683431985514,
+              "fixes": 154,
+              "breaks": 143,
+              "net": 11
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 189,
+                "fixes": 95,
+                "breaks": 94,
+                "net": 1,
+                "precision": 0.5026455026455027
+              },
+              "new_to_used": {
+                "count": 183,
+                "fixes": 95,
+                "breaks": 88,
+                "net": 7,
+                "precision": 0.5191256830601093
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9252227818674932,
+            "delta_accuracy": 0.0013173188686554926,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.20529915551271263,
+            "delta_logloss": 0.017661341778972328,
+            "fixes": 193,
+            "breaks": 176,
+            "net": 17,
+            "bootstrap_seller_ci95": [
+              -32.0,
+              78.0
+            ],
+            "bootstrap_seller_mean": 17.163,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9559313348706123,
+              "delta_acc": -0.00102485267742769,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.12199622324986434,
+              "fixes": 34,
+              "breaks": 38,
+              "net": -4
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.9119084647856032,
+              "delta_acc": 0.00233281493001547,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.24141683431985514,
+              "fixes": 159,
+              "breaks": 138,
+              "net": 21
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 194,
+                "fixes": 106,
+                "breaks": 88,
+                "net": 18,
+                "precision": 0.5463917525773195
+              },
+              "new_to_used": {
+                "count": 175,
+                "fixes": 87,
+                "breaks": 88,
+                "net": -1,
+                "precision": 0.49714285714285716
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9254552499031383,
+            "delta_accuracy": 0.0015497869043006318,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.20529915551271263,
+            "delta_logloss": 0.017661341778972328,
+            "fixes": 196,
+            "breaks": 176,
+            "net": 20,
+            "bootstrap_seller_ci95": [
+              -31.0,
+              82.02499999999986
+            ],
+            "bootstrap_seller_mean": 19.946,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9559313348706123,
+              "delta_acc": -0.00102485267742769,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.12199622324986434,
+              "fixes": 35,
+              "breaks": 39,
+              "net": -4
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.9122417240613198,
+              "delta_acc": 0.0026660742057320608,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.24141683431985514,
+              "fixes": 161,
+              "breaks": 137,
+              "net": 24
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 233,
+                "fixes": 122,
+                "breaks": 111,
+                "net": 11,
+                "precision": 0.5236051502145923
+              },
+              "new_to_used": {
+                "count": 139,
+                "fixes": 74,
+                "breaks": 65,
+                "net": 9,
+                "precision": 0.5323741007194245
+              }
+            }
+          }
+        },
+        "LGB_valname_vs_A_hist": {
+          "th_base_tune": 0.47000000000000003,
+          "th_cand_tune": 0.42500000000000004,
+          "common_th_050": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9243703990701279,
+            "accuracy_cand": 0.9260751646648586,
+            "delta_accuracy": 0.0017047655947307616,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.2048678207849096,
+            "delta_logloss": 0.017230007051169283,
+            "fixes": 214,
+            "breaks": 192,
+            "net": 22,
+            "bootstrap_seller_ci95": [
+              -24.0,
+              77.0
+            ],
+            "bootstrap_seller_mean": 22.2445,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9559313348706123,
+              "acc_cand": 0.9577248270561107,
+              "delta_acc": 0.001793492185498402,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.12117107423091457,
+              "fixes": 43,
+              "breaks": 36,
+              "net": 7
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.910686514107976,
+              "acc_cand": 0.9123528104865586,
+              "delta_acc": 0.0016662963785826213,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.24115624577938216,
+              "fixes": 171,
+              "breaks": 156,
+              "net": 15
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 207,
+                "fixes": 111,
+                "breaks": 96,
+                "net": 15,
+                "precision": 0.5362318840579711
+              },
+              "new_to_used": {
+                "count": 199,
+                "fixes": 103,
+                "breaks": 96,
+                "net": 7,
+                "precision": 0.5175879396984925
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9266950794265788,
+            "delta_accuracy": 0.002789616427741115,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.2048678207849096,
+            "delta_logloss": 0.017230007051169283,
+            "fixes": 216,
+            "breaks": 180,
+            "net": 36,
+            "bootstrap_seller_ci95": [
+              -12.0,
+              95.0
+            ],
+            "bootstrap_seller_mean": 36.3,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9579810402254676,
+              "delta_acc": 0.001024852677427579,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.12117107423091457,
+              "fixes": 38,
+              "breaks": 34,
+              "net": 4
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.9131304154632304,
+              "delta_acc": 0.0035547656076426737,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.24115624577938216,
+              "fixes": 178,
+              "breaks": 146,
+              "net": 32
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 214,
+                "fixes": 124,
+                "breaks": 90,
+                "net": 34,
+                "precision": 0.5794392523364486
+              },
+              "new_to_used": {
+                "count": 182,
+                "fixes": 92,
+                "breaks": 90,
+                "net": 2,
+                "precision": 0.5054945054945055
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9265401007361488,
+            "delta_accuracy": 0.0026346377373110963,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.2048678207849096,
+            "delta_logloss": 0.017230007051169283,
+            "fixes": 212,
+            "breaks": 178,
+            "net": 34,
+            "bootstrap_seller_ci95": [
+              -9.024999999999999,
+              83.0
+            ],
+            "bootstrap_seller_mean": 34.293,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9574686138867537,
+              "delta_acc": 0.000512426338713734,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.12117107423091457,
+              "fixes": 36,
+              "breaks": 34,
+              "net": 2
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.9131304154632304,
+              "delta_acc": 0.0035547656076426737,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.24115624577938216,
+              "fixes": 176,
+              "breaks": 144,
+              "net": 32
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 179,
+                "fixes": 108,
+                "breaks": 71,
+                "net": 37,
+                "precision": 0.6033519553072626
+              },
+              "new_to_used": {
+                "count": 211,
+                "fixes": 104,
+                "breaks": 107,
+                "net": -3,
+                "precision": 0.4928909952606635
+              }
+            }
+          }
+        },
+        "Blend075_hist_vs_A_hist": {
+          "th_base_tune": 0.47000000000000003,
+          "th_cand_tune": 0.5,
+          "common_th_050": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9243703990701279,
+            "accuracy_cand": 0.9269275474622239,
+            "delta_accuracy": 0.002557148392096087,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.18443953307011504,
+            "delta_logloss": -0.0031982806636252636,
+            "fixes": 72,
+            "breaks": 39,
+            "net": 33,
+            "bootstrap_seller_ci95": [
+              7.0,
+              66.0
+            ],
+            "bootstrap_seller_mean": 33.159,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9559313348706123,
+              "acc_cand": 0.9572124007173969,
+              "delta_acc": 0.001281065846784557,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11433747839685941,
+              "fixes": 15,
+              "breaks": 10,
+              "net": 5
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.910686514107976,
+              "acc_cand": 0.9137969340146634,
+              "delta_acc": 0.0031104199066874783,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.21483370318672432,
+              "fixes": 57,
+              "breaks": 29,
+              "net": 28
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 55,
+                "fixes": 37,
+                "breaks": 18,
+                "net": 19,
+                "precision": 0.6727272727272727
+              },
+              "new_to_used": {
+                "count": 56,
+                "fixes": 35,
+                "breaks": 21,
+                "net": 14,
+                "precision": 0.625
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.927005036807439,
+            "delta_accuracy": 0.0030995738086012636,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.18443953307011504,
+            "delta_logloss": -0.0031982806636252636,
+            "fixes": 77,
+            "breaks": 37,
+            "net": 40,
+            "bootstrap_seller_ci95": [
+              15.0,
+              69.0
+            ],
+            "bootstrap_seller_mean": 40.08,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9577248270561107,
+              "delta_acc": 0.000768639508070712,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11433747839685941,
+              "fixes": 11,
+              "breaks": 8,
+              "net": 3
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.9136858475894246,
+              "delta_acc": 0.004110197733836918,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.21483370318672432,
+              "fixes": 66,
+              "breaks": 29,
+              "net": 37
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 63,
+                "fixes": 40,
+                "breaks": 23,
+                "net": 17,
+                "precision": 0.6349206349206349
+              },
+              "new_to_used": {
+                "count": 51,
+                "fixes": 37,
+                "breaks": 14,
+                "net": 23,
+                "precision": 0.7254901960784313
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9269275474622239,
+            "delta_accuracy": 0.0030220844633862542,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.18443953307011504,
+            "delta_logloss": -0.0031982806636252636,
+            "fixes": 80,
+            "breaks": 41,
+            "net": 39,
+            "bootstrap_seller_ci95": [
+              10.0,
+              78.0
+            ],
+            "bootstrap_seller_mean": 39.0705,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9572124007173969,
+              "delta_acc": 0.000256213169356867,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11433747839685941,
+              "fixes": 13,
+              "breaks": 12,
+              "net": 1
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.9137969340146634,
+              "delta_acc": 0.004221284159075744,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.21483370318672432,
+              "fixes": 67,
+              "breaks": 29,
+              "net": 38
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 97,
+                "fixes": 63,
+                "breaks": 34,
+                "net": 29,
+                "precision": 0.6494845360824743
+              },
+              "new_to_used": {
+                "count": 24,
+                "fixes": 17,
+                "breaks": 7,
+                "net": 10,
+                "precision": 0.7083333333333334
+              }
+            }
+          }
+        },
+        "Blend075_valname_vs_A_hist": {
+          "th_base_tune": 0.47000000000000003,
+          "th_cand_tune": 0.5,
+          "common_th_050": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9243703990701279,
+            "accuracy_cand": 0.9267725687717939,
+            "delta_accuracy": 0.002402169701666068,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.18441217987225733,
+            "delta_logloss": -0.003225633861482974,
+            "fixes": 119,
+            "breaks": 88,
+            "net": 31,
+            "bootstrap_seller_ci95": [
+              0.0,
+              65.0
+            ],
+            "bootstrap_seller_mean": 31.5665,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9559313348706123,
+              "acc_cand": 0.9587496797335383,
+              "delta_acc": 0.002818344862925981,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11498671158782044,
+              "fixes": 26,
+              "breaks": 15,
+              "net": 11
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.910686514107976,
+              "acc_cand": 0.9129082426127527,
+              "delta_acc": 0.0022217285047767543,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.21451300221331016,
+              "fixes": 93,
+              "breaks": 73,
+              "net": 20
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 106,
+                "fixes": 60,
+                "breaks": 46,
+                "net": 14,
+                "precision": 0.5660377358490566
+              },
+              "new_to_used": {
+                "count": 101,
+                "fixes": 59,
+                "breaks": 42,
+                "net": 17,
+                "precision": 0.5841584158415841
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9271600154978691,
+            "delta_accuracy": 0.0032545524990313934,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.18441217987225733,
+            "delta_logloss": -0.003225633861482974,
+            "fixes": 117,
+            "breaks": 75,
+            "net": 42,
+            "bootstrap_seller_ci95": [
+              15.0,
+              70.0
+            ],
+            "bootstrap_seller_mean": 42.3745,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9574686138867537,
+              "delta_acc": 0.000512426338713734,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11498671158782044,
+              "fixes": 20,
+              "breaks": 18,
+              "net": 2
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.9140191068651411,
+              "delta_acc": 0.004443457009553398,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.21451300221331016,
+              "fixes": 97,
+              "breaks": 57,
+              "net": 40
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 97,
+                "fixes": 60,
+                "breaks": 37,
+                "net": 23,
+                "precision": 0.6185567010309279
+              },
+              "new_to_used": {
+                "count": 95,
+                "fixes": 57,
+                "breaks": 38,
+                "net": 19,
+                "precision": 0.6
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9267725687717939,
+            "delta_accuracy": 0.0028671057729562355,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.18441217987225733,
+            "delta_logloss": -0.003225633861482974,
+            "fixes": 128,
+            "breaks": 91,
+            "net": 37,
+            "bootstrap_seller_ci95": [
+              6.0,
+              75.0
+            ],
+            "bootstrap_seller_mean": 37.478,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9587496797335383,
+              "delta_acc": 0.001793492185498291,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11498671158782044,
+              "fixes": 24,
+              "breaks": 17,
+              "net": 7
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.9129082426127527,
+              "delta_acc": 0.0033325927571650205,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.21451300221331016,
+              "fixes": 104,
+              "breaks": 74,
+              "net": 30
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 149,
+                "fixes": 86,
+                "breaks": 63,
+                "net": 23,
+                "precision": 0.5771812080536913
+              },
+              "new_to_used": {
+                "count": 70,
+                "fixes": 42,
+                "breaks": 28,
+                "net": 14,
+                "precision": 0.6
+              }
+            }
+          }
+        },
+        "CB_Bag3_hist_vs_A_hist": {
+          "th_base_tune": 0.47000000000000003,
+          "th_cand_tune": 0.475,
+          "common_th_050": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9243703990701279,
+            "accuracy_cand": 0.9263076327005036,
+            "delta_accuracy": 0.0019372336303757898,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.18610095715731612,
+            "delta_logloss": -0.0015368565764241893,
+            "fixes": 62,
+            "breaks": 37,
+            "net": 25,
+            "bootstrap_seller_ci95": [
+              7.0,
+              43.024999999999864
+            ],
+            "bootstrap_seller_mean": 25.325,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9559313348706123,
+              "acc_cand": 0.9587496797335383,
+              "delta_acc": 0.002818344862925981,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11759854489514329,
+              "fixes": 18,
+              "breaks": 7,
+              "net": 11
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.910686514107976,
+              "acc_cand": 0.9122417240613198,
+              "delta_acc": 0.0015552099533437946,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.21580156980553436,
+              "fixes": 44,
+              "breaks": 30,
+              "net": 14
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 43,
+                "fixes": 26,
+                "breaks": 17,
+                "net": 9,
+                "precision": 0.6046511627906976
+              },
+              "new_to_used": {
+                "count": 56,
+                "fixes": 36,
+                "breaks": 20,
+                "net": 16,
+                "precision": 0.6428571428571429
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9254552499031383,
+            "delta_accuracy": 0.0015497869043006318,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.18610095715731612,
+            "delta_logloss": -0.0015368565764241893,
+            "fixes": 57,
+            "breaks": 37,
+            "net": 20,
+            "bootstrap_seller_ci95": [
+              1.0,
+              39.0
+            ],
+            "bootstrap_seller_mean": 19.7045,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9577248270561107,
+              "delta_acc": 0.000768639508070712,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11759854489514329,
+              "fixes": 11,
+              "breaks": 8,
+              "net": 3
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.9114641190846479,
+              "delta_acc": 0.0018884692290601635,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.21580156980553436,
+              "fixes": 46,
+              "breaks": 29,
+              "net": 17
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 43,
+                "fixes": 28,
+                "breaks": 15,
+                "net": 13,
+                "precision": 0.6511627906976745
+              },
+              "new_to_used": {
+                "count": 51,
+                "fixes": 29,
+                "breaks": 22,
+                "net": 7,
+                "precision": 0.5686274509803921
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9256877179387835,
+            "delta_accuracy": 0.001782254939945771,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.18610095715731612,
+            "delta_logloss": -0.0015368565764241893,
+            "fixes": 58,
+            "breaks": 35,
+            "net": 23,
+            "bootstrap_seller_ci95": [
+              3.9750000000000014,
+              42.0
+            ],
+            "bootstrap_seller_mean": 22.7755,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9582372533948245,
+              "delta_acc": 0.001281065846784446,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11759854489514329,
+              "fixes": 11,
+              "breaks": 6,
+              "net": 5
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.9115752055098867,
+              "delta_acc": 0.00199955565429899,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.21580156980553436,
+              "fixes": 47,
+              "breaks": 29,
+              "net": 18
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 47,
+                "fixes": 30,
+                "breaks": 17,
+                "net": 13,
+                "precision": 0.6382978723404256
+              },
+              "new_to_used": {
+                "count": 46,
+                "fixes": 28,
+                "breaks": 18,
+                "net": 10,
+                "precision": 0.6086956521739131
+              }
+            }
+          }
+        },
+        "Blend075_Bag3_hist_vs_A_hist": {
+          "th_base_tune": 0.47000000000000003,
+          "th_cand_tune": 0.5,
+          "common_th_050": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9243703990701279,
+            "accuracy_cand": 0.9274699728787291,
+            "delta_accuracy": 0.0030995738086012636,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.1835376676030733,
+            "delta_logloss": -0.004100146130667004,
+            "fixes": 93,
+            "breaks": 53,
+            "net": 40,
+            "bootstrap_seller_ci95": [
+              13.0,
+              70.0
+            ],
+            "bootstrap_seller_mean": 40.1785,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9559313348706123,
+              "acc_cand": 0.9579810402254676,
+              "delta_acc": 0.002049705354855269,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11438154779991533,
+              "fixes": 21,
+              "breaks": 13,
+              "net": 8
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.910686514107976,
+              "acc_cand": 0.9142412797156187,
+              "delta_acc": 0.0035547656076427847,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.21352170843752408,
+              "fixes": 72,
+              "breaks": 40,
+              "net": 32
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 68,
+                "fixes": 44,
+                "breaks": 24,
+                "net": 20,
+                "precision": 0.6470588235294118
+              },
+              "new_to_used": {
+                "count": 78,
+                "fixes": 49,
+                "breaks": 29,
+                "net": 20,
+                "precision": 0.6282051282051282
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9266175900813638,
+            "delta_accuracy": 0.0027121270825261057,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.1835376676030733,
+            "delta_logloss": -0.004100146130667004,
+            "fixes": 88,
+            "breaks": 53,
+            "net": 35,
+            "bootstrap_seller_ci95": [
+              9.0,
+              65.0
+            ],
+            "bootstrap_seller_mean": 35.1945,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9572124007173969,
+              "delta_acc": 0.000256213169356867,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11438154779991533,
+              "fixes": 16,
+              "breaks": 15,
+              "net": 1
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.913352588313708,
+              "delta_acc": 0.003776938458120327,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.21352170843752408,
+              "fixes": 72,
+              "breaks": 38,
+              "net": 34
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 73,
+                "fixes": 46,
+                "breaks": 27,
+                "net": 19,
+                "precision": 0.6301369863013698
+              },
+              "new_to_used": {
+                "count": 68,
+                "fixes": 42,
+                "breaks": 26,
+                "net": 16,
+                "precision": 0.6176470588235294
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9274699728787291,
+            "delta_accuracy": 0.003564509879891431,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.1835376676030733,
+            "delta_logloss": -0.004100146130667004,
+            "fixes": 98,
+            "breaks": 52,
+            "net": 46,
+            "bootstrap_seller_ci95": [
+              17.0,
+              81.0
+            ],
+            "bootstrap_seller_mean": 46.09,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9579810402254676,
+              "delta_acc": 0.001024852677427579,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.11438154779991533,
+              "fixes": 18,
+              "breaks": 14,
+              "net": 4
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.9142412797156187,
+              "delta_acc": 0.004665629860031051,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.21352170843752408,
+              "fixes": 80,
+              "breaks": 38,
+              "net": 42
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 107,
+                "fixes": 69,
+                "breaks": 38,
+                "net": 31,
+                "precision": 0.6448598130841121
+              },
+              "new_to_used": {
+                "count": 43,
+                "fixes": 29,
+                "breaks": 14,
+                "net": 15,
+                "precision": 0.6744186046511628
+              }
+            }
+          }
+        },
+        "R142_HistGB_vs_A_hist": {
+          "th_base_tune": 0.47000000000000003,
+          "th_cand_tune": 0.5,
+          "common_th_050": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9243703990701279,
+            "accuracy_cand": 0.9053080201472298,
+            "delta_accuracy": -0.019062378922898082,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.24068650908711128,
+            "delta_logloss": 0.05304869535337098,
+            "fixes": 299,
+            "breaks": 545,
+            "net": -246,
+            "bootstrap_seller_ci95": [
+              -344.025,
+              -142.97500000000014
+            ],
+            "bootstrap_seller_mean": -245.304,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9559313348706123,
+              "acc_cand": 0.9303100179349219,
+              "delta_acc": -0.025621316935690475,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.17980242773107807,
+              "fixes": 52,
+              "breaks": 152,
+              "net": -100
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.910686514107976,
+              "acc_cand": 0.894467896023106,
+              "delta_acc": -0.016218618084870018,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.26708403958395627,
+              "fixes": 247,
+              "breaks": 393,
+              "net": -146
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 405,
+                "fixes": 137,
+                "breaks": 268,
+                "net": -131,
+                "precision": 0.33827160493827163
+              },
+              "new_to_used": {
+                "count": 439,
+                "fixes": 162,
+                "breaks": 277,
+                "net": -115,
+                "precision": 0.3690205011389522
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9060829135993801,
+            "delta_accuracy": -0.0178225493994576,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.24068650908711128,
+            "delta_logloss": 0.05304869535337098,
+            "fixes": 293,
+            "breaks": 523,
+            "net": -230,
+            "bootstrap_seller_ci95": [
+              -326.025,
+              -128.0
+            ],
+            "bootstrap_seller_mean": -229.4185,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9305662311042787,
+              "delta_acc": -0.026389956443761298,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.17980242773107807,
+              "fixes": 47,
+              "breaks": 150,
+              "net": -103
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.8954676738502555,
+              "delta_acc": -0.014107976005332201,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.26708403958395627,
+              "fixes": 246,
+              "breaks": 373,
+              "net": -127
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 384,
+                "fixes": 146,
+                "breaks": 238,
+                "net": -92,
+                "precision": 0.3802083333333333
+              },
+              "new_to_used": {
+                "count": 432,
+                "fixes": 147,
+                "breaks": 285,
+                "net": -138,
+                "precision": 0.3402777777777778
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9053080201472298,
+            "delta_accuracy": -0.018597442851607915,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.24068650908711128,
+            "delta_logloss": 0.05304869535337098,
+            "fixes": 295,
+            "breaks": 535,
+            "net": -240,
+            "bootstrap_seller_ci95": [
+              -338.0,
+              -134.0
+            ],
+            "bootstrap_seller_mean": -239.3925,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9303100179349219,
+              "delta_acc": -0.026646169613118165,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.17980242773107807,
+              "fixes": 49,
+              "breaks": 153,
+              "net": -104
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.894467896023106,
+              "delta_acc": -0.015107753832481752,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.26708403958395627,
+              "fixes": 246,
+              "breaks": 382,
+              "net": -136
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 435,
+                "fixes": 157,
+                "breaks": 278,
+                "net": -121,
+                "precision": 0.36091954022988504
+              },
+              "new_to_used": {
+                "count": 395,
+                "fixes": 138,
+                "breaks": 257,
+                "net": -119,
+                "precision": 0.3493670886075949
+              }
+            }
+          }
+        },
+        "R142_CatBoost_vs_A_hist": {
+          "th_base_tune": 0.47000000000000003,
+          "th_cand_tune": 0.5,
+          "common_th_050": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9243703990701279,
+            "accuracy_cand": 0.9098798915149167,
+            "delta_accuracy": -0.014490507555211196,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.22833832658660835,
+            "delta_logloss": 0.04070051285286805,
+            "fixes": 278,
+            "breaks": 465,
+            "net": -187,
+            "bootstrap_seller_ci95": [
+              -270.0,
+              -85.97500000000014
+            ],
+            "bootstrap_seller_mean": -186.737,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9559313348706123,
+              "acc_cand": 0.9313348706123494,
+              "delta_acc": -0.024596464258262896,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.173182124724149,
+              "fixes": 51,
+              "breaks": 147,
+              "net": -96
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.910686514107976,
+              "acc_cand": 0.900577649411242,
+              "delta_acc": -0.010108864696733999,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.25225241855163605,
+              "fixes": 227,
+              "breaks": 318,
+              "net": -91
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 362,
+                "fixes": 131,
+                "breaks": 231,
+                "net": -100,
+                "precision": 0.36187845303867405
+              },
+              "new_to_used": {
+                "count": 381,
+                "fixes": 147,
+                "breaks": 234,
+                "net": -87,
+                "precision": 0.3858267716535433
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9094924447888415,
+            "delta_accuracy": -0.014413018209996187,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.22833832658660835,
+            "delta_logloss": 0.04070051285286805,
+            "fixes": 273,
+            "breaks": 459,
+            "net": -186,
+            "bootstrap_seller_ci95": [
+              -270.0,
+              -83.0
+            ],
+            "bootstrap_seller_mean": -185.4895,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9338970023059185,
+              "delta_acc": -0.02305918524212147,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.173182124724149,
+              "fixes": 48,
+              "breaks": 138,
+              "net": -90
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.8989113530326595,
+              "delta_acc": -0.010664296822928243,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.25225241855163605,
+              "fixes": 225,
+              "breaks": 321,
+              "net": -96
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 351,
+                "fixes": 140,
+                "breaks": 211,
+                "net": -71,
+                "precision": 0.39886039886039887
+              },
+              "new_to_used": {
+                "count": 381,
+                "fixes": 133,
+                "breaks": 248,
+                "net": -115,
+                "precision": 0.34908136482939633
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9098798915149167,
+            "delta_accuracy": -0.014025571483921029,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.22833832658660835,
+            "delta_logloss": 0.04070051285286805,
+            "fixes": 277,
+            "breaks": 458,
+            "net": -181,
+            "bootstrap_seller_ci95": [
+              -266.025,
+              -76.0
+            ],
+            "bootstrap_seller_mean": -180.8255,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9313348706123494,
+              "delta_acc": -0.025621316935690586,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.173182124724149,
+              "fixes": 47,
+              "breaks": 147,
+              "net": -100
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.900577649411242,
+              "delta_acc": -0.008998000444345733,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.25225241855163605,
+              "fixes": 230,
+              "breaks": 311,
+              "net": -81
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 395,
+                "fixes": 152,
+                "breaks": 243,
+                "net": -91,
+                "precision": 0.3848101265822785
+              },
+              "new_to_used": {
+                "count": 340,
+                "fixes": 125,
+                "breaks": 215,
+                "net": -90,
+                "precision": 0.36764705882352944
+              }
+            }
+          }
+        },
+        "R156_Ensemble_vs_A_hist": {
+          "th_base_tune": 0.47000000000000003,
+          "th_cand_tune": 0.5,
+          "common_th_050": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9243703990701279,
+            "accuracy_cand": 0.9092599767531965,
+            "delta_accuracy": -0.015110422316931382,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.2217704299825415,
+            "delta_logloss": 0.034132616248801206,
+            "fixes": 214,
+            "breaks": 409,
+            "net": -195,
+            "bootstrap_seller_ci95": [
+              -267.0,
+              -130.97500000000014
+            ],
+            "bootstrap_seller_mean": -194.6155,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9559313348706123,
+              "acc_cand": 0.9456828080963362,
+              "delta_acc": -0.010248526774276123,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.14562152916787424,
+              "fixes": 38,
+              "breaks": 78,
+              "net": -40
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.910686514107976,
+              "acc_cand": 0.8934681181959565,
+              "delta_acc": -0.017218395912019457,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.2547863331018091,
+              "fixes": 176,
+              "breaks": 331,
+              "net": -155
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 315,
+                "fixes": 102,
+                "breaks": 213,
+                "net": -111,
+                "precision": 0.3238095238095238
+              },
+              "new_to_used": {
+                "count": 308,
+                "fixes": 112,
+                "breaks": 196,
+                "net": -84,
+                "precision": 0.36363636363636365
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9077101898488957,
+            "delta_accuracy": -0.016195273149941958,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.2217704299825415,
+            "delta_logloss": 0.034132616248801206,
+            "fixes": 218,
+            "breaks": 427,
+            "net": -209,
+            "bootstrap_seller_ci95": [
+              -292.025,
+              -138.97500000000014
+            ],
+            "bootstrap_seller_mean": -208.9015,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9459390212656931,
+              "delta_acc": -0.011017166282346946,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.14562152916787424,
+              "fixes": 37,
+              "breaks": 80,
+              "net": -43
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.8911353032659409,
+              "delta_acc": -0.018440346589646772,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.2547863331018091,
+              "fixes": 181,
+              "breaks": 347,
+              "net": -166
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 316,
+                "fixes": 112,
+                "breaks": 204,
+                "net": -92,
+                "precision": 0.35443037974683544
+              },
+              "new_to_used": {
+                "count": 329,
+                "fixes": 106,
+                "breaks": 223,
+                "net": -117,
+                "precision": 0.3221884498480243
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9239054629988377,
+            "accuracy_cand": 0.9092599767531965,
+            "delta_accuracy": -0.014645486245641215,
+            "logloss_base": 0.1876378137337403,
+            "logloss_cand": 0.2217704299825415,
+            "delta_logloss": 0.034132616248801206,
+            "fixes": 221,
+            "breaks": 410,
+            "net": -189,
+            "bootstrap_seller_ci95": [
+              -258.025,
+              -123.0
+            ],
+            "bootstrap_seller_mean": -188.704,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.95695618754804,
+              "acc_cand": 0.9456828080963362,
+              "delta_acc": -0.011273379451703813,
+              "logloss_base": 0.11789786140159624,
+              "logloss_cand": 0.14562152916787424,
+              "fixes": 39,
+              "breaks": 83,
+              "net": -44
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9095756498555877,
+              "acc_cand": 0.8934681181959565,
+              "delta_acc": -0.01610753165963119,
+              "logloss_base": 0.21787498702327135,
+              "logloss_cand": 0.2547863331018091,
+              "fixes": 182,
+              "breaks": 327,
+              "net": -145
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 356,
+                "fixes": 126,
+                "breaks": 230,
+                "net": -104,
+                "precision": 0.3539325842696629
+              },
+              "new_to_used": {
+                "count": 275,
+                "fixes": 95,
+                "breaks": 180,
+                "net": -85,
+                "precision": 0.34545454545454546
+              }
+            }
+          }
+        }
+      },
+      "comparisons_vs_A_valname": {
+        "LGB_valname_vs_A_valname": {
+          "th_base_tune": 0.515,
+          "th_cand_tune": 0.42500000000000004,
+          "common_th_050": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9244478884153429,
+            "accuracy_cand": 0.9260751646648586,
+            "delta_accuracy": 0.0016272762495157522,
+            "logloss_base": 0.18773050411259962,
+            "logloss_cand": 0.2048678207849096,
+            "delta_logloss": 0.01713731667230997,
+            "fixes": 213,
+            "breaks": 192,
+            "net": 21,
+            "bootstrap_seller_ci95": [
+              -33.0,
+              89.02499999999986
+            ],
+            "bootstrap_seller_mean": 21.1405,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9577248270561107,
+              "acc_cand": 0.9577248270561107,
+              "delta_acc": 0.0,
+              "logloss_base": 0.11907248699846679,
+              "logloss_cand": 0.12117107423091457,
+              "fixes": 35,
+              "breaks": 35,
+              "net": 0
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.910019995556543,
+              "acc_cand": 0.9123528104865586,
+              "delta_acc": 0.002332814930015581,
+              "logloss_base": 0.2174985824059189,
+              "logloss_cand": 0.24115624577938216,
+              "fixes": 178,
+              "breaks": 157,
+              "net": 21
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 203,
+                "fixes": 108,
+                "breaks": 95,
+                "net": 13,
+                "precision": 0.5320197044334976
+              },
+              "new_to_used": {
+                "count": 202,
+                "fixes": 105,
+                "breaks": 97,
+                "net": 8,
+                "precision": 0.5198019801980198
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12905,
+            "accuracy_base": 0.924912824486633,
+            "accuracy_cand": 0.9263076327005036,
+            "delta_accuracy": 0.001394808213870613,
+            "logloss_base": 0.18773050411259962,
+            "logloss_cand": 0.2048678207849096,
+            "delta_logloss": 0.01713731667230997,
+            "fixes": 202,
+            "breaks": 184,
+            "net": 18,
+            "bootstrap_seller_ci95": [
+              -32.0,
+              80.02499999999986
+            ],
+            "bootstrap_seller_mean": 18.0935,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9582372533948245,
+              "acc_cand": 0.9582372533948245,
+              "delta_acc": 0.0,
+              "logloss_base": 0.11907248699846679,
+              "logloss_cand": 0.12117107423091457,
+              "fixes": 31,
+              "breaks": 31,
+              "net": 0
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9104643412574983,
+              "acc_cand": 0.9124638969117974,
+              "delta_acc": 0.001999555654299101,
+              "logloss_base": 0.2174985824059189,
+              "logloss_cand": 0.24115624577938216,
+              "fixes": 171,
+              "breaks": 153,
+              "net": 18
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 191,
+                "fixes": 95,
+                "breaks": 96,
+                "net": -1,
+                "precision": 0.4973821989528796
+              },
+              "new_to_used": {
+                "count": 195,
+                "fixes": 107,
+                "breaks": 88,
+                "net": 19,
+                "precision": 0.5487179487179488
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12905,
+            "accuracy_base": 0.924912824486633,
+            "accuracy_cand": 0.9265401007361488,
+            "delta_accuracy": 0.0016272762495157522,
+            "logloss_base": 0.18773050411259962,
+            "logloss_cand": 0.2048678207849096,
+            "delta_logloss": 0.01713731667230997,
+            "fixes": 218,
+            "breaks": 197,
+            "net": 21,
+            "bootstrap_seller_ci95": [
+              -28.0,
+              76.0
+            ],
+            "bootstrap_seller_mean": 21.1285,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9582372533948245,
+              "acc_cand": 0.9574686138867537,
+              "delta_acc": -0.000768639508070712,
+              "logloss_base": 0.11907248699846679,
+              "logloss_cand": 0.12117107423091457,
+              "fixes": 36,
+              "breaks": 39,
+              "net": -3
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9104643412574983,
+              "acc_cand": 0.9131304154632304,
+              "delta_acc": 0.0026660742057320608,
+              "logloss_base": 0.2174985824059189,
+              "logloss_cand": 0.24115624577938216,
+              "fixes": 182,
+              "breaks": 158,
+              "net": 24
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 134,
+                "fixes": 75,
+                "breaks": 59,
+                "net": 16,
+                "precision": 0.5597014925373134
+              },
+              "new_to_used": {
+                "count": 281,
+                "fixes": 143,
+                "breaks": 138,
+                "net": 5,
+                "precision": 0.5088967971530249
+              }
+            }
+          }
+        },
+        "Blend075_valname_vs_A_valname": {
+          "th_base_tune": 0.515,
+          "th_cand_tune": 0.5,
+          "common_th_050": {
+            "n_rows": 12905,
+            "accuracy_base": 0.9244478884153429,
+            "accuracy_cand": 0.9267725687717939,
+            "delta_accuracy": 0.0023246803564510587,
+            "logloss_base": 0.18773050411259962,
+            "logloss_cand": 0.18441217987225733,
+            "delta_logloss": -0.0033183242403422852,
+            "fixes": 88,
+            "breaks": 58,
+            "net": 30,
+            "bootstrap_seller_ci95": [
+              -2.0249999999999986,
+              74.0
+            ],
+            "bootstrap_seller_mean": 30.4625,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9577248270561107,
+              "acc_cand": 0.9587496797335383,
+              "delta_acc": 0.001024852677427579,
+              "logloss_base": 0.11907248699846679,
+              "logloss_cand": 0.11498671158782044,
+              "fixes": 13,
+              "breaks": 9,
+              "net": 4
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.910019995556543,
+              "acc_cand": 0.9129082426127527,
+              "delta_acc": 0.002888247056209714,
+              "logloss_base": 0.2174985824059189,
+              "logloss_cand": 0.21451300221331016,
+              "fixes": 75,
+              "breaks": 49,
+              "net": 26
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 72,
+                "fixes": 46,
+                "breaks": 26,
+                "net": 20,
+                "precision": 0.6388888888888888
+              },
+              "new_to_used": {
+                "count": 74,
+                "fixes": 42,
+                "breaks": 32,
+                "net": 10,
+                "precision": 0.5675675675675675
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12905,
+            "accuracy_base": 0.924912824486633,
+            "accuracy_cand": 0.927005036807439,
+            "delta_accuracy": 0.0020922123208059196,
+            "logloss_base": 0.18773050411259962,
+            "logloss_cand": 0.18441217987225733,
+            "delta_logloss": -0.0033183242403422852,
+            "fixes": 78,
+            "breaks": 51,
+            "net": 27,
+            "bootstrap_seller_ci95": [
+              -2.0,
+              64.02499999999986
+            ],
+            "bootstrap_seller_mean": 27.299,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9582372533948245,
+              "acc_cand": 0.9582372533948245,
+              "delta_acc": 0.0,
+              "logloss_base": 0.11907248699846679,
+              "logloss_cand": 0.11498671158782044,
+              "fixes": 7,
+              "breaks": 7,
+              "net": 0
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9104643412574983,
+              "acc_cand": 0.9134636747389469,
+              "delta_acc": 0.0029993334814485406,
+              "logloss_base": 0.2174985824059189,
+              "logloss_cand": 0.21451300221331016,
+              "fixes": 71,
+              "breaks": 44,
+              "net": 27
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 62,
+                "fixes": 37,
+                "breaks": 25,
+                "net": 12,
+                "precision": 0.5967741935483871
+              },
+              "new_to_used": {
+                "count": 67,
+                "fixes": 41,
+                "breaks": 26,
+                "net": 15,
+                "precision": 0.6119402985074627
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12905,
+            "accuracy_base": 0.924912824486633,
+            "accuracy_cand": 0.9267725687717939,
+            "delta_accuracy": 0.0018597442851608914,
+            "logloss_base": 0.18773050411259962,
+            "logloss_cand": 0.18441217987225733,
+            "delta_logloss": -0.0033183242403422852,
+            "fixes": 81,
+            "breaks": 57,
+            "net": 24,
+            "bootstrap_seller_ci95": [
+              -5.024999999999999,
+              59.0
+            ],
+            "bootstrap_seller_mean": 24.3135,
+            "seen_sellers": {
+              "n": 3903,
+              "acc_base": 0.9582372533948245,
+              "acc_cand": 0.9587496797335383,
+              "delta_acc": 0.000512426338713845,
+              "logloss_base": 0.11907248699846679,
+              "logloss_cand": 0.11498671158782044,
+              "fixes": 10,
+              "breaks": 8,
+              "net": 2
+            },
+            "new_sellers": {
+              "n": 9002,
+              "acc_base": 0.9104643412574983,
+              "acc_cand": 0.9129082426127527,
+              "delta_acc": 0.0024439013552544075,
+              "logloss_base": 0.2174985824059189,
+              "logloss_cand": 0.21451300221331016,
+              "fixes": 71,
+              "breaks": 49,
+              "net": 22
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 51,
+                "fixes": 31,
+                "breaks": 20,
+                "net": 11,
+                "precision": 0.6078431372549019
+              },
+              "new_to_used": {
+                "count": 87,
+                "fixes": 50,
+                "breaks": 37,
+                "net": 13,
+                "precision": 0.5747126436781609
+              }
+            }
+          }
+        }
+      }
+    },
+    "314159": {
+      "seed": 314159,
+      "n_confirm": 12843,
+      "n_seen": 3838,
+      "n_new": 9005,
+      "selected_lgb_hist": "lgb_default",
+      "selected_lgb_valname": "lgb_default",
+      "paired_file": "results\\intensive_20261030\\paired_all_models_seed_314159_confirm.csv.gz",
+      "paired_file_sha256": "0ff6616096a0f4df2eb82b6e1b7a5271c88f9d161a882ef99d889f472149ceaf",
+      "baseline_A_hist": {
+        "th_tune": 0.535,
+        "acc_050": 0.92089075761115,
+        "acc_tuned": 0.919956396480573,
+        "logloss": 0.1955248466550394
+      },
+      "baseline_A_valname": {
+        "th_tune": 0.455,
+        "acc_050": 0.9190998987775442,
+        "acc_tuned": 0.9180876742194192,
+        "logloss": 0.197008643374029
+      },
+      "comparisons_vs_A_hist": {
+        "A_valname_vs_A_hist": {
+          "th_base_tune": 0.535,
+          "th_cand_tune": 0.455,
+          "common_th_050": {
+            "n_rows": 12843,
+            "accuracy_base": 0.92089075761115,
+            "accuracy_cand": 0.9190998987775442,
+            "delta_accuracy": -0.0017908588336058573,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.197008643374029,
+            "delta_logloss": 0.001483796718989655,
+            "fixes": 70,
+            "breaks": 93,
+            "net": -23,
+            "bootstrap_seller_ci95": [
+              -51.025,
+              5.024999999999864
+            ],
+            "bootstrap_seller_mean": -22.2245,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9504950495049505,
+              "acc_cand": 0.9517978113600833,
+              "delta_acc": 0.0013027618551328946,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.1302905005179636,
+              "fixes": 15,
+              "breaks": 10,
+              "net": 5
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9082731815657967,
+              "acc_cand": 0.9051637978900611,
+              "delta_acc": -0.0031093836757356552,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.22544442708103388,
+              "fixes": 55,
+              "breaks": 83,
+              "net": -28
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 94,
+                "fixes": 40,
+                "breaks": 54,
+                "net": -14,
+                "precision": 0.425531914893617
+              },
+              "new_to_used": {
+                "count": 69,
+                "fixes": 30,
+                "breaks": 39,
+                "net": -9,
+                "precision": 0.43478260869565216
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.92089075761115,
+            "delta_accuracy": 0.0009343611305769883,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.197008643374029,
+            "delta_logloss": 0.001483796718989655,
+            "fixes": 87,
+            "breaks": 75,
+            "net": 12,
+            "bootstrap_seller_ci95": [
+              -15.0,
+              40.0
+            ],
+            "bootstrap_seller_mean": 12.364,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9525794684731631,
+              "delta_acc": 0.0015633142261594069,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.1302905005179636,
+              "fixes": 18,
+              "breaks": 12,
+              "net": 6
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.9073847862298723,
+              "delta_acc": 0.0006662965019433864,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.22544442708103388,
+              "fixes": 69,
+              "breaks": 63,
+              "net": 6
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 99,
+                "fixes": 52,
+                "breaks": 47,
+                "net": 5,
+                "precision": 0.5252525252525253
+              },
+              "new_to_used": {
+                "count": 63,
+                "fixes": 35,
+                "breaks": 28,
+                "net": 7,
+                "precision": 0.5555555555555556
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.9180876742194192,
+            "delta_accuracy": -0.0018687222611538656,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.197008643374029,
+            "delta_logloss": 0.001483796718989655,
+            "fixes": 91,
+            "breaks": 115,
+            "net": -24,
+            "bootstrap_seller_ci95": [
+              -55.0,
+              6.024999999999864
+            ],
+            "bootstrap_seller_mean": -23.7195,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9504950495049505,
+              "delta_acc": -0.0005211047420532466,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.1302905005179636,
+              "fixes": 16,
+              "breaks": 18,
+              "net": -2
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.9042754025541366,
+              "delta_acc": -0.002443087173792269,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.22544442708103388,
+              "fixes": 75,
+              "breaks": 97,
+              "net": -22
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 27,
+                "fixes": 11,
+                "breaks": 16,
+                "net": -5,
+                "precision": 0.4074074074074074
+              },
+              "new_to_used": {
+                "count": 179,
+                "fixes": 80,
+                "breaks": 99,
+                "net": -19,
+                "precision": 0.44692737430167595
+              }
+            }
+          }
+        },
+        "LGB_hist_vs_A_hist": {
+          "th_base_tune": 0.535,
+          "th_cand_tune": 0.465,
+          "common_th_050": {
+            "n_rows": 12843,
+            "accuracy_base": 0.92089075761115,
+            "accuracy_cand": 0.9201899867632173,
+            "delta_accuracy": -0.0007007708479327412,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.2177587562234557,
+            "delta_logloss": 0.022233909568416338,
+            "fixes": 179,
+            "breaks": 188,
+            "net": -9,
+            "bootstrap_seller_ci95": [
+              -51.0,
+              34.0
+            ],
+            "bootstrap_seller_mean": -8.7735,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9504950495049505,
+              "acc_cand": 0.9536216779572694,
+              "delta_acc": 0.0031266284523189247,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.13428204249635153,
+              "fixes": 34,
+              "breaks": 22,
+              "net": 12
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9082731815657967,
+              "acc_cand": 0.905941143808995,
+              "delta_acc": -0.002332037756801686,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.2533371712467345,
+              "fixes": 145,
+              "breaks": 166,
+              "net": -21
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 204,
+                "fixes": 97,
+                "breaks": 107,
+                "net": -10,
+                "precision": 0.47549019607843135
+              },
+              "new_to_used": {
+                "count": 163,
+                "fixes": 82,
+                "breaks": 81,
+                "net": 1,
+                "precision": 0.5030674846625767
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.919956396480573,
+            "delta_accuracy": 0.0,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.2177587562234557,
+            "delta_logloss": 0.022233909568416338,
+            "fixes": 191,
+            "breaks": 191,
+            "net": 0,
+            "bootstrap_seller_ci95": [
+              -42.0,
+              44.0
+            ],
+            "bootstrap_seller_mean": -0.0375,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9541427826993225,
+              "delta_acc": 0.0031266284523188137,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.13428204249635153,
+              "fixes": 34,
+              "breaks": 22,
+              "net": 12
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.9053858967240422,
+              "delta_acc": -0.0013325930038866618,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.2533371712467345,
+              "fixes": 157,
+              "breaks": 169,
+              "net": -12
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 204,
+                "fixes": 90,
+                "breaks": 114,
+                "net": -24,
+                "precision": 0.4411764705882353
+              },
+              "new_to_used": {
+                "count": 178,
+                "fixes": 101,
+                "breaks": 77,
+                "net": 24,
+                "precision": 0.5674157303370787
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.9205793039009578,
+            "delta_accuracy": 0.0006229074203847329,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.2177587562234557,
+            "delta_logloss": 0.022233909568416338,
+            "fixes": 192,
+            "breaks": 184,
+            "net": 8,
+            "bootstrap_seller_ci95": [
+              -34.0,
+              51.0
+            ],
+            "bootstrap_seller_mean": 7.9265,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9536216779572694,
+              "delta_acc": 0.002605523710265678,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.13428204249635153,
+              "fixes": 33,
+              "breaks": 23,
+              "net": 10
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.9064963908939478,
+              "delta_acc": -0.0002220988339810548,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.2533371712467345,
+              "fixes": 159,
+              "breaks": 161,
+              "net": -2
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 142,
+                "fixes": 72,
+                "breaks": 70,
+                "net": 2,
+                "precision": 0.5070422535211268
+              },
+              "new_to_used": {
+                "count": 234,
+                "fixes": 120,
+                "breaks": 114,
+                "net": 6,
+                "precision": 0.5128205128205128
+              }
+            }
+          }
+        },
+        "LGB_valname_vs_A_hist": {
+          "th_base_tune": 0.535,
+          "th_cand_tune": 0.475,
+          "common_th_050": {
+            "n_rows": 12843,
+            "accuracy_base": 0.92089075761115,
+            "accuracy_cand": 0.9205014404734096,
+            "delta_accuracy": -0.0003893171377403748,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.21585448567448876,
+            "delta_logloss": 0.020329639019449397,
+            "fixes": 180,
+            "breaks": 185,
+            "net": -5,
+            "bootstrap_seller_ci95": [
+              -46.025,
+              38.0
+            ],
+            "bootstrap_seller_mean": -5.0555,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9504950495049505,
+              "acc_cand": 0.9541427826993225,
+              "delta_acc": 0.0036477331943720603,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.13486610873255853,
+              "fixes": 36,
+              "breaks": 22,
+              "net": 14
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9082731815657967,
+              "acc_cand": 0.9061632426429761,
+              "delta_acc": -0.002109938922820631,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.25037235249327033,
+              "fixes": 144,
+              "breaks": 163,
+              "net": -19
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 196,
+                "fixes": 94,
+                "breaks": 102,
+                "net": -8,
+                "precision": 0.47959183673469385
+              },
+              "new_to_used": {
+                "count": 169,
+                "fixes": 86,
+                "breaks": 83,
+                "net": 3,
+                "precision": 0.5088757396449705
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.9205014404734096,
+            "delta_accuracy": 0.0005450439928366135,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.21585448567448876,
+            "delta_logloss": 0.020329639019449397,
+            "fixes": 192,
+            "breaks": 185,
+            "net": 7,
+            "bootstrap_seller_ci95": [
+              -37.0,
+              52.0
+            ],
+            "bootstrap_seller_mean": 6.8715,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9531005732152162,
+              "delta_acc": 0.0020844189682125425,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.13486610873255853,
+              "fixes": 33,
+              "breaks": 25,
+              "net": 8
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.9066074403109383,
+              "delta_acc": -0.0001110494169905829,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.25037235249327033,
+              "fixes": 159,
+              "breaks": 160,
+              "net": -1
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 196,
+                "fixes": 92,
+                "breaks": 104,
+                "net": -12,
+                "precision": 0.46938775510204084
+              },
+              "new_to_used": {
+                "count": 181,
+                "fixes": 100,
+                "breaks": 81,
+                "net": 19,
+                "precision": 0.5524861878453039
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.9202678501907654,
+            "delta_accuracy": 0.00031145371019236645,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.21585448567448876,
+            "delta_logloss": 0.020329639019449397,
+            "fixes": 193,
+            "breaks": 189,
+            "net": 4,
+            "bootstrap_seller_ci95": [
+              -40.0,
+              49.0
+            ],
+            "bootstrap_seller_mean": 3.388,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9541427826993225,
+              "delta_acc": 0.0031266284523188137,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.13486610873255853,
+              "fixes": 35,
+              "breaks": 23,
+              "net": 12
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.9058300943920045,
+              "delta_acc": -0.0008883953359244412,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.25037235249327033,
+              "fixes": 158,
+              "breaks": 166,
+              "net": -8
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 148,
+                "fixes": 71,
+                "breaks": 77,
+                "net": -6,
+                "precision": 0.4797297297297297
+              },
+              "new_to_used": {
+                "count": 234,
+                "fixes": 122,
+                "breaks": 112,
+                "net": 10,
+                "precision": 0.5213675213675214
+              }
+            }
+          }
+        },
+        "Blend075_hist_vs_A_hist": {
+          "th_base_tune": 0.535,
+          "th_cand_tune": 0.49,
+          "common_th_050": {
+            "n_rows": 12843,
+            "accuracy_base": 0.92089075761115,
+            "accuracy_cand": 0.9226037530172079,
+            "delta_accuracy": 0.001712995406057849,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.19388646918999594,
+            "delta_logloss": -0.0016383774650434169,
+            "fixes": 67,
+            "breaks": 45,
+            "net": 22,
+            "bootstrap_seller_ci95": [
+              -1.0,
+              45.024999999999864
+            ],
+            "bootstrap_seller_mean": 21.843,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9504950495049505,
+              "acc_cand": 0.9531005732152162,
+              "delta_acc": 0.002605523710265789,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.12638286543767868,
+              "fixes": 14,
+              "breaks": 4,
+              "net": 10
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9082731815657967,
+              "acc_cand": 0.9096057745696835,
+              "delta_acc": 0.0013325930038867728,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.22265702234950663,
+              "fixes": 53,
+              "breaks": 41,
+              "net": 12
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 56,
+                "fixes": 31,
+                "breaks": 25,
+                "net": 6,
+                "precision": 0.5535714285714286
+              },
+              "new_to_used": {
+                "count": 56,
+                "fixes": 36,
+                "breaks": 20,
+                "net": 16,
+                "precision": 0.6428571428571429
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.9222922993070155,
+            "delta_accuracy": 0.002335902826442471,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.19388646918999594,
+            "delta_logloss": -0.0016383774650434169,
+            "fixes": 71,
+            "breaks": 41,
+            "net": 30,
+            "bootstrap_seller_ci95": [
+              7.0,
+              53.0
+            ],
+            "bootstrap_seller_mean": 29.9865,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9528400208441897,
+              "delta_acc": 0.0018238665971860302,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.12638286543767868,
+              "fixes": 10,
+              "breaks": 3,
+              "net": 7
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.9092726263187119,
+              "delta_acc": 0.0025541365907829627,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.22265702234950663,
+              "fixes": 61,
+              "breaks": 38,
+              "net": 23
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 56,
+                "fixes": 31,
+                "breaks": 25,
+                "net": 6,
+                "precision": 0.5535714285714286
+              },
+              "new_to_used": {
+                "count": 56,
+                "fixes": 40,
+                "breaks": 16,
+                "net": 24,
+                "precision": 0.7142857142857143
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.9231487970100444,
+            "delta_accuracy": 0.00319240052947134,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.19388646918999594,
+            "delta_logloss": -0.0016383774650434169,
+            "fixes": 92,
+            "breaks": 51,
+            "net": 41,
+            "bootstrap_seller_ci95": [
+              15.0,
+              68.0
+            ],
+            "bootstrap_seller_mean": 40.4225,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9525794684731631,
+              "delta_acc": 0.0015633142261594069,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.12638286543767868,
+              "fixes": 12,
+              "breaks": 6,
+              "net": 6
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.9106052193225985,
+              "delta_acc": 0.0038867295946696245,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.22265702234950663,
+              "fixes": 80,
+              "breaks": 45,
+              "net": 35
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 23,
+                "fixes": 15,
+                "breaks": 8,
+                "net": 7,
+                "precision": 0.6521739130434783
+              },
+              "new_to_used": {
+                "count": 120,
+                "fixes": 77,
+                "breaks": 43,
+                "net": 34,
+                "precision": 0.6416666666666667
+              }
+            }
+          }
+        },
+        "Blend075_valname_vs_A_hist": {
+          "th_base_tune": 0.535,
+          "th_cand_tune": 0.47000000000000003,
+          "common_th_050": {
+            "n_rows": 12843,
+            "accuracy_base": 0.92089075761115,
+            "accuracy_cand": 0.922759479872304,
+            "delta_accuracy": 0.0018687222611539767,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.19448230697381447,
+            "delta_logloss": -0.001042539681224891,
+            "fixes": 94,
+            "breaks": 70,
+            "net": 24,
+            "bootstrap_seller_ci95": [
+              -4.0,
+              53.0
+            ],
+            "bootstrap_seller_mean": 24.54,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9504950495049505,
+              "acc_cand": 0.9536216779572694,
+              "delta_acc": 0.0031266284523189247,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.12695415752869993,
+              "fixes": 19,
+              "breaks": 7,
+              "net": 12
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9082731815657967,
+              "acc_cand": 0.9096057745696835,
+              "delta_acc": 0.0013325930038867728,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.22326332169567448,
+              "fixes": 75,
+              "breaks": 63,
+              "net": 12
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 94,
+                "fixes": 51,
+                "breaks": 43,
+                "net": 8,
+                "precision": 0.5425531914893617
+              },
+              "new_to_used": {
+                "count": 70,
+                "fixes": 43,
+                "breaks": 27,
+                "net": 16,
+                "precision": 0.6142857142857143
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.9215915284590828,
+            "delta_accuracy": 0.0016351319785097296,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.19448230697381447,
+            "delta_logloss": -0.001042539681224891,
+            "fixes": 99,
+            "breaks": 78,
+            "net": 21,
+            "bootstrap_seller_ci95": [
+              -8.0,
+              49.0
+            ],
+            "bootstrap_seller_mean": 21.3315,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9544033350703491,
+              "delta_acc": 0.003387180823345437,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.12695415752869993,
+              "fixes": 20,
+              "breaks": 7,
+              "net": 13
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.9076068850638535,
+              "delta_acc": 0.0008883953359245522,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.22326332169567448,
+              "fixes": 79,
+              "breaks": 71,
+              "net": 8
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 106,
+                "fixes": 57,
+                "breaks": 49,
+                "net": 8,
+                "precision": 0.5377358490566038
+              },
+              "new_to_used": {
+                "count": 71,
+                "fixes": 42,
+                "breaks": 29,
+                "net": 13,
+                "precision": 0.5915492957746479
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.9219808455968231,
+            "delta_accuracy": 0.0020244491162501044,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.19448230697381447,
+            "delta_logloss": -0.001042539681224891,
+            "fixes": 117,
+            "breaks": 91,
+            "net": 26,
+            "bootstrap_seller_ci95": [
+              -4.0,
+              58.0
+            ],
+            "bootstrap_seller_mean": 26.2265,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9531005732152162,
+              "delta_acc": 0.0020844189682125425,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.12695415752869993,
+              "fixes": 23,
+              "breaks": 15,
+              "net": 8
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.9087173792337591,
+              "delta_acc": 0.0019988895058301592,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.22326332169567448,
+              "fixes": 94,
+              "breaks": 76,
+              "net": 18
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 40,
+                "fixes": 26,
+                "breaks": 14,
+                "net": 12,
+                "precision": 0.65
+              },
+              "new_to_used": {
+                "count": 168,
+                "fixes": 91,
+                "breaks": 77,
+                "net": 14,
+                "precision": 0.5416666666666666
+              }
+            }
+          }
+        },
+        "CB_Bag3_hist_vs_A_hist": {
+          "th_base_tune": 0.535,
+          "th_cand_tune": 0.53,
+          "common_th_050": {
+            "n_rows": 12843,
+            "accuracy_base": 0.92089075761115,
+            "accuracy_cand": 0.919878533053025,
+            "delta_accuracy": -0.0010122245581249967,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.19497734510435785,
+            "delta_logloss": -0.0005475015506815062,
+            "fixes": 27,
+            "breaks": 40,
+            "net": -13,
+            "bootstrap_seller_ci95": [
+              -31.0,
+              5.0
+            ],
+            "bootstrap_seller_mean": -12.528,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9504950495049505,
+              "acc_cand": 0.9507556018759771,
+              "delta_acc": 0.0002605523710266233,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.12934379542258098,
+              "fixes": 7,
+              "breaks": 6,
+              "net": 1
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9082731815657967,
+              "acc_cand": 0.9067184897279289,
+              "delta_acc": -0.0015546918378678276,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.2229508668898836,
+              "fixes": 20,
+              "breaks": 34,
+              "net": -14
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 39,
+                "fixes": 12,
+                "breaks": 27,
+                "net": -15,
+                "precision": 0.3076923076923077
+              },
+              "new_to_used": {
+                "count": 28,
+                "fixes": 15,
+                "breaks": 13,
+                "net": 2,
+                "precision": 0.5357142857142857
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.9205793039009578,
+            "delta_accuracy": 0.0006229074203847329,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.19497734510435785,
+            "delta_logloss": -0.0005475015506815062,
+            "fixes": 47,
+            "breaks": 39,
+            "net": 8,
+            "bootstrap_seller_ci95": [
+              -13.0,
+              29.0
+            ],
+            "bootstrap_seller_mean": 8.2635,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9507556018759771,
+              "delta_acc": -0.0002605523710266233,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.12934379542258098,
+              "fixes": 6,
+              "breaks": 7,
+              "net": -1
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.9077179344808439,
+              "delta_acc": 0.000999444752915024,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.2229508668898836,
+              "fixes": 41,
+              "breaks": 32,
+              "net": 9
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 55,
+                "fixes": 27,
+                "breaks": 28,
+                "net": -1,
+                "precision": 0.4909090909090909
+              },
+              "new_to_used": {
+                "count": 31,
+                "fixes": 20,
+                "breaks": 11,
+                "net": 9,
+                "precision": 0.6451612903225806
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.9203457136183135,
+            "delta_accuracy": 0.0003893171377404858,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.19497734510435785,
+            "delta_logloss": -0.0005475015506815062,
+            "fixes": 43,
+            "breaks": 38,
+            "net": 5,
+            "bootstrap_seller_ci95": [
+              -15.0,
+              24.0
+            ],
+            "bootstrap_seller_mean": 5.188,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9510161542470037,
+              "delta_acc": 0.0,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.12934379542258098,
+              "fixes": 5,
+              "breaks": 5,
+              "net": 0
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.9072737368128817,
+              "delta_acc": 0.0005552470849528035,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.2229508668898836,
+              "fixes": 38,
+              "breaks": 33,
+              "net": 5
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 45,
+                "fixes": 20,
+                "breaks": 25,
+                "net": -5,
+                "precision": 0.4444444444444444
+              },
+              "new_to_used": {
+                "count": 36,
+                "fixes": 23,
+                "breaks": 13,
+                "net": 10,
+                "precision": 0.6388888888888888
+              }
+            }
+          }
+        },
+        "Blend075_Bag3_hist_vs_A_hist": {
+          "th_base_tune": 0.535,
+          "th_cand_tune": 0.48,
+          "common_th_050": {
+            "n_rows": 12843,
+            "accuracy_base": 0.92089075761115,
+            "accuracy_cand": 0.9231487970100444,
+            "delta_accuracy": 0.0022580393988943515,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.19300445882717673,
+            "delta_logloss": -0.0025203878278626246,
+            "fixes": 74,
+            "breaks": 45,
+            "net": 29,
+            "bootstrap_seller_ci95": [
+              5.0,
+              53.0
+            ],
+            "bootstrap_seller_mean": 29.1345,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9504950495049505,
+              "acc_cand": 0.9533611255862429,
+              "delta_acc": 0.0028660760812924124,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.12639391175261608,
+              "fixes": 15,
+              "breaks": 4,
+              "net": 11
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9082731815657967,
+              "acc_cand": 0.9102720710716269,
+              "delta_acc": 0.0019988895058301592,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.2213943843876613,
+              "fixes": 59,
+              "breaks": 41,
+              "net": 18
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 61,
+                "fixes": 36,
+                "breaks": 25,
+                "net": 11,
+                "precision": 0.5901639344262295
+              },
+              "new_to_used": {
+                "count": 58,
+                "fixes": 38,
+                "breaks": 20,
+                "net": 18,
+                "precision": 0.6551724137931034
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.9225258895896598,
+            "delta_accuracy": 0.002569493109086718,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.19300445882717673,
+            "delta_logloss": -0.0025203878278626246,
+            "fixes": 81,
+            "breaks": 48,
+            "net": 33,
+            "bootstrap_seller_ci95": [
+              8.0,
+              57.0
+            ],
+            "bootstrap_seller_mean": 32.953,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9544033350703491,
+              "delta_acc": 0.003387180823345437,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.12639391175261608,
+              "fixes": 17,
+              "breaks": 4,
+              "net": 13
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.9089394780677401,
+              "delta_acc": 0.002220988339811214,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.2213943843876613,
+              "fixes": 64,
+              "breaks": 44,
+              "net": 20
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 73,
+                "fixes": 44,
+                "breaks": 29,
+                "net": 15,
+                "precision": 0.6027397260273972
+              },
+              "new_to_used": {
+                "count": 56,
+                "fixes": 37,
+                "breaks": 19,
+                "net": 18,
+                "precision": 0.6607142857142857
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.9224480261621116,
+            "delta_accuracy": 0.0024916296815385985,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.19300445882717673,
+            "delta_logloss": -0.0025203878278626246,
+            "fixes": 90,
+            "breaks": 58,
+            "net": 32,
+            "bootstrap_seller_ci95": [
+              6.0,
+              58.0
+            ],
+            "bootstrap_seller_mean": 31.6365,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9523189161021365,
+              "delta_acc": 0.0013027618551327835,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.12639391175261608,
+              "fixes": 15,
+              "breaks": 10,
+              "net": 5
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.9097168239866741,
+              "delta_acc": 0.0029983342587451833,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.2213943843876613,
+              "fixes": 75,
+              "breaks": 48,
+              "net": 27
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 17,
+                "fixes": 10,
+                "breaks": 7,
+                "net": 3,
+                "precision": 0.5882352941176471
+              },
+              "new_to_used": {
+                "count": 131,
+                "fixes": 80,
+                "breaks": 51,
+                "net": 29,
+                "precision": 0.6106870229007634
+              }
+            }
+          }
+        },
+        "R142_HistGB_vs_A_hist": {
+          "th_base_tune": 0.535,
+          "th_cand_tune": 0.5,
+          "common_th_050": {
+            "n_rows": 12843,
+            "accuracy_base": 0.92089075761115,
+            "accuracy_cand": 0.8934049676866775,
+            "delta_accuracy": -0.02748578992447248,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.2542543648629692,
+            "delta_logloss": 0.05872951820792985,
+            "fixes": 251,
+            "breaks": 604,
+            "net": -353,
+            "bootstrap_seller_ci95": [
+              -433.0,
+              -271.97500000000014
+            ],
+            "bootstrap_seller_mean": -353.177,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9504950495049505,
+              "acc_cand": 0.9254820218863992,
+              "delta_acc": -0.025013027618551287,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.18927727658376056,
+              "fixes": 45,
+              "breaks": 141,
+              "net": -96
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9082731815657967,
+              "acc_cand": 0.8797334813992227,
+              "delta_acc": -0.028539700166574034,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.2819480977686441,
+              "fixes": 206,
+              "breaks": 463,
+              "net": -257
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 425,
+                "fixes": 117,
+                "breaks": 308,
+                "net": -191,
+                "precision": 0.2752941176470588
+              },
+              "new_to_used": {
+                "count": 430,
+                "fixes": 134,
+                "breaks": 296,
+                "net": -162,
+                "precision": 0.3116279069767442
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.8941836019621584,
+            "delta_accuracy": -0.025772794518414632,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.2542543648629692,
+            "delta_logloss": 0.05872951820792985,
+            "fixes": 270,
+            "breaks": 601,
+            "net": -331,
+            "bootstrap_seller_ci95": [
+              -418.0,
+              -246.0
+            ],
+            "bootstrap_seller_mean": -331.4075,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9257425742574258,
+              "delta_acc": -0.02527357998957791,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.18927727658376056,
+              "fixes": 45,
+              "breaks": 142,
+              "net": -97
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.8807329261521377,
+              "delta_acc": -0.025985563575791182,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.2819480977686441,
+              "fixes": 225,
+              "breaks": 459,
+              "net": -234
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 454,
+                "fixes": 123,
+                "breaks": 331,
+                "net": -208,
+                "precision": 0.2709251101321586
+              },
+              "new_to_used": {
+                "count": 417,
+                "fixes": 147,
+                "breaks": 270,
+                "net": -123,
+                "precision": 0.35251798561151076
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.8934049676866775,
+            "delta_accuracy": -0.026551428793895493,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.2542543648629692,
+            "delta_logloss": 0.05872951820792985,
+            "fixes": 262,
+            "breaks": 603,
+            "net": -341,
+            "bootstrap_seller_ci95": [
+              -422.025,
+              -257.97500000000014
+            ],
+            "bootstrap_seller_mean": -341.5435,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9254820218863992,
+              "delta_acc": -0.025534132360604533,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.18927727658376056,
+              "fixes": 45,
+              "breaks": 143,
+              "net": -98
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.8797334813992227,
+              "delta_acc": -0.026985008328706206,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.2819480977686441,
+              "fixes": 217,
+              "breaks": 460,
+              "net": -243
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 393,
+                "fixes": 103,
+                "breaks": 290,
+                "net": -187,
+                "precision": 0.26208651399491095
+              },
+              "new_to_used": {
+                "count": 472,
+                "fixes": 159,
+                "breaks": 313,
+                "net": -154,
+                "precision": 0.336864406779661
+              }
+            }
+          }
+        },
+        "R142_CatBoost_vs_A_hist": {
+          "th_base_tune": 0.535,
+          "th_cand_tune": 0.5,
+          "common_th_050": {
+            "n_rows": 12843,
+            "accuracy_base": 0.92089075761115,
+            "accuracy_cand": 0.8994004516078797,
+            "delta_accuracy": -0.021490306003270288,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.24365148753928667,
+            "delta_logloss": 0.04812664088424731,
+            "fixes": 249,
+            "breaks": 525,
+            "net": -276,
+            "bootstrap_seller_ci95": [
+              -375.05,
+              -187.97500000000014
+            ],
+            "bootstrap_seller_mean": -277.559,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9504950495049505,
+              "acc_cand": 0.9319958311620635,
+              "delta_acc": -0.018499218342886925,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.1754811762642261,
+              "fixes": 46,
+              "breaks": 117,
+              "net": -71
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9082731815657967,
+              "acc_cand": 0.8855080510827318,
+              "delta_acc": -0.022765130483064944,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.27270619655357675,
+              "fixes": 203,
+              "breaks": 408,
+              "net": -205
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 362,
+                "fixes": 104,
+                "breaks": 258,
+                "net": -154,
+                "precision": 0.287292817679558
+              },
+              "new_to_used": {
+                "count": 412,
+                "fixes": 145,
+                "breaks": 267,
+                "net": -122,
+                "precision": 0.35194174757281554
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.8979989099120144,
+            "delta_accuracy": -0.02195748656855867,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.24365148753928667,
+            "delta_logloss": 0.04812664088424731,
+            "fixes": 265,
+            "breaks": 547,
+            "net": -282,
+            "bootstrap_seller_ci95": [
+              -394.0,
+              -186.97500000000014
+            ],
+            "bootstrap_seller_mean": -283.6915,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9319958311620635,
+              "delta_acc": -0.01902032308494017,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.1754811762642261,
+              "fixes": 47,
+              "breaks": 120,
+              "net": -73
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.8835091615769017,
+              "delta_acc": -0.023209328151027164,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.27270619655357675,
+              "fixes": 218,
+              "breaks": 427,
+              "net": -209
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 401,
+                "fixes": 110,
+                "breaks": 291,
+                "net": -181,
+                "precision": 0.2743142144638404
+              },
+              "new_to_used": {
+                "count": 411,
+                "fixes": 155,
+                "breaks": 256,
+                "net": -101,
+                "precision": 0.3771289537712895
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.8994004516078797,
+            "delta_accuracy": -0.0205559448726933,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.24365148753928667,
+            "delta_logloss": 0.04812664088424731,
+            "fixes": 267,
+            "breaks": 531,
+            "net": -264,
+            "bootstrap_seller_ci95": [
+              -363.025,
+              -174.0
+            ],
+            "bootstrap_seller_mean": -265.9255,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9319958311620635,
+              "delta_acc": -0.01902032308494017,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.1754811762642261,
+              "fixes": 45,
+              "breaks": 118,
+              "net": -73
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.8855080510827318,
+              "delta_acc": -0.021210438645197116,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.27270619655357675,
+              "fixes": 222,
+              "breaks": 413,
+              "net": -191
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 337,
+                "fixes": 93,
+                "breaks": 244,
+                "net": -151,
+                "precision": 0.27596439169139464
+              },
+              "new_to_used": {
+                "count": 461,
+                "fixes": 174,
+                "breaks": 287,
+                "net": -113,
+                "precision": 0.3774403470715835
+              }
+            }
+          }
+        },
+        "R156_Ensemble_vs_A_hist": {
+          "th_base_tune": 0.535,
+          "th_cand_tune": 0.5,
+          "common_th_050": {
+            "n_rows": 12843,
+            "accuracy_base": 0.92089075761115,
+            "accuracy_cand": 0.9050844818188897,
+            "delta_accuracy": -0.01580627579226035,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.22882494712724938,
+            "delta_logloss": 0.03330010047221002,
+            "fixes": 214,
+            "breaks": 417,
+            "net": -203,
+            "bootstrap_seller_ci95": [
+              -256.0,
+              -150.97500000000014
+            ],
+            "bootstrap_seller_mean": -203.616,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9504950495049505,
+              "acc_cand": 0.9408546117769672,
+              "delta_acc": -0.009640437727983286,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.15136845950349803,
+              "fixes": 38,
+              "breaks": 75,
+              "net": -37
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9082731815657967,
+              "acc_cand": 0.8898389783453637,
+              "delta_acc": -0.018434203220432988,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.26183749565583997,
+              "fixes": 176,
+              "breaks": 342,
+              "net": -166
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 349,
+                "fixes": 117,
+                "breaks": 232,
+                "net": -115,
+                "precision": 0.335243553008596
+              },
+              "new_to_used": {
+                "count": 282,
+                "fixes": 97,
+                "breaks": 185,
+                "net": -88,
+                "precision": 0.34397163120567376
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.905395935529082,
+            "delta_accuracy": -0.014560460951490994,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.22882494712724938,
+            "delta_logloss": 0.03330010047221002,
+            "fixes": 230,
+            "breaks": 417,
+            "net": -187,
+            "bootstrap_seller_ci95": [
+              -241.0,
+              -137.0
+            ],
+            "bootstrap_seller_mean": -187.887,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9416362688900469,
+              "delta_acc": -0.009379885356956774,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.15136845950349803,
+              "fixes": 40,
+              "breaks": 76,
+              "net": -36
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.8899500277623542,
+              "delta_acc": -0.016768461965574688,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.26183749565583997,
+              "fixes": 190,
+              "breaks": 341,
+              "net": -151
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 371,
+                "fixes": 123,
+                "breaks": 248,
+                "net": -125,
+                "precision": 0.33153638814016173
+              },
+              "new_to_used": {
+                "count": 276,
+                "fixes": 107,
+                "breaks": 169,
+                "net": -62,
+                "precision": 0.38768115942028986
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12843,
+            "accuracy_base": 0.919956396480573,
+            "accuracy_cand": 0.9050844818188897,
+            "delta_accuracy": -0.01487191466168336,
+            "logloss_base": 0.19552484665503936,
+            "logloss_cand": 0.22882494712724938,
+            "delta_logloss": 0.03330010047221002,
+            "fixes": 223,
+            "breaks": 414,
+            "net": -191,
+            "bootstrap_seller_ci95": [
+              -244.0,
+              -140.0
+            ],
+            "bootstrap_seller_mean": -191.9825,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9510161542470037,
+              "acc_cand": 0.9408546117769672,
+              "delta_acc": -0.010161542470036533,
+              "logloss_base": 0.12965589474018843,
+              "logloss_cand": 0.15136845950349803,
+              "fixes": 37,
+              "breaks": 76,
+              "net": -39
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9067184897279289,
+              "acc_cand": 0.8898389783453637,
+              "delta_acc": -0.01687951138256516,
+              "logloss_base": 0.22359869867604973,
+              "logloss_cand": 0.26183749565583997,
+              "fixes": 186,
+              "breaks": 338,
+              "net": -152
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 315,
+                "fixes": 101,
+                "breaks": 214,
+                "net": -113,
+                "precision": 0.32063492063492066
+              },
+              "new_to_used": {
+                "count": 322,
+                "fixes": 122,
+                "breaks": 200,
+                "net": -78,
+                "precision": 0.37888198757763975
+              }
+            }
+          }
+        }
+      },
+      "comparisons_vs_A_valname": {
+        "LGB_valname_vs_A_valname": {
+          "th_base_tune": 0.455,
+          "th_cand_tune": 0.475,
+          "common_th_050": {
+            "n_rows": 12843,
+            "accuracy_base": 0.9190998987775442,
+            "accuracy_cand": 0.9205014404734096,
+            "delta_accuracy": 0.0014015416958654825,
+            "logloss_base": 0.197008643374029,
+            "logloss_cand": 0.21585448567448876,
+            "delta_logloss": 0.018845842300459742,
+            "fixes": 213,
+            "breaks": 195,
+            "net": 18,
+            "bootstrap_seller_ci95": [
+              -31.0,
+              67.0
+            ],
+            "bootstrap_seller_mean": 17.169,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9517978113600833,
+              "acc_cand": 0.9541427826993225,
+              "delta_acc": 0.002344971339239166,
+              "logloss_base": 0.1302905005179636,
+              "logloss_cand": 0.13486610873255853,
+              "fixes": 37,
+              "breaks": 28,
+              "net": 9
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9051637978900611,
+              "acc_cand": 0.9061632426429761,
+              "delta_acc": 0.000999444752915024,
+              "logloss_base": 0.22544442708103388,
+              "logloss_cand": 0.25037235249327033,
+              "fixes": 176,
+              "breaks": 167,
+              "net": 9
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 205,
+                "fixes": 101,
+                "breaks": 104,
+                "net": -3,
+                "precision": 0.4926829268292683
+              },
+              "new_to_used": {
+                "count": 203,
+                "fixes": 112,
+                "breaks": 91,
+                "net": 21,
+                "precision": 0.5517241379310345
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12843,
+            "accuracy_base": 0.9180876742194192,
+            "accuracy_cand": 0.9210464844662462,
+            "delta_accuracy": 0.0029588102468269817,
+            "logloss_base": 0.197008643374029,
+            "logloss_cand": 0.21585448567448876,
+            "delta_logloss": 0.018845842300459742,
+            "fixes": 213,
+            "breaks": 175,
+            "net": 38,
+            "bootstrap_seller_ci95": [
+              -9.024999999999999,
+              87.0
+            ],
+            "bootstrap_seller_mean": 37.1425,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9504950495049505,
+              "acc_cand": 0.9546638874413758,
+              "delta_acc": 0.004168837936425307,
+              "logloss_base": 0.1302905005179636,
+              "logloss_cand": 0.13486610873255853,
+              "fixes": 39,
+              "breaks": 23,
+              "net": 16
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9042754025541366,
+              "acc_cand": 0.9067184897279289,
+              "delta_acc": 0.002443087173792269,
+              "logloss_base": 0.22544442708103388,
+              "logloss_cand": 0.25037235249327033,
+              "fixes": 174,
+              "breaks": 152,
+              "net": 22
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 216,
+                "fixes": 120,
+                "breaks": 96,
+                "net": 24,
+                "precision": 0.5555555555555556
+              },
+              "new_to_used": {
+                "count": 172,
+                "fixes": 93,
+                "breaks": 79,
+                "net": 14,
+                "precision": 0.5406976744186046
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12843,
+            "accuracy_base": 0.9180876742194192,
+            "accuracy_cand": 0.9202678501907654,
+            "delta_accuracy": 0.002180175971346232,
+            "logloss_base": 0.197008643374029,
+            "logloss_cand": 0.21585448567448876,
+            "delta_logloss": 0.018845842300459742,
+            "fixes": 209,
+            "breaks": 181,
+            "net": 28,
+            "bootstrap_seller_ci95": [
+              -21.0,
+              77.0
+            ],
+            "bootstrap_seller_mean": 27.1075,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9504950495049505,
+              "acc_cand": 0.9541427826993225,
+              "delta_acc": 0.0036477331943720603,
+              "logloss_base": 0.1302905005179636,
+              "logloss_cand": 0.13486610873255853,
+              "fixes": 39,
+              "breaks": 25,
+              "net": 14
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9042754025541366,
+              "acc_cand": 0.9058300943920045,
+              "delta_acc": 0.0015546918378678276,
+              "logloss_base": 0.22544442708103388,
+              "logloss_cand": 0.25037235249327033,
+              "fixes": 170,
+              "breaks": 156,
+              "net": 14
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 228,
+                "fixes": 123,
+                "breaks": 105,
+                "net": 18,
+                "precision": 0.5394736842105263
+              },
+              "new_to_used": {
+                "count": 162,
+                "fixes": 86,
+                "breaks": 76,
+                "net": 10,
+                "precision": 0.5308641975308642
+              }
+            }
+          }
+        },
+        "Blend075_valname_vs_A_valname": {
+          "th_base_tune": 0.455,
+          "th_cand_tune": 0.47000000000000003,
+          "common_th_050": {
+            "n_rows": 12843,
+            "accuracy_base": 0.9190998987775442,
+            "accuracy_cand": 0.922759479872304,
+            "delta_accuracy": 0.003659581094759834,
+            "logloss_base": 0.197008643374029,
+            "logloss_cand": 0.19448230697381447,
+            "delta_logloss": -0.002526336400214546,
+            "fixes": 88,
+            "breaks": 41,
+            "net": 47,
+            "bootstrap_seller_ci95": [
+              21.0,
+              73.0
+            ],
+            "bootstrap_seller_mean": 46.7645,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9517978113600833,
+              "acc_cand": 0.9536216779572694,
+              "delta_acc": 0.0018238665971860302,
+              "logloss_base": 0.1302905005179636,
+              "logloss_cand": 0.12695415752869993,
+              "fixes": 14,
+              "breaks": 7,
+              "net": 7
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9051637978900611,
+              "acc_cand": 0.9096057745696835,
+              "delta_acc": 0.004441976679622428,
+              "logloss_base": 0.22544442708103388,
+              "logloss_cand": 0.22326332169567448,
+              "fixes": 74,
+              "breaks": 34,
+              "net": 40
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 64,
+                "fixes": 40,
+                "breaks": 24,
+                "net": 16,
+                "precision": 0.625
+              },
+              "new_to_used": {
+                "count": 65,
+                "fixes": 48,
+                "breaks": 17,
+                "net": 31,
+                "precision": 0.7384615384615385
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12843,
+            "accuracy_base": 0.9180876742194192,
+            "accuracy_cand": 0.9215136650315346,
+            "delta_accuracy": 0.003425990812115476,
+            "logloss_base": 0.197008643374029,
+            "logloss_cand": 0.19448230697381447,
+            "delta_logloss": -0.002526336400214546,
+            "fixes": 84,
+            "breaks": 40,
+            "net": 44,
+            "bootstrap_seller_ci95": [
+              18.0,
+              73.0
+            ],
+            "bootstrap_seller_mean": 43.666,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9504950495049505,
+              "acc_cand": 0.9523189161021365,
+              "delta_acc": 0.0018238665971860302,
+              "logloss_base": 0.1302905005179636,
+              "logloss_cand": 0.12695415752869993,
+              "fixes": 14,
+              "breaks": 7,
+              "net": 7
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9042754025541366,
+              "acc_cand": 0.9083842309827873,
+              "delta_acc": 0.004108828428650679,
+              "logloss_base": 0.22544442708103388,
+              "logloss_cand": 0.22326332169567448,
+              "fixes": 70,
+              "breaks": 33,
+              "net": 37
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 57,
+                "fixes": 41,
+                "breaks": 16,
+                "net": 25,
+                "precision": 0.7192982456140351
+              },
+              "new_to_used": {
+                "count": 67,
+                "fixes": 43,
+                "breaks": 24,
+                "net": 19,
+                "precision": 0.6417910447761194
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12843,
+            "accuracy_base": 0.9180876742194192,
+            "accuracy_cand": 0.9219808455968231,
+            "delta_accuracy": 0.00389317137740397,
+            "logloss_base": 0.197008643374029,
+            "logloss_cand": 0.19448230697381447,
+            "delta_logloss": -0.002526336400214546,
+            "fixes": 91,
+            "breaks": 41,
+            "net": 50,
+            "bootstrap_seller_ci95": [
+              24.0,
+              79.0
+            ],
+            "bootstrap_seller_mean": 49.946,
+            "seen_sellers": {
+              "n": 3838,
+              "acc_base": 0.9504950495049505,
+              "acc_cand": 0.9531005732152162,
+              "delta_acc": 0.002605523710265789,
+              "logloss_base": 0.1302905005179636,
+              "logloss_cand": 0.12695415752869993,
+              "fixes": 17,
+              "breaks": 7,
+              "net": 10
+            },
+            "new_sellers": {
+              "n": 9005,
+              "acc_base": 0.9042754025541366,
+              "acc_cand": 0.9087173792337591,
+              "delta_acc": 0.004441976679622428,
+              "logloss_base": 0.22544442708103388,
+              "logloss_cand": 0.22326332169567448,
+              "fixes": 74,
+              "breaks": 34,
+              "net": 40
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 78,
+                "fixes": 57,
+                "breaks": 21,
+                "net": 36,
+                "precision": 0.7307692307692307
+              },
+              "new_to_used": {
+                "count": 54,
+                "fixes": 34,
+                "breaks": 20,
+                "net": 14,
+                "precision": 0.6296296296296297
+              }
+            }
+          }
+        }
+      }
+    },
+    "20261030": {
+      "seed": 20261030,
+      "n_confirm": 12881,
+      "n_seen": 3740,
+      "n_new": 9141,
+      "selected_lgb_hist": "lgb_conservative",
+      "selected_lgb_valname": "lgb_conservative",
+      "paired_file": "results\\intensive_20261030\\paired_all_models_seed_20261030_confirm.csv.gz",
+      "paired_file_sha256": "6dee9e593794e3ea3d04460bb8922f64f8dcfaf35d8d92648c6c2e68632d2f56",
+      "baseline_A_hist": {
+        "th_tune": 0.44,
+        "acc_050": 0.9313717879046658,
+        "acc_tuned": 0.9291980436301529,
+        "logloss": 0.17038908763522487
+      },
+      "baseline_A_valname": {
+        "th_tune": 0.47000000000000003,
+        "acc_050": 0.9299743808710503,
+        "acc_tuned": 0.9302849157674093,
+        "logloss": 0.17042342123664778
+      },
+      "comparisons_vs_A_hist": {
+        "A_valname_vs_A_hist": {
+          "th_base_tune": 0.44,
+          "th_cand_tune": 0.47000000000000003,
+          "common_th_050": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9313717879046658,
+            "accuracy_cand": 0.9299743808710503,
+            "delta_accuracy": -0.001397407033615461,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.17042342123664778,
+            "delta_logloss": 3.433360142290898e-05,
+            "fixes": 73,
+            "breaks": 91,
+            "net": -18,
+            "bootstrap_seller_ci95": [
+              -47.0,
+              9.0
+            ],
+            "bootstrap_seller_mean": -18.3265,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.955614973262032,
+              "acc_cand": 0.954812834224599,
+              "delta_acc": -0.0008021390374330917,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12407536473787724,
+              "fixes": 7,
+              "breaks": 10,
+              "net": -3
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9214527950990045,
+              "acc_cand": 0.9198118367793459,
+              "delta_acc": -0.001640958319658603,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.1893865249786237,
+              "fixes": 66,
+              "breaks": 81,
+              "net": -15
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 80,
+                "fixes": 38,
+                "breaks": 42,
+                "net": -4,
+                "precision": 0.475
+              },
+              "new_to_used": {
+                "count": 84,
+                "fixes": 35,
+                "breaks": 49,
+                "net": -14,
+                "precision": 0.4166666666666667
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9291980436301529,
+            "accuracy_cand": 0.9294309448024222,
+            "delta_accuracy": 0.000232901172269262,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.17042342123664778,
+            "delta_logloss": 3.433360142290898e-05,
+            "fixes": 77,
+            "breaks": 74,
+            "net": 3,
+            "bootstrap_seller_ci95": [
+              -23.0,
+              29.0
+            ],
+            "bootstrap_seller_mean": 2.9765,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9545454545454546,
+              "acc_cand": 0.9550802139037433,
+              "delta_acc": 0.0005347593582887278,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12407536473787724,
+              "fixes": 13,
+              "breaks": 11,
+              "net": 2
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9188272617875506,
+              "acc_cand": 0.9189366590088611,
+              "delta_acc": 0.00010939722131053653,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.1893865249786237,
+              "fixes": 64,
+              "breaks": 63,
+              "net": 1
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 77,
+                "fixes": 46,
+                "breaks": 31,
+                "net": 15,
+                "precision": 0.5974025974025974
+              },
+              "new_to_used": {
+                "count": 74,
+                "fixes": 31,
+                "breaks": 43,
+                "net": -12,
+                "precision": 0.4189189189189189
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9291980436301529,
+            "accuracy_cand": 0.9302849157674093,
+            "delta_accuracy": 0.001086872137256445,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.17042342123664778,
+            "delta_logloss": 3.433360142290898e-05,
+            "fixes": 87,
+            "breaks": 73,
+            "net": 14,
+            "bootstrap_seller_ci95": [
+              -12.024999999999999,
+              40.0
+            ],
+            "bootstrap_seller_mean": 13.986,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9545454545454546,
+              "acc_cand": 0.9542780748663101,
+              "delta_acc": -0.0002673796791444749,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12407536473787724,
+              "fixes": 13,
+              "breaks": 14,
+              "net": -1
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9188272617875506,
+              "acc_cand": 0.9204682201072093,
+              "delta_acc": 0.001640958319658714,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.1893865249786237,
+              "fixes": 74,
+              "breaks": 59,
+              "net": 15
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 114,
+                "fixes": 67,
+                "breaks": 47,
+                "net": 20,
+                "precision": 0.5877192982456141
+              },
+              "new_to_used": {
+                "count": 46,
+                "fixes": 20,
+                "breaks": 26,
+                "net": -6,
+                "precision": 0.43478260869565216
+              }
+            }
+          }
+        },
+        "LGB_hist_vs_A_hist": {
+          "th_base_tune": 0.44,
+          "th_cand_tune": 0.455,
+          "common_th_050": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9313717879046658,
+            "accuracy_cand": 0.928887508733794,
+            "delta_accuracy": -0.002484279170871795,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.17487946831668838,
+            "delta_logloss": 0.004490380681463513,
+            "fixes": 167,
+            "breaks": 199,
+            "net": -32,
+            "bootstrap_seller_ci95": [
+              -71.0,
+              8.0
+            ],
+            "bootstrap_seller_mean": -31.9205,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.955614973262032,
+              "acc_cand": 0.953475935828877,
+              "delta_acc": -0.002139037433155022,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12676931826675567,
+              "fixes": 33,
+              "breaks": 41,
+              "net": -8
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9214527950990045,
+              "acc_cand": 0.9188272617875506,
+              "delta_acc": -0.002625533311453876,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.19456352489548154,
+              "fixes": 134,
+              "breaks": 158,
+              "net": -24
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 207,
+                "fixes": 94,
+                "breaks": 113,
+                "net": -19,
+                "precision": 0.45410628019323673
+              },
+              "new_to_used": {
+                "count": 159,
+                "fixes": 73,
+                "breaks": 86,
+                "net": -13,
+                "precision": 0.4591194968553459
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9291980436301529,
+            "accuracy_cand": 0.9278006365965376,
+            "delta_accuracy": -0.00139740703361535,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.17487946831668838,
+            "delta_logloss": 0.004490380681463513,
+            "fixes": 154,
+            "breaks": 172,
+            "net": -18,
+            "bootstrap_seller_ci95": [
+              -58.025,
+              19.024999999999864
+            ],
+            "bootstrap_seller_mean": -18.0785,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9545454545454546,
+              "acc_cand": 0.9524064171122995,
+              "delta_acc": -0.002139037433155133,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12676931826675567,
+              "fixes": 32,
+              "breaks": 40,
+              "net": -8
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9188272617875506,
+              "acc_cand": 0.9177332895744448,
+              "delta_acc": -0.0010939722131058094,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.19456352489548154,
+              "fixes": 122,
+              "breaks": 132,
+              "net": -10
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 202,
+                "fixes": 98,
+                "breaks": 104,
+                "net": -6,
+                "precision": 0.48514851485148514
+              },
+              "new_to_used": {
+                "count": 124,
+                "fixes": 56,
+                "breaks": 68,
+                "net": -12,
+                "precision": 0.45161290322580644
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9291980436301529,
+            "accuracy_cand": 0.9279559040447171,
+            "delta_accuracy": -0.001242139585435842,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.17487946831668838,
+            "delta_logloss": 0.004490380681463513,
+            "fixes": 160,
+            "breaks": 176,
+            "net": -16,
+            "bootstrap_seller_ci95": [
+              -56.0,
+              21.024999999999864
+            ],
+            "bootstrap_seller_mean": -16.1135,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9545454545454546,
+              "acc_cand": 0.9524064171122995,
+              "delta_acc": -0.002139037433155133,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12676931826675567,
+              "fixes": 32,
+              "breaks": 40,
+              "net": -8
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9188272617875506,
+              "acc_cand": 0.917952084017066,
+              "delta_acc": -0.0008751777704846253,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.19456352489548154,
+              "fixes": 128,
+              "breaks": 136,
+              "net": -8
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 216,
+                "fixes": 106,
+                "breaks": 110,
+                "net": -4,
+                "precision": 0.49074074074074076
+              },
+              "new_to_used": {
+                "count": 120,
+                "fixes": 54,
+                "breaks": 66,
+                "net": -12,
+                "precision": 0.45
+              }
+            }
+          }
+        },
+        "LGB_valname_vs_A_hist": {
+          "th_base_tune": 0.44,
+          "th_cand_tune": 0.45,
+          "common_th_050": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9313717879046658,
+            "accuracy_cand": 0.9292756773542427,
+            "delta_accuracy": -0.002096110550423136,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.1740621110716964,
+            "delta_logloss": 0.003673023436471523,
+            "fixes": 166,
+            "breaks": 193,
+            "net": -27,
+            "bootstrap_seller_ci95": [
+              -68.0,
+              14.0
+            ],
+            "bootstrap_seller_mean": -26.847,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.955614973262032,
+              "acc_cand": 0.954812834224599,
+              "delta_acc": -0.0008021390374330917,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12799452481350157,
+              "fixes": 35,
+              "breaks": 38,
+              "net": -3
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9214527950990045,
+              "acc_cand": 0.9188272617875506,
+              "delta_acc": -0.002625533311453876,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.19291046164664977,
+              "fixes": 131,
+              "breaks": 155,
+              "net": -24
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 211,
+                "fixes": 94,
+                "breaks": 117,
+                "net": -23,
+                "precision": 0.44549763033175355
+              },
+              "new_to_used": {
+                "count": 148,
+                "fixes": 72,
+                "breaks": 76,
+                "net": -4,
+                "precision": 0.4864864864864865
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9291980436301529,
+            "accuracy_cand": 0.9284217063892555,
+            "delta_accuracy": -0.000776337240897429,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.1740621110716964,
+            "delta_logloss": 0.003673023436471523,
+            "fixes": 158,
+            "breaks": 168,
+            "net": -10,
+            "bootstrap_seller_ci95": [
+              -46.0,
+              27.0
+            ],
+            "bootstrap_seller_mean": -9.7215,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9545454545454546,
+              "acc_cand": 0.9537433155080214,
+              "delta_acc": -0.0008021390374332027,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12799452481350157,
+              "fixes": 31,
+              "breaks": 34,
+              "net": -3
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9188272617875506,
+              "acc_cand": 0.9180614812383765,
+              "delta_acc": -0.0007657805491740888,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.19291046164664977,
+              "fixes": 127,
+              "breaks": 134,
+              "net": -7
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 208,
+                "fixes": 105,
+                "breaks": 103,
+                "net": 2,
+                "precision": 0.5048076923076923
+              },
+              "new_to_used": {
+                "count": 118,
+                "fixes": 53,
+                "breaks": 65,
+                "net": -12,
+                "precision": 0.4491525423728814
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9291980436301529,
+            "accuracy_cand": 0.928576973837435,
+            "delta_accuracy": -0.000621069792717921,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.1740621110716964,
+            "delta_logloss": 0.003673023436471523,
+            "fixes": 160,
+            "breaks": 168,
+            "net": -8,
+            "bootstrap_seller_ci95": [
+              -46.0,
+              30.0
+            ],
+            "bootstrap_seller_mean": -7.607,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9545454545454546,
+              "acc_cand": 0.9542780748663101,
+              "delta_acc": -0.0002673796791444749,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12799452481350157,
+              "fixes": 31,
+              "breaks": 32,
+              "net": -1
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9188272617875506,
+              "acc_cand": 0.9180614812383765,
+              "delta_acc": -0.0007657805491740888,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.19291046164664977,
+              "fixes": 129,
+              "breaks": 136,
+              "net": -7
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 217,
+                "fixes": 109,
+                "breaks": 108,
+                "net": 1,
+                "precision": 0.5023041474654378
+              },
+              "new_to_used": {
+                "count": 111,
+                "fixes": 51,
+                "breaks": 60,
+                "net": -9,
+                "precision": 0.4594594594594595
+              }
+            }
+          }
+        },
+        "Blend075_hist_vs_A_hist": {
+          "th_base_tune": 0.44,
+          "th_cand_tune": 0.48,
+          "common_th_050": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9313717879046658,
+            "accuracy_cand": 0.9306730843878581,
+            "delta_accuracy": -0.000698703516807675,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.1682244326355019,
+            "delta_logloss": -0.002164654999722959,
+            "fixes": 44,
+            "breaks": 53,
+            "net": -9,
+            "bootstrap_seller_ci95": [
+              -29.0,
+              11.0
+            ],
+            "bootstrap_seller_mean": -9.1245,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.955614973262032,
+              "acc_cand": 0.9564171122994652,
+              "delta_acc": 0.0008021390374332027,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12180198060709316,
+              "fixes": 10,
+              "breaks": 7,
+              "net": 3
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9214527950990045,
+              "acc_cand": 0.9201400284432776,
+              "delta_acc": -0.0013127666557268824,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.18721797498166193,
+              "fixes": 34,
+              "breaks": 46,
+              "net": -12
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 50,
+                "fixes": 22,
+                "breaks": 28,
+                "net": -6,
+                "precision": 0.44
+              },
+              "new_to_used": {
+                "count": 47,
+                "fixes": 22,
+                "breaks": 25,
+                "net": -3,
+                "precision": 0.46808510638297873
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9291980436301529,
+            "accuracy_cand": 0.9300520145951401,
+            "delta_accuracy": 0.0008539709649871829,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.1682244326355019,
+            "delta_logloss": -0.002164654999722959,
+            "fixes": 45,
+            "breaks": 34,
+            "net": 11,
+            "bootstrap_seller_ci95": [
+              -7.0,
+              28.0
+            ],
+            "bootstrap_seller_mean": 11.111,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9545454545454546,
+              "acc_cand": 0.9553475935828877,
+              "delta_acc": 0.0008021390374330917,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12180198060709316,
+              "fixes": 8,
+              "breaks": 5,
+              "net": 3
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9188272617875506,
+              "acc_cand": 0.9197024395580352,
+              "delta_acc": 0.0008751777704846253,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.18721797498166193,
+              "fixes": 37,
+              "breaks": 29,
+              "net": 8
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 39,
+                "fixes": 22,
+                "breaks": 17,
+                "net": 5,
+                "precision": 0.5641025641025641
+              },
+              "new_to_used": {
+                "count": 40,
+                "fixes": 23,
+                "breaks": 17,
+                "net": 6,
+                "precision": 0.575
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9291980436301529,
+            "accuracy_cand": 0.9302849157674093,
+            "delta_accuracy": 0.001086872137256445,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.1682244326355019,
+            "delta_logloss": -0.002164654999722959,
+            "fixes": 63,
+            "breaks": 49,
+            "net": 14,
+            "bootstrap_seller_ci95": [
+              -8.0,
+              37.0
+            ],
+            "bootstrap_seller_mean": 14.031,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9545454545454546,
+              "acc_cand": 0.9553475935828877,
+              "delta_acc": 0.0008021390374330917,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12180198060709316,
+              "fixes": 14,
+              "breaks": 11,
+              "net": 3
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9188272617875506,
+              "acc_cand": 0.9200306312219669,
+              "delta_acc": 0.001203369434416346,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.18721797498166193,
+              "fixes": 49,
+              "breaks": 38,
+              "net": 11
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 101,
+                "fixes": 56,
+                "breaks": 45,
+                "net": 11,
+                "precision": 0.5544554455445545
+              },
+              "new_to_used": {
+                "count": 11,
+                "fixes": 7,
+                "breaks": 4,
+                "net": 3,
+                "precision": 0.6363636363636364
+              }
+            }
+          }
+        },
+        "Blend075_valname_vs_A_hist": {
+          "th_base_tune": 0.44,
+          "th_cand_tune": 0.45,
+          "common_th_050": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9313717879046658,
+            "accuracy_cand": 0.9311388867323965,
+            "delta_accuracy": -0.000232901172269262,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.16802802182209722,
+            "delta_logloss": -0.002361065813127644,
+            "fixes": 86,
+            "breaks": 89,
+            "net": -3,
+            "bootstrap_seller_ci95": [
+              -31.0,
+              24.0
+            ],
+            "bootstrap_seller_mean": -3.3355,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.955614973262032,
+              "acc_cand": 0.954812834224599,
+              "delta_acc": -0.0008021390374330917,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12260679266536384,
+              "fixes": 12,
+              "breaks": 15,
+              "net": -3
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9214527950990045,
+              "acc_cand": 0.9214527950990045,
+              "delta_acc": 0.0,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.18661191822798093,
+              "fixes": 74,
+              "breaks": 74,
+              "net": 0
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 92,
+                "fixes": 47,
+                "breaks": 45,
+                "net": 2,
+                "precision": 0.5108695652173914
+              },
+              "new_to_used": {
+                "count": 83,
+                "fixes": 39,
+                "breaks": 44,
+                "net": -5,
+                "precision": 0.46987951807228917
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9291980436301529,
+            "accuracy_cand": 0.9298967471469607,
+            "delta_accuracy": 0.000698703516807786,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.16802802182209722,
+            "delta_logloss": -0.002361065813127644,
+            "fixes": 85,
+            "breaks": 76,
+            "net": 9,
+            "bootstrap_seller_ci95": [
+              -18.0,
+              35.0
+            ],
+            "bootstrap_seller_mean": 9.09,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9545454545454546,
+              "acc_cand": 0.9545454545454546,
+              "delta_acc": 0.0,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12260679266536384,
+              "fixes": 12,
+              "breaks": 12,
+              "net": 0
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9188272617875506,
+              "acc_cand": 0.9198118367793459,
+              "delta_acc": 0.0009845749917952729,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.18661191822798093,
+              "fixes": 73,
+              "breaks": 64,
+              "net": 9
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 94,
+                "fixes": 53,
+                "breaks": 41,
+                "net": 12,
+                "precision": 0.5638297872340425
+              },
+              "new_to_used": {
+                "count": 67,
+                "fixes": 32,
+                "breaks": 35,
+                "net": -3,
+                "precision": 0.47761194029850745
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9291980436301529,
+            "accuracy_cand": 0.9305954506637684,
+            "delta_accuracy": 0.001397407033615461,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.16802802182209722,
+            "delta_logloss": -0.002361065813127644,
+            "fixes": 89,
+            "breaks": 71,
+            "net": 18,
+            "bootstrap_seller_ci95": [
+              -9.0,
+              45.0
+            ],
+            "bootstrap_seller_mean": 18.1035,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9545454545454546,
+              "acc_cand": 0.9550802139037433,
+              "delta_acc": 0.0005347593582887278,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12260679266536384,
+              "fixes": 13,
+              "breaks": 11,
+              "net": 2
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9188272617875506,
+              "acc_cand": 0.9205776173285198,
+              "delta_acc": 0.0017503555409692506,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.18661191822798093,
+              "fixes": 76,
+              "breaks": 60,
+              "net": 16
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 101,
+                "fixes": 59,
+                "breaks": 42,
+                "net": 17,
+                "precision": 0.5841584158415841
+              },
+              "new_to_used": {
+                "count": 59,
+                "fixes": 30,
+                "breaks": 29,
+                "net": 1,
+                "precision": 0.5084745762711864
+              }
+            }
+          }
+        },
+        "CB_Bag3_hist_vs_A_hist": {
+          "th_base_tune": 0.44,
+          "th_cand_tune": 0.47000000000000003,
+          "common_th_050": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9313717879046658,
+            "accuracy_cand": 0.9301296483192298,
+            "delta_accuracy": -0.001242139585435953,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.16939993449152418,
+            "delta_logloss": -0.0009891531437006829,
+            "fixes": 41,
+            "breaks": 57,
+            "net": -16,
+            "bootstrap_seller_ci95": [
+              -38.0,
+              4.0
+            ],
+            "bootstrap_seller_mean": -16.2615,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.955614973262032,
+              "acc_cand": 0.9540106951871657,
+              "delta_acc": -0.0016042780748662944,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12311178482100693,
+              "fixes": 2,
+              "breaks": 8,
+              "net": -6
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9214527950990045,
+              "acc_cand": 0.9203588228858987,
+              "delta_acc": -0.0010939722131058094,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.18833852761784894,
+              "fixes": 39,
+              "breaks": 49,
+              "net": -10
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 46,
+                "fixes": 19,
+                "breaks": 27,
+                "net": -8,
+                "precision": 0.41304347826086957
+              },
+              "new_to_used": {
+                "count": 52,
+                "fixes": 22,
+                "breaks": 30,
+                "net": -8,
+                "precision": 0.4230769230769231
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9291980436301529,
+            "accuracy_cand": 0.9307507181119479,
+            "delta_accuracy": 0.001552674481794969,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.16939993449152418,
+            "delta_logloss": -0.0009891531437006829,
+            "fixes": 48,
+            "breaks": 28,
+            "net": 20,
+            "bootstrap_seller_ci95": [
+              3.0,
+              37.0
+            ],
+            "bootstrap_seller_mean": 20.0325,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9545454545454546,
+              "acc_cand": 0.9558823529411765,
+              "delta_acc": 0.0013368983957219305,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12311178482100693,
+              "fixes": 8,
+              "breaks": 3,
+              "net": 5
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9188272617875506,
+              "acc_cand": 0.9204682201072093,
+              "delta_acc": 0.001640958319658714,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.18833852761784894,
+              "fixes": 40,
+              "breaks": 25,
+              "net": 15
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 38,
+                "fixes": 29,
+                "breaks": 9,
+                "net": 20,
+                "precision": 0.7631578947368421
+              },
+              "new_to_used": {
+                "count": 38,
+                "fixes": 19,
+                "breaks": 19,
+                "net": 0,
+                "precision": 0.5
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9291980436301529,
+            "accuracy_cand": 0.9315270553528453,
+            "delta_accuracy": 0.002329011722692398,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.16939993449152418,
+            "delta_logloss": -0.0009891531437006829,
+            "fixes": 60,
+            "breaks": 30,
+            "net": 30,
+            "bootstrap_seller_ci95": [
+              11.0,
+              49.0
+            ],
+            "bootstrap_seller_mean": 30.022,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9545454545454546,
+              "acc_cand": 0.9550802139037433,
+              "delta_acc": 0.0005347593582887278,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12311178482100693,
+              "fixes": 10,
+              "breaks": 8,
+              "net": 2
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9188272617875506,
+              "acc_cand": 0.9218903839842468,
+              "delta_acc": 0.003063122196696244,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.18833852761784894,
+              "fixes": 50,
+              "breaks": 22,
+              "net": 28
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 77,
+                "fixes": 51,
+                "breaks": 26,
+                "net": 25,
+                "precision": 0.6623376623376623
+              },
+              "new_to_used": {
+                "count": 13,
+                "fixes": 9,
+                "breaks": 4,
+                "net": 5,
+                "precision": 0.6923076923076923
+              }
+            }
+          }
+        },
+        "Blend075_Bag3_hist_vs_A_hist": {
+          "th_base_tune": 0.44,
+          "th_cand_tune": 0.47000000000000003,
+          "common_th_050": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9313717879046658,
+            "accuracy_cand": 0.930983619284217,
+            "delta_accuracy": -0.00038816862044877,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.16795319731126676,
+            "delta_logloss": -0.0024358903239581065,
+            "fixes": 65,
+            "breaks": 70,
+            "net": -5,
+            "bootstrap_seller_ci95": [
+              -31.0,
+              18.0
+            ],
+            "bootstrap_seller_mean": -5.575,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.955614973262032,
+              "acc_cand": 0.9542780748663101,
+              "delta_acc": -0.0013368983957219305,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12231431111720359,
+              "fixes": 9,
+              "breaks": 14,
+              "net": -5
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9214527950990045,
+              "acc_cand": 0.9214527950990045,
+              "delta_acc": 0.0,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.18662614713795928,
+              "fixes": 56,
+              "breaks": 56,
+              "net": 0
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 64,
+                "fixes": 31,
+                "breaks": 33,
+                "net": -2,
+                "precision": 0.484375
+              },
+              "new_to_used": {
+                "count": 71,
+                "fixes": 34,
+                "breaks": 37,
+                "net": -3,
+                "precision": 0.4788732394366197
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9291980436301529,
+            "accuracy_cand": 0.9300520145951401,
+            "delta_accuracy": 0.0008539709649871829,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.16795319731126676,
+            "delta_logloss": -0.0024358903239581065,
+            "fixes": 57,
+            "breaks": 46,
+            "net": 11,
+            "bootstrap_seller_ci95": [
+              -10.0,
+              31.0
+            ],
+            "bootstrap_seller_mean": 10.908,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9545454545454546,
+              "acc_cand": 0.9542780748663101,
+              "delta_acc": -0.0002673796791444749,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12231431111720359,
+              "fixes": 8,
+              "breaks": 9,
+              "net": -1
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9188272617875506,
+              "acc_cand": 0.9201400284432776,
+              "delta_acc": 0.0013127666557269935,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.18662614713795928,
+              "fixes": 49,
+              "breaks": 37,
+              "net": 12
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 56,
+                "fixes": 31,
+                "breaks": 25,
+                "net": 6,
+                "precision": 0.5535714285714286
+              },
+              "new_to_used": {
+                "count": 47,
+                "fixes": 26,
+                "breaks": 21,
+                "net": 5,
+                "precision": 0.5531914893617021
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9291980436301529,
+            "accuracy_cand": 0.9305954506637684,
+            "delta_accuracy": 0.001397407033615461,
+            "logloss_base": 0.17038908763522487,
+            "logloss_cand": 0.16795319731126676,
+            "delta_logloss": -0.0024358903239581065,
+            "fixes": 65,
+            "breaks": 47,
+            "net": 18,
+            "bootstrap_seller_ci95": [
+              -5.0,
+              40.0
+            ],
+            "bootstrap_seller_mean": 17.945,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9545454545454546,
+              "acc_cand": 0.9550802139037433,
+              "delta_acc": 0.0005347593582887278,
+              "logloss_base": 0.12341245823306858,
+              "logloss_cand": 0.12231431111720359,
+              "fixes": 11,
+              "breaks": 9,
+              "net": 2
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9188272617875506,
+              "acc_cand": 0.9205776173285198,
+              "delta_acc": 0.0017503555409692506,
+              "logloss_base": 0.18960936921974125,
+              "logloss_cand": 0.18662614713795928,
+              "fixes": 54,
+              "breaks": 38,
+              "net": 16
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 92,
+                "fixes": 54,
+                "breaks": 38,
+                "net": 16,
+                "precision": 0.5869565217391305
+              },
+              "new_to_used": {
+                "count": 20,
+                "fixes": 11,
+                "breaks": 9,
+                "net": 2,
+                "precision": 0.55
+              }
+            }
+          }
+        }
+      },
+      "comparisons_vs_A_valname": {
+        "LGB_valname_vs_A_valname": {
+          "th_base_tune": 0.47000000000000003,
+          "th_cand_tune": 0.45,
+          "common_th_050": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9299743808710503,
+            "accuracy_cand": 0.9292756773542427,
+            "delta_accuracy": -0.000698703516807675,
+            "logloss_base": 0.17042342123664778,
+            "logloss_cand": 0.1740621110716964,
+            "delta_logloss": 0.003638689835048614,
+            "fixes": 161,
+            "breaks": 170,
+            "net": -9,
+            "bootstrap_seller_ci95": [
+              -49.025,
+              30.0
+            ],
+            "bootstrap_seller_mean": -8.5205,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.954812834224599,
+              "acc_cand": 0.954812834224599,
+              "delta_acc": 0.0,
+              "logloss_base": 0.12407536473787724,
+              "logloss_cand": 0.12799452481350157,
+              "fixes": 35,
+              "breaks": 35,
+              "net": 0
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9198118367793459,
+              "acc_cand": 0.9188272617875506,
+              "delta_acc": -0.0009845749917952729,
+              "logloss_base": 0.1893865249786237,
+              "logloss_cand": 0.19291046164664977,
+              "fixes": 126,
+              "breaks": 135,
+              "net": -9
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 199,
+                "fixes": 99,
+                "breaks": 100,
+                "net": -1,
+                "precision": 0.49748743718592964
+              },
+              "new_to_used": {
+                "count": 132,
+                "fixes": 62,
+                "breaks": 70,
+                "net": -8,
+                "precision": 0.4696969696969697
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9302849157674093,
+            "accuracy_cand": 0.9291204099060631,
+            "delta_accuracy": -0.001164505861346199,
+            "logloss_base": 0.17042342123664778,
+            "logloss_cand": 0.1740621110716964,
+            "delta_logloss": 0.003638689835048614,
+            "fixes": 162,
+            "breaks": 177,
+            "net": -15,
+            "bootstrap_seller_ci95": [
+              -55.025,
+              26.024999999999864
+            ],
+            "bootstrap_seller_mean": -14.4775,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9542780748663101,
+              "acc_cand": 0.9540106951871657,
+              "delta_acc": -0.0002673796791443639,
+              "logloss_base": 0.12407536473787724,
+              "logloss_cand": 0.12799452481350157,
+              "fixes": 32,
+              "breaks": 33,
+              "net": -1
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9204682201072093,
+              "acc_cand": 0.9189366590088611,
+              "delta_acc": -0.0015315610983481776,
+              "logloss_base": 0.1893865249786237,
+              "logloss_cand": 0.19291046164664977,
+              "fixes": 130,
+              "breaks": 144,
+              "net": -14
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 208,
+                "fixes": 106,
+                "breaks": 102,
+                "net": 4,
+                "precision": 0.5096153846153846
+              },
+              "new_to_used": {
+                "count": 131,
+                "fixes": 56,
+                "breaks": 75,
+                "net": -19,
+                "precision": 0.42748091603053434
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9302849157674093,
+            "accuracy_cand": 0.928576973837435,
+            "delta_accuracy": -0.0017079419299743659,
+            "logloss_base": 0.17042342123664778,
+            "logloss_cand": 0.1740621110716964,
+            "delta_logloss": 0.003638689835048614,
+            "fixes": 154,
+            "breaks": 176,
+            "net": -22,
+            "bootstrap_seller_ci95": [
+              -61.0,
+              18.0
+            ],
+            "bootstrap_seller_mean": -21.593,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9542780748663101,
+              "acc_cand": 0.9542780748663101,
+              "delta_acc": 0.0,
+              "logloss_base": 0.12407536473787724,
+              "logloss_cand": 0.12799452481350157,
+              "fixes": 32,
+              "breaks": 32,
+              "net": 0
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9204682201072093,
+              "acc_cand": 0.9180614812383765,
+              "delta_acc": -0.002406738868832803,
+              "logloss_base": 0.1893865249786237,
+              "logloss_cand": 0.19291046164664977,
+              "fixes": 122,
+              "breaks": 144,
+              "net": -22
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 184,
+                "fixes": 93,
+                "breaks": 91,
+                "net": 2,
+                "precision": 0.5054347826086957
+              },
+              "new_to_used": {
+                "count": 146,
+                "fixes": 61,
+                "breaks": 85,
+                "net": -24,
+                "precision": 0.4178082191780822
+              }
+            }
+          }
+        },
+        "Blend075_valname_vs_A_valname": {
+          "th_base_tune": 0.47000000000000003,
+          "th_cand_tune": 0.45,
+          "common_th_050": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9299743808710503,
+            "accuracy_cand": 0.9311388867323965,
+            "delta_accuracy": 0.001164505861346199,
+            "logloss_base": 0.17042342123664778,
+            "logloss_cand": 0.16802802182209722,
+            "delta_logloss": -0.002395399414550553,
+            "fixes": 54,
+            "breaks": 39,
+            "net": 15,
+            "bootstrap_seller_ci95": [
+              -3.0,
+              34.0
+            ],
+            "bootstrap_seller_mean": 14.991,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.954812834224599,
+              "acc_cand": 0.954812834224599,
+              "delta_acc": 0.0,
+              "logloss_base": 0.12407536473787724,
+              "logloss_cand": 0.12260679266536384,
+              "fixes": 9,
+              "breaks": 9,
+              "net": 0
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9198118367793459,
+              "acc_cand": 0.9214527950990045,
+              "delta_acc": 0.001640958319658603,
+              "logloss_base": 0.1893865249786237,
+              "logloss_cand": 0.18661191822798093,
+              "fixes": 45,
+              "breaks": 30,
+              "net": 15
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 53,
+                "fixes": 30,
+                "breaks": 23,
+                "net": 7,
+                "precision": 0.5660377358490566
+              },
+              "new_to_used": {
+                "count": 40,
+                "fixes": 24,
+                "breaks": 16,
+                "net": 8,
+                "precision": 0.6
+              }
+            }
+          },
+          "common_th_base": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9302849157674093,
+            "accuracy_cand": 0.930983619284217,
+            "delta_accuracy": 0.000698703516807675,
+            "logloss_base": 0.17042342123664778,
+            "logloss_cand": 0.16802802182209722,
+            "delta_logloss": -0.002395399414550553,
+            "fixes": 48,
+            "breaks": 39,
+            "net": 9,
+            "bootstrap_seller_ci95": [
+              -10.0,
+              27.0
+            ],
+            "bootstrap_seller_mean": 8.9625,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9542780748663101,
+              "acc_cand": 0.954812834224599,
+              "delta_acc": 0.0005347593582888388,
+              "logloss_base": 0.12407536473787724,
+              "logloss_cand": 0.12260679266536384,
+              "fixes": 8,
+              "breaks": 6,
+              "net": 2
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9204682201072093,
+              "acc_cand": 0.9212340006563833,
+              "delta_acc": 0.0007657805491739778,
+              "logloss_base": 0.1893865249786237,
+              "logloss_cand": 0.18661191822798093,
+              "fixes": 40,
+              "breaks": 33,
+              "net": 7
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 49,
+                "fixes": 29,
+                "breaks": 20,
+                "net": 9,
+                "precision": 0.5918367346938775
+              },
+              "new_to_used": {
+                "count": 38,
+                "fixes": 19,
+                "breaks": 19,
+                "net": 0,
+                "precision": 0.5
+              }
+            }
+          },
+          "policy_tuned_th": {
+            "n_rows": 12881,
+            "accuracy_base": 0.9302849157674093,
+            "accuracy_cand": 0.9305954506637684,
+            "delta_accuracy": 0.000310534896359016,
+            "logloss_base": 0.17042342123664778,
+            "logloss_cand": 0.16802802182209722,
+            "delta_logloss": -0.002395399414550553,
+            "fixes": 51,
+            "breaks": 47,
+            "net": 4,
+            "bootstrap_seller_ci95": [
+              -15.024999999999999,
+              24.0
+            ],
+            "bootstrap_seller_mean": 4.1175,
+            "seen_sellers": {
+              "n": 3740,
+              "acc_base": 0.9542780748663101,
+              "acc_cand": 0.9550802139037433,
+              "delta_acc": 0.0008021390374332027,
+              "logloss_base": 0.12407536473787724,
+              "logloss_cand": 0.12260679266536384,
+              "fixes": 8,
+              "breaks": 5,
+              "net": 3
+            },
+            "new_sellers": {
+              "n": 9141,
+              "acc_base": 0.9204682201072093,
+              "acc_cand": 0.9205776173285198,
+              "delta_acc": 0.00010939722131053653,
+              "logloss_base": 0.1893865249786237,
+              "logloss_cand": 0.18661191822798093,
+              "fixes": 43,
+              "breaks": 42,
+              "net": 1
+            },
+            "directions": {
+              "used_to_new": {
+                "count": 36,
+                "fixes": 24,
+                "breaks": 12,
+                "net": 12,
+                "precision": 0.6666666666666666
+              },
+              "new_to_used": {
+                "count": 62,
+                "fixes": 27,
+                "breaks": 35,
+                "net": -8,
+                "precision": 0.43548387096774194
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "inductive_70k_test_refit": {
+    "refit_time_seconds": 409.7,
+    "test_diag_path": "results\\intensive_20261030\\test_30k_mainline_predictions.csv.gz",
+    "test_diag_sha256": "74d3cd88fa92f417dae63f629e86c7291bcf8ac09396cb53682c182a034af8df",
+    "polarity_verified": "used=1, new=0",
+    "n_test_rows": 30000,
+    "test_seen_rows": 21487,
+    "test_new_rows": 8513,
+    "mean_p_used_cb_single": 0.4615593373042388,
+    "mean_p_used_blend_single": 0.46197092964713937,
+    "mean_p_used_blend_bag3": 0.4622630078387441,
+    "agreement_vs_s48_at_050_cb_single": 0.9639666666666666,
+    "agreement_vs_s48_at_050_blend_single": 0.9648666666666667,
+    "agreement_vs_s48_at_050_blend_bag3": 0.9655666666666667,
+    "n_flips_vs_s48_at_050_blend_single": 1054,
+    "n_flips_vs_s48_at_050_blend_bag3": 1033
+  }
+}

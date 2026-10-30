@@ -1,0 +1,524 @@
+{
+  "timestamp": "2026-10-30 01:03:47",
+  "runtime_seconds": 1.21,
+  "baseline_s48_sha256": "3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722",
+  "historical_probes_72_76": {
+    "sub_72": {
+      "score": 0.94623,
+      "delta_vs_48": -0.0001,
+      "n_flips": 8,
+      "ids": [
+        3250,
+        8207,
+        15613,
+        16148,
+        23563,
+        25379,
+        29262,
+        29312
+      ]
+    },
+    "sub_73": {
+      "score": 0.946,
+      "delta_vs_48": -0.00033,
+      "n_flips": 7,
+      "ids": [
+        3190,
+        5585,
+        5857,
+        9733,
+        10705,
+        20259,
+        20611
+      ]
+    },
+    "sub_74": {
+      "score": 0.94614,
+      "delta_vs_48": -0.00019,
+      "n_flips": 8,
+      "ids": [
+        560,
+        7252,
+        7914,
+        9327,
+        11239,
+        11244,
+        14405,
+        19313
+      ]
+    },
+    "sub_75": {
+      "score": 0.94633,
+      "delta_vs_48": 0,
+      "n_flips": 5,
+      "ids": [
+        5390,
+        8227,
+        15392,
+        19853,
+        25060
+      ]
+    },
+    "sub_76": {
+      "score": 0.94633,
+      "delta_vs_48": 0,
+      "n_flips": 0,
+      "ids": []
+    }
+  },
+  "train_confirm_validation_of_consensus_gate": {
+    "2026": {
+      "n_confirm": 12905,
+      "full_model_switch": {
+        "n_flips": 150,
+        "fixes": 98,
+        "breaks": 52,
+        "net": 46,
+        "precision_of_flips": 0.6533
+      },
+      "restricted_consensus_gate_seen": {
+        "n_flips": 17,
+        "fixes": 11,
+        "breaks": 6,
+        "net": 5,
+        "precision_of_flips": 0.6471,
+        "bootstrap_seller_ci95": [
+          -3.0,
+          13.0
+        ]
+      }
+    },
+    "314159": {
+      "n_confirm": 12843,
+      "full_model_switch": {
+        "n_flips": 148,
+        "fixes": 90,
+        "breaks": 58,
+        "net": 32,
+        "precision_of_flips": 0.6081
+      },
+      "restricted_consensus_gate_seen": {
+        "n_flips": 9,
+        "fixes": 7,
+        "breaks": 2,
+        "net": 5,
+        "precision_of_flips": 0.7778,
+        "bootstrap_seller_ci95": [
+          -1.0,
+          11.0
+        ]
+      }
+    },
+    "20261030": {
+      "n_confirm": 12881,
+      "full_model_switch": {
+        "n_flips": 112,
+        "fixes": 65,
+        "breaks": 47,
+        "net": 18,
+        "precision_of_flips": 0.5804
+      },
+      "restricted_consensus_gate_seen": {
+        "n_flips": 13,
+        "fixes": 8,
+        "breaks": 5,
+        "net": 3,
+        "precision_of_flips": 0.6154,
+        "bootstrap_seller_ci95": [
+          -4.0,
+          10.0
+        ]
+      }
+    }
+  },
+  "candidates_menu": {
+    "Option_A_Full_Inductive_Blend_Bag3": {
+      "option_class": "A (Full Model Prediction)",
+      "file_path": "submissions\\20261030\\candidate_optionA_full_inductive_blend_bag3.csv",
+      "sha256": "d93af8e75bde55f6cdf8b90ca61da19ccf5ad7f0b1d32ee479b86bd1a7fb02db",
+      "baseline_reference": "submission_48 (.94633, 3f8d08e0...)",
+      "hypothesis": "Full 30,000-row prediction from the strictly inductive 70k refit of `0.75 CatBoost_Bag + 0.25 LightGBM_Bag3` (105 R151 features + OOF TE + OOF `txt_sparse_p`, common threshold 0.500). Tests whether global probability calibration gains (-0.0023 to -0.0030 log loss across all cuts) translate into net public accuracy over S48.",
+      "validation_status": "PROMISING_LOGLOSS_HIGH_VARIANCE_HARD_FLIPS",
+      "n_flips_vs_s48": 1033,
+      "seen_seller_flips": 664,
+      "new_seller_flips": 369,
+      "used_to_new": 474,
+      "new_to_used": 559,
+      "overlap_with_probes_72_75_count": 13,
+      "overlap_with_probes_72_75_ids": [
+        560,
+        5390,
+        7252,
+        7914,
+        8227,
+        9327,
+        9733,
+        11239,
+        14405,
+        15392,
+        19313,
+        19853,
+        25060
+      ],
+      "overlap_by_historical_probe": {
+        "sub_72": 0,
+        "sub_73": 1,
+        "sub_74": 7,
+        "sub_75": 5,
+        "sub_76": 0
+      },
+      "flipped_ids_1based": [
+        18,
+        47,
+        48,
+        210,
+        236,
+        257,
+        315,
+        345,
+        361,
+        377,
+        393,
+        406,
+        439,
+        449,
+        452,
+        487,
+        521,
+        552,
+        558,
+        560,
+        604,
+        626,
+        638,
+        651,
+        762,
+        767,
+        771,
+        806,
+        887,
+        918,
+        931,
+        978,
+        1163,
+        1189,
+        1232,
+        1256,
+        1343,
+        1346,
+        1398,
+        1419,
+        1422,
+        1464,
+        1499,
+        1531,
+        1555,
+        1556,
+        1578,
+        1682,
+        1734,
+        1760
+      ]
+    },
+    "Option_B1_Seen15_Consensus_Sub80": {
+      "option_class": "B (Restricted Rule Intervention \u2014 Core 15 Seen Sellers)",
+      "file_path": "submissions\\20261030\\candidate_sub80_seen_sellers_conservative_unprobed.csv",
+      "sha256": "23415a6147e0363a30d73a9d360d766f2492e689780046c91831c8733e1dc9f7",
+      "baseline_reference": "submission_48 (.94633, 3f8d08e0...)",
+      "hypothesis": "Top-15 highest-confidence consensus flips restricted exclusively to seen sellers (15 seen / 0 new, 9 used->new / 6 new->used), 100% virgin with respect to probes 72-75 and 100% disjoint from B2, C1, and C2. Buys 3x more statistical resolution (15 flips = 0.00050 max delta) than a 5-flip probe.",
+      "validation_status": "VALIDATED_HIGH_PRECISION_SEEN_SELLER_GATE",
+      "n_flips_vs_s48": 15,
+      "seen_seller_flips": 15,
+      "new_seller_flips": 0,
+      "used_to_new": 9,
+      "new_to_used": 6,
+      "overlap_with_probes_72_75_count": 0,
+      "overlap_with_probes_72_75_ids": [],
+      "overlap_by_historical_probe": {
+        "sub_72": 0,
+        "sub_73": 0,
+        "sub_74": 0,
+        "sub_75": 0,
+        "sub_76": 0
+      },
+      "flipped_ids_1based": [
+        3056,
+        3106,
+        3802,
+        5237,
+        6128,
+        6487,
+        6940,
+        7575,
+        13230,
+        16660,
+        19403,
+        23454,
+        25976,
+        26293,
+        29552
+      ]
+    },
+    "Option_B2_Disjoint15_Consensus_Sub78": {
+      "option_class": "B (Restricted Rule Intervention \u2014 Disjoint 15 Consensus)",
+      "file_path": "submissions\\20261030\\candidate_sub78_consensus_disjoint15_unprobed.csv",
+      "sha256": "98e1913752df6da3bae48d33d1d7017148f2a3dfd7a546d701520e90c1b56704",
+      "baseline_reference": "submission_48 (.94633, 3f8d08e0...)",
+      "hypothesis": "Second disjoint 15-flip consensus block (10 seen / 5 new, 10 used->new / 5 new->used), 100% disjoint from B1/Sub80, C1/Sub79, C2/Sub77, and 0% overlap with historical probes 72-75.",
+      "validation_status": "VALIDATED_DISJOINT_CONSENSUS_BLOCK",
+      "n_flips_vs_s48": 15,
+      "seen_seller_flips": 10,
+      "new_seller_flips": 5,
+      "used_to_new": 10,
+      "new_to_used": 5,
+      "overlap_with_probes_72_75_count": 0,
+      "overlap_with_probes_72_75_ids": [],
+      "overlap_by_historical_probe": {
+        "sub_72": 0,
+        "sub_73": 0,
+        "sub_74": 0,
+        "sub_75": 0,
+        "sub_76": 0
+      },
+      "flipped_ids_1based": [
+        3619,
+        4599,
+        5028,
+        5205,
+        6562,
+        7278,
+        12641,
+        17714,
+        19545,
+        20200,
+        22327,
+        25326,
+        25600,
+        25940,
+        28448
+      ]
+    },
+    "Option_B3_Inductive_Unanimous_Consensus": {
+      "option_class": "B (Restricted Rule Intervention \u2014 6-Model Unanimous Gate, 18 Flips)",
+      "file_path": "submissions\\20261030\\candidate_optionB_inductive_unanimous_consensus.csv",
+      "sha256": "03d88c4aa23eee39deaf178e147a6a2ad001d4412292296ede39f7d4251e8a87",
+      "baseline_reference": "submission_48 (.94633, 3f8d08e0...)",
+      "hypothesis": "Strict intersection of the consensus gate (B1 U B2, 30 flips) with the new 70k strictly inductive `CatBoost_Bag` and `LightGBM_Bag3` predictions: flips S48 ONLY on the 18 items (17 seen / 1 new, 11 from B1 + 7 from B2) where all historical and new inductive boosting models unanimously agree (`Option_B3 \u2282 Option_A`).",
+      "validation_status": "VALIDATED_UNANIMOUS_CROSS_PIPELINE_GATE",
+      "n_flips_vs_s48": 18,
+      "seen_seller_flips": 17,
+      "new_seller_flips": 1,
+      "used_to_new": 10,
+      "new_to_used": 8,
+      "overlap_with_probes_72_75_count": 0,
+      "overlap_with_probes_72_75_ids": [],
+      "overlap_by_historical_probe": {
+        "sub_72": 0,
+        "sub_73": 0,
+        "sub_74": 0,
+        "sub_75": 0,
+        "sub_76": 0
+      },
+      "flipped_ids_1based": [
+        3056,
+        3802,
+        4599,
+        5028,
+        5237,
+        6128,
+        6562,
+        7278,
+        7575,
+        13230,
+        16660,
+        19403,
+        19545,
+        20200,
+        22327,
+        25976,
+        26293,
+        29552
+      ]
+    },
+    "Option_C1_Exploratory_NewSellers20_Sub79": {
+      "option_class": "C (Exploratory Diagnostic Probe \u2014 20 New Sellers Clean Text)",
+      "file_path": "submissions\\20261030\\candidate_sub79_new_sellers_clean_text.csv",
+      "sha256": "81ef2f8dc4c724b0983cfed49aa008be9166320881ddff64c2aa1c926e6012ff",
+      "baseline_reference": "submission_48 (.94633, 3f8d08e0...)",
+      "hypothesis": "20 flips restricted exclusively to new sellers (0 seen / 20 new, 18 used->new / 2 new->used) with explicit clean text cues, 100% disjoint from B1, B2, B3, C2, and historical probes 72-75.",
+      "validation_status": "EXPLORATORY_NEW_SELLER_PROBE",
+      "n_flips_vs_s48": 20,
+      "seen_seller_flips": 0,
+      "new_seller_flips": 20,
+      "used_to_new": 18,
+      "new_to_used": 2,
+      "overlap_with_probes_72_75_count": 0,
+      "overlap_with_probes_72_75_ids": [],
+      "overlap_by_historical_probe": {
+        "sub_72": 0,
+        "sub_73": 0,
+        "sub_74": 0,
+        "sub_75": 0,
+        "sub_76": 0
+      },
+      "flipped_ids_1based": [
+        55,
+        944,
+        1653,
+        4432,
+        9674,
+        9761,
+        10644,
+        11905,
+        13634,
+        13987,
+        16499,
+        18688,
+        21971,
+        22345,
+        23234,
+        24721,
+        26804,
+        27455,
+        27734,
+        28333
+      ]
+    },
+    "Option_C2_Exploratory_Margin5_Sub77": {
+      "option_class": "C (Exploratory Diagnostic Probe \u2014 5 Disjoint Boundary Flips)",
+      "file_path": "submissions\\20261030\\candidate_sub77_nested_margin5_unprobed.csv",
+      "sha256": "9b07f45caaf9d6cdf063b65e35ba90187e38471c45f5511f905ea8a088a2cc92",
+      "baseline_reference": "submission_48 (.94633, 3f8d08e0...)",
+      "hypothesis": "5 boundary-margin consensus flips (2 seen / 3 new, 3 used->new / 2 new->used), 100% disjoint from B1, B2, B3, C1, and 0% overlap with historical probes 72-75.",
+      "validation_status": "EXPLORATORY_SMALL_MARGIN_PROBE",
+      "n_flips_vs_s48": 5,
+      "seen_seller_flips": 2,
+      "new_seller_flips": 3,
+      "used_to_new": 3,
+      "new_to_used": 2,
+      "overlap_with_probes_72_75_count": 0,
+      "overlap_with_probes_72_75_ids": [],
+      "overlap_by_historical_probe": {
+        "sub_72": 0,
+        "sub_73": 0,
+        "sub_74": 0,
+        "sub_75": 0,
+        "sub_76": 0
+      },
+      "flipped_ids_1based": [
+        732,
+        4969,
+        18735,
+        18790,
+        25747
+      ]
+    }
+  },
+  "pairwise_candidate_intersections": {
+    "Option_A_Full_Inductive_Blend_Bag3__vs__Option_B1_Seen15_Consensus_Sub80": {
+      "n_first": 1033,
+      "n_second": 15,
+      "n_intersection": 11,
+      "is_disjoint": false,
+      "is_nested": false
+    },
+    "Option_A_Full_Inductive_Blend_Bag3__vs__Option_B2_Disjoint15_Consensus_Sub78": {
+      "n_first": 1033,
+      "n_second": 15,
+      "n_intersection": 8,
+      "is_disjoint": false,
+      "is_nested": false
+    },
+    "Option_A_Full_Inductive_Blend_Bag3__vs__Option_B3_Inductive_Unanimous_Consensus": {
+      "n_first": 1033,
+      "n_second": 18,
+      "n_intersection": 18,
+      "is_disjoint": false,
+      "is_nested": true
+    },
+    "Option_A_Full_Inductive_Blend_Bag3__vs__Option_C1_Exploratory_NewSellers20_Sub79": {
+      "n_first": 1033,
+      "n_second": 20,
+      "n_intersection": 0,
+      "is_disjoint": true,
+      "is_nested": false
+    },
+    "Option_A_Full_Inductive_Blend_Bag3__vs__Option_C2_Exploratory_Margin5_Sub77": {
+      "n_first": 1033,
+      "n_second": 5,
+      "n_intersection": 2,
+      "is_disjoint": false,
+      "is_nested": false
+    },
+    "Option_B1_Seen15_Consensus_Sub80__vs__Option_B2_Disjoint15_Consensus_Sub78": {
+      "n_first": 15,
+      "n_second": 15,
+      "n_intersection": 0,
+      "is_disjoint": true,
+      "is_nested": false
+    },
+    "Option_B1_Seen15_Consensus_Sub80__vs__Option_B3_Inductive_Unanimous_Consensus": {
+      "n_first": 15,
+      "n_second": 18,
+      "n_intersection": 11,
+      "is_disjoint": false,
+      "is_nested": false
+    },
+    "Option_B1_Seen15_Consensus_Sub80__vs__Option_C1_Exploratory_NewSellers20_Sub79": {
+      "n_first": 15,
+      "n_second": 20,
+      "n_intersection": 0,
+      "is_disjoint": true,
+      "is_nested": false
+    },
+    "Option_B1_Seen15_Consensus_Sub80__vs__Option_C2_Exploratory_Margin5_Sub77": {
+      "n_first": 15,
+      "n_second": 5,
+      "n_intersection": 0,
+      "is_disjoint": true,
+      "is_nested": false
+    },
+    "Option_B2_Disjoint15_Consensus_Sub78__vs__Option_B3_Inductive_Unanimous_Consensus": {
+      "n_first": 15,
+      "n_second": 18,
+      "n_intersection": 7,
+      "is_disjoint": false,
+      "is_nested": false
+    },
+    "Option_B2_Disjoint15_Consensus_Sub78__vs__Option_C1_Exploratory_NewSellers20_Sub79": {
+      "n_first": 15,
+      "n_second": 20,
+      "n_intersection": 0,
+      "is_disjoint": true,
+      "is_nested": false
+    },
+    "Option_B2_Disjoint15_Consensus_Sub78__vs__Option_C2_Exploratory_Margin5_Sub77": {
+      "n_first": 15,
+      "n_second": 5,
+      "n_intersection": 0,
+      "is_disjoint": true,
+      "is_nested": false
+    },
+    "Option_B3_Inductive_Unanimous_Consensus__vs__Option_C1_Exploratory_NewSellers20_Sub79": {
+      "n_first": 18,
+      "n_second": 20,
+      "n_intersection": 0,
+      "is_disjoint": true,
+      "is_nested": false
+    },
+    "Option_B3_Inductive_Unanimous_Consensus__vs__Option_C2_Exploratory_Margin5_Sub77": {
+      "n_first": 18,
+      "n_second": 5,
+      "n_intersection": 0,
+      "is_disjoint": true,
+      "is_nested": false
+    },
+    "Option_C1_Exploratory_NewSellers20_Sub79__vs__Option_C2_Exploratory_Margin5_Sub77": {
+      "n_first": 20,
+      "n_second": 5,
+      "n_intersection": 0,
+      "is_disjoint": true,
+      "is_nested": false
+    }
+  }
+}
