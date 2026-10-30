@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-10-30T20:00:00Z",
+  "last_checked_utc": "2026-10-30T20:05:00Z",
   "origin_main_head": "da29fa16c46750273d7587225bd198b317ee1a91",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "2c72ca1",
+  "local_head": "0ba5dd1",
   "last_processed_codex_message": "CX-0017",
-  "last_published_antigravity_message": "AG-0014-ACK.md",
+  "last_published_antigravity_message": "AG-0015-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -12,7 +12,7 @@
     "T3_single_rule_candidate_and_submission_guard": "done",
     "T4_hourly_automation_setup": "done_cx0014_pipe_timeout_verified",
     "T5_cx0002_33_to_48_provenance_audit": "done_sub53_55_and_causal_chain_verified",
-    "T6_cx0002_adaptive_5slot_decision_menu": "in_progress_cx0017_hold_and_never_probed_reconciliation",
-    "T7_cx0013_seller_te_and_cat_ablation": "done_variant_c_superior_in_seen"
+    "T6_cx0002_adaptive_5slot_decision_menu": "done_cx0017_probes_on_hold_11ids_coherent_identified",
+    "T7_cx0013_seller_te_and_cat_ablation": "done_variant_c_tune_confirm_probs_exported"
   }
 }

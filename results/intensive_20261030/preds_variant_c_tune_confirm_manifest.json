@@ -1,0 +1,26 @@
+{
+  "2026": {
+    "file_name": "preds_variant_c_seed2026_tune_confirm.csv.gz",
+    "sha256": "2125dce96bbc85ecfdd31e4e2284578ba58011140a368af407f40c45e0626912",
+    "n_tune": 11765,
+    "n_confirm": 12905,
+    "best_iteration_tune": 899,
+    "elapsed_seconds": 261.8
+  },
+  "314159": {
+    "file_name": "preds_variant_c_seed314159_tune_confirm.csv.gz",
+    "sha256": "326b26a20f2f44fb40a44c789b862619b1bab0ec09d26499ec68dbe22da5e131",
+    "n_tune": 12473,
+    "n_confirm": 12843,
+    "best_iteration_tune": 513,
+    "elapsed_seconds": 184.5
+  },
+  "20261030": {
+    "file_name": "preds_variant_c_seed20261030_tune_confirm.csv.gz",
+    "sha256": "59bb04250c6bb4ee007c543e9136f2032480d482b03de769c162da7a27df38c5",
+    "n_tune": 13451,
+    "n_confirm": 12881,
+    "best_iteration_tune": 395,
+    "elapsed_seconds": 159.0
+  }
+}

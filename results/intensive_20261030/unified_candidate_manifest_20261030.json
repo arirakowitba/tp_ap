@@ -1173,5 +1173,28 @@
       }
     ],
     "abandonment_rule": "Immediate abandonment of seller TE and categorical intervention families if Sonda 1 or Sonda 2 fails to improve Public LB. No further exploratory uploads permitted."
+  },
+  "status": "PROBES_ON_HOLD_HISTORICAL_OVERLAP",
+  "hold_reason": "Audit by Claude (CL-0011) and Codex (CX-0017) confirmed 86/95 IDs were previously tested in 04-76. Candidate probes 1-4 are held; submission not recommended.",
+  "never_probed_seen_coherent_candidates": {
+    "description": "11 items never tested in 04-76 where Variant C and Blend both disagree with S48 and agree with seller train majority.",
+    "ids": [
+      47,
+      2584,
+      9480,
+      11321,
+      13606,
+      13618,
+      16186,
+      16300,
+      16865,
+      17806,
+      24178
+    ],
+    "n_items": 11,
+    "direction_breakdown": {
+      "new->used": 9,
+      "used->new": 2
+    }
   }
 }
