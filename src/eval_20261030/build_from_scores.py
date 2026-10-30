@@ -124,7 +124,7 @@ def main():
                 combined_flips[i] = target
 
         if has_overlap:
-            print("WARNING: Overlap detected among winning probes. Resolving by highest-delta probe.")
+            sys.exit("Cannot combine overlapping winning blocks: aggregate score gains are not additive. Prepare a disjoint or explicitly nested experiment before generating a final CSV.")
 
         print(f"\nBuilding disjoint union of winning flips ({len(combined_flips)} total flips)...")
         out_path = Path(args.out_csv)
