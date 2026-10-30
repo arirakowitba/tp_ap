@@ -1,0 +1,218 @@
+{
+ "2026": {
+  "confirm": {
+   "n": 12905,
+   "all": {
+    "acc_b10": 0.92879,
+    "acc_vc": 0.93041,
+    "ll_b10": 0.18938,
+    "ll_vc": 0.1785,
+    "net_b10_minus_vc": -21,
+    "ci95": [
+     -73.0,
+     34.024999999999864
+    ],
+    "n_disagree": 459,
+    "b10_right_when_disagree": 0.477
+   },
+   "seen": {
+    "acc_b10": 0.96567,
+    "acc_vc": 0.96439,
+    "ll_b10": 0.10142,
+    "ll_vc": 0.0978,
+    "net_b10_minus_vc": 5,
+    "ci95": [
+     -7.0,
+     17.0
+    ],
+    "n_disagree": 37,
+    "b10_right_when_disagree": 0.568
+   },
+   "new": {
+    "acc_b10": 0.9128,
+    "acc_vc": 0.91569,
+    "ll_b10": 0.22752,
+    "ll_vc": 0.2135,
+    "net_b10_minus_vc": -26,
+    "ci95": [
+     -77.0,
+     23.0
+    ],
+    "n_disagree": 422,
+    "b10_right_when_disagree": 0.469
+   }
+  },
+  "tune": {
+   "n": 11765,
+   "all": {
+    "acc_b10": 0.92877,
+    "acc_vc": 0.93209,
+    "ll_b10": 0.18252,
+    "ll_vc": 0.17093,
+    "net_b10_minus_vc": -39,
+    "ci95": [
+     -85.0,
+     8.0
+    ],
+    "n_disagree": 391,
+    "b10_right_when_disagree": 0.45
+   },
+   "seen": {
+    "acc_b10": 0.96329,
+    "acc_vc": 0.96578,
+    "ll_b10": 0.09668,
+    "ll_vc": 0.09344,
+    "net_b10_minus_vc": -10,
+    "ci95": [
+     -24.0,
+     3.0249999999998636
+    ],
+    "n_disagree": 46,
+    "b10_right_when_disagree": 0.391
+   },
+   "new": {
+    "acc_b10": 0.91097,
+    "acc_vc": 0.9147,
+    "ll_b10": 0.22681,
+    "ll_vc": 0.21091,
+    "net_b10_minus_vc": -29,
+    "ci95": [
+     -74.025,
+     14.0
+    ],
+    "n_disagree": 345,
+    "b10_right_when_disagree": 0.458
+   }
+  }
+ },
+ "314159": {
+  "confirm": {
+   "n": 12843,
+   "all": {
+    "acc_b10": 0.92268,
+    "acc_vc": 0.91996,
+    "ll_b10": 0.2,
+    "ll_vc": 0.19544,
+    "net_b10_minus_vc": 35,
+    "ci95": [
+     -27.0,
+     105.02499999999986
+    ],
+    "n_disagree": 513,
+    "b10_right_when_disagree": 0.534
+   },
+   "seen": {
+    "acc_b10": 0.9643,
+    "acc_vc": 0.96352,
+    "ll_b10": 0.09884,
+    "ll_vc": 0.10236,
+    "net_b10_minus_vc": 3,
+    "ci95": [
+     -10.0,
+     17.0
+    ],
+    "n_disagree": 45,
+    "b10_right_when_disagree": 0.533
+   },
+   "new": {
+    "acc_b10": 0.90494,
+    "acc_vc": 0.90139,
+    "ll_b10": 0.24311,
+    "ll_vc": 0.23511,
+    "net_b10_minus_vc": 32,
+    "ci95": [
+     -28.0,
+     104.02499999999986
+    ],
+    "n_disagree": 468,
+    "b10_right_when_disagree": 0.534
+   }
+  },
+  "tune": {
+   "n": 12473,
+   "all": {
+    "acc_b10": 0.92287,
+    "acc_vc": 0.93185,
+    "ll_b10": 0.1908,
+    "ll_vc": 0.18045,
+    "net_b10_minus_vc": -112,
+    "ci95": [
+     -178.0,
+     -54.975000000000136
+    ],
+    "n_disagree": 478,
+    "b10_right_when_disagree": 0.383
+   },
+   "seen": {
+    "acc_b10": 0.95945,
+    "acc_vc": 0.96179,
+    "ll_b10": 0.10159,
+    "ll_vc": 0.10153,
+    "net_b10_minus_vc": -9,
+    "ci95": [
+     -22.0,
+     4.0
+    ],
+    "n_disagree": 43,
+    "b10_right_when_disagree": 0.395
+   },
+   "new": {
+    "acc_b10": 0.90656,
+    "acc_vc": 0.9185,
+    "ll_b10": 0.23059,
+    "ll_vc": 0.21565,
+    "net_b10_minus_vc": -103,
+    "ci95": [
+     -166.025,
+     -49.0
+    ],
+    "n_disagree": 435,
+    "b10_right_when_disagree": 0.382
+   }
+  }
+ },
+ "20261030": {
+  "confirm": {
+   "n": 12881,
+   "all": {
+    "acc_b10": 0.93137,
+    "acc_vc": 0.93129,
+    "ll_b10": 0.17558,
+    "ll_vc": 0.17143,
+    "net_b10_minus_vc": 1,
+    "ci95": [
+     -45.025,
+     49.0
+    ],
+    "n_disagree": 431,
+    "b10_right_when_disagree": 0.501
+   },
+   "seen": {
+    "acc_b10": 0.9607,
+    "acc_vc": 0.96176,
+    "ll_b10": 0.10405,
+    "ll_vc": 0.10698,
+    "net_b10_minus_vc": -4,
+    "ci95": [
+     -18.0,
+     11.0
+    ],
+    "n_disagree": 52,
+    "b10_right_when_disagree": 0.462
+   },
+   "new": {
+    "acc_b10": 0.91937,
+    "acc_vc": 0.91883,
+    "ll_b10": 0.20484,
+    "ll_vc": 0.1978,
+    "net_b10_minus_vc": 5,
+    "ci95": [
+     -40.0,
+     49.0
+    ],
+    "n_disagree": 379,
+    "b10_right_when_disagree": 0.507
+   }
+  }
+ }
+}
