@@ -1,0 +1,23 @@
+{
+  "mode": "split",
+  "seed": 20261030,
+  "n_dev": 43668,
+  "n_confirm": 12881,
+  "b10_acc": 0.9313717879046658,
+  "b10_ll": 0.17557800278313235,
+  "A_hist_acc": 0.9291980436301529,
+  "fixes": 277,
+  "breaks": 249,
+  "elapsed_sec": 1994,
+  "env": {
+    "catboost": "1.2.10",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "python": "3.13.18",
+    "threads": 2
+  },
+  "note": "dev = fit only (70k minus tune minus confirm), same training rows as A_hist/CB_Bag3; iterations and threshold 0.5 frozen from historical selected_ensemble.json/metrics.csv"
+}
