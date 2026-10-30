@@ -1,0 +1,5 @@
+# Submission75 result reported by Ariel
+
+File submission_75_lexical_seen_to_used5_on48.csv; SHA256 b2cf5face8ae2cdebc20b9c30ac2eb4b041b073346abcd852f1949a34671236b (uploaded file checked). Public score **.94633**, tied with submission48. Five seen-seller changes new→used based on lexical disagreement. The displayed tie is aggregate evidence only, not confirmation of all five targets. It may reflect offsetting effects on public rows, hidden-only changes or score display precision. Do not infer individual labels, expand the lexical rule or assume improvement on the hidden leaderboard.
+
+Today's completed scores:72 .94623;73 .94600;74 .94614;75 .94633. Four disjoint blocks, none with positive observed public delta. Known public best remains48 .94633;75 also ties. One slot remains in Ariel's plan. A fifth upload should add a new justified comparison rather than duplicate48/75 or combine adverse72–74. Candidate71 still lacks a controlled advantage over the best historical model. No assistant upload to Kaggle.
