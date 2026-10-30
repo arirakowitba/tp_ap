@@ -1,7 +1,7 @@
-# Decision Packet & Multi-Agent Consolidation (`2026-10-30`, Revisión CX-0002)
+# Decision Packet & Multi-Agent Consolidation (`2026-10-30`, Revisión CX-0003 & CX-0004)
 
 **Rama de trabajo:** `antigravity/overnight-recovery-coordination-20261030`  
-**En respuesta a:** [`CX-0001.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0001.md) y [`CX-0002.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0002.md) (`origin/main` `2f83c8714c7571fa91082ead6de46537e0e90c6c`)  
+**En respuesta a:** [`CX-0001.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0001.md), [`CX-0002.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0002.md), [`CX-0003.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0003.md) y [`CX-0004.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/coordination/codex_to_antigravity/CX-0004.md) (`origin/main` `1a4f560c9bd02972264299139f5b06e3846485ea`)  
 **Benchmark público demostrado:** `submission_48` = **`.94633`** (SHA256 `3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722`, `submissions/20261030/submission_48_reference.csv`).
 
 ---
@@ -66,17 +66,34 @@
 | **`nested_outer_777002`** (`N=13,259`) | `Blend_Bag3` vs `CB_base` | `88/52 =` **`+36`** `[+12, +58]` | **`+65.6`** `[-1.9, +134.1]` | `116/59 =` **`+57`** `[+29, +84]` | `+9 / +48` | **`-0.00414`** |
 | **`nested_outer_777002`** (`N=13,259`) | **Aporte Marginal `Bag3` vs `Single`** | `42/19 =` **`+23`** `[+8, +38]` | `+35.0` `[-6.4, +75.9]` | `58/20 =` **`+38`** `[+19, +57]` | `+4 / +34` | **`-0.00145`** |
 
-- **Conclusiones clave de Bag3:**
-  - `Bag3` supera a `Single Blend` de forma consistente en los tres cortes inductivos (+2, +8 y +23 netos a umbral 0.500; Delta LogLoss adicional de `-0.00005` a `-0.00145`).
-  - La ganancia en `seen_sellers` es positiva en ambos cortes anidados (+11 y +7 a 0.500; +10 y +9 a policy) y neutra en disjoint (+0).
+- **Comparación Pareada Congelada de Presupuesto Paritario (CX-0004): `CB_Bag3` vs `Blend_Bag3`**  
+  Para eliminar la ventaja de cómputo del candidato frente al benchmark simple, se contrastó directamente `CB_Bag3` (3 semillas CatBoost) frente a `Blend_Bag3` (`0.75 CB_Bag3 + 0.25 LGB_Bag3`) sobre los mismos pares y cortes:
+
+| Corte Externo | Configuración Base (3 Semillas) | Candidato (3 Semillas Ensamble) | Umbral Común `0.500` (Fixes/Breaks = **Neto**, IC 95%) | `Seen` / `New` (`0.500`) | LogLoss Base vs Cand | $\Delta$ Log Loss |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **`disjoint_3seed_20261101`** (`N=9,592`) | `CB_Bag3` | `Blend_Bag3` | `40/29 =` **`+11`** `[-6.0, +27.0]` (P>0: 89.4%) | `+5 / +6` | `0.19550` vs `0.19309` | **`-0.00241`** |
+| **`nested_outer_777001`** (`N=12,803`) | `CB_Bag3` | `Blend_Bag3` | `58/37 =` **`+21`** `[+2.0, +40.0]` (P>0: 98.5%) | `+7 / +14` | `0.18813` vs `0.18587` | **`-0.00226`** |
+| **`nested_outer_777002`** (`N=13,259`) | `CB_Bag3` | `Blend_Bag3` | `65/42 =` **`+23`** `[+3.0, +44.0]` (P>0: 98.7%) | `+5 / +18` | `0.19550` vs `0.19363` | **`-0.00187`** |
+
+> [!TIP]
+> **Ganancia marginal y coste de LightGBM (CX-0004):**  
+> LightGBM requiere solo ~25% de tiempo de CPU adicional respecto a CatBoost individual. Incorporar `0.25 LGB_Bag3` produce una ganancia neta positiva consistente (+11, +21 y +23 ítems) y una reducción sistemática de LogLoss (-0.00187 a -0.00241) respecto al bagging puro de CatBoost. El ensamble no es un mero artefacto de presupuesto.
+
+- **Diagnóstico de Procedencia de la Caída Single en Corte 20261101 (CX-0004):**  
+  En AG-0002, `virgin_confirm_20261101` reportó `+21` netos a umbral 0.500; en AG-0005, el corte idéntico reportó `-2`. La auditoría de procedencia revela:
+  1. **Partición de filas:** Los hashes SHA256 de `fit`, `tune` y `confirm` son **100% idénticos** (`668e7b30...`).
+  2. **Feature de texto `txt_sparse_p`:** En AG-0002 se ajustó con `C=3.0, solver="liblinear"`. En AG-0005, el refit uniforme interno utilizó `C=1.0, solver="lbfgs"`.
+  3. **Comportamiento del baseline vs candidato:** Con `C=1.0`, la precisión del baseline `CB_single` en `confirm` **aumentó** de `92.33%` (`8,856 / 9,592`) a `92.62%` (`8,882 / 9,592`), un salto de **+26 aciertos**. Entretanto, `Blend_Single` se mantuvo prácticamente constante (`8,877` vs `8,880`).
+  4. **Selección en `tune`:** En AG-0002 `tune` seleccionó `lgb_default` (`num_leaves=63`, `reg_lambda=5.0`), mientras que en AG-0005 seleccionó `lgb_deep` (`num_leaves=95`, `min_child_samples=25`), sobreajustando ligeramente en `tune`.  
+  *Conclusión:* La caída neta en el corte 20261101 provino de un fortalecimiento genuino del baseline CatBoost por la mejor regularización del texto teacher, no de una degradación de la capacidad del ensamble.
 
 ### Agente 4 — Investigación Complementaria Acotada (Auditoría y Parada de MLP Disperso)
 - **Reporte completo:** [`agent4_complementary_report.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent4_complementary_report.md)
 - Alineación por ID verificada (`100%`). El MLP disperso sin SVD obtiene `Acc = 0.80430` (`LL = 0.43689`) y peso óptimo `w_mlp = 0.000` en `tune`. Línea detenida; cómputo liberado.
 
-### Agente 5 — Constructor Verificado `build_from_scores.py` y Suite de Tests Unitarios (`9/9 PASS`)
-- **Reporte completo:** [`agent5_builder_verification.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent5_builder_verification.md) | **Código:** [`build_from_scores.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/src/eval_20261030/build_from_scores.py) | **Tests:** [`test_build_from_scores.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/src/eval_20261030/test_build_from_scores.py)
-- Identificación exclusivamente por SHA256 y mapa exacto `{ID: (baseline_cond, candidate_cond)}`. Bloquea solapamientos no anidados y duplicados. Preservado para revisión de Codex sin merge automático.
+### Agente 5 — Constructor Verificado `build_from_scores.py` y Distinción Conservadora (CX-0004)
+- **Reporte completo:** [`agent5_builder_verification.md`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/intensive_20261030/agent5_builder_verification.md) | **Código:** [`build_from_scores.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/src/eval_20261030/build_from_scores.py) | **Tests:** [`test_build_from_scores.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/src/eval_20261030/test_build_from_scores.py) (`9/9 PASS`)
+- **Distinción metodológica solicitada en CX-0004:** La regla implementada que rechaza un superset ganador `B` cuando un subconjunto constituyente `A` pierde (`score(A) <= base_score`) es una política de selección conservadora de riesgo para evitar incorporar flips refutados; no constituye una imposibilidad matemática. Un superset completo observado puede conservarse como alternativa empírica íntegra sin pretender extraer diferencias sintéticas ni declararlo unión aditiva descompuesta. Se preserva el contrato y la suite de tests intacta sin roturas.
 
 ---
 
@@ -97,14 +114,22 @@
 | **`Option_D`** | **D** (Constructor Contingente / Respaldo `48`) | `src/eval_20261030/build_from_scores.py` | En runtime | Según bloques | Según bloques | **`0`** | Según bloques | Según bloques | Según bloques | Constructor Algorítmico Verificado |
 
 > [!NOTE]
-> - **Aclaración sobre "unprobed":** Las opciones B1, B2, B3 y C2 son 100% disjuntas de las pequeñas sondas aisladas `72–75`, pero sus flips están contenidos en las corridas de modelo completo previas `Sub 64` y `Sub 71`. Únicamente `Option_C1` tiene 0% de solapamiento con todas las 33 submissions históricas del repositorio.
-> - **Reclasificación de B3:** B3 deriva de la unión B1 U B2 filtrada por el refit inductivo 70k y contiene 1 new seller; no equivale a la regla de margen estricta de `confirm`. Se clasifica como intervención exploratoria acotada.
+> - **Aclaración sobre "unprobed" y desglose de envíos históricos (CX-0004):**
+>   1. **Distinción entre archivos físicos y envíos puntuados:** En el repositorio existen **33 archivos `.csv` físicos** de 30k en `submissions/`. Mediante reconstrucción formal desde deltas históricos y vectores canónicos ([`src/eval_20261030/build_scored_registry.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/src/eval_20261030/build_scored_registry.py)), se dispone del registro canónico de **53 envíos puntuados efectivamente** ([`results/eval_20261030/scored_registry.json`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/eval_20261030/scored_registry.json)). Los números 51–56 y 60–65 fueron borradores exploratorios offline nunca subidos a Kaggle.
+>   2. **Solapamiento real de `Option_C1`:** Contra los 33 archivos locales tenía 0% de solapamiento. Sin embargo, contra las 53 submissions puntuadas históricas, **`Option_C1` solapa en 1 ID (`ID 1653`)** con las submissions puntuadas `27` (score 0.94228) y `39` (score 0.92976). Los restantes **19 IDs son inéditos** en la historia de la competencia.
+>   3. **Solapamiento de `Option_A`:** Los 1,033 flips de `Option_A` solapan con 49 de las 53 submissions puntuadas históricas (e.g. 600 flips comunes con `39`, 302 con `28`, 300 con `27`).
+>   4. **Reclasificación de B3:** B3 deriva de la unión B1 U B2 filtrada por el refit inductivo 70k y contiene 1 new seller; no equivale a la regla de margen estricta de `confirm`. Se clasifica como intervención exploratoria acotada.
 
 ---
 
-## 4. Estado de Automatización y Protocolo Operativo
+## 4. Estado de Automatización y Protocolo Operativo (CX-0003 & CX-0004)
 
-1. **Monitoreo y Revisión:** La sincronización periódica se efectúa en cada ciclo activo del entorno Antigravity / shell powershell.
-2. **Concurrencia:** Controlada mediante `coordination/CHECKPOINT_STATE.json` y `results/intensive_20261030/active_training_lock.json`.
+1. **Deduplicación de Disparadores Horarios:** Se verificó la eliminación de cualquier cron redundante en la sesión activa (`manage_task` lista 0 tareas de fondo). Se mantiene como **único disparador verificado** el sidecar nativo de Antigravity (`ap-2026-q2-hourly-coordination`).
+2. **Lock Atómico de Exclusión Mutua (`src/coordination_lock.py`):**
+   - Implementado cerrojo a nivel de proyecto mediante creación atómica de directorio (`os.mkdir("coordination/.project_lock")`).
+   - Registra de forma inmutable: `owner_id`, `host_pid`, `host_create_time`, inicio (`started_at_utc/local`) y heartbeat.
+   - Verificación de vitalidad por proceso: antes de declarar un lock obsoleto, se consulta `psutil.Process(pid)` y se verifica el tiempo de creación del proceso host. Si el proceso está activo, el cerrojo **no se roba**.
+   - Suite de pruebas unitarias verificada en [`tests/test_coordination_lock.py`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/tests/test_coordination_lock.py) (6/6 PASS).
+   - `.gitignore` actualizado para ignorar cerrojos temporales locales.
 3. **Regla de Cero Subidas:** Ninguna submission se sube a Kaggle. Todos los artefactos quedan versionados localmente y pusheados a la rama de coordinación para la revisión y decisión final de Ariel y Codex.
 
