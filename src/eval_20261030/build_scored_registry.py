@@ -2,7 +2,11 @@
 
 Sources:
 - results/revision_submissions/posterior_flips_20261027/assemble.py (4-50, 57, 58)
-- results/revision_submissions/round138_fin_stack_segment_samples_20261028.md (59, 150 nuevos, 150 vistos)
+- results/revision_submissions/round137_adaptive_candidates_20261028.md (59, 59_new, 59_seen_to_new)
+- results/revision_submissions/round138_fin_stack_segment_samples_20261028.md (fin_stack_new150, fin_stack_seen150)
+- results/revision_submissions/round105_111_alpha1_candidate53_20261027.md (53)
+- results/revision_submissions/round118_119_public53_postmortem_20261027.md (53 postmortem)
+- results/revision_submissions/round122_partition53_submissions_54_56_20261027.md (54, 55, 56)
 - results/revision_submissions/registry_72_76_20261029.json (72-76)
 - base07, base15, base33, and flips TSVs
 """
@@ -92,12 +96,11 @@ def main():
     if sub58_p.exists():
         subs[58] = {int(r["ID"]): r["condition"] for r in csv.DictReader(open(sub58_p))}
 
-    # Fin stack 59 and probes (2026-10-28)
+    # Fin stack 59 and segment probes (2026-10-28)
     sub59_p = ROOT / "submissions" / "20261028" / "submission_59_fin_stack_banda_0.85_1.00_sobre48.csv"
     if sub59_p.exists():
         subs["59_full"] = {int(r["ID"]): r["condition"] for r in csv.DictReader(open(sub59_p))}
 
-    # Fin stack 150 samples
     H_fs = ROOT / "submissions" / "20261028"
     m_fs = json.loads((H_fs / "manifest_bandas_fin_stack.json").read_text())
     p59_item = next(p for p in m_fs["probes"] if p["number"] == 59)
@@ -111,6 +114,32 @@ def main():
         train_sellers.add(json.loads(line)["seller_id"])
     test_sellers = [json.loads(line)["seller_id"] for line in open(ROOT / "data" / "ap_2026_q_2" / "raw" / "test_data.jsonlines", encoding="utf-8")]
     seen_arr = pd.Series(test_sellers).isin(train_sellers).to_numpy()
+
+    # Reconstruct probe_59_new_seller (26 flips vs 48, score 0.94619)
+    s59_df = pd.read_csv(H_fs / p59_item["file"])
+    s48_df = pd.DataFrame([{"ID": i, "condition": subs[48][i]} for i in range(1, 30001)])
+    flips_59 = (s59_df["condition"] != s48_df["condition"]).to_numpy()
+
+    mask_59_new = flips_59 & (~seen_arr)
+    df_59_new = s48_df.copy()
+    df_59_new.loc[mask_59_new, "condition"] = s59_df.loc[mask_59_new, "condition"]
+    path_59_new = H_fs / "probe_59_new_seller_sobre48.csv"
+    df_59_new.to_csv(path_59_new, index=False, lineterminator="\n")
+    sha_59_new = sha256_bytes(path_59_new.read_bytes())
+    assert sha_59_new == "de1ebd9af13ecc1723e5f521e1c0dcb525a2e9261267ae3edb7bafe4bc5e7b9f", f"Mismatch 59 new: {sha_59_new}"
+    subs["probe_59_new_seller"] = {int(r["ID"]): r["condition"] for _, r in df_59_new.iterrows()}
+    print(f"Generated and loaded probe_59_new_seller (SHA: {sha_59_new})")
+
+    # Reconstruct probe_59_seen_to_new (27 flips vs 48, score 0.94590)
+    mask_59_s2n = flips_59 & seen_arr & (s59_df["condition"] == "new")
+    df_59_s2n = s48_df.copy()
+    df_59_s2n.loc[mask_59_s2n, "condition"] = s59_df.loc[mask_59_s2n, "condition"]
+    path_59_s2n = H_fs / "probe_59_seen_to_new_sobre48.csv"
+    df_59_s2n.to_csv(path_59_s2n, index=False, lineterminator="\n")
+    sha_59_s2n = sha256_bytes(path_59_s2n.read_bytes())
+    assert sha_59_s2n == "d06115e8984d4ae82c34cd0ac7276f7b16a6666d1eca57bea736aa5f7b7f32e7", f"Mismatch 59 seen2new: {sha_59_s2n}"
+    subs["probe_59_seen_to_new"] = {int(r["ID"]): r["condition"] for _, r in df_59_s2n.iterrows()}
+    print(f"Generated and loaded probe_59_seen_to_new (SHA: {sha_59_s2n})")
 
     pool = set().union(*(set(p["ids"]) for p in m_fs["probes"] if p["number"] in (60, 61, 62)))
     for name, seg in [("seen", seen_arr), ("new", ~seen_arr)]:
@@ -149,7 +178,11 @@ def main():
         41: 0.94628, 42: 0.94614, 43: 0.94614, 44: 0.94619,
         45: 0.94623, 46: 0.94623, 47: 0.94628, 48: 0.94633,
         49: 0.94628, 50: 0.94628, 57: 0.94633, 58: 0.94633,
-        "59_full": 0.94576, "fin_stack_new150": 0.94495, "fin_stack_seen150": 0.94257,
+        "59_full": 0.94576,
+        "probe_59_new_seller": 0.94619,
+        "probe_59_seen_to_new": 0.94590,
+        "fin_stack_new150": 0.94495,
+        "fin_stack_seen150": 0.94257,
         72: 0.94623, 73: 0.94600, 74: 0.94614, 75: 0.94633, 76: 0.94633
     }
 
@@ -183,6 +216,53 @@ def main():
             "flips_dict": {str(k): v["to"] for k, v in flips_vs_48.items()}
         })
 
+    # Add explicitly verified scored submissions 53, 54, 55 (provenance documented, CSV kept in Library)
+    documented_scored = [
+        {
+            "key": "53",
+            "file_name": "submission_53_seller_loo_alpha1_on_48.csv",
+            "score": 0.94114,
+            "delta_vs_48": round(0.94114 - 0.94633, 5),
+            "status": "loss",
+            "sha256_lf": "a894af2ebabbe3166caf984842813b1a47d0504b181a5800198655e2b15813a8",
+            "sha256_vector": None,
+            "n_flips_vs_48": 411,
+            "flipped_ids": [],
+            "flips_dict": {},
+            "provenance": "round105_111_alpha1_candidate53_20261027.md, round118_119_public53_postmortem_20261027.md, Library libfile_2071a29b9e7481919a588c058125db96",
+            "audit_state": "enviado-score-conocido-hash-conocido-CSV-no-local"
+        },
+        {
+            "key": "54",
+            "file_name": "submission_54_partition53_bloque1.csv",
+            "score": 0.94457,
+            "delta_vs_48": round(0.94457 - 0.94633, 5),
+            "status": "loss",
+            "sha256_lf": "5ac51b6926ac2d39264ae450bdc8bd8e0f99948ebf0ee893069bce04137debd5",
+            "sha256_vector": None,
+            "n_flips_vs_48": 204,
+            "flipped_ids": [],
+            "flips_dict": {},
+            "provenance": "round122_partition53_submissions_54_56_20261027.md, Library libfile_3208460aae608191bb598624b81ee4ba",
+            "audit_state": "enviado-score-conocido-hash-conocido-CSV-no-local"
+        },
+        {
+            "key": "55",
+            "file_name": "submission_55_partition53_bloque2.csv",
+            "score": 0.94514,
+            "delta_vs_48": round(0.94514 - 0.94633, 5),
+            "status": "loss",
+            "sha256_lf": "fb82ba0afec97a166d4744cadd8967e028b46824204e67adac8336d8f9711eb5",
+            "sha256_vector": None,
+            "n_flips_vs_48": 65,
+            "flipped_ids": [],
+            "flips_dict": {},
+            "provenance": "round122_partition53_submissions_54_56_20261027.md, Library libfile_220f8ec2f4648191bee01543493f7e0a",
+            "audit_state": "enviado-score-conocido-hash-conocido-CSV-no-local"
+        }
+    ]
+    registry_entries.extend(documented_scored)
+
     # Save registry JSON
     out_json = EVAL_DIR / "scored_registry.json"
     with open(out_json, "w", encoding="utf-8") as f:
@@ -191,12 +271,19 @@ def main():
                 "score": 0.94633,
                 "sha256": s48_hash,
             },
-            "missing_submissions_notes": [
-                "01-03: CSVs exactos no recuperables en disco (solo score en log)",
-                "10: CSV exacto no recuperable",
-                "26-30: scores publicos exactos reconstruidos via assemble.py",
-                "51-56: borradores offline nunca enviados a Kaggle (sin score)",
-                "60-65: borradores offline de bandas y modelos puros (sin score)"
+            "inventory_correction_notes": [
+                "01-03: enviados, scores conocidos (01: 0.94433, 02: 0.94419, 03: 0.94447); CSVs exactos no disponibles localmente en disco (enviado-score-conocido-CSV-no-identificado)",
+                "10: enviado, score conocido 0.94500; CSV exacto no disponible localmente en disco (enviado-score-conocido-CSV-no-identificado)",
+                "26-30: scores publicos reconstruidos via assemble.py y confirmados",
+                "51-52: preparadas, no enviadas (descartadas formalmente tras la caida publica de 53)",
+                "53: enviada y puntuada (score publico 0.94114, SHA256 a894af2ebabbe3166caf984842813b1a47d0504b181a5800198655e2b15813a8, 411 flips vs 48)",
+                "54: enviada y puntuada (score publico 0.94457, SHA256 5ac51b6926ac2d39264ae450bdc8bd8e0f99948ebf0ee893069bce04137debd5, 204 flips vs 48)",
+                "55: enviada y puntuada (score publico 0.94514, SHA256 fb82ba0afec97a166d4744cadd8967e028b46824204e67adac8336d8f9711eb5, 65 flips vs 48)",
+                "56: preparada, no enviada (bloque de 142 flips inferido ~.94409, descartado tras resultados adversos de 54 y 55)",
+                "59: comprende 5 envios con scores conocidos reportados por Ariel: 59_full (.94576), probe_59_new_seller (.94619), probe_59_seen_to_new (.94590), fin_stack_new150 (.94495), fin_stack_seen150 (.94257)",
+                "60-65: borradores offline de bandas y modelos puros sin envios Kaggle confirmados",
+                "66-71: preparadas en Ronda 152 sin scores publicos confirmados en el repo (preparado-sin-score-confirmado-en-repo)",
+                "72-76: enviadas y puntuadas el 2026-10-29 (72: .94623, 73: .94600, 74: .94614, 75: .94633, 76: .94633 duplicado exacto de 48)"
             ],
             "entries": registry_entries
         }, f, indent=2)

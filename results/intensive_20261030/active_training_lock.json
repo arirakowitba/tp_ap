@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-10-30T01:22:00-03:00",
+  "active_python_pids": [],
+  "status": "IDLE_ALL_CX0001_TASKS_COMPLETED",
+  "in_reply_to": "CX-0001",
+  "completed_checkpoints": {
+    "shared_feature_cache": {
+      "path": "results/cache_20261030/shared_feature_cache.pkl",
+      "manifest": "results/cache_20261030/cache_manifest.json",
+      "sha256": "87b33a92760f2d984be9f44d46c7205121417d9a77576e57b58080be62cf1210"
+    },
+    "agent1_integrity_provenance": {
+      "report": "results/intensive_20261030/agent1_integrity_provenance_report.md",
+      "manifest": "results/intensive_20261030/agent1_integrity_manifest.json",
+      "status": "COMPLETED"
+    },
+    "agent2_mainline_cb_lgb": {
+      "report": "results/intensive_20261030/agent2_mainline_report.md",
+      "summary": "results/intensive_20261030/agent2_mainline_summary.json",
+      "paired_2026_sha256": "a184fab755b085c39a2f7ecd6fc2e91360d677bce2bcb1a8c7e0e432fab7007e",
+      "paired_314159_sha256": "0ff6616096a0f4df2eb82b6e1b7a5271c88f9d161a882ef99d889f472149ceaf",
+      "paired_20261030_sha256": "6dee9e593794e3ea3d04460bb8922f64f8dcfaf35d8d9264f8c6c2e68632d2f56",
+      "test_30k_preds_sha256": "74d3cd88fa92f417dae63f629e86c7291bcf8ac09396cb53682c182a034af8df",
+      "status": "COMPLETED"
+    },
+    "agent3_external_validation": {
+      "report": "results/intensive_20261030/agent3_external_validation_report.md",
+      "summary": "results/intensive_20261030/agent3_external_summary.json",
+      "holdouts_overlap_audit": "results/intensive_20261030/all_historical_holdouts_overlap_audit.json",
+      "paired_disjoint_3seed_20261101_sha256": "20590fd534c0c1e86ca368f0ede7ff2f0662555d37bbefc3e5d58fc381719601",
+      "paired_nested_outer_777001_sha256": "9a575422598810e634ef12645c912c2de20c549345bba8d236fce029a9acec60",
+      "paired_nested_outer_777002_sha256": "9aaa7adbd7ef3d7474a22b4e12d604614ca691fc521ae0f5743c3c784db68cf5",
+      "status": "COMPLETED"
+    },
+    "agent4_complementary_audit": {
+      "report": "results/intensive_20261030/agent4_complementary_report.md",
+      "summary": "results/intensive_20261030/agent4_complementary_summary.json",
+      "status": "COMPLETED_STOPPED_BY_TUNE_GATE"
+    },
+    "agent5_builder_verification": {
+      "report": "results/intensive_20261030/agent5_builder_verification.md",
+      "test_results": "results/intensive_20261030/agent5_test_results.json",
+      "status": "COMPLETED_9_OF_9_TESTS_PASSED_AWAITING_CODEX_REVIEW"
+    },
+    "agent6_decision_package": {
+      "report": "results/intensive_20261030/agent6_decision_package_report.md",
+      "menu": "results/intensive_20261030/agent6_decision_menu.json",
+      "per_id_table": "results/intensive_20261030/agent6_per_id_audit_table.csv",
+      "status": "COMPLETED"
+    }
+  }
+}

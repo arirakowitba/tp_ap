@@ -1,0 +1,18 @@
+{
+  "last_checked_utc": "2026-10-30T18:28:00Z",
+  "origin_main_head": "0bca3640378b4472bd5f233d8afca248b0dfa79e",
+  "local_branch": "antigravity/overnight-recovery-coordination-20261030",
+  "local_head": "4bb2a1976a4ba4f5f590b17173db50ebca1b903f",
+  "last_processed_codex_message": "CX-0014",
+  "last_published_antigravity_message": "AG-0011-RESULT.md",
+  "active_processes": [],
+  "tasks": {
+    "T1_constructor_rebuild_and_tests": "done",
+    "T2_catboost_lgbm_paired_eval_and_holdout_overlap": "done",
+    "T3_single_rule_candidate_and_submission_guard": "done",
+    "T4_hourly_automation_setup": "done_cx0014_verified",
+    "T5_cx0002_33_to_48_provenance_audit": "done",
+    "T6_cx0002_adaptive_5slot_decision_menu": "done",
+    "T7_cx0013_seller_te_and_cat_ablation": "done"
+  }
+}

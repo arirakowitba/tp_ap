@@ -1,92 +1,79 @@
-# Benchmark Restoration & Baseline Attribution Report
+# Benchmark Restoration, Baseline Attribution & Variant Provenance Report
 
 **Date**: 2026-10-30  
 **Repository**: `arirakowitba/tp_ap`  
-**Branch**: `antigravity/benchmark-recovery-20261030`  
-**Active Competitor Benchmark**: Submission 48 (Score `.94633`, SHA256 `3f8d08e063870...`)
+**Branch**: `antigravity/overnight-recovery-coordination-20261030`  
+**Active Competitor Benchmark**: Submission 48 (Score `.94633`, SHA256 `3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722`)
 
 ---
 
-## 1. Executive Summary & Exact Reproduction
+## 1. Executive Summary: Exact Historical Reproduction (`A_hist`) vs. New Attribute-Value Variant (`A_valname`)
 
-The strong deep baseline (Deep CatBoost, Rounds 151/153) has been **100.00% reproduced down to the exact float**:
+Our provenance audit resolved the apparent discrepancy between the earlier draft of this report (which reported 100.00% agreement with historical R151) and `reproduction_manifest_agent2.json` (which reported ~98.35% agreement):
 
-| Canonical Seed | Historical Acc | Reproducing Acc | Pearson Correlation | Agreement vs Historical | Tune Threshold | Confirm Log Loss |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Seed 2026** | **0.92391** | **0.92391** | **1.000000** | **100.00%** | `0.47` | `0.18764` |
-| **Seed 314159** | **0.92019** | **0.92019** | **1.000000** | **100.00%** | `0.54` | `0.19558` |
+1. **`Pipeline A_hist` (Exact Historical R151 Reproduction)**:
+   - Uses `extract_deep_features` from `src/revision_submissions/deep_catboost_nbsvm_ablation_20261029.py`, where `combos` for `txt_sparse_p` concatenates **attribute IDs** (`a.get("id")`) separated by `||` (`f"{t} || {w} || {attrs}"`) and `float64` probabilities.
+   - Reproduces `paired_deep_ablation_seed_2026.csv` and `paired_deep_ablation_seed_314159.csv` with **`0.000000` difference after 5-decimal rounding (`max_abs_diff = 4.9998e-6`), `100.0000%` prediction agreement, and `r = 1.000000`**.
+2. **`Pipeline A_valname` (New Variant with Attribute `value_name` and Threshold Tuned on `tune`)**:
+   - Uses `src/benchmark_20261030/data_loader.py`, where `combos` for `txt_sparse_p` concatenates **attribute value names** (`a.get("value_name")`) and casts `txt_sparse_p` to `float32`.
+   - Produces a distinct `txt_sparse_p` feature that agrees **`98.3495%`** (Seed 2026) and **`98.2948%`** (Seed 314159) with `A_hist` (`r = 0.99637`).
 
-- Confirm prediction matrices have been persisted and verified:
-  - `results/benchmark_20261030/preds_A_seed2026_confirm.csv.gz`
-  - `results/benchmark_20261030/preds_A_seed314159_confirm.csv.gz`
+| Seed | Pipeline Variant | Text `combos` Definition | Tune Threshold | Tune Acc | Confirm Acc (`th_tune`) | Confirm Acc (`0.500`) | Confirm Log Loss | Agreement vs R151 CSV | Pearson Corr vs R151 |
+| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **2026** | **`A_hist` (Exact R151)** | `title \|\| warranty \|\| attr.id` | `0.470` | 0.92809 | **0.92391** | 0.92437 | **0.18764** | **100.0000%** | **1.000000** |
+| **2026** | **`A_valname` (New Variant)** | `title warranty attr.value_name` | `0.515` | 0.92971 | **0.92491** | 0.92445 | 0.18773 | 98.3495% | 0.996371 |
+| **314159** | **`A_hist` (`6a71f6c`, `tc=8`)** | `title \|\| warranty \|\| attr.id` | `0.535` | 0.93290 | **0.92019** | 0.92089 | 0.19558 | **100.0000%** | **1.000000** |
+| **314159** | **`A_hist` (`tc=4` bounded)** | `title \|\| warranty \|\| attr.id` | `0.535` | 0.93217 | **0.91996** | 0.92089 | **0.19552** | 99.5095% | 0.999625 |
+| **314159** | **`A_valname` (New Variant)** | `title warranty attr.value_name` | `0.455` | 0.93209 | **0.91809** | 0.91910 | 0.19701 | 98.2948% | 0.996329 |
+| **20261030** | **`A_hist` (Exact R151)** | `title \|\| warranty \|\| attr.id` | `0.440` | 0.93339 | **0.92920** | **0.93137** | **0.17039** | *(Reference)* | *(Reference)* |
+| **20261030** | **`A_valname` (New Variant)** | `title warranty attr.value_name` | `0.470` | 0.93435 | **0.93028** | 0.92997 | 0.17042 | 98.7579% vs `A_hist` | 0.996864 |
+
+- **Preserved Historical Confirm Files (Never Overwritten)**:
+  - `results/benchmark_20261030/preds_A_seed2026_confirm.csv.gz` (restored from `6a71f6c`, SHA256 `0db12d52610bbff70b8992b7e24171b6cf85a67bca7dcaeb7aa87798766ab1bd`)
+  - `results/benchmark_20261030/preds_A_seed314159_confirm.csv.gz` (restored from `6a71f6c`, SHA256 `9289a5be3822cd8e2e389d665e69f8d6bede7825a7bff49660fdaac06a5049f1`)
+- **Explicitly Separated New Artifacts**:
+  - `results/benchmark_20261030/preds_A_hist_seed{2026,314159,20261030}_{tune,confirm}.csv.gz`
+  - `results/benchmark_20261030/preds_A_valname_seed{2026,314159,20261030}_{tune,confirm}.csv.gz`
 
 ---
 
-## 2. Dissection of the Round 156/157 Baseline Drop (.924/.920 -> .905/.898)
+## 2. Dissection of the Round 156/157 Baseline Drop (`.924`/`.920` -> `.905`/`.898`)
 
 In Round 156/157, the reported CatBoost baseline fell sharply to `.905` (Seed 2026) and `.898` (Seed 314159), leading the authors to claim a "+144 net gain" for an ensemble that only achieved `.915/.911`—still far below the true `.924/.920` reference.
-
-We conducted controlled ablations isolating the three competing hypotheses:
-1. **Split composition hypothesis** (divergence in seller allocation between `split_seller_groups` and `canonical_split`).
-2. **Target Encoding smoothing hypothesis** ($\alpha=5.0$ vs $\alpha=10.0$).
-3. **Feature omission hypothesis** (omission of `txt_sparse_p` and fine-grained visual/temporal features).
 
 ### Controlled Ablation Results (`results/benchmark_20261030/attribution_gap_table.csv`)
 
 | Seed | Architecture / Pipeline | Split Partition | Features | TE $\alpha$ | Tune Acc | Confirm Acc | Confirm Log Loss | Delta vs R151 Base |
 | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **2026** | Pipeline A (R151 Base) | R151 split_seller_groups | R151 full deep (101 feats) + txt_sparse_p | 5.0 | 0.92809 | **0.92391** | 0.18764 | Benchmark |
-| **2026** | Pipeline A (on R157 split) | R157 canonical_split | R151 full deep (101 feats) + txt_sparse_p | 5.0 | 0.92818 | **0.92383** | 0.19016 | **-0.00008** (1 row) |
-| **2026** | Pipeline A (TE $\alpha=10$) | R151 split_seller_groups | R151 full deep (101 feats) + txt_sparse_p | 10.0 | 0.92758 | **0.92429** | 0.18843 | **+0.00038** |
-| **314159** | Pipeline A (R151 Base) | R151 split_seller_groups | R151 full deep (101 feats) + txt_sparse_p | 5.0 | 0.93290 | **0.92019** | 0.19558 | Benchmark |
-| **314159** | Pipeline A (on R157 split) | R157 canonical_split | R151 full deep (101 feats) + txt_sparse_p | 5.0 | 0.93137 | **0.92012** | 0.19749 | **-0.00007** (1 row) |
-| **314159** | Pipeline A (TE $\alpha=10$) | R151 split_seller_groups | R151 full deep (101 feats) + txt_sparse_p | 10.0 | 0.93161 | **0.92159** | 0.19654 | **+0.00140** |
+| **2026** | Pipeline A (R151 Base) | R151 `split_seller_groups` | R151 full deep (105 cols incl. `txt_sparse_p`) | 5.0 | 0.92809 | **0.92391** | 0.18764 | Benchmark |
+| **2026** | Pipeline A (on R157 split) | R157 `canonical_split` | R151 full deep (105 cols incl. `txt_sparse_p`) | 5.0 | 0.92818 | **0.92383** | 0.19016 | **-0.00008** (1 row) |
+| **2026** | Pipeline A (TE $\alpha=10$) | R151 `split_seller_groups` | R151 full deep (105 cols incl. `txt_sparse_p`) | 10.0 | 0.92758 | **0.92429** | 0.18843 | **+0.00038** |
+| **314159** | Pipeline A (R151 Base) | R151 `split_seller_groups` | R151 full deep (105 cols incl. `txt_sparse_p`) | 5.0 | 0.93290 | **0.92019** | 0.19558 | Benchmark |
+| **314159** | Pipeline A (on R157 split) | R157 `canonical_split` | R151 full deep (105 cols incl. `txt_sparse_p`) | 5.0 | 0.93137 | **0.92012** | 0.19749 | **-0.00007** (1 row) |
+| **314159** | Pipeline A (TE $\alpha=10$) | R151 `split_seller_groups` | R151 full deep (105 cols incl. `txt_sparse_p`) | 10.0 | 0.93161 | **0.92159** | 0.19654 | **+0.00140** |
 
 ### Definitive Conclusions of the Attribution Audit
-1. **The split partition DOES NOT explain the drop**:
-   When the complete Pipeline A feature matrix is evaluated on the R157 partition, the confirm accuracy is **0.92383** (Seed 2026) and **0.92012** (Seed 314159). The difference between splits is less than 0.00008 (~1 item out of 13,000 confirm rows).
-2. **TE smoothing DOES NOT explain the drop**:
-   Changing $\alpha=5.0$ to $\alpha=10.0$ slightly increases confirm accuracy (0.92429 and 0.92159).
-3. **The entire drop was caused by feature truncation, predominantly omitting `txt_sparse_p`**:
-   In `src/revision_submissions/ensemble_lgbm_catboost_experiment_20261029.py` (Round 156/157), the author:
-   - **Completely omitted `txt_sparse_p`** (the leak-free out-of-fold SGDClassifier probability over TF-IDF n-gram combinations of title + warranty + attributes). Without `txt_sparse_p`, the model lacked any NLP representation of product condition in the text.
-   - **Omitted 9 granular engineered features**: `pic_code`, `thumb_code`, `pic_prefix`, `pic_mean_area`, `dur_days`, `created_dow`, `upd_minus_created`, `var_sold`, and `seller_mean_init_q`.
-   - Reduced iterations from 900 to 600 with premature early stopping on tune.
-
-> [!IMPORTANT]
-> The "+144 net gain" claimed in Round 156 was an artifact of comparing against an accidentally hobbled CatBoost baseline (.905). When compared fairly against the true baseline (.924), Round 157 (.915) is a net regression of ~120 errors.
+1. **The split partition DOES NOT explain the drop**: Difference is less than `0.00008` (~1 row out of 12,905).
+2. **TE smoothing DOES NOT explain the drop**: Changing $\alpha=5.0$ to $\alpha=10.0$ slightly increases confirm accuracy.
+3. **The entire drop was caused by feature truncation in R156/R157**, predominantly omitting `txt_sparse_p` and 9 granular visual/temporal features (`pic_code`, `thumb_code`, `pic_prefix`, `pic_mean_area`, `dur_days`, `created_dow`, `upd_minus_created`, `var_sold`, `seller_mean_init_q`).
 
 ---
 
-## 3. Seen vs New Definition Audit
+## 3. Seen vs. New Seller Proportions (Validation Confirm vs. 30k Test)
 
-In historical reports, discrepancy in seen/new item counts was noted:
-- **Canonical R151 definition in Validation Confirm**: is_seen = np.isin(sellers[confirm], fit_sellers).
-  In Seed 2026: **3,903 seen items (30.2%)** and **9,002 new items (69.8%)** in confirm.
-  *(Note: An earlier draft inverted these counts. Because split_seller_groups_r151 intentionally reserves 10% of all unique sellers as a pure held-out block for confirm, new-seller items predominate in confirm to stress-test generalization).*
-- **Kaggle Test Set Breakdown (30,000 items vs 70k Train)**:
-  - **21,487 items (71.62%)** belong to sellers present in train (seen_seller).
-  - **8,513 items (28.38%)** belong to new sellers (
-ew_seller).
-- **Round 157 split implementation**: canonical_split divided sellers by len(unique) // 5, altering the random shuffle order. Although the proportion of seen sellers remained roughly 30/70 in confirm, the individual seller IDs in confirm shifted by 31.4%.
+- **Canonical R151 Validation `confirm` (`is_seen = np.isin(sellers[confirm], fit_sellers)`)**:
+  - Seed 2026: **3,903 seen items (`30.24%`)** and **9,002 new items (`69.76%`)** (`n = 12,905`).
+  - Seed 314159: **3,838 seen items (`29.88%`)** and **9,005 new items (`70.12%`)** (`n = 12,843`).
+  - Seed 20261030: **3,740 seen items (`29.04%`)** and **9,141 new items (`70.96%`)** (`n = 12,881`).
+- **Kaggle 30k Test Set (`is_seen = np.isin(sellers_test, sellers_train_70k)`)**:
+  - **21,487 seen items (`71.623%`)** and **8,513 new items (`28.377%`)** (`n = 30,000`).
 
 ---
 
-## 4. Confirm Overlap Audit (`confirm_overlap_audit.md`)
+## 4. Confirm Overlap Audit (Never Call a Reused Confirm Split "Virgin")
 
-Historical confirm splits have been repeatedly inspected across Rounds 150–157.
-Our formal audit of row and seller overlaps between historical confirms and the predeclared seed `20261030` revealed:
-- **18.6% of rows** in seed `20261030` confirm appeared in at least one prior confirm set.
-- **31.5% of seller IDs** appeared in prior confirm sets.
-- **Protocol mandate**: All confirm evaluations must be recognized as **reused confirm sets**, requiring strict pre-freezing of hyperparameters and thresholds on `tune` before evaluating `confirm`.
-
----
-
-## 5. Artifact Provenance & Hashes
-
-- `results/benchmark_20261030/attribution_gap_table.csv`
-- `results/benchmark_20261030/preds_A_seed2026_confirm.csv.gz`
-- `results/benchmark_20261030/preds_A_seed314159_confirm.csv.gz`
-- `results/benchmark_20261030/test_probs_pipeline_A.npy` (pending full 70k refit)
-- `results/eval_20261030/confirm_overlap_audit.csv`
-- `results/eval_20261030/scored_registry.json`
+- `seed_2026` vs `seed_314159`: **2,337 shared rows (`18.11%`)**, **2,089 shared sellers (`31.42%`)**.
+- `seed_2026` vs `seed_20261030`: **2,393 shared rows (`18.54%`)**, **2,073 shared sellers (`31.18%`)**.
+- `seed_314159` vs `seed_20261030`: **2,249 shared rows (`17.51%`)**, **2,020 shared sellers (`30.41%`)**.
+- **`seed_20261030` vs union `(2026 ∪ 314159)`**: **4,232 shared rows (`32.85%`)** and **3,170 shared sellers (`48.13%`)**.
+- Because these splits overlap substantially and share ~65% of `fit` rows, gains across seeds must **never** be summed or treated as independent trials.

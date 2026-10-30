@@ -16,3 +16,8 @@ models/
 results/round_v5/
 catboost_info/
 src/round127_agente_*/logs/
+coordination/.project_lock/
+coordination/.lock/
+coordination/*.oslock
+
+
