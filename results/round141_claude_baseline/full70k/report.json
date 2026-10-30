@@ -1,0 +1,17 @@
+{
+  "mode": "full",
+  "agree_with_hist_94428": 0.996,
+  "n_diff": 120,
+  "sha256": "42ef474c0bf1babc6a5ed19894c67e0dd9be52e95f79bfe052644480585a6624",
+  "elapsed_sec": 2853,
+  "env": {
+    "catboost": "1.2.10",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "python": "3.13.18",
+    "threads": 2
+  }
+}
