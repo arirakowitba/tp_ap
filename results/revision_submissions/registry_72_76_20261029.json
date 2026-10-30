@@ -1,0 +1,122 @@
+{
+  "baseline": {
+    "number": 48,
+    "score": 0.94633,
+    "sha256": "3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722"
+  },
+  "score_source": "Ariel, completed Kaggle submissions in this conversation",
+  "date_buenos_aires": "2026-10-29",
+  "limitation": "Scores are aggregate block evidence, never labels for individual IDs. Exact historical public denominator and formatting not assumed.",
+  "submissions": [
+    {
+      "number": 72,
+      "file": "submission_72_new_seller_to_new_unprobed8.csv",
+      "score": 0.94623,
+      "sha256": "54120580491c0049fb27ecff8d45d676f80bc5a6c4831150588aa3b04b68ef7b",
+      "ids": [
+        3250,
+        8207,
+        15613,
+        16148,
+        23563,
+        25379,
+        29262,
+        29312
+      ],
+      "target": "new",
+      "segment": "new_seller",
+      "direction": "used_to_new",
+      "decision": "exclude",
+      "n_flips": 8,
+      "delta_displayed": -0.0001,
+      "base": 48
+    },
+    {
+      "number": 73,
+      "file": "submission_73_new_seller_to_used_unprobed7.csv",
+      "score": 0.946,
+      "sha256": "f2f5f372ea1210cdcffa4e9e9fb0e7e74bd0bee91a7f279f0c1fd7f56162b8ee",
+      "ids": [
+        3190,
+        5585,
+        5857,
+        9733,
+        10705,
+        20259,
+        20611
+      ],
+      "target": "used",
+      "segment": "new_seller",
+      "direction": "new_to_used",
+      "decision": "exclude",
+      "n_flips": 7,
+      "delta_displayed": -0.00033,
+      "base": 48
+    },
+    {
+      "number": 74,
+      "file": "submission_74_seen_residual8_on48.csv",
+      "score": 0.94614,
+      "sha256": "8993a3a803b1bc47be8ab639466e7895f4b4c4087377977ce47223943bde8991",
+      "ids": [
+        560,
+        7252,
+        7914,
+        9327,
+        11239,
+        11244,
+        14405,
+        19313
+      ],
+      "targets": {
+        "560": "new",
+        "7252": "new",
+        "7914": "used",
+        "9327": "new",
+        "11239": "used",
+        "11244": "new",
+        "14405": "used",
+        "19313": "new"
+      },
+      "segment": "seen_seller",
+      "direction": "mixed_5_to_new_3_to_used",
+      "decision": "exclude",
+      "n_flips": 8,
+      "delta_displayed": -0.00019,
+      "base": 48
+    },
+    {
+      "number": 75,
+      "file": "submission_75_lexical_seen_to_used5_on48.csv",
+      "score": 0.94633,
+      "sha256": "b2cf5face8ae2cdebc20b9c30ac2eb4b041b073346abcd852f1949a34671236b",
+      "ids": [
+        5390,
+        8227,
+        15392,
+        19853,
+        25060
+      ],
+      "target": "used",
+      "segment": "seen_seller",
+      "direction": "new_to_used",
+      "decision": "tie_not_promoted",
+      "n_flips": 5,
+      "delta_displayed": 0,
+      "base": 48
+    },
+    {
+      "number": 76,
+      "file": "submission_76_final_baseline48.csv",
+      "score": 0.94633,
+      "sha256": "3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722",
+      "ids": [],
+      "segment": "all",
+      "direction": "none",
+      "decision": "duplicate_of48",
+      "n_flips": 0,
+      "delta_displayed": 0,
+      "base": 48
+    }
+  ]
+}
