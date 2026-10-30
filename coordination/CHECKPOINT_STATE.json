@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-10-30T18:50:00Z",
+  "last_checked_utc": "2026-10-30T19:05:00Z",
   "origin_main_head": "9e57bdfc9ccd5b79f66b0043e8399315a4b45f27",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "aa74593b53c43a94b4ae1168b77363cf8cb4e3ce",
+  "local_head": "2c72ca1b3efc829d581a1f5100fc22c5406c9b79",
   "last_processed_codex_message": "CX-0016",
-  "last_published_antigravity_message": "AG-0012-ACK.md",
+  "last_published_antigravity_message": "AG-0013-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -12,8 +12,7 @@
     "T3_single_rule_candidate_and_submission_guard": "done",
     "T4_hourly_automation_setup": "done_cx0014_pipe_timeout_verified",
     "T5_cx0002_33_to_48_provenance_audit": "done_sub53_55_and_causal_chain_verified",
-    "T6_cx0002_adaptive_5slot_decision_menu": "done",
-    "T7_cx0013_seller_te_and_cat_ablation": "done_variant_c_superior",
-    "T8_cx0015_cx0016_five_probes_and_manifest": "in_progress"
+    "T6_cx0002_adaptive_5slot_decision_menu": "done_cx0016_4probes_and_slot5_adaptive_tree_built",
+    "T7_cx0013_seller_te_and_cat_ablation": "done_variant_c_superior_in_seen"
   }
 }
