@@ -1,4 +1,4 @@
-"""Hourly Coordination & Task Runner with Real Mutual Exclusion (CX-0003 / CX-0008 / CX-0010).
+"""Hourly Coordination & Task Runner with Real Mutual Exclusion (CX-0003 / CX-0008 / CX-0010 / CX-0014).
 
 Guarantees:
 1. Acquires `ProjectLock` (OS-level kernel descriptor lock + metadata) BEFORE inspecting
@@ -8,17 +8,23 @@ Guarantees:
    (never relying on local checkout files that `git fetch` does not update).
 4. Prevents duplicate execution of completed `task_id`s and executes any authorized command
    (`--task-cmd`) inside the critical section while pulsing lock heartbeats.
-5. Logs start/end timestamps, observed HEADs, unread remote messages, and execution result
-   to an append-only JSONL audit log.
+5. Redirects child `stdout` and `stderr` directly to temporary disk files instead of unread OS pipes
+   so a verbose child process can never deadlock on a full pipe buffer (`CX-0014`).
+6. Enforces `--task-timeout-seconds` and terminates the entire child process tree on timeout
+   (`taskkill /F /T /PID` on Windows / `os.killpg` on POSIX), recording `"status": "TIMED_OUT"`
+   and never marking a timed-out or failed task as completed (`CX-0014`).
 """
 from __future__ import annotations
 
 import argparse
 import datetime
 import json
+import os
 import re
+import signal
 import subprocess
 import sys
+import tempfile
 import time
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -50,6 +56,34 @@ def run_git(args: List[str], cwd: Path = REPO_ROOT, timeout: int = 30) -> subpro
         errors="replace",
         timeout=timeout,
     )
+
+
+def _kill_process_tree(proc: subprocess.Popen) -> None:
+    """Terminates `proc` and its entire child process tree across Windows and POSIX."""
+    if proc.poll() is not None:
+        return
+    try:
+        if os.name == "nt":
+            subprocess.run(
+                ["taskkill", "/F", "/T", "/PID", str(proc.pid)],
+                capture_output=True,
+                timeout=10,
+            )
+        else:
+            try:
+                os.killpg(os.getpgid(proc.pid), signal.SIGKILL)
+            except Exception:
+                proc.kill()
+    except Exception:
+        pass
+    try:
+        proc.kill()
+    except Exception:
+        pass
+    try:
+        proc.wait(timeout=5)
+    except Exception:
+        pass
 
 
 def list_remote_codex_messages(ref: str = "origin/main", cwd: Path = REPO_ROOT) -> List[Dict[str, str]]:
@@ -149,6 +183,12 @@ def main() -> int:
     parser.add_argument("--log-file", default=str(DEFAULT_LOG_FILE), help="Path to runner JSONL log")
     parser.add_argument("--task-id", default="", help="Unique task identifier to prevent duplicate execution")
     parser.add_argument("--task-cmd", default="", help="Shell/command to execute inside the critical section")
+    parser.add_argument(
+        "--task-timeout-seconds",
+        type=float,
+        default=3600.0,
+        help="Maximum wall-clock seconds allowed for --task-cmd before process-tree termination",
+    )
     args = parser.parse_args()
 
     lock_dir = Path(args.lock_dir) if args.lock_dir else DEFAULT_LOCK_DIR
@@ -211,6 +251,10 @@ def main() -> int:
 
         task_exit_code: Optional[int] = None
         task_status = "NO_TASK"
+        stdout_bytes = 0
+        stderr_bytes = 0
+        stdout_tail = ""
+        stderr_tail = ""
 
         if args.task_cmd:
             if args.task_id and has_completed_task(log_file, args.task_id):
@@ -218,19 +262,45 @@ def main() -> int:
                 task_exit_code = 0
             else:
                 lock.heartbeat()
-                proc = subprocess.Popen(
-                    args.task_cmd,
-                    cwd=str(REPO_ROOT),
-                    shell=True,
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE,
-                    text=True,
-                )
-                while proc.poll() is None:
-                    lock.heartbeat()
-                    time.sleep(0.2)
-                task_exit_code = proc.returncode
-                task_status = "COMPLETED" if task_exit_code == 0 else "FAILED"
+                with tempfile.TemporaryFile(mode="w+b") as out_f, tempfile.TemporaryFile(mode="w+b") as err_f:
+                    popen_kwargs = {
+                        "cwd": str(REPO_ROOT),
+                        "shell": True,
+                        "stdout": out_f,
+                        "stderr": err_f,
+                    }
+                    if os.name != "nt":
+                        popen_kwargs["start_new_session"] = True
+
+                    task_start_mono = time.monotonic()
+                    timed_out = False
+                    proc = subprocess.Popen(args.task_cmd, **popen_kwargs)
+                    while proc.poll() is None:
+                        lock.heartbeat()
+                        if (
+                            args.task_timeout_seconds > 0
+                            and (time.monotonic() - task_start_mono) > args.task_timeout_seconds
+                        ):
+                            timed_out = True
+                            _kill_process_tree(proc)
+                            break
+                        time.sleep(0.1)
+
+                    out_f.flush()
+                    err_f.flush()
+                    stdout_bytes = out_f.tell()
+                    stderr_bytes = err_f.tell()
+                    out_f.seek(max(0, stdout_bytes - 1024))
+                    err_f.seek(max(0, stderr_bytes - 1024))
+                    stdout_tail = out_f.read().decode("utf-8", errors="replace")
+                    stderr_tail = err_f.read().decode("utf-8", errors="replace")
+
+                    if timed_out:
+                        task_exit_code = 124
+                        task_status = "TIMED_OUT"
+                    else:
+                        task_exit_code = proc.returncode
+                        task_status = "COMPLETED" if task_exit_code == 0 else "FAILED"
 
         record = {
             "status": task_status if args.task_cmd else "CHECK_COMPLETED",
@@ -250,10 +320,14 @@ def main() -> int:
             "task_id": args.task_id,
             "task_cmd": args.task_cmd,
             "task_exit_code": task_exit_code,
+            "stdout_bytes": stdout_bytes,
+            "stderr_bytes": stderr_bytes,
+            "stdout_tail": stdout_tail[-500:] if stdout_tail else "",
+            "stderr_tail": stderr_tail[-500:] if stderr_tail else "",
         }
         append_runner_log(log_file, record)
         print(json.dumps(record, indent=2))
-        return 0 if (task_exit_code is None or task_exit_code == 0) else task_exit_code
+        return 0 if (task_exit_code is None or task_exit_code == 0) else int(task_exit_code)
     finally:
         lock.release()
 

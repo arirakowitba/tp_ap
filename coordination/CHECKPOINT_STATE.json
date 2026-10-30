@@ -10,7 +10,7 @@
     "T1_constructor_rebuild_and_tests": "done",
     "T2_catboost_lgbm_paired_eval_and_holdout_overlap": "done",
     "T3_single_rule_candidate_and_submission_guard": "done",
-    "T4_hourly_automation_setup": "in_progress_cx0014_pipe_and_timeout_hardening",
+    "T4_hourly_automation_setup": "done_cx0014_verified",
     "T5_cx0002_33_to_48_provenance_audit": "in_progress_cx0013_audit_53_55_and_causal_genealogy",
     "T6_cx0002_adaptive_5slot_decision_menu": "in_progress_cx0013_adaptive_4plus1_tree",
     "T7_cx0013_seller_te_and_cat_ablation": "in_progress"

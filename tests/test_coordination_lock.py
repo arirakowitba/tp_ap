@@ -318,6 +318,170 @@ class TestProjectLock(unittest.TestCase):
         self.assertGreaterEqual(info2.heartbeat_utc, info1.heartbeat_utc)
         self.assertTrue(lock.release())
 
+    def test_cx0014_large_stdout_stderr_no_pipe_deadlock(self):
+        """CX-0014: Child writing > 512 KB to both stdout and stderr must never deadlock on OS pipe buffers."""
+        log_file = Path(self.temp_dir) / "runner_large_io.jsonl"
+        state_file = Path(self.temp_dir) / "state_large_io.json"
+        state_file.write_text(json.dumps({"last_processed_codex_message": "CX-0014"}), encoding="utf-8")
+
+        noisy_script = Path(self.temp_dir) / "noisy_task.py"
+        noisy_script.write_text(
+            "import sys\n"
+            "chunk = 'A' * 8192 + '\\n'\n"
+            "for _ in range(80):\n"
+            "    sys.stdout.write(chunk)\n"
+            "    sys.stderr.write(chunk)\n"
+            "sys.stdout.flush()\n"
+            "sys.stderr.flush()\n",
+            encoding="utf-8",
+        )
+        runner_script = str(REPO_ROOT / "src" / "run_coordination_check.py")
+        task_cmd = f'"{sys.executable}" "{noisy_script}"'
+
+        res = subprocess.run(
+            [
+                sys.executable,
+                runner_script,
+                "--lock-dir",
+                str(self.lock_dir),
+                "--owner",
+                "runner_noisy",
+                "--skip-fetch",
+                "--state-file",
+                str(state_file),
+                "--log-file",
+                str(log_file),
+                "--task-id",
+                "T_LARGE_OUTPUT",
+                "--task-cmd",
+                task_cmd,
+                "--task-timeout-seconds",
+                "15",
+            ],
+            cwd=str(REPO_ROOT),
+            capture_output=True,
+            text=True,
+            timeout=20,
+        )
+        self.assertEqual(res.returncode, 0, msg=res.stderr)
+        out = json.loads(res.stdout)
+        self.assertEqual(out["status"], "COMPLETED")
+        self.assertEqual(out["task_exit_code"], 0)
+        self.assertGreater(out["stdout_bytes"], 500_000)
+        self.assertGreater(out["stderr_bytes"], 500_000)
+
+    def test_cx0014_task_timeout_kills_process_tree_and_not_marked_completed(self):
+        """CX-0014: Hanging task must be killed (with child tree) on timeout, logged as TIMED_OUT, and not marked COMPLETED."""
+        log_file = Path(self.temp_dir) / "runner_timeout.jsonl"
+        state_file = Path(self.temp_dir) / "state_timeout.json"
+        state_file.write_text(json.dumps({"last_processed_codex_message": "CX-0014"}), encoding="utf-8")
+
+        hang_script = Path(self.temp_dir) / "hang_task.py"
+        hang_script.write_text(
+            "import time, sys\n"
+            "print('starting hang task', flush=True)\n"
+            "time.sleep(30)\n",
+            encoding="utf-8",
+        )
+        runner_script = str(REPO_ROOT / "src" / "run_coordination_check.py")
+        task_cmd = f'"{sys.executable}" "{hang_script}"'
+
+        t0 = time.monotonic()
+        res = subprocess.run(
+            [
+                sys.executable,
+                runner_script,
+                "--lock-dir",
+                str(self.lock_dir),
+                "--owner",
+                "runner_timeout",
+                "--skip-fetch",
+                "--state-file",
+                str(state_file),
+                "--log-file",
+                str(log_file),
+                "--task-id",
+                "T_TIMEOUT_TEST",
+                "--task-cmd",
+                task_cmd,
+                "--task-timeout-seconds",
+                "0.8",
+            ],
+            cwd=str(REPO_ROOT),
+            capture_output=True,
+            text=True,
+            timeout=15,
+        )
+        elapsed = time.monotonic() - t0
+        self.assertLess(elapsed, 10.0)
+        self.assertEqual(res.returncode, 124)
+        out = json.loads(res.stdout)
+        self.assertEqual(out["status"], "TIMED_OUT")
+        self.assertEqual(out["task_exit_code"], 124)
+
+        # Lock must be released after timeout
+        check_lock = ProjectLock(lock_dir=self.lock_dir, owner_id="post_timeout_verifier")
+        self.assertTrue(check_lock.acquire())
+        self.assertTrue(check_lock.release())
+
+        # Timed-out task must NOT be treated as completed (a subsequent fast run with same task_id must execute)
+        fast_script = Path(self.temp_dir) / "fast_task.py"
+        fast_script.write_text("print('recovered ok')\n", encoding="utf-8")
+        res2 = subprocess.run(
+            [
+                sys.executable,
+                runner_script,
+                "--lock-dir",
+                str(self.lock_dir),
+                "--owner",
+                "runner_retry",
+                "--skip-fetch",
+                "--state-file",
+                str(state_file),
+                "--log-file",
+                str(log_file),
+                "--task-id",
+                "T_TIMEOUT_TEST",
+                "--task-cmd",
+                f'"{sys.executable}" "{fast_script}"',
+                "--task-timeout-seconds",
+                "10",
+            ],
+            cwd=str(REPO_ROOT),
+            capture_output=True,
+            text=True,
+            timeout=15,
+        )
+        self.assertEqual(res2.returncode, 0)
+        out2 = json.loads(res2.stdout)
+        self.assertEqual(out2["status"], "COMPLETED")
+
+    def test_cx0014_cli_run_holds_and_releases_lock(self):
+        """CX-0014: CLI 'run --cmd ...' holds lock during command and releases on exit."""
+        lock_script = str(REPO_ROOT / "src" / "coordination_lock.py")
+        marker = Path(self.temp_dir) / "cli_run_ok.txt"
+        cmd = f'"{sys.executable}" -c "from pathlib import Path; Path(r\'{marker}\').write_text(\'ok\')"'
+        res = subprocess.run(
+            [
+                sys.executable,
+                lock_script,
+                "run",
+                "--lock-dir",
+                str(self.lock_dir),
+                "--owner",
+                "cli_runner",
+                "--cmd",
+                cmd,
+            ],
+            cwd=str(REPO_ROOT),
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+        self.assertEqual(res.returncode, 0, msg=res.stderr)
+        self.assertTrue(marker.exists())
+        self.assertFalse(self.lock_dir.exists())
+
 
 if __name__ == "__main__":
     unittest.main()

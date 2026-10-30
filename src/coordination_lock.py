@@ -18,6 +18,7 @@ import json
 import os
 import shutil
 import stat
+import subprocess
 import sys
 import threading
 import time
@@ -426,14 +427,23 @@ class ProjectLock:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Antigravity Project Mutual Exclusion Lock CLI")
+    parser = argparse.ArgumentParser(
+        description=(
+            "Antigravity Project Mutual Exclusion Lock CLI. "
+            "NOTE: OS descriptor locks are bound to a live process; use 'run --cmd ...' "
+            "or Python 'with ProjectLock(...):' to guard a critical section."
+        )
+    )
     parser.add_argument(
-        "action", choices=["status", "acquire", "release", "heartbeat"], help="Action to execute"
+        "action",
+        choices=["status", "run"],
+        help="Action to execute: 'status' inspects lock state; 'run' executes --cmd inside the lock",
     )
     parser.add_argument("--owner", default="antigravity_cli", help="Owner identifier")
     parser.add_argument("--branch", default="", help="Active git branch")
     parser.add_argument("--desc", default="", help="Task description")
     parser.add_argument("--lock-dir", default=None, help="Custom lock directory path")
+    parser.add_argument("--cmd", default="", help="Command to execute while holding the lock (for 'run')")
     args = parser.parse_args()
 
     lock_dir = Path(args.lock_dir) if args.lock_dir else DEFAULT_LOCK_DIR
@@ -464,34 +474,27 @@ def main():
             print(json.dumps({"status": "UNLOCKED"}, indent=2))
             sys.exit(0)
 
-    elif args.action == "acquire":
-        success = lock.acquire()
-        if success:
-            print(json.dumps({"status": "ACQUIRED", "lock_dir": str(lock.lock_dir)}, indent=2))
-            sys.exit(0)
-        else:
+    elif args.action == "run":
+        if not args.cmd:
+            print(json.dumps({"status": "ERROR", "reason": "MISSING_CMD_FOR_RUN"}, indent=2))
+            sys.exit(2)
+        if not lock.acquire():
             info = lock.read_lock_info()
             print(
                 json.dumps(
                     {
-                        "status": "FAILED",
-                        "reason": "HELD_BY_ACTIVE_PROCESS",
+                        "status": "SKIPPED_LOCK_HELD",
                         "held_by": asdict(info) if info else None,
                     },
                     indent=2,
                 )
             )
             sys.exit(1)
-
-    elif args.action == "release":
-        success = lock.release()
-        print(json.dumps({"status": "RELEASED" if success else "FAILED_TO_RELEASE"}, indent=2))
-        sys.exit(0 if success else 1)
-
-    elif args.action == "heartbeat":
-        success = lock.heartbeat()
-        print(json.dumps({"status": "HEARTBEAT_UPDATED" if success else "FAILED"}, indent=2))
-        sys.exit(0 if success else 1)
+        try:
+            res = subprocess.run(args.cmd, shell=True)
+            sys.exit(res.returncode)
+        finally:
+            lock.release()
 
 
 if __name__ == "__main__":
