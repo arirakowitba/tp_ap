@@ -1,0 +1,91 @@
+{
+  "disjoint_orthogonal_suite": {
+    "block_A_sub80_seen_conservative": {
+      "file": "candidate_sub80_seen_sellers_conservative_unprobed.csv",
+      "n_flips": 15,
+      "ids": [
+        3056,
+        3106,
+        3802,
+        5237,
+        6128,
+        6487,
+        6940,
+        7575,
+        13230,
+        16660,
+        19403,
+        23454,
+        25976,
+        26293,
+        29552
+      ],
+      "segment": "Seen sellers (conservative)",
+      "sha256": "23415a6147e0363a30d73a9d360d766f2492e689780046c91831c8733e1dc9f7"
+    },
+    "block_B_sub77_marginal5": {
+      "file": "candidate_sub77_nested_margin5_unprobed.csv",
+      "n_flips": 5,
+      "ids": [
+        732,
+        4969,
+        18735,
+        18790,
+        25747
+      ],
+      "segment": "Marginal high-confidence (nested contrast)",
+      "sha256": "9b07f45caaf9d6cdf063b65e35ba90187e38471c45f5511f905ea8a088a2cc92"
+    },
+    "block_C_sub78_consensus_disjoint15": {
+      "file": "candidate_sub78_consensus_disjoint15_unprobed.csv",
+      "n_flips": 15,
+      "ids": [
+        3619,
+        4599,
+        5028,
+        5205,
+        6562,
+        7278,
+        12641,
+        17714,
+        19545,
+        20200,
+        22327,
+        25326,
+        25600,
+        25940,
+        28448
+      ],
+      "segment": "Consensus (disjoint from 77/80)",
+      "sha256": "98e1913752df6da3bae48d33d1d7017148f2a3dfd7a546d701520e90c1b56704"
+    },
+    "block_D_sub79_new_clean_text": {
+      "file": "candidate_sub79_new_sellers_clean_text.csv",
+      "n_flips": 20,
+      "ids": [
+        55,
+        944,
+        1653,
+        4432,
+        9674,
+        9761,
+        10644,
+        11905,
+        13634,
+        13987,
+        16499,
+        18688,
+        21971,
+        22345,
+        23234,
+        24721,
+        26804,
+        27455,
+        27734,
+        28333
+      ],
+      "segment": "New sellers (pure text)",
+      "sha256": "81ef2f8dc4c724b0983cfed49aa008be9166320881ddff64c2aa1c926e6012ff"
+    }
+  }
+}
