@@ -61,9 +61,14 @@ We conducted controlled ablations isolating the three competing hypotheses:
 ## 3. Seen vs New Definition Audit
 
 In historical reports, discrepancy in seen/new item counts was noted:
-- **Canonical R151 definition**: `is_seen = np.isin(sellers[confirm], fit_sellers)`.
-  In Seed 2026: 9,077 seen items (69.6%), 3,968 new items (30.4%) in confirm.
-- **Round 157 split implementation**: `canonical_split` divided sellers by `len(unique) // 5`, altering the random shuffle order. Although the proportion of seen sellers remained roughly 70/30, the individual seller IDs in confirm shifted by 31.4%.
+- **Canonical R151 definition in Validation Confirm**: is_seen = np.isin(sellers[confirm], fit_sellers).
+  In Seed 2026: **3,903 seen items (30.2%)** and **9,002 new items (69.8%)** in confirm.
+  *(Note: An earlier draft inverted these counts. Because split_seller_groups_r151 intentionally reserves 10% of all unique sellers as a pure held-out block for confirm, new-seller items predominate in confirm to stress-test generalization).*
+- **Kaggle Test Set Breakdown (30,000 items vs 70k Train)**:
+  - **21,487 items (71.62%)** belong to sellers present in train (seen_seller).
+  - **8,513 items (28.38%)** belong to new sellers (
+ew_seller).
+- **Round 157 split implementation**: canonical_split divided sellers by len(unique) // 5, altering the random shuffle order. Although the proportion of seen sellers remained roughly 30/70 in confirm, the individual seller IDs in confirm shifted by 31.4%.
 
 ---
 

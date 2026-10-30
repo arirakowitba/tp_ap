@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-10-29 23:35:06",
+  "seed": 2026,
+  "vocabulary_dimensions": {
+    "word_ngrams": 22951,
+    "char_subwords": 50000,
+    "total_sparse_features": 72951
+  },
+  "performance": {
+    "vectorization_time_s": 14.538099765777588,
+    "train_time_s": 129.0644154548645,
+    "inference_time_s": 0.2727854251861572,
+    "peak_memory_mb": 1158.2734375,
+    "tune_accuracy": 0.8238844028899277,
+    "tune_logloss": 0.40537181965986036,
+    "confirm_accuracy": 0.8148004649360713,
+    "confirm_logloss": 0.42485487978743136
+  },
+  "complementary_evaluation": {
+    "fixes": 42,
+    "breaks": 35,
+    "net_gain": 7,
+    "acc_baseline": 0.924912824486633,
+    "acc_blend": 0.9254552499031383,
+    "ll_baseline": 0.18773050411259962,
+    "ll_blend": 0.1935547808660224
+  },
+  "oof_generation": {
+    "oof_fit_shape": [
+      45330
+    ],
+    "oof_fit_mean": 0.4687730073928833,
+    "oof_saved": true
+  }
+}
