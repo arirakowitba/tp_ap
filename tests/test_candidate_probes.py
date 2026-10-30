@@ -109,6 +109,19 @@ class TestCandidateProbesHarness(unittest.TestCase):
             "3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722",
         )
 
+    def test_candidate_models_havg_and_havg_plus_valid(self):
+        """H-AVG and H-AVG-Plus candidates must exist, have 30000 rows, and pass submission guard."""
+        from src.eval_20261030.submission_guard import check_submission_file
+
+        for name in ["candidate_model_havg_b10_variant_c_full70k.csv", "candidate_model_havg_plus_full70k.csv"]:
+            p = OUT_DIR / name
+            self.assertTrue(p.exists(), f"Candidate {name} does not exist at {p}")
+            df = pd.read_csv(p)
+            self.assertEqual(len(df), 30000, f"{name} does not have 30000 rows")
+            self.assertEqual(list(df.columns), ["ID", "condition"])
+            ok, msg = check_submission_file(p, self.registry, self.s48_dict, verbose=False)
+            self.assertTrue(ok, f"Submission guard rejected {name}: {msg}")
+
 
 if __name__ == "__main__":
     unittest.main()
