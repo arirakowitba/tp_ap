@@ -1,0 +1,134 @@
+{
+  "agent": "AGENTE 5 \u2014 CONSTRUCTOR Y DISE\u00d1O DE SUBMISSIONS",
+  "module_under_test": "src/eval_20261030/build_from_scores.py",
+  "test_module": "src/eval_20261030/test_build_from_scores.py",
+  "total_tests_run": 9,
+  "failures": 0,
+  "errors": 0,
+  "all_passed": true,
+  "baseline_s48_vector_sha256": "3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722",
+  "scenarios": [
+    {
+      "scenario_id": "scenario_0_zero_filename_heuristics",
+      "title": "Source inspection confirms zero filename-number heuristics or hardcoded flip sets",
+      "passed": true,
+      "details": {
+        "forbidden_tokens_checked": [
+          "SUB77_MINUS_SUB80",
+          "SUB78_CONSENSUS_UNIQUE",
+          "SUB78_SHARED_WITH_77_80",
+          "if \"77\" in",
+          "if \"78\" in",
+          "elif \"78\" in",
+          "elif \"79\" in",
+          "elif \"80\" in"
+        ],
+        "violations_found": []
+      }
+    },
+    {
+      "scenario_id": "scenario_1_two_disjoint_winners",
+      "title": "Two disjoint winning blocks (15 + 20 flips) + tie + loss -> 35-flip union, no delta sum",
+      "passed": true,
+      "details": {
+        "status": "COMBINED_DISJOINT_UNION",
+        "n_flips": 35,
+        "combined_sha256": "491fcfa1aeb867338fc1b081a12987fcf1acc2d902bb331d4569af3f49f4e8dc",
+        "combined_flip_set_hash": "3b2fd7e2d28aa446d081f9432208289835c22aab9591e396fda9658f473ab6d0",
+        "expected_score": null
+      }
+    },
+    {
+      "scenario_id": "scenario_2_partial_overlap_blocked",
+      "title": "Partially overlapping winning blocks (20 and 25 sharing 10 IDs) blocked with exact ID report",
+      "passed": true,
+      "details": {
+        "error_message": "Cannot combine partially overlapping winning blocks! Block 1 (flip_set_hash=c36a93ae5144..., n_flips=20, score=0.94645) and Block 2 (flip_set_hash=f5090bd56ab9..., n_flips=25, score=0.94650) share 10 overlapping IDs: [732, 3802, 6128, 6487, 6940, 7575, 18790, 19403, 25976, 29552]. Refusing to combine B1 U B2 (overlapping deltas are non-additive) and refusing to extract unvalidated difference subsets B1 \\ B2 (10 IDs: [159, 4152, 4969, 11386, 13384, 15152, 16565, 18735, 23244, 25747]) or B2 \\ B1 (15 IDs: [3619, 4599, 5028, 5205, 6562, 7278, 12641, 17714, 19545, 20200, 22327, 25326, 25600, 25940, 28448]).",
+        "shared_ids_verified": [
+          732,
+          3802,
+          6128,
+          6487,
+          6940,
+          7575,
+          18790,
+          19403,
+          25976,
+          29552
+        ]
+      }
+    },
+    {
+      "scenario_id": "scenario_3_valid_nested_contrast",
+      "title": "Nested contrast A (15) < B (20): promotes B when score(B)>score(A) (40 flips) and retains A when score(B)<=score(A) (35 flips)",
+      "passed": true,
+      "details": {
+        "case_3a_n_flips": 40,
+        "case_3a_resolution": "PROMOTE_SUPERSET_B",
+        "case_3b_n_flips": 35,
+        "case_3b_resolution": "RETAIN_SUBSET_A_REJECT_MARGIN"
+      }
+    },
+    {
+      "scenario_id": "scenario_4_same_filename_number_different_hashes",
+      "title": "Distinguishes candidate_sub78_v1.csv (25 legacy flips) vs candidate_sub78_v2.csv (15 disjoint flips) strictly by SHA256 and flip_set_hash",
+      "passed": true,
+      "details": {
+        "v1_sha256": "e00f535b1e79192f971d3360df0823b84f4efc439ec48f8e89554483e836f9a6",
+        "v1_flip_set_hash": "f5090bd56ab922e813176bbf3421d41b61c514e8c0bb03f748430e594238bb2b",
+        "v2_sha256": "4b13b67e5b8e405ba35d9ff85cea64cf495e4ec6a22aadd7af26962480f6b4a6",
+        "v2_flip_set_hash": "96d3378b70b2ef31210b2ab68a83a346816b145072c32a75fc7d964923be3489",
+        "v2_combined_n_flips": 35
+      }
+    },
+    {
+      "scenario_id": "scenario_5_unprobed_exclusive_subset_blocked",
+      "title": "Winning superset B (20 flips, 0.94650) with losing subset A (15 flips, 0.94620) blocked from extracting unprobed 5-flip B \\ A",
+      "passed": true,
+      "details": {
+        "error_message": "Unsafe nested contrast: superset probe (flip_set_hash=c36a93ae5144..., n_flips=20, score=0.94650) beat baseline, but its evaluated strict subset probe (flip_set_hash=07cfe65b3583..., n_flips=15, score=0.94620 <= base=0.94633) did NOT win. Refusing to extract the unprobed 5-flip exclusive subset B \\ A (IDs=[732, 4969, 18735, 18790, 25747], marginal_hash=c838f50cbeba...) without independent evaluation, and refusing to promote superset B containing non-winning subset A.",
+        "unprobed_marginal_ids": [
+          732,
+          4969,
+          18735,
+          18790,
+          25747
+        ]
+      }
+    },
+    {
+      "scenario_id": "scenario_6_duplicates_and_single_winner_guard",
+      "title": "Blocks S48/S76 duplicate, blocks historical registry duplicate (Sub 75), and prevents re-emitting a single already-scored winner",
+      "passed": true,
+      "details": {
+        "s48_dup_error": "Candidate (sha256=3f8d08e0e618...) has 0 flips vs baseline (exact duplicate of Baseline S48 / Submission 76, vector_sha256=3f8d08e0e618...).",
+        "reg75_dup_error": "Candidate (sha256=b2cf5face8ae...) is an exact duplicate of previously evaluated submission '75' (score=0.94633).",
+        "single_winner_status": "SINGLE_WINNER_ALREADY_SCORED",
+        "single_winner_output_written": false
+      }
+    },
+    {
+      "scenario_id": "scenario_7_schema_hash_score_validation",
+      "title": "Rejects NaN/Inf/None/bool scores, SHA256 mismatch, baseline mismatch, invalid label 'refurbished', duplicate IDs, and missing rows",
+      "passed": true,
+      "details": {
+        "sha_mismatch_error": "File SHA256 mismatch for 'valid.csv': expected 0000000000000000000000000000000000000000000000000000000000000000, got 5051b513034605badd003a7286b8d773311cc567e6f2870affdb0dd8e6b0e0be.",
+        "baseline_mismatch_error": "Baseline SHA256 mismatch for 'valid.csv': entry specifies base_sha256=ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, active baseline is 3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722.",
+        "invalid_label_error": "Invalid condition label at ID 100 in 'bad_label.csv': 'refurbished'. Allowed values are strictly ['new', 'used'].",
+        "duplicate_id_error": "Duplicate IDs detected in 'dup_id.csv': [1].",
+        "row_count_error": "Invalid row count in 'short.csv': expected 30000, got 29999."
+      }
+    },
+    {
+      "scenario_id": "scenario_8_real_candidates_on_disk",
+      "title": "Verified real candidate CSVs in submissions/20261030: 4-block disjoint suite combines to 55 flips, while legacy 77+78 overlap is blocked",
+      "passed": true,
+      "details": {
+        "disjoint4_n_flips": 55,
+        "disjoint4_combined_sha256": "46552907f760cfbe2741649512ce9fec3caf3cb0271cc0db6c1a05fa1a8b4281",
+        "disjoint4_combined_flip_set_hash": "5e598c45907a6d0695fd9c3d1784af3d5b4bcb0a51a07aae77c97fe9eafa364c",
+        "legacy_overlap_blocked_error": "Cannot combine partially overlapping winning blocks! Block 1 (flip_set_hash=591ef60f5002..., n_flips=20, score=0.94645) and Block 2 (flip_set_hash=f5090bd56ab9..., n_flips=25, score=0.94650) share 10 overlapping IDs: [732, 3802, 6128, 6487, 6940, 7575, 18790, 19403, 25976, 29552]. Refusing to combine B1 U B2 (overlapping deltas are non-additive) and refusing to extract unvalidated difference subsets B1 \\ B2 (10 IDs: [3056, 3106, 4969, 5237, 13230, 16660, 18735, 23454, 25747, 26293]) or B2 \\ B1 (15 IDs: [3619, 4599, 5028, 5205, 6562, 7278, 12641, 17714, 19545, 20200, 22327, 25326, 25600, 25940, 28448])."
+      }
+    }
+  ]
+}
