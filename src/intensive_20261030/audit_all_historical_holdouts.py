@@ -29,7 +29,7 @@ if str(ROOT) not in sys.path:
 
 from src.benchmark_20261030.split_utils import split_seller_groups_r151, split_seller_groups_r157
 from src.intensive_20261030.shared_cache import build_or_load_cache
-from src.intensive_20261030.agent3_external_validation import build_virgin_confirm_split
+from src.intensive_20261030.agent3_external_validation import build_disjoint_3seed_split
 
 OUT_DIR = ROOT / "results" / "intensive_20261030"
 
@@ -118,9 +118,11 @@ def main():
         "R151_seed2026_confirm": hist_holdouts["R151_seed2026_confirm"],
         "R151_seed314159_confirm": hist_holdouts["R151_seed314159_confirm"],
         "R151_seed20261030_confirm": hist_holdouts["R151_seed20261030_confirm"],
-        "disjoint_3seed_20261101_confirm": set(int(x) for x in build_virgin_confirm_split(sellers, seed=20261101)[2]),
+        "disjoint_3seed_20261101_confirm": set(int(x) for x in build_disjoint_3seed_split(sellers, seed=20261101)[2]),
         "nested_outer_777001_confirm": set(int(x) for x in split_seller_groups_r151(sellers, 777001)[2]),
         "nested_outer_777002_confirm": set(int(x) for x in split_seller_groups_r151(sellers, 777002)[2]),
+        "seller_group_seed42026_confirm": set(int(x) for x in split_seller_groups_r151(sellers, 42026)[2]),
+        "seller_group_seed992026_confirm": set(int(x) for x in split_seller_groups_r151(sellers, 992026)[2]),
     }
 
     matrix = {}

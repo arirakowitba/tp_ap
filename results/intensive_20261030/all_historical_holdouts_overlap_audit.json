@@ -1054,6 +1054,354 @@
           "overlap_sellers_pct": 97.47
         }
       }
+    },
+    "seller_group_seed42026_confirm": {
+      "n_rows": 13197,
+      "n_sellers": 6593,
+      "overlaps": {
+        "R151_seed2026_tune": {
+          "hist_rows": 11765,
+          "hist_sellers": 6533,
+          "overlap_rows": 2126,
+          "overlap_rows_pct": 16.11,
+          "overlap_sellers": 1991,
+          "overlap_sellers_pct": 30.2
+        },
+        "R151_seed2026_confirm": {
+          "hist_rows": 12905,
+          "hist_sellers": 6649,
+          "overlap_rows": 2436,
+          "overlap_rows_pct": 18.46,
+          "overlap_sellers": 2096,
+          "overlap_sellers_pct": 31.79
+        },
+        "R151_seed314159_tune": {
+          "hist_rows": 12473,
+          "hist_sellers": 6573,
+          "overlap_rows": 2229,
+          "overlap_rows_pct": 16.89,
+          "overlap_sellers": 2000,
+          "overlap_sellers_pct": 30.34
+        },
+        "R151_seed314159_confirm": {
+          "hist_rows": 12843,
+          "hist_sellers": 6642,
+          "overlap_rows": 2526,
+          "overlap_rows_pct": 19.14,
+          "overlap_sellers": 2050,
+          "overlap_sellers_pct": 31.09
+        },
+        "R151_seed20261030_tune": {
+          "hist_rows": 13451,
+          "hist_sellers": 6573,
+          "overlap_rows": 2508,
+          "overlap_rows_pct": 19.0,
+          "overlap_sellers": 1983,
+          "overlap_sellers_pct": 30.08
+        },
+        "R151_seed20261030_confirm": {
+          "hist_rows": 12881,
+          "hist_sellers": 6586,
+          "overlap_rows": 2253,
+          "overlap_rows_pct": 17.07,
+          "overlap_sellers": 1970,
+          "overlap_sellers_pct": 29.88
+        },
+        "R157_seed2026_tune": {
+          "hist_rows": 11765,
+          "hist_sellers": 6547,
+          "overlap_rows": 2159,
+          "overlap_rows_pct": 16.36,
+          "overlap_sellers": 1992,
+          "overlap_sellers_pct": 30.21
+        },
+        "R157_seed2026_confirm": {
+          "hist_rows": 12906,
+          "hist_sellers": 6656,
+          "overlap_rows": 2393,
+          "overlap_rows_pct": 18.13,
+          "overlap_sellers": 2031,
+          "overlap_sellers_pct": 30.81
+        },
+        "R157_seed314159_tune": {
+          "hist_rows": 12473,
+          "hist_sellers": 6602,
+          "overlap_rows": 2240,
+          "overlap_rows_pct": 16.97,
+          "overlap_sellers": 2018,
+          "overlap_sellers_pct": 30.61
+        },
+        "R157_seed314159_confirm": {
+          "hist_rows": 12844,
+          "hist_sellers": 6614,
+          "overlap_rows": 2524,
+          "overlap_rows_pct": 19.13,
+          "overlap_sellers": 2034,
+          "overlap_sellers_pct": 30.85
+        },
+        "SellerSplit_seed46077_tune": {
+          "hist_rows": 12534,
+          "hist_sellers": 6637,
+          "overlap_rows": 2359,
+          "overlap_rows_pct": 17.88,
+          "overlap_sellers": 2016,
+          "overlap_sellers_pct": 30.58
+        },
+        "SellerSplit_seed46077_confirm": {
+          "hist_rows": 12327,
+          "hist_sellers": 6575,
+          "overlap_rows": 2334,
+          "overlap_rows_pct": 17.69,
+          "overlap_sellers": 2002,
+          "overlap_sellers_pct": 30.37
+        },
+        "SellerSplit_seed42_tune": {
+          "hist_rows": 12639,
+          "hist_sellers": 6599,
+          "overlap_rows": 2395,
+          "overlap_rows_pct": 18.15,
+          "overlap_sellers": 2051,
+          "overlap_sellers_pct": 31.11
+        },
+        "SellerSplit_seed42_confirm": {
+          "hist_rows": 12977,
+          "hist_sellers": 6619,
+          "overlap_rows": 2432,
+          "overlap_rows_pct": 18.43,
+          "overlap_sellers": 1971,
+          "overlap_sellers_pct": 29.9
+        },
+        "round_v3_confirmation_seed731_saved": {
+          "hist_rows": 14000,
+          "hist_sellers": 8357,
+          "overlap_rows": 2668,
+          "overlap_rows_pct": 20.22,
+          "overlap_sellers": 2648,
+          "overlap_sellers_pct": 40.16
+        },
+        "round_v5_selection_seed42_saved": {
+          "hist_rows": 14000,
+          "hist_sellers": 8368,
+          "overlap_rows": 2663,
+          "overlap_rows_pct": 20.18,
+          "overlap_sellers": 2594,
+          "overlap_sellers_pct": 39.34
+        },
+        "optimize_leaderboard_seed42_holdout3": {
+          "hist_rows": 21000,
+          "hist_sellers": 11458,
+          "overlap_rows": 4021,
+          "overlap_rows_pct": 30.47,
+          "overlap_sellers": 3347,
+          "overlap_sellers_pct": 50.77
+        },
+        "confirm_and_submit_seed731_holdout2": {
+          "hist_rows": 14000,
+          "hist_sellers": 8357,
+          "overlap_rows": 2668,
+          "overlap_rows_pct": 20.22,
+          "overlap_sellers": 2648,
+          "overlap_sellers_pct": 40.16
+        },
+        "UNION_R151_3Seeds_Confirm": {
+          "hist_rows": 32060,
+          "hist_sellers": 14618,
+          "overlap_rows": 5923,
+          "overlap_rows_pct": 44.88,
+          "overlap_sellers": 3945,
+          "overlap_sellers_pct": 59.84
+        },
+        "UNION_R151_3Seeds_TuneAndConfirm": {
+          "hist_rows": 52035,
+          "hist_sellers": 22069,
+          "overlap_rows": 9581,
+          "overlap_rows_pct": 72.6,
+          "overlap_sellers": 5471,
+          "overlap_sellers_pct": 82.98
+        },
+        "UNION_All_Reconstructed_Holdouts": {
+          "hist_rows": 67007,
+          "hist_sellers": 27008,
+          "overlap_rows": 12585,
+          "overlap_rows_pct": 95.36,
+          "overlap_sellers": 6419,
+          "overlap_sellers_pct": 97.36
+        }
+      }
+    },
+    "seller_group_seed992026_confirm": {
+      "n_rows": 12470,
+      "n_sellers": 6566,
+      "overlaps": {
+        "R151_seed2026_tune": {
+          "hist_rows": 11765,
+          "hist_sellers": 6533,
+          "overlap_rows": 2149,
+          "overlap_rows_pct": 17.23,
+          "overlap_sellers": 1937,
+          "overlap_sellers_pct": 29.5
+        },
+        "R151_seed2026_confirm": {
+          "hist_rows": 12905,
+          "hist_sellers": 6649,
+          "overlap_rows": 2253,
+          "overlap_rows_pct": 18.07,
+          "overlap_sellers": 2052,
+          "overlap_sellers_pct": 31.25
+        },
+        "R151_seed314159_tune": {
+          "hist_rows": 12473,
+          "hist_sellers": 6573,
+          "overlap_rows": 2301,
+          "overlap_rows_pct": 18.45,
+          "overlap_sellers": 1918,
+          "overlap_sellers_pct": 29.21
+        },
+        "R151_seed314159_confirm": {
+          "hist_rows": 12843,
+          "hist_sellers": 6642,
+          "overlap_rows": 2280,
+          "overlap_rows_pct": 18.28,
+          "overlap_sellers": 2050,
+          "overlap_sellers_pct": 31.22
+        },
+        "R151_seed20261030_tune": {
+          "hist_rows": 13451,
+          "hist_sellers": 6573,
+          "overlap_rows": 2370,
+          "overlap_rows_pct": 19.01,
+          "overlap_sellers": 2001,
+          "overlap_sellers_pct": 30.48
+        },
+        "R151_seed20261030_confirm": {
+          "hist_rows": 12881,
+          "hist_sellers": 6586,
+          "overlap_rows": 2370,
+          "overlap_rows_pct": 19.01,
+          "overlap_sellers": 2006,
+          "overlap_sellers_pct": 30.55
+        },
+        "R157_seed2026_tune": {
+          "hist_rows": 11765,
+          "hist_sellers": 6547,
+          "overlap_rows": 2109,
+          "overlap_rows_pct": 16.91,
+          "overlap_sellers": 1897,
+          "overlap_sellers_pct": 28.89
+        },
+        "R157_seed2026_confirm": {
+          "hist_rows": 12906,
+          "hist_sellers": 6656,
+          "overlap_rows": 2256,
+          "overlap_rows_pct": 18.09,
+          "overlap_sellers": 2033,
+          "overlap_sellers_pct": 30.96
+        },
+        "R157_seed314159_tune": {
+          "hist_rows": 12473,
+          "hist_sellers": 6602,
+          "overlap_rows": 2315,
+          "overlap_rows_pct": 18.56,
+          "overlap_sellers": 1987,
+          "overlap_sellers_pct": 30.26
+        },
+        "R157_seed314159_confirm": {
+          "hist_rows": 12844,
+          "hist_sellers": 6614,
+          "overlap_rows": 2251,
+          "overlap_rows_pct": 18.05,
+          "overlap_sellers": 2029,
+          "overlap_sellers_pct": 30.9
+        },
+        "SellerSplit_seed46077_tune": {
+          "hist_rows": 12534,
+          "hist_sellers": 6637,
+          "overlap_rows": 2190,
+          "overlap_rows_pct": 17.56,
+          "overlap_sellers": 2034,
+          "overlap_sellers_pct": 30.98
+        },
+        "SellerSplit_seed46077_confirm": {
+          "hist_rows": 12327,
+          "hist_sellers": 6575,
+          "overlap_rows": 2187,
+          "overlap_rows_pct": 17.54,
+          "overlap_sellers": 2038,
+          "overlap_sellers_pct": 31.04
+        },
+        "SellerSplit_seed42_tune": {
+          "hist_rows": 12639,
+          "hist_sellers": 6599,
+          "overlap_rows": 2183,
+          "overlap_rows_pct": 17.51,
+          "overlap_sellers": 1988,
+          "overlap_sellers_pct": 30.28
+        },
+        "SellerSplit_seed42_confirm": {
+          "hist_rows": 12977,
+          "hist_sellers": 6619,
+          "overlap_rows": 2509,
+          "overlap_rows_pct": 20.12,
+          "overlap_sellers": 2032,
+          "overlap_sellers_pct": 30.95
+        },
+        "round_v3_confirmation_seed731_saved": {
+          "hist_rows": 14000,
+          "hist_sellers": 8357,
+          "overlap_rows": 2418,
+          "overlap_rows_pct": 19.39,
+          "overlap_sellers": 2600,
+          "overlap_sellers_pct": 39.6
+        },
+        "round_v5_selection_seed42_saved": {
+          "hist_rows": 14000,
+          "hist_sellers": 8368,
+          "overlap_rows": 2473,
+          "overlap_rows_pct": 19.83,
+          "overlap_sellers": 2623,
+          "overlap_sellers_pct": 39.95
+        },
+        "optimize_leaderboard_seed42_holdout3": {
+          "hist_rows": 21000,
+          "hist_sellers": 11458,
+          "overlap_rows": 3753,
+          "overlap_rows_pct": 30.1,
+          "overlap_sellers": 3348,
+          "overlap_sellers_pct": 50.99
+        },
+        "confirm_and_submit_seed731_holdout2": {
+          "hist_rows": 14000,
+          "hist_sellers": 8357,
+          "overlap_rows": 2418,
+          "overlap_rows_pct": 19.39,
+          "overlap_sellers": 2600,
+          "overlap_sellers_pct": 39.6
+        },
+        "UNION_R151_3Seeds_Confirm": {
+          "hist_rows": 32060,
+          "hist_sellers": 14618,
+          "overlap_rows": 5720,
+          "overlap_rows_pct": 45.87,
+          "overlap_sellers": 3948,
+          "overlap_sellers_pct": 60.13
+        },
+        "UNION_R151_3Seeds_TuneAndConfirm": {
+          "hist_rows": 52035,
+          "hist_sellers": 22069,
+          "overlap_rows": 9262,
+          "overlap_rows_pct": 74.27,
+          "overlap_sellers": 5456,
+          "overlap_sellers_pct": 83.09
+        },
+        "UNION_All_Reconstructed_Holdouts": {
+          "hist_rows": 67007,
+          "hist_sellers": 27008,
+          "overlap_rows": 11931,
+          "overlap_rows_pct": 95.68,
+          "overlap_sellers": 6408,
+          "overlap_sellers_pct": 97.59
+        }
+      }
     }
   }
 }

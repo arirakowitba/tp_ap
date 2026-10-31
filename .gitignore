@@ -21,3 +21,7 @@ coordination/.lock/
 coordination/*.oslock
 
 
+
+*.cbm
+results/intensive_20261030/**/*.cbm
+results/intensive_20261030/**/lgb_*_tc.txt

@@ -45,6 +45,10 @@ def fit_models(x,y,groups,z,selected,protocol,y_eval=None):
  probs=[];metrics_table=pd.read_csv(OUT/'metrics.csv')
  for name in selected['names']:
   print(protocol,'MODEL',name,flush=True);ts=time.time()
+  cached_path=OUT/(name+'_'+protocol+'.npy')
+  if cached_path.exists():
+   print(protocol,'MODEL',name,'LOADED FROM CACHE',cached_path,flush=True)
+   p=np.load(cached_path);probs.append(p);continue
   if name.startswith('logistic_word'):
    p=linear_predict(x,y,z,C=1. if name.endswith('C1') else 4.)
   elif name=='logistic_text_oof_stack_base':p=text_predict(x,y,z)
@@ -69,8 +73,8 @@ def fit_models(x,y,groups,z,selected,protocol,y_eval=None):
    params=json.loads((OUT/(name+'_params.json')).read_text());n=int(metrics_table[metrics_table.model==name].iloc[0].best_iteration)+1;params['iterations']=n
    a,b=(st.copy(),sv.copy()) if ('stack' in name or 'neighbors' in name or 'pair_ctr' in name) else (tr.copy(),va.copy());texts=[]
    if 'native' in name:a['full_text']=x.full_text.to_numpy();b['full_text']=z.full_text.to_numpy();texts=['full_text']
-   model=CatBoostClassifier(**params,loss_function='Logloss',eval_metric='Accuracy',thread_count=8,allow_writing_files=False,one_hot_max_size=10,random_strength=.5)
-   model.fit(a,y,cat_features=cats,text_features=texts,verbose=300);p=model.predict_proba(b)[:,1];model.save_model(str(OUT/(name+'_'+protocol+'.cbm')))
+   model=CatBoostClassifier(**params,loss_function='Logloss',eval_metric='Accuracy',thread_count=12,allow_writing_files=False,one_hot_max_size=10,random_strength=.5)
+   model.fit(a,y,cat_features=cats,text_features=texts,verbose=200);p=model.predict_proba(b)[:,1];model.save_model(str(OUT/(name+'_'+protocol+'.cbm')))
   probs.append(p)
   if y_eval is not None:record(name,p,y_eval,protocol=protocol,seconds=time.time()-ts)
   np.save(OUT/(name+'_'+protocol+'.npy'),p);gc.collect()
