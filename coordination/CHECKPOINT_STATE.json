@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-10-30T21:00:00Z",
-  "origin_main_head": "d606f92f398e2b14fcdfdb4b3d0b9e2f56af2f6c",
+  "last_checked_utc": "2026-10-31T01:00:00Z",
+  "origin_main_head": "29e8c0c5805eca200fc6de0e75c431a85f9d88f9",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "898ffcd",
-  "last_processed_codex_message": "CX-0018",
-  "last_published_antigravity_message": "AG-0016-RESULT.md",
+  "local_head": "d9b1fa1",
+  "last_processed_codex_message": "CX-0026",
+  "last_published_antigravity_message": "AG-0019-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -13,6 +13,8 @@
     "T4_hourly_automation_setup": "done_cx0014_pipe_timeout_verified",
     "T5_cx0002_33_to_48_provenance_audit": "done_sub53_55_and_causal_chain_verified",
     "T6_cx0002_adaptive_5slot_decision_menu": "done_havg_built_and_verified_s48_primary",
-    "T7_cx0013_seller_te_and_cat_ablation": "done_discrepancy_resolved_pure_cb_vs_blend"
+    "T7_cx0013_seller_te_and_cat_ablation": "done_discrepancy_resolved_pure_cb_vs_blend",
+    "T8_historical_matrix_audit_and_guard_reinforcement": "done_63_entries_and_rfc4180_reader_verified",
+    "T9_sequential_probes_design_toward_096": "done_s1_s2_s3_disjoint_and_manifest_published"
   }
 }

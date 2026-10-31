@@ -263,6 +263,84 @@ def main():
     ]
     registry_entries.extend(documented_scored)
 
+    # Add 2026-10-30 scored submissions (D2, D1, H-AVG-Plus, H-AVG, and Combined D1+D2)
+    today_scored_configs = [
+        {
+            "key": "D2_sonda2_new_virgin16",
+            "file_name": "probe_havg_plus_sonda2_new_virgin16.csv",
+            "score": 0.94638,
+            "expected_sha": "d72acb37b1d4d8fefef786fe425b643e4e887d98cdeee287d1812c5b5781ee9a",
+            "status": "win",
+            "provenance": "results/public_20261030_score_registry.md, CX-0021"
+        },
+        {
+            "key": "D1_sonda1_seen_virgin7",
+            "file_name": "probe_havg_plus_sonda1_seen_virgin7.csv",
+            "score": 0.94647,
+            "expected_sha": "6afa9bb30da486c08373197030409eb018fc7e504f80f89716b898faebab9a9f",
+            "status": "win",
+            "provenance": "results/public_20261030_score_registry.md, CX-0022"
+        },
+        {
+            "key": "havg_plus_full70k",
+            "file_name": "candidate_model_havg_plus_full70k.csv",
+            "score": 0.94471,
+            "expected_sha": "c568ad01485564a7682135ffec515204200326105c3e2b2d08a222b17f24ee8f",
+            "status": "loss",
+            "provenance": "results/public_20261030_score_registry.md, CX-0023"
+        },
+        {
+            "key": "havg_b10_variant_c_full70k",
+            "file_name": "candidate_model_havg_b10_variant_c_full70k.csv",
+            "score": 0.94514,
+            "expected_sha": "71d86093d7d14831cd33ef6de9bf7c3e076f2915b7dcce12609ac49bdf8a7a3d",
+            "status": "loss",
+            "provenance": "results/public_20261030_score_registry.md, CX-0024"
+        },
+        {
+            "key": "candidate_d1_d2_combined_on48",
+            "file_name": "candidate_d1_d2_combined_on48.csv",
+            "score": 0.94652,
+            "expected_sha": "57172f209ff5018d4ceef8c57172cc731828cc78eb9cb02dedccff4a51292502",
+            "status": "win",
+            "provenance": "results/public_20261030_score_registry.md, CX-0025, CX-0026"
+        }
+    ]
+
+    for item in today_scored_configs:
+        file_path = ROOT / "submissions" / item["file_name"]
+        assert file_path.exists(), f"File not found: {file_path}"
+        with open(file_path, "rb") as f:
+            raw_bytes = f.read()
+        sha_lf = sha256_bytes(raw_bytes)
+        assert sha_lf == item["expected_sha"], f"SHA mismatch for {item['file_name']}: {sha_lf} vs {item['expected_sha']}"
+        
+        with open(file_path, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            assert reader.fieldnames == ["ID", "condition"]
+            labels = {int(r["ID"]): r["condition"] for r in reader}
+        assert len(labels) == 30000
+        
+        sha_vec = sha256_vector(labels)
+        flips_vs_48 = {}
+        for i in range(1, 30001):
+            if labels[i] != b48[i]:
+                flips_vs_48[i] = {"from_48": b48[i], "to": labels[i]}
+                
+        registry_entries.append({
+            "key": item["key"],
+            "score": item["score"],
+            "delta_vs_48": round(item["score"] - 0.94633, 5),
+            "status": item["status"],
+            "sha256_lf": sha_lf,
+            "sha256_vector": sha_vec,
+            "n_flips_vs_48": len(flips_vs_48),
+            "flipped_ids": sorted(list(flips_vs_48.keys())),
+            "flips_dict": {str(k): v["to"] for k, v in flips_vs_48.items()},
+            "provenance": item["provenance"],
+            "audit_state": "enviado-score-confirmado-archivo-local-verificado"
+        })
+
     # Save registry JSON
     out_json = EVAL_DIR / "scored_registry.json"
     with open(out_json, "w", encoding="utf-8") as f:
@@ -270,6 +348,12 @@ def main():
             "baseline_48": {
                 "score": 0.94633,
                 "sha256": s48_hash,
+            },
+            "current_best_combined": {
+                "score": 0.94652,
+                "sha256": "57172f209ff5018d4ceef8c57172cc731828cc78eb9cb02dedccff4a51292502",
+                "key": "candidate_d1_d2_combined_on48",
+                "n_flips_vs_48": 23
             },
             "inventory_correction_notes": [
                 "01-03: enviados, scores conocidos (01: 0.94433, 02: 0.94419, 03: 0.94447); CSVs exactos no disponibles localmente en disco (enviado-score-conocido-CSV-no-identificado)",
@@ -283,7 +367,8 @@ def main():
                 "59: comprende 5 envios con scores conocidos reportados por Ariel: 59_full (.94576), probe_59_new_seller (.94619), probe_59_seen_to_new (.94590), fin_stack_new150 (.94495), fin_stack_seen150 (.94257)",
                 "60-65: borradores offline de bandas y modelos puros sin envios Kaggle confirmados",
                 "66-71: preparadas en Ronda 152 sin scores publicos confirmados en el repo (preparado-sin-score-confirmado-en-repo)",
-                "72-76: enviadas y puntuadas el 2026-10-29 (72: .94623, 73: .94600, 74: .94614, 75: .94633, 76: .94633 duplicado exacto de 48)"
+                "72-76: enviadas y puntuadas el 2026-10-29 (72: .94623, 73: .94600, 74: .94614, 75: .94633, 76: .94633 duplicado exacto de 48)",
+                "2026-10-30: 5 envios puntuados reportados en results/public_20261030_score_registry.md y CX-0021..CX-0026 (D2: 0.94638, D1: 0.94647, H-AVG-Plus: 0.94471, H-AVG: 0.94514, D1+D2 combinada: 0.94652 nuevo maximo historico)"
             ],
             "entries": registry_entries
         }, f, indent=2)
