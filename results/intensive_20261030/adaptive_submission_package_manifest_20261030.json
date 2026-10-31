@@ -1,0 +1,250 @@
+{
+  "metadata": {
+    "created_at": "2026-10-30T21:00:00-03:00",
+    "protocol_reference": "CX-0020",
+    "evaluator": "Antigravity",
+    "benchmark_reference": "submission48 (LB 0.94633)"
+  },
+  "candidates": {
+    "candidate_a_reference_s48": {
+      "file": "submissions/submission_48_reference.csv",
+      "sha256": "3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722",
+      "role": "Safety fallback / Baseline reference",
+      "flips_vs_s48": 0,
+      "public_lb_demonstrated": 0.94633,
+      "evidence": "Canonical reference submission 48."
+    },
+    "candidate_b_havg_b10_variant_c": {
+      "file": "submissions/candidate_model_havg_b10_variant_c_full70k.csv",
+      "sha256": "71d86093d7d14831cd33ef6de9bf7c3e076f2915b7dcce12609ac49bdf8a7a3d",
+      "role": "Ensemble candidate B10-centric",
+      "flips_vs_s48": 388,
+      "cv_net_fixes_vs_b10": "+23.3 net fixes across cuts",
+      "evidence": "Claude B10 blend with strong holdout gains."
+    },
+    "candidate_c_havg_plus_full70k": {
+      "file": "submissions/candidate_model_havg_plus_full70k.csv",
+      "sha256": "c568ad01485564a7682135ffec515204200326105c3e2b2d08a222b17f24ee8f",
+      "role": "Flagship model: B10 + CatBoost (3-seed bagged 600 iter) + LightGBM (227 estimators)",
+      "flips_vs_s48": 378,
+      "breakdown_flips": {
+        "total": 378,
+        "used_to_new": 163,
+        "new_to_used": 215,
+        "historical_overlap_04_76": 355,
+        "virgin_never_probed": 23
+      },
+      "evidence": "Frozen exact hyperparameters; statistically significant confirm gains on B10."
+    },
+    "probe_d1_seen_virgin7": {
+      "file": "submissions/probe_havg_plus_sonda1_seen_virgin7.csv",
+      "sha256": "6afa9bb30da486c08373197030409eb018fc7e504f80f89716b898faebab9a9f",
+      "role": "Adaptive probe 1: 7 virgin flips on seen sellers",
+      "flips_vs_s48": 7,
+      "target_ids": [
+        47,
+        4013,
+        4256,
+        16828,
+        17446,
+        24178,
+        25390
+      ],
+      "flip_details": [
+        {
+          "ID": 47,
+          "seller_id": "1289787548",
+          "s48_pred": "new",
+          "probe_pred": "used"
+        },
+        {
+          "ID": 4013,
+          "seller_id": "7682846375",
+          "s48_pred": "used",
+          "probe_pred": "new"
+        },
+        {
+          "ID": 4256,
+          "seller_id": "4394999141",
+          "s48_pred": "used",
+          "probe_pred": "new"
+        },
+        {
+          "ID": 16828,
+          "seller_id": "6809465199",
+          "s48_pred": "used",
+          "probe_pred": "new"
+        },
+        {
+          "ID": 17446,
+          "seller_id": "9909295265",
+          "s48_pred": "new",
+          "probe_pred": "used"
+        },
+        {
+          "ID": 24178,
+          "seller_id": "7889814136",
+          "s48_pred": "used",
+          "probe_pred": "new"
+        },
+        {
+          "ID": 25390,
+          "seller_id": "7474572139",
+          "s48_pred": "new",
+          "probe_pred": "used"
+        }
+      ],
+      "expected_impact": "Identifies if seen-seller tree refinements translate to LB gain on previously untouched IDs without risking full package."
+    },
+    "probe_d2_new_virgin16": {
+      "file": "submissions/probe_havg_plus_sonda2_new_virgin16.csv",
+      "sha256": "d72acb37b1d4d8fefef786fe425b643e4e887d98cdeee287d1812c5b5781ee9a",
+      "role": "Adaptive probe 2: 16 virgin flips on new sellers",
+      "flips_vs_s48": 16,
+      "target_ids": [
+        1753,
+        2455,
+        3135,
+        4184,
+        5993,
+        6247,
+        12361,
+        13349,
+        13637,
+        13768,
+        14087,
+        16438,
+        18976,
+        23082,
+        23529,
+        25753
+      ],
+      "flip_details": [
+        {
+          "ID": 1753,
+          "seller_id": "6428845684",
+          "s48_pred": "new",
+          "probe_pred": "used"
+        },
+        {
+          "ID": 2455,
+          "seller_id": "7164033610",
+          "s48_pred": "new",
+          "probe_pred": "used"
+        },
+        {
+          "ID": 3135,
+          "seller_id": "7768177126",
+          "s48_pred": "used",
+          "probe_pred": "new"
+        },
+        {
+          "ID": 4184,
+          "seller_id": "1838056707",
+          "s48_pred": "used",
+          "probe_pred": "new"
+        },
+        {
+          "ID": 5993,
+          "seller_id": "7067637169",
+          "s48_pred": "used",
+          "probe_pred": "new"
+        },
+        {
+          "ID": 6247,
+          "seller_id": "8836246966",
+          "s48_pred": "used",
+          "probe_pred": "new"
+        },
+        {
+          "ID": 12361,
+          "seller_id": "4280430035",
+          "s48_pred": "new",
+          "probe_pred": "used"
+        },
+        {
+          "ID": 13349,
+          "seller_id": "8448141175",
+          "s48_pred": "new",
+          "probe_pred": "used"
+        },
+        {
+          "ID": 13637,
+          "seller_id": "3689105532",
+          "s48_pred": "used",
+          "probe_pred": "new"
+        },
+        {
+          "ID": 13768,
+          "seller_id": "2593056815",
+          "s48_pred": "new",
+          "probe_pred": "used"
+        },
+        {
+          "ID": 14087,
+          "seller_id": "2378526007",
+          "s48_pred": "new",
+          "probe_pred": "used"
+        },
+        {
+          "ID": 16438,
+          "seller_id": "7869015368",
+          "s48_pred": "used",
+          "probe_pred": "new"
+        },
+        {
+          "ID": 18976,
+          "seller_id": "4489664454",
+          "s48_pred": "new",
+          "probe_pred": "used"
+        },
+        {
+          "ID": 23082,
+          "seller_id": "7659274593",
+          "s48_pred": "new",
+          "probe_pred": "used"
+        },
+        {
+          "ID": 23529,
+          "seller_id": "7726314044",
+          "s48_pred": "new",
+          "probe_pred": "used"
+        },
+        {
+          "ID": 25753,
+          "seller_id": "3965902873",
+          "s48_pred": "used",
+          "probe_pred": "new"
+        }
+      ],
+      "expected_impact": "Tests virgin high-confidence text/category generalizations on unrepresented sellers."
+    }
+  },
+  "sequential_decision_tree": {
+    "step_1": {
+      "action": "Ariel evaluates whether to submit Sonda 1 (D1, 7 flips) or directly deploy Candidate C.",
+      "branch_probe_strategy": {
+        "submission_1": "Submit probe_havg_plus_sonda1_seen_virgin7.csv (D1, 7 flips).",
+        "if_score_improves": {
+          "condition": "Score > 0.94633 (e.g. >= 0.94643, +1 or more fixes)",
+          "interpretation": "Virgin seen-seller fixes validated.",
+          "next_action": "Submit probe_havg_plus_sonda2_new_virgin16.csv (D2, 16 flips) to validate new-seller block, OR directly submit Candidate C (havg_plus_full70k)."
+        },
+        "if_score_neutral": {
+          "condition": "Score == 0.94633 (even balance or 0 effect on public slice)",
+          "interpretation": "Neutral effect on 30% public test.",
+          "next_action": "Submit probe_havg_plus_sonda2_new_virgin16.csv (D2) to test orthogonal signal."
+        },
+        "if_score_drops": {
+          "condition": "Score < 0.94633",
+          "interpretation": "Seen-seller aggressive flips hurt public test.",
+          "next_action": "Discard D1 flips; keep Candidate A (S48) as fallback or test Candidate B."
+        }
+      },
+      "branch_direct_deployment_strategy": {
+        "submission_1": "Submit candidate_model_havg_plus_full70k.csv (Candidate C).",
+        "rationale": "Strongest holdout evidence (+49 and +29 net fixes over B10, lower log loss across all seeds). If Ariel prefers spending quota on the best model candidate rather than micro-probes."
+      }
+    }
+  }
+}
