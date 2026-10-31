@@ -1,0 +1,147 @@
+{
+  "title": "Iterative Nocturnal Research Batch (CX-0028)",
+  "benchmark_leader": "candidate_d1_d2_combined_on48 (0.94652 LB)",
+  "methodology": {
+    "development_cuts": [
+      2026,
+      314159,
+      20261030
+    ],
+    "blind_confirm_cut": 42026,
+    "status_classification_rules": {
+      "CONFIRMADA": "Acc & LL superior con IC bootstrap 95% estrictamente > 0 en corte virgen",
+      "EXPLORATORIA": "Mejora consistente de LL o ganancia concentrada en nuevos, pero IC incluye 0",
+      "DESCARTADA": "Degrada LL o no mejora frente a baseline fuerte"
+    }
+  },
+  "cycles": {
+    "phase_1_development": {
+      "2026": {
+        "elapsed_seconds": 71.1,
+        "n_confirm": 12905,
+        "seen_count": 3903,
+        "new_count": 9002,
+        "b10_baseline": {
+          "accuracy": 0.9287872917473847,
+          "log_loss": 0.18938031422965207
+        },
+        "text_cond_standalone": {
+          "accuracy": 0.8408368849283223,
+          "log_loss": 0.3707064524306838
+        },
+        "inductive_lgb_standalone": {
+          "accuracy": 0.9263851220457188,
+          "log_loss": 0.18583012034745386,
+          "best_iter": 312
+        },
+        "blend_b10_inductive": {
+          "accuracy": 0.9330492057342116,
+          "log_loss": 0.1775179281779684,
+          "delta_log_loss": -0.01186,
+          "net_fixes": 55,
+          "ci_95": [
+            9.0,
+            104.0
+          ],
+          "seen_net": -11,
+          "new_net": 66,
+          "fixes": 187,
+          "breaks": 132
+        }
+      },
+      "314159": {
+        "elapsed_seconds": 69.3,
+        "n_confirm": 12843,
+        "seen_count": 3838,
+        "new_count": 9005,
+        "b10_baseline": {
+          "accuracy": 0.9226816164447559,
+          "log_loss": 0.1999972275020486
+        },
+        "text_cond_standalone": {
+          "accuracy": 0.8360974850112902,
+          "log_loss": 0.3785824426293665
+        },
+        "inductive_lgb_standalone": {
+          "accuracy": 0.9172311765163903,
+          "log_loss": 0.20785585495892572,
+          "best_iter": 258
+        },
+        "blend_b10_inductive": {
+          "accuracy": 0.9239274312855252,
+          "log_loss": 0.19194592906536626,
+          "delta_log_loss": -0.00805,
+          "net_fixes": 16,
+          "ci_95": [
+            -30.0,
+            62.0
+          ],
+          "seen_net": -8,
+          "new_net": 24,
+          "fixes": 185,
+          "breaks": 169
+        }
+      },
+      "20261030": {
+        "elapsed_seconds": 68.6,
+        "n_confirm": 12881,
+        "seen_count": 3740,
+        "new_count": 9141,
+        "b10_baseline": {
+          "accuracy": 0.9313717879046658,
+          "log_loss": 0.1755780033422598
+        },
+        "text_cond_standalone": {
+          "accuracy": 0.850166912506793,
+          "log_loss": 0.35334665452255004
+        },
+        "inductive_lgb_standalone": {
+          "accuracy": 0.9257821597702042,
+          "log_loss": 0.1804228191872174,
+          "best_iter": 305
+        },
+        "blend_b10_inductive": {
+          "accuracy": 0.9340113345237171,
+          "log_loss": 0.16893969954904972,
+          "delta_log_loss": -0.00664,
+          "net_fixes": 34,
+          "ci_95": [
+            -4.0,
+            72.0
+          ],
+          "seen_net": 2,
+          "new_net": 32,
+          "fixes": 158,
+          "breaks": 124
+        }
+      }
+    },
+    "phase_2_blind_confirm": {
+      "elapsed_seconds": 171.8,
+      "seed": 42026,
+      "n_confirm": 13197,
+      "seen_count": 3744,
+      "new_count": 9453,
+      "baseline_catboost": {
+        "accuracy": 0.9214215351973933,
+        "log_loss": 0.19635818427793392
+      },
+      "ensemble_candidate": {
+        "accuracy": 0.9277866181707964,
+        "log_loss": 0.1851400247884478,
+        "delta_log_loss": -0.01122,
+        "net_fixes": 84,
+        "ci_95": [
+          42.0,
+          127.0
+        ],
+        "seen_net": 16,
+        "new_net": 68,
+        "fixes": 214,
+        "breaks": 130,
+        "best_iter_tune": 344
+      },
+      "verdict": "CONFIRMADA"
+    }
+  }
+}

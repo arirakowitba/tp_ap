@@ -1,9 +1,14 @@
 {
   "metadata": {
     "created_at": "2026-10-30T21:00:00-03:00",
-    "protocol_reference": "CX-0020",
+    "protocol_reference": "CX-0020 & CX-0028",
     "evaluator": "Antigravity",
-    "benchmark_reference": "submission48 (LB 0.94633)"
+    "benchmark_reference": "submission48 (LB 0.94633) -> superseded by candidate_d1_d2_combined_on48 (LB 0.94652)",
+    "epistemic_corrections_cx0028": {
+      "no_causal_id_imputation": "Score drops in full models reflect aggregate block behavior; individual IDs are NOT proven incorrect nor do overlaps determine individual ground truth.",
+      "public_resolution_definition": "Elementary public resolution per net fix is ~1/N_public (~0.00005 to 0.00011), not block size.",
+      "no_uncalibrated_projections": "No linear score projections without predictive posterior distributions. Reused confirm cuts are strictly development sets."
+    }
   },
   "candidates": {
     "candidate_a_reference_s48": {
