@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-01T06:25:00Z",
+  "last_checked_utc": "2026-11-01T06:45:00Z",
   "origin_main_head": "818eb234c9c1b9bdfbf160c1d6df4b0f9ef46cf0",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "222bfcf",
+  "local_head": "0e86a5e",
   "last_processed_codex_message": "CX-0042",
-  "last_published_antigravity_message": "AG-0025-ACK.md",
+  "last_published_antigravity_message": "AG-0026-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -18,7 +18,7 @@
     "T9_sequential_probes_design_toward_096": "done_s1_s2_s3_disjoint_and_manifest_published",
     "T10_probe_block_and_reproducible_checkpoint": "done_cx0034_cx0035_verified",
     "T11_public_denominator_and_identifiability_audit": "done_n20998_and_382signatures_verified",
-    "T12_task_a_aggregate_posterior_ledger_prequential": "in_progress",
-    "T13_task_b_train_only_orthogonal_models_097": "in_progress"
+    "T12_task_a_aggregate_posterior_ledger_prequential": "done_prequential_91pct_dir_acc",
+    "T13_task_b_train_only_orthogonal_models_097": "done_tree_neural_ensemble_plus66_fixes"
   }
 }
