@@ -1,0 +1,281 @@
+{
+  "title": "Semantic and Category-Conditioned Price Model (Target >= 0.94700)",
+  "timestamp_utc": "2026-11-01T06:38:01Z",
+  "anchor_score": 0.94652,
+  "anchor_file": "candidate_d1_d2_combined_on48.csv",
+  "evaluation_seed": 42026,
+  "n_confirm": 13197,
+  "n_seen_confirm": 3744,
+  "n_new_confirm": 9453,
+  "confirm_metrics": {
+    "baseline_b10_accuracy": 0.9268015458058649,
+    "baseline_b10_logloss": 0.19305583100491963,
+    "semantic_ensemble_accuracy": 0.9215730847919982,
+    "semantic_ensemble_logloss": 0.192703624339514,
+    "delta_accuracy": -0.005228461013866759,
+    "delta_logloss": -0.00035220666540564105,
+    "fixes_vs_b10": 292,
+    "breaks_vs_b10": 361,
+    "net_fixes": -69,
+    "net_seen": -45,
+    "net_new": -24,
+    "bootstrap_95_ci_seller": [
+      -128.0,
+      -6.0
+    ]
+  },
+  "optimal_tune_hyperparameters": {
+    "weight_catboost": 0.65,
+    "weight_lightgbm": 0.35,
+    "weight_text_model": 0.0,
+    "decision_threshold": 0.435,
+    "tune_accuracy": 0.9210119139718397,
+    "tune_logloss": 0.1991094431317454
+  },
+  "generated_artifacts": {
+    "candidate_0947": {
+      "file": "submissions/candidate_semantic_0947_anchored_on_best.csv",
+      "sha256": "7099b4c65d4437b806505c2951093fc9044fd47af09b335f20ac9d9d87fcd65d",
+      "n_flips_vs_best": 18,
+      "flipped_ids": [
+        25326,
+        24090,
+        6027,
+        6128,
+        24257,
+        10915,
+        25940,
+        6487,
+        6940,
+        24647,
+        12641,
+        17714,
+        859,
+        28448,
+        23005,
+        24397,
+        10408,
+        7770
+      ]
+    },
+    "probe_semantic_8": {
+      "file": "submissions/probe_semantic_high_margin8.csv",
+      "sha256": "5208059670f32ede9b3194d3835567cce02efbb6463366721bd9b7aeb97573b7",
+      "n_flips_vs_best": 8,
+      "flipped_ids": [
+        25326,
+        24090,
+        6027,
+        6128,
+        24257,
+        10915,
+        25940,
+        6487
+      ]
+    },
+    "paired_predictions": {
+      "file": "results\\intensive_20261030\\model_0947\\paired_predictions_seed42026_model0947.csv.gz",
+      "sha256": "3dc97d529e940eab20dfb7b854ff1c92c72fd803617897334532fa27ea883829"
+    }
+  },
+  "top_flips_detail": [
+    {
+      "ID": 25326,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.05689384415745735,
+      "margin": 0.44310614466667175,
+      "is_seen": true,
+      "title": "Cartera Mujer Cuero Vacuno Bandolera!!!!!!!!!!!!!",
+      "price": 69.99
+    },
+    {
+      "ID": 24090,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.06041242554783821,
+      "margin": 0.4395875632762909,
+      "is_seen": false,
+      "title": "Fantasticos Ametricos Bicolor Purpura/amarillo. Envio Gratis",
+      "price": 1950.0
+    },
+    {
+      "ID": 6027,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.06472408026456833,
+      "margin": 0.4352759122848511,
+      "is_seen": false,
+      "title": "Cartuchos Originales Hp Ce413a Carcasas Vac\u00edas De 1\u00b0 Uso",
+      "price": 50.0
+    },
+    {
+      "ID": 6128,
+      "cur_label": "new",
+      "new_label": "used",
+      "direction": "new->used",
+      "p_val": 0.934836745262146,
+      "margin": 0.434836745262146,
+      "is_seen": true,
+      "title": "Durero  Coleccion Los Genios De La Pintura",
+      "price": 70.0
+    },
+    {
+      "ID": 24257,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.07402580976486206,
+      "margin": 0.42597419023513794,
+      "is_seen": true,
+      "title": "Reposera Beb\u00e9s Adaptador Para Ba\u00f1adera",
+      "price": 159.0
+    },
+    {
+      "ID": 10915,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.07873712480068207,
+      "margin": 0.42126286029815674,
+      "is_seen": false,
+      "title": "Lampara Colgante",
+      "price": 750.0
+    },
+    {
+      "ID": 25940,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.07988172769546509,
+      "margin": 0.4201182723045349,
+      "is_seen": false,
+      "title": "Zapatillas Adidas Numero 40 Con Corderito",
+      "price": 799.0
+    },
+    {
+      "ID": 6487,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.09010393917560577,
+      "margin": 0.4098960757255554,
+      "is_seen": true,
+      "title": "Monreai Y Tejada Iconograf\u00eda Del Cristianismo - Acantilado",
+      "price": 465.0
+    },
+    {
+      "ID": 6940,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.10048151761293411,
+      "margin": 0.3995184898376465,
+      "is_seen": true,
+      "title": "Banfield.solo Para Fanaticos- Envio Gratis ",
+      "price": 280.0
+    },
+    {
+      "ID": 24647,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.10775929689407349,
+      "margin": 0.3922407031059265,
+      "is_seen": false,
+      "title": "La Parrilla Cl\u00e1sica De Marlena Spieler-150 Recetas Pr\u00e1cticas",
+      "price": 55.0
+    },
+    {
+      "ID": 12641,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.11123575270175934,
+      "margin": 0.38876426219940186,
+      "is_seen": false,
+      "title": "Carcasa Nokia 1100 Original Parte Delantera",
+      "price": 70.0
+    },
+    {
+      "ID": 17714,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.11309785395860672,
+      "margin": 0.3869021534919739,
+      "is_seen": false,
+      "title": "Cupla Marca Wilton Para Manga -  Tama\u00f1o Chico-",
+      "price": 50.0
+    },
+    {
+      "ID": 859,
+      "cur_label": "new",
+      "new_label": "used",
+      "direction": "new->used",
+      "p_val": 0.881499707698822,
+      "margin": 0.381499707698822,
+      "is_seen": false,
+      "title": "Amiibo Villager Nintendo Wiiu",
+      "price": 1390.0
+    },
+    {
+      "ID": 28448,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.12727724015712738,
+      "margin": 0.3727227449417114,
+      "is_seen": true,
+      "title": "Remera Mujer Forever 21 Flecos",
+      "price": 200.0
+    },
+    {
+      "ID": 23005,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.12848562002182007,
+      "margin": 0.37151437997817993,
+      "is_seen": true,
+      "title": "Paula Cahen D'anvers Remera 3m",
+      "price": 150.0
+    },
+    {
+      "ID": 24397,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.13478365540504456,
+      "margin": 0.36521634459495544,
+      "is_seen": true,
+      "title": "Cuernos De Agarre Aluminio Manubrios De Biccleta",
+      "price": 119.99
+    },
+    {
+      "ID": 10408,
+      "cur_label": "used",
+      "new_label": "new",
+      "direction": "used->new",
+      "p_val": 0.1429293304681778,
+      "margin": 0.3570706844329834,
+      "is_seen": false,
+      "title": "Botines Lotto Talle 42 - Materiales De Verdad, Duran A\u00f1os!",
+      "price": 575.0
+    },
+    {
+      "ID": 7770,
+      "cur_label": "new",
+      "new_label": "used",
+      "direction": "new->used",
+      "p_val": 0.8558800220489502,
+      "margin": 0.3558800220489502,
+      "is_seen": true,
+      "title": "Coches Cl\u00e1sicos",
+      "price": 300.0
+    }
+  ]
+}
