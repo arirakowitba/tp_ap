@@ -1,12 +1,25 @@
 {
-  "timestamp_utc": "2026-11-01T16:04:01Z",
+  "timestamp_utc": "2026-11-01T20:34:31Z",
   "description": "Advanced Inductive Structural Model with Category Price Dispersion and Lexical Condition Signals",
+  "splits_overlap_audit": {
+    "n_confirm_2026": 12905,
+    "n_confirm_314159": 12843,
+    "overlap_rows_count": 2337,
+    "overlap_rows_pct": 18.109259976753197,
+    "unique_rows_count_2026": 10568,
+    "unique_rows_count_314159": 10506,
+    "sellers_count_2026": 6649,
+    "sellers_count_314159": 6642,
+    "overlap_sellers_count": 2089,
+    "overlap_sellers_pct": 31.418258384719504
+  },
   "split_evaluations": {
     "seed_2026": {
       "seed": 2026,
       "n_fit": 45330,
       "n_tune": 11765,
       "n_confirm": 12905,
+      "best_iteration": 335,
       "tune_frozen_params": {
         "best_weight_lgb": 0.1,
         "best_threshold": 0.47500000000000003,
@@ -41,6 +54,7 @@
       "n_fit": 44684,
       "n_tune": 12473,
       "n_confirm": 12843,
+      "best_iteration": 377,
       "tune_frozen_params": {
         "best_weight_lgb": 0.15,
         "best_threshold": 0.48000000000000004,
@@ -75,7 +89,9 @@
     "model": "LightGBM_dispersion_lexical_70k",
     "n_train": 70000,
     "n_test": 30000,
-    "test_p_mean": 0.4621611030286903,
-    "test_p_std": 0.4261450528255921
+    "target_rounds": 356,
+    "learning_rate": 0.05,
+    "test_p_mean": 0.46207611558474043,
+    "test_p_std": 0.42916135540425693
   }
 }
