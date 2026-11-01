@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-10-31T01:00:00Z",
-  "origin_main_head": "29e8c0c5805eca200fc6de0e75c431a85f9d88f9",
+  "last_checked_utc": "2026-11-01T06:25:00Z",
+  "origin_main_head": "818eb234c9c1b9bdfbf160c1d6df4b0f9ef46cf0",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "d9b1fa1",
-  "last_processed_codex_message": "CX-0026",
-  "last_published_antigravity_message": "AG-0019-RESULT.md",
+  "local_head": "222bfcf",
+  "last_processed_codex_message": "CX-0042",
+  "last_published_antigravity_message": "AG-0025-ACK.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -15,6 +15,10 @@
     "T6_cx0002_adaptive_5slot_decision_menu": "done_havg_built_and_verified_s48_primary",
     "T7_cx0013_seller_te_and_cat_ablation": "done_discrepancy_resolved_pure_cb_vs_blend",
     "T8_historical_matrix_audit_and_guard_reinforcement": "done_63_entries_and_rfc4180_reader_verified",
-    "T9_sequential_probes_design_toward_096": "done_s1_s2_s3_disjoint_and_manifest_published"
+    "T9_sequential_probes_design_toward_096": "done_s1_s2_s3_disjoint_and_manifest_published",
+    "T10_probe_block_and_reproducible_checkpoint": "done_cx0034_cx0035_verified",
+    "T11_public_denominator_and_identifiability_audit": "done_n20998_and_382signatures_verified",
+    "T12_task_a_aggregate_posterior_ledger_prequential": "in_progress",
+    "T13_task_b_train_only_orthogonal_models_097": "in_progress"
   }
 }
