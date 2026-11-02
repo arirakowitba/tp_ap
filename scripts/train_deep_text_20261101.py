@@ -20,17 +20,25 @@ def split_testlike(sellers, seed):
     rng=np.random.default_rng(seed)
     unique=np.unique(sellers)
     rng.shuffle(unique)
-    k=int(.0175*len(unique))
+    k=int(.05*len(unique))
     tune_new=set(unique[:k])
     confirm_new=set(unique[k:2*k])
-    seen_rows=np.flatnonzero(~np.isin(sellers,list(tune_new | confirm_new)))
-    rng.shuffle(seen_rows)
-    n_seen=int(.14*len(sellers))
-    tune=np.r_[np.flatnonzero(np.isin(sellers,list(tune_new))),seen_rows[:n_seen]]
-    confirm=np.r_[np.flatnonzero(np.isin(sellers,list(confirm_new))),seen_rows[n_seen:2*n_seen]]
+    eligible=[]
+    grouped={}
+    for i,s in enumerate(sellers):
+        grouped.setdefault(s,[]).append(i)
+    # Reserve at least one row per seen seller in fit.
+    for s in unique[2*k:]:
+        ix=np.asarray(grouped[s],dtype=int)
+        rng.shuffle(ix)
+        eligible.extend(ix[1:])
+    eligible=np.asarray(eligible,dtype=int)
+    rng.shuffle(eligible)
+    n_seen=min(9000,len(eligible)//2)
+    tune=np.r_[np.flatnonzero(np.isin(sellers,list(tune_new))),eligible[:n_seen]]
+    confirm=np.r_[np.flatnonzero(np.isin(sellers,list(confirm_new))),eligible[n_seen:2*n_seen]]
     fit=np.setdiff1d(np.arange(len(sellers)),np.r_[tune,confirm])
     return fit,tune,confirm
-
 
 
 def read_raw():
