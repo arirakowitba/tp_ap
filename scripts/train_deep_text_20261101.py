@@ -16,6 +16,22 @@ from scripts.train_text_condition_20261101 import ZIP, OUT, split, text_features
 SEED = int(sys.argv[1]) if len(sys.argv)>1 else 20261104
 DROP_AGG = ("freq_", "seller_", "sell_mean_", "rel_price_cat")
 
+def split_testlike(sellers, seed):
+    rng=np.random.default_rng(seed)
+    unique=np.unique(sellers)
+    rng.shuffle(unique)
+    k=int(.0175*len(unique))
+    tune_new=set(unique[:k])
+    confirm_new=set(unique[k:2*k])
+    seen_rows=np.flatnonzero(~np.isin(sellers,list(tune_new | confirm_new)))
+    rng.shuffle(seen_rows)
+    n_seen=int(.14*len(sellers))
+    tune=np.r_[np.flatnonzero(np.isin(sellers,list(tune_new))),seen_rows[:n_seen]]
+    confirm=np.r_[np.flatnonzero(np.isin(sellers,list(confirm_new))),seen_rows[n_seen:2*n_seen]]
+    fit=np.setdiff1d(np.arange(len(sellers)),np.r_[tune,confirm])
+    return fit,tune,confirm
+
+
 
 def read_raw():
     with zipfile.ZipFile(ZIP) as z:
@@ -45,7 +61,7 @@ def main():
     y = np.array([int(r["condition"] == "used") for r in rows])
     seller = np.array([str(r["seller_id"]) for r in rows])
     ids = np.array([str(r["id"]) for r in rows])
-    fit, tune, confirm = split(y, seller, SEED)
+    fit, tune, confirm = split_testlike(seller, SEED) if len(sys.argv)>2 and sys.argv[2]=="testlike" else split(y, seller, SEED)
     features, cat, titles, warranties, combos = extract_deep_features(rows)
     keep = [c for c in features if not c.startswith(DROP_AGG)]
     a = add_fit_aggregates(features[keep], cat, fit)
