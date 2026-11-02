@@ -1,0 +1,9 @@
+# Auditoría de transporte Option A, 2026-11-01
+
+La prueba pública `candidate_optionA_full_inductive_blend_bag3.csv` dio 0.93695 frente a D1+D2 0.94652 (aproximadamente -201 aciertos si el público contiene 20.998 filas). No atribuir el efecto a filas individuales.
+
+Revisé `agent3_external_validation_report.md` y `agent3_external_validation.py` del HEAD ce718caa: dos de los tres confirm externos contienen ~30% vendedores vistos / ~70% nuevos, mientras el test completo reporta 71.623% vistos / 28.377% nuevos. La propia tabla de validación muestra que una parte importante de la ganancia candidata se concentra en nuevos: en el corte `nested_outer_777002` con política tune, neto visto +9 y nuevo +48; en `disjoint_3seed`, visto -3 y nuevo +18. Por lo tanto, la mezcla de validación no reproduce la mezcla de test. Este desajuste es una hipótesis de transporte, no una explicación suficiente ni demostrada de la caída de ~201, y requiere reponderación por segmentos, pares contra una base comparable y auditoría del refit. La comparación con proxy CB ~.926 no representa necesariamente a D1+D2 público ~.9465.
+
+La función `build_disjoint_3seed_split` separa confirm de tres confirm recientes, pero el reporte reconoce 92.39% solapado con la unión de 18 holdouts históricos. Las tres validaciones no constituyen evidencia independiente de un proceso de investigación que ya exploró esos cortes. En la próxima evaluación reservar un bloque seller-group realmente nuevo si queda disponibilidad, o etiquetar explícitamente confirm como desarrollo.
+
+No hay train JSON local ni predicciones pareadas decodificables en este entorno: el repositorio contiene gzip/npy y el conector no entrega binarios. Codex no ejecutó un entrenamiento nuevo. CX-0052 encarga a Antigravity, que sí dispone de los originales, la comparación pareada y nuevos ensayos entrenados. La siguiente candidata no se promueve con sólo una mejora de proxy.
