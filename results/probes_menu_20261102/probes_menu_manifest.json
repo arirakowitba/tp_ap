@@ -1,0 +1,755 @@
+{
+  "anchor_control": "candidate_d1_d2_combined_on48.csv (Score: 0.94652, SHA256: 57172f209ff5018d4ceef8c57172cc731828cc78eb9cb02dedccff4a51292502)",
+  "blocks": {
+    "Sonda_A_high_score_new15": {
+      "file": "probe_sonda_a_high_score_new15_on_d1d2.csv",
+      "sha256_lf": "9fd66852e712414cb21641e8836c9c7224372e2a6a756deea1d89ddbc8d5a3aa",
+      "flips_vs_d1d2": 15,
+      "flipped_ids": [
+        5122,
+        25656,
+        29633,
+        3352,
+        20534,
+        14589,
+        25905,
+        12877,
+        25869,
+        20085,
+        27674,
+        27123,
+        25753,
+        21490,
+        23528
+      ],
+      "seen_sellers_count": 0,
+      "new_sellers_count": 15,
+      "virgin_ids_count": 1,
+      "historical_ledger_overlap_count": 14,
+      "mean_margin": 0.40973470902283077,
+      "min_margin": 0.37391431506121453,
+      "max_margin": 0.47435583555536287,
+      "items": [
+        {
+          "ID": 5122,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.016926015540832333,
+          "p_ens": 0.034362313348442,
+          "margin_avg": 0.47435583555536287,
+          "is_seen": false,
+          "is_virgin": false
+        },
+        {
+          "ID": 25656,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.9634980158980055,
+          "p_ens": 0.963223111465793,
+          "margin_avg": 0.46336056368189926,
+          "is_seen": false,
+          "is_virgin": false
+        },
+        {
+          "ID": 29633,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.9391888649466094,
+          "p_ens": 0.9262822131770058,
+          "margin_avg": 0.43273553906180756,
+          "is_seen": false,
+          "is_virgin": false
+        },
+        {
+          "ID": 3352,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.9380316173925454,
+          "p_ens": 0.9046639337599196,
+          "margin_avg": 0.4213477755762325,
+          "is_seen": false,
+          "is_virgin": false
+        },
+        {
+          "ID": 20534,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.9131060770882523,
+          "p_ens": 0.9198604957584695,
+          "margin_avg": 0.4164832864233609,
+          "is_seen": false,
+          "is_virgin": false
+        },
+        {
+          "ID": 14589,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.9230319030951745,
+          "p_ens": 0.9087424604031353,
+          "margin_avg": 0.4158871817491549,
+          "is_seen": false,
+          "is_virgin": false
+        },
+        {
+          "ID": 25905,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.9135767375936419,
+          "p_ens": 0.9029625452718373,
+          "margin_avg": 0.4082696414327396,
+          "is_seen": false,
+          "is_virgin": false
+        },
+        {
+          "ID": 12877,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.8792131109063797,
+          "p_ens": 0.9355311707676397,
+          "margin_avg": 0.4073721408370097,
+          "is_seen": false,
+          "is_virgin": false
+        },
+        {
+          "ID": 25869,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.842710153991067,
+          "p_ens": 0.9574676989064879,
+          "margin_avg": 0.4000889264487774,
+          "is_seen": false,
+          "is_virgin": false
+        },
+        {
+          "ID": 20085,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.03289915878272272,
+          "p_ens": 0.18227748524777368,
+          "margin_avg": 0.39241167798475185,
+          "is_seen": false,
+          "is_virgin": false
+        },
+        {
+          "ID": 27674,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.9169639428507445,
+          "p_ens": 0.8621202808400419,
+          "margin_avg": 0.38954211184539317,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 27123,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.9244991231850906,
+          "p_ens": 0.8527363584309834,
+          "margin_avg": 0.388617740808037,
+          "is_seen": false,
+          "is_virgin": false
+        },
+        {
+          "ID": 25753,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.8899677021668665,
+          "p_ens": 0.8848697772773186,
+          "margin_avg": 0.38741873972209256,
+          "is_seen": false,
+          "is_virgin": false
+        },
+        {
+          "ID": 21490,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.06752869605888255,
+          "p_ens": 0.18404098563186252,
+          "margin_avg": 0.37421515915462744,
+          "is_seen": false,
+          "is_virgin": false
+        },
+        {
+          "ID": 23528,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.1228385193713443,
+          "p_ens": 0.12933285050622667,
+          "margin_avg": 0.37391431506121453,
+          "is_seen": false,
+          "is_virgin": false
+        }
+      ]
+    },
+    "Sonda_B_model_contrast_seen15": {
+      "file": "probe_sonda_b_model_contrast_seen15_on_d1d2.csv",
+      "sha256_lf": "265198cc60cbd0a7d9ba48f27a963051fb8edb1d84a57d9a7cfb50ac4c5b987d",
+      "flips_vs_d1d2": 15,
+      "flipped_ids": [
+        18592,
+        16554,
+        26770,
+        12786,
+        2709,
+        11122,
+        1343,
+        22549,
+        22286,
+        26314,
+        15977,
+        7968,
+        22031,
+        16753,
+        29896
+      ],
+      "seen_sellers_count": 15,
+      "new_sellers_count": 0,
+      "virgin_ids_count": 0,
+      "historical_ledger_overlap_count": 15,
+      "mean_margin": 0.43336315621330945,
+      "min_margin": 0.4035993945352798,
+      "max_margin": 0.47498834450829325,
+      "items": [
+        {
+          "ID": 18592,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.00235876492756974,
+          "p_ens": 0.04766454605584375,
+          "margin_avg": 0.47498834450829325,
+          "is_seen": true,
+          "is_virgin": false
+        },
+        {
+          "ID": 16554,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.012555118865021198,
+          "p_ens": 0.056125519699442086,
+          "margin_avg": 0.46565968071776837,
+          "is_seen": true,
+          "is_virgin": false
+        },
+        {
+          "ID": 26770,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.9191526862045196,
+          "p_ens": 0.9827025278075215,
+          "margin_avg": 0.4509276070060206,
+          "is_seen": true,
+          "is_virgin": false
+        },
+        {
+          "ID": 12786,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.004636190685678918,
+          "p_ens": 0.09901255454775035,
+          "margin_avg": 0.4481756273832853,
+          "is_seen": true,
+          "is_virgin": false
+        },
+        {
+          "ID": 2709,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.08498092938587118,
+          "p_ens": 0.03226634719408891,
+          "margin_avg": 0.4413763617100199,
+          "is_seen": true,
+          "is_virgin": false
+        },
+        {
+          "ID": 11122,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.03376183197715134,
+          "p_ens": 0.08550045037327572,
+          "margin_avg": 0.4403688588247865,
+          "is_seen": true,
+          "is_virgin": false
+        },
+        {
+          "ID": 1343,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.059622175752304725,
+          "p_ens": 0.06152177116989335,
+          "margin_avg": 0.439428026538901,
+          "is_seen": true,
+          "is_virgin": false
+        },
+        {
+          "ID": 22549,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.8795507177852083,
+          "p_ens": 0.9760874637045388,
+          "margin_avg": 0.42781909074487356,
+          "is_seen": true,
+          "is_virgin": false
+        },
+        {
+          "ID": 22286,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.10451058752563716,
+          "p_ens": 0.047540952740835495,
+          "margin_avg": 0.4239742298667637,
+          "is_seen": true,
+          "is_virgin": false
+        },
+        {
+          "ID": 26314,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.9649093505312074,
+          "p_ens": 0.880848035504207,
+          "margin_avg": 0.4228786930177072,
+          "is_seen": true,
+          "is_virgin": false
+        },
+        {
+          "ID": 15977,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.025546873173124516,
+          "p_ens": 0.12925722729160577,
+          "margin_avg": 0.4225979497676349,
+          "is_seen": true,
+          "is_virgin": false
+        },
+        {
+          "ID": 7968,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.9732511259005024,
+          "p_ens": 0.8615468159475098,
+          "margin_avg": 0.41739897092400613,
+          "is_seen": true,
+          "is_virgin": false
+        },
+        {
+          "ID": 22031,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.09509095601344307,
+          "p_ens": 0.07378786121865472,
+          "margin_avg": 0.4155605913839511,
+          "is_seen": true,
+          "is_virgin": false
+        },
+        {
+          "ID": 16753,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.05188518029150197,
+          "p_ens": 0.13672698716779785,
+          "margin_avg": 0.4056939162703501,
+          "is_seen": true,
+          "is_virgin": false
+        },
+        {
+          "ID": 29896,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.095054775677559,
+          "p_ens": 0.09774643525188145,
+          "margin_avg": 0.4035993945352798,
+          "is_seen": true,
+          "is_virgin": false
+        }
+      ]
+    },
+    "Sonda_C_virgin_orthogonal15": {
+      "file": "probe_sonda_c_virgin_orthogonal15_on_d1d2.csv",
+      "sha256_lf": "d30eabeabc98ca7757b35887ac9c090631c78a1ce758c80694588ef2fda17cf3",
+      "flips_vs_d1d2": 15,
+      "flipped_ids": [
+        5996,
+        12926,
+        24566,
+        4831,
+        22373,
+        20096,
+        23197,
+        13767,
+        28878,
+        27530,
+        23492,
+        27733,
+        14414,
+        24893,
+        5908
+      ],
+      "seen_sellers_count": 7,
+      "new_sellers_count": 8,
+      "virgin_ids_count": 15,
+      "historical_ledger_overlap_count": 0,
+      "mean_margin": 0.25420764201307505,
+      "min_margin": 0.2034995616316119,
+      "max_margin": 0.3123287684572985,
+      "items": [
+        {
+          "ID": 5996,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.05789101160955482,
+          "p_ens": 0.31745145147584813,
+          "margin_avg": 0.3123287684572985,
+          "is_seen": true,
+          "is_virgin": true
+        },
+        {
+          "ID": 12926,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.1315288314225111,
+          "p_ens": 0.29454199496560246,
+          "margin_avg": 0.2869645868059432,
+          "is_seen": true,
+          "is_virgin": true
+        },
+        {
+          "ID": 24566,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.089786411934686,
+          "p_ens": 0.3564280254758601,
+          "margin_avg": 0.27689278129472694,
+          "is_seen": true,
+          "is_virgin": true
+        },
+        {
+          "ID": 4831,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.18339771640507327,
+          "p_ens": 0.2883797477729668,
+          "margin_avg": 0.26411126791097994,
+          "is_seen": true,
+          "is_virgin": true
+        },
+        {
+          "ID": 22373,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.08274530621414831,
+          "p_ens": 0.44114336240601176,
+          "margin_avg": 0.23805566568991995,
+          "is_seen": true,
+          "is_virgin": true
+        },
+        {
+          "ID": 20096,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.21252949258561285,
+          "p_ens": 0.3487812716861719,
+          "margin_avg": 0.21934461786410764,
+          "is_seen": true,
+          "is_virgin": true
+        },
+        {
+          "ID": 23197,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.201632939648239,
+          "p_ens": 0.381961184626879,
+          "margin_avg": 0.20820293786244098,
+          "is_seen": true,
+          "is_virgin": true
+        },
+        {
+          "ID": 13767,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.1806334092719701,
+          "p_ens": 0.20763525568737856,
+          "margin_avg": 0.3058656675203256,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 28878,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.7468161861345086,
+          "p_ens": 0.8405811148080415,
+          "margin_avg": 0.2936986504712751,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 27530,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.8585886161182769,
+          "p_ens": 0.7270025551305845,
+          "margin_avg": 0.2927955856244307,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 23492,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.27091607788820826,
+          "p_ens": 0.22295184525729211,
+          "margin_avg": 0.25306603842724984,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 27733,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.7563396507941067,
+          "p_ens": 0.6993428089439784,
+          "margin_avg": 0.22784122986904254,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 14414,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.1337797277398829,
+          "p_ens": 0.421878668845619,
+          "margin_avg": 0.22217080170724907,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 24893,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.2290252358556576,
+          "p_ens": 0.354421826025294,
+          "margin_avg": 0.2082764690595242,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 5908,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.31590099812592987,
+          "p_ens": 0.27709987861084634,
+          "margin_avg": 0.2034995616316119,
+          "is_seen": false,
+          "is_virgin": true
+        }
+      ]
+    },
+    "Sonda_D_virgin_new15": {
+      "file": "probe_sonda_d_virgin_new15_on_d1d2.csv",
+      "sha256_lf": "2097f2aee580e7476c945ffc557db48bfa3b35d1635c0cf6f57676eacc6d8d86",
+      "flips_vs_d1d2": 15,
+      "flipped_ids": [
+        8051,
+        29771,
+        22174,
+        26373,
+        26401,
+        14662,
+        28946,
+        11180,
+        17817,
+        15409,
+        16218,
+        14362,
+        23627,
+        25808,
+        29589
+      ],
+      "seen_sellers_count": 0,
+      "new_sellers_count": 15,
+      "virgin_ids_count": 15,
+      "historical_ledger_overlap_count": 0,
+      "mean_margin": 0.16705374421935607,
+      "min_margin": 0.13222200199774092,
+      "max_margin": 0.2031097112996687,
+      "items": [
+        {
+          "ID": 8051,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.1531844876696015,
+          "p_ens": 0.4405960897310611,
+          "margin_avg": 0.2031097112996687,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 29771,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.1724323499350105,
+          "p_ens": 0.4263877558920243,
+          "margin_avg": 0.2005899470864826,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 22174,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.33951164164465436,
+          "p_ens": 0.26112455396650397,
+          "margin_avg": 0.19968190219442083,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 26373,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.807891916753995,
+          "p_ens": 0.5685528092766516,
+          "margin_avg": 0.1882223630153233,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 26401,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.7960691240322351,
+          "p_ens": 0.567587613556555,
+          "margin_avg": 0.181828368794395,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 14662,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.32117635225985125,
+          "p_ens": 0.3182025444109598,
+          "margin_avg": 0.18031055166459448,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 28946,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.6186393511056357,
+          "p_ens": 0.7374275570274529,
+          "margin_avg": 0.1780334540665443,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 11180,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.34156606585420834,
+          "p_ens": 0.346405639384557,
+          "margin_avg": 0.15601414738061734,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 17817,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.22614339839303124,
+          "p_ens": 0.4635370970367335,
+          "margin_avg": 0.15515975228511764,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 15409,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.1943225223749853,
+          "p_ens": 0.49567036593227265,
+          "margin_avg": 0.15500355584637104,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 16218,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.250764727754715,
+          "p_ens": 0.45179915614626415,
+          "margin_avg": 0.14871805804951044,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 14362,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.4043535644882477,
+          "p_ens": 0.298612953756451,
+          "margin_avg": 0.14851674087765063,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 23627,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.5587797105531931,
+          "p_ens": 0.7319270778347959,
+          "margin_avg": 0.1453533941939945,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 25808,
+          "original": "used",
+          "proposed": "new",
+          "p_r200": 0.2466349343303153,
+          "p_ens": 0.48728063659386545,
+          "margin_avg": 0.13304221453790963,
+          "is_seen": false,
+          "is_virgin": true
+        },
+        {
+          "ID": 29589,
+          "original": "new",
+          "proposed": "used",
+          "p_r200": 0.5000198483972557,
+          "p_ens": 0.7644241555982262,
+          "margin_avg": 0.13222200199774092,
+          "is_seen": false,
+          "is_virgin": true
+        }
+      ]
+    }
+  },
+  "pairwise_overlap_matrix": {
+    "Sonda_A_high_score_new15": {
+      "Sonda_A_high_score_new15": 15,
+      "Sonda_B_model_contrast_seen15": 0,
+      "Sonda_C_virgin_orthogonal15": 0,
+      "Sonda_D_virgin_new15": 0
+    },
+    "Sonda_B_model_contrast_seen15": {
+      "Sonda_A_high_score_new15": 0,
+      "Sonda_B_model_contrast_seen15": 15,
+      "Sonda_C_virgin_orthogonal15": 0,
+      "Sonda_D_virgin_new15": 0
+    },
+    "Sonda_C_virgin_orthogonal15": {
+      "Sonda_A_high_score_new15": 0,
+      "Sonda_B_model_contrast_seen15": 0,
+      "Sonda_C_virgin_orthogonal15": 15,
+      "Sonda_D_virgin_new15": 0
+    },
+    "Sonda_D_virgin_new15": {
+      "Sonda_A_high_score_new15": 0,
+      "Sonda_B_model_contrast_seen15": 0,
+      "Sonda_C_virgin_orthogonal15": 0,
+      "Sonda_D_virgin_new15": 15
+    }
+  }
+}
