@@ -1,5 +1,6 @@
 """Full 70k refit from frozen test-like tune settings; no public score used."""
 import hashlib
+import os
 import json
 import zipfile
 from pathlib import Path
@@ -80,16 +81,18 @@ def main():
     pd.DataFrame({"ID":np.arange(1,len(test)+1),"item_id":[r["id"] for r in test],
                   "seller_id":[r["seller_id"] for r in test],"p_used":prob,
                   "p_text":p_text_te}).to_csv(probs,index=False)
-    baseline=Path(__file__).resolve().parents[1]/"submissions/candidate_d1_d2_combined_on48.csv"
-    ref=pd.read_csv(baseline).sort_values("ID")
-    assert np.array_equal(ref.ID.values,np.arange(1,30001))
-    flips=(ref.condition.to_numpy()!=pred)
+    baseline=Path(os.environ.get("AP_BASELINE", str(Path(__file__).resolve().parents[1]/"submissions/candidate_d1_d2_combined_on48.csv")))
+    flips=None
+    if baseline.exists():
+        ref=pd.read_csv(baseline).sort_values("ID")
+        assert np.array_equal(ref.ID.values,np.arange(1,30001))
+        flips=(ref.condition.to_numpy()!=pred)
     manifest={"train_zip_sha":hashlib.sha256(ZIP.read_bytes()).hexdigest(),
               "iterations":ITERATIONS,"threshold":THRESHOLD,"seed":SEED,
               "candidate_sha":hashlib.sha256(out.read_bytes()).hexdigest(),
               "prob_sha":hashlib.sha256(probs.read_bytes()).hexdigest(),
               "n_rows":len(test),"n_unique_test_item_id":len({r["id"] for r in test}),
-              "flips_vs_D1D2":int(flips.sum()),"test_seen_fraction":float(np.isin([str(r["seller_id"]) for r in test],sellers).mean())}
+              "flips_vs_D1D2":int(flips.sum()) if flips is not None else None,"test_seen_fraction":float(np.isin([str(r["seller_id"]) for r in test],sellers).mean())}
     (OUT/"refit_manifest.json").write_text(json.dumps(manifest,indent=2))
     print(json.dumps(manifest,indent=2),flush=True)
 
