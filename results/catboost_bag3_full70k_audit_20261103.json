@@ -1,0 +1,40 @@
+{
+  "n_test": 30000,
+  "n_seen": 21487,
+  "anchor_sha256": "57172f209ff5018d4ceef8c57172cc731828cc78eb9cb02dedccff4a51292502",
+  "probabilities_sha256": "2bf80cbc97000a2c4b81a58d55d8235e9d6afd05cb46ac14fda6eef22f1ba9bc",
+  "used_is_one": true,
+  "thresholds": {
+    "0.45": {
+      "bag_vs_anchor": 670,
+      "bag_vs_anchor_seen": 253,
+      "bag_vs_anchor_new": 417,
+      "bag_to_used": 438,
+      "bag_to_new": 232,
+      "bag_only_vs_single": 128,
+      "bag_only_anchor_matched_single": 55,
+      "bag_only_anchor_matched_bag": 73
+    },
+    "0.475": {
+      "bag_vs_anchor": 652,
+      "bag_vs_anchor_seen": 243,
+      "bag_vs_anchor_new": 409,
+      "bag_to_used": 383,
+      "bag_to_new": 269,
+      "bag_only_vs_single": 137,
+      "bag_only_anchor_matched_single": 58,
+      "bag_only_anchor_matched_bag": 79
+    },
+    "0.5": {
+      "bag_vs_anchor": 646,
+      "bag_vs_anchor_seen": 233,
+      "bag_vs_anchor_new": 413,
+      "bag_to_used": 334,
+      "bag_to_new": 312,
+      "bag_only_vs_single": 135,
+      "bag_only_anchor_matched_single": 58,
+      "bag_only_anchor_matched_bag": 77
+    }
+  },
+  "caveat": "Unlabeled test audit only; no accuracy or expected public gain can be inferred from disagreement counts."
+}
