@@ -76,20 +76,23 @@ def main():
     p_bag = prior.p_bag3.to_numpy()
     p_blend = .5 * p_lgb + .5 * p_bag
     p_single = prior.p_single.to_numpy()
+    seen = np.isin(sellers[confirm], sellers[fit])
+    p_new_gate = np.where(seen, p_bag, p_blend)
     probs = {"historical_single": p_single, "bag3": p_bag,
-             "lightgbm": p_lgb, "fixed_half_blend": p_blend}
+             "lightgbm": p_lgb, "fixed_half_blend": p_blend,
+             "new_seller_only_blend": p_new_gate}
     metrics = {name: {"accuracy05": float(np.mean((p >= .5) == y[confirm])),
                       "logloss": float(log_loss(y[confirm], p))}
                for name, p in probs.items()}
-    seen = np.isin(sellers[confirm], sellers[fit])
     pairs = pd.DataFrame({"item_id": ids[confirm], "seller_id": sellers[confirm],
                           "is_seen": seen.astype(int), "y_true": y[confirm],
                           "p_single": p_single, "p_bag3": p_bag,
-                          "p_lgb": p_lgb, "p_fixed_half_blend": p_blend})
+                          "p_lgb": p_lgb, "p_fixed_half_blend": p_blend,
+                          "p_new_seller_only_blend": p_new_gate})
     path = OUT / f"paired_{SEED}.csv"
     pairs.to_csv(path, index=False)
     reports = {}
-    for name in ("lightgbm", "fixed_half_blend"):
+    for name in ("lightgbm", "fixed_half_blend", "new_seller_only_blend"):
         delta = ((probs[name] >= .5) == y[confirm]).astype(int) - \
                 ((p_bag >= .5) == y[confirm]).astype(int)
         by = pairs.assign(delta=delta).groupby("seller_id").delta.sum().to_numpy()
