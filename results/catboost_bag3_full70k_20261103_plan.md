@@ -1,0 +1,3 @@
+# Refit 70k de bag3, plan predeclarado (2026-11-03)
+
+Validación previa de pesos fijos: seeds seller-group 20261124/25/26 dieron +28/+14/+6 frente a single y logloss menor en los tres. Se entrenará full 70k original con el mismo extractor histórico y TF-IDF/TE OOF por seller. CatBoost depth6, lr.07, l2=6, 900 iteraciones fijas (sin seleccionar por test), seeds 20261102/20262099/20263096, promedio igual de probabilidades. Generar solamente probabilidades test con ID original y hashes; ninguna etiqueta de test, ningún envío Kaggle. Umbral de análisis .475 (mediana de umbrales tune bag en los tres cortes), no calibrado aún para el refit 70k. Mapear discrepancias frente a D1+D2 y distinguir predicción exploratoria de evidencia pública.
