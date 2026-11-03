@@ -124,7 +124,13 @@ Con una meta fijada por Ariel de **0,95404** (+158 aciertos netos sobre $D_1+D_2
 
 ## 6. Próximos Pasos Inmediatos (Ciclo 2)
 
-1. **Generación de Predicciones Test 70k (Ciclo 1)**: Concluir la inferencia del modelo candidato sobre los 30.000 ítems de test, calcular el hash SHA-256 y persistir la auditoría de flips vs $D_1+D_2$.
+1. **Generación de Predicciones Test 70k (Ciclo 1) [COMPLETADO]**:
+   - Archivo generado: [`submissions/candidate_cycle1_multimodal_full70k.csv`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/submissions/candidate_cycle1_multimodal_full70k.csv)
+   - SHA-256: `ade679e6a1b8d883395be87d325d3cb8b080c790bf4998b733a1397b1cf4cf25`
+   - Vector de probabilidades crudas: [`results/cycle1_training/cycle1_test_probs.npy`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/cycle1_training/cycle1_test_probs.npy)
+   - Desacuerdos frente a $D_1+D_2$: **644 flips (2,15%)** (coincidencia de 97,85%).
+   - Desglose de flips: 382 en vendedores nuevos (59,3%), 262 en vendedores vistos (40,7%). 77 IDs vírgenes, 567 IDs tocados en intervenciones pasadas.
+   - Auditoría completa: [`results/cycle1_training/cycle1_test_audit_vs_d1d2.json`](file:///c:/Users/arira/OneDrive/Documents/GitHub/tp_ap/results/cycle1_training/cycle1_test_audit_vs_d1d2.json).
 2. **Lanzamiento de Ciclo 2 (LightGBM + Ensamble)**:
    - Entrenar LightGBM con target encoding bayesiano OOF de alta cardinalidad en vendedores y categorías.
    - Ensayar la combinación convexa óptima de probabilidades de CatBoost y LightGBM en el confirm split `20261109`.
