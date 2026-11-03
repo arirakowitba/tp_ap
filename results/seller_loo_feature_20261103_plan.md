@@ -1,0 +1,7 @@
+# Plan previo: historial vendedor como variable continua sin fuga propia — 2026-11-03 11:46 UTC
+
+Hipótesis: la base fuerte incluye seller_id categórico, pero su `te_seller_id` OOF se calcula con GroupKFold por vendedor, lo cual deja el valor constante en fit para esa columna y un historial variable en tune/confirm. Una señal de historial no lineal que el modelo pueda aprender podría aportar, aunque el override manual por historial vendedor perdió contra bases fuertes en round141. Este experimento añade **sólo una variable supervisada derivada de fit**, no aplica ninguna regla dura.
+
+Split predeclarado `split_testlike(sellers, 20261129)` sobre las 70k etiquetas originales. Misma matriz word+char LR OOF, CatBoost depth6 lr .07 l2=6, 900 iteraciones máximas, seller_id categórico. Baseline y candidato comparten fit/tune/confirm e hiperparámetros. En candidato, para cada fila de fit con vendedor s: `seller_loo=(sum_y_s-y_i+10*prior)/(count_s-1+10)`, `seller_hist_n=count_s-1`. Para tune/confirm: usar únicamente sum/count de fit, `(sum_y_s+10*prior)/(count_s+10)`; si s no aparece en fit, prior y n=0. No usar etiquetas de tune/confirm en las variables.
+
+Early stopping y umbrales (.44:.005:.56) elegidos sólo en tune. Reportar accuracy, logloss, fixes/breaks, seen/new, bootstrap vendedor, hashes y pares por ID contra baseline fuerte; también umbral fijo .5. Si no hay una ganancia clara, cerrar la línea sin refit ni CSV. Si hay señal positiva, replicar en otro seed predeclarado antes de promover. No Kaggle.
