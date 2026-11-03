@@ -25,9 +25,44 @@ from scripts.train_deep_text_20261101 import split_testlike
 from src.revision_submissions.deep_catboost_nbsvm_ablation_20261029 import extract_deep_features
 
 SEED = int(os.environ.get("AP_SEED", "20261130"))
+MODE = os.environ.get("AP_CONTEXT_MODE", "100k")
+assert MODE in ("100k", "fit")
 ZIP = Path(os.environ["AP_ZIP"])
-OUT = ROOT / "results/refit_context_transport"
+OUT = ROOT / ("results/refit_context_transport" if MODE == "100k" else
+              "results/inductive_aggregates")
 OUT.mkdir(parents=True, exist_ok=True)
+
+
+def fit_only_aggregates(base, cat, fit):
+    """Fit unsupervised maps on fit rows, then transform every row."""
+    out = base.copy()
+    for col in ("seller_id", "category_id", "city"):
+        counts = cat[col].iloc[fit].value_counts()
+        out[f"freq_{col}"] = cat[col].map(counts).fillna(1).to_numpy(np.float32)
+    seller = cat.seller_id
+    ncat = pd.DataFrame({"seller": seller.iloc[fit].to_numpy(),
+                         "category": cat.category_id.iloc[fit].to_numpy()})
+    ncat = ncat.groupby("seller").category.nunique()
+    out["seller_n_cats"] = seller.map(ncat).fillna(0).to_numpy(np.float32)
+    sources = {"seller_mean_logprice": "log_price",
+               "seller_mean_init_q": "sold_ratio",
+               "sell_mean_w_null": "warranty_null",
+               "sell_mean_t_usado": "t_usado",
+               "sell_mean_t_nuevo": "t_nuevo",
+               "sell_mean_ship_free": "ship_free",
+               "sell_mean_auto_relist": "automatic_relist",
+               "sell_mean_n_pics": "n_pics"}
+    for dst, src in sources.items():
+        values = base[src].iloc[fit].to_numpy()
+        stats = pd.DataFrame({"seller": seller.iloc[fit].to_numpy(),
+                              "value": values}).groupby("seller").value.mean()
+        out[dst] = seller.map(stats).fillna(float(np.mean(values))).to_numpy(np.float32)
+    price = base.log_price.iloc[fit].to_numpy()
+    med = pd.DataFrame({"category": cat.category_id.iloc[fit].to_numpy(),
+                        "log_price": price}).groupby("category").log_price.median()
+    out["rel_price_cat"] = (base.log_price.to_numpy() -
+                            cat.category_id.map(med).fillna(float(np.median(price))).to_numpy())
+    return out
 
 
 def main():
@@ -42,9 +77,13 @@ def main():
     ids = np.array([str(r["id"]) for r in train])
     fit, tune, confirm = split_testlike(sellers, SEED)
     a70, cat70, titles70, _, combos70 = extract_deep_features(train)
-    a100, cat100, titles100, _, combos100 = extract_deep_features(train + test)
-    a100 = a100.iloc[:n].copy()
-    cat100 = cat100.iloc[:n].copy()
+    if MODE == "100k":
+        a100, cat100, titles100, _, combos100 = extract_deep_features(train + test)
+        a100 = a100.iloc[:n].copy()
+        cat100 = cat100.iloc[:n].copy()
+    else:
+        a100 = fit_only_aggregates(a70, cat70, fit)
+        cat100, titles100, combos100 = cat70, titles70, combos70
     assert titles70 == titles100[:n] and combos70 == combos100[:n]
     assert cat70.equals(cat100)
     changed = {}
@@ -108,7 +147,8 @@ def main():
     rng = np.random.default_rng(SEED)
     boot = np.array([by[rng.integers(0, len(by), len(by))].sum()
                      for _ in range(3000)])
-    report = {"seed": SEED, "fit_tune_confirm": [len(fit), len(tune), len(confirm)],
+    report = {"seed": SEED, "mode": MODE,
+              "fit_tune_confirm": [len(fit), len(tune), len(confirm)],
               "train_zip_sha256": hashlib.sha256(ZIP.read_bytes()).hexdigest(),
               "confirm_ids_sha256": hashlib.sha256(ids[confirm].astype("U").tobytes()).hexdigest(),
               "changed_unsupervised_features": changed,
