@@ -24,7 +24,7 @@ from scripts.ablate_attr_value_vs_historical_text import make_te, text_oof
 from scripts.train_deep_text_20261101 import split_testlike
 from src.revision_submissions.deep_catboost_nbsvm_ablation_20261029 import extract_deep_features
 
-SEED = 20261130
+SEED = int(os.environ.get("AP_SEED", "20261130"))
 ZIP = Path(os.environ["AP_ZIP"])
 OUT = ROOT / "results/refit_context_transport"
 OUT.mkdir(parents=True, exist_ok=True)
