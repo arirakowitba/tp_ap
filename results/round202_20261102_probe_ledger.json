@@ -1,0 +1,81 @@
+{
+  "date_art": "2026-11-02",
+  "score_source": "Ariel reported Kaggle public scores in chat; not fetched from Kaggle by Codex",
+  "base": {
+    "name": "submission_final_best_d1_d2_20261031.csv",
+    "score": 0.94652,
+    "sha256_lf": "57172f209ff5018d4ceef8c57172cc731828cc78eb9cb02dedccff4a51292502"
+  },
+  "public_n_assumption": 20998,
+  "submissions": [
+    {
+      "name": "probe_sonda_a_high_score_new15_on_d1d2.csv",
+      "score": 0.94633,
+      "sha256_lf": "9fd66852e712414cb21641e8836c9c7224372e2a6a756deea1d89ddbc8d5a3aa",
+      "row_count": 30000,
+      "flip_ids_vs_base": [
+        3352,
+        5122,
+        12877,
+        14589,
+        20085,
+        20534,
+        21490,
+        23528,
+        25656,
+        25753,
+        25869,
+        25905,
+        27123,
+        27674,
+        29633
+      ],
+      "net_correct_count_vs_base_if_n20998": -4
+    },
+    {
+      "name": "probe_a_consensus11_on_d1d2.csv",
+      "score": 0.94638,
+      "sha256_lf": "8653c421f925ae6a1ddd2768909ba60ff481f40e18a76665be2d4072440fa15a",
+      "row_count": 30000,
+      "flip_ids_vs_base": [
+        5122,
+        12877,
+        14589,
+        20085,
+        20534,
+        21490,
+        23528,
+        25656,
+        25753,
+        25905,
+        29633
+      ],
+      "net_correct_count_vs_base_if_n20998": -3
+    },
+    {
+      "name": "probe_global_split_a_strong5_on_d1d2.csv",
+      "score": 0.94652,
+      "sha256_lf": "dc7202de445079d5a0ceee36d39f9ddd9fc887880b4250068340dc720d2e8933",
+      "row_count": 30000,
+      "flip_ids_vs_base": [
+        12877,
+        14589,
+        25656,
+        25905,
+        29633
+      ],
+      "net_correct_count_vs_base_if_n20998": 0
+    },
+    {
+      "name": "probe_global_split_a_top2_on_d1d2.csv",
+      "score": 0.94652,
+      "sha256_lf": "b865b69c9b330a93805e8a1ebdeef33e0b55170aac8d998da8f76c4e42d3686e",
+      "row_count": 30000,
+      "flip_ids_vs_base": [
+        12877,
+        14589
+      ],
+      "net_correct_count_vs_base_if_n20998": 0
+    }
+  ]
+}
