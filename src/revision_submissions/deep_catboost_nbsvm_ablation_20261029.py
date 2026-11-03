@@ -542,7 +542,7 @@ def main():
     rows, ids, sellers, y_used = load_dataset()
     F_df, cat_df, titles, warranties, combos = extract_deep_features(rows)
     
-    seeds = [2026, 314159]
+    seeds = [int(s) for s in os.environ.get("AP_SEEDS", "2026,314159").split(",")]
     ablation_results = []
     
     for s in seeds:
