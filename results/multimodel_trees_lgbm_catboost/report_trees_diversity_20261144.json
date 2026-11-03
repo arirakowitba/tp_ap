@@ -1,0 +1,23 @@
+{
+  "experiment": "multimodel_trees_lgbm_catboost",
+  "split_seed": 20261144,
+  "n_confirm": 12264,
+  "best_w_lgb": 0.2,
+  "th_cb": 0.5250000000000001,
+  "th_lgb": 0.4900000000000001,
+  "th_ens": 0.5550000000000002,
+  "acc_cb": 0.9558871493803001,
+  "ll_cb": 0.12079524286021172,
+  "acc_lgb": 0.9502609262883236,
+  "ll_lgb": 0.13071322054495044,
+  "acc_ens": 0.95662100456621,
+  "ll_ens": 0.11916856401473865,
+  "delta_hits": 9,
+  "fixes": 36,
+  "breaks": 27,
+  "discrepancies": 63,
+  "net_seen": 7,
+  "net_new": 2,
+  "ci_95_low": -7.0,
+  "ci_95_high": 25.0
+}
