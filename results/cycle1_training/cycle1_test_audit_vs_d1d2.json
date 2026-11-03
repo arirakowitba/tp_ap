@@ -1,0 +1,174 @@
+{
+  "candidate_file": "submissions\\candidate_cycle1_multimodal_full70k.csv",
+  "sha256": "ade679e6a1b8d883395be87d325d3cb8b080c790bf4998b733a1397b1cf4cf25",
+  "n_test": 30000,
+  "n_flips_vs_d1d2": 644,
+  "flip_rate": 0.0215,
+  "flips_seen_sellers": 262,
+  "flips_new_sellers": 382,
+  "flips_virgin_history": 77,
+  "flips_touched_history": 567,
+  "tune_threshold": 0.42,
+  "sample_flips_first_20": [
+    {
+      "ID": 119,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.5361,
+      "seller_seen": true,
+      "virgin_history": true
+    },
+    {
+      "ID": 148,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.4323,
+      "seller_seen": false,
+      "virgin_history": false
+    },
+    {
+      "ID": 161,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.5216,
+      "seller_seen": true,
+      "virgin_history": false
+    },
+    {
+      "ID": 256,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.4378,
+      "seller_seen": true,
+      "virgin_history": false
+    },
+    {
+      "ID": 257,
+      "d1d2_pred": "used",
+      "candidate_pred": "new",
+      "prob_used": 0.3303,
+      "seller_seen": false,
+      "virgin_history": false
+    },
+    {
+      "ID": 312,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.4349,
+      "seller_seen": true,
+      "virgin_history": false
+    },
+    {
+      "ID": 361,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.4321,
+      "seller_seen": false,
+      "virgin_history": false
+    },
+    {
+      "ID": 439,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.6972,
+      "seller_seen": false,
+      "virgin_history": false
+    },
+    {
+      "ID": 449,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.6071,
+      "seller_seen": false,
+      "virgin_history": false
+    },
+    {
+      "ID": 452,
+      "d1d2_pred": "used",
+      "candidate_pred": "new",
+      "prob_used": 0.3627,
+      "seller_seen": false,
+      "virgin_history": false
+    },
+    {
+      "ID": 460,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.4383,
+      "seller_seen": true,
+      "virgin_history": false
+    },
+    {
+      "ID": 521,
+      "d1d2_pred": "used",
+      "candidate_pred": "new",
+      "prob_used": 0.3093,
+      "seller_seen": false,
+      "virgin_history": false
+    },
+    {
+      "ID": 552,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.5604,
+      "seller_seen": false,
+      "virgin_history": false
+    },
+    {
+      "ID": 558,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.5023,
+      "seller_seen": false,
+      "virgin_history": false
+    },
+    {
+      "ID": 686,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.4277,
+      "seller_seen": true,
+      "virgin_history": false
+    },
+    {
+      "ID": 767,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.5749,
+      "seller_seen": false,
+      "virgin_history": false
+    },
+    {
+      "ID": 771,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.6069,
+      "seller_seen": false,
+      "virgin_history": false
+    },
+    {
+      "ID": 774,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.4291,
+      "seller_seen": false,
+      "virgin_history": false
+    },
+    {
+      "ID": 815,
+      "d1d2_pred": "new",
+      "candidate_pred": "used",
+      "prob_used": 0.5133,
+      "seller_seen": true,
+      "virgin_history": false
+    },
+    {
+      "ID": 887,
+      "d1d2_pred": "used",
+      "candidate_pred": "new",
+      "prob_used": 0.1504,
+      "seller_seen": true,
+      "virgin_history": false
+    }
+  ]
+}
