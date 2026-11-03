@@ -1,0 +1,7 @@
+# Category-conditioned text interaction — predeclared validation
+
+The current strong baseline feeds CatBoost one global word+char TF-IDF OOF probability and raw category ID. It cannot directly learn every category-specific word meaning from one scalar. Test a complementary, regularized linear model on category-prefixed word unigrams/bigrams from title, warranty and attribute IDs. This is distinct from Antigravity's planned enriched attribute-value text model.
+
+Use original 70k labeled train rows; `used=1`. Predeclare seller-group seeds 20261136 and 20261137. For each split, fit global word+char TF-IDF on fit only and generate grouped OOF fit probabilities plus fit-trained tune/confirm probabilities. Build category-prefixed word 1–2 grams with a 2^18 dimensional nonnegative hashing vectorizer, then fit TF-IDF IDF on fit only, grouped OOF logistic regression C=1.0, and fit-trained tune/confirm probabilities. Compare identical strong CatBoost specifications with and without the added `txt_category_word_p` column. Select early stopping and thresholds only on tune. Evaluate confirm once per seed. Report paired accuracy, logloss, fixes/breaks, seen/new, seller bootstrap, unique-ID dedup, hashes and private per-ID pairs. No public submission without broad, consistent gain.
+
+Input ZIP SHA-256 `3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886`. Code: `scripts/ablate_category_text_interaction_20261103.py`.

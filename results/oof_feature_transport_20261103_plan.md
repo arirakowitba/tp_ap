@@ -1,0 +1,7 @@
+# OOF feature transport to inference — predeclared plan
+
+The historical strong CatBoost receives supervised text probability and target encodings as out-of-fold features on its fit rows. For tune/confirm (and full refit test), current code uses a full-fit linear text model and full-fit TE maps, which have more training labels than each OOF feature generator. This may create a feature-distribution mismatch. Test an inference arm that averages the four GroupKFold fit-submodel probabilities and TE maps for tune/confirm, matching the OOF generator's per-model fit size. The fit-row features remain **identical** between arms.
+
+Use original 70k labeled train, `used=1`; predeclare fresh seller-group seeds 20261139 and 20261140. Common extraction of 101 structural features on 70k, common word(1,2)+char_wb(3,5) TF-IDF fitted on fit, four GroupKFold seller OOF models, and common CatBoost depth6/900 LR.07/l2=6 specification. Arm A uses full-fit text LR and full-fit TE for tune/confirm; arm B uses mean of the four fold LR and TE maps. Each arm independently selects early stopping and threshold on tune, then evaluates confirm once. Also report a common .500 threshold, paired accuracy, logloss, fixes/breaks, seen/new, seller bootstrap, hashes and private per-ID pairs. Deduplicate overlapping confirm IDs for pooled interpretation. No public CSV without broad, replicated gain against strong baseline and bag3.
+
+Code: `scripts/ablate_oof_feature_transport_20261103.py`. Original ZIP SHA-256 `3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886`.
