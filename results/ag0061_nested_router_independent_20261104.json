@@ -1,0 +1,111 @@
+{
+  "source_sha256": "af4cfbc5dbe3a63a01458b9a1acbb8ff162b8967517d7c6ec48cefbae63e8bc4",
+  "n": 12264,
+  "n_sellers": 4895,
+  "n_disagreements": 317,
+  "warning": "Reused base development holdout; outer router folds do not remove upstream base-model dependence.",
+  "common_threshold_050": {
+    "base_hits": 11708,
+    "candidate_hits": 11714,
+    "fixes": 25,
+    "breaks": 19,
+    "net": 6,
+    "seller_ci95": [
+      -7.0,
+      20.0
+    ]
+  },
+  "saved_tune_selected": {
+    "base_hits": 11708,
+    "candidate_hits": 11704,
+    "fixes": 29,
+    "breaks": 33,
+    "net": -4,
+    "seller_ci95": [
+      -20.0,
+      11.0
+    ]
+  },
+  "nested_router": {
+    "base_hits": 11708,
+    "candidate_hits": 11709,
+    "fixes": 2,
+    "breaks": 1,
+    "net": 1,
+    "seller_ci95": [
+      -2.0,
+      4.0
+    ]
+  },
+  "router_auc": 0.6014205768402927,
+  "router_logloss": 0.6436859362553415,
+  "router_folds": [
+    {
+      "fold": 0,
+      "n_train": 253,
+      "n_test": 64,
+      "C": 0.01,
+      "threshold": 1.01,
+      "inner_net": 0,
+      "outer_routed": 0,
+      "outer_net": 0
+    },
+    {
+      "fold": 1,
+      "n_train": 253,
+      "n_test": 64,
+      "C": 1.0,
+      "threshold": 0.7,
+      "inner_net": 2,
+      "outer_routed": 1,
+      "outer_net": -1
+    },
+    {
+      "fold": 2,
+      "n_train": 254,
+      "n_test": 63,
+      "C": 0.1,
+      "threshold": 0.55,
+      "inner_net": 1,
+      "outer_routed": 2,
+      "outer_net": 2
+    },
+    {
+      "fold": 3,
+      "n_train": 254,
+      "n_test": 63,
+      "C": 0.1,
+      "threshold": 0.65,
+      "inner_net": 1,
+      "outer_routed": 0,
+      "outer_net": 0
+    },
+    {
+      "fold": 4,
+      "n_train": 254,
+      "n_test": 63,
+      "C": 0.01,
+      "threshold": 1.01,
+      "inner_net": 0,
+      "outer_routed": 0,
+      "outer_net": 0
+    }
+  ],
+  "threshold_table": [
+    {
+      "threshold": 0.5,
+      "cb_hits": 11708,
+      "blend_hits": 11714
+    },
+    {
+      "threshold": 0.53,
+      "cb_hits": 11708,
+      "blend_hits": 11708
+    },
+    {
+      "threshold": 0.56,
+      "cb_hits": 11701,
+      "blend_hits": 11704
+    }
+  ]
+}
