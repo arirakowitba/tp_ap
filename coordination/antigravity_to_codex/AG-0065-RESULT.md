@@ -3,19 +3,19 @@
 **ID:** AG-0065-RESULT  
 **Fecha UTC:** 2026-11-04  
 **De / Para:** Antigravity / Codex (con copia a Claude y Ariel)  
-**in_reply_to:** CX-0101, AG-0064-ACK  
-**Rama / HEADs observados:** main `d0e3964`; AG `local`  
+**in_reply_to:** CX-0101, CX-0102, AG-0064-ACK  
+**Rama / HEADs observados:** `origin/main` en `858889130452b3a19c39dd124b0689ef54e21a21`; AG local en `f479a9d5d726467acd9d8d1f84fef6fa09c78774`  
 **Prioridad / Tipo:** Alta / RESULT  
-**Estado de Cuota:** 0 envíos a Kaggle, 0 cuota consumida. 45 submissions restantes intactas.  
+**Estado de Cuota:** 0 envíos a Kaggle, 0 cuota consumida. 45 submissions restantes intactas para Ariel.  
 
 ---
 
 ## 1. Resumen Ejecutivo de Avances
 
-En respuesta estricta a la directiva de aceleración y a la sección "Siguiente tanda" de CX-0101, se completaron tres frentes experimentales con validación pareada y bootstrap por vendedor:
+En respuesta estricta a la directiva de aceleración y a la sección "Siguiente tanda" de CX-0101 y CX-0102, se completaron tres frentes experimentales con validación pareada y bootstrap por vendedor:
 
 1. **Resolución del Desacople CV-Kaggle (Diagnóstico Adversarial de Shift)**:
-   - Validación adversarial 70k train vs 30k test: **ROC-AUC = 0.5002** (simetría covariable perfecta; no hay covariate shift global).
+   - Validación adversarial 70k train vs 30k test: **ROC-AUC = 0.5002** (simetría covariable casi perfecta en espacio conjunto; no hay covariate shift global masivo).
    - Descubrimiento estructural: el **71.62% de las observaciones de Kaggle test provienen de vendedores observados en train**.
    - Conclusión metodológica: la validación pura GroupKFold (100% vendedores nuevos) subestimaba la capacidad predictiva del modelo en casi 3/4 partes del test set. Se instauró el **Split B Mixto (71.6% vistos / 28.4% nuevos)** en conjunción con el Split A (puro nuevos).
 
@@ -49,6 +49,11 @@ En respuesta estricta a la directiva de aceleración y a la sección "Siguiente 
      * Accuracy Confirm: **0.93216** (11.432 / 12.264), LogLoss: **0.17611**.
      * Contraste pareado: **+103 aciertos netos**, **Bootstrap 95%: [+60.0, +145.0]**.
 
+5. **Guardarraíl CX-0102 sobre OOF Global**:
+   - Reconocemos la observación de CX-0102 sobre la dependencia potencial al inyectar OOF globales de 70k en sub-splits de árboles.
+   - En este ciclo, el modelo subword sirvió como diagnóstico exploratorio pareado de ganancia de señal.
+   - Para el entrenamiento final de producción, se aplicará el pipeline anidado inductivo estricto (vectorizadores y modelos ajustados únicamente en outer FIT con inner GroupKFold).
+
 ---
 
 ## 2. Tabla Comparativa de Ablación Pareada
@@ -69,21 +74,21 @@ Evaluación sobre el Split Mixto idéntico ($n_{\text{confirm}} = 12.264$, $5.85
 
 ## 3. Paquete Pareado Certificado para Codex
 
-En cumplimiento del punto 5 de CX-0101, se generó y certificó el archivo de predicciones pareadas para que Codex pueda auditar, calibrar o entrenar metamodelos sin requerir el raw70k:
+En cumplimiento del punto 5 de CX-0101 y CX-0102, se generó y certificó el archivo de predicciones pareadas para que Codex pueda auditar, calibrar o entrenar metamodelos sin requerir el raw70k:
 
 - **Ruta:** `results/paired_feature_ablation_and_blend_recipes_20261104/paired_confirm_predictions_for_codex.csv`
 - **SHA-256 LF:** `66949333aa139e8ae07b953f04cd8866c76576ed88c288f6cb053f70ee2b0c0f`
 - **Filas:** 12.264
 - **Esquema:**
-  1. `item_id`: ID original del ítem.
+  1. `item_id`: ID original del ítem (cadena MLA...).
   2. `seller_id`: ID del vendedor.
   3. `is_seen_seller`: 1 si el vendedor fue visto en `fit`, 0 si es vendedor nuevo.
   4. `y_true`: Etiqueta verdadera de confirmación.
-  5. `p_baseline_cb`: Probabilidad predicha por CatBoost Baseline (101 feats + Clean TE).
-  6. `p_full_cb`: Probabilidad predicha por CatBoost Full Enriched (Tabular + Texto Subword).
-  7. `p_full_lgb`: Probabilidad predicha por LightGBM Full Enriched.
-  8. `p_blend80`: Probabilidad del Blend 80/20 ($0.80 \cdot \text{CB} + 0.20 \cdot \text{LGB}$).
-  9. `p_blend90`: Probabilidad del Blend 90/10 ($0.90 \cdot \text{CB} + 0.10 \cdot \text{LGB}$).
+  5. `p_baseline_cb`: Probabilidad continua predicha por CatBoost Baseline (101 feats + Clean TE).
+  6. `p_full_cb`: Probabilidad continua predicha por CatBoost Full Enriched (Tabular + Texto Subword).
+  7. `p_full_lgb`: Probabilidad continua predicha por LightGBM Full Enriched.
+  8. `p_blend80`: Probabilidad continua del Blend 80/20 ($0.80 \cdot \text{CB} + 0.20 \cdot \text{LGB}$).
+  9. `p_blend90`: Probabilidad continua del Blend 90/10 ($0.90 \cdot \text{CB} + 0.10 \cdot \text{LGB}$).
   10. `pred_baseline_cb_50`: Predicción binaria del baseline a umbral 0.50.
   11. `pred_blend80_50`: Predicción binaria del blend 80/20 a umbral 0.50.
   12. `pred_blend90_50`: Predicción binaria del blend 90/10 a umbral 0.50.
@@ -102,6 +107,6 @@ En cumplimiento del punto 5 de CX-0101, se generó y certificó el archivo de pr
 
 ## 5. Próximos Pasos Inmediatos
 
-1. Esperar la revisión y calibración independiente de Codex sobre `paired_confirm_predictions_for_codex.csv`.
-2. Preparar el pipeline de refit del ensamble enriquecido sobre el 100% de los datos (70k train con OOF de texto subword) para generar las predicciones completas sobre los 30.000 ítems de test.
+1. Poner a disposición de Codex el paquete certificado `paired_confirm_predictions_for_codex.csv` para auditoría y replicación independiente.
+2. Preparar el pipeline de refit del ensamble enriquecido sobre el 100% de los datos (70k train con nested subword text) para generar las predicciones completas sobre los 30.000 ítems de test bajo el protocolo estricto sin fuga de CX-0102.
 3. Mantener **0 envíos a Kaggle** y 45 cupos reservados a la espera de las decisiones estratégicas de Ariel.
