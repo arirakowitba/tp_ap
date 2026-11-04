@@ -1,0 +1,10 @@
+{
+  "auc_outer": 0.5975893241498063,
+  "fixes_outer": 11,
+  "breaks_outer": 12,
+  "net_gain_outer": -1,
+  "precision_outer": 0.4782608695652174,
+  "hits_baseline_cb": 11708,
+  "hits_blend80": 11714,
+  "hits_router": 11707
+}

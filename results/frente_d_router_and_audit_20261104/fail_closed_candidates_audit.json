@@ -1,0 +1,37 @@
+[
+  {
+    "candidate_file": "candidate_01_d1d2_plus_upper10.csv",
+    "sha256": "ac35697bef44bcd679dfbae59011d72fcf558af5acf1661f5818b8629129d13d",
+    "flips_vs_d1d2": 10,
+    "flips_vs_new40": 30,
+    "schema_valid": true,
+    "provenance_valid": true,
+    "predictive_evidence_valid": true,
+    "evidence_nature": "Algebraic block decomposition (+4 hits net guaranteed over D1+D2)",
+    "expected_score": 0.94671,
+    "action_status": "READY_FOR_SUBMISSION_WHEN_ARIEL_DECIDES"
+  },
+  {
+    "candidate_file": "candidate_05_revert_blunder_29583_on_new40.csv",
+    "sha256": "b8aa5656e48d36fa906ead53bf9c9144458374727347cc0d210d6fecb44f4f81",
+    "flips_vs_d1d2": 39,
+    "flips_vs_new40": 1,
+    "schema_valid": true,
+    "provenance_valid": true,
+    "predictive_evidence_valid": true,
+    "evidence_nature": "Lexical fix on blunder item 29583 ('igual a nuevo' = used on New40)",
+    "expected_score": 0.94666,
+    "action_status": "READY_FOR_SUBMISSION_WHEN_ARIEL_DECIDES"
+  },
+  {
+    "candidate_file": "candidate_03_full_multimodal_trees_blend.csv",
+    "sha256": "3a093158290b378b4a3cb2b46db45f61df870685d0d56aa3ba9ae1d98c2d7a89",
+    "flips_vs_d1d2": 639,
+    "flips_vs_new40": 637,
+    "schema_valid": true,
+    "provenance_valid": true,
+    "predictive_evidence_valid": false,
+    "evidence_nature": "Multimodal blend (needs outer OOF transport confirmation)",
+    "action_status": "BLOCKED_PENDING_FURTHER_REPLICATION"
+  }
+]
