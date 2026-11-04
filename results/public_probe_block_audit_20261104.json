@@ -1,0 +1,83 @@
+{
+  "n_public": 20998,
+  "rows": {
+    "base": {
+      "filename": "submission_final_best_d1_d2_20261031.csv",
+      "sha256": "57172f209ff5018d4ceef8c57172cc731828cc78eb9cb02dedccff4a51292502",
+      "score": 0.94652,
+      "public_hits": 19875,
+      "delta_hits_vs_base": 0,
+      "n_flips": 0,
+      "new_to_used": 0,
+      "used_to_new": 0
+    },
+    "all80": {
+      "filename": "submission_20261104_01_bag3_deep_new80.csv",
+      "sha256": "b9b4ab8c4842047bda1a62a794d02e8e93aa05b493a1d1dd6d3cbc910c1b2138",
+      "score": 0.94633,
+      "public_hits": 19871,
+      "delta_hits_vs_base": -4,
+      "n_flips": 80,
+      "new_to_used": 40,
+      "used_to_new": 40
+    },
+    "used40": {
+      "filename": "probe_20261104_02_split_to_used40_on_d1d2.csv",
+      "sha256": "46c25b9b61322e5464c2ad5ffe20d3e2f2bb42df90f3a6cabaad3f73f96aa947",
+      "score": 0.94623,
+      "public_hits": 19869,
+      "delta_hits_vs_base": -6,
+      "n_flips": 40,
+      "new_to_used": 40,
+      "used_to_new": 0
+    },
+    "new40": {
+      "filename": "submission_20261104_03_split_to_new40_on_d1d2.csv",
+      "sha256": "c9fe5b8381eb723c55ccb92d2210194c7e5021500e836522a37d521d2ca190df",
+      "score": 0.94661,
+      "public_hits": 19877,
+      "delta_hits_vs_base": 2,
+      "n_flips": 40,
+      "new_to_used": 0,
+      "used_to_new": 40
+    },
+    "low20": {
+      "filename": "probe_20261104_04_to_new_lowmargin20_on_d1d2.csv",
+      "sha256": "a1a58a733a06e40ff00c8047707eb58d2918e5480fe9951f7c13d485eb7fbb99",
+      "score": 0.94661,
+      "public_hits": 19877,
+      "delta_hits_vs_base": 2,
+      "n_flips": 20,
+      "new_to_used": 0,
+      "used_to_new": 20
+    },
+    "low10": {
+      "filename": "probe_20261104_05_to_new_lowmargin10_on_d1d2.csv",
+      "sha256": "e36a3866a42c89db15cc41626a3dad4d0a2ceac84c387b8a7e24e767f32b85a6",
+      "score": 0.94642,
+      "public_hits": 19873,
+      "delta_hits_vs_base": -2,
+      "n_flips": 10,
+      "new_to_used": 0,
+      "used_to_new": 10
+    }
+  },
+  "relations": {
+    "all80_is_disjoint_union_used40_new40": true,
+    "low20_subset_new40": true,
+    "low10_subset_low20": true,
+    "high20_size": 20,
+    "upper10_size": 10,
+    "aggregate_additivity": {
+      "used40_plus_new40_equals_all80": true,
+      "low10_plus_upper10_equals_low20": true
+    },
+    "derived_delta_hits": {
+      "high20": 0,
+      "upper10": 4
+    }
+  },
+  "best_public_score": 0.94661,
+  "gap_hits_to_095404": 156,
+  "warning": "Aggregate constraints only; no individual label inference."
+}
