@@ -1,8 +1,9 @@
 """Paired CatBoost native text / nested NB text on original70k.
 All vocabulary/supervised text fitting restricted to outer fit.
 """
-import argparse,gc,hashlib,json,time,zipfile
+import argparse,gc,hashlib,json,time,zipfile,sys
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import numpy as np,pandas as pd
 from scipy import sparse
 from sklearn.feature_extraction.text import HashingVectorizer
