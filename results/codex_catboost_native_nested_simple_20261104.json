@@ -1,0 +1,219 @@
+{
+  "seed": 20261104,
+  "pure": false,
+  "split_sizes": {
+    "fit": 44834,
+    "tune": 12542,
+    "confirm": 12624
+  },
+  "split_hashes": {
+    "fit": "0b15e2c6f97fe810fbdd4616274f813b19986c015a49dc38ba2b253467b1025d",
+    "tune": "d0bcf08902d3517f5f7d6c0543f7bc03fb12204faf6dd644734a542fbfcc4a2c",
+    "confirm": "ced0e88f1d8c26cc21e66f948c5c1a5a45cd0a47d37e9f508fb7ea3cc8288cd2"
+  },
+  "results_at_050": {
+    "cb_tabular": {
+      "accuracy": 0.9342522179974652,
+      "logloss": 0.16931061424990904,
+      "hits": 11794,
+      "net": 0,
+      "fixes": 0,
+      "breaks": 0,
+      "seller_ci95": [
+        0.0,
+        0.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 9000,
+          "accuracy": 0.957,
+          "net": 0
+        },
+        "new": {
+          "n": 3624,
+          "accuracy": 0.8777593818984547,
+          "net": 0
+        }
+      }
+    },
+    "cb_nested_nb": {
+      "accuracy": 0.9468472750316856,
+      "logloss": 0.14453202330321988,
+      "hits": 11953,
+      "net": 159,
+      "fixes": 255,
+      "breaks": 96,
+      "seller_ci95": [
+        111.0,
+        205.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 9000,
+          "accuracy": 0.9636666666666667,
+          "net": 60
+        },
+        "new": {
+          "n": 3624,
+          "accuracy": 0.9050772626931567,
+          "net": 99
+        }
+      }
+    },
+    "cb_native_text": {
+      "accuracy": 0.9428073510773131,
+      "logloss": 0.15451240834263338,
+      "hits": 11902,
+      "net": 108,
+      "fixes": 186,
+      "breaks": 78,
+      "seller_ci95": [
+        66.0,
+        149.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 9000,
+          "accuracy": 0.9623333333333334,
+          "net": 48
+        },
+        "new": {
+          "n": 3624,
+          "accuracy": 0.8943156732891833,
+          "net": 60
+        }
+      }
+    },
+    "lgb_nested_nb": {
+      "accuracy": 0.9328263624841572,
+      "logloss": 0.16935651756085401,
+      "hits": 11776,
+      "net": -18,
+      "fixes": 334,
+      "breaks": 352,
+      "seller_ci95": [
+        -81.0,
+        46.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 9000,
+          "accuracy": 0.9471111111111111,
+          "net": -89
+        },
+        "new": {
+          "n": 3624,
+          "accuracy": 0.8973509933774835,
+          "net": 71
+        }
+      }
+    },
+    "blend_native_nb": {
+      "accuracy": 0.9468472750316856,
+      "logloss": 0.14578741908260337,
+      "hits": 11953,
+      "net": 159,
+      "fixes": 223,
+      "breaks": 64,
+      "seller_ci95": [
+        114.97500000000001,
+        203.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 9000,
+          "accuracy": 0.9645555555555556,
+          "net": 68
+        },
+        "new": {
+          "n": 3624,
+          "accuracy": 0.9028697571743929,
+          "net": 91
+        }
+      }
+    },
+    "blend_cb_lgb80": {
+      "accuracy": 0.9466096324461344,
+      "logloss": 0.14407382616179862,
+      "hits": 11950,
+      "net": 156,
+      "fixes": 266,
+      "breaks": 110,
+      "seller_ci95": [
+        108.0,
+        204.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 9000,
+          "accuracy": 0.9633333333333334,
+          "net": 57
+        },
+        "new": {
+          "n": 3624,
+          "accuracy": 0.9050772626931567,
+          "net": 99
+        }
+      }
+    }
+  },
+  "tune_selected": {
+    "cb_tabular": {
+      "threshold": 0.5100000000000001,
+      "tune_accuracy": 0.9367724445861904,
+      "hits": 11791,
+      "net_vs_tuned_base": 0
+    },
+    "cb_nested_nb": {
+      "threshold": 0.5300000000000001,
+      "tune_accuracy": 0.943948333599107,
+      "hits": 11942,
+      "net_vs_tuned_base": 151
+    },
+    "cb_native_text": {
+      "threshold": 0.4700000000000001,
+      "tune_accuracy": 0.9443469940998246,
+      "hits": 11908,
+      "net_vs_tuned_base": 117
+    },
+    "lgb_nested_nb": {
+      "threshold": 0.4600000000000001,
+      "tune_accuracy": 0.9307925370754265,
+      "hits": 11784,
+      "net_vs_tuned_base": -7
+    },
+    "blend_native_nb": {
+      "threshold": 0.4900000000000001,
+      "tune_accuracy": 0.946101100302982,
+      "hits": 11956,
+      "net_vs_tuned_base": 165
+    },
+    "blend_cb_lgb80": {
+      "threshold": 0.4900000000000001,
+      "tune_accuracy": 0.9447456546005422,
+      "hits": 11949,
+      "net_vs_tuned_base": 158
+    }
+  },
+  "training": {
+    "cb_tabular": {
+      "best_iteration": 874,
+      "seconds": 69.33490324020386
+    },
+    "cb_nested_nb": {
+      "best_iteration": 854,
+      "seconds": 84.85340619087219
+    },
+    "cb_native_text": {
+      "best_iteration": 897,
+      "seconds": 223.65810537338257
+    },
+    "lgb_nested_nb": {
+      "best_iteration": 762,
+      "seconds": 28.71543860435486
+    }
+  },
+  "duration_seconds": 568.0642514228821,
+  "pairs_sha256": "ca6994461b65e5efa23991802098318d6fff8ae87abcc5b2ec3dd1c876820c16",
+  "limitation": "Reused development split. Native CatBoost text handled by library within fit. No end-to-end outer confirmation or public improvement demonstrated."
+}
