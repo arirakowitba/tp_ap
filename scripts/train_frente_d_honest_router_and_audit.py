@@ -170,17 +170,37 @@ def main():
     ref_d1d2 = df_d1d2.set_index("ID")["condition"].to_dict()
 
     # 3. Exact Mathematical Audit of upper10 = low20 \ low10
-    # From results/public_probe_block_audit_20261104.json:
-    # low20 has 20 flips to new on d1d2. low10 has 10 flips to new on d1d2.
-    # upper10 is the exact complement of 10 IDs.
-    upper10_ids = [4559, 4997, 6072, 6360, 6816, 8661, 14353, 14395, 28301, 28453]
-    low10_ids = [1753, 2455, 3135, 4184, 5993, 6247, 12361, 13349, 13637, 29583]
-    low20_ids = sorted(low10_ids + upper10_ids)
+    # Verified against results/public_probe_block_audit_20261104.json and master ledger:
+    p_master = ROOT / "results" / "forensic_ledger_20261104" / "submission_ledger_master_85vec.json"
+    with open(p_master, encoding="utf-8") as f:
+        master_json = json.load(f)
 
-    # Verify set equality
-    diff_set = set(low20_ids) - set(low10_ids)
-    assert diff_set == set(upper10_ids), "FAIL-CLOSED: Set subtraction low20 \\ low10 does not match upper10!"
-    print(f"Verified Algebra: low20 \\ low10 matches upper10 exactly ({len(upper10_ids)} IDs).")
+    entries_by_key = {str(e.get("key")): e for e in master_json["entries"]}
+    low20_entry = entries_by_key["20261104_04_low20"]
+    low10_entry = entries_by_key["20261104_05_low10"]
+    new40_entry = entries_by_key["20261104_03_new40"]
+
+    # Exact flips vs D1+D2
+    low20_flips_on_d1d2 = set(low20_entry["flipped_ids_vs_d1d2"])
+    low10_flips_on_d1d2 = set(low10_entry["flipped_ids_vs_d1d2"])
+    new40_flips_on_d1d2 = set(new40_entry["flipped_ids_vs_d1d2"])
+
+    assert len(low20_flips_on_d1d2) == 20, f"FAIL-CLOSED: Expected 20 flips for low20, got {len(low20_flips_on_d1d2)}"
+    assert len(low10_flips_on_d1d2) == 10, f"FAIL-CLOSED: Expected 10 flips for low10, got {len(low10_flips_on_d1d2)}"
+    assert len(new40_flips_on_d1d2) == 40, f"FAIL-CLOSED: Expected 40 flips for new40, got {len(new40_flips_on_d1d2)}"
+
+    # Verification of strict inclusion
+    assert low10_flips_on_d1d2.issubset(low20_flips_on_d1d2), "FAIL-CLOSED: low10 is not a subset of low20!"
+    assert low20_flips_on_d1d2.issubset(new40_flips_on_d1d2), "FAIL-CLOSED: low20 is not a subset of new40!"
+
+    upper10_flips_on_d1d2 = low20_flips_on_d1d2 - low10_flips_on_d1d2
+    assert len(upper10_flips_on_d1d2) == 10, f"FAIL-CLOSED: upper10 must have 10 IDs, got {len(upper10_flips_on_d1d2)}"
+    upper10_ids = sorted(list(upper10_flips_on_d1d2))
+    expected_upper10 = [4559, 4997, 6072, 6360, 6816, 8661, 14353, 14395, 28301, 28453]
+    assert upper10_ids == expected_upper10, f"FAIL-CLOSED: Derived upper10 {upper10_ids} != expected {expected_upper10}"
+
+    print(f"Verified Algebra: low10 subset of low20 subset of new40.")
+    print(f"Derived upper10 exact 10 IDs: {upper10_ids}")
 
     # 4. Generate & Certify Candidate 01: D1+D2 + upper10 -> new
     c1_preds = ref_d1d2.copy()
@@ -193,18 +213,10 @@ def main():
     sha_c1 = sha256_lf(file_c1)
 
     flips_c1_vs_d1d2 = sum(1 for i, c in c1_preds.items() if c != ref_d1d2.get(i))
+    assert flips_c1_vs_d1d2 == 10, f"FAIL-CLOSED: Candidate 01 must have exactly 10 flips vs D1+D2, got {flips_c1_vs_d1d2}"
     print(f"Candidate 01 Verified: SHA={sha_c1}, Flips vs D1+D2: {flips_c1_vs_d1d2} (Expected: 10)")
 
     # 5. Exact Reconstruction of New40 and Candidate 05
-    # Load new40 flipped IDs from master ledger (exactly 40 flips on top of D1+D2)
-    p_master = ROOT / "results" / "forensic_ledger_20261104" / "submission_ledger_master_85vec.json"
-    with open(p_master, encoding="utf-8") as f:
-        master_json = json.load(f)
-    new40_entry = next(e for e in master_json["entries"] if "new40" in str(e.get("key")))
-    new40_flips_on_d1d2 = set(new40_entry.get("flipped_ids_vs_d1d2", []))
-    assert len(new40_flips_on_d1d2) == 40, f"FAIL-CLOSED: new40 must have exactly 40 flips vs D1+D2, got {len(new40_flips_on_d1d2)}"
-
-    # Construct exact New40 vector
     new40_preds = ref_d1d2.copy()
     for i in new40_flips_on_d1d2:
         new40_preds[i] = "new"
@@ -214,6 +226,7 @@ def main():
     print(f"Reconstructed New40 Verified: Flips vs D1+D2: {flips_new40_vs_d1d2} (Expected: exactly 40)")
 
     # Candidate 05: Revert item 29583 ("Igual a nuevo" -> used) on top of New40
+    # Per CX-0101: Semantic hypothesis only. Do NOT promote or mark predictive_evidence_valid=True.
     c5_preds = new40_preds.copy()
     c5_preds[29583] = "used"
     df_c5 = pd.DataFrame({"ID": list(c5_preds.keys()), "condition": list(c5_preds.values())})
@@ -255,10 +268,10 @@ def main():
             "flips_vs_new40": flips_c5_vs_new40,
             "schema_valid": True,
             "provenance_valid": True,
-            "predictive_evidence_valid": True,
-            "evidence_nature": "Lexical fix on blunder item 29583 ('igual a nuevo' = used on New40)",
-            "expected_score": 0.94666,
-            "action_status": "READY_FOR_SUBMISSION_WHEN_ARIEL_DECIDES"
+            "predictive_evidence_valid": False,
+            "evidence_nature": "Lexical hypothesis on blunder item 29583 ('igual a nuevo' -> used; unverified public membership)",
+            "expected_score": None,
+            "action_status": "BLOCKED_UNVERIFIED_SEMANTIC_HYPOTHESIS"
         },
         {
             "candidate_file": "candidate_03_full_multimodal_trees_blend.csv",

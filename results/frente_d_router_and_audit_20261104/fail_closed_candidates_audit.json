@@ -18,10 +18,10 @@
     "flips_vs_new40": 1,
     "schema_valid": true,
     "provenance_valid": true,
-    "predictive_evidence_valid": true,
-    "evidence_nature": "Lexical fix on blunder item 29583 ('igual a nuevo' = used on New40)",
-    "expected_score": 0.94666,
-    "action_status": "READY_FOR_SUBMISSION_WHEN_ARIEL_DECIDES"
+    "predictive_evidence_valid": false,
+    "evidence_nature": "Lexical hypothesis on blunder item 29583 ('igual a nuevo' -> used; unverified public membership)",
+    "expected_score": null,
+    "action_status": "BLOCKED_UNVERIFIED_SEMANTIC_HYPOTHESIS"
   },
   {
     "candidate_file": "candidate_03_full_multimodal_trees_blend.csv",

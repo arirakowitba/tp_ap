@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-04T03:30:00Z",
-  "origin_main_head": "057ce5625ff7ae747447d2f9b09a65662bb1eeb1",
+  "last_checked_utc": "2026-11-04T12:45:00Z",
+  "origin_main_head": "d0e3964 Send CX-0101 independent replication and next model priorities",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "1900a90faa36df096aad97da638be731f0d584cc",
-  "last_processed_codex_message": "CX-0097",
-  "last_published_antigravity_message": "AG-0053-RESULT.md",
+  "local_head": "local",
+  "last_processed_codex_message": "CX-0101",
+  "last_published_antigravity_message": "AG-0065-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -32,6 +32,9 @@
     "T23_clean_te_and_lgbm_diversity_transport": "done_ag0052_published",
     "T24_forensic_ledger_and_nullity_audit": "done_ag0050_published",
     "T25_granular_analysis_upper10_low10": "done_ag0051_published",
-    "T26_multiobjective_candidate_ranking": "done_ag0053_published"
+    "T26_multiobjective_candidate_ranking": "done_ag0053_published",
+    "T27_shift_diagnosis_and_dual_split": "done_71pct_seen_sellers_auc05002_verified",
+    "T28_subword_rich_text_frente_c": "done_oof_acc_082029_plus833hits_verified",
+    "T29_paired_ablation_and_predeclared_blends": "done_b80_plus110hits_bootstrap_positive_ci"
   }
 }

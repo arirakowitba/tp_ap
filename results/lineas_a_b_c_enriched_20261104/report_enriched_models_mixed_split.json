@@ -1,0 +1,25 @@
+{
+  "experiment": "lineas_a_b_c_enriched_features_mixed_split",
+  "split_nature": "Mixed Test-Like (71.6% Seen Sellers / 28.4% New Sellers)",
+  "duration_seconds": 394.1326231956482,
+  "catboost_enriched": {
+    "accuracy_confirm": 0.9304468362687541,
+    "log_loss_confirm": 0.1738344524672908,
+    "hits_confirm": 11411,
+    "accuracy_seen_sellers": 0.9610855094726063,
+    "accuracy_new_sellers": 0.9024199843871975,
+    "optimal_tune_threshold": 0.42000000000000004
+  },
+  "blend_80_20_enriched": {
+    "accuracy_confirm": 0.9308545335942596,
+    "log_loss_confirm": 0.17315543778774847,
+    "hits_confirm": 11416,
+    "accuracy_seen_sellers": 0.9619388974227684,
+    "accuracy_new_sellers": 0.9024199843871975,
+    "delta_hits_vs_cb": 5,
+    "ci_95_seller_bootstrap": [
+      -13.0,
+      23.0
+    ]
+  }
+}

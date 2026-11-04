@@ -1,0 +1,79 @@
+{
+  "experiment": "frente_c_subword_rich_text_and_diagnostics",
+  "diagnostics": {
+    "train_size": 70000,
+    "test_size": 30000,
+    "class_prevalence": {
+      "used_count": 32412,
+      "new_count": 37588,
+      "used_ratio": 0.46302857142857146,
+      "new_ratio": 0.5369714285714285
+    },
+    "title_diagnostics": {
+      "empty_titles_train": 0,
+      "empty_titles_train_pct": 0.0,
+      "empty_titles_test": 0,
+      "char_length_mean_train": 45.38257142857143,
+      "char_length_median_train": 48.0,
+      "word_count_mean_train": 7.372571428571429,
+      "word_count_median_train": 8.0
+    },
+    "attributes_diagnostics": {
+      "has_attributes_train_pct": 12.382857142857143,
+      "has_attributes_test_pct": 12.523333333333333,
+      "attr_count_mean_train": 1.176057142857143,
+      "attr_count_mean_test": 1.2143666666666666,
+      "attr_count_max_train": 81
+    },
+    "warranty_diagnostics": {
+      "has_warranty_train_pct": 39.00714285714286,
+      "has_warranty_test_pct": 39.18,
+      "used_rate_with_warranty": 0.3801135323200879,
+      "used_rate_without_warranty": 0.5160557442323457,
+      "warranty_signal_ratio": 0.736574559179692
+    }
+  },
+  "fold_metrics": [
+    {
+      "fold": 1,
+      "accuracy": 0.8154285714285714,
+      "log_loss": 0.40562480798890577,
+      "roc_auc": 0.8958531808663994,
+      "duration_seconds": 27.248722076416016
+    },
+    {
+      "fold": 2,
+      "accuracy": 0.8380571428571428,
+      "log_loss": 0.3694195992689329,
+      "roc_auc": 0.9160131640110097,
+      "duration_seconds": 30.178257703781128
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.8141142857142857,
+      "log_loss": 0.419611674701082,
+      "roc_auc": 0.8885406515534267,
+      "duration_seconds": 29.13099479675293
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.8135428571428571,
+      "log_loss": 0.41301795297855437,
+      "roc_auc": 0.8918498738999736,
+      "duration_seconds": 31.193329572677612
+    }
+  ],
+  "overall_oof": {
+    "accuracy": 0.8202857142857143,
+    "log_loss": 0.4019185089526098,
+    "roc_auc": 0.8980085279428391,
+    "hits_70k": 57420
+  },
+  "baseline_sparse_word_comparison": {
+    "baseline_accuracy": 0.8083857142857143,
+    "baseline_log_loss": 0.42430185387053726,
+    "delta_hits_70k": 833,
+    "log_loss_reduction": 0.022383344917927483
+  },
+  "duration_total_seconds": 131.34941029548645
+}
