@@ -1,0 +1,92 @@
+[
+  {
+    "candidate_file": "candidate_01_d1d2_plus_upper10.csv",
+    "passed_all_checks": true,
+    "sha256": "ac35697bef44bcd679dfbae59011d72fcf558af5acf1661f5818b8629129d13d",
+    "rows": 30000,
+    "columns": [
+      "ID",
+      "condition"
+    ],
+    "used_count": 14100,
+    "new_count": 15900,
+    "flips_vs_d1d2": 10,
+    "flips_vs_new40": 10,
+    "flips_vs_s48": 10
+  },
+  {
+    "candidate_file": "candidate_02_informative_contrast_batch15.csv",
+    "passed_all_checks": true,
+    "sha256": "69e6e593d38e80281501e16162983c814f03a7d51ceba54125ee9acb140649ed",
+    "rows": 30000,
+    "columns": [
+      "ID",
+      "condition"
+    ],
+    "used_count": 14097,
+    "new_count": 15903,
+    "flips_vs_d1d2": 13,
+    "flips_vs_new40": 13,
+    "flips_vs_s48": 13
+  },
+  {
+    "candidate_file": "candidate_03_full_multimodal_trees_blend.csv",
+    "passed_all_checks": true,
+    "sha256": "3a093158290b378b4a3cb2b46db45f61df870685d0d56aa3ba9ae1d98c2d7a89",
+    "rows": 30000,
+    "columns": [
+      "ID",
+      "condition"
+    ],
+    "used_count": 13941,
+    "new_count": 16059,
+    "flips_vs_d1d2": 639,
+    "flips_vs_new40": 639,
+    "flips_vs_s48": 639
+  },
+  {
+    "candidate_file": "candidate_04a_crossed_hadamard_batchA.csv",
+    "passed_all_checks": true,
+    "sha256": "e7a2d02c0f54effba61639ece76d5420db07a9b13f90fb0cdaba6146d4730e3b",
+    "rows": 30000,
+    "columns": [
+      "ID",
+      "condition"
+    ],
+    "used_count": 14101,
+    "new_count": 15899,
+    "flips_vs_d1d2": 9,
+    "flips_vs_new40": 9,
+    "flips_vs_s48": 9
+  },
+  {
+    "candidate_file": "candidate_04b_crossed_hadamard_batchB.csv",
+    "passed_all_checks": true,
+    "sha256": "19af38fffeb90fbf2da1362246fb587085ca46906768476a31b79ab38714845a",
+    "rows": 30000,
+    "columns": [
+      "ID",
+      "condition"
+    ],
+    "used_count": 14103,
+    "new_count": 15897,
+    "flips_vs_d1d2": 7,
+    "flips_vs_new40": 7,
+    "flips_vs_s48": 7
+  },
+  {
+    "candidate_file": "candidate_05_revert_blunder_29583_on_new40.csv",
+    "passed_all_checks": true,
+    "sha256": "b8aa5656e48d36fa906ead53bf9c9144458374727347cc0d210d6fecb44f4f81",
+    "rows": 30000,
+    "columns": [
+      "ID",
+      "condition"
+    ],
+    "used_count": 14071,
+    "new_count": 15929,
+    "flips_vs_d1d2": 39,
+    "flips_vs_new40": 39,
+    "flips_vs_s48": 39
+  }
+]

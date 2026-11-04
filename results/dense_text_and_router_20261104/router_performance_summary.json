@@ -1,0 +1,85 @@
+{
+  "auc_router": 0.678590785907859,
+  "best_policy": {
+    "threshold": 0.45,
+    "routed_to_lgb": 93.0,
+    "fixes": 55.0,
+    "breaks": 38.0,
+    "net_gain": 17.0,
+    "precision": 0.5914
+  },
+  "threshold_sweep": [
+    {
+      "threshold": 0.3,
+      "routed_to_lgb": 271,
+      "fixes": 120,
+      "breaks": 151,
+      "net_gain": -31,
+      "precision": 0.4428
+    },
+    {
+      "threshold": 0.35,
+      "routed_to_lgb": 224,
+      "fixes": 108,
+      "breaks": 116,
+      "net_gain": -8,
+      "precision": 0.4821
+    },
+    {
+      "threshold": 0.4,
+      "routed_to_lgb": 160,
+      "fixes": 86,
+      "breaks": 74,
+      "net_gain": 12,
+      "precision": 0.5375
+    },
+    {
+      "threshold": 0.45,
+      "routed_to_lgb": 93,
+      "fixes": 55,
+      "breaks": 38,
+      "net_gain": 17,
+      "precision": 0.5914
+    },
+    {
+      "threshold": 0.5,
+      "routed_to_lgb": 38,
+      "fixes": 20,
+      "breaks": 18,
+      "net_gain": 2,
+      "precision": 0.5263
+    },
+    {
+      "threshold": 0.55,
+      "routed_to_lgb": 20,
+      "fixes": 12,
+      "breaks": 8,
+      "net_gain": 4,
+      "precision": 0.6
+    },
+    {
+      "threshold": 0.6,
+      "routed_to_lgb": 14,
+      "fixes": 9,
+      "breaks": 5,
+      "net_gain": 4,
+      "precision": 0.6429
+    },
+    {
+      "threshold": 0.65,
+      "routed_to_lgb": 12,
+      "fixes": 8,
+      "breaks": 4,
+      "net_gain": 4,
+      "precision": 0.6667
+    },
+    {
+      "threshold": 0.7,
+      "routed_to_lgb": 8,
+      "fixes": 7,
+      "breaks": 1,
+      "net_gain": 6,
+      "precision": 0.875
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "architecture": "TruncatedSVD(100) on Title + Structured Attributes TF-IDF",
+  "vocabulary_size": 80000,
+  "validation_strategy": "GroupKFold (4 folds) by seller",
+  "single_model_standalone": {
+    "logistic_regression_svd100": {
+      "acc": 0.9324,
+      "log_loss": 0.1742
+    },
+    "catboost_with_svd100": {
+      "acc": 0.9552,
+      "log_loss": 0.1201
+    }
+  },
+  "complementarity_with_catboost": {
+    "correlation_with_cb": 0.9721,
+    "information_gain": "Provides smooth continuous gradients in dense semantic latent space",
+    "blending_gain": "+13 to +15 hits on confirm set, -0.00148 LogLoss"
+  }
+}
