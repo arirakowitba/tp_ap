@@ -94,7 +94,10 @@ def main():
     tune_pairs.to_csv(out/"tune_pairs.csv",index=False)
     report={"seed":args.seed,"deep":args.deep,"pure":args.pure,"split_sizes":dict(zip(["fit","tune","confirm"],map(len,[fi,tu,co]))),
      "split_hashes":{n:digest(ids[ix]) for n,ix in [("fit",fi),("tune",tu),("confirm",co)]},
-     "results_at_050":res,"tune_selected":tuned,"training":metadata,"duration_seconds":time.time()-start,
+     "results_at_050":res,"tune_selected":tuned,
+     "incremental_vs_nested_nb":{name:metrics(y[co],probs[name],probs["cb_nested_nb"]>=.5,s[co],seen)
+          for name in ["cb_native_text","blend_native_nb","blend_cb_lgb80"]},
+     "source_zip_sha256":hashlib.sha256(Path(args.zip).read_bytes()).hexdigest(),"training":metadata,"duration_seconds":time.time()-start,
      "pairs_sha256":hashlib.sha256((out/"pairs.csv").read_bytes()).hexdigest(),
      "limitation":"Reused development split. Native CatBoost text handled by library within fit. No end-to-end outer confirmation or public improvement demonstrated."}
     (out/"report.json").write_text(json.dumps(report,indent=2)+"\n");print(json.dumps(report,indent=2),flush=True)
