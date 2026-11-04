@@ -1,0 +1,134 @@
+{
+  "source_sha256": "af4cfbc5dbe3a63a01458b9a1acbb8ff162b8967517d7c6ec48cefbae63e8bc4",
+  "n": 12264,
+  "sellers": 4895,
+  "method": "5 outer GroupKFold, fixed LR C=1, threshold=.5, no threshold search",
+  "limitation": "Development only. Upstream base models and this confirm have been repeatedly used; these folds do not make end-to-end nested OOF.",
+  "results": {
+    "raw_cb": {
+      "hits": 11708,
+      "accuracy": 0.9546640574037835,
+      "logloss": 0.12093697419238215,
+      "auc": 0.9901237435284518,
+      "fixes": 0,
+      "breaks": 0,
+      "net_vs_cb": 0,
+      "net_ci95": [
+        0.0,
+        0.0
+      ],
+      "logloss_delta_vs_cb": 0.0,
+      "logloss_delta_ci95": [
+        0.0,
+        0.0
+      ],
+      "fold_nets": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "raw_blend": {
+      "hits": 11714,
+      "accuracy": 0.9551532941943901,
+      "logloss": 0.11992078950221355,
+      "auc": 0.9904335544967432,
+      "fixes": 25,
+      "breaks": 19,
+      "net_vs_cb": 6,
+      "net_ci95": [
+        -7.0,
+        20.0
+      ],
+      "logloss_delta_vs_cb": -0.001016184690168605,
+      "logloss_delta_ci95": [
+        -0.002123542200785872,
+        -6.307402045651062e-06
+      ],
+      "fold_nets": [
+        2,
+        5,
+        1,
+        0,
+        -2
+      ]
+    },
+    "platt_cb": {
+      "hits": 11702,
+      "accuracy": 0.9541748206131768,
+      "logloss": 0.12095103629295158,
+      "auc": 0.9900747219602173,
+      "fixes": 2,
+      "breaks": 8,
+      "net_vs_cb": -6,
+      "net_ci95": [
+        -13.0,
+        0.0
+      ],
+      "logloss_delta_vs_cb": 1.4062100569412394e-05,
+      "logloss_delta_ci95": [
+        -0.0003384608782357758,
+        0.00040558898604781807
+      ],
+      "fold_nets": [
+        1,
+        -2,
+        1,
+        -1,
+        -5
+      ]
+    },
+    "platt_blend": {
+      "hits": 11713,
+      "accuracy": 0.955071754729289,
+      "logloss": 0.11944508517330954,
+      "auc": 0.9903910513277725,
+      "fixes": 26,
+      "breaks": 21,
+      "net_vs_cb": 5,
+      "net_ci95": [
+        -9.0,
+        20.0
+      ],
+      "logloss_delta_vs_cb": -0.0014918890190726136,
+      "logloss_delta_ci95": [
+        -0.002622238813406553,
+        -0.00042093622327700047
+      ],
+      "fold_nets": [
+        2,
+        5,
+        1,
+        0,
+        -3
+      ]
+    },
+    "stack_cb_lgb": {
+      "hits": 11704,
+      "accuracy": 0.954337899543379,
+      "logloss": 0.11911793250708845,
+      "auc": 0.9904854612580943,
+      "fixes": 42,
+      "breaks": 46,
+      "net_vs_cb": -4,
+      "net_ci95": [
+        -24.0,
+        16.0
+      ],
+      "logloss_delta_vs_cb": -0.0018190416852937041,
+      "logloss_delta_ci95": [
+        -0.0036082677513686314,
+        -0.0002671121881206348
+      ],
+      "fold_nets": [
+        -3,
+        2,
+        4,
+        -7,
+        0
+      ]
+    }
+  }
+}
