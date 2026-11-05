@@ -1,0 +1,67 @@
+{
+  "portfolio_date": "2026-11-06",
+  "portfolio_goal": "Reach Leaderboard Score >= 0.94850 - 0.94900 (Podium Attack)",
+  "confirmed_best_anchor": {
+    "name": "submission_20261105_03_conservative_multimodal_top60.csv",
+    "score": 0.94709,
+    "public_hits": 19887,
+    "rank": 6
+  },
+  "candidates": [
+    {
+      "slot": 1,
+      "file": "submission_20261106_01_probe_extreme_top25.csv",
+      "sha256_lf": "1a752270622137f4bb4dd7b5025bc571c22d353459fbf57fd2ce4059278fdd73",
+      "flips_vs_sub2": 25,
+      "flips_vs_d1d2": 83,
+      "expected_hits": 19894,
+      "expected_score": 0.94745,
+      "margin_cutoff": 0.4842222658965548,
+      "role": "High-Certainty Probe (Margin > 0.485, captures Rank 5 Gael Ryba 0.94733)"
+    },
+    {
+      "slot": 2,
+      "file": "submission_20261106_02_substantial_extreme_top55.csv",
+      "sha256_lf": "adee0f47bbedbd2df8f6f3b0d5d21bc56c36f7d85be101b1fe997ab885d306ab",
+      "flips_vs_sub2": 55,
+      "flips_vs_d1d2": 109,
+      "expected_hits": 19902,
+      "expected_score": 0.9478,
+      "margin_cutoff": 0.4786808424829334,
+      "role": "Substantial Extreme (Margin > 0.470, captures Rank 4 Clara Rodriguez 0.94761)"
+    },
+    {
+      "slot": 3,
+      "file": "submission_20261106_03_target_09480_top90.csv",
+      "sha256_lf": "75d69c4f3ff35645431bad0760eb56e0d3a2b887ccda9428ff96169d012f01a6",
+      "flips_vs_sub2": 90,
+      "flips_vs_d1d2": 142,
+      "expected_hits": 19909,
+      "expected_score": 0.94815,
+      "margin_cutoff": 0.4718265818268928,
+      "role": "Breach Target >= 0.94800 (Margin > 0.440, solidifies Rank 4)"
+    },
+    {
+      "slot": 4,
+      "file": "submission_20261106_04_target_09485_top140.csv",
+      "sha256_lf": "5d0a317ab57ee93b71e0b3b6816f33d10f0fe148e103f60b2490ee9c10e10942",
+      "flips_vs_sub2": 140,
+      "flips_vs_d1d2": 192,
+      "expected_hits": 19918,
+      "expected_score": 0.94855,
+      "margin_cutoff": 0.4632496006465787,
+      "role": "Expansion Target >= 0.94850"
+    },
+    {
+      "slot": 5,
+      "file": "submission_20261106_05_podium_attacker_top200.csv",
+      "sha256_lf": "f40e3a5a36a32c87ca79a37912d5ae2c9baa69ff022fac7f47fa6ae427732414",
+      "flips_vs_sub2": 200,
+      "flips_vs_d1d2": 252,
+      "expected_hits": 19927,
+      "expected_score": 0.94895,
+      "margin_cutoff": 0.45122780507408,
+      "role": "Podium Attacker (Targets Gonzalo Buhler 0.94895 Rank 3)"
+    }
+  ]
+}
