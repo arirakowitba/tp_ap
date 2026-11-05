@@ -1,0 +1,268 @@
+{
+  "seed": 20261107,
+  "baseline_name": "cb_nested_nb",
+  "deep": true,
+  "pure": true,
+  "split_sizes": {
+    "fit": 49631,
+    "tune": 9859,
+    "confirm": 10510
+  },
+  "split_hashes": {
+    "fit": "3f8bb12c86393aa9d04190c7a78f5972e3510552009111bcc83c3eea86cfee39",
+    "tune": "15ab8659332661728238f50c20ab296c53f1aeee665158fbb826d3056f5e2f42",
+    "confirm": "c20ee8c86ad0d0556d08807e6c53a29781b0f67b224e5ddfbd14b2ade3e95705"
+  },
+  "results_at_050": {
+    "cb_nested_nb": {
+      "accuracy": 0.9095147478591817,
+      "logloss": 0.23610858198401946,
+      "hits": 9559,
+      "net": 0,
+      "fixes": 0,
+      "breaks": 0,
+      "seller_ci95": [
+        0.0,
+        0.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 0,
+          "accuracy": null,
+          "net": 0
+        },
+        "new": {
+          "n": 10510,
+          "accuracy": 0.9095147478591817,
+          "net": 0
+        }
+      }
+    },
+    "cb_native_text": {
+      "accuracy": 0.9032350142721218,
+      "logloss": 0.2579500366417197,
+      "hits": 9493,
+      "net": -66,
+      "fixes": 225,
+      "breaks": 291,
+      "seller_ci95": [
+        -141.0,
+        0.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 0,
+          "accuracy": null,
+          "net": 0
+        },
+        "new": {
+          "n": 10510,
+          "accuracy": 0.9032350142721218,
+          "net": -66
+        }
+      }
+    },
+    "lgb_nested_nb": {
+      "accuracy": 0.9021883920076118,
+      "logloss": 0.25578312002836806,
+      "hits": 9482,
+      "net": -77,
+      "fixes": 154,
+      "breaks": 231,
+      "seller_ci95": [
+        -138.0,
+        -21.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 0,
+          "accuracy": null,
+          "net": 0
+        },
+        "new": {
+          "n": 10510,
+          "accuracy": 0.9021883920076118,
+          "net": -77
+        }
+      }
+    },
+    "blend_native_nb": {
+      "accuracy": 0.9122740247383444,
+      "logloss": 0.24041486512395938,
+      "hits": 9588,
+      "net": 29,
+      "fixes": 136,
+      "breaks": 107,
+      "seller_ci95": [
+        -3.0,
+        65.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 0,
+          "accuracy": null,
+          "net": 0
+        },
+        "new": {
+          "n": 10510,
+          "accuracy": 0.9122740247383444,
+          "net": 29
+        }
+      }
+    },
+    "blend_cb_lgb80": {
+      "accuracy": 0.9094196003805899,
+      "logloss": 0.23577989327923596,
+      "hits": 9558,
+      "net": -1,
+      "fixes": 40,
+      "breaks": 41,
+      "seller_ci95": [
+        -22.0,
+        20.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 0,
+          "accuracy": null,
+          "net": 0
+        },
+        "new": {
+          "n": 10510,
+          "accuracy": 0.9094196003805899,
+          "net": -1
+        }
+      }
+    }
+  },
+  "tune_selected": {
+    "cb_nested_nb": {
+      "threshold": 0.4600000000000001,
+      "tune_accuracy": 0.9111471751698955,
+      "hits": 9562,
+      "net_vs_tuned_base": 0
+    },
+    "cb_native_text": {
+      "threshold": 0.44000000000000006,
+      "tune_accuracy": 0.9066842478953241,
+      "hits": 9540,
+      "net_vs_tuned_base": -22
+    },
+    "lgb_nested_nb": {
+      "threshold": 0.4700000000000001,
+      "tune_accuracy": 0.9080028400446293,
+      "hits": 9497,
+      "net_vs_tuned_base": -65
+    },
+    "blend_native_nb": {
+      "threshold": 0.44000000000000006,
+      "tune_accuracy": 0.9124657673192007,
+      "hits": 9607,
+      "net_vs_tuned_base": 45
+    },
+    "blend_cb_lgb80": {
+      "threshold": 0.4700000000000001,
+      "tune_accuracy": 0.9121614768232073,
+      "hits": 9572,
+      "net_vs_tuned_base": 10
+    }
+  },
+  "incremental_vs_nested_nb": {
+    "cb_native_text": {
+      "accuracy": 0.9032350142721218,
+      "logloss": 0.2579500366417197,
+      "hits": 9493,
+      "net": -66,
+      "fixes": 225,
+      "breaks": 291,
+      "seller_ci95": [
+        -141.0,
+        0.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 0,
+          "accuracy": null,
+          "net": 0
+        },
+        "new": {
+          "n": 10510,
+          "accuracy": 0.9032350142721218,
+          "net": -66
+        }
+      }
+    },
+    "blend_native_nb": {
+      "accuracy": 0.9122740247383444,
+      "logloss": 0.24041486512395938,
+      "hits": 9588,
+      "net": 29,
+      "fixes": 136,
+      "breaks": 107,
+      "seller_ci95": [
+        -3.0,
+        65.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 0,
+          "accuracy": null,
+          "net": 0
+        },
+        "new": {
+          "n": 10510,
+          "accuracy": 0.9122740247383444,
+          "net": 29
+        }
+      }
+    },
+    "blend_cb_lgb80": {
+      "accuracy": 0.9094196003805899,
+      "logloss": 0.23577989327923596,
+      "hits": 9558,
+      "net": -1,
+      "fixes": 40,
+      "breaks": 41,
+      "seller_ci95": [
+        -22.0,
+        20.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 0,
+          "accuracy": null,
+          "net": 0
+        },
+        "new": {
+          "n": 10510,
+          "accuracy": 0.9094196003805899,
+          "net": -1
+        }
+      }
+    }
+  },
+  "frozen_policy": {
+    "blend_threshold": 0.51,
+    "nb_threshold": 0.53,
+    "blend_hits": 9570,
+    "nb_hits": 9540
+  },
+  "source_zip_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+  "training": {
+    "cb_nested_nb": {
+      "best_iteration": 842,
+      "seconds": 41.31081414222717
+    },
+    "cb_native_text": {
+      "best_iteration": 899,
+      "seconds": 145.90968823432922
+    },
+    "lgb_nested_nb": {
+      "best_iteration": 803,
+      "seconds": 6.060342311859131
+    }
+  },
+  "duration_seconds": 230.60805749893188,
+  "pairs_sha256": "c6ebac4dde79e45e70fac6d2493a7b3991276c8a7351a62282c9bd428b3612ab",
+  "limitation": "Reused development split. Native CatBoost text handled by library within fit. No end-to-end outer confirmation or public improvement demonstrated."
+}

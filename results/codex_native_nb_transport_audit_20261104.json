@@ -1,0 +1,166 @@
+{
+  "limitation": "Predeclared policies evaluated on development splits; repeated item overlap documented, no public-score projection.",
+  "cuts": {
+    "strong_deep_native_nested_results": {
+      "seed": 20261104,
+      "n": 12624,
+      "pure": false,
+      "n_seen": 9000,
+      "pair_sha256": "9b0ad0cd2a5ec7cffb1dba3b96dba3a4309b3e590131f6c80be0c0338a8af24f",
+      "native_nb_common50": {
+        "base_hits": 11998,
+        "candidate_hits": 12012,
+        "fixes": 59,
+        "breaks": 45,
+        "net": 14,
+        "seller_ci95": [
+          -7.0,
+          36.0
+        ],
+        "seen_net": 5,
+        "new_net": 9
+      },
+      "native_nb_frozen_thresholds": {
+        "base_hits": 11991,
+        "candidate_hits": 12016,
+        "fixes": 70,
+        "breaks": 45,
+        "net": 25,
+        "seller_ci95": [
+          3.0,
+          48.0
+        ],
+        "seen_net": 11,
+        "new_net": 14
+      },
+      "cb_lgb80_common50": {
+        "base_hits": 11998,
+        "candidate_hits": 12010,
+        "fixes": 35,
+        "breaks": 23,
+        "net": 12,
+        "seller_ci95": [
+          -3.0,
+          28.0
+        ],
+        "seen_net": 12,
+        "new_net": 0
+      }
+    },
+    "replicate_native_mixed_20261106": {
+      "seed": 20261106,
+      "n": 12177,
+      "pure": false,
+      "n_seen": 9000,
+      "pair_sha256": "d2ec31a6fc0097498775d4b3bcc60a932b44f64d8f5c849c66b5a95e0a64ca5d",
+      "native_nb_common50": {
+        "base_hits": 11550,
+        "candidate_hits": 11584,
+        "fixes": 80,
+        "breaks": 46,
+        "net": 34,
+        "seller_ci95": [
+          4.0,
+          74.0
+        ],
+        "seen_net": -1,
+        "new_net": 35
+      },
+      "native_nb_frozen_thresholds": {
+        "base_hits": 11550,
+        "candidate_hits": 11580,
+        "fixes": 81,
+        "breaks": 51,
+        "net": 30,
+        "seller_ci95": [
+          -2.0,
+          73.0
+        ],
+        "seen_net": -1,
+        "new_net": 31
+      },
+      "cb_lgb80_common50": {
+        "base_hits": 11550,
+        "candidate_hits": 11555,
+        "fixes": 35,
+        "breaks": 30,
+        "net": 5,
+        "seller_ci95": [
+          -12.0,
+          22.0
+        ],
+        "seen_net": -1,
+        "new_net": 6
+      }
+    },
+    "replicate_native_group_20261107": {
+      "seed": 20261107,
+      "n": 10510,
+      "pure": true,
+      "n_seen": 0,
+      "pair_sha256": "c6ebac4dde79e45e70fac6d2493a7b3991276c8a7351a62282c9bd428b3612ab",
+      "native_nb_common50": {
+        "base_hits": 9559,
+        "candidate_hits": 9588,
+        "fixes": 136,
+        "breaks": 107,
+        "net": 29,
+        "seller_ci95": [
+          -4.0,
+          65.0
+        ],
+        "seen_net": 0,
+        "new_net": 29
+      },
+      "native_nb_frozen_thresholds": {
+        "base_hits": 9540,
+        "candidate_hits": 9570,
+        "fixes": 133,
+        "breaks": 103,
+        "net": 30,
+        "seller_ci95": [
+          -1.0,
+          63.0
+        ],
+        "seen_net": 0,
+        "new_net": 30
+      },
+      "cb_lgb80_common50": {
+        "base_hits": 9559,
+        "candidate_hits": 9558,
+        "fixes": 40,
+        "breaks": 41,
+        "net": -1,
+        "seller_ci95": [
+          -22.0,
+          20.0
+        ],
+        "seen_net": 0,
+        "new_net": -1
+      }
+    }
+  },
+  "pairwise_overlap": [
+    {
+      "a": "strong_deep_native_nested_results",
+      "b": "replicate_native_mixed_20261106",
+      "n_common": 2678,
+      "fraction_a": 0.2121356147021546,
+      "fraction_b": 0.21992280528865896
+    },
+    {
+      "a": "strong_deep_native_nested_results",
+      "b": "replicate_native_group_20261107",
+      "n_common": 2012,
+      "fraction_a": 0.15937896070975918,
+      "fraction_b": 0.19143672692673644
+    },
+    {
+      "a": "replicate_native_mixed_20261106",
+      "b": "replicate_native_group_20261107",
+      "n_common": 1808,
+      "fraction_a": 0.14847663628151433,
+      "fraction_b": 0.17202664129400572
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "seed": 20261105,
+  "pure_seller_group": true,
+  "n_train": 70000,
+  "split_sizes": {
+    "fit": 48899,
+    "tune": 10894,
+    "confirm": 10207
+  },
+  "split_id_hashes": {
+    "fit": "0b3edb6cee5e2216111d49d2f9cb65c4926bf67b6504f3cd02a16bb18dd0e820",
+    "tune": "d2ea43b74b0a0d490d4481af14418848f19d9f5e37463d07fd7d67fcf3fced9e",
+    "confirm": "55d784024b8ab25b8a9b1d145c0eb79f7d2bb3bd4125e33ef4bf57fe343759f3"
+  },
+  "source_zip_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+  "pair_sha256": "0800ac9e684e633cc4d6b296c274d145035594364f02595bb50387bc8aa958fd",
+  "results": {
+    "core": {
+      "accuracy": 0.8602919565004409,
+      "logloss": 0.31249614566195566,
+      "hits": 8781,
+      "net": 0,
+      "fixes": 0,
+      "breaks": 0,
+      "seller_ci95": [
+        0.0,
+        0.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 0,
+          "accuracy": null,
+          "net": 0
+        },
+        "new": {
+          "n": 10207,
+          "accuracy": 0.8602919565004409,
+          "net": 0
+        }
+      }
+    },
+    "rich": {
+      "accuracy": 0.8569609091799745,
+      "logloss": 0.32252098371056265,
+      "hits": 8747,
+      "net": -34,
+      "fixes": 272,
+      "breaks": 306,
+      "seller_ci95": [
+        -131.0,
+        60.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 0,
+          "accuracy": null,
+          "net": 0
+        },
+        "new": {
+          "n": 10207,
+          "accuracy": 0.8569609091799745,
+          "net": -34
+        }
+      }
+    },
+    "rich_nested_text": {
+      "accuracy": 0.9027138238463799,
+      "logloss": 0.24656582851749417,
+      "hits": 9214,
+      "net": 433,
+      "fixes": 694,
+      "breaks": 261,
+      "seller_ci95": [
+        323.0,
+        564.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 0,
+          "accuracy": null,
+          "net": 0
+        },
+        "new": {
+          "n": 10207,
+          "accuracy": 0.9027138238463799,
+          "net": 433
+        }
+      }
+    },
+    "nested_text_only": {
+      "accuracy": 0.8259037915156265,
+      "logloss": 0.39748498296676243,
+      "hits": 8430,
+      "net": -351,
+      "fixes": 936,
+      "breaks": 1287,
+      "seller_ci95": [
+        -559.0,
+        -150.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 0,
+          "accuracy": null,
+          "net": 0
+        },
+        "new": {
+          "n": 10207,
+          "accuracy": 0.8259037915156265,
+          "net": -351
+        }
+      }
+    }
+  },
+  "tune_selected": {
+    "core": {
+      "threshold": 0.44000000000000006,
+      "hits": 8804,
+      "tune_accuracy": 0.8563429410684781
+    },
+    "rich": {
+      "threshold": 0.4,
+      "hits": 8811,
+      "tune_accuracy": 0.8601064806315403
+    },
+    "rich_nested_text": {
+      "threshold": 0.4600000000000001,
+      "hits": 9227,
+      "tune_accuracy": 0.89407013034698
+    }
+  },
+  "model_duration_seconds": {
+    "core": 2.826144218444824,
+    "rich": 2.446331739425659,
+    "rich_nested_text": 3.0125977993011475
+  },
+  "duration_seconds": 101.78681373596191,
+  "limitation": "New reproducible development experiment; historical confirm overlap not yet audited. Compare official strong baseline on same IDs before promotion."
+}

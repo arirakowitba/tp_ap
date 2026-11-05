@@ -1,0 +1,97 @@
+{
+  "source_pairs_sha256": "66949333aa139e8ae07b953f04cd8866c76576ed88c288f6cb053f70ee2b0c0f",
+  "rows": 12264,
+  "raw_id_label_seller_mismatches": 0,
+  "reproduced_split": {
+    "fit": 31667,
+    "tune": 12442,
+    "confirm": 12264,
+    "excluded": 13627
+  },
+  "seen_rows": 5859,
+  "seen_fraction": 0.4777397260273973,
+  "global_oof_dependency": [
+    {
+      "text_fold": 0,
+      "outer_confirm_labels_used_in_text_train": 9222,
+      "outer_tune_labels_used_in_text_train": 9389,
+      "outer_fit_rows_receiving_this_text_model": 8033,
+      "outer_confirm_rows_receiving_this_text_model": 3042
+    },
+    {
+      "text_fold": 1,
+      "outer_confirm_labels_used_in_text_train": 9159,
+      "outer_tune_labels_used_in_text_train": 9295,
+      "outer_fit_rows_receiving_this_text_model": 8283,
+      "outer_confirm_rows_receiving_this_text_model": 3105
+    },
+    {
+      "text_fold": 2,
+      "outer_confirm_labels_used_in_text_train": 9164,
+      "outer_tune_labels_used_in_text_train": 9342,
+      "outer_fit_rows_receiving_this_text_model": 7368,
+      "outer_confirm_rows_receiving_this_text_model": 3100
+    },
+    {
+      "text_fold": 3,
+      "outer_confirm_labels_used_in_text_train": 9247,
+      "outer_tune_labels_used_in_text_train": 9300,
+      "outer_fit_rows_receiving_this_text_model": 7983,
+      "outer_confirm_rows_receiving_this_text_model": 3017
+    }
+  ],
+  "comparisons": {
+    "p_full_cb": {
+      "base_hits": 11329,
+      "hits": 11428,
+      "fixes": 257,
+      "breaks": 158,
+      "net": 99,
+      "ci95": [
+        58.0,
+        140.0
+      ],
+      "seen_net": 6,
+      "new_net": 93
+    },
+    "p_full_lgb": {
+      "base_hits": 11329,
+      "hits": 11342,
+      "fixes": 323,
+      "breaks": 310,
+      "net": 13,
+      "ci95": [
+        -37.0,
+        64.0
+      ],
+      "seen_net": -30,
+      "new_net": 43
+    },
+    "p_blend80": {
+      "base_hits": 11329,
+      "hits": 11439,
+      "fixes": 271,
+      "breaks": 161,
+      "net": 110,
+      "ci95": [
+        68.0,
+        152.0
+      ],
+      "seen_net": 8,
+      "new_net": 102
+    },
+    "p_blend90": {
+      "base_hits": 11329,
+      "hits": 11432,
+      "fixes": 263,
+      "breaks": 160,
+      "net": 103,
+      "ci95": [
+        62.0,
+        143.0
+      ],
+      "seen_net": 6,
+      "new_net": 97
+    }
+  }
+}
