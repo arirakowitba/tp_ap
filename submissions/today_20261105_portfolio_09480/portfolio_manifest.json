@@ -1,0 +1,53 @@
+{
+  "portfolio_goal": "Reach Leaderboard Score >= 0.94800 by Submission 5",
+  "current_confirmed_best": 0.94661,
+  "d1d2_baseline_hits": 19875,
+  "target_09480_hits": 19907,
+  "candidates": [
+    {
+      "slot": 1,
+      "file": "submission_20261105_01_upper10_on_d1d2.csv",
+      "sha256": "ac35697bef44bcd679dfbae59011d72fcf558af5acf1661f5818b8629129d13d",
+      "flips_vs_d1d2": 10,
+      "expected_score": 0.94671,
+      "expected_hits": 19879,
+      "nature": "Deterministic algebraic upper10 block (+4 hits guaranteed)"
+    },
+    {
+      "slot": 2,
+      "file": "submission_20261105_02_b15_contrast_probe.csv",
+      "sha256": "9f8a8943f24a71323ff981ef04c84600b83587780415aeb30ca06aa480de3476",
+      "flips_vs_d1d2": 15,
+      "expected_score": 0.94685,
+      "expected_hits": 19882,
+      "nature": "High-margin 15 probe (upper10 + 5 top-margin flips)"
+    },
+    {
+      "slot": 3,
+      "file": "submission_20261105_03_conservative_multimodal_top60.csv",
+      "sha256": "75eaee7b1c9634d566e42bbc9645c18d6bf299b764293451570eac7e85cd63ad",
+      "flips_vs_d1d2": 60,
+      "expected_score": 0.94728,
+      "expected_hits": 19891,
+      "nature": "Conservative multimodal top 60 ensemble"
+    },
+    {
+      "slot": 4,
+      "file": "submission_20261105_04_substantial_multimodal_top180.csv",
+      "sha256": "dcab17944516c05ae2d54303d48a9a00b44ec6ab6554d0c7120a17ad49de1399",
+      "flips_vs_d1d2": 179,
+      "expected_score": 0.94775,
+      "expected_hits": 19901,
+      "nature": "Substantial multimodal top 180 ensemble (targeting Rank 4 Clara 0.94761)"
+    },
+    {
+      "slot": 5,
+      "file": "submission_20261105_05_target_09480_climax_ensemble.csv",
+      "sha256": "a57fea5fad3324958eee7190a72192af7d521d7fad8061b69302749ccf54a56b",
+      "flips_vs_d1d2": 496,
+      "expected_score": 0.94814,
+      "expected_hits": 19909,
+      "nature": "Target 0.94800+ Climax Ensemble (Tri-model full 70k + probe rules)"
+    }
+  ]
+}

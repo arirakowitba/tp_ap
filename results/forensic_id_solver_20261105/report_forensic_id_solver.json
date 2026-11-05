@@ -1,0 +1,27 @@
+{
+  "n_submissions_analyzed": 78,
+  "n_intervened_ids": 2572,
+  "matrix_rank": 72,
+  "residual_norm": 1.124473384607291e-05,
+  "n_positive_flip_candidates": 9,
+  "n_d1d2_confirmed_correct": 361,
+  "upper10_ids": [
+    4559,
+    4997,
+    6072,
+    6360,
+    6816,
+    8661,
+    14353,
+    14395,
+    28301,
+    28453
+  ],
+  "upper10_mean_effect": 0.39999,
+  "top_non_upper10_positive_ids": [
+    20,
+    257,
+    151
+  ],
+  "duration_seconds": 12.283361434936523
+}

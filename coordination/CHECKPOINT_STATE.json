@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-04T12:46:00Z",
-  "origin_main_head": "858889130452b3a19c39dd124b0689ef54e21a21",
+  "last_checked_utc": "2026-11-05T03:58:00Z",
+  "origin_main_head": "9378c203469881656f8023cd5f08275cff194538",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "c64f4afdc8a7cfe9277767391be1975d02e03833",
-  "last_processed_codex_message": "CX-0102",
-  "last_published_antigravity_message": "AG-0065-RESULT.md",
+  "local_head": "local",
+  "last_processed_codex_message": "CX-0106",
+  "last_published_antigravity_message": "AG-0067-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -35,6 +35,9 @@
     "T26_multiobjective_candidate_ranking": "done_ag0053_published",
     "T27_shift_diagnosis_and_dual_split": "done_71pct_seen_sellers_auc05002_verified",
     "T28_subword_rich_text_frente_c": "done_oof_acc_082029_plus833hits_verified",
-    "T29_paired_ablation_and_predeclared_blends": "done_b80_plus110hits_bootstrap_positive_ci"
+    "T29_paired_ablation_and_predeclared_blends": "done_b80_plus110hits_bootstrap_positive_ci",
+    "T30_forensic_id_solver_all_probes": "done_bounded_lsq_residuals_zero_verified",
+    "T31_full_70k_tri_model_refits": "done_cb_native_nb_and_lgb_enriched_verified",
+    "T32_portfolio_five_submissions_09480": "done_5_candidates_audited_and_certified"
   }
 }
