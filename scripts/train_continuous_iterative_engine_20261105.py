@@ -8,7 +8,8 @@ AP-2026-Q-2: Iterative, multi-model training pipeline that runs continuously:
 5. Calibrates multi-model ensemble probabilities and generates audited candidates for tomorrow's submissions.
 """
 
-import os, sys, json, time, pickle, gc
+import os, sys, json, time, pickle, gc, warnings
+warnings.filterwarnings("ignore")
 from pathlib import Path
 import numpy as np, pandas as pd
 from sklearn.metrics import accuracy_score, log_loss, roc_auc_score
