@@ -1,8 +1,8 @@
 {
   "title": "Master Submission Ledger (85 Recoverable Vectors)",
   "source": "Reconciliation of 80 historical vectors + 5 verified public probes from 2026-11-04",
-  "n_entries_total": 88,
-  "n_recoverable_vectors": 85,
+  "n_entries_total": 89,
+  "n_recoverable_vectors": 86,
   "n_unresolved_entries": 3,
   "n_intervened_ids": 2572,
   "n_public_size": 20998,
@@ -25180,6 +25180,33 @@
       "n_flips_vs_48": 33,
       "n_flips_vs_d1d2": 10,
       "delta_vs_48": 9e-05
+    },
+    {
+      "key": "20261105_01_upper10",
+      "name": "submission_20261105_01_upper10_on_d1d2.csv",
+      "sha256_lf": "ac35697bef44bcd679dfbae59011d72fcf558af5acf1661f5818b8629129d13d",
+      "score": 0.94671,
+      "public_hits": 19879,
+      "flipped_ids_vs_d1d2": [
+        4559,
+        4997,
+        6072,
+        6360,
+        6816,
+        8661,
+        14353,
+        14395,
+        28301,
+        28453
+      ],
+      "delta_vs_d1d2": 4,
+      "delta_vs_48": 8,
+      "n_flips_vs_d1d2": 10,
+      "n_flips_vs_48": 33,
+      "notes": "Confirmed by Ariel on Kaggle 2026-11-05. Exact +4 public hits over D1+D2 (19875 -> 19879).",
+      "status": "verified_recoverable"
     }
-  ]
+  ],
+  "best_public_score": 0.94671,
+  "best_public_hits": 19879
 }
