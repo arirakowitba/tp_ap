@@ -1,0 +1,92 @@
+{
+  "seed": 20261104,
+  "deep": true,
+  "pure": false,
+  "split_sizes": {
+    "fit": 44834,
+    "tune": 12542,
+    "confirm": 12624
+  },
+  "split_hashes": {
+    "fit": "0b15e2c6f97fe810fbdd4616274f813b19986c015a49dc38ba2b253467b1025d",
+    "tune": "d0bcf08902d3517f5f7d6c0543f7bc03fb12204faf6dd644734a542fbfcc4a2c",
+    "confirm": "ced0e88f1d8c26cc21e66f948c5c1a5a45cd0a47d37e9f508fb7ea3cc8288cd2"
+  },
+  "results_at_050": {
+    "cb_tabular": {
+      "accuracy": 0.9472433460076045,
+      "logloss": 0.14361768747995327,
+      "hits": 11958,
+      "net": 0,
+      "fixes": 0,
+      "breaks": 0,
+      "seller_ci95": [
+        0.0,
+        0.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 9000,
+          "accuracy": 0.9638888888888889,
+          "net": 0
+        },
+        "new": {
+          "n": 3624,
+          "accuracy": 0.9059050772626932,
+          "net": 0
+        }
+      }
+    },
+    "cb_nested_nb": {
+      "accuracy": 0.9503326996197718,
+      "logloss": 0.13040403616153473,
+      "hits": 11997,
+      "net": 39,
+      "fixes": 146,
+      "breaks": 107,
+      "seller_ci95": [
+        -1.0,
+        80.0
+      ],
+      "seen_new": {
+        "seen": {
+          "n": 9000,
+          "accuracy": 0.9635555555555556,
+          "net": -3
+        },
+        "new": {
+          "n": 3624,
+          "accuracy": 0.9174944812362031,
+          "net": 42
+        }
+      }
+    }
+  },
+  "tune_selected": {
+    "cb_tabular": {
+      "threshold": 0.5700000000000002,
+      "tune_accuracy": 0.945941636102695,
+      "hits": 11930,
+      "net_vs_tuned_base": 0
+    },
+    "cb_nested_nb": {
+      "threshold": 0.5500000000000002,
+      "tune_accuracy": 0.948413331207144,
+      "hits": 11995,
+      "net_vs_tuned_base": 65
+    }
+  },
+  "training": {
+    "cb_tabular": {
+      "best_iteration": 1099,
+      "seconds": 37.08574295043945
+    },
+    "cb_nested_nb": {
+      "best_iteration": 1094,
+      "seconds": 35.37477993965149
+    }
+  },
+  "duration_seconds": 105.55711960792542,
+  "pairs_sha256": "cc18bf65e9bb8cf581969a1f45dfbf406de52a5d59582aaf70b263694bab934b",
+  "limitation": "Reused development split. Native CatBoost text handled by library within fit. No end-to-end outer confirmation or public improvement demonstrated."
+}
