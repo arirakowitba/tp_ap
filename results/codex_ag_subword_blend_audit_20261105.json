@@ -1,0 +1,48 @@
+{
+  "seed": 20261104,
+  "split_sizes": {
+    "fit": 44834,
+    "tune": 12542,
+    "confirm": 12624
+  },
+  "split_hashes": {
+    "fit": "0b15e2c6f97fe810fbdd4616274f813b19986c015a49dc38ba2b253467b1025d",
+    "tune": "d0bcf08902d3517f5f7d6c0543f7bc03fb12204faf6dd644734a542fbfcc4a2c",
+    "confirm": "ced0e88f1d8c26cc21e66f948c5c1a5a45cd0a47d37e9f508fb7ea3cc8288cd2"
+  },
+  "text_recipe": {
+    "word_features": 26040,
+    "char_features": 45000,
+    "lr_C": 1.5,
+    "fit_only": true
+  },
+  "standalone": {
+    "tune_accuracy_050": 0.8248285759846914,
+    "confirm_accuracy_050": 0.8433143219264893,
+    "confirm_logloss": 0.3747396675623342
+  },
+  "selection": {
+    "weight_lr": 0.0,
+    "threshold": 0.51,
+    "baseline_threshold": 0.51,
+    "tune_accuracy": 0.9506458300111625,
+    "baseline_tune_accuracy": 0.9506458300111625
+  },
+  "confirm": {
+    "candidate_accuracy": 0.9518377693282636,
+    "baseline_accuracy": 0.9518377693282636,
+    "candidate_logloss": 0.13212211250140132,
+    "baseline_logloss": 0.13212211250140132,
+    "paired": {
+      "hits": 12016,
+      "net": 0,
+      "fixes": 0,
+      "breaks": 0,
+      "disagreements": 0
+    },
+    "seen_net": 0,
+    "new_net": 0
+  },
+  "duration_seconds": 23.624002695083618,
+  "limitation": "Reused development split; one tune-selected blend evaluated on confirm."
+}
