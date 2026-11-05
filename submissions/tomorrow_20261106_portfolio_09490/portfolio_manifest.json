@@ -1,6 +1,7 @@
 {
   "portfolio_date": "2026-11-06",
   "portfolio_goal": "Reach Leaderboard Score >= 0.94850 - 0.94900 (Podium Attack)",
+  "methodology": "Strict Multi-Model Cross-Validated Consensus (OOF 0.93551 + F117 + CB Deep + 80k Subword)",
   "confirmed_best_anchor": {
     "name": "submission_20261105_03_conservative_multimodal_top60.csv",
     "score": 0.94709,
@@ -10,58 +11,58 @@
   "candidates": [
     {
       "slot": 1,
-      "file": "submission_20261106_01_probe_extreme_top25.csv",
-      "sha256_lf": "1a752270622137f4bb4dd7b5025bc571c22d353459fbf57fd2ce4059278fdd73",
-      "flips_vs_sub2": 25,
-      "flips_vs_d1d2": 83,
+      "file": "submission_20261106_01_probe_extreme_top20.csv",
+      "sha256_lf": "ef9d78827b42df870e968a161af923925e391ca8712cf22829c939198c52c6cf",
+      "flips_vs_sub2": 20,
+      "flips_vs_d1d2": 80,
       "expected_hits": 19894,
       "expected_score": 0.94745,
-      "margin_cutoff": 0.4842222658965548,
-      "role": "High-Certainty Probe (Margin > 0.485, captures Rank 5 Gael Ryba 0.94733)"
+      "min_margin_cutoff": 0.23321776255339433,
+      "role": "High-Certainty Probe (Min Margin >= 0.235, captures Rank 5 Gael Ryba 0.94733)"
     },
     {
       "slot": 2,
-      "file": "submission_20261106_02_substantial_extreme_top55.csv",
-      "sha256_lf": "adee0f47bbedbd2df8f6f3b0d5d21bc56c36f7d85be101b1fe997ab885d306ab",
-      "flips_vs_sub2": 55,
-      "flips_vs_d1d2": 109,
+      "file": "submission_20261106_02_substantial_extreme_top45.csv",
+      "sha256_lf": "1bfc565ef2424b454291413f7b3ff305c301bf2fe2b3269f6b2a210dcf750e5a",
+      "flips_vs_sub2": 45,
+      "flips_vs_d1d2": 103,
       "expected_hits": 19902,
       "expected_score": 0.9478,
-      "margin_cutoff": 0.4786808424829334,
-      "role": "Substantial Extreme (Margin > 0.470, captures Rank 4 Clara Rodriguez 0.94761)"
+      "min_margin_cutoff": 0.17539408447371763,
+      "role": "Substantial Extreme (Min Margin >= 0.170, captures Rank 4 Clara Rodriguez 0.94761)"
     },
     {
       "slot": 3,
-      "file": "submission_20261106_03_target_09480_top90.csv",
-      "sha256_lf": "75d69c4f3ff35645431bad0760eb56e0d3a2b887ccda9428ff96169d012f01a6",
-      "flips_vs_sub2": 90,
-      "flips_vs_d1d2": 142,
+      "file": "submission_20261106_03_target_09480_top75.csv",
+      "sha256_lf": "2030cf5b7c1e75094658c7e3e64ef86d1a3afcab8dae1f5f797e75c77f50ac77",
+      "flips_vs_sub2": 75,
+      "flips_vs_d1d2": 133,
       "expected_hits": 19909,
       "expected_score": 0.94815,
-      "margin_cutoff": 0.4718265818268928,
-      "role": "Breach Target >= 0.94800 (Margin > 0.440, solidifies Rank 4)"
+      "min_margin_cutoff": 0.1209531370415543,
+      "role": "Breach Target >= 0.94800 (Min Margin >= 0.120, solidifies Rank 4)"
     },
     {
       "slot": 4,
-      "file": "submission_20261106_04_target_09485_top140.csv",
-      "sha256_lf": "5d0a317ab57ee93b71e0b3b6816f33d10f0fe148e103f60b2490ee9c10e10942",
-      "flips_vs_sub2": 140,
-      "flips_vs_d1d2": 192,
+      "file": "submission_20261106_04_target_09485_top120.csv",
+      "sha256_lf": "3e8d99d25a570554f7a5c3907efc887de21b1e74db25610c7e84c9ccc51edf48",
+      "flips_vs_sub2": 120,
+      "flips_vs_d1d2": 176,
       "expected_hits": 19918,
       "expected_score": 0.94855,
-      "margin_cutoff": 0.4632496006465787,
+      "min_margin_cutoff": 0.057249334780198446,
       "role": "Expansion Target >= 0.94850"
     },
     {
       "slot": 5,
-      "file": "submission_20261106_05_podium_attacker_top200.csv",
-      "sha256_lf": "f40e3a5a36a32c87ca79a37912d5ae2c9baa69ff022fac7f47fa6ae427732414",
-      "flips_vs_sub2": 200,
-      "flips_vs_d1d2": 252,
+      "file": "submission_20261106_05_podium_attacker_top182_4m.csv",
+      "sha256_lf": "ec64bcb221a944aaa49d7a5cd45473bba9272b1096faf68b6a54e6e90e611761",
+      "flips_vs_sub2": 182,
+      "flips_vs_d1d2": 236,
       "expected_hits": 19927,
       "expected_score": 0.94895,
-      "margin_cutoff": 0.45122780507408,
-      "role": "Podium Attacker (Targets Gonzalo Buhler 0.94895 Rank 3)"
+      "min_margin_cutoff": 0.0011566029680132872,
+      "role": "Podium Attacker (All 182 4-Model Unanimous Flips, targets Gonzalo Buhler 0.94895 Rank 3)"
     }
   ]
 }
