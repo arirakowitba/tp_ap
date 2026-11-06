@@ -105,6 +105,8 @@ def main() -> None:
     ap.add_argument("--id-col", default="item_id")
     ap.add_argument("--seller-col", default="seller_id")
     ap.add_argument("--min-routed", type=int, default=20)
+    ap.add_argument("--selection-z", type=float, default=3.5,
+                    help="Tune selection LCB multiplier; default is conservative for grid multiplicity.")
     ap.add_argument("--bootstrap-reps", type=int, default=3000)
     ap.add_argument("--seed", type=int, default=20261106)
     ap.add_argument("--output", required=True, type=Path)
@@ -112,6 +114,12 @@ def main() -> None:
 
     tune = load_pairs(args.tune, args.y_col, args.id_col, args.base_col, args.challenger_col)
     confirm = load_pairs(args.confirm, args.y_col, args.id_col, args.base_col, args.challenger_col)
+    overlap = set(tune[args.id_col].astype(str)) & set(confirm[args.id_col].astype(str))
+    if overlap:
+        sample = sorted(overlap)[:10]
+        raise ValueError(
+            f"tune/confirm ID overlap is forbidden: n={len(overlap)}, sample={sample}"
+        )
 
     candidates = []
     for cm in np.arange(0.0, 0.401, 0.05):
@@ -124,8 +132,11 @@ def main() -> None:
                 }
                 mask = mask_for(tune, args.base_col, args.challenger_col, rule)
                 metrics = evaluate(tune, args.y_col, args.base_col, args.challenger_col, mask)
+                metrics["selection_lcb"] = float(
+                    metrics["net"] - args.selection_z * math.sqrt(max(metrics["n_routed"], 1))
+                )
                 if metrics["n_routed"] >= args.min_routed:
-                    candidates.append((metrics["net_lcb_normal95"], metrics["net"], -metrics["n_routed"], rule, metrics))
+                    candidates.append((metrics["selection_lcb"], metrics["net"], -metrics["n_routed"], rule, metrics))
 
     no_op = {
         "challenger_margin_min": 1.0,
@@ -142,7 +153,10 @@ def main() -> None:
         selection_note = "No candidate had positive conservative tune LCB; selected no-op."
     else:
         _, _, _, rule, tune_metrics = selected
-        selection_note = "Selected by maximum tune-only normal-approximation 95% lower bound."
+        selection_note = (
+            "Selected by maximum tune-only multiplicity-guarded lower bound "
+            f"(z={args.selection_z:g})."
+        )
 
     confirm_mask = mask_for(confirm, args.base_col, args.challenger_col, rule)
     confirm_metrics = evaluate(confirm, args.y_col, args.base_col, args.challenger_col, confirm_mask)
@@ -154,6 +168,9 @@ def main() -> None:
     result = {
         "contract": "tune-selected once, confirm-evaluated once; train-only labels",
         "selection_note": selection_note,
+        "selection_z": args.selection_z,
+        "tune_confirm_id_overlap": 0,
+        "n_candidate_rules": len(candidates),
         "selected_rule": rule,
         "tune": tune_metrics,
         "confirm": confirm_metrics,
@@ -166,7 +183,7 @@ def main() -> None:
             "challenger_col": args.challenger_col,
         },
         "limitations": [
-            "Grid search still creates selection multiplicity; positive confirm requires replication.",
+            "The conservative selection-z reduces but does not eliminate grid-selection multiplicity; positive confirm requires replication.",
             "A no-op selection is a valid result and blocks routing.",
             "This script never establishes public-test transport.",
         ],
