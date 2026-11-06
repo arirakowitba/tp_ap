@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-06T14:48:00Z",
-  "origin_main_head": "5b46f6bca48669604064136b826166b7e14ad775",
+  "last_checked_utc": "2026-11-06T18:05:00Z",
+  "origin_main_head": "7f74b492562a8a04e3062b1782e8b70c236b2d46",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "44cb3f1",
+  "local_head": "c6b8ca4",
   "last_processed_codex_message": "CX-0120",
-  "last_published_antigravity_message": "AG-0090-ACK.md",
+  "last_published_antigravity_message": "AG-0091-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -50,7 +50,8 @@
     "T41_ultimate_podium_engine_oof09423_and_portfolio_ready": "done_5_calibrated_candidates_audited",
     "T42_canonical_ledger_rebuild_and_cx0114_compliance": "done_canonical_rebuild_89unique_and_backtest_fail_zero_prior_verified",
     "T43_fold_safe_f117_lgbm_benchmark_and_block": "done_f117_collapsed_on_new_sellers_net_minus263_and_blend_zero_gain_blocked",
-    "T44_triad_block_f117_negative_control_and_ledger_patch": "done_negative_control_noop_and_evt_contradiction_resolved"
+    "T44_triad_block_f117_negative_control_and_ledger_patch": "done_negative_control_noop_and_evt_contradiction_resolved",
+    "T45_attributes_warranty_tags_challenger_and_router_eval": "done_noop_selected_z35_and_blocked_honestly"
   },
   "best_confirmed_score": 0.94719,
   "best_confirmed_hits": 19889,

@@ -1,0 +1,51 @@
+{
+  "contract": "tune-selected once, confirm-evaluated once; train-only labels",
+  "selection_note": "No candidate had positive conservative tune LCB; selected no-op.",
+  "selection_z": 3.5,
+  "tune_confirm_id_overlap": 0,
+  "n_candidate_rules": 243,
+  "selected_rule": {
+    "challenger_margin_min": 1.0,
+    "baseline_margin_max": 0.0,
+    "direction": "both"
+  },
+  "tune": {
+    "n_routed": 0,
+    "fixes": 0,
+    "breaks": 0,
+    "net": 0,
+    "baseline_hits": 11915,
+    "routed_hits": 11915,
+    "baseline_accuracy": 0.9500079732100144,
+    "routed_accuracy": 0.9500079732100144,
+    "net_lcb_normal95": -1.96
+  },
+  "confirm": {
+    "n_routed": 0,
+    "fixes": 0,
+    "breaks": 0,
+    "net": 0,
+    "baseline_hits": 12024,
+    "routed_hits": 12024,
+    "baseline_accuracy": 0.9524714828897338,
+    "routed_accuracy": 0.9524714828897338,
+    "net_lcb_normal95": -1.96,
+    "seller_bootstrap_net_ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  "inputs": {
+    "tune_path": "results\\challenger_attributes_warranty_tags_20261106\\tune_pairs.csv",
+    "tune_sha256": "c827230ebdbfad05ba89024eef53556602d284adf76a93a72b24e6137a7286a3",
+    "confirm_path": "results\\challenger_attributes_warranty_tags_20261106\\pairs.csv",
+    "confirm_sha256": "2d6a304fa50da28e02e6092cf6ca0ca3e47b66aede31e88b722f2ff76fe7cb01",
+    "base_col": "p_blend_native_nb",
+    "challenger_col": "p_attr_catboost"
+  },
+  "limitations": [
+    "The conservative selection-z reduces but does not eliminate grid-selection multiplicity; positive confirm requires replication.",
+    "A no-op selection is a valid result and blocks routing.",
+    "This script never establishes public-test transport."
+  ]
+}
