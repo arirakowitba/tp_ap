@@ -201,12 +201,14 @@ def main() -> None:
             else:
                 category = "draft_offline"
 
+        notes = item.get("explanation")
         # Special case 53, 54, 55:
         # In raw_reconcil, item 55 is "53", item 56 is "54", item 57 is "55" (Category 1, scored).
         # And items 103, 104, 105 are drafts (Category 3).
         if ident in ["53", "54", "55"] and category == "scored_with_vector":
             # Their CSVs are not locally preserved in Git repository
             category = "scored_no_vector"
+            notes = "Score público documentado en histórico, pero el archivo CSV de 30k filas no se encuentra preservado localmente en el repositorio; clasificado honestamente como scored_no_vector sin vector."
 
         # Check alias
         alias_of = known_aliases_cx0114.get(ident)
@@ -239,7 +241,7 @@ def main() -> None:
             "alias_of_legacy": alias_of,
             "is_alias": alias_of is not None,
             "source_provenance": item.get("source_provenance"),
-            "notes": item.get("explanation"),
+            "notes": notes,
             "vector_path": None,
             "normalized_vector_sha256": None,
             "n_flips_vs_48": None,

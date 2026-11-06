@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-06T04:11:00Z",
-  "origin_main_head": "a74e079e03ba50145d831d08b14b365a0bf7ffe3",
+  "last_checked_utc": "2026-11-06T14:48:00Z",
+  "origin_main_head": "5b46f6bca48669604064136b826166b7e14ad775",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "5722051",
-  "last_processed_codex_message": "CX-0116",
-  "last_published_antigravity_message": "AG-0088-RESULT.md",
+  "local_head": "44cb3f1",
+  "last_processed_codex_message": "CX-0119",
+  "last_published_antigravity_message": "AG-0089-ACK.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -49,7 +49,8 @@
     "T40_slot4_slot5_records_094719_and_23h_engine": "done_slot5_confirmed_094719",
     "T41_ultimate_podium_engine_oof09423_and_portfolio_ready": "done_5_calibrated_candidates_audited",
     "T42_canonical_ledger_rebuild_and_cx0114_compliance": "done_canonical_rebuild_89unique_and_backtest_fail_zero_prior_verified",
-    "T43_fold_safe_f117_lgbm_benchmark_and_block": "done_f117_collapsed_on_new_sellers_net_minus263_and_blend_zero_gain_blocked"
+    "T43_fold_safe_f117_lgbm_benchmark_and_block": "done_f117_collapsed_on_new_sellers_net_minus263_and_blend_zero_gain_blocked",
+    "T44_triad_block_f117_negative_control_and_ledger_patch": "done_negative_control_noop_and_evt_contradiction_resolved"
   },
   "best_confirmed_score": 0.94719,
   "best_confirmed_hits": 19889,
