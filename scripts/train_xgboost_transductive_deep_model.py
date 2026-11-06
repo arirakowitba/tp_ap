@@ -1,9 +1,11 @@
-"""Transductive XGBoost Deep Model (AP-2026-Q-2).
+"""Transductive XGBoost Deep Model (AP-2026-Q-2) - Strict Zero-Leakage Engine.
 
-Trains a 5-fold Stratified XGBoost classifier (tree_method='hist', max_depth=7, n_estimators=1200)
+Trains a 5-fold Stratified XGBoost classifier (tree_method='hist', max_depth=7, n_estimators=1000)
 on the augmented transductive dataset (70k train + verified test pseudo-labels).
-Complements CatBoost Depth 8 (OOF 0.94554) and LightGBM 63 Leaves.
-Outputs out-of-fold metrics and full 30,000 test prediction probabilities.
+Ensures 100% strict zero-leakage:
+- Out-of-fold SAGA text predictions computed strictly per fold.
+- Out-of-fold Bayesian-smoothed target encodings computed strictly per fold.
+Outputs honest out-of-fold metrics and full 30,000 test prediction probabilities.
 """
 
 import os, sys, json, time, gc, warnings
@@ -29,7 +31,7 @@ def log(msg):
 
 def main():
     log("=" * 75)
-    log("=== STARTING TRANSDUCTIVE XGBOOST TRAINING ENGINE ===")
+    log("=== STARTING ZERO-LEAKAGE TRANSDUCTIVE XGBOOST TRAINING ENGINE ===")
     log("=" * 75)
     t0 = time.time()
 
@@ -84,7 +86,10 @@ def main():
         y_train_aug = y_train
         weights_aug = weights_tr
 
-    # 3. High-Capacity Text Feature Extraction
+    n_aug = len(y_train_aug)
+    n_te = len(df_te)
+
+    # 3. High-Capacity Text Feature Extraction & SVD
     log("[Step 3/5] Extracting 100k TF-IDF N-Grams and 64-dim SVD...")
     tr_text = (df_tr_aug["title"].fillna("") + " " + df_tr_aug["tags"].astype(str)).tolist()
     te_text = (df_te["title"].fillna("") + " " + df_te["tags"].astype(str)).tolist()
@@ -104,13 +109,47 @@ def main():
     X_tr_svd = svd.fit_transform(X_tr_tfidf)
     X_te_svd = svd.transform(X_te_tfidf)
 
-    lr_text = LogisticRegression(C=1.5, max_iter=800, solver="saga", random_state=42, n_jobs=-1)
-    lr_text.fit(X_tr_tfidf, y_train_aug, sample_weight=weights_aug)
-    p_text_tr = lr_text.predict_proba(X_tr_tfidf)[:, 1]
-    p_text_te = lr_text.predict_proba(X_te_tfidf)[:, 1]
+    # 4. Strict OOF SAGA Predictions and Target Encodings
+    log("[Step 4/5] Fitting Strict Out-of-Fold SAGA Specialist and Target Encodings...")
+    skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+    oof_text = np.zeros(n_aug, dtype=np.float32)
+    p_text_te = np.zeros(n_te, dtype=np.float32)
+
+    cat_te_oof = np.zeros(n_aug, dtype=np.float32)
+    seller_te_oof = np.zeros(n_aug, dtype=np.float32)
+    cat_te_test = np.zeros(n_te, dtype=np.float32)
+    seller_te_test = np.zeros(n_te, dtype=np.float32)
+
+    global_p = float(y_train_aug.mean())
+    df_aug_target = df_tr_aug.copy()
+    df_aug_target["target"] = y_train_aug
+
+    for fold, (trn_idx, val_idx) in enumerate(skf.split(X_tr_tfidf, y_train_aug)):
+        t_fold = time.time()
+        # SAGA Text
+        lr = LogisticRegression(C=1.5, max_iter=600, solver="saga", random_state=42 + fold, n_jobs=-1)
+        lr.fit(X_tr_tfidf[trn_idx], y_train_aug[trn_idx], sample_weight=weights_aug[trn_idx])
+        oof_text[val_idx] = lr.predict_proba(X_tr_tfidf[val_idx])[:, 1]
+        p_text_te += lr.predict_proba(X_te_tfidf)[:, 1] / 5.0
+
+        # Target encodings strictly on train fold
+        fold_df = df_aug_target.iloc[trn_idx]
+        c_stats = fold_df.groupby("category_id")["target"].agg(["count", "sum"])
+        c_smooth = (c_stats["sum"] + 10.0 * global_p) / (c_stats["count"] + 10.0)
+        cat_te_oof[val_idx] = df_tr_aug.iloc[val_idx]["category_id"].map(c_smooth).fillna(global_p).values
+        cat_te_test += df_te["category_id"].map(c_smooth).fillna(global_p).values / 5.0
+
+        s_stats = fold_df.groupby("seller_id")["target"].agg(["count", "sum"])
+        s_smooth = (s_stats["sum"] + 5.0 * global_p) / (s_stats["count"] + 5.0)
+        seller_te_oof[val_idx] = df_tr_aug.iloc[val_idx]["seller_id"].map(s_smooth).fillna(global_p).values
+        seller_te_test += df_te["seller_id"].map(s_smooth).fillna(global_p).values / 5.0
+
+        log(f"  Fold {fold+1}/5 SAGA & TE finished in {time.time()-t_fold:.1f}s")
+
+    acc_text = accuracy_score(y_train_aug[:70000], (oof_text[:70000] >= 0.5).astype(int))
+    log(f"Strict OOF SAGA Text Accuracy (70k base): {acc_text:.5f}")
 
     # Engineering Tabular Features
-    log("[Step 4/5] Engineering Enriched Tabular Features...")
     price_tr = df_tr_aug["price"].fillna(0).values
     price_te = df_te["price"].fillna(0).values
     log_price_tr = np.log1p(np.maximum(0, price_tr))
@@ -129,34 +168,22 @@ def main():
         if not w or pd.isna(w):
             return 0
         w_s = str(w).lower()
-        return 1 if ("mes" in w_s or "año" in w_s or "garant" in w_s) else 0
+        return 1 if any(k in w_s for k in ["mes", "año", "garant", "dias"]) else 0
 
     tr_w = df_tr_aug["warranty"].apply(parse_warr).values
     te_w = df_te["warranty"].apply(parse_warr).values
 
-    global_p = float(y_train_aug.mean())
-    cat_stats = df_tr_aug.assign(t=y_train_aug).groupby("category_id")["t"].agg(["count", "sum"])
-    cat_smooth = (cat_stats["sum"] + 10.0 * global_p) / (cat_stats["count"] + 10.0)
-    cat_te_tr = df_tr_aug["category_id"].map(cat_smooth).fillna(global_p).values
-    cat_te_te = df_te["category_id"].map(cat_smooth).fillna(global_p).values
-
-    seller_stats = df_tr_aug.assign(t=y_train_aug).groupby("seller_id")["t"].agg(["count", "sum"])
-    seller_smooth = (seller_stats["sum"] + 5.0 * global_p) / (seller_stats["count"] + 5.0)
-    seller_te_tr = df_tr_aug["seller_id"].map(seller_smooth).fillna(global_p).values
-    seller_te_te = df_te["seller_id"].map(seller_smooth).fillna(global_p).values
-
     X_tr_tab = np.column_stack([
-        log_price_tr, tr_pr_ratio, tr_attrs, tr_w, cat_te_tr, seller_te_tr, p_text_tr, X_tr_svd
+        log_price_tr, tr_pr_ratio, tr_attrs, tr_w, cat_te_oof, seller_te_oof, oof_text, X_tr_svd
     ]).astype(np.float32)
     X_te_tab = np.column_stack([
-        log_price_te, te_pr_ratio, te_attrs, te_w, cat_te_te, seller_te_te, p_text_te, X_te_svd
+        log_price_te, te_pr_ratio, te_attrs, te_w, cat_te_test, seller_te_test, p_text_te, X_te_svd
     ]).astype(np.float32)
 
     # 5. Fit 5-Fold Stratified XGBoost
-    log("[Step 5/5] Fitting 5-Fold Stratified XGBoost (tree_method='hist', max_depth=7, n_estimators=1000)...")
-    skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-    oof_preds = np.zeros(len(y_train_aug), dtype=np.float32)
-    test_preds = np.zeros(len(df_te), dtype=np.float32)
+    log("[Step 5/5] Fitting 5-Fold Stratified Zero-Leakage XGBoost (tree_method='hist', max_depth=7, n_estimators=1000)...")
+    oof_xgb = np.zeros(n_aug, dtype=np.float32)
+    test_xgb = np.zeros(n_te, dtype=np.float32)
 
     for fold, (trn_idx, val_idx) in enumerate(skf.split(X_tr_tab, y_train_aug)):
         t_fold = time.time()
@@ -179,33 +206,33 @@ def main():
             X_tr_f, y_tr_f,
             sample_weight=w_tr_f,
             eval_set=[(X_va_f, y_va_f)],
-            verbose=200
+            verbose=False
         )
 
         oof_fold = model.predict_proba(X_va_f)[:, 1]
-        oof_preds[val_idx] = oof_fold
-        test_preds += model.predict_proba(X_te_tab)[:, 1] / 5.0
+        oof_xgb[val_idx] = oof_fold
+        test_xgb += model.predict_proba(X_te_tab)[:, 1] / 5.0
 
         f_acc = accuracy_score(y_va_f, (oof_fold >= 0.5).astype(int))
         f_ll = log_loss(y_va_f, oof_fold)
-        log(f"Fold {fold+1} Finished in {time.time()-t_fold:.1f}s | Acc: {f_acc:.5f} | LogLoss: {f_ll:.5f}")
+        log(f"Fold {fold+1} Finished in {time.time()-t_fold:.1f}s | Honest OOF Acc: {f_acc:.5f} | LogLoss: {f_ll:.5f}")
 
     # Base 70k OOF metrics
-    oof_base = oof_preds[:len(y_train)]
+    oof_base = oof_xgb[:len(y_train)]
     y_base = y_train
     base_acc = accuracy_score(y_base, (oof_base >= 0.5).astype(int))
     base_ll = log_loss(y_base, oof_base)
     base_auc = roc_auc_score(y_base, oof_base)
 
     log("=" * 75)
-    log(f"=== TRANSDUCTIVE XGBOOST OOF METRICS (BASE 70K) ===")
+    log(f"=== STRICT ZERO-LEAKAGE TRANSDUCTIVE XGBOOST OOF METRICS (BASE 70K) ===")
     log(f"Accuracy: {base_acc:.5f} | LogLoss: {base_ll:.5f} | ROC-AUC: {base_auc:.5f}")
     log("=" * 75)
 
     # Save predictions
     df_out = pd.DataFrame({
-        "ID": np.arange(1, len(test_preds) + 1),
-        "p_xgb_transductive": test_preds
+        "ID": np.arange(1, len(test_xgb) + 1),
+        "p_xgb_transductive": test_xgb
     })
     out_file = OUT_DIR / "xgboost_transductive_probabilities.csv"
     df_out.to_csv(out_file, index=False)
@@ -214,7 +241,7 @@ def main():
     # Save summary report
     rep_file = OUT_DIR / "xgboost_transductive_training_report.md"
     with open(rep_file, "w", encoding="utf-8") as f:
-        f.write("# Transductive XGBoost Deep Model Report\n\n")
+        f.write("# Transductive XGBoost Deep Model Report (Strict Zero-Leakage)\n\n")
         f.write(f"- **Accuracy (OOF Base 70k):** `{base_acc:.5f}`\n")
         f.write(f"- **LogLoss (OOF Base 70k):** `{base_ll:.5f}`\n")
         f.write(f"- **ROC-AUC (OOF Base 70k):** `{base_auc:.5f}`\n")
@@ -223,6 +250,11 @@ def main():
         f.write(f"- **Estimators:** `1000`\n")
         f.write(f"- **Elapsed Time:** `{time.time()-t0:.1f}s`\n")
         f.write(f"- **Output File:** `{out_file.name}`\n")
+        f.write("\n### Fold Breakdown:\n")
+        for fold, (trn_idx, val_idx) in enumerate(skf.split(X_tr_tab, y_train_aug)):
+            if val_idx[-1] < 70000:
+                acc_f = accuracy_score(y_train_aug[val_idx], (oof_xgb[val_idx] >= 0.5).astype(int))
+                f.write(f"- Fold {fold+1}: `{acc_f:.5f}`\n")
     log(f"Saved report to {rep_file}")
     log(f"Total pipeline completed in {time.time()-t0:.1f}s.")
 
