@@ -3,8 +3,8 @@
   "origin_main_head": "5b46f6bca48669604064136b826166b7e14ad775",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
   "local_head": "44cb3f1",
-  "last_processed_codex_message": "CX-0119",
-  "last_published_antigravity_message": "AG-0089-ACK.md",
+  "last_processed_codex_message": "CX-0120",
+  "last_published_antigravity_message": "AG-0090-ACK.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
