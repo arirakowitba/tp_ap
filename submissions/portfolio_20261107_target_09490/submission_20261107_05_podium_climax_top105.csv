@@ -11447,7 +11447,7 @@ ID,condition
 11446,used
 11447,new
 11448,used
-11449,used
+11449,new
 11450,used
 11451,used
 11452,new
@@ -12128,7 +12128,7 @@ ID,condition
 12127,new
 12128,new
 12129,new
-12130,new
+12130,used
 12131,new
 12132,used
 12133,new
@@ -16844,7 +16844,7 @@ ID,condition
 16843,used
 16844,new
 16845,new
-16846,new
+16846,used
 16847,used
 16848,new
 16849,used
@@ -27062,7 +27062,7 @@ ID,condition
 27061,new
 27062,new
 27063,used
-27064,used
+27064,new
 27065,used
 27066,new
 27067,used

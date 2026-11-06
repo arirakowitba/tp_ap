@@ -813,7 +813,7 @@ ID,condition
 812,new
 813,used
 814,used
-815,used
+815,new
 816,new
 817,new
 818,used
@@ -13222,7 +13222,7 @@ ID,condition
 13221,used
 13222,used
 13223,used
-13224,new
+13224,used
 13225,used
 13226,new
 13227,new
@@ -19851,7 +19851,7 @@ ID,condition
 19850,used
 19851,new
 19852,new
-19853,new
+19853,used
 19854,new
 19855,new
 19856,new
@@ -22136,7 +22136,7 @@ ID,condition
 22135,new
 22136,new
 22137,new
-22138,used
+22138,new
 22139,used
 22140,new
 22141,new

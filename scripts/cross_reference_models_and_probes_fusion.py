@@ -42,6 +42,10 @@ def main():
     p_cont = ROOT / "results" / "continuous_training_20261105" / "continuous_test_probabilities_latest.csv"
     df_cont = pd.read_csv(p_cont).set_index("ID") if p_cont.exists() else None
 
+    # d. Transductive Deep CatBoost (OOF 0.94554, LogLoss 0.13999)
+    p_trans = ROOT / "results" / "transductive_deep_models" / "transductive_test_probabilities.csv"
+    df_trans = pd.read_csv(p_trans).set_index("ID") if p_trans.exists() else None
+
     # 3. Load Probe Posteriors & Empirical Deconvolution
     p_bayes = ROOT / "results" / "bayesian_solver_98vec" / "bayesian_transductive_item_effects_98vec.csv"
     df_bayes = pd.read_csv(p_bayes).set_index("item_id")
@@ -99,6 +103,8 @@ def main():
             preds_list.append(float(df_f117.loc[item_id, "p_f117_lgbm"]))
         if df_cont is not None and item_id in df_cont.index:
             preds_list.append(float(df_cont.loc[item_id, "p_catboost_deep"]))
+        if df_trans is not None and item_id in df_trans.index:
+            preds_list.append(float(df_trans.loc[item_id, "p_cb_transductive"]))
             
         p_model_mean = float(np.mean(preds_list))
         p_model_std = float(np.std(preds_list))
