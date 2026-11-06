@@ -1,7 +1,7 @@
 {
   "title": "Master Submission Ledger (85 Recoverable Vectors)",
   "source": "Reconciliation of 80 historical vectors + 5 verified public probes from 2026-11-04",
-  "n_entries_total": 95,
+  "n_entries_total": 96,
   "n_recoverable_vectors": 90,
   "n_unresolved_entries": 3,
   "n_intervened_ids": 2572,
@@ -25874,6 +25874,17 @@
       "delta_vs_d1d2": 8,
       "total_flips_vs_anchor": 15,
       "notes": "15 empirical candidate flips tested; proved that used->new flips in book/vintage categories suffer from false positive drift. Re-calibrating for pure surgical used flips."
+    },
+    {
+      "submission_file": "submission_20261106_03_surgical_purified_top10.csv",
+      "date": "2026-11-06T00:17:00Z",
+      "score": 0.94709,
+      "public_hits": 19887,
+      "anchor_reference": "submission_20261105_03_conservative_multimodal_top60.csv",
+      "delta_vs_anchor": 0,
+      "delta_vs_d1d2": 12,
+      "total_flips_vs_anchor": 10,
+      "notes": "10 surgical modifications tested (1 revert of 3081 + 9 unanimous used flips). Re-established 0.94709 peak (+4 over Slot 2, +3 over Slot 1)."
     }
   ],
   "best_public_score": 0.94709,
