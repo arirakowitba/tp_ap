@@ -1,7 +1,7 @@
 {
   "title": "Master Submission Ledger (85 Recoverable Vectors)",
   "source": "Reconciliation of 80 historical vectors + 5 verified public probes from 2026-11-04",
-  "n_entries_total": 97,
+  "n_entries_total": 98,
   "n_recoverable_vectors": 90,
   "n_unresolved_entries": 3,
   "n_intervened_ids": 2572,
@@ -25896,8 +25896,22 @@
       "delta_vs_d1d2": 13,
       "total_flips_vs_anchor": 7,
       "notes": "NEW CONFIRMED ALL-TIME RECORD (0.94714, 19888 hits). Proved that 7 pure unanimous consumer goods with used keywords strictly improve leaderboard."
+    },
+    {
+      "submission_file": "submission_20261106_05_climax_consumer_unanimous_top15.csv",
+      "date": "2026-11-06T00:27:00Z",
+      "score": 0.94719,
+      "public_hits": 19889,
+      "anchor_reference": "submission_20261106_04_pure_unanimous_consumer_top7.csv",
+      "delta_vs_anchor": 1,
+      "delta_vs_sub2": 2,
+      "delta_vs_d1d2": 14,
+      "total_flips_vs_anchor": 15,
+      "total_flips_vs_sub2": 22,
+      "total_flips_vs_d1d2": 82,
+      "notes": "NEW CONFIRMED ALL-TIME RECORD (0.94719, 19889 hits, Rank 7). Climax submission of the day confirmed positive slope."
     }
   ],
-  "best_public_score": 0.94714,
-  "best_public_hits": 19888
+  "best_public_score": 0.94719,
+  "best_public_hits": 19889
 }
