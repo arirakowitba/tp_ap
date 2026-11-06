@@ -1,17 +1,11 @@
 {
-  "last_checked_utc": "2026-11-06T01:16:00Z",
+  "last_checked_utc": "2026-11-06T02:07:00Z",
   "origin_main_head": "9378c203469881656f8023cd5f08275cff194538",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "6f9dd75",
+  "local_head": "e2569d1",
   "last_processed_codex_message": "CX-0106",
-  "last_published_antigravity_message": "AG-0081-RESULT.md",
-  "active_processes": [
-    {
-      "task_id": "task-3317",
-      "script": "scripts/train_ultimate_podium_engine_23h.py",
-      "status": "LightGBM OOF 0.94139 finished; CatBoost Depth 8 training in progress"
-    }
-  ],
+  "last_published_antigravity_message": "AG-0082-RESULT.md",
+  "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
     "T2_catboost_lgbm_paired_eval_and_holdout_overlap": "done",
@@ -52,7 +46,8 @@
     "T37_f117_lgbm_oof09291_auc09804": "done_5fold_test_probs_saved",
     "T38_optimal_stacking_oof09355_generated": "done_test_probs_saved",
     "T39_portfolio_20261106_strict_consensus_100pct": "done_5_candidates_certified",
-    "T40_slot4_slot5_records_094719_and_23h_engine": "running_pid_36936"
+    "T40_slot4_slot5_records_094719_and_23h_engine": "done_slot5_confirmed_094719",
+    "T41_ultimate_podium_engine_oof09423_and_portfolio_ready": "done_5_calibrated_candidates_audited"
   },
   "best_confirmed_score": 0.94719,
   "best_confirmed_hits": 19889,
