@@ -154,29 +154,30 @@ def main():
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
     cat_te_oof = np.zeros(n_train)
     seller_te_oof = np.zeros(n_train)
-    global_prior = y_train.mean()
+    global_prior = float(y_train.mean())
+
+    df_tr_target = df_tr.copy()
+    df_tr_target["target"] = y_train
 
     for tr_idx, val_idx in cv.split(df_tr, y_train):
         # Category TE
-        fold_tr = df_tr.iloc[tr_idx]
-        fold_y = y_train[tr_idx]
-        cat_stats = fold_tr.groupby("category_id").agg(count=("category_id", "size"), sum_y=(fold_y, "sum"))
-        # Smooth with prior weight 10
-        smoothed = (cat_stats["sum_y"] + 10 * global_prior) / (cat_stats["count"] + 10)
-        cat_te_oof[val_idx] = df_tr.iloc[val_idx]["category_id"].map(smoothed).fillna(global_prior)
+        fold_tr = df_tr_target.iloc[tr_idx]
+        cat_stats = fold_tr.groupby("category_id")["target"].agg(["count", "sum"])
+        smoothed = (cat_stats["sum"] + 10.0 * global_prior) / (cat_stats["count"] + 10.0)
+        cat_te_oof[val_idx] = df_tr.iloc[val_idx]["category_id"].map(smoothed).fillna(global_prior).values
 
         # Seller TE
-        seller_stats = fold_tr.groupby("seller_id").agg(count=("seller_id", "size"), sum_y=(fold_y, "sum"))
-        s_smoothed = (seller_stats["sum_y"] + 5 * global_prior) / (seller_stats["count"] + 5)
-        seller_te_oof[val_idx] = df_tr.iloc[val_idx]["seller_id"].map(s_smoothed).fillna(global_prior)
+        seller_stats = fold_tr.groupby("seller_id")["target"].agg(["count", "sum"])
+        s_smoothed = (seller_stats["sum"] + 5.0 * global_prior) / (seller_stats["count"] + 5.0)
+        seller_te_oof[val_idx] = df_tr.iloc[val_idx]["seller_id"].map(s_smoothed).fillna(global_prior).values
 
     # Test TE
-    full_cat_stats = df_tr.groupby("category_id").agg(count=("category_id", "size"), sum_y=(y_train, "sum"))
-    full_cat_smooth = (full_cat_stats["sum_y"] + 10 * global_prior) / (full_cat_stats["count"] + 10)
+    full_cat_stats = df_tr_target.groupby("category_id")["target"].agg(["count", "sum"])
+    full_cat_smooth = (full_cat_stats["sum"] + 10.0 * global_prior) / (full_cat_stats["count"] + 10.0)
     cat_te_test = df_te["category_id"].map(full_cat_smooth).fillna(global_prior).values
 
-    full_seller_stats = df_tr.groupby("seller_id").agg(count=("seller_id", "size"), sum_y=(y_train, "sum"))
-    full_seller_smooth = (full_seller_stats["sum_y"] + 5 * global_prior) / (full_seller_stats["count"] + 5)
+    full_seller_stats = df_tr_target.groupby("seller_id")["target"].agg(["count", "sum"])
+    full_seller_smooth = (full_seller_stats["sum"] + 5.0 * global_prior) / (full_seller_stats["count"] + 5.0)
     seller_te_test = df_te["seller_id"].map(full_seller_smooth).fillna(global_prior).values
 
     # Assemble Tabular Feature Matrices
@@ -323,7 +324,7 @@ def main():
         "ID": range(1, 30001),
         "p_lgb": p_te_lgb,
         "p_cb": p_te_cb,
-        "p_text": p_te_te,
+        "p_text": p_text_te,
         "p_optimal_blend": p_te_blend
     })
     df_test_probs.to_csv(OUT_DIR / "test_probabilities_podium_engine.csv", index=False)
