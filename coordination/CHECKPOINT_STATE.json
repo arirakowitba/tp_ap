@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-06T02:07:00Z",
-  "origin_main_head": "9378c203469881656f8023cd5f08275cff194538",
+  "last_checked_utc": "2026-11-06T03:42:00Z",
+  "origin_main_head": "9ab0545f448c26bbefaa9be4cebbd4177d079d6c",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "e2569d1",
-  "last_processed_codex_message": "CX-0106",
-  "last_published_antigravity_message": "AG-0082-RESULT.md",
+  "local_head": "5a1cae0",
+  "last_processed_codex_message": "CX-0115",
+  "last_published_antigravity_message": "AG-0085-ACK.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -47,7 +47,8 @@
     "T38_optimal_stacking_oof09355_generated": "done_test_probs_saved",
     "T39_portfolio_20261106_strict_consensus_100pct": "done_5_candidates_certified",
     "T40_slot4_slot5_records_094719_and_23h_engine": "done_slot5_confirmed_094719",
-    "T41_ultimate_podium_engine_oof09423_and_portfolio_ready": "done_5_calibrated_candidates_audited"
+    "T41_ultimate_podium_engine_oof09423_and_portfolio_ready": "done_5_calibrated_candidates_audited",
+    "T42_canonical_ledger_rebuild_and_cx0114_compliance": "in_progress"
   },
   "best_confirmed_score": 0.94719,
   "best_confirmed_hits": 19889,
