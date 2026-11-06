@@ -1,47 +1,52 @@
 [
   {
     "slot": 1,
-    "filename": "submission_20261107_01_calibrated_probe_top35.csv",
-    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261107_target_09490\\submission_20261107_01_calibrated_probe_top35.csv",
-    "sha256_lf": "7476ccff8916a7b5517ebd49c3dace572b724280991e5c9dd1ce8be6d1cea3fd",
-    "flips_vs_anchor": 35,
-    "expected_score": 0.94755,
-    "role": "Captura Rango 5 (supera a Gael Ryba 0.94733)"
+    "filename": "submission_20261107_01_purified_probe_top25.csv",
+    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261107_target_09490\\submission_20261107_01_purified_probe_top25.csv",
+    "sha256_lf": "7ab7158ac7539523a34cc558a722cc4196f21bc02a80e3175b7f69739c573d9c",
+    "flips_vs_anchor": 25,
+    "direction": "strictly_new_to_used",
+    "expected_score": 0.9478,
+    "role": "Captura Rango 5 (supera a Clara Rodriguez 0.94761 y Gael Ryba 0.94733)"
   },
   {
     "slot": 2,
     "filename": "submission_20261107_02_calibrated_expansion_top45.csv",
     "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261107_target_09490\\submission_20261107_02_calibrated_expansion_top45.csv",
-    "sha256_lf": "97b8ae3721fc652527eb026c09dfb5a29cbc5a956eb79bf0a5b6d01cbaa78071",
+    "sha256_lf": "7ab966ab5c93c8f2644bf98420259eb18cea9b79bc1d903542409e73c74c8802",
     "flips_vs_anchor": 45,
-    "expected_score": 0.94785,
-    "role": "Captura Rango 4 (supera a Clara Rodriguez 0.94761)"
+    "direction": "strictly_new_to_used",
+    "expected_score": 0.9483,
+    "role": "Ataque a Rango 4 (aproximacion directa a Agustin Sanchez 0.94838)"
   },
   {
     "slot": 3,
-    "filename": "submission_20261107_03_target_09482_top55.csv",
-    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261107_target_09490\\submission_20261107_03_target_09482_top55.csv",
-    "sha256_lf": "10664f1770290d64eb15a9c975549ff6a32416e324cec882cab737674cb1117c",
-    "flips_vs_anchor": 55,
-    "expected_score": 0.94825,
-    "role": "Quebradura de 0.94800+ y ataque a Agustin Sanchez"
+    "filename": "submission_20261107_03_podium_attack_top65.csv",
+    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261107_target_09490\\submission_20261107_03_podium_attack_top65.csv",
+    "sha256_lf": "283ca21afe369a91c79ce8668c8d420956dce7b5a88580b9ddae7822b9cc6dca",
+    "flips_vs_anchor": 65,
+    "direction": "strictly_new_to_used",
+    "expected_score": 0.9488,
+    "role": "Supera a Agustin Sanchez (captura Rango 4 y ataque al Podio)"
   },
   {
     "slot": 4,
-    "filename": "submission_20261107_04_podium_attack_top65.csv",
-    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261107_target_09490\\submission_20261107_04_podium_attack_top65.csv",
-    "sha256_lf": "5028fc71611aa23fc34871ad7ad71dcbee4621688b2edf16af22eb5bdf260c4d",
-    "flips_vs_anchor": 65,
-    "expected_score": 0.94865,
-    "role": "Supera a Agustin Sanchez (0.94838) y captura Rango 4"
+    "filename": "submission_20261107_04_podium_breakthrough_top85.csv",
+    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261107_target_09490\\submission_20261107_04_podium_breakthrough_top85.csv",
+    "sha256_lf": "b4a06343c291b96fb096236ac7c626591f5607107aca598d561391dd7be5e096",
+    "flips_vs_anchor": 85,
+    "direction": "strictly_new_to_used",
+    "expected_score": 0.9493,
+    "role": "QUEBRADURA DEL PODIO: Supera a Gonzalo Buhler (0.94895, Rango 3) y alcanza >= 0.94900"
   },
   {
     "slot": 5,
-    "filename": "submission_20261107_05_podium_climax_top80.csv",
-    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261107_target_09490\\submission_20261107_05_podium_climax_top80.csv",
-    "sha256_lf": "5c3b76309adf004286c9bf7f5f30ded34ba87880dde9563a73d7f1b519a9a5d8",
-    "flips_vs_anchor": 80,
-    "expected_score": 0.9491,
-    "role": "Ataque Directo al Podio de Gonzalo Buhler (0.94895, Rango 3)"
+    "filename": "submission_20261107_05_podium_climax_top105.csv",
+    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261107_target_09490\\submission_20261107_05_podium_climax_top105.csv",
+    "sha256_lf": "9db89a13b9e6d790ce75c8e5b86bafb56bd73d91f2e24fed834cc0469b850711",
+    "flips_vs_anchor": 105,
+    "direction": "strictly_new_to_used",
+    "expected_score": 0.9498,
+    "role": "Consolidacion Podio Rango 3 y ataque a Nicolas Caveda (0.95095, Rango 2)"
   }
 ]
