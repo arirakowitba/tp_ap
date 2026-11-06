@@ -86,8 +86,8 @@ def _kill_process_tree(proc: subprocess.Popen) -> None:
         pass
 
 
-def list_remote_codex_messages(ref: str = "origin/main", cwd: Path = REPO_ROOT) -> List[Dict[str, str]]:
-    """Lists CX-*.md messages directly from a git ref (e.g. origin/main) via git ls-tree & git show."""
+def list_remote_codex_messages(ref: str = "origin/main", cwd: Path = REPO_ROOT, fetch_bodies: bool = False) -> List[Dict[str, str]]:
+    """Lists CX-*.md messages directly from a git ref (e.g. origin/main) via git ls-tree."""
     res = run_git(["ls-tree", ref, "coordination/codex_to_antigravity/"], cwd=cwd)
     if res.returncode != 0:
         return []
@@ -103,21 +103,22 @@ def list_remote_codex_messages(ref: str = "origin/main", cwd: Path = REPO_ROOT) 
         if not (name.startswith("CX-") and name.endswith(".md")):
             continue
 
-        msg_id = name.split("-")[0] + "-" + name.split("-")[1].replace(".md", "")
-        show_res = run_git(["show", f"{ref}:{rel_path}"], cwd=cwd)
+        msg_id = name.split(".")[0]
         subject_type = ""
         in_reply_to = ""
         supersedes = ""
-        if show_res.returncode == 0:
-            for mline in show_res.stdout.splitlines()[:20]:
-                if mline.startswith("id:"):
-                    msg_id = mline.split(":", 1)[1].strip()
-                elif mline.startswith("type:"):
-                    subject_type = mline.split(":", 1)[1].strip()
-                elif mline.startswith("in_reply_to:"):
-                    in_reply_to = mline.split(":", 1)[1].strip()
-                elif mline.startswith("supersedes:"):
-                    supersedes = mline.split(":", 1)[1].strip()
+        if fetch_bodies:
+            show_res = run_git(["show", f"{ref}:{rel_path}"], cwd=cwd)
+            if show_res.returncode == 0:
+                for mline in show_res.stdout.splitlines()[:20]:
+                    if mline.lower().startswith("id:"):
+                        msg_id = mline.split(":", 1)[1].strip()
+                    elif mline.lower().startswith("type:"):
+                        subject_type = mline.split(":", 1)[1].strip()
+                    elif mline.lower().startswith("in_reply_to:"):
+                        in_reply_to = mline.split(":", 1)[1].strip()
+                    elif mline.lower().startswith("supersedes:"):
+                        supersedes = mline.split(":", 1)[1].strip()
 
         messages.append(
             {

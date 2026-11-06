@@ -1,0 +1,59 @@
+{
+  "experiment": "cycle2_lightgbm_and_catboost_ensemble",
+  "split_seed": 20261109,
+  "confirm_rows": 12357,
+  "lightgbm_standalone": {
+    "accuracy": 0.9358258476976612,
+    "log_loss": 0.17476393289461695,
+    "threshold": 0.445,
+    "best_iteration": 395
+  },
+  "best_ensemble": {
+    "w_catboost": 0.8,
+    "w_lightgbm": 0.2,
+    "threshold": 0.46,
+    "accuracy": 0.9505543416686898,
+    "log_loss": 0.13987111759145485,
+    "net_fixes_vs_base": 29,
+    "fixes": 95,
+    "breaks": 66,
+    "net_seen": 0,
+    "net_new": 29,
+    "bootstrap_seller_ci95": [
+      3.0,
+      60.0
+    ]
+  },
+  "grid_results": [
+    {
+      "w_catboost": 0.3,
+      "w_lightgbm": 0.7,
+      "log_loss": 0.15362
+    },
+    {
+      "w_catboost": 0.4,
+      "w_lightgbm": 0.6,
+      "log_loss": 0.14947
+    },
+    {
+      "w_catboost": 0.5,
+      "w_lightgbm": 0.5,
+      "log_loss": 0.14609
+    },
+    {
+      "w_catboost": 0.6,
+      "w_lightgbm": 0.4,
+      "log_loss": 0.14339
+    },
+    {
+      "w_catboost": 0.7,
+      "w_lightgbm": 0.3,
+      "log_loss": 0.14131
+    },
+    {
+      "w_catboost": 0.8,
+      "w_lightgbm": 0.2,
+      "log_loss": 0.13987
+    }
+  ]
+}

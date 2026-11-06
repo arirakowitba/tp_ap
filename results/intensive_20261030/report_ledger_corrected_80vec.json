@@ -1,0 +1,44 @@
+{
+  "n_entries_total": 83,
+  "n_recoverable_vectors": 80,
+  "n_unresolved_entries": 3,
+  "unresolved_keys": [
+    "53",
+    "54",
+    "55"
+  ],
+  "n_intervened_ids": 2568,
+  "matrix_shape": [
+    80,
+    2568
+  ],
+  "algebraic_rank": 68,
+  "algebraic_nullity": 2500,
+  "corrected_recent_flips": {
+    "A15": {
+      "flips_vs_d1d2": 15,
+      "flips_vs_48_old_declared": 28,
+      "flips_vs_48_true": 36
+    },
+    "A11": {
+      "flips_vs_d1d2": 11,
+      "flips_vs_48_old_declared": 24,
+      "flips_vs_48_true": 32
+    },
+    "strong5": {
+      "flips_vs_d1d2": 5,
+      "flips_vs_48_old_declared": 24,
+      "flips_vs_48_true": 28
+    },
+    "top2": {
+      "flips_vs_d1d2": 2,
+      "flips_vs_48_old_declared": 23,
+      "flips_vs_48_true": 25
+    },
+    "final_global_evidence": {
+      "flips_vs_d1d2": 10,
+      "flips_vs_48_old_declared": 27,
+      "flips_vs_48_true": 25
+    }
+  }
+}

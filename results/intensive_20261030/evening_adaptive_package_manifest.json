@@ -1,0 +1,118 @@
+{
+  "title": "Evening Adaptive Submission Package (CX-0032)",
+  "date_utc": "2026-10-31T22:43:55Z",
+  "session_deadline": "2026-10-31 21:00 Buenos Aires (00:00 UTC)",
+  "reference_baselines": {
+    "s48_reference": {
+      "file": "submissions/submission_48_reference.csv",
+      "score_lb": 0.94633,
+      "sha256": "3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722"
+    },
+    "current_best_public": {
+      "file": "submissions/candidate_d1_d2_combined_on48.csv",
+      "score_lb": 0.94652,
+      "sha256": "57172f209ff5018d4ceef8c57172cc731828cc78eb9cb02dedccff4a51292502",
+      "flips_vs_48": 23
+    }
+  },
+  "adaptive_probes": {
+    "probe_1_seen_virgin7": {
+      "file": "candidate_probe1_seen_virgin7.csv",
+      "sha256": "3a0c5b324ae03def6c970bf63808d8c5e3bdce703e48288b598be87903815822",
+      "flips_vs_48": 7,
+      "flips_vs_best_094652": 16,
+      "flipped_ids": [
+        47,
+        4013,
+        4256,
+        16828,
+        17446,
+        24178,
+        25390
+      ],
+      "segment": "seen_sellers_only",
+      "hypothesis": "Isolates whether the seen-seller component of D1 provides positive net fixes on public LB.",
+      "decision_rule": {
+        "if_positive (> .94633)": "Confirms seen-seller flips are active. Retain D1 and expand seen-seller high-margin set.",
+        "if_neutral_or_negative (<= .94633)": "Seen flips provide no lift or negative lift. Focus entirely on new-seller inductive features."
+      }
+    },
+    "probe_2_new_virgin16": {
+      "file": "candidate_probe2_new_virgin16.csv",
+      "sha256": "41b5d09075577889d96d7c379c7d2c247f65e9ed62ed59cf518b317dabc92bdb",
+      "flips_vs_48": 16,
+      "flips_vs_best_094652": 7,
+      "flipped_ids": [
+        1753,
+        2455,
+        3135,
+        4184,
+        5993,
+        6247,
+        12361,
+        13349,
+        13637,
+        13768,
+        14087,
+        16438,
+        18976,
+        23082,
+        23529,
+        25753
+      ],
+      "segment": "new_sellers_only",
+      "hypothesis": "Isolates whether the new-seller component of D2 is the true source of gain in D1+D2 (.94652).",
+      "decision_rule": {
+        "if_positive (> .94633)": "Confirms new-seller inductive signals drive LB gains. Habilita candidate expansions on new sellers.",
+        "if_neutral_or_negative (<= .94633)": "Indicates new-seller threshold was overly aggressive. Re-calibrate toward conservative threshold."
+      }
+    },
+    "probe_3_reverse_polarity_virgin12": {
+      "file": "candidate_probe3_reverse_polarity_virgin12.csv",
+      "sha256": "7d353b78a188c66fed7e1365c62379ca4b800fcc7a66bf4b9329242f46b0c2e1",
+      "flips_vs_48": 0,
+      "flips_vs_best_094652": 23,
+      "flipped_ids": [],
+      "segment": "virgin_opposite_polarity_new_to_used",
+      "hypothesis": "Evaluates whether high-confidence model flips in the opposite direction (new -> used) recover ground truth without asymmetric penalty.",
+      "decision_rule": {
+        "if_positive (> .94633)": "Validates bidirectional error correction. Incorporate P3 into 5th submission.",
+        "if_neutral_or_negative (<= .94633)": "Confirms strong asymmetric penalty for false used. Restrict candidate flips strictly to used -> new."
+      }
+    },
+    "probe_4_inductive_price_extreme15": {
+      "file": "candidate_probe4_inductive_price_extreme15.csv",
+      "sha256": "7d353b78a188c66fed7e1365c62379ca4b800fcc7a66bf4b9329242f46b0c2e1",
+      "flips_vs_48": 0,
+      "flips_vs_best_094652": 23,
+      "flipped_ids": [],
+      "segment": "new_sellers_extreme_price_discordance",
+      "hypothesis": "Tests whether category-relative price percentiles provide robust inductive discriminative signal on new sellers.",
+      "decision_rule": {
+        "if_positive (> .94633)": "Validates inductive relative price features on new sellers. Merge P4 into 5th candidate.",
+        "if_neutral_or_negative (<= .94633)": "Discards extreme price percentile heuristic. Rely on full tree model ranking."
+      }
+    }
+  },
+  "submission_5_transition_matrix": {
+    "description": "Adaptive construction of 5th submission conditioned on the 4 probe scores received from Ariel:",
+    "cases": [
+      {
+        "condition": "P1 > .94633 and P2 > .94633",
+        "action": "Synergy confirmed: Candidate 5 combines D1 + D2 + any winning probe (P3/P4) with threshold calibrated on tune."
+      },
+      {
+        "condition": "P2 > .94633 and P1 <= .94633",
+        "action": "New sellers dominate: Candidate 5 builds on D2 (16 new) + P4 (if positive), discarding D1."
+      },
+      {
+        "condition": "P1 > .94633 and P2 <= .94633",
+        "action": "Seen sellers dominate: Candidate 5 builds on D1 (7 seen) + expanded seen-seller high-margin set, discarding D2."
+      },
+      {
+        "condition": "P1, P2, P3, P4 all <= .94652",
+        "action": "Safety anchor: Retain candidate_d1_d2_combined_on48.csv (0.94652) as the definitive best candidate to prevent regression."
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "experiment": "cycle1_multimodal_word_char_domain_cues",
+  "split_seed": 20261109,
+  "confirm_rows": 12357,
+  "seen_fraction": 0.7283321194464676,
+  "baseline_strong": {
+    "accuracy": 0.9482074937282512,
+    "log_loss": 0.1415341694472949,
+    "threshold_tune": 0.54
+  },
+  "candidate": {
+    "accuracy": 0.9502306385044914,
+    "log_loss": 0.13967446021374455,
+    "threshold_tune": 0.42000000000000004
+  },
+  "paired_results": {
+    "net_fixes": 25,
+    "fixes": 105,
+    "breaks": 80,
+    "net_seen": 2,
+    "net_new": 23,
+    "log_loss_delta": -0.0018597092335503607,
+    "bootstrap_seller_ci95": [
+      -6.0,
+      60.0
+    ]
+  }
+}

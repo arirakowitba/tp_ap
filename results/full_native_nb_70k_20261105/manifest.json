@@ -1,0 +1,16 @@
+{
+  "recipe": ".5 native CatBoost + .5 nested-NB CatBoost",
+  "threshold": 0.51,
+  "iterations": 900,
+  "seed": 20261104,
+  "n_train": 70000,
+  "n_test": 30000,
+  "source_zip_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+  "submission_sha256": "c56fc618e74d7a0a59d8a68f5a70b1546294a75fbef8edcbed978330c470de3c",
+  "test_probs_sha256": "e5ccc2513eb1f77f134e5e6a08e17ae76a222778ec2cd93a5b66b7afbbca6e90",
+  "train_id_sha256": "9912ab704f76c8375788fc6b90813787c59c7df5a3981121bf9bb66c4d996fdf",
+  "test_id_sha256": "0ba911b7fd623638b4a7bbbfd15d56b65e93659a4ec4bdfe85930837ea0aa758",
+  "seconds": 517.5617520809174,
+  "warning": "Unsubmitted candidate. No public-score guarantee; refit/calibration transport remains unverified.",
+  "test_labels_used": false
+}

@@ -1,0 +1,61 @@
+{
+  "total_remaining_submissions": 45,
+  "daily_distribution": {
+    "Dia_1_20261104": {
+      "quota": 8,
+      "focus": "Consolidaci\u00f3n de ancla p\u00fablica, reparaci\u00f3n de blunder 29583 y primer blend controlado",
+      "allocation": {
+        "Explotaci\u00f3n": 2,
+        "Modelos_Base": 3,
+        "Sondas_Informativas": 2,
+        "Reserva": 1
+      }
+    },
+    "Dia_2_20261105": {
+      "quota": 9,
+      "focus": "Ensamble multimodal escalado y apertura de nuevo rango con batches Hadamard",
+      "allocation": {
+        "Explotaci\u00f3n": 2,
+        "Modelos_Base": 3,
+        "Sondas_Informativas": 3,
+        "Reserva": 1
+      }
+    },
+    "Dia_3_20261106": {
+      "quota": 10,
+      "focus": "Fusi\u00f3n CatBoost-LightGBM-Redes con Router OOF y calibraci\u00f3n de probabilidades",
+      "allocation": {
+        "Explotaci\u00f3n": 2,
+        "Modelos_Base": 4,
+        "Sondas_Informativas": 3,
+        "Reserva": 1
+      }
+    },
+    "Dia_4_20261107": {
+      "quota": 10,
+      "focus": "Maximizaci\u00f3n de score p\u00fablico objetivo (~0.950+) y selecci\u00f3n de modelos de baja correlaci\u00f3n",
+      "allocation": {
+        "Explotaci\u00f3n": 2,
+        "Modelos_Base": 4,
+        "Sondas_Informativas": 2,
+        "Reserva": 2
+      }
+    },
+    "Dia_5_20261108_Cierre": {
+      "quota": 8,
+      "focus": "Congelamiento de submissions finales (p\u00fablica vs privada), desempate y selecci\u00f3n conservadora",
+      "allocation": {
+        "Explotaci\u00f3n": 1,
+        "Modelos_Base": 2,
+        "Sondas_Informativas": 1,
+        "Reserva": 4
+      }
+    }
+  },
+  "category_totals": {
+    "Explotacion_Directa_20pct": 9,
+    "Modelos_Base_y_Diversidad_35pct": 16,
+    "Sondas_Informativas_25pct": 11,
+    "Reserva_Estrategica_20pct": 9
+  }
+}

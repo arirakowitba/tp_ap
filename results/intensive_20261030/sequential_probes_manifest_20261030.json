@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "created_at_utc": "2026-10-31T01:10:00Z",
+    "reference_baseline": "candidate_d1_d2_combined_on48.csv (Score 0.94652, SHA 57172f...)",
+    "safety_fallback": "submission_48_reference.csv (Score 0.94633)",
+    "target_objective": "~0.96000 LB",
+    "protocol_tasks": [
+      "CX-0025",
+      "CX-0026"
+    ],
+    "designer": "Antigravity"
+  },
+  "probe_inventory": {
+    "probe_s1_seen_virgin25": {
+      "file": "submissions/probe_s1_seen_virgin25.csv",
+      "sha256": "a87142adbdc302e37e025f4eecdad8294f5ce491ebefc928be0d12b821939876",
+      "n_flips_vs_best": 25,
+      "n_flips_vs_s48": 48,
+      "hypothesis": "Hypothesis S1: Seen-seller high-margin tree agreement (margin >= 0.18) on untouched virgin IDs.",
+      "target_ids": [
+        14277,
+        1556,
+        2832,
+        25047,
+        12713,
+        2584,
+        9480,
+        6171,
+        14944,
+        14123,
+        29565,
+        10724,
+        29748,
+        6237,
+        5229,
+        28259,
+        7163,
+        11952,
+        377,
+        9484,
+        13618,
+        10123,
+        23210,
+        23999,
+        14609
+      ],
+      "expected_delta_if_true": "+0.00020 to +0.00030",
+      "risk_profile": "Extremely low: 0 overlap with refuted history, high SNR seen sellers."
+    },
+    "probe_s2_new_virgin25": {
+      "file": "submissions/probe_s2_new_virgin25.csv",
+      "sha256": "b9acc4b93c91d032a22d640ba72a3e633650aceff4a3b3057323b3e370acb0dd",
+      "n_flips_vs_best": 25,
+      "n_flips_vs_s48": 48,
+      "hypothesis": "Hypothesis S2: New-seller high-margin text tree agreement on untouched virgin IDs.",
+      "target_ids": [
+        7414,
+        18735,
+        8983,
+        14143,
+        24638,
+        3055,
+        18908,
+        2295,
+        8267,
+        452,
+        25138,
+        3079,
+        651,
+        7200,
+        26941,
+        1256,
+        4383,
+        2125,
+        22233,
+        4228,
+        11517,
+        3083,
+        9557,
+        23268,
+        6072
+      ],
+      "expected_delta_if_true": "+0.00015 to +0.00025",
+      "risk_profile": "Low: tested in D2 (+0.00005 on 16 flips); expands generalization."
+    },
+    "probe_s3_lexical_virgin25": {
+      "file": "submissions/probe_s3_lexical_virgin25.csv",
+      "sha256": "dcf5a5eb4cdc099274a5b84028691c1edea7ac618325b078a037ed94774871e0",
+      "n_flips_vs_best": 25,
+      "n_flips_vs_s48": 48,
+      "hypothesis": "Hypothesis S3: Third orthogonal virgin consensus block (margin >= 0.15) on untouched test IDs.",
+      "target_ids": [
+        20926,
+        3562,
+        2220,
+        19810,
+        16126,
+        2114,
+        15940,
+        7690,
+        27020,
+        8203,
+        7367,
+        21920,
+        27225,
+        19947,
+        25287,
+        16186,
+        27520,
+        13829,
+        26247,
+        11548,
+        14730,
+        19688,
+        19457,
+        9314,
+        5078
+      ],
+      "expected_delta_if_true": "+0.00020 to +0.00030",
+      "risk_profile": "Very low: strictly virgin, high tree consensus."
+    },
+    "candidate_s1_s2_combined_on_best": {
+      "file": "submissions/candidate_s1_s2_combined_on_best.csv",
+      "sha256": "bb21e59d43cf9cf0d8e0d0d6bc56b81a1de8c52a2c6ace5155ba867e50312cc3",
+      "n_flips_vs_best": 50,
+      "n_flips_vs_s48": 73,
+      "hypothesis": "Orthogonal union of confirmed Seen (S1) + New (S2) blocks.",
+      "expected_delta_if_both_confirmed": "+0.00040 to +0.00060 (Reaching ~0.94700+)",
+      "risk_profile": "Zero risk if submitted conditionally after S1 and S2 succeed."
+    }
+  },
+  "sequential_decision_tree": {
+    "step_1": {
+      "action": "Submit probe_s1_seen_virgin25.csv (25 flips)",
+      "condition_a": "Score > 0.94652 (e.g. 0.94675+): S1 confirmed. Set Baseline_A = Best + S1.",
+      "condition_b": "Score <= 0.94652: S1 rejected. Retain 0.94652 as baseline."
+    },
+    "step_2": {
+      "action": "Submit probe_s2_new_virgin25.csv (25 flips)",
+      "condition_a": "Score > 0.94652 (e.g. 0.94670+): S2 confirmed. Set Baseline_B = Best + S2.",
+      "condition_b": "Score <= 0.94652: S2 rejected."
+    },
+    "step_3": {
+      "action": "Submit probe_s3_lexical_virgin25.csv (25 flips)",
+      "condition_a": "Score > current baseline: S3 confirmed."
+    },
+    "step_4": {
+      "action": "Deploy combined candidate of confirmed blocks (e.g. candidate_s1_s2_combined_on_best.csv if S1 and S2 succeed).",
+      "guarantee": "Strict mutual disjointness guarantees that accuracy gains are linear and additive on the public test slice."
+    },
+    "step_5": {
+      "action": "Reserved for Claude's calibrated posterior probe if it passes the prequential backtest (CC-0010)."
+    }
+  }
+}

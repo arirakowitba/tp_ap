@@ -1,0 +1,68 @@
+{
+  "model_name": "H-AVG-Plus",
+  "architecture": "0.50 * B10 (Claude) + 0.50 * Variant_C_Blend (0.75 CB_Bagged_3seeds + 0.25 LGB)",
+  "components": {
+    "b10": {
+      "origin": "origin/claude/posterior-y-modelos-20261027:results/round141_claude_baseline/full70k/test_p.npy",
+      "weight": 0.5
+    },
+    "cb_bagged": {
+      "seeds": [
+        2026,
+        314159,
+        20261030
+      ],
+      "iterations_per_seed": 600,
+      "learning_rate": 0.07,
+      "depth": 6,
+      "l2_leaf_reg": 6.0,
+      "cat_features": [
+        "category_id",
+        "listing_type_id",
+        "buying_mode",
+        "state",
+        "ship_mode",
+        "seller_id"
+      ],
+      "weight_in_vc": 0.75
+    },
+    "lgb_full70k": {
+      "n_estimators": 227,
+      "iterations_rationale": "Exact median of tune best_iterations (189, 227, 257) from cross-validation cuts",
+      "learning_rate": 0.04,
+      "num_leaves": 63,
+      "weight_in_vc": 0.25
+    }
+  },
+  "decision_threshold": 0.5,
+  "total_flips_vs_s48": 378,
+  "historical_04_76_tested_flips": 355,
+  "never_probed_flips": 23,
+  "submission_guard_passed": true,
+  "guard_message": {
+    "file": "candidate_model_havg_plus_full70k.csv",
+    "valid": true,
+    "n_rows": 30000,
+    "n_flips_vs_48": 378,
+    "sha256": "e424e17f122eb8e4061b81738de29feb9bd82c6ef405ea4234ec9389d17494f2",
+    "flips_used_to_new": 163,
+    "flips_new_to_used": 215,
+    "warnings": [
+      "WARNING: Overlaps with REFUTED negative submission '37' (Score: 0.9449) on 28 IDs (28 with same target direction).",
+      "WARNING: Overlaps with REFUTED negative submission '38' (Score: 0.94423) on 33 IDs (33 with same target direction).",
+      "WARNING: Overlaps with REFUTED negative submission '39' (Score: 0.92976) on 214 IDs (214 with same target direction).",
+      "WARNING: Overlaps with REFUTED negative submission '45' (Score: 0.94623) on 3 IDs (3 with same target direction).",
+      "WARNING: Overlaps with REFUTED negative submission '46' (Score: 0.94623) on 5 IDs (5 with same target direction).",
+      "WARNING: Overlaps with REFUTED negative submission '49' (Score: 0.94628) on 7 IDs (7 with same target direction).",
+      "WARNING: Overlaps with REFUTED negative submission '50' (Score: 0.94628) on 2 IDs (2 with same target direction).",
+      "WARNING: Overlaps with REFUTED negative submission '59_full' (Score: 0.94576) on 4 IDs (4 with same target direction).",
+      "WARNING: Overlaps with REFUTED negative submission 'fin_stack_seen150' (Score: 0.94257) on 1 IDs (1 with same target direction).",
+      "WARNING: Overlaps with REFUTED negative submission 'fin_stack_new150' (Score: 0.94495) on 3 IDs (3 with same target direction).",
+      "WARNING: Overlaps with REFUTED negative submission '74' (Score: 0.94614) on 2 IDs (2 with same target direction).",
+      "NOTICE: Overlaps with TIED submission '75' (Score: 0.94633) on 2 IDs. Note that 75 did NOT demonstrate public improvement."
+    ]
+  },
+  "sha256": "e424e17f122eb8e4061b81738de29feb9bd82c6ef405ea4234ec9389d17494f2",
+  "total_elapsed_seconds": 24.0,
+  "timestamp_utc": "2026-10-30T21:50:52Z"
+}

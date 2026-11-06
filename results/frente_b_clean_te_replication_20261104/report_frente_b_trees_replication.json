@@ -1,0 +1,54 @@
+{
+  "experiment": "frente_b_clean_te_trees_replication",
+  "split_seed": 20261144,
+  "split_sizes": {
+    "fit": 45294,
+    "tune": 12442,
+    "confirm": 12264
+  },
+  "duration_seconds": 616.8104114532471,
+  "catboost_bag3": {
+    "seeds": [
+      20261144,
+      20262141,
+      20263138
+    ],
+    "accuracy": 0.9546640574037835,
+    "log_loss": 0.12093697419238215,
+    "hits": 11708,
+    "optimal_threshold": 0.5300000000000001
+  },
+  "lightgbm_bag3": {
+    "seeds": [
+      20261144,
+      20262141,
+      20263138
+    ],
+    "bagging_params": {
+      "subsample_freq": 1,
+      "bagging_fraction": 0.8,
+      "feature_fraction": 0.8
+    },
+    "seed_diversity": {
+      "correlations": [
+        0.9974779191260571,
+        0.9976254205799605,
+        0.9977270337480753
+      ],
+      "disagreements_s0_s1": 116
+    }
+  },
+  "blend_80_20": {
+    "accuracy": 0.954337899543379,
+    "log_loss": 0.11992078950221358,
+    "hits": 11704,
+    "delta_hits_tuned_th": -4,
+    "delta_hits_common_50": 6,
+    "fixes": 29,
+    "breaks": 33,
+    "ci_95_seller_bootstrap": [
+      -20.0,
+      11.0
+    ]
+  }
+}

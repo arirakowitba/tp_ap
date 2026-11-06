@@ -1,0 +1,56 @@
+{
+  "split_date": "2026-10-29",
+  "n_train_historical": 57,
+  "n_test_prospective": 32,
+  "solver_full_test": {
+    "n": 32,
+    "mae": 24.58538442172911,
+    "rmse": 35.46945550505929,
+    "med_ae": 11.035592797592276,
+    "pearson_r": 0.6585970540023411,
+    "spearman_rho": -0.5759243494271048,
+    "sign_acc": 0.27586206896551724,
+    "balanced_sign_acc": 0.5
+  },
+  "zero_predictor_full_test": {
+    "n": 32,
+    "mae": 11.5,
+    "rmse": 35.65371649632055,
+    "med_ae": 4.0,
+    "pearson_r": 0.0,
+    "spearman_rho": 0.0,
+    "sign_acc": 0.0,
+    "balanced_sign_acc": 0.0
+  },
+  "solver_without_optionA": {
+    "n": 32,
+    "mae": 24.58538442172911,
+    "rmse": 35.46945550505929,
+    "med_ae": 11.035592797592276,
+    "pearson_r": 0.6585970540023411,
+    "spearman_rho": -0.5759243494271048,
+    "sign_acc": 0.27586206896551724,
+    "balanced_sign_acc": 0.5
+  },
+  "zero_predictor_without_optionA": {
+    "n": 32,
+    "mae": 11.5,
+    "rmse": 35.65371649632055,
+    "med_ae": 4.0,
+    "pearson_r": 0.0,
+    "spearman_rho": 0.0,
+    "sign_acc": 0.0,
+    "balanced_sign_acc": 0.0
+  },
+  "historical_mean_without_optionA": {
+    "n": 32,
+    "mae": 37.996710526315795,
+    "rmse": 45.00060295926539,
+    "med_ae": 32.09649122807018,
+    "pearson_r": 0.0,
+    "spearman_rho": 0.0,
+    "sign_acc": 0.27586206896551724,
+    "balanced_sign_acc": 0.5
+  },
+  "verdict": "FAIL_PREDICTIVE_ZERO_PRIOR: Bounded solver on high-nullity matrix does NOT beat zero predictor on prospective test window (Solver MAE vs Zero MAE). Confirms CX-0114 instruction that public scores must be treated strictly as aggregate batch constraints rather than calibrated per-ID posteriors."
+}

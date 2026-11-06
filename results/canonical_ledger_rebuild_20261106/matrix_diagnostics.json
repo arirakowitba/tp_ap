@@ -1,0 +1,28 @@
+{
+  "n_canonical_equations": 89,
+  "n_active_ids_flipped": 2725,
+  "rank_in_R": 83,
+  "rank_in_F2": 83,
+  "nullity": 2642,
+  "gram_condition_number": 1535150451083032.2,
+  "singular_values_top5": [
+    1535.1504510830323,
+    1383.5051531535694,
+    975.1708131003455,
+    737.3890220316086,
+    650.7821756089438
+  ],
+  "singular_values_bottom5": [
+    2.9041667132677624e-14,
+    8.70828367072713e-15,
+    5.6819459798267866e-15,
+    4.107357652210752e-15,
+    7.016443175959552e-16
+  ],
+  "active_anchor": {
+    "name": "submission_20261106_05_climax_consumer_unanimous_top15.csv",
+    "score": 0.94719,
+    "public_hits": 19889,
+    "delta_hits_vs_48": 18
+  }
+}

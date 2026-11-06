@@ -1,0 +1,93 @@
+{
+  "experiment": "adversarial_validation_train_vs_test",
+  "adversarial_roc_auc": 0.5002067823809524,
+  "total_train_rows": 70000,
+  "total_test_rows": 30000,
+  "seller_overlap": {
+    "unique_sellers_train": 27949,
+    "unique_sellers_test": 15019,
+    "shared_sellers": 7053,
+    "test_rows_seen_seller_pct": 71.62333333333333,
+    "test_rows_new_seller_pct": 28.376666666666665
+  },
+  "feature_drift_ranking": [
+    {
+      "feature": "category_id",
+      "importance_gain": 1747.2947642008462,
+      "pct_importance": 94.00985957884629
+    },
+    {
+      "feature": "price",
+      "importance_gain": 56.732913176218666,
+      "pct_importance": 3.0524061025470632
+    },
+    {
+      "feature": "state_id",
+      "importance_gain": 31.83537038167318,
+      "pct_importance": 1.7128413365277162
+    },
+    {
+      "feature": "title_len",
+      "importance_gain": 7.9394731521606445,
+      "pct_importance": 0.42716819820954216
+    },
+    {
+      "feature": "title_word_count",
+      "importance_gain": 7.626033147176107,
+      "pct_importance": 0.4103041570307396
+    },
+    {
+      "feature": "num_pics",
+      "importance_gain": 4.195866584777832,
+      "pct_importance": 0.22575059258930866
+    },
+    {
+      "feature": "ship_mode",
+      "importance_gain": 3.0048465728759766,
+      "pct_importance": 0.16167003424934276
+    },
+    {
+      "feature": "num_tags",
+      "importance_gain": 0.0,
+      "pct_importance": 0.0
+    },
+    {
+      "feature": "log_price",
+      "importance_gain": 0.0,
+      "pct_importance": 0.0
+    },
+    {
+      "feature": "num_attrs",
+      "importance_gain": 0.0,
+      "pct_importance": 0.0
+    },
+    {
+      "feature": "has_warranty",
+      "importance_gain": 0.0,
+      "pct_importance": 0.0
+    },
+    {
+      "feature": "num_vars",
+      "importance_gain": 0.0,
+      "pct_importance": 0.0
+    },
+    {
+      "feature": "buying_mode",
+      "importance_gain": 0.0,
+      "pct_importance": 0.0
+    },
+    {
+      "feature": "listing_type_id",
+      "importance_gain": 0.0,
+      "pct_importance": 0.0
+    }
+  ],
+  "top_features_comparison": {
+    "price_median_train": 250.0,
+    "price_median_test": 250.0,
+    "num_attrs_mean_train": 1.176057142857143,
+    "num_attrs_mean_test": 1.2143666666666666,
+    "has_warranty_pct_train": 39.00714285714286,
+    "has_warranty_pct_test": 39.18
+  }
+}

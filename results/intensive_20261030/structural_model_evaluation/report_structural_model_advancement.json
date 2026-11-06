@@ -1,0 +1,97 @@
+{
+  "timestamp_utc": "2026-11-01T20:34:31Z",
+  "description": "Advanced Inductive Structural Model with Category Price Dispersion and Lexical Condition Signals",
+  "splits_overlap_audit": {
+    "n_confirm_2026": 12905,
+    "n_confirm_314159": 12843,
+    "overlap_rows_count": 2337,
+    "overlap_rows_pct": 18.109259976753197,
+    "unique_rows_count_2026": 10568,
+    "unique_rows_count_314159": 10506,
+    "sellers_count_2026": 6649,
+    "sellers_count_314159": 6642,
+    "overlap_sellers_count": 2089,
+    "overlap_sellers_pct": 31.418258384719504
+  },
+  "split_evaluations": {
+    "seed_2026": {
+      "seed": 2026,
+      "n_fit": 45330,
+      "n_tune": 11765,
+      "n_confirm": 12905,
+      "best_iteration": 335,
+      "tune_frozen_params": {
+        "best_weight_lgb": 0.1,
+        "best_threshold": 0.47500000000000003,
+        "proxy_threshold": 0.47000000000000003
+      },
+      "metrics": {
+        "acc_proxy": 0.9239054629988377,
+        "acc_cand": 0.9239829523440527,
+        "delta_acc": 7.748934521500939e-05,
+        "ll_proxy": 0.1876378137337403,
+        "ll_cand": 0.18673415213389624,
+        "delta_ll": -0.0009036615998440634,
+        "auc_proxy": 0.9781615146439268,
+        "auc_cand": 0.9784295213440942,
+        "fixes": 22,
+        "breaks": 21,
+        "net_fixes": 1,
+        "bootstrap_95ci": [
+          -12.0,
+          15.0
+        ],
+        "seen_fixes": 7,
+        "seen_breaks": 5,
+        "seen_net": 2,
+        "new_fixes": 15,
+        "new_breaks": 16,
+        "new_net": -1
+      }
+    },
+    "seed_314159": {
+      "seed": 314159,
+      "n_fit": 44684,
+      "n_tune": 12473,
+      "n_confirm": 12843,
+      "best_iteration": 377,
+      "tune_frozen_params": {
+        "best_weight_lgb": 0.15,
+        "best_threshold": 0.48000000000000004,
+        "proxy_threshold": 0.535
+      },
+      "metrics": {
+        "acc_proxy": 0.919956396480573,
+        "acc_cand": 0.9216693918866309,
+        "delta_acc": 0.001712995406057849,
+        "ll_proxy": 0.1955248466550394,
+        "ll_cand": 0.193628729762462,
+        "delta_ll": -0.0018961168925774041,
+        "auc_proxy": 0.9758057276803863,
+        "auc_cand": 0.9762882469285449,
+        "fixes": 67,
+        "breaks": 45,
+        "net_fixes": 22,
+        "bootstrap_95ci": [
+          -2.0,
+          48.0
+        ],
+        "seen_fixes": 10,
+        "seen_breaks": 10,
+        "seen_net": 0,
+        "new_fixes": 57,
+        "new_breaks": 35,
+        "new_net": 22
+      }
+    }
+  },
+  "full_refit": {
+    "model": "LightGBM_dispersion_lexical_70k",
+    "n_train": 70000,
+    "n_test": 30000,
+    "target_rounds": 356,
+    "learning_rate": 0.05,
+    "test_p_mean": 0.46207611558474043,
+    "test_p_std": 0.42916135540425693
+  }
+}

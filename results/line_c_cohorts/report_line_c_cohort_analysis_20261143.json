@@ -1,0 +1,8 @@
+{
+  "n_confirm": 12360,
+  "n_fixes": 227,
+  "n_breaks": 1350,
+  "n_both_correct": 10359,
+  "n_both_wrong": 424,
+  "uncertain_tree_cohort_size": 249
+}

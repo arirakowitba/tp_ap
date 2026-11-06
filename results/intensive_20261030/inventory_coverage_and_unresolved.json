@@ -1,0 +1,384 @@
+{
+  "real_submissions_count": 39,
+  "candidates_unsubmitted_count": 56,
+  "duplicates_count": 13,
+  "inconsistent_count": 6,
+  "real_submissions": [
+    {
+      "file": "submission_15_top16_Q4_sobre_mejor11.csv",
+      "path": "submissions\\20261019\\submission_15_top16_Q4_sobre_mejor11.csv",
+      "key": "15",
+      "score": 0.94523,
+      "sha256_lf": "658ee215ee4998c3ee2cb6238005fef29b8d3f84bc7a7d420878bf80ec5d3dd3"
+    },
+    {
+      "file": "submission_16_frescos_consenso64_sobre15.csv",
+      "path": "submissions\\20261020\\submission_16_frescos_consenso64_sobre15.csv",
+      "key": "16",
+      "score": 0.945,
+      "sha256_lf": "a710f0b1126c4aafdcd2e07a97ab005ffd3c58f7e2c6aa74cc8ec77eed2cbf81"
+    },
+    {
+      "file": "submission_17_informacion_cruzada_A_C_sobre15.csv",
+      "path": "submissions\\20261020\\submission_17_informacion_cruzada_A_C_sobre15.csv",
+      "key": "17",
+      "score": 0.94447,
+      "sha256_lf": "0011e0f1cd27c58c995cfc8e25c7587270865e94344bb7ab62d984030a123512"
+    },
+    {
+      "file": "submission_18_informacion_cruzada_B_C_sobre15.csv",
+      "path": "submissions\\20261020\\submission_18_informacion_cruzada_B_C_sobre15.csv",
+      "key": "18",
+      "score": 0.94404,
+      "sha256_lf": "70140e37a7fc08d04920660ecf2a40c078033b26446b2124b14194b5fda2a30b"
+    },
+    {
+      "file": "submission_19_informacion_cruzada_B_D_sobre15.csv",
+      "path": "submissions\\20261020\\submission_19_informacion_cruzada_B_D_sobre15.csv",
+      "key": "19",
+      "score": 0.94409,
+      "sha256_lf": "f12a0c10ff45e6ed6f8817e0d3cb4a0f1d6218d8a2dc9ddaea13fc92bd12aa72"
+    },
+    {
+      "file": "submission_20_informacion_cruzada_C_D_E_sobre15.csv",
+      "path": "submissions\\20261020\\submission_20_informacion_cruzada_C_D_E_sobre15.csv",
+      "key": "20",
+      "score": 0.94285,
+      "sha256_lf": "4447b356e2c24352556079b60745bbecad62355a6e51dddf65dc7f7f41c27a6d"
+    },
+    {
+      "file": "submission_consolidada_A32_sobre15_no_enviada.csv",
+      "path": "submissions\\20261020\\submission_consolidada_A32_sobre15_no_enviada.csv",
+      "key": "24",
+      "score": 0.94533,
+      "sha256_lf": "84529fa355bd20dc4b34bcffb244cfa3f57a451c1b091a9db3fdc40468acbd0f"
+    },
+    {
+      "file": "submission_21_A_E1_E2_sobre15.csv",
+      "path": "submissions\\20261021\\submission_21_A_E1_E2_sobre15.csv",
+      "key": "21",
+      "score": 0.94504,
+      "sha256_lf": "44cc8fbbd1d4e3fc76ce828743832a8b72d3fb44944be4b7ed927fdc34de9ac6"
+    },
+    {
+      "file": "submission_22_A_E1_E3_sobre15.csv",
+      "path": "submissions\\20261021\\submission_22_A_E1_E3_sobre15.csv",
+      "key": "22",
+      "score": 0.94471,
+      "sha256_lf": "6ba66edfbaba4256a4f4fb34b096bbc46b375458dd7e2cc58c4ceb54dad5c6ec"
+    },
+    {
+      "file": "submission_23_A_E1_E4_sobre15.csv",
+      "path": "submissions\\20261021\\submission_23_A_E1_E4_sobre15.csv",
+      "key": "23",
+      "score": 0.94495,
+      "sha256_lf": "7d334e01833e1dd8dc2d64fcd22f2830e785a4830269b49a88f7586a202da52b"
+    },
+    {
+      "file": "submission_25_A_E2_top16_catboost.csv",
+      "path": "submissions\\20261021\\submission_25_A_E2_top16_catboost.csv",
+      "key": "25",
+      "score": 0.94519,
+      "sha256_lf": "fc582f79e8e2f706472277fd6418883efa3e8820eeb537601b11bd5ffde72187"
+    },
+    {
+      "file": "submission_26_A_E2_complemento16.csv",
+      "path": "submissions\\20261021\\submission_26_A_E2_complemento16.csv",
+      "key": "26",
+      "score": 0.94547,
+      "sha256_lf": "ed8ce3da6553cd53c3222cdba0b52d9645b009bb455a1b28edd74696e5670c12"
+    },
+    {
+      "file": "submission_57_posterior_sobre48.csv",
+      "path": "submissions\\20261027\\submission_57_posterior_sobre48.csv",
+      "key": "57",
+      "score": 0.94633,
+      "sha256_lf": "12ff239a3369ee800ae9d19354932e48707bb1a729111790c3527f05e334d0f5"
+    },
+    {
+      "file": "submission_58_posterior_sobre48.csv",
+      "path": "submissions\\20261027\\submission_58_posterior_sobre48.csv",
+      "key": "58",
+      "score": 0.94633,
+      "sha256_lf": "28ec3251ad223b1494e83807752010542e4fceef55822032477a87752be67792"
+    },
+    {
+      "file": "probe_59_new_seller_sobre48.csv",
+      "path": "submissions\\20261028\\probe_59_new_seller_sobre48.csv",
+      "key": "probe_59_new_seller",
+      "score": 0.94619,
+      "sha256_lf": "de1ebd9af13ecc1723e5f521e1c0dcb525a2e9261267ae3edb7bafe4bc5e7b9f"
+    },
+    {
+      "file": "probe_59_seen_to_new_sobre48.csv",
+      "path": "submissions\\20261028\\probe_59_seen_to_new_sobre48.csv",
+      "key": "probe_59_seen_to_new",
+      "score": 0.9459,
+      "sha256_lf": "d06115e8984d4ae82c34cd0ac7276f7b16a6666d1eca57bea736aa5f7b7f32e7"
+    },
+    {
+      "file": "probe_fin_stack_new_unprobed150_sobre48.csv",
+      "path": "submissions\\20261028\\probe_fin_stack_new_unprobed150_sobre48.csv",
+      "key": "fin_stack_new150",
+      "score": 0.94495,
+      "sha256_lf": "ebb365337aa674d5ce099b763b4917089348539bf1b3b8e5f509e7950cfcf67a"
+    },
+    {
+      "file": "probe_fin_stack_seen_unprobed150_sobre48.csv",
+      "path": "submissions\\20261028\\probe_fin_stack_seen_unprobed150_sobre48.csv",
+      "key": "fin_stack_seen150",
+      "score": 0.94257,
+      "sha256_lf": "37a8c519abff07ae8c64e360001229f3f3bf6953301908b38a946327ed00c832"
+    },
+    {
+      "file": "submission_59_fin_stack_banda_0.85_1.00_sobre48.csv",
+      "path": "submissions\\20261028\\submission_59_fin_stack_banda_0.85_1.00_sobre48.csv",
+      "key": "59_full",
+      "score": 0.94576,
+      "sha256_lf": "b34723587e1ef09c897a4af5768a2ea025c0dd313c04bd6494d5f0289899f373"
+    },
+    {
+      "file": "submission_69_probe4_unanimous_consensus.csv",
+      "path": "submissions\\20261029\\submission_69_probe4_unanimous_consensus.csv",
+      "key": "74",
+      "score": 0.94614,
+      "sha256_lf": "8993a3a803b1bc47be8ab639466e7895f4b4c4087377977ce47223943bde8991"
+    },
+    {
+      "file": "submission_72_new_seller_to_new_unprobed8.csv",
+      "path": "submissions\\20261029\\submission_72_new_seller_to_new_unprobed8.csv",
+      "key": "72",
+      "score": 0.94623,
+      "sha256_lf": "54120580491c0049fb27ecff8d45d676f80bc5a6c4831150588aa3b04b68ef7b"
+    },
+    {
+      "file": "submission_73_new_seller_to_used_unprobed7.csv",
+      "path": "submissions\\20261029\\submission_73_new_seller_to_used_unprobed7.csv",
+      "key": "73",
+      "score": 0.946,
+      "sha256_lf": "f2f5f372ea1210cdcffa4e9e9fb0e7e74bd0bee91a7f279f0c1fd7f56162b8ee"
+    },
+    {
+      "file": "submission_75_lexical_seen_to_used5_on48.csv",
+      "path": "submissions\\20261029\\submission_75_lexical_seen_to_used5_on48.csv",
+      "key": "75",
+      "score": 0.94633,
+      "sha256_lf": "b2cf5face8ae2cdebc20b9c30ac2eb4b041b073346abcd852f1949a34671236b"
+    },
+    {
+      "file": "submission_76_final_baseline48.csv",
+      "path": "submissions\\20261029\\submission_76_final_baseline48.csv",
+      "key": "76",
+      "score": 0.94633,
+      "sha256_lf": "3f8d08e0e61854c2805a02140b1f7428016d63deae4bd7d6c820c7478f6c9722"
+    },
+    {
+      "file": "candidate_optionA_full_inductive_blend_bag3.csv",
+      "path": "submissions\\20261030\\candidate_optionA_full_inductive_blend_bag3.csv",
+      "key": "candidate_optionA_full_inductive_blend_bag3",
+      "score": 0.93695,
+      "sha256_lf": "d93af8e75bde55f6cdf8b90ca61da19ccf5ad7f0b1d32ee479b86bd1a7fb02db"
+    },
+    {
+      "file": "candidate_sub79_new_sellers_clean_text.csv",
+      "path": "submissions\\20261030\\candidate_sub79_new_sellers_clean_text.csv",
+      "key": "candidate_c1_sub79_new_clean20",
+      "score": 0.94623,
+      "sha256_lf": "6a75fd3389c280c9a0123433ccf952afff25239de961c78b831ea9ebf5e831d6"
+    },
+    {
+      "file": "candidate_d1_d2_combined_on48.csv",
+      "path": "submissions\\candidate_d1_d2_combined_on48.csv",
+      "key": "submission_final_reconfirmation_d1_d2",
+      "score": 0.94652,
+      "sha256_lf": "57172f209ff5018d4ceef8c57172cc731828cc78eb9cb02dedccff4a51292502"
+    },
+    {
+      "file": "candidate_frontier_0947_top22.csv",
+      "path": "submissions\\candidate_frontier_0947_top22.csv",
+      "key": "candidate_frontier_top22",
+      "score": 0.94623,
+      "sha256_lf": "c399247eb2757b332373518dbe99c37f3fafd3d1ba29107865db0d7c24b5579f"
+    },
+    {
+      "file": "candidate_model_havg_b10_variant_c_full70k.csv",
+      "path": "submissions\\candidate_model_havg_b10_variant_c_full70k.csv",
+      "key": "havg_variant_c_full70k",
+      "score": 0.94514,
+      "sha256_lf": "71d86093d7d14831cd33ef6de9bf7c3e076f2915b7dcce12609ac49bdf8a7a3d"
+    },
+    {
+      "file": "candidate_model_havg_plus_full70k.csv",
+      "path": "submissions\\candidate_model_havg_plus_full70k.csv",
+      "key": "havg_plus_full70k",
+      "score": 0.94471,
+      "sha256_lf": "c568ad01485564a7682135ffec515204200326105c3e2b2d08a222b17f24ee8f"
+    },
+    {
+      "file": "candidate_probe1_seen_virgin7.csv",
+      "path": "submissions\\candidate_probe1_seen_virgin7.csv",
+      "key": "probe_d1_seen7",
+      "score": 0.94647,
+      "sha256_lf": "6afa9bb30da486c08373197030409eb018fc7e504f80f89716b898faebab9a9f"
+    },
+    {
+      "file": "candidate_probe2_new_virgin16.csv",
+      "path": "submissions\\candidate_probe2_new_virgin16.csv",
+      "key": "probe_d2_new16",
+      "score": 0.94638,
+      "sha256_lf": "d72acb37b1d4d8fefef786fe425b643e4e887d98cdeee287d1812c5b5781ee9a"
+    },
+    {
+      "file": "candidate_unanimous_consensus_0947.csv",
+      "path": "submissions\\candidate_unanimous_consensus_0947.csv",
+      "key": "candidate_unanimous_consensus",
+      "score": 0.94628,
+      "sha256_lf": "af616752b4181ef569a98aee335b66f964ee28c6b796d0e90a1ffb5c56892878"
+    },
+    {
+      "file": "probe_frontier_increment23_on_d1d2.csv",
+      "path": "submissions\\probe_frontier_increment23_on_d1d2.csv",
+      "key": "probe_frontier_increment23",
+      "score": 0.94642,
+      "sha256_lf": "060e1a0fd22954263b2eeebc88435229fb043f0acffc014a1f9e03719f7b3378"
+    },
+    {
+      "file": "probe_s1_seen_virgin25.csv",
+      "path": "submissions\\probe_s1_seen_virgin25.csv",
+      "key": "probe_s1_seen_virgin25",
+      "score": 0.94628,
+      "sha256_lf": "4ce2ab7269e35bf5825f2e3d115a3e4cff874c208dc35c8ed1369ff5357c7b10"
+    },
+    {
+      "file": "probe_s2_new_virgin25.csv",
+      "path": "submissions\\probe_s2_new_virgin25.csv",
+      "key": "probe_s2_new_virgin25",
+      "score": 0.94585,
+      "sha256_lf": "7182d8efcd40af7d8ec16b2393e2fef3227714b7996e768d0767a9fa0089e8bf"
+    },
+    {
+      "file": "probe_s3_lexical_virgin25.csv",
+      "path": "submissions\\probe_s3_lexical_virgin25.csv",
+      "key": "probe_s3_lexical_virgin25",
+      "score": 0.94628,
+      "sha256_lf": "5f1ebfc6e23fa72bc6613c82ed16d8ff43360f4086f4eb97d5d0d6690c05ca69"
+    },
+    {
+      "file": "probe_semantic_only4_on_d1d2.csv",
+      "path": "submissions\\probe_semantic_only4_on_d1d2.csv",
+      "key": "probe_semantic_only4",
+      "score": 0.94638,
+      "sha256_lf": "fadebcac8538274d62a35096493c9a789441ea89ca96259eac28957b4b04238c"
+    },
+    {
+      "file": "probe_sonda_a_high_score_new15_on_d1d2.csv",
+      "path": "submissions\\probes_menu_20261102\\probe_sonda_a_high_score_new15_on_d1d2.csv",
+      "key": "A15",
+      "score": 0.94633,
+      "sha256_lf": "9fd66852e712414cb21641e8836c9c7224372e2a6a756deea1d89ddbc8d5a3aa"
+    }
+  ],
+  "unsubmitted_candidates_sample": [
+    {
+      "file": "submission_60_fin_stack_banda_0.70_0.85_sobre48.csv",
+      "path": "submissions\\20261028\\submission_60_fin_stack_banda_0.70_0.85_sobre48.csv",
+      "sha256_lf": "1f6f5d3d1a034f77369ae3cce27c0bc36a8e495d0f241fc2bdeb3d6c2fe942cf"
+    },
+    {
+      "file": "submission_61_fin_stack_banda_0.60_0.70_sobre48.csv",
+      "path": "submissions\\20261028\\submission_61_fin_stack_banda_0.60_0.70_sobre48.csv",
+      "sha256_lf": "a005743573ecb8c01b75737e73c990f7e65cc35161228ffc7964ac59bd0f7c4a"
+    },
+    {
+      "file": "submission_62_fin_stack_banda_0.50_0.60_sobre48.csv",
+      "path": "submissions\\20261028\\submission_62_fin_stack_banda_0.50_0.60_sobre48.csv",
+      "sha256_lf": "4f270f9d64b989b8bc6b7ae36f5252ec765df7efa91cc18252298f3798392f8a"
+    },
+    {
+      "file": "submission_63_fin_stack_modelo_puro.csv",
+      "path": "submissions\\20261028\\submission_63_fin_stack_modelo_puro.csv",
+      "sha256_lf": "6f03bd7400f9012444bf29adf1f44b6dedcc77d6f7d54079464c218c5abf0121"
+    },
+    {
+      "file": "submission_64_dual_catboost_pure.csv",
+      "path": "submissions\\20261029\\submission_64_dual_catboost_pure.csv",
+      "sha256_lf": "e96d204f6e88b09780437a91903d151bdca53f85448377a192e329351dc4927a"
+    },
+    {
+      "file": "submission_65_dual_catboost_new_sellers_top_margin.csv",
+      "path": "submissions\\20261029\\submission_65_dual_catboost_new_sellers_top_margin.csv",
+      "sha256_lf": "33e03d6ffe4d983c70e5b18159b66648b15df21108dd1a487290ecea13ead867"
+    },
+    {
+      "file": "submission_66_probe1_new_sellers_to_new.csv",
+      "path": "submissions\\20261029\\submission_66_probe1_new_sellers_to_new.csv",
+      "sha256_lf": "24e2381246d556f4b3d86e5c3b2282292562d5b5547138e5efdfcb8a11bf1d84"
+    },
+    {
+      "file": "submission_67_probe2_new_sellers_to_used.csv",
+      "path": "submissions\\20261029\\submission_67_probe2_new_sellers_to_used.csv",
+      "sha256_lf": "2718112f2dabb9ce8bb136e61368ca03fdc6951d392eb2420b722a09feb6b8ae"
+    },
+    {
+      "file": "submission_68_probe3_alt_virgin_lexical.csv",
+      "path": "submissions\\20261029\\submission_68_probe3_alt_virgin_lexical.csv",
+      "sha256_lf": "da52ad285898ecf3e07cda30624ff1c88277a27b7cc8a28b04b67f9dd1ff8f8c"
+    },
+    {
+      "file": "submission_68_probe3_seen_sellers_to_used.csv",
+      "path": "submissions\\20261029\\submission_68_probe3_seen_sellers_to_used.csv",
+      "sha256_lf": "c546636a3ce1e0acbead2c5f06c9c030d7345875c0861dc2caf29584ea940994"
+    },
+    {
+      "file": "submission_68_probe3_uncertainty_flips.csv",
+      "path": "submissions\\20261029\\submission_68_probe3_uncertainty_flips.csv",
+      "sha256_lf": "14579058570d62bf8db5a65c83603c74d3f2dac4080c37e7082672c2233e4a80"
+    },
+    {
+      "file": "submission_70_final_optimized.csv",
+      "path": "submissions\\20261029\\submission_70_final_optimized.csv",
+      "sha256_lf": "f734b5be0915f2770170a9a3c3683c9a3b55660ccb320cead3003a0113f2b52c"
+    },
+    {
+      "file": "submission_71_strong_ensemble_candidate.csv",
+      "path": "submissions\\20261029\\submission_71_strong_ensemble_candidate.csv",
+      "sha256_lf": "e2866c5a3f12105d9b2a1d5b800d5975d32aab88b0793e0dccf6e76ecb3f0a91"
+    },
+    {
+      "file": "candidate_optionB_inductive_unanimous_consensus.csv",
+      "path": "submissions\\20261030\\candidate_optionB_inductive_unanimous_consensus.csv",
+      "sha256_lf": "03d88c4aa23eee39deaf178e147a6a2ad001d4412292296ede39f7d4251e8a87"
+    },
+    {
+      "file": "candidate_single_intervention_rule_on_48.csv",
+      "path": "submissions\\20261030\\candidate_single_intervention_rule_on_48.csv",
+      "sha256_lf": "51ea764c8b69745001eed43f33f79ad960ca8553707294f69e4086d21d9da534"
+    },
+    {
+      "file": "candidate_sub77_dual_cb_high_margin_unprobed.csv",
+      "path": "submissions\\20261030\\candidate_sub77_dual_cb_high_margin_unprobed.csv",
+      "sha256_lf": "3770adeea626b96f6bb9eb48abb8e25130c2e63740c36cf30299a021c1503dcb"
+    },
+    {
+      "file": "candidate_sub77_nested_margin5_unprobed.csv",
+      "path": "submissions\\20261030\\candidate_sub77_nested_margin5_unprobed.csv",
+      "sha256_lf": "e0890d0b7e6be427cd76534b6204cef0d78f4110a0b71c8ce205272311cc4bd1"
+    },
+    {
+      "file": "candidate_sub78_consensus_disjoint15_unprobed.csv",
+      "path": "submissions\\20261030\\candidate_sub78_consensus_disjoint15_unprobed.csv",
+      "sha256_lf": "4b13b67e5b8e405ba35d9ff85cea64cf495e4ec6a22aadd7af26962480f6b4a6"
+    },
+    {
+      "file": "candidate_sub78_model_consensus_unprobed.csv",
+      "path": "submissions\\20261030\\candidate_sub78_model_consensus_unprobed.csv",
+      "sha256_lf": "e00f535b1e79192f971d3360df0823b84f4efc439ec48f8e89554483e836f9a6"
+    },
+    {
+      "file": "candidate_sub80_seen_sellers_conservative_unprobed.csv",
+      "path": "submissions\\20261030\\candidate_sub80_seen_sellers_conservative_unprobed.csv",
+      "sha256_lf": "643b1b55c52fe5f30603fd057af71b93269b3986d015d353e2c685c635090eae"
+    }
+  ],
+  "missing_from_100_estimate": "Approximately 17 historical exploratory uploads lack canonical CSV logs in repo"
+}

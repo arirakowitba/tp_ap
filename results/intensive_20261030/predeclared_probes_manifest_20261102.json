@@ -1,0 +1,145 @@
+{
+  "date_utc": "2026-11-02T12:00:00Z",
+  "anchor": "candidate_d1_d2_combined_on48.csv (0.94652)",
+  "blocks": {
+    "B1_seen_extreme15": {
+      "filename": "probe_b1_seen_extreme15_on_d1d2.csv",
+      "description": "Seen sellers, extreme margin (|p - 0.5| > 0.436)",
+      "n_flips": 15,
+      "flipped_ids": [
+        3647,
+        4359,
+        4397,
+        6822,
+        7575,
+        9327,
+        20566,
+        22226,
+        22286,
+        25697,
+        25890,
+        26469,
+        26975,
+        27204,
+        28605
+      ],
+      "min_margin": 0.43677,
+      "mean_margin": 0.4529,
+      "sha256_raw": "6372c27dc8bf088ac6787a616ccebd15473cb300d5371329ca77f411da238add",
+      "sha256_lf": "98a10f50bebb0d483282c5a7f12fb7fd7f5da81db1b6b443b4925ae4fe3fe4d7"
+    },
+    "B2_new_extreme15": {
+      "filename": "probe_b2_new_extreme15_on_d1d2.csv",
+      "description": "New sellers, extreme margin (|p - 0.5| > 0.356)",
+      "n_flips": 15,
+      "flipped_ids": [
+        1823,
+        1905,
+        3352,
+        8349,
+        8650,
+        8816,
+        9529,
+        12877,
+        14589,
+        17626,
+        20396,
+        22327,
+        25252,
+        25656,
+        29519
+      ],
+      "min_margin": 0.35688,
+      "mean_margin": 0.41078,
+      "sha256_raw": "f38fd4a6d8c3c5e8dde5c84291c4c1d7fc6f84615b7d97430ae5572e46f3b0f8",
+      "sha256_lf": "61c9102ff6b612b33fd026bbd6651788ebbd5e60eb895107e9a9578cc99be421"
+    },
+    "B3_seen_unanimous15": {
+      "filename": "probe_b3_seen_unanimous15_on_d1d2.csv",
+      "description": "Seen sellers, unanimous consensus (|p - 0.5| > 0.411)",
+      "n_flips": 15,
+      "flipped_ids": [
+        7968,
+        8503,
+        8681,
+        8920,
+        10361,
+        11703,
+        12726,
+        12786,
+        16190,
+        19545,
+        23586,
+        26693,
+        26707,
+        26979,
+        28010
+      ],
+      "min_margin": 0.41192,
+      "mean_margin": 0.42261,
+      "sha256_raw": "a796820f01541fb392590baee1c82245b36fb1875baf0e76661dd0525d56a25f",
+      "sha256_lf": "fee1f2bbdc8d2268aff7606e267a2664b610befc4b2333978961590e2695fa74"
+    },
+    "B4_new_unanimous15": {
+      "filename": "probe_b4_new_unanimous15_on_d1d2.csv",
+      "description": "New sellers, unanimous consensus (|p - 0.5| > 0.299)",
+      "n_flips": 15,
+      "flipped_ids": [
+        1346,
+        2249,
+        7422,
+        8040,
+        9727,
+        10127,
+        13637,
+        17825,
+        17924,
+        18549,
+        19173,
+        20534,
+        26574,
+        28389,
+        29533
+      ],
+      "min_margin": 0.29982,
+      "mean_margin": 0.32547,
+      "sha256_raw": "c91e8ecab6c2eea93f44ffc9382983547edd48e660a4d1d95be5d8d87dd4054d",
+      "sha256_lf": "c4de74d6b4605ca5e21a64de210f976045687a5539e51c32db2638887c00ca1e"
+    }
+  },
+  "overlap_matrix": {
+    "B1_seen_extreme15": {
+      "B1_seen_extreme15": 15,
+      "B2_new_extreme15": 0,
+      "B3_seen_unanimous15": 0,
+      "B4_new_unanimous15": 0
+    },
+    "B2_new_extreme15": {
+      "B1_seen_extreme15": 0,
+      "B2_new_extreme15": 15,
+      "B3_seen_unanimous15": 0,
+      "B4_new_unanimous15": 0
+    },
+    "B3_seen_unanimous15": {
+      "B1_seen_extreme15": 0,
+      "B2_new_extreme15": 0,
+      "B3_seen_unanimous15": 15,
+      "B4_new_unanimous15": 0
+    },
+    "B4_new_unanimous15": {
+      "B1_seen_extreme15": 0,
+      "B2_new_extreme15": 0,
+      "B3_seen_unanimous15": 0,
+      "B4_new_unanimous15": 15
+    }
+  },
+  "adaptive_slot5_protocol": {
+    "description": "Pre-specified conditional decision rule for 5th submission slot",
+    "rules": [
+      "If Delta(B1) > 0 and Delta(B2) > 0: Submit combination B1 + B2 (30 flips).",
+      "If Delta(B1) > 0 and Delta(B2) <= 0: Submit B1 + B3 (if Delta(B3) > 0) or B1 alone.",
+      "If Delta(B2) > 0 and Delta(B1) <= 0: Submit B2 + B4 (if Delta(B4) > 0) or B2 alone.",
+      "If all Delta <= 0: Retain exact D1+D2 (0.94652) as immutable final anchor."
+    ]
+  }
+}

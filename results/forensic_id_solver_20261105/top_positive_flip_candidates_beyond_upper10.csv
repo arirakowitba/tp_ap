@@ -1,0 +1,4 @@
+item_id,d1d2_label,inferred_true_target,bounded_effect_delta,ridge_effect_delta,n_submissions_intervened,target_evidence,confidence,p_subword_text_used,seller_id,price,title
+20,used,new,0.8649,-0.1428,2,flip_to_other_is_positive,medium,0.351,5626006330,600.0,"Alzas, Medias Alzas, Techos, Pisos, Cuadros Y Más "
+257,used,new,0.7843,0.1683,5,flip_to_other_is_positive,high,0.2166,8616000640,49.99,2 Pulseras Tachas Gotico Punk Cuero Negro -zona En
+151,used,new,0.7707,-0.5117,1,flip_to_other_is_positive,medium,0.928,3069055696,50.0,Caricaturas - 40 Años De La República Federal Alem

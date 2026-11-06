@@ -1,0 +1,51 @@
+{
+  "contract": "tune-selected once, confirm-evaluated once; train-only labels",
+  "selection_note": "No candidate had positive conservative tune LCB; selected no-op.",
+  "selection_z": 3.5,
+  "tune_confirm_id_overlap": 0,
+  "n_candidate_rules": 240,
+  "selected_rule": {
+    "challenger_margin_min": 1.0,
+    "baseline_margin_max": 0.0,
+    "direction": "both"
+  },
+  "tune": {
+    "n_routed": 0,
+    "fixes": 0,
+    "breaks": 0,
+    "net": 0,
+    "baseline_hits": 11898,
+    "routed_hits": 11898,
+    "baseline_accuracy": 0.9486525275075746,
+    "routed_accuracy": 0.9486525275075746,
+    "net_lcb_normal95": -1.96
+  },
+  "confirm": {
+    "n_routed": 0,
+    "fixes": 0,
+    "breaks": 0,
+    "net": 0,
+    "baseline_hits": 11998,
+    "routed_hits": 11998,
+    "baseline_accuracy": 0.9504119138149556,
+    "routed_accuracy": 0.9504119138149556,
+    "net_lcb_normal95": -1.96,
+    "seller_bootstrap_net_ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  "inputs": {
+    "tune_path": "results\\fold_safe_f117_lgbm_20261106\\tune_pairs.csv",
+    "tune_sha256": "6f12a46a27a2fc499473795e27b73710545c766a33ecb5849e8e90848e3235c4",
+    "confirm_path": "results\\fold_safe_f117_lgbm_20261106\\pairs.csv",
+    "confirm_sha256": "9b97ad4df5fab405c058c1f82a3112b194762b4bb21470f16a10855cb39253e6",
+    "base_col": "p_cb_nested_nb",
+    "challenger_col": "p_f117_lgb_nested_text"
+  },
+  "limitations": [
+    "The conservative selection-z reduces but does not eliminate grid-selection multiplicity; positive confirm requires replication.",
+    "A no-op selection is a valid result and blocks routing.",
+    "This script never establishes public-test transport."
+  ]
+}

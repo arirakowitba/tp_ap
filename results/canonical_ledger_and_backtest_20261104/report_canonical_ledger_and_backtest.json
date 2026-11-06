@@ -1,0 +1,88 @@
+{
+  "n_verified_entries": 85,
+  "n_unique_vectors": 78,
+  "n_redundant_aliases": 7,
+  "design_matrix": {
+    "n_vectors": 78,
+    "n_intervened_ids": 2572,
+    "rank_R": 72,
+    "nullity": 2500
+  },
+  "chronological_holdout": {
+    "train_n": 55,
+    "test_n": 23,
+    "full": {
+      "n": 23,
+      "mae": 5.408648121796415,
+      "rmse": 7.323186235414322,
+      "med_ae": 4.294881798797503,
+      "pearson_r": 0.9936260279799429,
+      "spearman_rho": -0.21807676360882775,
+      "sign_acc": 0.4,
+      "balanced_sign_acc": 0.5
+    },
+    "without_optionA": {
+      "n": 22,
+      "mae": 4.5858070798174495,
+      "rmse": 5.562431119942999,
+      "med_ae": 4.071118710156747,
+      "pearson_r": -0.21790535135300704,
+      "spearman_rho": -0.3936284973478037,
+      "sign_acc": 0.3684210526315789,
+      "balanced_sign_acc": 0.5
+    },
+    "baseline_zero": {
+      "n": 22,
+      "mae": 2.5454545454545454,
+      "rmse": 3.2051095570553083,
+      "med_ae": 2.0,
+      "pearson_r": 0.0,
+      "spearman_rho": 0.0,
+      "sign_acc": 0.0,
+      "balanced_sign_acc": 0.0
+    },
+    "baseline_mean": {
+      "n": 22,
+      "mae": 28.727272727272727,
+      "rmse": 28.89636655359978,
+      "med_ae": 29.0,
+      "pearson_r": 0.0,
+      "spearman_rho": 0.0,
+      "sign_acc": 0.3684210526315789,
+      "balanced_sign_acc": 0.5
+    },
+    "probes_20261104": {
+      "n": 5,
+      "mae": 8.397467288381367,
+      "rmse": 9.02459309698617,
+      "med_ae": 9.683509988277795,
+      "pearson_r": 0.43187753561413333,
+      "spearman_rho": 0.5642880936468347,
+      "sign_acc": 0.25,
+      "balanced_sign_acc": 0.5
+    }
+  },
+  "leave_one_lineage_out": {
+    "n_lineage_components": 13,
+    "full": {
+      "n": 78,
+      "mae": 22.159585527860774,
+      "rmse": 50.213926537443776,
+      "med_ae": 7.399759016931057,
+      "pearson_r": 0.6762104212588951,
+      "spearman_rho": 0.6221823151772393,
+      "sign_acc": 0.6527777777777778,
+      "balanced_sign_acc": 0.42500000000000004
+    },
+    "without_optionA": {
+      "n": 77,
+      "mae": 20.085509749177795,
+      "rmse": 46.093903717961894,
+      "med_ae": 6.799518033862114,
+      "pearson_r": 0.6297692303054383,
+      "spearman_rho": 0.6071979266805325,
+      "sign_acc": 0.647887323943662,
+      "balanced_sign_acc": 0.4230225988700565
+    }
+  }
+}

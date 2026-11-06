@@ -1,0 +1,157 @@
+{
+  "title": "Intensive Hypotheses Validation (CX-0027)",
+  "benchmark_leader": "candidate_d1_d2_combined_on48 (0.94652 LB)",
+  "seeds": [
+    2026,
+    314159,
+    20261030
+  ],
+  "hypotheses_tested": {
+    "H1_TextSubwords": "Calibrated OOF Char 3-5 + Word 1-2 TF-IDF model",
+    "H2_InductiveInteractions": "Inductive price-to-category distributions & crosses with LightGBM",
+    "H3_DecoupledRouter": "Specialized architecture routing new sellers to inductive + subword models"
+  },
+  "cuts": {
+    "2026": {
+      "elapsed_seconds": 52.9,
+      "n_confirm": 12905,
+      "n_seen": 3903,
+      "n_new": 9002,
+      "b10_baseline": {
+        "accuracy": 0.9287872917473847,
+        "log_loss": 0.18938031422965207
+      },
+      "a_hist_baseline": {
+        "accuracy": 0.9243703990701279,
+        "log_loss": 0.18763781336621763
+      },
+      "h1_pure_text_subwords": {
+        "accuracy": 0.8245641224331655,
+        "log_loss": 0.3951895831019828
+      },
+      "h2_inductive_lgb": {
+        "accuracy": 0.9243703990701279,
+        "log_loss": 0.18924891342062572,
+        "best_iteration": 387
+      },
+      "h2_b10_blend": {
+        "accuracy": 0.9318868655559861,
+        "log_loss": 0.17822130225715724,
+        "vs_b10_net": 40,
+        "ci_95": [
+          -9.0,
+          92.0
+        ],
+        "delta_log_loss": -0.01116
+      },
+      "h3_decoupled_router": {
+        "accuracy": 0.9311119721038357,
+        "log_loss": 0.1774813768417316,
+        "fixes_vs_b10": 216,
+        "breaks_vs_b10": 186,
+        "vs_b10_net": 30,
+        "ci_95": [
+          -21.0,
+          86.0
+        ],
+        "net_seen": -11,
+        "net_new": 41,
+        "delta_log_loss": -0.0119
+      }
+    },
+    "314159": {
+      "elapsed_seconds": 56.7,
+      "n_confirm": 12843,
+      "n_seen": 3838,
+      "n_new": 9005,
+      "b10_baseline": {
+        "accuracy": 0.9226816164447559,
+        "log_loss": 0.1999972275020486
+      },
+      "a_hist_baseline": {
+        "accuracy": 0.92089075761115,
+        "log_loss": 0.19552484772413992
+      },
+      "h1_pure_text_subwords": {
+        "accuracy": 0.8274546445534532,
+        "log_loss": 0.39234675412421005
+      },
+      "h2_inductive_lgb": {
+        "accuracy": 0.9158296348205248,
+        "log_loss": 0.21145159855623735,
+        "best_iteration": 372
+      },
+      "h2_b10_blend": {
+        "accuracy": 0.9243946118508136,
+        "log_loss": 0.1914749734751356,
+        "vs_b10_net": 22,
+        "ci_95": [
+          -31.0,
+          79.0
+        ],
+        "delta_log_loss": -0.00852
+      },
+      "h3_decoupled_router": {
+        "accuracy": 0.9239274312855252,
+        "log_loss": 0.19130414318347122,
+        "fixes_vs_b10": 236,
+        "breaks_vs_b10": 220,
+        "vs_b10_net": 16,
+        "ci_95": [
+          -44.0,
+          78.0
+        ],
+        "net_seen": -8,
+        "net_new": 24,
+        "delta_log_loss": -0.00869
+      }
+    },
+    "20261030": {
+      "elapsed_seconds": 53.9,
+      "n_confirm": 12881,
+      "n_seen": 3740,
+      "n_new": 9141,
+      "b10_baseline": {
+        "accuracy": 0.9313717879046658,
+        "log_loss": 0.1755780033422598
+      },
+      "a_hist_baseline": {
+        "accuracy": 0.9313717879046658,
+        "log_loss": 0.17038908806093064
+      },
+      "h1_pure_text_subwords": {
+        "accuracy": 0.8337085629997671,
+        "log_loss": 0.3789978528826812
+      },
+      "h2_inductive_lgb": {
+        "accuracy": 0.9264808632870118,
+        "log_loss": 0.1815221263910603,
+        "best_iteration": 318
+      },
+      "h2_b10_blend": {
+        "accuracy": 0.9333902647309992,
+        "log_loss": 0.16848550324705244,
+        "vs_b10_net": 26,
+        "ci_95": [
+          -14.0,
+          66.0
+        ],
+        "delta_log_loss": -0.00709
+      },
+      "h3_decoupled_router": {
+        "accuracy": 0.9324586600419222,
+        "log_loss": 0.1681735652955208,
+        "fixes_vs_b10": 191,
+        "breaks_vs_b10": 177,
+        "vs_b10_net": 14,
+        "ci_95": [
+          -31.0,
+          58.0
+        ],
+        "net_seen": 1,
+        "net_new": 13,
+        "delta_log_loss": -0.0074
+      }
+    }
+  }
+}

@@ -1,12 +1,14 @@
 """Duplicate Guard and Submission Safety Harness.
 
 Directly prevents submitting duplicates or previously scored blocks:
-- Validates structural schema: 30,000 rows, IDs 1..30000, header ID,condition, labels in {new, used}.
+- Validates structural schema using csv.DictReader: exactly 30,000 parsed rows,
+  header ["ID", "condition"], sequential unique IDs 1..30000, labels strictly in {"new", "used"}.
 - BLOCKS (exit code 1) if file is an exact duplicate of 48 or any scored submission (like 76).
 - BLOCKS (exit code 1) if the exact set of flips vs 48 equals any previously scored block.
 - WARNS if flips overlap with refuted negative blocks (72, 73, 74, 59, 45, 46, 39, etc.) or tied block 75.
 """
 import argparse
+import csv
 import hashlib
 import json
 import sys
@@ -24,30 +26,56 @@ def sha256_vector(labels_dict):
     vec = "".join("1" if labels_dict[i] == "used" else "0" for i in range(1, 30001))
     return hashlib.sha256(vec.encode("ascii")).hexdigest()
 
-def check_submission_file(csv_path, registry_data, s48_dict, verbose=True):
+def validate_structural_schema(csv_path):
+    """Validate RFC-4180 CSV schema using csv.DictReader."""
     path = Path(csv_path)
     if not path.exists():
-        return False, f"File not found: {path}"
+        return False, f"File not found: {path}", None
 
-    # 1. Structural schema validation
+    records = []
+    try:
+        with open(path, "r", encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f)
+            if reader.fieldnames != ["ID", "condition"]:
+                return False, f"Column header error: expected ['ID', 'condition'], got {reader.fieldnames}", None
+            for row in reader:
+                records.append((row.get("ID"), row.get("condition")))
+    except Exception as e:
+        return False, f"CSV DictReader parse error: {e}", None
+
+    if len(records) != 30000:
+        return False, f"Row count error: expected exactly 30000 parsed CSV records, got {len(records)}", None
+
+    labels = {}
+    for row_idx, (raw_id, raw_cond) in enumerate(records, start=1):
+        try:
+            val_id = int(raw_id)
+        except (ValueError, TypeError):
+            return False, f"ID parse error at record {row_idx}: '{raw_id}' is not an integer", None
+        if val_id != row_idx:
+            return False, f"ID sequencing error at record {row_idx}: expected {row_idx}, got {val_id}", None
+        
+        c = str(raw_cond).strip() if raw_cond is not None else ""
+        if c not in ("new", "used"):
+            return False, f"Invalid condition value at record {row_idx} (ID {val_id}): '{raw_cond}'", None
+        labels[val_id] = c
+
+    # Double check pandas compatibility
     try:
         df = pd.read_csv(path)
+        if len(df) != 30000:
+            return False, f"Pandas row count mismatch: {len(df)} vs 30000", None
     except Exception as e:
-        return False, f"CSV parse error: {e}"
+        return False, f"Pandas parse error: {e}", None
 
-    if len(df) != 30000:
-        return False, f"Row count error: expected 30000, got {len(df)}"
-    if list(df.columns) != ["ID", "condition"]:
-        return False, f"Column error: expected ['ID', 'condition'], got {list(df.columns)}"
-    if not (df["ID"].values == list(range(1, 30001))).all():
-        return False, "ID sequencing error: IDs must be strictly 1..30000 sequential"
-    
-    conditions = df["condition"].astype(str).str.strip().tolist()
-    unique_conds = set(conditions)
-    if not unique_conds.issubset({"new", "used"}):
-        return False, f"Invalid condition values: {unique_conds - {'new', 'used'}}"
+    return True, "Schema OK", labels
 
-    labels = {i + 1: c for i, c in enumerate(conditions)}
+def check_submission_file(csv_path, registry_data, s48_dict, verbose=True):
+    path = Path(csv_path)
+    valid_struct, err_msg, labels = validate_structural_schema(path)
+    if not valid_struct:
+        return False, err_msg
+
     file_bytes = path.read_bytes()
     raw_sha = sha256_bytes(file_bytes)
     vec_sha = sha256_vector(labels)
@@ -93,13 +121,18 @@ def check_submission_file(csv_path, registry_data, s48_dict, verbose=True):
 
     # WARN CHECK: Overlaps with refuted negative blocks or ties
     warnings = []
-    refuted_keys = {"72", "73", "74", "59_full", "fin_stack_new150", "fin_stack_seen150", "45", "46", "49", "50", "39", "37", "38"}
+    refuted_keys = {
+        "72", "73", "74", "59_full", "fin_stack_new150", "fin_stack_seen150",
+        "45", "46", "49", "50", "39", "37", "38", "53", "54", "55",
+        "havg_plus_full70k", "havg_b10_variant_c_full70k"
+    }
     for entry in registry_data["entries"]:
         k = entry["key"]
-        entry_flips = set(entry["flipped_ids"])
+        entry_flips = set(entry.get("flipped_ids", []))
         overlap = flipped_id_set & entry_flips
         if overlap:
-            matched_targets = sum(labels[i] == entry["flips_dict"][str(i)] for i in overlap)
+            flips_dict = entry.get("flips_dict", {})
+            matched_targets = sum(labels[i] == flips_dict.get(str(i)) for i in overlap if str(i) in flips_dict)
             if k in refuted_keys:
                 warnings.append(
                     f"WARNING: Overlaps with REFUTED negative submission '{k}' (Score: {entry['score']}) "
@@ -111,11 +144,25 @@ def check_submission_file(csv_path, registry_data, s48_dict, verbose=True):
                     f"Note that 75 did NOT demonstrate public improvement."
                 )
 
+    # 3. Compare against Current Best Baseline (candidate_d1_d2_combined_on48, score 0.94652)
+    best_file = ROOT / "submissions" / "candidate_d1_d2_combined_on48.csv"
+    best_labels = {}
+    flips_vs_best = {}
+    if best_file.exists():
+        with open(best_file, "r", encoding="utf-8", newline="") as bf:
+            b_reader = csv.DictReader(bf)
+            for r in b_reader:
+                best_labels[int(r["ID"])] = r["condition"].strip()
+        for i in range(1, 30001):
+            if labels[i] != best_labels[i]:
+                flips_vs_best[i] = {"from_best": best_labels[i], "to": labels[i]}
+
     report = {
         "file": path.name,
         "valid": True,
         "n_rows": 30000,
         "n_flips_vs_48": n_flips,
+        "n_flips_vs_best_094652": len(flips_vs_best) if best_labels else None,
         "sha256": raw_sha,
         "flips_used_to_new": sum(s48_dict[i] == "used" and labels[i] == "new" for i in flips_vs_48),
         "flips_new_to_used": sum(s48_dict[i] == "new" and labels[i] == "used" for i in flips_vs_48),
@@ -144,6 +191,8 @@ def main():
         if passed:
             print(f"[PASS] {res['file']}")
             print(f"       Flips vs 48: {res['n_flips_vs_48']} (used->new: {res['flips_used_to_new']}, new->used: {res['flips_new_to_used']})")
+            if res.get("n_flips_vs_best_094652") is not None:
+                print(f"       Flips vs New Best (.94652): {res['n_flips_vs_best_094652']}")
             print(f"       SHA256: {res['sha256']}")
             for w in res["warnings"]:
                 print(f"       ! {w}")

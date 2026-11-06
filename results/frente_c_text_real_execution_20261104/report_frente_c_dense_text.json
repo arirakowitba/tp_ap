@@ -1,0 +1,23 @@
+{
+  "experiment": "frente_c_dense_and_sparse_text_real_execution",
+  "split_strategy": "GroupKFold (4 folds) by seller",
+  "n_train": 70000,
+  "n_test": 30000,
+  "total_duration_seconds": 229.21810960769653,
+  "sparse_tfidf_linear": {
+    "accuracy_oof": 0.8083857142857143,
+    "log_loss_oof": 0.42430185387053726,
+    "hits_oof": 56587
+  },
+  "dense_svd_50_linear": {
+    "accuracy_oof": 0.7035142857142858,
+    "log_loss_oof": 0.5673133726823295,
+    "hits_oof": 49246
+  },
+  "text_blend": {
+    "weights": "0.85 Sparse + 0.15 SVD",
+    "accuracy_oof": 0.8091428571428572,
+    "log_loss_oof": 0.42628113621615576,
+    "correlation_sparse_dense": 0.6811920322490138
+  }
+}

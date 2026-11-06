@@ -1,0 +1,12 @@
+{
+  "timestamp_utc": "2026-11-05 14:23:15",
+  "model": "LGBMClassifier-F117",
+  "n_features": 117,
+  "n_folds": 5,
+  "oof_accuracy": 0.9291285714285714,
+  "oof_logloss": 0.18736074431445404,
+  "oof_auc": 0.980398123796957,
+  "test_prob_mean": 0.4629421341095821,
+  "test_prob_std": 0.4581487192088761,
+  "elapsed_seconds": 643.0364089012146
+}

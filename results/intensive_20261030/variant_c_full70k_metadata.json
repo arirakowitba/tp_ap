@@ -1,0 +1,22 @@
+{
+  "model": "CatBoostClassifier_variant_c_full70k",
+  "iterations": 600,
+  "iterations_rationale": "Informed by median (513) and mean (602) best_iteration across tune splits for seeds 2026 (899), 314159 (513), 20261030 (395)",
+  "learning_rate": 0.07,
+  "depth": 6,
+  "l2_leaf_reg": 6.0,
+  "cat_features": [
+    "category_id",
+    "listing_type_id",
+    "buying_mode",
+    "state",
+    "ship_mode",
+    "seller_id"
+  ],
+  "elapsed_seconds": 184.7,
+  "sha256": "c17c83e955882bb298b509fe277b686d033d74b94d916efb76c1b9f7e0190fb8",
+  "mean_p": 0.46201184391975403,
+  "std_p": 0.4543302357196808,
+  "min_p": 6.273532562772743e-06,
+  "max_p": 0.9999979138374329
+}

@@ -1,0 +1,37 @@
+{
+  "experiment": "line_b_nbsvm_discriminative_text_model",
+  "split_seed": 20261143,
+  "confirm_rows": 12360,
+  "vocabulary_dim": 155498,
+  "nbsvm_standalone": {
+    "best_c": 0.2,
+    "threshold": 0.5000000000000001,
+    "confirm_acc": 0.8473300970873786,
+    "confirm_ll": 0.3505395360346018,
+    "paired_vs_single": {
+      "net": -1233,
+      "fixes": 232,
+      "breaks": 1465,
+      "net_seen": -932,
+      "net_new": -301
+    },
+    "paired_vs_bag3": {
+      "net": -1236,
+      "fixes": 221,
+      "breaks": 1457,
+      "net_seen": -936,
+      "net_new": -300
+    },
+    "paired_vs_line_a": {
+      "net": -113,
+      "fixes": 332,
+      "breaks": 445,
+      "net_seen": -81,
+      "net_new": -32
+    },
+    "bootstrap_ci95_vs_bag3": [
+      -1381.025,
+      -1100.975
+    ]
+  }
+}

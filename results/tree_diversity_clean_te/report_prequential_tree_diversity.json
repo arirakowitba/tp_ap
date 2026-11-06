@@ -1,0 +1,124 @@
+{
+  "cuts": [
+    20261143,
+    20261144
+  ],
+  "n_total_evaluations": 24624,
+  "n_unique_items": 22024,
+  "n_overlap_items": 2600,
+  "logloss_dedup_first": {
+    "cb_bag3": 0.12987022631507766,
+    "ens8020": 0.12839412083081927,
+    "ens9010": 0.12880927264026415,
+    "delta_8020": -0.0014761054842583887,
+    "delta_9010": -0.001060953674813514
+  },
+  "raw_pooled_050": {
+    "ens8020": {
+      "n_rows": 24624,
+      "hits_cand": 23450,
+      "hits_ctrl": 23417,
+      "acc_cand": 0.9523229369720598,
+      "acc_ctrl": 0.9509827810266407,
+      "delta": 33,
+      "fixes": 74,
+      "breaks": 41,
+      "disagreements": 115,
+      "net_seen": 18,
+      "net_new": 15,
+      "ci_95": [
+        11.0,
+        56.0
+      ]
+    },
+    "ens9010": {
+      "n_rows": 24624,
+      "hits_cand": 23439,
+      "hits_ctrl": 23417,
+      "acc_cand": 0.9518762183235867,
+      "acc_ctrl": 0.9509827810266407,
+      "delta": 22,
+      "fixes": 39,
+      "breaks": 17,
+      "disagreements": 56,
+      "net_seen": 9,
+      "net_new": 13,
+      "ci_95": [
+        7.0,
+        38.0
+      ]
+    }
+  },
+  "dedup_chronological_first_050": {
+    "ens8020": {
+      "n_rows": 22024,
+      "hits_cand": 20948,
+      "hits_ctrl": 20915,
+      "acc_cand": 0.9511442063203778,
+      "acc_ctrl": 0.9496458409008355,
+      "delta": 33,
+      "fixes": 70,
+      "breaks": 37,
+      "disagreements": 107,
+      "net_seen": 17,
+      "net_new": 16,
+      "ci_95": [
+        12.0,
+        56.0
+      ]
+    },
+    "ens9010": {
+      "n_rows": 22024,
+      "hits_cand": 20937,
+      "hits_ctrl": 20915,
+      "acc_cand": 0.9506447511805304,
+      "acc_ctrl": 0.9496458409008355,
+      "delta": 22,
+      "fixes": 38,
+      "breaks": 16,
+      "disagreements": 54,
+      "net_seen": 9,
+      "net_new": 13,
+      "ci_95": [
+        8.0,
+        38.0
+      ]
+    }
+  },
+  "dedup_latest_last_050": {
+    "ens8020": {
+      "n_rows": 22024,
+      "hits_cand": 20956,
+      "hits_ctrl": 20925,
+      "acc_cand": 0.951507446422085,
+      "acc_ctrl": 0.9500998910279694,
+      "delta": 31,
+      "fixes": 66,
+      "breaks": 35,
+      "disagreements": 101,
+      "net_seen": 21,
+      "net_new": 10,
+      "ci_95": [
+        11.0,
+        52.0
+      ]
+    },
+    "ens9010": {
+      "n_rows": 22024,
+      "hits_cand": 20945,
+      "hits_ctrl": 20925,
+      "acc_cand": 0.9510079912822376,
+      "acc_ctrl": 0.9500998910279694,
+      "delta": 20,
+      "fixes": 34,
+      "breaks": 14,
+      "disagreements": 48,
+      "net_seen": 11,
+      "net_new": 9,
+      "ci_95": [
+        6.0,
+        34.0
+      ]
+    }
+  }
+}

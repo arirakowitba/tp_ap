@@ -1,0 +1,19 @@
+{
+  "experiment": "catboost_prefixed_text_oof_ablation",
+  "split_seed": 20261144,
+  "n_confirm": 12264,
+  "acc_control": 0.9558871493803001,
+  "ll_control": 0.12079524286021172,
+  "th_control": 0.5250000000000001,
+  "acc_enriched": 0.9552348336594912,
+  "ll_enriched": 0.12140155775189851,
+  "th_enriched": 0.5600000000000002,
+  "delta_hits": -8,
+  "fixes": 38,
+  "breaks": 46,
+  "discrepancies": 84,
+  "net_seen": -2,
+  "net_new": -6,
+  "ci_95_low": -27.0,
+  "ci_95_high": 11.0
+}

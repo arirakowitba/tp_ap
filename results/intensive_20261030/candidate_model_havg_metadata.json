@@ -1,0 +1,31 @@
+{
+  "model_name": "H_AVG_0.5_B10_plus_0.5_Variant_C",
+  "weights": {
+    "b10": 0.5,
+    "variant_c": 0.5
+  },
+  "threshold": 0.5,
+  "sub_file": "candidate_model_havg_b10_variant_c_full70k.csv",
+  "sub_sha256": "0ab48a9eb6cd089a343a24cfce7a6b7ed4fe606714944c9094741eba79e63b32",
+  "probs_file": "test_probs_havg_b10_variant_c_inductive_70k.npy",
+  "n_flips_vs_48": 388,
+  "probed_in_04_76": 360,
+  "never_probed": 28,
+  "never_probed_seen": 11,
+  "never_probed_new": 17,
+  "never_probed_seen_ids": [
+    47,
+    686,
+    4013,
+    4256,
+    16029,
+    16865,
+    17446,
+    19619,
+    24178,
+    25390,
+    26999
+  ],
+  "p_havg_mean": 0.4614514708518982,
+  "p_havg_std": 0.45330214500427246
+}

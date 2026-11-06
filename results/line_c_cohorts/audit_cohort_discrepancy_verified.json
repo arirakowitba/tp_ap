@@ -1,0 +1,49 @@
+{
+  "paired_file": "results\\line_a_text\\paired_20261143.csv",
+  "sha256": "39e551da3db630a45d397bc1f729ddd00c10209cc5a3143984b557a197fb5783",
+  "n_confirm": 12360,
+  "model_identities": {
+    "model_line_a": "L\u00ednea A Standalone (Sparse Linear TF-IDF Text-Only, Logistic Regression C=2.5, threshold=0.485)",
+    "model_bag3": "CatBoost Bag3 (3 seeds 20261143/20262140/20263137, depth 6, lr 0.07, deep features + seller + word+char OOF, threshold=0.430)",
+    "model_single": "CatBoost Single Hist\u00f3rico Fuerte (seed 20261143, threshold=0.470)",
+    "model_blend": "Blend Predeclarado Tune (0.10 Line A + 0.90 Bag3, threshold=0.505)"
+  },
+  "accuracies": {
+    "line_a": 0.8564724919093851,
+    "single": 0.9470873786407767,
+    "bag3": 0.9473300970873786,
+    "blend": 0.9475728155339805
+  },
+  "contingency_line_a_vs_bag3": {
+    "fixes_line_a_correct_bag3_wrong": 227,
+    "breaks_line_a_wrong_bag3_correct": 1350,
+    "both_correct": 10359,
+    "both_wrong": 424,
+    "net_delta_line_a_vs_bag3": -1123,
+    "explanation": "Los 1.350 breaks corresponden a casos donde CatBoost Bag3 acierta gracias a metadatos/vendedor y L\u00ednea A (modelo s\u00f3lo de texto) falla. Los 227 fixes son casos donde L\u00ednea A acierta y Bag3 se equivoca."
+  },
+  "contingency_blend_vs_bag3": {
+    "fixes": 35,
+    "breaks": 32,
+    "net": 3,
+    "stats": {
+      "net_total": 3,
+      "net_seen": 4,
+      "net_new": -1,
+      "n_seen": 9000,
+      "n_new": 3360
+    }
+  },
+  "contingency_bag3_vs_single": {
+    "fixes": 35,
+    "breaks": 32,
+    "net": 3,
+    "stats": {
+      "net_total": 3,
+      "net_seen": 4,
+      "net_new": -1,
+      "n_seen": 9000,
+      "n_new": 3360
+    }
+  }
+}
