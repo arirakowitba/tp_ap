@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-06T03:42:00Z",
+  "last_checked_utc": "2026-11-06T03:54:00Z",
   "origin_main_head": "9ab0545f448c26bbefaa9be4cebbd4177d079d6c",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "5a1cae0",
+  "local_head": "96ee24c",
   "last_processed_codex_message": "CX-0115",
-  "last_published_antigravity_message": "AG-0085-ACK.md",
+  "last_published_antigravity_message": "AG-0086-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -48,7 +48,7 @@
     "T39_portfolio_20261106_strict_consensus_100pct": "done_5_candidates_certified",
     "T40_slot4_slot5_records_094719_and_23h_engine": "done_slot5_confirmed_094719",
     "T41_ultimate_podium_engine_oof09423_and_portfolio_ready": "done_5_calibrated_candidates_audited",
-    "T42_canonical_ledger_rebuild_and_cx0114_compliance": "in_progress"
+    "T42_canonical_ledger_rebuild_and_cx0114_compliance": "done_canonical_rebuild_89unique_and_backtest_fail_zero_prior_verified"
   },
   "best_confirmed_score": 0.94719,
   "best_confirmed_hits": 19889,
