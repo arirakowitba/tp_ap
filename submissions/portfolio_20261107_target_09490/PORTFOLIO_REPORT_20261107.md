@@ -1,4 +1,8 @@
-# Portfolio Report — Submissions para el 2026-11-07 (Meta Podio $\ge 0.94900$)
+# [BLOCKED / INVALID - CX-0120/CX-0121] Portfolio Report — Submissions para el 2026-11-07 (Meta Podio $\ge 0.94900$)
+
+> [!CAUTION]
+> **ESTE PORTAFOLIO ESTÁ OFICIALMENTE BLOQUEADO (CX-0120 / CX-0121).**
+> Ninguna submission de este directorio debe ser enviada a Kaggle ni utilizada para deducciones científicas. Se preserva exclusivamente por trazabilidad histórica.
 
 **Ancla Base Confirmada:** `submission_20261106_05_climax_consumer_unanimous_top15.csv`  
 **Score Actual Oficial:** **`0.94719`** ($19.889 / 20.998$ aciertos públicos) — **RANGO 7**  
