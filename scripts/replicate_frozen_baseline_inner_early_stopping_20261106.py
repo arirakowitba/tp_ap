@@ -202,11 +202,11 @@ def main():
     }
 
     confirm_metrics_vs_native = {
-        name: metrics(y[co], p, base_co_native_text, s[co], seen_co)
+        name: metrics(y[co], probs[name], base_co_native_text, s[co], seen_co)
         for name in ["blend_native_nb"]
     }
     tune_metrics_vs_native = {
-        name: metrics(y[tu], p, base_tu_native_text, s[tu], seen_tu)
+        name: metrics(y[tu], tup[name], base_tu_native_text, s[tu], seen_tu)
         for name in ["blend_native_nb"]
     }
 
