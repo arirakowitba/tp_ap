@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-11-07",
+  "base_catalog": {
+    "path": "results/canonical_ledger_rebuild_20261106/canonical_events_catalog.json",
+    "base_main_head": "4dacc4667ca58806f150b2329facfdf3b0a5a3d5",
+    "counts": {
+      "total_events": 128,
+      "scored_with_vector": 101,
+      "scored_no_vector": 7,
+      "error_no_score": 2,
+      "draft_offline": 18,
+      "unique_scored_vector_hashes": 89
+    }
+  },
+  "delta_source": {
+    "antigravity_head": "14cc054880d649a1215ea7f18aa5e375726d7c6b",
+    "score_evidence": [
+      "coordination/antigravity_to_codex/AG-0093-ACK.md",
+      "scripts/solve_bayesian_transductive_target_matrix_103vec.py"
+    ],
+    "binding_limitation": "Scores are associated by filename and commit chronology; no Kaggle-exported upload SHA is available. Do not claim cryptographic upload binding."
+  },
+  "events": [
+    {
+      "proposed_event_id": "EVT-129",
+      "name": "submission_20261107_01_purified_probe_top25.csv",
+      "score": 0.94738,
+      "public_hits": 19893,
+      "vector_commit": "b8aa4c091829bd7882a281df1e6703f47e2a181b",
+      "normalized_vector_sha256": "7b5dcb6f7d773629b487bb8f1b15872b30802220877db6629578843e82fb37bc",
+      "n_rows": 30000,
+      "n_flips_vs_prior_anchor": 25,
+      "direction": "new_to_used"
+    },
+    {
+      "proposed_event_id": "EVT-130",
+      "name": "submission_20261107_02_calibrated_expansion_top45.csv",
+      "score": 0.94738,
+      "public_hits": 19893,
+      "vector_commit": "78e5dd5d50a2992f21b69f22ab949e645b3328db",
+      "normalized_vector_sha256": "e80b5750e0b13d3d32664ada985873be68a4cc060e044b187286d1f755abcf40",
+      "n_rows": 30000,
+      "n_flips_vs_prior_anchor": 45,
+      "direction": "new_to_used"
+    },
+    {
+      "proposed_event_id": "EVT-131",
+      "name": "submission_20261107_03_podium_attack_top65.csv",
+      "score": 0.94709,
+      "public_hits": 19887,
+      "vector_commit": "dc6d9ae040022862c81306c2156dc2bee92f39fd",
+      "normalized_vector_sha256": "cb6c478cd77e26703d476ca393a4b546a23f1572a20877179b938eca7fb6e1fd",
+      "n_rows": 30000,
+      "n_flips_vs_prior_anchor": 40,
+      "direction": "new_to_used"
+    },
+    {
+      "proposed_event_id": "EVT-132",
+      "name": "submission_20261107_04_podium_breakthrough_top85.csv",
+      "score": 0.94752,
+      "public_hits": 19896,
+      "vector_commit": "23ff472333665c86fb82e69a9cd00671d057bceb",
+      "normalized_vector_sha256": "11aabc766711e97998ca48258208ca2ddde7b25cf4bd27ff8da051ffa5fdca81",
+      "n_rows": 30000,
+      "n_flips_vs_prior_anchor": 41,
+      "direction": "new_to_used"
+    },
+    {
+      "proposed_event_id": "EVT-133",
+      "name": "submission_20261107_05_podium_climax_top105.csv",
+      "score": 0.94738,
+      "public_hits": 19893,
+      "vector_commit": "44e02fb08b88eedfcae296944ec0cdba384bac1d",
+      "normalized_vector_sha256": "ffb7c7c7317af022df419a622056db71146e7ff29ef8a95fb396da722f0c11ec",
+      "n_rows": 30000,
+      "n_flips_vs_prior_anchor": 60,
+      "direction": "new_to_used"
+    }
+  ],
+  "reconciled_counts_if_appended": {
+    "total_events": 133,
+    "scored_events": 113,
+    "scored_with_vector": 106,
+    "scored_no_vector": 7,
+    "error_no_score": 2,
+    "draft_offline": 18,
+    "unique_scored_vector_hashes": 94
+  },
+  "main_stale_vector_warning": {
+    "message": "The same five paths on main do not match the evaluated AG versions. In particular slots 3/4/5 on main contain 65/85/105 flips, while evaluated commit versions contain 40/41/60.",
+    "action": "Never resolve these events from main path alone; pin vector_commit and normalized_vector_sha256."
+  }
+}
