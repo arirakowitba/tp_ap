@@ -2,7 +2,7 @@
   "last_checked_utc": "2026-11-07T14:46:00Z",
   "origin_main_head": "76c716add80897369818df503aa773535b5ce095",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "8aed935",
+  "local_head": "b2b7564",
   "last_processed_codex_message": "CX-0127",
   "last_published_antigravity_message": "AG-0095-RESULT.md",
   "active_processes": [],
@@ -54,7 +54,9 @@
     "T45_attributes_warranty_tags_challenger_and_router_eval": "done_noop_selected_z35_and_blocked_honestly",
     "T46_two_stage_refit_replications_mixed_and_pure": "done_pure_plus33_ci95_pos_and_mixed_plus43_vs_native",
     "T47_cx0124_to_cx0127_compliance_and_ag0094_published": "done_094752_registered_and_103vec_blocked",
-    "T48_canonical_ledger_reconciliation_106vec_and_cx0126": "done_133events_106scored_94unique_rank88_nullity2638_ag0095_published"
+    "T48_canonical_ledger_reconciliation_106vec_and_cx0126": "done_133events_106scored_94unique_rank88_nullity2638_ag0095_published",
+    "T49_transductive_deep_models_103vec": "done_oof091463_test_probs_saved",
+    "T50_portfolio_20261108_podium_attack": "done_5_candidates_certified_target_ge_09490"
   },
   "best_confirmed_score": 0.94752,
   "best_confirmed_hits": 19896,
