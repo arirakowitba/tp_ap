@@ -51,11 +51,11 @@
     "slot": 5,
     "filename": "submission_20261107_05_podium_climax_top105.csv",
     "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261107_target_09490\\submission_20261107_05_podium_climax_top105.csv",
-    "sha256_lf": "78e1ca26f5e5c2f54ea7633ed236221988816884eb7b89b89ca1630e2dcdd6e3",
-    "flips_vs_anchor": 105,
+    "sha256_lf": "5d8e5e2ace9d8a38fbb945d80606c9f9256d615705b18d18964b4f1952e719a5",
+    "flips_vs_anchor": 60,
     "direction": "strictly_new_to_used",
-    "expected_score": 0.9498,
-    "role": "Consolidacion Podio Rango 3 y ataque a Nicolas Caveda (0.95095, Rango 2)",
+    "expected_score": 0.94795,
+    "role": "Climax Final de la Jornada (Supera a Clara Rodriguez 0.94761, asegura Rango 5)",
     "mean_posterior_p_used": 0.9092,
     "tested_items_in_flip_set": 104
   }
