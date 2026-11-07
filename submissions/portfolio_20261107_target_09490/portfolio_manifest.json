@@ -15,7 +15,7 @@
     "slot": 2,
     "filename": "submission_20261107_02_calibrated_expansion_top45.csv",
     "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261107_target_09490\\submission_20261107_02_calibrated_expansion_top45.csv",
-    "sha256_lf": "761d0b8f329ddd7343335e3bd6dfa678dc3f74a44e4afba1f46da5fa732bb399",
+    "sha256_lf": "063eae39ce5ca6e81a61108489b3677fd99fbd318e027905b0229e7be929f321",
     "flips_vs_anchor": 45,
     "direction": "strictly_new_to_used",
     "expected_score": 0.9483,
