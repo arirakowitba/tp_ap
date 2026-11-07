@@ -1,0 +1,130 @@
+[
+  {
+    "event_id": "EVT-041",
+    "legacy_identifier": "48",
+    "display_name": "48",
+    "score": 0.94633,
+    "canonical_event_id": "EVT-004",
+    "normalized_vector_sha256": "9c9a9215301c51eb1a0cffd4f943183593b25047639092bc7f6acf473d688ffc"
+  },
+  {
+    "event_id": "EVT-044",
+    "legacy_identifier": "57",
+    "display_name": "57",
+    "score": 0.94633,
+    "canonical_event_id": "EVT-005",
+    "normalized_vector_sha256": "912cce8347302c42c128aa752f87211c6ca85699cd73c798dc1704d8e2725f2c"
+  },
+  {
+    "event_id": "EVT-055",
+    "legacy_identifier": "76",
+    "display_name": "76",
+    "score": 0.94633,
+    "canonical_event_id": "EVT-004",
+    "normalized_vector_sha256": "9c9a9215301c51eb1a0cffd4f943183593b25047639092bc7f6acf473d688ffc"
+  },
+  {
+    "event_id": "EVT-064",
+    "legacy_identifier": "probe_d2_new16",
+    "display_name": "probe_d2_new16",
+    "score": 0.94638,
+    "canonical_event_id": "EVT-059",
+    "normalized_vector_sha256": "b85e16a73643d241e459fb7184f63c6a116b19ec7a8c4e80cb3763b97cf688ce"
+  },
+  {
+    "event_id": "EVT-065",
+    "legacy_identifier": "probe_d1_seen7",
+    "display_name": "probe_d1_seen7",
+    "score": 0.94647,
+    "canonical_event_id": "EVT-060",
+    "normalized_vector_sha256": "b406735ef1df0c389c22db9c07c4acf5635882ec55f59244fdaccb27a1d48737"
+  },
+  {
+    "event_id": "EVT-066",
+    "legacy_identifier": "havg_variant_c_full70k",
+    "display_name": "havg_variant_c_full70k",
+    "score": 0.94514,
+    "canonical_event_id": "EVT-062",
+    "normalized_vector_sha256": "3f00af3e1c2f8bacc2078fd638cf3cbe39fc207970c4b32043666df4944de9f2"
+  },
+  {
+    "event_id": "EVT-071",
+    "legacy_identifier": "submission_final_reconfirmation_d1_d2",
+    "display_name": "submission_final_reconfirmation_d1_d2",
+    "score": 0.94652,
+    "canonical_event_id": "EVT-063",
+    "normalized_vector_sha256": "9d103ea1baa09c7c80d47da231652cc757050e5eb120f3497b49d3a28ba70ce4"
+  },
+  {
+    "event_id": "EVT-090",
+    "legacy_identifier": "04",
+    "display_name": "submission_04_probe_low_post_10flip.csv",
+    "score": 0.94457,
+    "canonical_event_id": "EVT-090",
+    "normalized_vector_sha256": "137c7c2b098134587ed7c78628c426e9f92dd5c412c1f5438c7dd5eed1bbe02a"
+  },
+  {
+    "event_id": "EVT-091",
+    "legacy_identifier": "05",
+    "display_name": "submission_05_probe_mid_post_10flip.csv",
+    "score": 0.94447,
+    "canonical_event_id": "EVT-091",
+    "normalized_vector_sha256": "20f446dd4ff4972b9e5775b180ac0e4cc51a6584238caa7a324fc7085d4ff7c3"
+  },
+  {
+    "event_id": "EVT-092",
+    "legacy_identifier": "06",
+    "display_name": "submission_06_probe_high_post_10flip.csv",
+    "score": 0.94457,
+    "canonical_event_id": "EVT-092",
+    "normalized_vector_sha256": "98c905f6c7c5f19163e5afce21cd4ba1b164549be2d9b82532cdc958da4fe6dd"
+  },
+  {
+    "event_id": "EVT-093",
+    "legacy_identifier": "07",
+    "display_name": "base07_labels_1_to_30000.txt",
+    "score": 0.94476,
+    "canonical_event_id": "EVT-093",
+    "normalized_vector_sha256": "9f52a0073d2418f50f750ebbc2a6387927da9d27e2649e220e49b07fabda53b5"
+  },
+  {
+    "event_id": "EVT-095",
+    "legacy_identifier": "59_new",
+    "display_name": "submission_59_subset_nuevos_26_sobre48.csv",
+    "score": 0.94619,
+    "canonical_event_id": "EVT-047",
+    "normalized_vector_sha256": "83dbcc8ae0931e7f8f425595ff90f5bee68dd3868a64b254d4c4b70228d44d72"
+  },
+  {
+    "event_id": "EVT-096",
+    "legacy_identifier": "59_seen_new",
+    "display_name": "submission_59_subset_vistos_to_new_27_sobre48.csv",
+    "score": 0.9459,
+    "canonical_event_id": "EVT-048",
+    "normalized_vector_sha256": "864bf661a28c7147b1a6872d5519ca69a5f0a7c80624b398e9bb9d996f24b562"
+  },
+  {
+    "event_id": "EVT-097",
+    "legacy_identifier": "probe_fin_stack_new150",
+    "display_name": "probe_fin_stack_new_unprobed150_sobre48.csv",
+    "score": 0.94495,
+    "canonical_event_id": "EVT-050",
+    "normalized_vector_sha256": "14a3907e2677ba657c0d20b1e1d9325deef7663f68c97648e6c8ad3f4ff2552d"
+  },
+  {
+    "event_id": "EVT-098",
+    "legacy_identifier": "probe_fin_stack_seen150",
+    "display_name": "probe_fin_stack_seen_unprobed150_sobre48.csv",
+    "score": 0.94257,
+    "canonical_event_id": "EVT-049",
+    "normalized_vector_sha256": "d4b776d7fd89f9decc547cf8ff4cbfa0d9bab38772734b76bd69fdbbe90abeaf"
+  },
+  {
+    "event_id": "EVT-125",
+    "legacy_identifier": "20261106_slot2_top15",
+    "display_name": "submission_20261106_02_calibrated_empirical_top15.csv",
+    "score": 0.9469,
+    "canonical_event_id": "EVT-022",
+    "normalized_vector_sha256": "ea8358e7255950a1bdded412b535915cbc173d8f804b06522872c819452f0b4a"
+  }
+]

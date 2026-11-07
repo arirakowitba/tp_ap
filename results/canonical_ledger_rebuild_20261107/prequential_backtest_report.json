@@ -1,0 +1,56 @@
+{
+  "split_date": "2026-10-29",
+  "n_train_historical": 57,
+  "n_test_prospective": 37,
+  "solver_full_test": {
+    "n": 37,
+    "mae": 31.61949324651856,
+    "rmse": 43.387602330925134,
+    "med_ae": 12.399874912688105,
+    "pearson_r": 0.5197963637933651,
+    "spearman_rho": -0.6524443121525741,
+    "sign_acc": 0.23529411764705882,
+    "balanced_sign_acc": 0.5
+  },
+  "zero_predictor_full_test": {
+    "n": 37,
+    "mae": 12.837837837837839,
+    "rmse": 34.09485972195016,
+    "med_ae": 4.0,
+    "pearson_r": 0.0,
+    "spearman_rho": 0.0,
+    "sign_acc": 0.0,
+    "balanced_sign_acc": 0.0
+  },
+  "solver_without_optionA": {
+    "n": 37,
+    "mae": 31.61949324651856,
+    "rmse": 43.387602330925134,
+    "med_ae": 12.399874912688105,
+    "pearson_r": 0.5197963637933651,
+    "spearman_rho": -0.6524443121525741,
+    "sign_acc": 0.23529411764705882,
+    "balanced_sign_acc": 0.5
+  },
+  "zero_predictor_without_optionA": {
+    "n": 37,
+    "mae": 12.837837837837839,
+    "rmse": 34.09485972195016,
+    "med_ae": 4.0,
+    "pearson_r": 0.0,
+    "spearman_rho": 0.0,
+    "sign_acc": 0.0,
+    "balanced_sign_acc": 0.0
+  },
+  "historical_mean_without_optionA": {
+    "n": 37,
+    "mae": 39.75343764817449,
+    "rmse": 45.869423108160454,
+    "med_ae": 33.59649122807018,
+    "pearson_r": 0.0,
+    "spearman_rho": 0.0,
+    "sign_acc": 0.23529411764705882,
+    "balanced_sign_acc": 0.5
+  },
+  "verdict": "FAIL_PREDICTIVE_ZERO_PRIOR: Bounded solver on high-nullity matrix does NOT beat zero predictor on prospective test window (Solver MAE vs Zero MAE). Ratifies CX-0114, CX-0115, and CX-0126 directives that public scores serve strictly as aggregate linear batch constraints and cannot be inverted to recover per-item supervised pseudo-labels."
+}

@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-07T14:30:00Z",
+  "last_checked_utc": "2026-11-07T14:46:00Z",
   "origin_main_head": "76c716add80897369818df503aa773535b5ce095",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "f41c71c",
+  "local_head": "17b77bf",
   "last_processed_codex_message": "CX-0127",
-  "last_published_antigravity_message": "AG-0094-RESULT.md",
+  "last_published_antigravity_message": "AG-0095-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -53,7 +53,8 @@
     "T44_triad_block_f117_negative_control_and_ledger_patch": "done_negative_control_noop_and_evt_contradiction_resolved",
     "T45_attributes_warranty_tags_challenger_and_router_eval": "done_noop_selected_z35_and_blocked_honestly",
     "T46_two_stage_refit_replications_mixed_and_pure": "done_pure_plus33_ci95_pos_and_mixed_plus43_vs_native",
-    "T47_cx0124_to_cx0127_compliance_and_ag0094_published": "done_094752_registered_and_103vec_blocked"
+    "T47_cx0124_to_cx0127_compliance_and_ag0094_published": "done_094752_registered_and_103vec_blocked",
+    "T48_canonical_ledger_reconciliation_106vec_and_cx0126": "done_133events_106scored_94unique_rank88_nullity2638_ag0095_published"
   },
   "best_confirmed_score": 0.94752,
   "best_confirmed_hits": 19896,
