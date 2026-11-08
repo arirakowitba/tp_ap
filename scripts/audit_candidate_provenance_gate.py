@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Fail closed when a candidate/submission builder depends on blocked score-derived artifacts.
+"""Fail closed when a candidate/submission builder depends on blocked artifacts.
 
 This is a static provenance gate, not a model validator. It prevents accidental promotion of
-known-invalid dependency families. Forensic analysis can still inspect the files outside a
-promotion workflow.
+known-invalid dependency families and explicitly blocked portfolio namespaces. Forensic analysis
+may preserve those files, but they cannot pass a promotion workflow.
 """
 
 from __future__ import annotations
@@ -19,6 +19,7 @@ FORBIDDEN = {
     "transductive_test_probabilities_103vec": "probabilities from blocked pseudo-label model",
     "map_effect_vs_d1d2": "non-identifiable item effect",
     "expected_gain_vs_s4": "uncalibrated score-derived item gain",
+    "portfolio_20261108_podium_target_09490": "portfolio namespace blocked by CX-0128/CX-0129/CX-0131",
 }
 
 CANDIDATE_HINTS = (
@@ -33,11 +34,12 @@ CANDIDATE_HINTS = (
 def audit_file(path: Path) -> dict:
     text = path.read_text(encoding="utf-8", errors="replace")
     low = text.lower()
-    candidate_context = any(h in low or h in path.as_posix().lower() for h in CANDIDATE_HINTS)
+    path_low = path.as_posix().lower()
+    candidate_context = any(h in low or h in path_low for h in CANDIDATE_HINTS)
     hits = [
         {"token": token, "reason": reason}
         for token, reason in FORBIDDEN.items()
-        if token.lower() in low
+        if token.lower() in low or token.lower() in path_low
     ]
     return {
         "path": path.as_posix(),
@@ -65,7 +67,7 @@ def main() -> int:
         "status": "BLOCKED" if missing or any(r["blocked"] for r in reports) else "PASS",
         "missing": missing,
         "reports": reports,
-        "policy": "CX-0128/CX-0129",
+        "policy": "CX-0128/CX-0129/CX-0131",
     }
     rendered = json.dumps(payload, indent=2, ensure_ascii=False)
     print(rendered)
