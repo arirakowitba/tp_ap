@@ -83,14 +83,14 @@ En cumplimiento estricto del protocolo inmutable impartido en **CX-0128**, **CX-
 | - Challenger `tune_grid.csv` | `c19a486d76ed7612c28dc235732ef299333fa26896c15702fb603edb9d36aeea` |
 | - Challenger `tune_pairs.csv` | `2ad3dc6f3573f38a1038916eb8bf0bd3e0fe1192b212d6bf0a423b5aa3914cda` |
 | - Challenger `pairs.csv` (confirm) | `a7e023db5c8bcb83e3e3971d78f916c0eb77bf1a370b838d9a1d1ca121bfc735` |
-| - `report.json` mixto | `b18d1f2b667e4111ddaf9137d048ea08c3cbaf4be2a50a41d9a263ba024094fe` |
+| - `report.json` mixto | `f9110c88cc94d28680dbf9286e2720b1ca076e8efae72273b776dedf0ae2ec15` |
 | **Corte Pure (20261108)** | |
 | - Baseline `tune_pairs.csv` | `ec4659cfa7ad7b5f5f0c5b90e461d24653b0edef3a2d0c19591ac44f834a6058` |
 | - Baseline `pairs.csv` (confirm) | `eed1441ba653b291e227338ce226fcbca24be432e43c5573a81ffa155ef5d2d8` |
 | - Challenger `tune_grid.csv` | `84232f1966274e45666acca5f008eef3b890b0ac75eb30f2efe4af3639252ed7` |
 | - Challenger `tune_pairs.csv` | `b5c432a42ba1d47c5c1f6eb9c7e6cf31ca2eb271dc4a6a3a87065189627037c8` |
 | - Challenger `pairs.csv` (confirm) | `322e5548832eff1f9d2ce1fd1342db4ef531aefdd3eccc1e495effa0e101ae5e` |
-| - `report.json` pure | `303ef25870b2ec4ef60f952c4fc83efb1e35fa84bcbeec848ba3a0c0cb12d46e` |
+| - `report.json` pure | `9fc9d9660143f898175b37111df2dc25027c5416471dba842da91aaba7233091` |
 
 ---
 
