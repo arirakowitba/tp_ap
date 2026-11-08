@@ -17,6 +17,10 @@ FORBIDDEN = {
     "bayesian_transductive_item_effects_103vec": "score-derived item effects",
     "transductive_deep_models_103vec": "model trained with test pseudo-labels",
     "transductive_test_probabilities_103vec": "probabilities from blocked pseudo-label model",
+    "bayesian_solver_108vec": "underidentified per-ID solver with no prequential validation",
+    "bayesian_transductive_item_effects_108vec": "score-derived item effects from a rank-deficient system",
+    "transductive_deep_models_108vec": "model family trained with test pseudo-labels",
+    "portfolio_20261109_podium_attack": "portfolio namespace blocked by CX-0132",
     "map_effect_vs_d1d2": "non-identifiable item effect",
     "expected_gain_vs_s4": "uncalibrated score-derived item gain",
     "portfolio_20261108_podium_target_09490": "portfolio namespace blocked by CX-0128/CX-0129/CX-0131",
@@ -67,7 +71,7 @@ def main() -> int:
         "status": "BLOCKED" if missing or any(r["blocked"] for r in reports) else "PASS",
         "missing": missing,
         "reports": reports,
-        "policy": "CX-0128/CX-0129/CX-0131",
+        "policy": "CX-0128/CX-0129/CX-0131/CX-0132",
     }
     rendered = json.dumps(payload, indent=2, ensure_ascii=False)
     print(rendered)
