@@ -1,0 +1,80 @@
+{
+  "status": "BLOCKED",
+  "missing": [],
+  "reports": [
+    {
+      "path": "scripts/build_unified_multimodal_matrix.py",
+      "candidate_context": true,
+      "forbidden_dependencies": [
+        {
+          "token": "bayesian_solver_103vec",
+          "reason": "underidentified per-ID solver"
+        },
+        {
+          "token": "bayesian_transductive_item_effects_103vec",
+          "reason": "score-derived item effects"
+        },
+        {
+          "token": "transductive_deep_models_103vec",
+          "reason": "model trained with test pseudo-labels"
+        },
+        {
+          "token": "transductive_test_probabilities_103vec",
+          "reason": "probabilities from blocked pseudo-label model"
+        },
+        {
+          "token": "map_effect_vs_d1d2",
+          "reason": "non-identifiable item effect"
+        },
+        {
+          "token": "expected_gain_vs_s4",
+          "reason": "uncalibrated score-derived item gain"
+        }
+      ],
+      "blocked": true
+    },
+    {
+      "path": "scripts/generate_portfolio_20261108_podium_attack.py",
+      "candidate_context": true,
+      "forbidden_dependencies": [
+        {
+          "token": "bayesian_solver_103vec",
+          "reason": "underidentified per-ID solver"
+        },
+        {
+          "token": "bayesian_transductive_item_effects_103vec",
+          "reason": "score-derived item effects"
+        },
+        {
+          "token": "transductive_deep_models_103vec",
+          "reason": "model trained with test pseudo-labels"
+        },
+        {
+          "token": "transductive_test_probabilities_103vec",
+          "reason": "probabilities from blocked pseudo-label model"
+        },
+        {
+          "token": "expected_gain_vs_s4",
+          "reason": "uncalibrated score-derived item gain"
+        },
+        {
+          "token": "portfolio_20261108_podium_target_09490",
+          "reason": "portfolio namespace blocked by CX-0128/CX-0129/CX-0131"
+        }
+      ],
+      "blocked": true
+    },
+    {
+      "path": "scripts/generate_portfolio_20261109_podium_attack.py",
+      "candidate_context": true,
+      "forbidden_dependencies": [
+        {
+          "token": "portfolio_20261109_podium_attack",
+          "reason": "portfolio namespace blocked by CX-0132"
+        }
+      ],
+      "blocked": true
+    }
+  ],
+  "policy": "CX-0128/CX-0129/CX-0131/CX-0132"
+}
