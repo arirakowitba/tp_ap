@@ -1,0 +1,605 @@
+{
+  "submission_20261109_01_surgical_rank5_capture_top5.csv": {
+    "description": "Top 5 Surgical Flips (Target: >= 0.94766, Beat Clara Rodriguez 0.94761)",
+    "total_flips": 5,
+    "used_to_new": 3,
+    "new_to_used": 2,
+    "file_size": 303069,
+    "flips": [
+      {
+        "item_id": 25885,
+        "from": "used",
+        "to": "new",
+        "reason": "Rental service - Letras Gigantes 3d 15 Anos Alquiler"
+      },
+      {
+        "item_id": 6688,
+        "from": "used",
+        "to": "new",
+        "reason": "Brand new motorcycle tires - Cubiertas Bridgestone 180/55/17"
+      },
+      {
+        "item_id": 19591,
+        "from": "used",
+        "to": "new",
+        "reason": "Scale model toy in box, seller 0 used/18 new - Hot Wheels Chevy GMC Van"
+      },
+      {
+        "item_id": 6072,
+        "from": "new",
+        "to": "used",
+        "reason": "Vintage antique acetate - Absinthe Blanqui Vintage Acetato"
+      },
+      {
+        "item_id": 16451,
+        "from": "new",
+        "to": "used",
+        "reason": "Spare part front panel - Panel Frente Handy Icom Ic-2sat"
+      }
+    ]
+  },
+  "submission_20261109_02_calibrated_milestone_top10.csv": {
+    "description": "Top 10 Balanced Flips (Target: >= 0.94800 Milestone)",
+    "total_flips": 10,
+    "used_to_new": 5,
+    "new_to_used": 5,
+    "file_size": 303070,
+    "flips": [
+      {
+        "item_id": 25885,
+        "from": "used",
+        "to": "new",
+        "reason": "Rental service - Letras Gigantes 3d 15 Anos Alquiler"
+      },
+      {
+        "item_id": 6688,
+        "from": "used",
+        "to": "new",
+        "reason": "Brand new motorcycle tires - Cubiertas Bridgestone 180/55/17"
+      },
+      {
+        "item_id": 19591,
+        "from": "used",
+        "to": "new",
+        "reason": "Scale model toy in box, seller 0 used/18 new - Hot Wheels Chevy GMC Van"
+      },
+      {
+        "item_id": 6072,
+        "from": "new",
+        "to": "used",
+        "reason": "Vintage antique acetate - Absinthe Blanqui Vintage Acetato"
+      },
+      {
+        "item_id": 16451,
+        "from": "new",
+        "to": "used",
+        "reason": "Spare part front panel - Panel Frente Handy Icom Ic-2sat"
+      },
+      {
+        "item_id": 14227,
+        "from": "used",
+        "to": "new",
+        "reason": "Security DVR kit with power supply - Dvr 16 Ch +1 Fuente+ Wifi"
+      },
+      {
+        "item_id": 22635,
+        "from": "used",
+        "to": "new",
+        "reason": "New LED tube with warranty - Tubo Led 24w Seisa Con Garantia"
+      },
+      {
+        "item_id": 26115,
+        "from": "new",
+        "to": "used",
+        "reason": "Secondhand baby nursing nest - Nidos De Amamantar"
+      },
+      {
+        "item_id": 24724,
+        "from": "new",
+        "to": "used",
+        "reason": "Antique original 1988 photo - Antigua Foto Original Auto Renault Trafic 1988"
+      },
+      {
+        "item_id": 25265,
+        "from": "new",
+        "to": "used",
+        "reason": "Secondhand men leather boots - Bota Hombre Cuero Color Marron Talle 42"
+      }
+    ]
+  },
+  "submission_20261109_03_rank4_breakthrough_top15.csv": {
+    "description": "Top 15 Master Flips (Target: >= 0.94838, Beat Agustin Sanchez 0.94838)",
+    "total_flips": 15,
+    "used_to_new": 7,
+    "new_to_used": 8,
+    "file_size": 303071,
+    "flips": [
+      {
+        "item_id": 25885,
+        "from": "used",
+        "to": "new",
+        "reason": "Rental service - Letras Gigantes 3d 15 Anos Alquiler"
+      },
+      {
+        "item_id": 6688,
+        "from": "used",
+        "to": "new",
+        "reason": "Brand new motorcycle tires - Cubiertas Bridgestone 180/55/17"
+      },
+      {
+        "item_id": 19591,
+        "from": "used",
+        "to": "new",
+        "reason": "Scale model toy in box, seller 0 used/18 new - Hot Wheels Chevy GMC Van"
+      },
+      {
+        "item_id": 6072,
+        "from": "new",
+        "to": "used",
+        "reason": "Vintage antique acetate - Absinthe Blanqui Vintage Acetato"
+      },
+      {
+        "item_id": 16451,
+        "from": "new",
+        "to": "used",
+        "reason": "Spare part front panel - Panel Frente Handy Icom Ic-2sat"
+      },
+      {
+        "item_id": 14227,
+        "from": "used",
+        "to": "new",
+        "reason": "Security DVR kit with power supply - Dvr 16 Ch +1 Fuente+ Wifi"
+      },
+      {
+        "item_id": 22635,
+        "from": "used",
+        "to": "new",
+        "reason": "New LED tube with warranty - Tubo Led 24w Seisa Con Garantia"
+      },
+      {
+        "item_id": 26115,
+        "from": "new",
+        "to": "used",
+        "reason": "Secondhand baby nursing nest - Nidos De Amamantar"
+      },
+      {
+        "item_id": 24724,
+        "from": "new",
+        "to": "used",
+        "reason": "Antique original 1988 photo - Antigua Foto Original Auto Renault Trafic 1988"
+      },
+      {
+        "item_id": 25265,
+        "from": "new",
+        "to": "used",
+        "reason": "Secondhand men leather boots - Bota Hombre Cuero Color Marron Talle 42"
+      },
+      {
+        "item_id": 24000,
+        "from": "used",
+        "to": "new",
+        "reason": "Handcrafted artisan key holder - Porta Llaves Madera Artesanal"
+      },
+      {
+        "item_id": 25906,
+        "from": "used",
+        "to": "new",
+        "reason": "Printed t-shirt - Remera Con Estampa"
+      },
+      {
+        "item_id": 29519,
+        "from": "new",
+        "to": "used",
+        "reason": "Secondhand refrigerator - Heladera Con Freezer Gafa 387"
+      },
+      {
+        "item_id": 16828,
+        "from": "new",
+        "to": "used",
+        "reason": "Imported clothing talle M, seller 15 used / 1 new - Camisa Importada"
+      },
+      {
+        "item_id": 14405,
+        "from": "new",
+        "to": "used",
+        "reason": "Used academic book year 2000, seller 11 used / 1 new - Modelos Economicos Garcia-rialeconomi"
+      }
+    ]
+  },
+  "submission_20261109_04_podium_attack_top25.csv": {
+    "description": "Top 25 Expanded Flips (Target: >= 0.94895, Contest Gonzalo Buhler 0.94895)",
+    "total_flips": 25,
+    "used_to_new": 12,
+    "new_to_used": 13,
+    "file_size": 303071,
+    "flips": [
+      {
+        "item_id": 25885,
+        "from": "used",
+        "to": "new",
+        "reason": "Rental service - Letras Gigantes 3d 15 Anos Alquiler"
+      },
+      {
+        "item_id": 6688,
+        "from": "used",
+        "to": "new",
+        "reason": "Brand new motorcycle tires - Cubiertas Bridgestone 180/55/17"
+      },
+      {
+        "item_id": 19591,
+        "from": "used",
+        "to": "new",
+        "reason": "Scale model toy in box, seller 0 used/18 new - Hot Wheels Chevy GMC Van"
+      },
+      {
+        "item_id": 6072,
+        "from": "new",
+        "to": "used",
+        "reason": "Vintage antique acetate - Absinthe Blanqui Vintage Acetato"
+      },
+      {
+        "item_id": 16451,
+        "from": "new",
+        "to": "used",
+        "reason": "Spare part front panel - Panel Frente Handy Icom Ic-2sat"
+      },
+      {
+        "item_id": 14227,
+        "from": "used",
+        "to": "new",
+        "reason": "Security DVR kit with power supply - Dvr 16 Ch +1 Fuente+ Wifi"
+      },
+      {
+        "item_id": 22635,
+        "from": "used",
+        "to": "new",
+        "reason": "New LED tube with warranty - Tubo Led 24w Seisa Con Garantia"
+      },
+      {
+        "item_id": 26115,
+        "from": "new",
+        "to": "used",
+        "reason": "Secondhand baby nursing nest - Nidos De Amamantar"
+      },
+      {
+        "item_id": 24724,
+        "from": "new",
+        "to": "used",
+        "reason": "Antique original 1988 photo - Antigua Foto Original Auto Renault Trafic 1988"
+      },
+      {
+        "item_id": 25265,
+        "from": "new",
+        "to": "used",
+        "reason": "Secondhand men leather boots - Bota Hombre Cuero Color Marron Talle 42"
+      },
+      {
+        "item_id": 24000,
+        "from": "used",
+        "to": "new",
+        "reason": "Handcrafted artisan key holder - Porta Llaves Madera Artesanal"
+      },
+      {
+        "item_id": 25906,
+        "from": "used",
+        "to": "new",
+        "reason": "Printed t-shirt - Remera Con Estampa"
+      },
+      {
+        "item_id": 29519,
+        "from": "new",
+        "to": "used",
+        "reason": "Secondhand refrigerator - Heladera Con Freezer Gafa 387"
+      },
+      {
+        "item_id": 16828,
+        "from": "new",
+        "to": "used",
+        "reason": "Imported clothing talle M, seller 15 used / 1 new - Camisa Importada"
+      },
+      {
+        "item_id": 14405,
+        "from": "new",
+        "to": "used",
+        "reason": "Used academic book year 2000, seller 11 used / 1 new - Modelos Economicos Garcia-rialeconomi"
+      },
+      {
+        "item_id": 23955,
+        "from": "used",
+        "to": "new",
+        "reason": "Electric mosquito swatter - Paleta Raqueta Mata Mosquito Recargable"
+      },
+      {
+        "item_id": 28321,
+        "from": "used",
+        "to": "new",
+        "reason": "Model aircraft kit in box - Special Hobby Vickers Vildebeest Mk.iv 1/72"
+      },
+      {
+        "item_id": 4637,
+        "from": "used",
+        "to": "new",
+        "reason": "Brand new kitchen melamine pantry - Despensero Melamina Cocina 18 Mm"
+      },
+      {
+        "item_id": 2531,
+        "from": "used",
+        "to": "new",
+        "reason": "Renault Scenic wheel rims - Llantas De Chapa Renault Scenic"
+      },
+      {
+        "item_id": 20095,
+        "from": "used",
+        "to": "new",
+        "reason": "Motorcycle luggage rack new - Porta Equipaje Defensa Fz 16"
+      },
+      {
+        "item_id": 21129,
+        "from": "new",
+        "to": "used",
+        "reason": "Used audio digital console - Consola Digital Presonus 16.4.2"
+      },
+      {
+        "item_id": 3720,
+        "from": "new",
+        "to": "used",
+        "reason": "Vintage acrylic lamp - Lampara Torsada De Acrilico"
+      },
+      {
+        "item_id": 8118,
+        "from": "new",
+        "to": "used",
+        "reason": "Vintage vinyl record - Disco Vinilo Carlos Loyola Dunga Dunga"
+      },
+      {
+        "item_id": 345,
+        "from": "new",
+        "to": "used",
+        "reason": "Used girls sneakers size 18 - Zapatillas Botitas Roller Star Nina 18"
+      },
+      {
+        "item_id": 19947,
+        "from": "new",
+        "to": "used",
+        "reason": "Antique 1939 Ford car handle - Manijon De Baul Ford 1939 Antiguo"
+      }
+    ]
+  },
+  "submission_20261109_05_podium_climax_top38.csv": {
+    "description": "Top 38 Climax Flips (Target: >= 0.94930, Podium Lock)",
+    "total_flips": 38,
+    "used_to_new": 18,
+    "new_to_used": 20,
+    "file_size": 303072,
+    "flips": [
+      {
+        "item_id": 25885,
+        "from": "used",
+        "to": "new",
+        "reason": "Rental service - Letras Gigantes 3d 15 Anos Alquiler"
+      },
+      {
+        "item_id": 6688,
+        "from": "used",
+        "to": "new",
+        "reason": "Brand new motorcycle tires - Cubiertas Bridgestone 180/55/17"
+      },
+      {
+        "item_id": 19591,
+        "from": "used",
+        "to": "new",
+        "reason": "Scale model toy in box, seller 0 used/18 new - Hot Wheels Chevy GMC Van"
+      },
+      {
+        "item_id": 6072,
+        "from": "new",
+        "to": "used",
+        "reason": "Vintage antique acetate - Absinthe Blanqui Vintage Acetato"
+      },
+      {
+        "item_id": 16451,
+        "from": "new",
+        "to": "used",
+        "reason": "Spare part front panel - Panel Frente Handy Icom Ic-2sat"
+      },
+      {
+        "item_id": 14227,
+        "from": "used",
+        "to": "new",
+        "reason": "Security DVR kit with power supply - Dvr 16 Ch +1 Fuente+ Wifi"
+      },
+      {
+        "item_id": 22635,
+        "from": "used",
+        "to": "new",
+        "reason": "New LED tube with warranty - Tubo Led 24w Seisa Con Garantia"
+      },
+      {
+        "item_id": 26115,
+        "from": "new",
+        "to": "used",
+        "reason": "Secondhand baby nursing nest - Nidos De Amamantar"
+      },
+      {
+        "item_id": 24724,
+        "from": "new",
+        "to": "used",
+        "reason": "Antique original 1988 photo - Antigua Foto Original Auto Renault Trafic 1988"
+      },
+      {
+        "item_id": 25265,
+        "from": "new",
+        "to": "used",
+        "reason": "Secondhand men leather boots - Bota Hombre Cuero Color Marron Talle 42"
+      },
+      {
+        "item_id": 24000,
+        "from": "used",
+        "to": "new",
+        "reason": "Handcrafted artisan key holder - Porta Llaves Madera Artesanal"
+      },
+      {
+        "item_id": 25906,
+        "from": "used",
+        "to": "new",
+        "reason": "Printed t-shirt - Remera Con Estampa"
+      },
+      {
+        "item_id": 29519,
+        "from": "new",
+        "to": "used",
+        "reason": "Secondhand refrigerator - Heladera Con Freezer Gafa 387"
+      },
+      {
+        "item_id": 16828,
+        "from": "new",
+        "to": "used",
+        "reason": "Imported clothing talle M, seller 15 used / 1 new - Camisa Importada"
+      },
+      {
+        "item_id": 14405,
+        "from": "new",
+        "to": "used",
+        "reason": "Used academic book year 2000, seller 11 used / 1 new - Modelos Economicos Garcia-rialeconomi"
+      },
+      {
+        "item_id": 23955,
+        "from": "used",
+        "to": "new",
+        "reason": "Electric mosquito swatter - Paleta Raqueta Mata Mosquito Recargable"
+      },
+      {
+        "item_id": 28321,
+        "from": "used",
+        "to": "new",
+        "reason": "Model aircraft kit in box - Special Hobby Vickers Vildebeest Mk.iv 1/72"
+      },
+      {
+        "item_id": 4637,
+        "from": "used",
+        "to": "new",
+        "reason": "Brand new kitchen melamine pantry - Despensero Melamina Cocina 18 Mm"
+      },
+      {
+        "item_id": 2531,
+        "from": "used",
+        "to": "new",
+        "reason": "Renault Scenic wheel rims - Llantas De Chapa Renault Scenic"
+      },
+      {
+        "item_id": 20095,
+        "from": "used",
+        "to": "new",
+        "reason": "Motorcycle luggage rack new - Porta Equipaje Defensa Fz 16"
+      },
+      {
+        "item_id": 21129,
+        "from": "new",
+        "to": "used",
+        "reason": "Used audio digital console - Consola Digital Presonus 16.4.2"
+      },
+      {
+        "item_id": 3720,
+        "from": "new",
+        "to": "used",
+        "reason": "Vintage acrylic lamp - Lampara Torsada De Acrilico"
+      },
+      {
+        "item_id": 8118,
+        "from": "new",
+        "to": "used",
+        "reason": "Vintage vinyl record - Disco Vinilo Carlos Loyola Dunga Dunga"
+      },
+      {
+        "item_id": 345,
+        "from": "new",
+        "to": "used",
+        "reason": "Used girls sneakers size 18 - Zapatillas Botitas Roller Star Nina 18"
+      },
+      {
+        "item_id": 19947,
+        "from": "new",
+        "to": "used",
+        "reason": "Antique 1939 Ford car handle - Manijon De Baul Ford 1939 Antiguo"
+      },
+      {
+        "item_id": 10745,
+        "from": "used",
+        "to": "new",
+        "reason": "PS3 wireless controller in blister - Ps3 Joystick Dualshock3 En Blister"
+      },
+      {
+        "item_id": 28004,
+        "from": "used",
+        "to": "new",
+        "reason": "Action figure in blister - Heman Twistoid Girator En Blister Vintage"
+      },
+      {
+        "item_id": 17790,
+        "from": "used",
+        "to": "new",
+        "reason": "Music CD new - Nuevo Cd 333 Volumen Ii"
+      },
+      {
+        "item_id": 21980,
+        "from": "used",
+        "to": "new",
+        "reason": "New tile cutter machine - Nueva Cortadora De Ceramicos Zonta 64cm"
+      },
+      {
+        "item_id": 20585,
+        "from": "used",
+        "to": "new",
+        "reason": "PVC roll fabric - Tela Pvc Transparente Rollo"
+      },
+      {
+        "item_id": 25205,
+        "from": "used",
+        "to": "new",
+        "reason": "Digital book - Parasitology An Integrated Approach Libro Digital"
+      },
+      {
+        "item_id": 8920,
+        "from": "new",
+        "to": "used",
+        "reason": "Pre-owned gold ring - Aro Solitario De Oro Blanco Y Brillante"
+      },
+      {
+        "item_id": 22120,
+        "from": "new",
+        "to": "used",
+        "reason": "Lot 4 secondhand women clothes XL - Mujer Lote 4 Ropa Camisa Y Pantalon"
+      },
+      {
+        "item_id": 20822,
+        "from": "new",
+        "to": "used",
+        "reason": "Used book - Martin Fierro"
+      },
+      {
+        "item_id": 11041,
+        "from": "new",
+        "to": "used",
+        "reason": "Used belt - Cinturon Con Elastico"
+      },
+      {
+        "item_id": 16033,
+        "from": "new",
+        "to": "used",
+        "reason": "Used book - Psicologia Social Y Personalidad"
+      },
+      {
+        "item_id": 4060,
+        "from": "new",
+        "to": "used",
+        "reason": "Used progressive rock CD - Nine Stones Close One Eye On The Sunrise"
+      },
+      {
+        "item_id": 5616,
+        "from": "new",
+        "to": "used",
+        "reason": "Vintage 70s board game - Juego Del 15 Juegos Atlas 70"
+      }
+    ]
+  }
+}
