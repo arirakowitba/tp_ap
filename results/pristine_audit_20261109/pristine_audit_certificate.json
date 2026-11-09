@@ -1,0 +1,31 @@
+{
+  "certificate_id": "CERT-20261109-PRISTINE-FINAL-AP2026Q2",
+  "timestamp_utc": "2026-11-09 21:46:32",
+  "verdict": "NO_QUALIFY",
+  "delta_frozen": 0.25,
+  "strong_baseline": "oof_predictions_podium_engine.csv (OOF 0.94230)",
+  "virgin_confirm": {
+    "total_items": 11999,
+    "seen_items": 8594,
+    "unseen_items": 3405,
+    "flips": 1,
+    "fixes": 1,
+    "breaks": 0,
+    "net": 1,
+    "precision_percent": 100.0
+  },
+  "uncertainty_stressed": {
+    "p5_adj": -5.944551254559756,
+    "p1_adj": -9.103170672695954,
+    "score_p5_adj": 0.9472357104841146,
+    "score_p1_adj": 0.9470852857094629,
+    "score_p50": 0.9475990713568049,
+    "prob_gain_ge_53": 0.0,
+    "prob_podium": 1.3055789782612237e-10
+  },
+  "candidate": {
+    "csv_path": "results\\pristine_audit_20261109\\candidate_pristine_audit_final.csv",
+    "sha256": "af05ee17126d2c10c52942a09ed6031e5db8c0d93044f12fe3279e34ca3219a6",
+    "flips_vs_evt132": 1936
+  }
+}
