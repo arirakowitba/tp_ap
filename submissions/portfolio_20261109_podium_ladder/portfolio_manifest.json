@@ -1,0 +1,52 @@
+[
+  {
+    "slot": 1,
+    "filename": "submission_slot1_top20_rank6_probe.csv",
+    "path": "submissions\\portfolio_20261109_podium_ladder\\submission_slot1_top20_rank6_probe.csv",
+    "sha256_lf": "aec898d0236ca2919f0e99387f0863494e8f439c8422ce5e86288607e05945ac",
+    "flips_vs_anchor": 20,
+    "expected_net_hits": 12,
+    "expected_score": 0.94809,
+    "role": "Sondeo de Ultra-Certeza: Supera a Clara Rodriguez (0.94761) y captura Rango 6; mide pendiente inicial p_hat1."
+  },
+  {
+    "slot": 2,
+    "filename": "submission_slot2_top45_rank4_expansion.csv",
+    "path": "submissions\\portfolio_20261109_podium_ladder\\submission_slot2_top45_rank4_expansion.csv",
+    "sha256_lf": "8f96f129869be6cf40e882e665945d07b12c50dae447563f8c8d75fb674a9070",
+    "flips_vs_anchor": 45,
+    "expected_net_hits": 26,
+    "expected_score": 0.94876,
+    "role": "Expansion Calibrada: Supera a Catalina Bachetti (0.94833) y Agustin Sanchez (0.94838), captura Rango 4."
+  },
+  {
+    "slot": 3,
+    "filename": "submission_slot3_top70_podium_attack.csv",
+    "path": "submissions\\portfolio_20261109_podium_ladder\\submission_slot3_top70_podium_attack.csv",
+    "sha256_lf": "f20482726dd16b8c24e3f6ea0ea5896d10b2fd189bc21f770551bf2d3fba9122",
+    "flips_vs_anchor": 70,
+    "expected_net_hits": 40,
+    "expected_score": 0.94942,
+    "role": "ASALTO AL PODIO: Supera a Gonzalo Buhler (0.94895) y CONQUISTA EL PODIO (PUESTO 3 GENERAL)."
+  },
+  {
+    "slot": 4,
+    "filename": "submission_slot4_top95_breakthrough_09500.csv",
+    "path": "submissions\\portfolio_20261109_podium_ladder\\submission_slot4_top95_breakthrough_09500.csv",
+    "sha256_lf": "c6d7eab91ae9e49835443b90ae06cf9e73f2821a3f0b16cf85d172a8eea13e92",
+    "flips_vs_anchor": 95,
+    "expected_net_hits": 54,
+    "expected_score": 0.95009,
+    "role": "QUIEBRE DE BARRERA 0.95000: Alcanza 0.95009 (+54 hits) asegurando Puesto 3 holgado."
+  },
+  {
+    "slot": 5,
+    "filename": "submission_slot5_top120_climax_podium.csv",
+    "path": "submissions\\portfolio_20261109_podium_ladder\\submission_slot5_top120_climax_podium.csv",
+    "sha256_lf": "c6cd95d02ff7dd4da7ed0a26317bd8f1554e66c3bd7e4e832c59d14019d6c92c",
+    "flips_vs_anchor": 120,
+    "expected_net_hits": 68,
+    "expected_score": 0.95076,
+    "role": "CLIMAX OPERATIVO: Consolidacion de Podio con 0.95076 (+68 hits) y asalto a Nicolas Caveda (0.95095, Rango 2)."
+  }
+]

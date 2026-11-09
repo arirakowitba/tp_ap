@@ -4,7 +4,7 @@ Computes exact hits, delta, empirical precision, and leaderboard rank progressio
 upon receiving live Kaggle feedback for each slot, then outputs the optimal next step.
 
 Usage:
-    python scripts/evaluate_live_slot_feedback.py --slot 1 --score 0.94780
+    python scripts/evaluate_live_slot_feedback.py --slot 1 --score 0.94810
 """
 
 import sys, json, argparse
@@ -12,23 +12,27 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 N_PUB = 20998
-ANCHOR_SCORE = 0.94719
-ANCHOR_HITS = 19889
+ANCHOR_SCORE = 0.94752
+ANCHOR_HITS = 19896
 
 LEADERBOARD = [
     {"rank": 1, "name": "Maximo Lladhon", "score": 0.95438, "hits": 20040},
     {"rank": 2, "name": "Nicolás Caveda", "score": 0.95095, "hits": 19968},
     {"rank": 3, "name": "Gonzalo Mariano Bühler", "score": 0.94895, "hits": 19926},
     {"rank": 4, "name": "Agustín Elías Sánchez", "score": 0.94838, "hits": 19914},
-    {"rank": 5, "name": "Clara Rodríguez Acevedo", "score": 0.94761, "hits": 19898},
-    {"rank": 6, "name": "Gael Ryba", "score": 0.94733, "hits": 19892},
-    {"rank": 7, "name": "Ariel Rakowszczyk (Anchor)", "score": 0.94719, "hits": 19889}
+    {"rank": 5, "name": "Catalina Bachetti", "score": 0.94833, "hits": 19913},
+    {"rank": 6, "name": "Clara Rodríguez Acevedo", "score": 0.94761, "hits": 19898},
+    {"rank": 7, "name": "Miranda Contieri Quiles", "score": 0.94752, "hits": 19896},
+    {"rank": 8, "name": "Ariel Rakowszczyk (Anchor)", "score": 0.94752, "hits": 19896},
+    {"rank": 9, "name": "Gael Ryba", "score": 0.94733, "hits": 19892},
+    {"rank": 10, "name": "Andres Glauberman", "score": 0.94719, "hits": 19889},
 ]
+
 
 def main():
     parser = argparse.ArgumentParser(description="Live Submission Feedback Evaluator")
     parser.add_argument("--slot", type=int, required=True, help="Slot number evaluated (1 to 5)")
-    parser.add_argument("--score", type=float, required=True, help="Official score returned by Kaggle (e.g. 0.94780)")
+    parser.add_argument("--score", type=float, required=True, help="Official score returned by Kaggle (e.g. 0.94810)")
     args = parser.parse_args()
 
     slot = args.slot
@@ -37,7 +41,7 @@ def main():
     delta = hits - ANCHOR_HITS
 
     # Load manifest
-    manifest_path = ROOT / "submissions" / "portfolio_20261107_target_09490" / "portfolio_manifest.json"
+    manifest_path = ROOT / "submissions" / "portfolio_20261109_podium_ladder" / "portfolio_manifest.json"
     with open(manifest_path, encoding="utf-8") as f:
         manifest = json.load(f)
 
@@ -48,9 +52,9 @@ def main():
 
     n_flips = slot_info["flips_vs_anchor"]
     pub_flips = int(round(n_flips * 0.70))
-    
+
     # Calculate empirical precision
-    # delta = m - (pub_flips - m) = 2m - pub_flips => m = (delta + pub_flips) / 2
+    # delta = fixes - breaks = fixes - (pub_flips - fixes) = 2*fixes - pub_flips => fixes = (delta + pub_flips) / 2
     m_correct = (delta + pub_flips) / 2.0
     empirical_precision = max(0.0, min(1.0, m_correct / pub_flips)) if pub_flips > 0 else 0.0
 
@@ -75,7 +79,7 @@ def main():
     print(f"New Projected Rank: Rango {current_rank}")
     for r in LEADERBOARD:
         status = "BEATEN! >>>" if hits > r["hits"] else ("TIED ===" if hits == r["hits"] else "ahead")
-        print(f"  Rank {r['rank']}: {r['name']:25s} | {r['score']:.5f} ({r['hits']} hits) | {status}")
+        print(f"  Rank {r['rank']:2d}: {r['name']:25s} | {r['score']:.5f} ({r['hits']} hits) | {status}")
 
     # Next Slot Recommendation
     next_slot = slot + 1
@@ -96,6 +100,7 @@ def main():
             print(f"WARNING: Neutral or negative delta ({delta:+d}). Hold submission and inspect error items.")
     else:
         print("\n=== SESSION COMPLETE: ALL 5 SLOTS EXECUTED ===")
+
 
 if __name__ == "__main__":
     main()
