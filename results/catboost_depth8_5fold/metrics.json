@@ -1,0 +1,64 @@
+{
+  "architecture": "CatBoostClassifier",
+  "depth": 8,
+  "learning_rate": 0.04,
+  "l2_leaf_reg": 5.0,
+  "max_iterations": 1800,
+  "early_stopping_rounds": 100,
+  "threads": 6,
+  "cv_scheme": "stratified",
+  "seed": 20261109,
+  "total_duration_minutes": 705.3811292648315,
+  "oof_accuracy_05": 0.9279857142857143,
+  "oof_accuracy_optimal": 0.9285142857142857,
+  "optimal_threshold": 0.4850000000000001,
+  "oof_logloss": 0.1802771356796653,
+  "oof_roc_auc": 0.9797653932933372,
+  "folds": [
+    {
+      "fold": 1,
+      "best_iteration": 1799,
+      "duration_seconds": 1024.5134162902832,
+      "accuracy_05": 0.9270714285714285,
+      "logloss": 0.18344464841903593,
+      "roc_auc": 0.9789959409563505
+    },
+    {
+      "fold": 2,
+      "best_iteration": 1797,
+      "duration_seconds": 39639.28591632843,
+      "accuracy_05": 0.9295714285714286,
+      "logloss": 0.17442688290460812,
+      "roc_auc": 0.9811677521618587
+    },
+    {
+      "fold": 3,
+      "best_iteration": 1799,
+      "duration_seconds": 601.7097597122192,
+      "accuracy_05": 0.9295,
+      "logloss": 0.17860393124444804,
+      "roc_auc": 0.9801121553873912
+    },
+    {
+      "fold": 4,
+      "best_iteration": 1799,
+      "duration_seconds": 520.4193434715271,
+      "accuracy_05": 0.928,
+      "logloss": 0.17777779265457408,
+      "roc_auc": 0.980506789371927
+    },
+    {
+      "fold": 5,
+      "best_iteration": 1799,
+      "duration_seconds": 514.6901142597198,
+      "accuracy_05": 0.9257857142857143,
+      "logloss": 0.18713242317566015,
+      "roc_auc": 0.9781405655843772
+    }
+  ],
+  "output_files": {
+    "oof_csv": "results\\catboost_depth8_5fold\\oof_predictions.csv",
+    "test_npy": "results\\catboost_depth8_5fold\\test_probabilities.npy",
+    "test_csv": "results\\catboost_depth8_5fold\\test_probabilities.csv"
+  }
+}

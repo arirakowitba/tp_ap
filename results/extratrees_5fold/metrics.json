@@ -1,0 +1,63 @@
+{
+  "architecture": "ExtraTreesClassifier",
+  "num_features": 207,
+  "n_train": 70000,
+  "n_test": 30000,
+  "global_prior": 0.46302857142857146,
+  "hyperparameters": {
+    "n_estimators": 300,
+    "max_depth": 25,
+    "min_samples_split": 10,
+    "min_samples_leaf": 4,
+    "max_features": "sqrt",
+    "random_state": 20261109,
+    "n_jobs": 6
+  },
+  "cv_folds": [
+    {
+      "fold": 1,
+      "accuracy": 0.9265,
+      "logloss": 0.20545905927087793,
+      "auc": 0.9794876026837247
+    },
+    {
+      "fold": 2,
+      "accuracy": 0.9285,
+      "logloss": 0.20389920271417133,
+      "auc": 0.9798076101466323
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.9258571428571428,
+      "logloss": 0.20720932213210316,
+      "auc": 0.9787765354099458
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.9281428571428572,
+      "logloss": 0.20533690495040646,
+      "auc": 0.9796470793508698
+    },
+    {
+      "fold": 5,
+      "accuracy": 0.9232857142857143,
+      "logloss": 0.21220191482050704,
+      "auc": 0.9770601003502555
+    }
+  ],
+  "oof_accuracy": 0.9264571428571429,
+  "oof_accuracy_optimal": 0.9267,
+  "optimal_threshold": 0.491,
+  "oof_logloss": 0.20682128077761316,
+  "oof_auc": 0.9789363728306189,
+  "test_used_count": 14312,
+  "test_new_count": 15688,
+  "elapsed_seconds": 59.68,
+  "elapsed_minutes": 0.99,
+  "output_files": {
+    "oof_csv": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\results\\extratrees_5fold\\oof_predictions.csv",
+    "test_npy": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\results\\extratrees_5fold\\test_probabilities.npy",
+    "test_csv": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\results\\extratrees_5fold\\test_probabilities.csv",
+    "metrics_json": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\results\\extratrees_5fold\\metrics.json"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "model": "Engine A: 5-Fold Stratified Sparse Linear Logistic Classifier",
+  "solver": "lbfgs",
+  "C": 1.5,
+  "n_train": 70000,
+  "n_test": 30000,
+  "total_sparse_features": 120008,
+  "tf_idf_word_features": 50000,
+  "tf_idf_char_features": 70000,
+  "tabular_features": 8,
+  "cv_folds": [
+    {
+      "fold": 1,
+      "accuracy": 0.8443571428571428,
+      "logloss": 0.35740669543334685,
+      "auc": 0.9219015779387518,
+      "iterations": 250
+    },
+    {
+      "fold": 2,
+      "accuracy": 0.8485,
+      "logloss": 0.34853900901552787,
+      "auc": 0.9260038173117625,
+      "iterations": 250
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.8540714285714286,
+      "logloss": 0.34753679255055325,
+      "auc": 0.9265895349053868,
+      "iterations": 247
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.8485,
+      "logloss": 0.3556832789979499,
+      "auc": 0.9226193469926185,
+      "iterations": 250
+    },
+    {
+      "fold": 5,
+      "accuracy": 0.8397857142857142,
+      "logloss": 0.3641350998832467,
+      "auc": 0.9179634599027334,
+      "iterations": 243
+    }
+  ],
+  "oof_accuracy_t050": 0.8470428571428571,
+  "oof_optimal_threshold": 0.487,
+  "oof_accuracy_optimal": 0.8475857142857143,
+  "oof_logloss": 0.3546618869906875,
+  "oof_roc_auc": 0.9230171305699364,
+  "test_used_count": 14326,
+  "test_new_count": 15674,
+  "elapsed_seconds": 97.99
+}

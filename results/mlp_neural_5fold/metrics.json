@@ -1,0 +1,74 @@
+{
+  "architecture": "MLPClassifier",
+  "num_features": 207,
+  "n_train": 70000,
+  "n_test": 30000,
+  "hyperparameters": {
+    "hidden_layer_sizes": [
+      256,
+      128,
+      64
+    ],
+    "activation": "relu",
+    "solver": "adam",
+    "alpha": 0.0001,
+    "batch_size": 256,
+    "learning_rate_init": 0.001,
+    "early_stopping": true,
+    "max_iter": 80,
+    "random_state": 20261109
+  },
+  "scaler": "StandardScaler",
+  "cv_folds": [
+    {
+      "fold": 1,
+      "accuracy": 0.9213571428571429,
+      "logloss": 0.19298446056250804,
+      "auc": 0.9768156034690865,
+      "epochs": 13
+    },
+    {
+      "fold": 2,
+      "accuracy": 0.9245714285714286,
+      "logloss": 0.18844118357026796,
+      "auc": 0.9790474064548899,
+      "epochs": 14
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.9255,
+      "logloss": 0.1891202530266848,
+      "auc": 0.9782341777040461,
+      "epochs": 15
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.9242857142857143,
+      "logloss": 0.2064314783537799,
+      "auc": 0.9762682195127622,
+      "epochs": 16
+    },
+    {
+      "fold": 5,
+      "accuracy": 0.9227857142857143,
+      "logloss": 0.19432120348549334,
+      "auc": 0.9771891922860602,
+      "epochs": 13
+    }
+  ],
+  "oof_accuracy_05": 0.9237,
+  "oof_accuracy_optimal": 0.9238428571428572,
+  "optimal_threshold": 0.4850000000000001,
+  "oof_logloss": 0.1942597157997468,
+  "oof_auc": 0.9769512480489078,
+  "test_used_count": 14285,
+  "test_new_count": 15715,
+  "elapsed_seconds": 75.81,
+  "elapsed_minutes": 1.26,
+  "output_files": {
+    "oof_csv": "results\\mlp_neural_5fold\\oof_predictions.csv",
+    "test_npy": "results\\mlp_neural_5fold\\test_probabilities.npy",
+    "test_csv": "results\\mlp_neural_5fold\\test_probabilities.csv",
+    "metrics_json": "results\\mlp_neural_5fold\\metrics.json"
+  }
+}
