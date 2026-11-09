@@ -1,0 +1,39 @@
+{
+  "timestamp_utc": "2026-11-09 19:04:43",
+  "local_time_art": "2026-11-09 16:30 ART",
+  "methodology": "Corrected Dual-Regime Frozen Holdout with Fold-Local Encodings and Margin Curation",
+  "raw_bootstrap": {
+    "p5_hits": 63.647117614746094,
+    "p50_hits": 137.98773193359375,
+    "p95_hits": 208.6338653564453,
+    "score_p5": 0.9505499151164276,
+    "score_p50": 0.9540902815474613,
+    "score_p95": 0.9574547035601698,
+    "prob_ge_53": 0.973
+  },
+  "stress_test_prequential": {
+    "gamma": 2.9557,
+    "p5_hits": -76.28093321647646,
+    "p50_hits": 137.98773193359375,
+    "p95_hits": 352.25639708366396,
+    "score_p5": 0.9438860399458769,
+    "score_p50": 0.9540902815474613,
+    "score_p95": 0.9642945231490458,
+    "prob_ge_53": 0.7429524093087592
+  },
+  "holdout_performance": {
+    "seen_net": 14,
+    "unseen_net": 79,
+    "total_net": 93,
+    "fixes": 310,
+    "breaks": 217,
+    "comp_acc_base": 0.9113559288084767,
+    "comp_acc_cand": 0.9179990500654525
+  },
+  "test_submission": {
+    "path": "results\\dual_regime_20261109\\candidate_c6_dual_regime_curated_margin.csv",
+    "sha256": "b5d94d5a56c6f65395a1ee4770fe82aada1a3f3d8c0467a945abfdbfdd070ae4",
+    "n_flips": 1131
+  },
+  "verdict": "NO_QUALIFY"
+}
