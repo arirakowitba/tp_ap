@@ -33,6 +33,13 @@ FORBIDDEN = {
     "submission_20261109_03_pure_used_expansion_top12.csv": "manual per-ID candidate blocked by CX-0134",
     "submission_20261109_04_podium_attack_top15.csv": "manual per-ID candidate blocked by CX-0134",
     "submission_20261109_05_podium_climax_top14.csv": "manual per-ID candidate blocked by CX-0134",
+    "portfolio_20261109_climax_09500": "confidence and validation claims rejected by CX-0136",
+    "generate_certified_superblend_portfolio_20261109.py": "portfolio builder blocked pending CX-0136 confidence gate",
+    "train_multimodal_stacking_blender_20261109.py": "same-OOF calibration/selection cannot certify 95% confidence",
+    "calculate_confidence_curves.py": "independent-Bernoulli confidence model is not calibrated for promotion",
+    "evaluate_grand_superstacker_20261109.py": "meta learner evaluated in-sample on its OOF design matrix",
+    "deconvolve_all_probes_and_extract_patterns.py": "aggregate-score deconvolution is non-identifiable per ID",
+    "deconvolution_20261109": "score-derived per-ID labels blocked by CX-0136",
 }
 
 CANDIDATE_HINTS = (
@@ -80,7 +87,7 @@ def main() -> int:
         "status": "BLOCKED" if missing or any(r["blocked"] for r in reports) else "PASS",
         "missing": missing,
         "reports": reports,
-        "policy": "CX-0128/CX-0129/CX-0131/CX-0132/CX-0134",
+        "policy": "CX-0128/CX-0129/CX-0131/CX-0132/CX-0134/CX-0136",
     }
     rendered = json.dumps(payload, indent=2, ensure_ascii=False)
     print(rendered)
