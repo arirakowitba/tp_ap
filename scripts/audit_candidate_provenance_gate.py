@@ -40,6 +40,9 @@ FORBIDDEN = {
     "evaluate_grand_superstacker_20261109.py": "meta learner evaluated in-sample on its OOF design matrix",
     "deconvolve_all_probes_and_extract_patterns.py": "aggregate-score deconvolution is non-identifiable per ID",
     "deconvolution_20261109": "score-derived per-ID labels blocked by CX-0136",
+    "candidate_c4_nested_meta_stacker_frozen.csv": "NO_QUALIFY; negative frozen confirm and invalid certification per CX-0138",
+    "final_audit_20261109": "C4 final audit namespace blocked from promotion by CX-0138",
+    "run_frozen_confirm_and_auditor_check.py": "fold-local feature and categorical mapping defects per CX-0138",
 }
 
 CANDIDATE_HINTS = (
@@ -87,7 +90,7 @@ def main() -> int:
         "status": "BLOCKED" if missing or any(r["blocked"] for r in reports) else "PASS",
         "missing": missing,
         "reports": reports,
-        "policy": "CX-0128/CX-0129/CX-0131/CX-0132/CX-0134/CX-0136",
+        "policy": "CX-0128/CX-0129/CX-0131/CX-0132/CX-0134/CX-0136/CX-0138",
     }
     rendered = json.dumps(payload, indent=2, ensure_ascii=False)
     print(rendered)
