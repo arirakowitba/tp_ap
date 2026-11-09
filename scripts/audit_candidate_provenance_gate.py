@@ -24,6 +24,15 @@ FORBIDDEN = {
     "map_effect_vs_d1d2": "non-identifiable item effect",
     "expected_gain_vs_s4": "uncalibrated score-derived item gain",
     "portfolio_20261108_podium_target_09490": "portfolio namespace blocked by CX-0128/CX-0129/CX-0131",
+    "generate_slot2_pure_used_top6.py": "manual per-ID flip generator blocked by CX-0134",
+    "generate_slot3_pure_used_top12.py": "manual per-ID flip generator blocked by CX-0134",
+    "generate_slot4_podium_attack_top15.py": "manual per-ID flip generator blocked by CX-0134",
+    "generate_slot5_podium_climax_top14.py": "manual per-ID flip generator blocked by CX-0134",
+    "submission_20261109_01_surgical_rank5_capture_top5.csv": "manual per-ID candidate blocked by CX-0134",
+    "submission_20261109_02_pure_used_capture_top6.csv": "manual per-ID candidate blocked by CX-0134",
+    "submission_20261109_03_pure_used_expansion_top12.csv": "manual per-ID candidate blocked by CX-0134",
+    "submission_20261109_04_podium_attack_top15.csv": "manual per-ID candidate blocked by CX-0134",
+    "submission_20261109_05_podium_climax_top14.csv": "manual per-ID candidate blocked by CX-0134",
 }
 
 CANDIDATE_HINTS = (
@@ -71,7 +80,7 @@ def main() -> int:
         "status": "BLOCKED" if missing or any(r["blocked"] for r in reports) else "PASS",
         "missing": missing,
         "reports": reports,
-        "policy": "CX-0128/CX-0129/CX-0131/CX-0132",
+        "policy": "CX-0128/CX-0129/CX-0131/CX-0132/CX-0134",
     }
     rendered = json.dumps(payload, indent=2, ensure_ascii=False)
     print(rendered)
