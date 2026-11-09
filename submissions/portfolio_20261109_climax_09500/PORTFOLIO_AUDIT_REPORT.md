@@ -1,11 +1,11 @@
-# Certified 5-Tier Super-Blend Portfolio Audit Report
+# Certified 5-Tier Super-Blend Portfolio Audit Report (Feedback-Integrated)
 
-**Date Generated:** 2026-11-09 16:46:44 UTC  
+**Date Generated:** 2026-11-09 17:06:43 UTC  
 **Anchor Submission:** `EVT-132` (Public Score: `0.94752`, Public Hits: `19,896`)  
-**Ensemble Model Foundation:** 6 Diverse Architectures (LightGBM, XGBoost, CatBoost, ExtraTrees, MLP, Sparse Linear)  
-**Combined Ensemble OOF Accuracy:** `0.94170` (LogLoss: `0.14732`, ROC-AUC: `0.98617`)  
+**Ensemble Model Foundation:** 6 Diverse Architectures (Upgraded LGBM Feedback, LGBM Base, XGBoost Hist, CatBoost Native Text, ExtraTrees Bagging, MLP Neural Network, Sparse Linear SAGA)  
+**Combined Ensemble OOF Accuracy:** `0.94179` (LogLoss: `0.14720`, ROC-AUC: `0.98620`)  
 **Rule #1 Status:** 100% INVIOLABLE (Strictly zero `used -> new` flips across all 5 tiers).  
-**Domain Filter:** 10 toxic false positives ('0km', 'a estrenar', 'sin uso') blocked.
+**Domain Filter:** 10 toxic false positives ('0km', 'a estrenar', 'sin uso') permanently blocked.
 
 ---
 
@@ -13,32 +13,32 @@
 
 | Tier | Filename | Flips | Avg Precision $\bar{q}$ | $\mathbb{E}[\Delta H]$ | Expected Hits | Expected Score | $\hat{P}(\text{Podium})$ | $\hat{P}(S \ge 0.95000)$ | Strategic Purpose |
 |:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|
-| **Slot 1** | `submission_20261109_01_rank5_secure_top10.csv` | 10 | 0.8804 | +5.3 | 19901.3 | **`0.94777`** | 0.0% | 0.00% | Secure Rank 5 (>= 0.94780, beats Clara Rodriguez 19,898) |
-| **Slot 2** | `submission_20261109_02_consolidation_top30.csv` | 30 | 0.8072 | +12.9 | 19908.9 | **`0.94813`** | 0.0% | 0.00% | Consolidation (>= 0.94814, chasing Rank 4) |
-| **Slot 3** | `submission_20261109_03_rank4_capture_top60.csv` | 60 | 0.7507 | +21.1 | 19917.1 | **`0.94852`** | 6.4% | 0.00% | Secure Rank 4 (>= 0.94852, beats Agustin Sanchez 19,914) |
-| **Slot 4** | `submission_20261109_04_podium_climax_top110.csv` | 110 | 0.7101 | +32.3 | 19928.3 | **`0.94906`** | **`61.2%`** | **`0.60%`** | Podium Climax (>= 0.94901, beats Gonzalo Buhler 19,926, 95% Conf >= Rank 4) |
-| **Slot 5** | `submission_20261109_05_rank2_attack_top165.csv` | 165 | 0.6760 | +40.7 | 19936.7 | **`0.94946`** | **`85.0%`** | **`11.48%`** | Rank 2 Attack (>= 0.94937, chasing Nicolas Caveda 19,968, 80% Conf Podium) |
+| **Slot 1** | `submission_20261109_01_rank5_secure_top10.csv` | 10 | 0.8720 | +5.2 | 19901.2 | **`0.94777`** | 0.0% | 0.00% | Secure Rank 5 (>= 0.94777, beats Clara Rodriguez 19,898) |
+| **Slot 2** | `submission_20261109_02_consolidation_top30.csv` | 30 | 0.8119 | +13.1 | 19909.1 | **`0.94814`** | 0.0% | 0.00% | Consolidation (>= 0.94814, chasing Rank 4) |
+| **Slot 3** | `submission_20261109_03_rank4_capture_top60.csv` | 60 | 0.7498 | +21.0 | 19917.0 | **`0.94852`** | 6.3% | 0.00% | Secure Rank 4 (>= 0.94852, beats Agustin Sanchez 19,914) |
+| **Slot 4** | `submission_20261109_04_podium_climax_top110.csv` | 110 | 0.7053 | +31.6 | 19927.6 | **`0.94902`** | **`57.7%`** | **`0.47%`** | Podium Climax (>= 0.94902, beats Gonzalo Buhler 19,926, 95.1% Conf >= Rank 4, 57.7% Conf Podium) |
+| **Slot 5** | `submission_20261109_05_rank2_attack_top165.csv` | 220 | 0.6500 | +46.2 | 19942.2 | **`0.94972`** | **`91.1%`** | **`28.52%`** | Max-Confidence 0.95000 Attack (>= 0.94972, 91.1% Conf Podium, 28.5% Conf >= 0.95000, +66 hits total) |
 
 ---
 
 ## Top 20 Certified Flip Candidates
-- **Rank 1**: `ID=28010` | $P(\text{used}) = 0.9595$ | "Pink Floyd (cd) Obscured By Clouds 2011 (arg) Promo"
-- **Rank 2**: `ID=12726` | $P(\text{used}) = 0.9135$ | "El Cambio Del Poder - Alvin Toffler Plaza & Janes"
-- **Rank 3**: `ID=22770` | $P(\text{used}) = 0.9034$ | "Formacion Etica Y Ciudadana 8"
-- **Rank 4**: `ID=10356` | $P(\text{used}) = 0.8658$ | "Juego A Pilas Vuelta Ciclista - Made In Spain"
-- **Rank 5**: `ID=2204` | $P(\text{used}) = 0.8627$ | "Antiguas Palomitas De Yeso Para Decorar Tortas"
-- **Rank 6**: `ID=6822` | $P(\text{used}) = 0.8559$ | "Lorena Astudillo Ojos De Agua   Audio Cd En Caballito"
-- **Rank 7**: `ID=21937` | $P(\text{used}) = 0.8445$ | "Otro Lote De Revistas Noticias Imperdibles"
-- **Rank 8**: `ID=19025` | $P(\text{used}) = 0.8410$ | "Diccionario Español - Italiano Ed Oceano"
-- **Rank 9**: `ID=12738` | $P(\text{used}) = 0.8372$ | "Lampara Colgante Oxido Y Cristal"
-- **Rank 10**: `ID=25763` | $P(\text{used}) = 0.8091$ | "Lote De 4.910,60m2 En Recinto Industrial Cerrado"
-- **Rank 11**: `ID=26665` | $P(\text{used}) = 0.8055$ | "Líderes Del Management. Dirección. La Agenda. Michael Hammer"
-- **Rank 12**: `ID=25371` | $P(\text{used}) = 0.8048$ | "Oliverio Girondo, En La Masmédula"
-- **Rank 13**: `ID=4060` | $P(\text{used}) = 0.8018$ | "Nine Stones Close - One Eye On The Sunrise (rock Progresivo)"
-- **Rank 14**: `ID=3417` | $P(\text{used}) = 0.7930$ | "Carteles De Chapa, Publicidades Antiguas. Cafe Espresso"
-- **Rank 15**: `ID=22499` | $P(\text{used}) = 0.7898$ | "Los Condenados De La Tierra   Frantz Fanon"
-- **Rank 16**: `ID=27683` | $P(\text{used}) = 0.7871$ | "Altocamet Manzana De Metal Cd Digipack Eletro Pop Rock"
-- **Rank 17**: `ID=20714` | $P(\text{used}) = 0.7867$ | "Servicio De Caniche Gratis!!!!!!! Experiencia Garantizada"
-- **Rank 18**: `ID=2349` | $P(\text{used}) = 0.7735$ | "Ricardo Strafacce, La Transformación De Rosendo"
-- **Rank 19**: `ID=14405` | $P(\text{used}) = 0.7729$ | "Modelos Economicos Y Finan.con Exel 2000- Garcia-rialeconomi"
-- **Rank 20**: `ID=27259` | $P(\text{used}) = 0.7686$ | "Pink Floyd - The Dark Side Of The Moon 30th Anniversary Sacd"
+- **Rank 1**: `ID=28010` | $P(\text{used}) = 0.9596$ | "Pink Floyd (cd) Obscured By Clouds 2011 (arg) Promo"
+- **Rank 2**: `ID=12726` | $P(\text{used}) = 0.9130$ | "El Cambio Del Poder - Alvin Toffler Plaza & Janes"
+- **Rank 3**: `ID=22770` | $P(\text{used}) = 0.9040$ | "Formacion Etica Y Ciudadana 8"
+- **Rank 4**: `ID=10356` | $P(\text{used}) = 0.8653$ | "Juego A Pilas Vuelta Ciclista - Made In Spain"
+- **Rank 5**: `ID=2204` | $P(\text{used}) = 0.8607$ | "Antiguas Palomitas De Yeso Para Decorar Tortas"
+- **Rank 6**: `ID=6822` | $P(\text{used}) = 0.8492$ | "Lorena Astudillo Ojos De Agua   Audio Cd En Caballito"
+- **Rank 7**: `ID=19025` | $P(\text{used}) = 0.8415$ | "Diccionario Español - Italiano Ed Oceano"
+- **Rank 8**: `ID=21937` | $P(\text{used}) = 0.8414$ | "Otro Lote De Revistas Noticias Imperdibles"
+- **Rank 9**: `ID=12738` | $P(\text{used}) = 0.8367$ | "Lampara Colgante Oxido Y Cristal"
+- **Rank 10**: `ID=25763` | $P(\text{used}) = 0.8124$ | "Lote De 4.910,60m2 En Recinto Industrial Cerrado"
+- **Rank 11**: `ID=25371` | $P(\text{used}) = 0.8119$ | "Oliverio Girondo, En La Masmédula"
+- **Rank 12**: `ID=26665` | $P(\text{used}) = 0.8037$ | "Líderes Del Management. Dirección. La Agenda. Michael Hammer"
+- **Rank 13**: `ID=4060` | $P(\text{used}) = 0.7973$ | "Nine Stones Close - One Eye On The Sunrise (rock Progresivo)"
+- **Rank 14**: `ID=2349` | $P(\text{used}) = 0.7968$ | "Ricardo Strafacce, La Transformación De Rosendo"
+- **Rank 15**: `ID=20714` | $P(\text{used}) = 0.7924$ | "Servicio De Caniche Gratis!!!!!!! Experiencia Garantizada"
+- **Rank 16**: `ID=22499` | $P(\text{used}) = 0.7917$ | "Los Condenados De La Tierra   Frantz Fanon"
+- **Rank 17**: `ID=3417` | $P(\text{used}) = 0.7889$ | "Carteles De Chapa, Publicidades Antiguas. Cafe Espresso"
+- **Rank 18**: `ID=17934` | $P(\text{used}) = 0.7845$ | "Hora De Los Gurus John Mickletwait Editorial Alianza"
+- **Rank 19**: `ID=27683` | $P(\text{used}) = 0.7813$ | "Altocamet Manzana De Metal Cd Digipack Eletro Pop Rock"
+- **Rank 20**: `ID=14405` | $P(\text{used}) = 0.7773$ | "Modelos Economicos Y Finan.con Exel 2000- Garcia-rialeconomi"

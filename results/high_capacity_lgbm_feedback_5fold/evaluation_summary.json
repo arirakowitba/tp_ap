@@ -1,0 +1,66 @@
+{
+  "model": "High-Capacity LightGBM F120+ 5-Fold",
+  "num_features": 223,
+  "n_train": 70000,
+  "n_test": 30000,
+  "global_prior": 0.46302857142857146,
+  "lgb_params": {
+    "num_leaves": 63,
+    "max_depth": 8,
+    "learning_rate": 0.03,
+    "n_estimators": 1500,
+    "colsample_bytree": 0.8,
+    "subsample": 0.8,
+    "min_child_samples": 25,
+    "n_jobs": -1,
+    "verbose": -1,
+    "objective": "binary",
+    "metric": "binary_logloss"
+  },
+  "svd_components": 64,
+  "cv_folds": [
+    {
+      "fold": 1,
+      "accuracy": 0.9377857142857143,
+      "logloss": 0.16189277523475643,
+      "auc": 0.9835207596800077,
+      "best_iteration": 295
+    },
+    {
+      "fold": 2,
+      "accuracy": 0.9365,
+      "logloss": 0.15937378632415294,
+      "auc": 0.9839064636315813,
+      "best_iteration": 314
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.9385,
+      "logloss": 0.15886258136926357,
+      "auc": 0.9839413177580841,
+      "best_iteration": 312
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.9392142857142857,
+      "logloss": 0.15853321993051117,
+      "auc": 0.9839559305452963,
+      "best_iteration": 294
+    },
+    {
+      "fold": 5,
+      "accuracy": 0.9403571428571429,
+      "logloss": 0.15597463574242657,
+      "auc": 0.9846580051743891,
+      "best_iteration": 225
+    }
+  ],
+  "oof_accuracy_t050": 0.9384714285714286,
+  "oof_optimal_threshold": 0.514,
+  "oof_accuracy_optimal": 0.9385857142857142,
+  "oof_logloss": 0.15892739941050163,
+  "oof_roc_auc": 0.9839703928940275,
+  "test_used_count": 14207,
+  "test_new_count": 15793,
+  "elapsed_seconds": 238.03
+}

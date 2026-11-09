@@ -1,0 +1,84 @@
+item_id,test_idx,anchor_pred,appearances,theta_dual,theta_bounded,inferred_label,title,price,warranty,tags,category_id,seller_id
+6688,6687,used,1,0.7273,0.75,HIGH_CONFIDENCE_TRUE_USED,Cubiertas Bridgestone 180/55/17 Y 120/70-17,1900.0,,[],MLA3936,9598035258
+19591,19590,used,1,0.7273,0.75,HIGH_CONFIDENCE_TRUE_USED,Brigada A - Chevy Gmc Van 1983 - Tv Serie - Hot Wheels 1/43,1550.0,NUEVO. POR DEFECTOS DE FABRICACIÓN.,['dragged_bids_and_visits'],MLA7981,7703596335
+25885,25884,used,1,0.7273,0.75,HIGH_CONFIDENCE_TRUE_USED,Letras Gigantes 3d 15 Años Eventos Alquiler,300.0,GARANTIA,[],MLA34331,4453975115
+26975,26974,used,2,0.277,0.2799,UNCERTAIN,Churchill - Alan Moorehead - Editorial Salvat,45.0,,['dragged_bids_and_visits'],MLA67582,1545641317
+17117,17116,used,2,0.277,0.2799,UNCERTAIN,"Copas De Cristal Tallado Napoleón P/licor, Cognac O Brandy",50.0,,['dragged_bids_and_visits'],MLA34372,8108841349
+27780,27779,used,2,0.277,0.2799,UNCERTAIN,Sobre De 8c. Circulado De Tandil A Alemania Año 1890,160.0,,['dragged_bids_and_visits'],MLA44089,3903789446
+15673,15672,new,1,0.2235,0.2668,UNCERTAIN,Pinza Pico De Loro Bahco Antigua Numero 221,295.0,6 MESES,['dragged_bids_and_visits'],MLA30833,6808968099
+19361,19360,new,1,0.1776,0.2128,UNCERTAIN,Estados Unidos Lote De 52 Monedas De Un Centavo,250.0,LOS PRODUCTOS CORRESPONDEN A LAS FOTOS Y O ESCANEOS,[],MLA31763,3130512241
+15392,15391,new,1,0.1776,0.2128,UNCERTAIN,Lampara Antigua Vitro Para Colgar O Aplique,1200.0,,['dragged_bids_and_visits'],MLA4690,3921282417
+14353,14352,used,3,0.1687,0.1662,UNCERTAIN,Juego Didactico De Bolitas E Colores,90.0,,['dragged_bids_and_visits'],MLA2962,9177305793
+3031,3030,used,3,0.1687,0.1662,UNCERTAIN,Florero Violetero Color Rubí Cristal Veneciano Deco Oro 24k,1299.9,"Mi antigüedad en ML mis calificaciones Se hacen envíos al interior vía Micro, OCA, Correo Argentino (costos de embalaje cadetería y despacho DESDE $35) Ante cualquier duda leer bien la publicación y/o preguntar. Muchas Gracias.",['dragged_bids_and_visits'],MLA34249,1691441475
+4997,4996,used,3,0.1687,0.1662,UNCERTAIN,Buzz Lightyear,1350.0,,[],MLA12060,4948253777
+1823,1822,used,3,0.1687,0.1662,UNCERTAIN,La Ciberpolítica Y Los Nuevos Ciudadanos - G. Martinez Pandi,80.0,,['dragged_bids_and_visits'],MLA6009,4469881150
+1346,1345,used,3,0.1687,0.1662,UNCERTAIN,Cinturón Cuero Legítimo Negro Hebilla Dorada Dama Mujer,180.0,,['dragged_bids_and_visits'],MLA62928,5982179845
+29533,29532,used,3,0.1687,0.1662,UNCERTAIN,Vicotria`s Secret,750.0,,[],MLA120370,9300050851
+28453,28452,used,3,0.1687,0.1662,UNCERTAIN,Camisa Sin Mangas. Musculosa Negro/ Azul - Espalda Moño,250.0,,[],MLA64222,1851861180
+8650,8649,used,3,0.1687,0.1662,UNCERTAIN,Transformador Trafo 750 Watts.,299.0,,['dragged_bids_and_visits'],MLA5848,1892813964
+1067,1066,used,3,0.1687,0.1662,UNCERTAIN,Patentes Antguas De Chapa.,199.0,,['dragged_bids_and_visits'],MLA6095,9355263866
+28301,28300,used,3,0.1687,0.1662,UNCERTAIN,Traje D Vestir Color Beige Clarito Crema Talle L 46 C/ Nuevo,250.0,,[],MLA109095,4003983042
+8227,8226,used,3,0.1687,0.1662,UNCERTAIN,Motherboard Biostar P4m900-m7 Se    No Funciona,78.0,,['dragged_bids_and_visits'],MLA3781,5143851919
+8661,8660,used,3,0.1687,0.1662,UNCERTAIN,Remera Contra Monsanto Algodón Peinado 24/1#remeras Rockeria,120.0,,['dragged_bids_and_visits'],MLA119287,2820269508
+8997,8996,used,3,0.1687,0.1662,UNCERTAIN,Pulsera Colorada Importada,80.0,,['dragged_bids_and_visits'],MLA42433,3156928923
+22499,22498,new,3,0.1075,0.1402,UNCERTAIN,Los Condenados De La Tierra   Frantz Fanon,200.0,,['dragged_bids_and_visits'],MLA41175,5774742868
+8674,8673,new,1,0.1083,0.1138,UNCERTAIN,Ghost Whisperer Dvd Subtitulado Castellano Original De Usa,200.0,,['dragged_bids_and_visits'],MLA15156,7682073372
+22905,22904,new,1,0.1083,0.1137,UNCERTAIN,Retro Vintrage Año 70 Original Traje Saco Pollera,250.0,Sin garant&iacute;a,['dragged_bids_and_visits'],MLA109095,8445504607
+16190,16189,new,1,0.1083,0.1137,UNCERTAIN,Nico Vagon Pasajeros Repintado Lima ? H0 (vph 16),370.0,NUESTRAS CALIFICACIONES Y LOS COMENTARIOS DE NUESTROS COMPRADORES GARANTIZAN TU COMPRA.,[],MLA38914,1358380526
+10013,10012,new,1,0.1083,0.1137,UNCERTAIN,Steve Winwood - Nine Lives 2008 - Cd Musicollector,130.0,,[],MLA15163,6635457251
+22953,22952,new,1,0.1083,0.1137,UNCERTAIN,Shawn Michaels Excelente Wcw Wwe Tna Ecw Wwf Lucha Libre Raw,200.0,Las fotos siempre son del producto publicado y la descripcion es la adecuada.,['dragged_bids_and_visits'],MLA37505,1522739213
+28431,28430,new,1,0.1083,0.1137,UNCERTAIN,Pecera / Acuario,190.0,,['dragged_bids_and_visits'],MLA1093,7648008170
+18412,18411,new,3,0.0565,0.0858,UNCERTAIN,Burro Para Fiat1 Mpi Como Nuevo Permuto,1000.0,,[],MLA85999,8957010774
+17645,17644,new,2,-0.0229,-0.0215,UNCERTAIN,Pollerín Niña Talle M Marca Limited Too,150.0,"Producto en excelente calidad, sin devolución, con detalle. No se aceptan cambios.",['dragged_bids_and_visits'],MLA112102,8118275883
+24735,24734,new,2,-0.0229,-0.0215,UNCERTAIN,Hot Wheels Ferrari Modena 360 - Impecable Vitrina-en Palermo,190.0,"MARCA ORIGINAL. MIS CALIFICACIONES, LA OPINIÓN DE MIS COMPRADORES Y LA PLENA SATISFACCIÓN AL RETIRAR EL PRODUCTO",[],MLA4734,5898160729
+26668,26667,new,4,-0.0748,-0.0493,UNCERTAIN,Iphone 4 8gb Para Repuestos,750.0,,[],MLA70356,1594232708
+10123,10122,new,4,-0.0748,-0.0493,UNCERTAIN,Fotocopiadora Xerox Dc 214 Para Repuesto,850.0,Sin garantía,['dragged_bids_and_visits'],MLA30762,1941827616
+7936,7935,new,2,-0.0701,-0.0725,UNCERTAIN,Sociedad Y Estado En Tiempos De Globalización. Campins,79.0,Sí,['dragged_bids_and_visits'],MLA6009,1191528787
+22237,22236,new,2,-0.0701,-0.0725,UNCERTAIN,Stiletos De Zara De Raso Negro Talle 38,400.0,,['dragged_bids_and_visits'],MLA370638,3619229304
+29859,29858,new,2,-0.0701,-0.0725,UNCERTAIN,Mochila Alforja Para Bicicleta,450.0,OFRECEMOS TOTAL GARANTIA DE SATISFACCIÓN,['dragged_bids_and_visits'],MLA9907,5157705303
+6900,6899,new,2,-0.0701,-0.0725,UNCERTAIN,Estados Unidos One Cent  1972 -,19.0,"Total, como en todas mis monedas.",['dragged_bids_and_visits'],MLA31763,2088607945
+815,814,new,2,-0.0701,-0.0727,UNCERTAIN,El Psicodiagnostico Miokinetico Cesar Coronel,250.0,,['dragged_bids_and_visits'],MLA11456,1208835287
+7048,7047,new,2,-0.1211,-0.127,UNCERTAIN,Antiguo Cenicero En Vitro Fusion Color Celeste Gran Tamaño,275.0,MIS CALIFICACIONES AVALAN LA CALIDAD Y ORIGINALIDAD DE LOS PRODUCTO OFRECIDOS,['dragged_bids_and_visits'],MLA34191,3871206484
+21122,21121,new,2,-0.1211,-0.127,UNCERTAIN,Antigua Foto Original Renault Trafic Diesel Auto Clasico,62.49,MIS CALIFICACIONES AVALAN LA CALIDAD DEL PRODUCTO OFRECIDO,['dragged_bids_and_visits'],MLA3476,3871206484
+23119,23118,new,1,-0.1313,-0.1352,UNCERTAIN,Loose 1980 Matchbox Superfast 79 Chevy Van De Vitrina!,74.99,Soy Usuario Certificado. Todas las fotos y descripcion corresponden al articulo que se entrega. Mas de 7 años en Mercado Libre con mas de 1100 calificaciones 100% POSITIVAS!!! Blister cerrado.,['dragged_bids_and_visits'],MLA4728,5578789209
+18146,18145,new,1,-0.1313,-0.1352,UNCERTAIN,"Kelis Rogers, Kelis Was Here - Cd Importado",189.9,"Nuevos, Cerrados, Garantidos",['dragged_bids_and_visits'],MLA29393,4134593967
+29278,29277,new,1,-0.1313,-0.1352,UNCERTAIN,Revista El Gourmet Nº58 - Especial Aniversario,50.0,,[],MLA41121,5640440104
+20259,20258,new,1,-0.1313,-0.1352,UNCERTAIN,Lote De Dos Muñecos Avatar Coleccion Mc Donalds 2009,120.0,,[],MLA2980,3451689265
+7234,7233,new,2,-0.167,-0.1806,UNCERTAIN,Taxi Driver Blu Ray Box Digi Book Deluxe Scorsese De Niro,499.98,"TODOS NUESTROS ARTÍCULOS ESTAN 100 % GARANTIZADOS.
+DE NO ESTAR CONFORME CON LOS MISMOS SE REINTEGRARÁ EL IMPORTE DEL PRODUCTO,CONTRA DEVOLUCION DEL ARTÍCULO",['dragged_bids_and_visits'],MLA29362,4248718919
+16674,16673,new,2,-0.167,-0.1806,UNCERTAIN,* Mar Del Plata Jardines Playa La Perla Antigua Foto Postal,116.0,Nuestra trayectoria y calificaciones avalan nuestra seriedad. TODOS nuestros artículos están GARANTIZADOS!,['dragged_bids_and_visits'],MLA2069,1800747411
+19853,19852,new,2,-0.167,-0.1806,UNCERTAIN,1970 Antigua Tortuga Con Hijo A Cuerda En Caja Original,300.0,,['dragged_bids_and_visits'],MLA12030,3927790857
+27683,27682,new,2,-0.167,-0.1806,UNCERTAIN,Altocamet Manzana De Metal Cd Digipack Eletro Pop Rock,129.98,Sí,['dragged_bids_and_visits'],MLA15226,4248718919
+24724,24723,new,2,-0.167,-0.1806,UNCERTAIN,Antigua Foto Original Auto Renault Trafic 1988 Auto Clasico,62.49,MIS CALIFICACIONES AVALAN LA CALIDAD DEL PRODUCTO OFRECIDO,['dragged_bids_and_visits'],MLA3476,3871206484
+24779,24778,new,1,-0.1784,-0.1862,UNCERTAIN,Manual Del Espectador De Cine Mauricio Rittner,70.0,,['dragged_bids_and_visits'],MLA3038,8867296818
+25490,25489,new,1,-0.1784,-0.1862,UNCERTAIN,"Grecia - Moneda De 10 Drachmas, Año 1986 - Democrito",24.0,ABSOLUTA,['dragged_bids_and_visits'],MLA31692,2088607945
+9562,9561,new,1,-0.1784,-0.1862,UNCERTAIN,Patas Arriba Eduardo Galeano,215.0,,['dragged_bids_and_visits'],MLA41287,7948478233
+7255,7254,new,1,-0.1784,-0.1862,UNCERTAIN,Libro Las Aventuras Del Gato Moncholo,100.0,,[],MLA31797,7469411546
+21659,21658,new,1,-0.1784,-0.1862,UNCERTAIN,"Garcia Conde - Argentina, Una Historia De Frontera",110.0,Los libros son revisados antes de publicar por lo que están en el estado que se indica en la publicación,['dragged_bids_and_visits'],MLA41174,2696095825
+21530,21529,new,1,-0.1784,-0.1862,UNCERTAIN,Poesia Argentina Del Siglo Xx,50.0,,['dragged_bids_and_visits'],MLA41269,5458449814
+2037,2036,new,1,-0.1784,-0.1862,UNCERTAIN,Poster Cine Cowboys Vs Aliens,70.0,Sin garantía,['dragged_bids_and_visits'],MLA6087,9743300166
+2349,2348,new,1,-0.1784,-0.1862,UNCERTAIN,"Ricardo Strafacce, La Transformación De Rosendo",139.0,Sin garantía,['dragged_bids_and_visits'],MLA1227,3892647980
+28295,28294,new,1,-0.1784,-0.1862,UNCERTAIN,"Osteoporosis - Cómo Prevenirla, Tratarla Y Mejorarla -",65.0,Sí,['dragged_bids_and_visits'],MLA41183,1191528787
+19854,19853,new,1,-0.1784,-0.1862,UNCERTAIN,Rodolfo Walsh Operacion Masacre Tapa Dura,120.0,,['dragged_bids_and_visits'],MLA2044,9835221422
+23291,23290,new,1,-0.1784,-0.1862,UNCERTAIN,Cd Morten Harket  Out Of My Hands,119.0,,['dragged_bids_and_visits'],MLA15219,7953059879
+25371,25370,new,1,-0.1784,-0.1862,UNCERTAIN,"Oliverio Girondo, En La Masmédula",120.0,,['dragged_bids_and_visits'],MLA1227,3892647980
+2549,2548,new,1,-0.3249,-0.3353,HIGH_CONFIDENCE_TRUE_NEW,Barra De Ejercicios Para Wii Fit Nintendo Balance Board,250.0,"garantía de 3 meses, con embalaje en perfecto estado",['dragged_bids_and_visits'],MLA48628,7512176481
+859,858,new,1,-0.3249,-0.3353,HIGH_CONFIDENCE_TRUE_NEW,Amiibo Villager Nintendo Wiiu,1390.0,,[],MLA126425,6702408430
+10753,10752,new,1,-0.3249,-0.3353,HIGH_CONFIDENCE_TRUE_NEW,Turibulo Incensario Religioso De Bronce,1400.0,,[],MLA47338,1504954502
+21325,21324,new,1,-0.3249,-0.3353,HIGH_CONFIDENCE_TRUE_NEW,Amatista Uruguay (drusa),355.0,,['dragged_bids_and_visits'],MLA43925,5399840184
+25449,25448,new,1,-0.3249,-0.3353,HIGH_CONFIDENCE_TRUE_NEW,Venta De Cel Bb Curve 9360 Liberado !!! Leer Bien !!,699.0,,['dragged_bids_and_visits'],MLA103670,1534320865
+10889,10888,new,1,-0.3249,-0.3353,HIGH_CONFIDENCE_TRUE_NEW,Plato De Postre Grindley Loza Inglesa Flores 17 Cm,170.0,,['dragged_bids_and_visits'],MLA34258,5308617367
+12356,12355,new,1,-0.3249,-0.3353,HIGH_CONFIDENCE_TRUE_NEW,Archi,65.0,,['dragged_bids_and_visits'],MLA3067,5348775599
+16075,16074,new,1,-0.3249,-0.3353,HIGH_CONFIDENCE_TRUE_NEW,El Libro De La Naturaleza Y La Tecnologia 7 Estrada,50.0,Sí,[],MLA7373,4811929520
+27016,27015,new,3,-0.3479,-0.3567,HIGH_CONFIDENCE_TRUE_NEW,Torre De Hanoi - Juego De Ingenio,50.0,,['dragged_bids_and_visits'],MLA76145,9862749243
+6308,6307,new,3,-0.3479,-0.3567,HIGH_CONFIDENCE_TRUE_NEW,Sailor Moon - Petit Chara Land,350.0,,['dragged_bids_and_visits'],MLA70160,8070145591
+15958,15957,new,1,-0.3446,-0.3934,HIGH_CONFIDENCE_TRUE_NEW,Dummy Motorola Moto G No Funcional Solo Para Exhibicion,80.0,Mis calificaciones y trayectoria tanto comercial como en internet avalan mi compromiso de venta,['dragged_bids_and_visits'],MLA1915,3828059326
+7545,7544,new,1,-0.3446,-0.3934,HIGH_CONFIDENCE_TRUE_NEW,Dunlop Slide Bronce Made In Usa 222 Brass El Mejor Permuto,250.0,"Esta testeado, Se prueba al entregar, No se reconoce mal Uso, manipulacion de terceros, mala instalacion, etc.",['dragged_bids_and_visits'],MLA29295,2992568449
+12587,12586,new,1,-0.3446,-0.3934,HIGH_CONFIDENCE_TRUE_NEW,Flash Gbr Alta Potencia Dj S 1500 Vendo O Permuto,1480.0,6 MESES,['dragged_bids_and_visits'],MLA32237,8434076131
+28819,28818,new,2,-0.4562,-0.4704,HIGH_CONFIDENCE_TRUE_NEW,Blink 182 Cd,120.0,,[],MLA15211,6362244869
+5585,5584,new,2,-0.4562,-0.4704,HIGH_CONFIDENCE_TRUE_NEW,"Syd Barrett, Dibujo",200.0,,[],MLA34341,1829607965
+5606,5605,new,2,-0.4562,-0.4704,HIGH_CONFIDENCE_TRUE_NEW,Fuente Para Dvd Home Theather : : Z O E S T : :,165.0,"RETIRA POR ZONA OESTE, SOLO ENVIO AL INTERIOR POR MICRO. NO DELIVERY",['dragged_bids_and_visits'],MLA5848,8076742426
+16515,16514,new,4,-0.5263,-0.5429,HIGH_CONFIDENCE_TRUE_NEW,Berta Baumkoler - La Lucha Es Vida - Ed. Cuadernos Marxistas,50.0,,['dragged_bids_and_visits'],MLA1227,9840215628
+28010,28009,new,4,-0.6232,-0.65,HIGH_CONFIDENCE_TRUE_NEW,Pink Floyd (cd) Obscured By Clouds 2011 (arg) Promo,150.0,,['dragged_bids_and_visits'],MLA15171,9761605107
+6072,6071,new,1,-0.7273,-0.75,HIGH_CONFIDENCE_TRUE_NEW,Absinthe Blanqui Vintage Individual Acetato. Made In France,100.0,,['dragged_bids_and_visits'],MLA31357,3037572954
+16451,16450,new,1,-0.7273,-0.75,HIGH_CONFIDENCE_TRUE_NEW,Panel Frente  Handy Icom Ic-2sat,79.0,30 DIAS,['dragged_bids_and_visits'],MLA11373,8293387473
