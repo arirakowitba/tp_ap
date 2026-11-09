@@ -1090,7 +1090,7 @@ ID,condition
 1089,new
 1090,new
 1091,new
-1092,used
+1092,new
 1093,used
 1094,new
 1095,new
@@ -8008,7 +8008,7 @@ ID,condition
 8007,new
 8008,used
 8009,new
-8010,used
+8010,new
 8011,used
 8012,used
 8013,new
@@ -8800,7 +8800,7 @@ ID,condition
 8799,new
 8800,new
 8801,used
-8802,new
+8802,used
 8803,used
 8804,new
 8805,new
@@ -9797,7 +9797,7 @@ ID,condition
 9796,new
 9797,used
 9798,new
-9799,new
+9799,used
 9800,new
 9801,used
 9802,used
@@ -19566,7 +19566,7 @@ ID,condition
 19565,used
 19566,new
 19567,used
-19568,new
+19568,used
 19569,used
 19570,used
 19571,used
@@ -27231,7 +27231,7 @@ ID,condition
 27230,new
 27231,used
 27232,new
-27233,used
+27233,new
 27234,used
 27235,new
 27236,used

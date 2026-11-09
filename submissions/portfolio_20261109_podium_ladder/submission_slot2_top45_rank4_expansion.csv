@@ -391,7 +391,7 @@ ID,condition
 390,used
 391,new
 392,new
-393,new
+393,used
 394,new
 395,used
 396,used
@@ -1090,7 +1090,7 @@ ID,condition
 1089,new
 1090,new
 1091,new
-1092,used
+1092,new
 1093,used
 1094,new
 1095,new
@@ -5790,7 +5790,7 @@ ID,condition
 5789,new
 5790,used
 5791,new
-5792,new
+5792,used
 5793,used
 5794,new
 5795,used
@@ -8008,7 +8008,7 @@ ID,condition
 8007,new
 8008,used
 8009,new
-8010,used
+8010,new
 8011,used
 8012,used
 8013,new
