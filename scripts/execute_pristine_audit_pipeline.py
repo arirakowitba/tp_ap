@@ -296,13 +296,13 @@ def main():
     print(f"  Raw P5:                  {p5_raw:+.1f} hits | Raw P50: {p50_raw:+.1f} hits | Raw P95: {p95_raw:+.1f} hits")
     print(f"  P5 Stressed (gamma=2.96):{p5_adj:+.1f} hits (Target: >= +53.0)")
     print(f"  P1 Stressed (gamma=2.96):{p1_adj:+.1f} hits")
-    print(f"  Score Guaranteed 95%:    {score_p5_adj:.5f}")
-    print(f"  Score Guaranteed 99%:    {score_p1_adj:.5f}")
+    print(f"  Exploratory score proxy P5:    {score_p5_adj:.5f}")
+    print(f"  Exploratory score proxy P1:    {score_p1_adj:.5f}")
     print(f"  Expected Public Score:   {score_p50:.5f}")
     print(f"  P(Gain >= +53 | Stress): {prob_53*100:.2f}% (Target: >= 95.0%)")
     print(f"  P(Gain >= +31 Podium):   {prob_podium*100:.2f}%")
 
-    status = "QUALIFIED" if (p5_adj >= 53.0 and prob_53 >= 0.95) else "NO_QUALIFY"
+    status = "NO_QUALIFY"  # CX-0141: legacy OOF and heuristic gamma cannot certify public coverage
     print(f"\nFINAL VERDICT: >>> {status} <<<")
 
     # 7. Generate Test Submission with Frozen Rule
@@ -354,7 +354,8 @@ def main():
             "net": net_confirm,
             "precision_percent": prec_confirm,
         },
-        "uncertainty_stressed": {
+        "confidence_audit": {"qualification_allowed": False, "public_probability_calibrated": False, "confirm_independence_verified": False, "reason": "Legacy OOF lineage not excluded from confirm; gamma-normal approximation lacks prequential coverage. All numbers below are exploratory diagnostics, not public guarantees."},
+        "uncertainty_stressed_exploratory_only": {
             "p5_adj": p5_adj,
             "p1_adj": p1_adj,
             "score_p5_adj": score_p5_adj,
