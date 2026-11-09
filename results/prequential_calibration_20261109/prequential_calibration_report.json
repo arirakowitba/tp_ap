@@ -1,0 +1,28 @@
+{
+  "timestamp_utc": "2026-11-09 18:20:26",
+  "policy": "CX-0137 Phase 3",
+  "prequential_backtest_steps": 53,
+  "nominal_coverage_90": 0.39622641509433965,
+  "nominal_coverage_95": 0.49056603773584906,
+  "nominal_coverage_99": 0.660377358490566,
+  "empirical_z_95": 5.793264377540051,
+  "widening_factor_gamma": 2.9557471313979855,
+  "lead_candidate": "C4_Nested_Meta_Stacker",
+  "raw_bootstrap_quantiles": {
+    "p5_hits": 13.950000000000003,
+    "p50_hits": 45.0,
+    "p95_hits": 72.0,
+    "prob_ge_53": 0.313
+  },
+  "prequential_widened_quantiles": {
+    "p5_hits": -40.79056048882653,
+    "p50_hits": 45.0,
+    "p95_hits": 130.79056048882654,
+    "score_p5": 0.9455762186642144,
+    "score_p50": 0.9496618725592914,
+    "score_p95": 0.9537475264543683,
+    "prob_ge_53": 0.4390426724034784
+  },
+  "qualification_status": "NO_QUALIFY",
+  "explanation": "Under honest prequential calibration with widening factor gamma=2.96, the 95% confidence lower bound is P5=-40.8 hits (score 0.94558). Because P5 < +53, the candidate cannot be certified with >=95% confidence to exceed 0.95000 today. Verdict is strictly NO_QUALIFY in adherence to scientific protocol."
+}
