@@ -1,0 +1,47 @@
+{
+  "model": "expanded_feedback_xgb_5fold",
+  "n_train": 70000,
+  "n_test": 30000,
+  "oof_accuracy": 0.9392857142857143,
+  "oof_hits": 65750,
+  "oof_logloss": 0.1650077732115922,
+  "oof_auc": 0.984858202134036,
+  "fold_metrics": [
+    {
+      "fold": 1,
+      "best_iteration": 1400,
+      "accuracy": 0.9391428571428572,
+      "logloss": 0.16799175568247282,
+      "auc": 0.9843625735343066
+    },
+    {
+      "fold": 2,
+      "best_iteration": 1400,
+      "accuracy": 0.9433571428571429,
+      "logloss": 0.15702047893882173,
+      "auc": 0.9859261150796456
+    },
+    {
+      "fold": 3,
+      "best_iteration": 1400,
+      "accuracy": 0.9415,
+      "logloss": 0.16178980166292564,
+      "auc": 0.9851094901804732
+    },
+    {
+      "fold": 4,
+      "best_iteration": 1400,
+      "accuracy": 0.9384285714285714,
+      "logloss": 0.16029310207646996,
+      "auc": 0.9856316530389619
+    },
+    {
+      "fold": 5,
+      "best_iteration": 1400,
+      "accuracy": 0.934,
+      "logloss": 0.1779437274237546,
+      "auc": 0.9833562922448537
+    }
+  ],
+  "timestamp_utc": "2026-11-09 17:21:02"
+}

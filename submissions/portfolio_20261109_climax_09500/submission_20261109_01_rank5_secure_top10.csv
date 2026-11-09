@@ -4058,7 +4058,7 @@ ID,condition
 4057,new
 4058,new
 4059,used
-4060,new
+4060,used
 4061,new
 4062,used
 4063,used
@@ -12736,7 +12736,7 @@ ID,condition
 12735,new
 12736,new
 12737,new
-12738,used
+12738,new
 12739,used
 12740,used
 12741,used
@@ -19023,7 +19023,7 @@ ID,condition
 19022,used
 19023,used
 19024,used
-19025,used
+19025,new
 19026,new
 19027,new
 19028,used
@@ -25369,7 +25369,7 @@ ID,condition
 25368,used
 25369,new
 25370,new
-25371,new
+25371,used
 25372,used
 25373,new
 25374,used

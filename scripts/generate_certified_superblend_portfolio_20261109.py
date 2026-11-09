@@ -60,8 +60,10 @@ def main():
     log("=== GENERATING CERTIFIED 5-TIER SUPER-BLEND PORTFOLIO WITH FEEDBACK ===")
     log("=" * 80)
 
-    # 1. Load All Architectures (including upgraded Feedback LightGBM)
+    # 1. Load All Architectures (including expanded Feedback LightGBM and XGBoost)
     model_paths = {
+        "LGBM_Exp_Feedback": (ROOT / "results/expanded_feedback_lgbm_5fold/oof_predictions.csv", "prob_used", ROOT / "results/expanded_feedback_lgbm_5fold/test_probabilities.npy"),
+        "XGB_Exp_Feedback": (ROOT / "results/expanded_feedback_xgb_5fold/oof_predictions.csv", "prob_used", ROOT / "results/expanded_feedback_xgb_5fold/test_probabilities.npy"),
         "LGBM_Feedback": (ROOT / "results/high_capacity_lgbm_feedback_5fold/oof_predictions.csv", "prob_used", ROOT / "results/high_capacity_lgbm_feedback_5fold/test_probabilities.npy"),
         "LGBM_Base": (ROOT / "results/high_capacity_lgbm_5fold/oof_predictions.csv", "prob_used", ROOT / "results/high_capacity_lgbm_5fold/test_probabilities.npy"),
         "XGBoost": (ROOT / "results/xgboost_diversity_5fold/oof_predictions.csv", "prob_used", ROOT / "results/xgboost_diversity_5fold/test_probabilities.npy"),

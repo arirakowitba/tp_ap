@@ -1,0 +1,47 @@
+{
+  "model": "expanded_feedback_lgbm_5fold",
+  "n_train": 70000,
+  "n_test": 30000,
+  "oof_accuracy": 0.9391428571428572,
+  "oof_hits": 65740,
+  "oof_logloss": 0.15825504096800713,
+  "oof_auc": 0.9841803756784638,
+  "fold_metrics": [
+    {
+      "fold": 1,
+      "best_iteration": 250,
+      "accuracy": 0.9375714285714286,
+      "logloss": 0.15970296114675037,
+      "auc": 0.9840104206553455
+    },
+    {
+      "fold": 2,
+      "best_iteration": 262,
+      "accuracy": 0.9437857142857143,
+      "logloss": 0.15221079017964284,
+      "auc": 0.9852465776059087
+    },
+    {
+      "fold": 3,
+      "best_iteration": 208,
+      "accuracy": 0.9395,
+      "logloss": 0.15828062629333564,
+      "auc": 0.9837853514416371
+    },
+    {
+      "fold": 4,
+      "best_iteration": 285,
+      "accuracy": 0.9402857142857143,
+      "logloss": 0.15231652779564073,
+      "auc": 0.9855495829074643
+    },
+    {
+      "fold": 5,
+      "best_iteration": 222,
+      "accuracy": 0.9345714285714286,
+      "logloss": 0.16876429942466603,
+      "auc": 0.9822682756147098
+    }
+  ],
+  "timestamp_utc": "2026-11-09 17:18:13"
+}

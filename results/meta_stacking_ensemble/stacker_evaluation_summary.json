@@ -1,0 +1,38 @@
+{
+  "timestamp_utc": "2026-11-09 17:21:46",
+  "n_models": 9,
+  "models": [
+    "LGBM_Expanded_Feedback",
+    "XGB_Expanded_Feedback",
+    "LGBM_Feedback_Base",
+    "LGBM_HighCapacity_Base",
+    "XGB_Diversity_Base",
+    "CatBoost_Depth8",
+    "ExtraTrees_Bagging",
+    "MLP_Neural",
+    "Sparse_Linear_SAGA"
+  ],
+  "weights_nnls": {
+    "LGBM_Expanded_Feedback": 0.6742322661536798,
+    "XGB_Expanded_Feedback": 0.0,
+    "LGBM_Feedback_Base": 0.10996522506838467,
+    "LGBM_HighCapacity_Base": 0.2057074421122481,
+    "XGB_Diversity_Base": 0.010095066665687321,
+    "CatBoost_Depth8": 0.0,
+    "ExtraTrees_Bagging": 0.0,
+    "MLP_Neural": 0.0,
+    "Sparse_Linear_SAGA": 0.0
+  },
+  "nnls_metrics": {
+    "accuracy": 0.9409142857142857,
+    "hits": 65864,
+    "logloss": 0.1530839122990129,
+    "auc": 0.9851380698748373
+  },
+  "meta_metrics": {
+    "accuracy": 0.9427142857142857,
+    "hits": 65990,
+    "logloss": 0.14463980705894203,
+    "auc": 0.9866438645091041
+  }
+}
