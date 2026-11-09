@@ -1,0 +1,136 @@
+{
+  "timestamp_utc": "2026-11-09 18:17:33",
+  "policy": "CX-0137 Phase 2",
+  "n_train": 70000,
+  "n_public": 20998,
+  "bootstrap_iterations": 1000,
+  "realistic_mixture": {
+    "seen_pct": 0.7162,
+    "unseen_pct": 0.2838
+  },
+  "ranking_criterion": "1. P5 (95% lower bound), 2. P(gain >= +53), 3. P50",
+  "candidates": [
+    {
+      "name": "C4_Nested_Meta_Stacker",
+      "desc": "Cross-Fitted Nested Meta-Stacker",
+      "acc_total": 0.9289571428571428,
+      "ll_total": 0.1737850184304844,
+      "auc_total": 0.9812616541686845,
+      "acc_seen": 0.9608978711506969,
+      "ll_seen": 0.10461731496102286,
+      "acc_unseen": 0.8486901535682023,
+      "ll_unseen": 0.34760332534255006,
+      "fixes": 513,
+      "breaks": 371,
+      "net_gain": 142,
+      "uncertainty": {
+        "p5_hits": 13.950000000000003,
+        "p50_hits": 45.0,
+        "p95_hits": 72.0,
+        "score_p5": 0.948183160300981,
+        "score_p50": 0.9496618725592914,
+        "score_p95": 0.9509477093056482,
+        "prob_ge_53": 0.313,
+        "verdict": "NO_QUALIFY"
+      }
+    },
+    {
+      "name": "C1_LGBM_Base",
+      "desc": "Best Individual Base Model (LightGBM)",
+      "acc_total": 0.9269285714285714,
+      "ll_total": 0.182784370805874,
+      "auc_total": 0.9795257754164415,
+      "acc_seen": 0.9586212405639654,
+      "ll_seen": 0.11460706396719783,
+      "acc_unseen": 0.8472849543310248,
+      "ll_unseen": 0.3541138128735179,
+      "fixes": 0,
+      "breaks": 0,
+      "net_gain": 0,
+      "uncertainty": {
+        "p5_hits": 0.0,
+        "p50_hits": 0.0,
+        "p95_hits": 0.0,
+        "score_p5": 0.9475188113153634,
+        "score_p50": 0.9475188113153634,
+        "score_p95": 0.9475188113153634,
+        "prob_ge_53": 0.0,
+        "verdict": "NO_QUALIFY"
+      }
+    },
+    {
+      "name": "C3_Bounded_Logit",
+      "desc": "Bounded Non-Negative Logit Blend",
+      "acc_total": 0.9269285714285714,
+      "ll_total": 0.182784370805874,
+      "auc_total": 0.9795257754164415,
+      "acc_seen": 0.9586212405639654,
+      "ll_seen": 0.11460706396719784,
+      "acc_unseen": 0.8472849543310248,
+      "ll_unseen": 0.3541138128735179,
+      "fixes": 0,
+      "breaks": 0,
+      "net_gain": 0,
+      "uncertainty": {
+        "p5_hits": 0.0,
+        "p50_hits": 0.0,
+        "p95_hits": 0.0,
+        "score_p5": 0.9475188113153634,
+        "score_p50": 0.9475188113153634,
+        "score_p95": 0.9475188113153634,
+        "prob_ge_53": 0.0,
+        "verdict": "NO_QUALIFY"
+      }
+    },
+    {
+      "name": "C5_Dual_Head_Router",
+      "desc": "Dual-Head Router (Seen/Unseen Seller Specialized)",
+      "acc_total": 0.9271571428571429,
+      "ll_total": 0.17856689958780642,
+      "auc_total": 0.9801595696954861,
+      "acc_seen": 0.9598394376323042,
+      "ll_seen": 0.10963446889019572,
+      "acc_unseen": 0.8450265984141323,
+      "ll_unseen": 0.351793966472889,
+      "fixes": 747,
+      "breaks": 731,
+      "net_gain": 16,
+      "uncertainty": {
+        "p5_hits": -30.0,
+        "p50_hits": 6.0,
+        "p95_hits": 41.0,
+        "score_p5": 0.9460901038194114,
+        "score_p50": 0.9478045528145538,
+        "score_p95": 0.9494713782264977,
+        "prob_ge_53": 0.011,
+        "verdict": "NO_QUALIFY"
+      }
+    },
+    {
+      "name": "C2_Simple_Average",
+      "desc": "Simple Average (LGBM + XGB + CatBoost)",
+      "acc_total": 0.9245857142857142,
+      "ll_total": 0.1820687274252349,
+      "auc_total": 0.9791708199873842,
+      "acc_seen": 0.9599392898510205,
+      "ll_seen": 0.10914953378475403,
+      "acc_unseen": 0.835742246311352,
+      "ll_unseen": 0.36531452198276965,
+      "fixes": 1002,
+      "breaks": 1166,
+      "net_gain": -164,
+      "uncertainty": {
+        "p5_hits": -91.0,
+        "p50_hits": -46.0,
+        "p95_hits": -4.9500000000000455,
+        "score_p5": 0.943185065244309,
+        "score_p50": 0.9453281264882369,
+        "score_p95": 0.9472830745785312,
+        "prob_ge_53": 0.0,
+        "verdict": "NO_QUALIFY"
+      }
+    }
+  ],
+  "lead_candidate": "C4_Nested_Meta_Stacker",
+  "lead_verdict": "NO_QUALIFY"
+}
