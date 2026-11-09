@@ -1,0 +1,73 @@
+{
+  "architecture": "XGBClassifier",
+  "num_features": 207,
+  "n_train": 70000,
+  "n_test": 30000,
+  "global_prior": 0.46302857142857146,
+  "hyperparameters": {
+    "n_estimators": 1200,
+    "max_depth": 7,
+    "learning_rate": 0.03,
+    "colsample_bytree": 0.8,
+    "subsample": 0.8,
+    "reg_lambda": 3.0,
+    "tree_method": "hist",
+    "random_state": 20261109,
+    "n_jobs": 6,
+    "early_stopping_rounds": 80,
+    "eval_metric": "logloss"
+  },
+  "svd_components": 64,
+  "cv_folds": [
+    {
+      "fold": 1,
+      "accuracy": 0.9367857142857143,
+      "logloss": 0.1595990235636163,
+      "auc": 0.9837239642650502,
+      "best_iteration": 450
+    },
+    {
+      "fold": 2,
+      "accuracy": 0.9417142857142857,
+      "logloss": 0.15119213128583417,
+      "auc": 0.9854049653453331,
+      "best_iteration": 702
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.9331428571428572,
+      "logloss": 0.16791366605418412,
+      "auc": 0.9822071684954978,
+      "best_iteration": 294
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.9377142857142857,
+      "logloss": 0.15509884883521244,
+      "auc": 0.9847502737945361,
+      "best_iteration": 561
+    },
+    {
+      "fold": 5,
+      "accuracy": 0.9339285714285714,
+      "logloss": 0.16581533440174387,
+      "auc": 0.9827030041484865,
+      "best_iteration": 509
+    }
+  ],
+  "oof_accuracy": 0.9366571428571429,
+  "oof_accuracy_optimal": 0.9370571428571428,
+  "optimal_threshold": 0.447,
+  "oof_logloss": 0.15992380082811816,
+  "oof_auc": 0.9836895931185078,
+  "test_used_count": 14417,
+  "test_new_count": 15583,
+  "elapsed_seconds": 87.08,
+  "elapsed_minutes": 1.45,
+  "output_files": {
+    "oof_csv": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\results\\xgboost_diversity_5fold\\oof_predictions.csv",
+    "test_npy": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\results\\xgboost_diversity_5fold\\test_probabilities.npy",
+    "test_csv": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\results\\xgboost_diversity_5fold\\test_probabilities.csv",
+    "metrics_json": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\results\\xgboost_diversity_5fold\\metrics.json"
+  }
+}
