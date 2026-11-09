@@ -1,0 +1,81 @@
+{
+  "certificate_id": "CERT-20261109-FINAL-AP2026Q2",
+  "timestamp_utc": "2026-11-09 18:27:13",
+  "local_time_art": "2026-11-09 20:15 ART",
+  "deadline_art": "2026-11-09 21:00 ART",
+  "author": "Antigravity (Operational Controller AP-2026-Q-2)",
+  "protocol_reference": "CX-0136 / CX-0137",
+  "target_condition": "P(score_publico >= 0.95000) >= 0.95 <=> P5 >= +53 net hits over EVT-132",
+  "anchor_reference": {
+    "name": "EVT-132",
+    "file": "submission_20261107_04_podium_breakthrough_top85.csv",
+    "public_score": 0.94752,
+    "public_hits_estimated": 19896,
+    "public_items_n": 20998,
+    "hits_required_for_09500": 19949,
+    "delta_hits_required": 53
+  },
+  "lead_candidate": {
+    "name": "C4_Nested_Meta_Stacker",
+    "architecture": "LGBM + XGBoost + CatBoost + Ridge Text -> Cross-Fitted L2 Logistic Meta-Stacker (t=0.50)",
+    "candidate_csv_path": "results\\final_audit_20261109\\candidate_c4_nested_meta_stacker_frozen.csv",
+    "candidate_csv_sha256": "60b579cec72263c3a5e78f2d7ba48fca22320245e73f7c61fe8881e7e2a09c97",
+    "test_rows": 30000,
+    "test_used_ratio": 0.46113333333333334
+  },
+  "validation_metrics": {
+    "cv_scheme": "5-Fold GroupKFold on seller_id (Zero-Leakage)",
+    "outer_seen_accuracy": 0.9609,
+    "outer_unseen_accuracy": 0.84869,
+    "realistic_composite_accuracy": 0.92896,
+    "logloss": 0.17379,
+    "roc_auc": 0.98126,
+    "pairwise_70k_gain": "+142 hits (513 fixes vs 371 breaks)"
+  },
+  "frozen_confirm_audit": {
+    "n_confirm": 21017,
+    "acc_lgb": 0.8656325831469762,
+    "acc_c4": 0.8613979159727839,
+    "loss_c4": 0.34739565200935724,
+    "auc_c4": 0.9391244500040483,
+    "fixes": 342,
+    "breaks": 431,
+    "net_gain": -89,
+    "seller_overlap": 0,
+    "item_overlap": 0
+  },
+  "auditor_verification": {
+    "auditor_status": "PASSED",
+    "has_leakage": false,
+    "checklist": [
+      "PASS: Zero seller overlap and zero item overlap in frozen confirm.",
+      "PASS: Blocked artifact quarantined: portfolio_20261109_climax_09500",
+      "PASS: Zero dependencies on portfolio_20261109_climax_09500 or aggregate score deconvolution.",
+      "PASS: Test candidate submission verified (30000 rows, valid schema).",
+      "PASS: Zero submissions sent to Kaggle. Zero quota spent. EVT-132 intact as verified repository anchor."
+    ]
+  },
+  "uncertainty_and_calibration": {
+    "raw_clustered_bootstrap": {
+      "p5_hits": 13.950000000000003,
+      "p50_hits": 45.0,
+      "p95_hits": 72.0,
+      "score_p5": 0.948183160300981,
+      "score_p50": 0.9496618725592914,
+      "score_p95": 0.9509477093056482,
+      "prob_gain_ge_53": 0.313
+    },
+    "prequential_widened": {
+      "widening_factor_gamma": 2.9557471313979855,
+      "p5_hits": -40.79056048882653,
+      "p50_hits": 45.0,
+      "p95_hits": 130.79056048882654,
+      "score_p5": 0.9455762186642144,
+      "score_p50": 0.9496618725592914,
+      "score_p95": 0.9537475264543683,
+      "calibrated_prob_ge_53": 0.4390426724034784
+    }
+  },
+  "qualification_status": "NO_QUALIFY",
+  "formal_determination": "Under rigorous, honest seller-group CV, realistic seen/unseen test composition (71.6% seen / 28.4% unseen), clustered uncertainty and prequential interval widening (gamma = 2.96), the conservative 95% confidence lower bound of public gain is P5 = -40.8 hits (score 0.94558). Because P5 is strictly lower than the required +53 net hits, the hypothesis P(score >= 0.95000) >= 0.95 CANNOT be certified with 95% confidence. The candidate status is formally NO_QUALIFY. In strict adherence to the competition protocol and instructions from Ariel and Codex, no submission was uploaded to Kaggle, no quota was consumed, and EVT-132 (0.94752) is preserved as the untouchable anchor."
+}
