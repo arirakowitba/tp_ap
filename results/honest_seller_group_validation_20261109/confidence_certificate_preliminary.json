@@ -1,0 +1,53 @@
+{
+  "timestamp_utc": "2026-11-09 18:12:11",
+  "policy": "CX-0137",
+  "validation_scheme": "5-Fold GroupKFold by seller_id (Zero seller overlap)",
+  "inner_early_stopping": "85/15 seller-grouped split inside outer train (Virgin outer val)",
+  "meta_cross_fitting": "5-Fold GroupKFold nested L2 Logistic Regression",
+  "n_train": 70000,
+  "n_public_simulated": 20998,
+  "bootstrap_iterations": 1000,
+  "base_models": {
+    "lgbm": {
+      "acc": 0.8879428571428571,
+      "logloss": 0.2692214879981022
+    },
+    "xgb": {
+      "acc": 0.8562857142857143,
+      "logloss": 0.3429647197079904
+    },
+    "catboost": {
+      "acc": 0.8564142857142857,
+      "logloss": 0.3343877126109646
+    },
+    "ridge": {
+      "acc": 0.6901142857142857,
+      "logloss": 0.6273577270127267
+    }
+  },
+  "nested_meta_model": {
+    "acc": 0.8887,
+    "logloss": 0.2680301365973595,
+    "auc": 0.9554157244374339,
+    "hits": 62209
+  },
+  "pairwise_vs_lgbm_base": {
+    "fixes": 333,
+    "breaks": 280,
+    "net_gain": 53
+  },
+  "calibrated_uncertainty": {
+    "p5_hits": -7.049999999999997,
+    "p50_hits": 15.5,
+    "p95_hits": 41.0,
+    "score_p5": 0.9471830650538147,
+    "score_p50": 0.9482569768549386,
+    "score_p95": 0.9494713782264977,
+    "prob_public_score_ge_095": 0.003
+  },
+  "verdict": "NO_QUALIFY",
+  "files_sha256": {
+    "train_data": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf",
+    "oof_predictions": "e12ed8430f3878e46b7df9819d35d1842a8d6cd106cdca0e495cd84b00e1e3a5"
+  }
+}
