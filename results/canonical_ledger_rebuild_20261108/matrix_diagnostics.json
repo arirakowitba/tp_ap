@@ -1,0 +1,29 @@
+{
+  "n_canonical_equations": 99,
+  "n_active_ids_flipped": 2729,
+  "rank_in_R": 93,
+  "rank_in_F2": 93,
+  "nullity": 2636,
+  "gram_condition_number": 2212264986228579.8,
+  "singular_values_top5": [
+    2212.26498622858,
+    1383.7910932225382,
+    1217.5995360122536,
+    749.5536578424034,
+    732.6408357898392
+  ],
+  "singular_values_bottom5": [
+    3.4261950351997675e-14,
+    1.0070550071322477e-14,
+    5.690645859649718e-15,
+    2.371145972468996e-15,
+    7.933046956428972e-16
+  ],
+  "active_anchor": {
+    "event_id": "EVT-132",
+    "name": "submission_20261107_04_podium_breakthrough_top85.csv",
+    "score": 0.94752,
+    "public_hits": 19896,
+    "delta_hits_vs_48": 25
+  }
+}
