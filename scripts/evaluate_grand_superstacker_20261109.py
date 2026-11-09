@@ -86,6 +86,9 @@ def main():
     specs = [
         ("LGBM_Expanded_Feedback", "results/expanded_feedback_lgbm_5fold/oof_predictions.csv", "results/expanded_feedback_lgbm_5fold/test_probabilities.npy"),
         ("XGB_Expanded_Feedback", "results/expanded_feedback_xgb_5fold/oof_predictions.csv", "results/expanded_feedback_xgb_5fold/test_probabilities.npy"),
+        ("CatBoost_Expanded_Feedback", "results/expanded_feedback_catboost_5fold/oof_predictions.csv", "results/expanded_feedback_catboost_5fold/test_probabilities.npy"),
+        ("MLP_Expanded_Feedback", "results/expanded_feedback_mlp_5fold/oof_predictions.csv", "results/expanded_feedback_mlp_5fold/test_probabilities.npy"),
+        ("ExtraTrees_Expanded_Feedback", "results/expanded_feedback_extratrees_5fold/oof_predictions.csv", "results/expanded_feedback_extratrees_5fold/test_probabilities.npy"),
         ("LGBM_Feedback_Base", "results/high_capacity_lgbm_feedback_5fold/oof_predictions.csv", "results/high_capacity_lgbm_feedback_5fold/test_probabilities.npy"),
         ("LGBM_HighCapacity_Base", "results/high_capacity_lgbm_5fold/oof_predictions.csv", "results/high_capacity_lgbm_5fold/test_probabilities.npy"),
         ("XGB_Diversity_Base", "results/xgboost_diversity_5fold/oof_predictions.csv", "results/xgboost_diversity_5fold/test_probabilities.npy"),
@@ -159,6 +162,10 @@ def main():
     
     out_dir = ROOT / "results" / "meta_stacking_ensemble"
     out_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Save OOF and Test predictions
+    np.save(out_dir / "oof_probabilities.npy", meta_p_oof)
+    pd.DataFrame({"ID": range(len(meta_p_oof)), "prob_used": meta_p_oof, "true_used": y_true}).to_csv(out_dir / "oof_predictions.csv", index=False)
     
     np.save(out_dir / "test_probabilities.npy", final_p_test)
     pd.DataFrame({"ID": range(len(final_p_test)), "prob_used": final_p_test}).to_csv(out_dir / "test_probabilities.csv", index=False)

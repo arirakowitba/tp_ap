@@ -1,0 +1,123 @@
+{
+  "timestamp_utc": "2026-11-09 17:54:58",
+  "policy": "CX-0136",
+  "gate_status": "HOLD",
+  "requirement": "Q_0.05(Delta H_pub) >= +53",
+  "n_train": 70000,
+  "n_public_simulated": 20998,
+  "bootstrap_iterations": 1000,
+  "n_models_stacked": 9,
+  "models": [
+    {
+      "name": "LGBM_Expanded_Feedback",
+      "oof_path": "results/expanded_feedback_lgbm_5fold/oof_predictions.csv",
+      "oof_sha256": "42c8ec6ac08f6953306f2f8d25e7dac6cb11f96fee264556084b5d7d5ca71d01",
+      "accuracy": 0.9391428571428572,
+      "logloss": 0.15825504096800713
+    },
+    {
+      "name": "XGB_Expanded_Feedback",
+      "oof_path": "results/expanded_feedback_xgb_5fold/oof_predictions.csv",
+      "oof_sha256": "ed2b3354f5808271bb0318df377c667e924ab4b69a061e08d2bdb320dad6fa1d",
+      "accuracy": 0.9392857142857143,
+      "logloss": 0.1650077732129025
+    },
+    {
+      "name": "CatBoost_Expanded_Feedback",
+      "oof_path": "results/expanded_feedback_catboost_5fold/oof_predictions.csv",
+      "oof_sha256": "fc8e7b0eb05a2ba77218f7e106ad965306c5ba70d009fca9f54841fabd9930da",
+      "accuracy": 0.9385142857142857,
+      "logloss": 0.15471007991267569
+    },
+    {
+      "name": "MLP_Expanded_Feedback",
+      "oof_path": "results/expanded_feedback_mlp_5fold/oof_predictions.csv",
+      "oof_sha256": "451b704fd96e0fbfa9bebaf1a7bc53026749203e3ee46a22d3b79bffd6ebd92f",
+      "accuracy": 0.9216571428571428,
+      "logloss": 0.20012385021589396
+    },
+    {
+      "name": "ExtraTrees_Expanded_Feedback",
+      "oof_path": "results/expanded_feedback_extratrees_5fold/oof_predictions.csv",
+      "oof_sha256": "d93fbb38ceb353c50508be12bcf0f3c0abb1711a76791d7d148de70cae5d971e",
+      "accuracy": 0.9161857142857143,
+      "logloss": 0.23656454383516373
+    },
+    {
+      "name": "LGBM_Iterative_Feedback",
+      "oof_path": "results/iterative_feedback_lgbm_5fold/oof_predictions.csv",
+      "oof_sha256": "ba06921016a09f3cb4ed6d1f32f7aae78f40773cadf562fc9edf88027fb5188d",
+      "accuracy": 0.9380285714285714,
+      "logloss": 0.1588712192266472
+    },
+    {
+      "name": "LGBM_Feedback_Base",
+      "oof_path": "results/lgbm_feedback_5fold/oof_predictions.csv",
+      "oof_sha256": "ae83b3d0a6739e5172c27d256529693488dcfa24eb3c953561481b5af8bccb49",
+      "accuracy": 0.9184285714285715,
+      "logloss": 0.23320061808421758
+    },
+    {
+      "name": "CatBoost_Depth8",
+      "oof_path": "results/catboost_depth8_5fold/oof_predictions.csv",
+      "oof_sha256": "f800c750a0cbc94f9c7935ed1d6acabddc1891ae5f88e5aa29469377d415cbee",
+      "accuracy": 0.9279857142857143,
+      "logloss": 0.18027713571784454
+    },
+    {
+      "name": "MLP_Neural",
+      "oof_path": "results/mlp_neural_5fold/oof_predictions.csv",
+      "oof_sha256": "785d40ea9565d1e86e2c2220d85f02bdc45e6378107cd28290d43afe751b8172",
+      "accuracy": 0.9237,
+      "logloss": 0.1942597850455815
+    }
+  ],
+  "nested_meta_metrics": {
+    "oof_accuracy": 0.9419142857142857,
+    "oof_hits": 65934,
+    "oof_logloss": 0.14632162877805582,
+    "oof_auc": 0.986355604351766,
+    "fold_metrics": [
+      {
+        "fold": 1,
+        "acc": 0.9399285714285714,
+        "logloss": 0.15044205966218716
+      },
+      {
+        "fold": 2,
+        "acc": 0.9467142857142857,
+        "logloss": 0.13881150117836058
+      },
+      {
+        "fold": 3,
+        "acc": 0.9435714285714286,
+        "logloss": 0.14400840589618494
+      },
+      {
+        "fold": 4,
+        "acc": 0.9422857142857143,
+        "logloss": 0.14213437248611016
+      },
+      {
+        "fold": 5,
+        "acc": 0.9370714285714286,
+        "logloss": 0.15621180466743642
+      }
+    ]
+  },
+  "clustered_uncertainty_quantiles": {
+    "q01_hits": 6.99,
+    "q05_hits": 22.950000000000003,
+    "q10_hits": 30.0,
+    "q50_hits": 57.0,
+    "q90_hits": 87.0,
+    "q95_hits": 94.04999999999995,
+    "q99_hits": 109.00999999999999
+  },
+  "projected_scores_from_evt132": {
+    "score_q05_guaranteed_95pct": 0.9486117725497667,
+    "score_median_expected": 0.9502333555576722,
+    "score_q95_optimistic": 0.9519978093151729
+  },
+  "probability_s_ge_095000": 0.593
+}
