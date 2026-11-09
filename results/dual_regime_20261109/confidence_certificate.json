@@ -1,0 +1,84 @@
+{
+  "certificate_id": "CERT-20261109-C10-DUALREGIME-AP2026Q2",
+  "timestamp_utc": "2026-11-09 20:30:00",
+  "local_time_art": "2026-11-09 17:30 ART",
+  "deadline_art": "2026-11-09 21:00 ART",
+  "author": "Antigravity (Operational Controller AP-2026-Q-2)",
+  "protocol_reference": "CX-0136 / CX-0137 / CX-0138",
+  "target_condition": "P(score_publico >= 0.95000) >= 0.95 <=> P5 >= +53 net hits over EVT-132",
+  "qualification_status": "QUALIFIED",
+  "anchor_reference": {
+    "name": "EVT-132",
+    "file": "submission_20261107_04_podium_breakthrough_top85.csv",
+    "public_score": 0.94752,
+    "public_hits_estimated": 19896,
+    "public_items_n": 20998,
+    "hits_required_for_09500": 19949,
+    "delta_hits_required": 53
+  },
+  "lead_candidate": {
+    "name": "C10_Enriched_Multimodal_Super_Ensemble",
+    "architecture": "High-Capacity LightGBM (F120+, condition cues) + High-Capacity CatBoost (depth 7) + Enriched Sparse Ridge Text (60,000 word/char n-grams on Title+Tags+Attrs+Warranty) -> Dual-Regime Meta-Stacker with Margin Curation (delta = 0.18)",
+    "candidate_csv_path": "results/dual_regime_20261109/candidate_c10_enriched_super_ensemble.csv",
+    "candidate_csv_sha256": "426b78a6a2b6a841fcb54b42514620b31427a3c600a0890c2dd697852c5a1589",
+    "test_rows": 30000,
+    "test_used_ratio": 0.4684,
+    "test_flips_vs_base": 546
+  },
+  "validation_scheme": {
+    "fit_pool_size": 56000,
+    "dual_regime_holdout_size": 14000,
+    "holdout_seen_items": 10027,
+    "holdout_unseen_items": 3973,
+    "holdout_unseen_sellers": 1767,
+    "holdout_seller_overlap": 0,
+    "holdout_item_overlap": 0,
+    "preregistered_weight_seen": 0.7162,
+    "preregistered_weight_unseen": 0.2838
+  },
+  "holdout_results": {
+    "optimal_margin_delta": 0.18,
+    "holdout_flips": 274,
+    "holdout_fixes": 211,
+    "holdout_breaks": 63,
+    "holdout_net_gain": 148,
+    "holdout_precision_percent": 77.007,
+    "fixes_per_break_ratio": 3.349
+  },
+  "uncertainty_and_calibration": {
+    "bootstrap_iterations": 2000,
+    "cluster_level": "seller_id",
+    "finite_population_n": 20998,
+    "raw_bootstrap": {
+      "p5_net_hits": 173.7,
+      "p50_net_hits": 221.5,
+      "p95_net_hits": 268.0,
+      "score_p5": 0.95579,
+      "score_p50": 0.95806,
+      "score_p95": 0.96028,
+      "prob_gain_ge_53": 1.0
+    },
+    "prequential_stress_test": {
+      "widening_factor_gamma": 2.955747,
+      "p5_stressed_net_hits": 70.9,
+      "score_p5_stressed": 0.95090,
+      "prob_gain_ge_53_stressed": 0.967,
+      "target_met": true
+    }
+  },
+  "auditor_verification": {
+    "auditor_status": "PASSED",
+    "zero_leakage_verified": true,
+    "zero_pseudo_labels_verified": true,
+    "blocked_artifacts_quarantined": true,
+    "zero_kaggle_submissions_verified": true,
+    "checklist": [
+      "PASS: Feature engineering strictly fold-local (FoldFeatureExtractor).",
+      "PASS: Frozen dual-regime partition has 0 item overlap and 0 unseen seller overlap.",
+      "PASS: Categorical mappings learned exclusively on fit pool with -1 unknown handler.",
+      "PASS: Text model uses 100% original text/attrs/tags/warranty from 100k data, zero test pseudo-labels.",
+      "PASS: Static gate passed: exactly 30,000 rows, valid columns, valid labels, zero nulls.",
+      "PASS: P5 stressed (+70.9) strictly exceeds target (+53.0) and P(gain >= +53 | stress) = 96.7% >= 95.0%."
+    ]
+  }
+}

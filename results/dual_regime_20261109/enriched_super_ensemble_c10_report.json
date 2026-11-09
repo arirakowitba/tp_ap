@@ -1,0 +1,16 @@
+{
+  "margin": 0.18,
+  "test_flips": 546,
+  "holdout_flips": 274,
+  "fixes": 211,
+  "breaks": 63,
+  "net_holdout": 148,
+  "precision": 77.00729927007299,
+  "raw_p5": 173.65528869628906,
+  "raw_p50": 221.52455139160156,
+  "raw_p95": 275.5721130371094,
+  "adj_p5": 70.90677253952026,
+  "prob_stress": 0.967157857967416,
+  "csv_file": "results\\dual_regime_20261109\\candidate_c10_enriched_super_ensemble.csv",
+  "sha256": "426b78a6a2b6a841fcb54b42514620b31427a3c600a0890c2dd697852c5a1589"
+}
