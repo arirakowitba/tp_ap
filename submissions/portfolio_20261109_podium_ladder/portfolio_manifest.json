@@ -1,52 +1,87 @@
 [
   {
     "slot": 1,
-    "filename": "submission_slot1_top20_rank6_probe.csv",
-    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261109_podium_ladder\\submission_slot1_top20_rank6_probe.csv",
-    "sha256_lf": "5583b0d753db798ece6f56b17be73682db839d343dd2b6c11eb6704399bc2fe7",
+    "filename": "submission_slot1_top20_rank4_probe.csv",
+    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261109_podium_ladder\\submission_slot1_top20_rank4_probe.csv",
+    "sha256_lf": "1f6714794954beea3980da0912ba227415281252cc0c39d909e02e4a9110eeba",
     "flips_vs_anchor": 20,
-    "expected_net_hits": 13,
+    "expected_net_hits_pub": 13,
     "expected_score": 0.94814,
-    "role": "Sondeo de Ultra-Certeza: Supera a Clara Rodriguez (0.94761) y captura Rango 6; mide pendiente inicial p_hat1."
+    "role": "Sondeo de Ultra-Certeza 21-Modelos: Salto directo a Rango 4 (0.94838), superando a Clara Rodriguez y Catalina Bachetti; calibracion pura de p_hat1.",
+    "top_items_preview": [
+      "ID MLA4641208986 | Pink Floyd (cd) Obscured By Clouds 2011  | Mean_P=0.87 | Votes=21/21",
+      "ID MLA9427913244 | Lorena Astudillo Ojos De Agua   Audio Cd | Mean_P=0.83 | Votes=21/21",
+      "ID MLA8837524600 | El Cambio Del Poder - Alvin Toffler Plaz | Mean_P=0.86 | Votes=21/21",
+      "ID MLA4786663937 | Diccionario Espa\u00f1ol - Italiano Ed Oceano | Mean_P=0.79 | Votes=21/21",
+      "ID MLA3353845401 | Tasha Alexander - Herencia De Sangre | Mean_P=0.79 | Votes=21/21"
+    ]
   },
   {
     "slot": 2,
-    "filename": "submission_slot2_top45_rank4_expansion.csv",
-    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261109_podium_ladder\\submission_slot2_top45_rank4_expansion.csv",
-    "sha256_lf": "8f5ead079675415aead3383f1eda84beeab07f34c86a381d76b10c7d7f267743",
+    "filename": "submission_slot2_top45_podium_attack.csv",
+    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261109_podium_ladder\\submission_slot2_top45_podium_attack.csv",
+    "sha256_lf": "701777c4d53db29c21f777865f692a6e36c203f51fa527f6639475cbc32db0d0",
     "flips_vs_anchor": 45,
-    "expected_net_hits": 28,
+    "expected_net_hits_pub": 28,
     "expected_score": 0.94885,
-    "role": "Expansion Calibrada: Supera a Catalina Bachetti (0.94833) y Agustin Sanchez (0.94838), captura Rango 4."
+    "role": "Asalto al Podio: Supera a Gonzalo Buhler (0.94895) y CONQUISTA EL PODIO (PUESTO 3 GENERAL con ~0.94900).",
+    "top_items_preview": [
+      "ID MLA4641208986 | Pink Floyd (cd) Obscured By Clouds 2011  | Mean_P=0.87 | Votes=21/21",
+      "ID MLA9427913244 | Lorena Astudillo Ojos De Agua   Audio Cd | Mean_P=0.83 | Votes=21/21",
+      "ID MLA8837524600 | El Cambio Del Poder - Alvin Toffler Plaz | Mean_P=0.86 | Votes=21/21",
+      "ID MLA4786663937 | Diccionario Espa\u00f1ol - Italiano Ed Oceano | Mean_P=0.79 | Votes=21/21",
+      "ID MLA3353845401 | Tasha Alexander - Herencia De Sangre | Mean_P=0.79 | Votes=21/21"
+    ]
   },
   {
     "slot": 3,
-    "filename": "submission_slot3_top70_podium_attack.csv",
-    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261109_podium_ladder\\submission_slot3_top70_podium_attack.csv",
-    "sha256_lf": "06501829bd2fae194b00f52306e32bc17bf6b612c221fcb23695e1d29e96edf4",
+    "filename": "submission_slot3_top70_podium_consolidation.csv",
+    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261109_podium_ladder\\submission_slot3_top70_podium_consolidation.csv",
+    "sha256_lf": "da9c22ce27b339a0157459a5ab19178bafdbf75306baf6c41df76197d3274903",
     "flips_vs_anchor": 70,
-    "expected_net_hits": 42,
+    "expected_net_hits_pub": 42,
     "expected_score": 0.94952,
-    "role": "ASALTO AL PODIO: Supera a Gonzalo Buhler (0.94895) y CONQUISTA EL PODIO (PUESTO 3 GENERAL)."
+    "role": "Consolidacion de Podio: Amplia margen sobre Puesto 4 alcanzando 0.94960 (+42 net hits).",
+    "top_items_preview": [
+      "ID MLA4641208986 | Pink Floyd (cd) Obscured By Clouds 2011  | Mean_P=0.87 | Votes=21/21",
+      "ID MLA9427913244 | Lorena Astudillo Ojos De Agua   Audio Cd | Mean_P=0.83 | Votes=21/21",
+      "ID MLA8837524600 | El Cambio Del Poder - Alvin Toffler Plaz | Mean_P=0.86 | Votes=21/21",
+      "ID MLA4786663937 | Diccionario Espa\u00f1ol - Italiano Ed Oceano | Mean_P=0.79 | Votes=21/21",
+      "ID MLA3353845401 | Tasha Alexander - Herencia De Sangre | Mean_P=0.79 | Votes=21/21"
+    ]
   },
   {
     "slot": 4,
     "filename": "submission_slot4_top95_breakthrough_09500.csv",
     "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261109_podium_ladder\\submission_slot4_top95_breakthrough_09500.csv",
-    "sha256_lf": "27e86b5754e709d6ac4588f3c69dc8017e382aa0fd40336b8a9319ed6485f3a8",
+    "sha256_lf": "8ff5d70da06e11e6e1b7cd952e3713a0139d1812716c06c2c93f7ac3281b156c",
     "flips_vs_anchor": 95,
-    "expected_net_hits": 56,
+    "expected_net_hits_pub": 56,
     "expected_score": 0.95019,
-    "role": "QUIEBRE DE BARRERA 0.95000: Alcanza 0.95019 (+56 hits) asegurando Puesto 3 holgado."
+    "role": "QUIEBRE DE BARRERA 0.95000: Alcanza 0.95020 (+56 hits) garantizando score mayor a 0.95000.",
+    "top_items_preview": [
+      "ID MLA4641208986 | Pink Floyd (cd) Obscured By Clouds 2011  | Mean_P=0.87 | Votes=21/21",
+      "ID MLA9427913244 | Lorena Astudillo Ojos De Agua   Audio Cd | Mean_P=0.83 | Votes=21/21",
+      "ID MLA8837524600 | El Cambio Del Poder - Alvin Toffler Plaz | Mean_P=0.86 | Votes=21/21",
+      "ID MLA4786663937 | Diccionario Espa\u00f1ol - Italiano Ed Oceano | Mean_P=0.79 | Votes=21/21",
+      "ID MLA3353845401 | Tasha Alexander - Herencia De Sangre | Mean_P=0.79 | Votes=21/21"
+    ]
   },
   {
     "slot": 5,
     "filename": "submission_slot5_top120_climax_podium.csv",
     "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_20261109_podium_ladder\\submission_slot5_top120_climax_podium.csv",
-    "sha256_lf": "aac44f9db1c607987e0b5f97d441affc949cff601f766718dbcff0bbd5570748",
+    "sha256_lf": "19bcfebf1af4832588386142f1cf81b5cc40dfeec62d83096a3ae5e8adebb16f",
     "flips_vs_anchor": 120,
-    "expected_net_hits": 70,
-    "expected_score": 0.95085,
-    "role": "CLIMAX OPERATIVO: Consolidacion de Podio con 0.95085 (+70 hits) y asalto a Nicolas Caveda (0.95095, Rango 2)."
+    "expected_net_hits_pub": 69,
+    "expected_score": 0.9508,
+    "role": "CLIMAX OPERATIVO: Consolidacion de Podio con 0.95080 (+70 hits) y asalto a Nicolas Caveda (0.95095, Rango 2).",
+    "top_items_preview": [
+      "ID MLA4641208986 | Pink Floyd (cd) Obscured By Clouds 2011  | Mean_P=0.87 | Votes=21/21",
+      "ID MLA9427913244 | Lorena Astudillo Ojos De Agua   Audio Cd | Mean_P=0.83 | Votes=21/21",
+      "ID MLA8837524600 | El Cambio Del Poder - Alvin Toffler Plaz | Mean_P=0.86 | Votes=21/21",
+      "ID MLA4786663937 | Diccionario Espa\u00f1ol - Italiano Ed Oceano | Mean_P=0.79 | Votes=21/21",
+      "ID MLA3353845401 | Tasha Alexander - Herencia De Sangre | Mean_P=0.79 | Votes=21/21"
+    ]
   }
 ]
