@@ -610,11 +610,11 @@ def main():
 
         log(f"Fold {fold+1} Finished ({time.time()-t_f0:.1f}s) | Best Iter: {best_iter} | Acc: {acc_f:.5f} | LogLoss: {ll_f:.5f} | AUC: {auc_f:.5f}")
         fold_scores.append({
-            "fold": fold + 1,
-            "accuracy": acc_f,
-            "logloss": ll_f,
-            "auc": auc_f,
-            "best_iteration": best_iter
+            "fold": int(fold + 1),
+            "accuracy": float(acc_f),
+            "logloss": float(ll_f),
+            "auc": float(auc_f),
+            "best_iteration": int(best_iter)
         })
 
         # Predict on Test
@@ -641,7 +641,7 @@ def main():
             best_acc = float(acc_t)
             best_thresh = float(t)
 
-    log(f"OOF Accuracy (t=0.50): {overall_acc:.5f} ({int((oof_predictions >= 0.5).astype(int) == y_train).sum()}/{n_train})")
+    log(f"OOF Accuracy (t=0.50): {overall_acc:.5f} ({int(((oof_predictions >= 0.5).astype(int) == y_train).sum())}/{n_train})")
     log(f"OOF Accuracy (optimal t={best_thresh:.4f}): {best_acc:.5f} ({int(((oof_predictions >= best_thresh).astype(int) == y_train).sum())}/{n_train})")
     log(f"OOF LogLoss: {overall_ll:.5f}")
     log(f"OOF ROC-AUC: {overall_auc:.5f}")

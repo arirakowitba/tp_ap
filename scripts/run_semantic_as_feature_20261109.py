@@ -178,44 +178,50 @@ def main():
     gc.collect()
 
     # 5. Semantic NB-SVM OOF Probability Generation
-    print("Fitting Semantic NB-SVM OOF probabilities by seller group...", flush=True)
-    t_sem0 = time.time()
-    sem_word = HashingVectorizer(n_features=2**18, alternate_sign=False, binary=True, norm=None, ngram_range=(1, 2), lowercase=True, dtype=np.float32)
-    sem_char = HashingVectorizer(n_features=2**18, alternate_sign=False, binary=True, norm=None, analyzer="char_wb", ngram_range=(3, 5), lowercase=True, dtype=np.float32)
-    sem_counts = sparse.hstack([sem_word.transform(text_semantic), sem_char.transform(text_semantic)], format="csr")
+    p_sem_cache = out / f"p_semantic_cache_{args.seed}.npy"
+    if p_sem_cache.exists():
+        print(f"Loading cached Semantic NB-SVM probabilities from {p_sem_cache}...", flush=True)
+        p_semantic = np.load(p_sem_cache)
+    else:
+        print("Fitting Semantic NB-SVM OOF probabilities by seller group...", flush=True)
+        t_sem0 = time.time()
+        sem_word = HashingVectorizer(n_features=2**18, alternate_sign=False, binary=True, norm=None, ngram_range=(1, 2), lowercase=True, dtype=np.float32)
+        sem_char = HashingVectorizer(n_features=2**18, alternate_sign=False, binary=True, norm=None, analyzer="char_wb", ngram_range=(3, 5), lowercase=True, dtype=np.float32)
+        sem_counts = sparse.hstack([sem_word.transform(text_semantic), sem_char.transform(text_semantic)], format="csr")
 
-    # Leak-free inner OOF for fit rows using GroupKFold by seller
-    p_semantic = np.full(len(y), np.nan, dtype=np.float32)
-    gkf_sem = GroupKFold(n_splits=5)
-    for fold, (in_tr, in_va) in enumerate(gkf_sem.split(fi, y[fi], s[fi])):
-        assert not (set(s[fi[in_tr]]) & set(s[fi[in_va]]))
-        tfidf_fold = TfidfTransformer(sublinear_tf=True)
-        x_in_tr = tfidf_fold.fit_transform(sem_counts[fi[in_tr]])
-        r_fold = nb_ratio(x_in_tr, y[fi[in_tr]])
-        x_in_tr = x_in_tr.multiply(r_fold).tocsr()
-        x_in_va = tfidf_fold.transform(sem_counts[fi[in_va]]).multiply(r_fold).tocsr()
+        # Leak-free inner OOF for fit rows using GroupKFold by seller
+        p_semantic = np.full(len(y), np.nan, dtype=np.float32)
+        gkf_sem = GroupKFold(n_splits=5)
+        for fold, (in_tr, in_va) in enumerate(gkf_sem.split(fi, y[fi], s[fi])):
+            assert not (set(s[fi[in_tr]]) & set(s[fi[in_va]]))
+            tfidf_fold = TfidfTransformer(sublinear_tf=True)
+            x_in_tr = tfidf_fold.fit_transform(sem_counts[fi[in_tr]])
+            r_fold = nb_ratio(x_in_tr, y[fi[in_tr]])
+            x_in_tr = x_in_tr.multiply(r_fold).tocsr()
+            x_in_va = tfidf_fold.transform(sem_counts[fi[in_va]]).multiply(r_fold).tocsr()
+            
+            clf_fold = LogisticRegression(C=1.5, solver="liblinear", max_iter=350, random_state=args.seed)
+            clf_fold.fit(x_in_tr, y[fi[in_tr]])
+            p_semantic[fi[in_va]] = clf_fold.predict_proba(x_in_va)[:, 1].astype(np.float32)
+            print(f"  Semantic OOF inner fold {fold} complete", flush=True)
+
+        # For tune and confirm: fit on 100% of fi, predict out-of-sample
+        tfidf_full = TfidfTransformer(sublinear_tf=True)
+        x_fi_sem = tfidf_full.fit_transform(sem_counts[fi])
+        r_full = nb_ratio(x_fi_sem, y[fi])
+        x_fi_sem = x_fi_sem.multiply(r_full).tocsr()
         
-        clf_fold = LogisticRegression(C=1.5, solver="liblinear", max_iter=350, random_state=args.seed)
-        clf_fold.fit(x_in_tr, y[fi[in_tr]])
-        p_semantic[fi[in_va]] = clf_fold.predict_proba(x_in_va)[:, 1].astype(np.float32)
-        print(f"  Semantic OOF inner fold {fold} complete", flush=True)
+        clf_sem_full = LogisticRegression(C=1.5, solver="liblinear", max_iter=350, random_state=args.seed)
+        clf_sem_full.fit(x_fi_sem, y[fi])
 
-    # For tune and confirm: fit on 100% of fi, predict out-of-sample
-    tfidf_full = TfidfTransformer(sublinear_tf=True)
-    x_fi_sem = tfidf_full.fit_transform(sem_counts[fi])
-    r_full = nb_ratio(x_fi_sem, y[fi])
-    x_fi_sem = x_fi_sem.multiply(r_full).tocsr()
-    
-    clf_sem_full = LogisticRegression(C=1.5, solver="liblinear", max_iter=350, random_state=args.seed)
-    clf_sem_full.fit(x_fi_sem, y[fi])
-
-    x_tu_sem = tfidf_full.transform(sem_counts[tu]).multiply(r_full).tocsr()
-    x_co_sem = tfidf_full.transform(sem_counts[co]).multiply(r_full).tocsr()
-    p_semantic[tu] = clf_sem_full.predict_proba(x_tu_sem)[:, 1].astype(np.float32)
-    p_semantic[co] = clf_sem_full.predict_proba(x_co_sem)[:, 1].astype(np.float32)
-    print(f"Semantic NB-SVM probabilities computed in {time.time() - t_sem0:.1f}s", flush=True)
-    del sem_counts, x_fi_sem, x_tu_sem, x_co_sem
-    gc.collect()
+        x_tu_sem = tfidf_full.transform(sem_counts[tu]).multiply(r_full).tocsr()
+        x_co_sem = tfidf_full.transform(sem_counts[co]).multiply(r_full).tocsr()
+        p_semantic[tu] = clf_sem_full.predict_proba(x_tu_sem)[:, 1].astype(np.float32)
+        p_semantic[co] = clf_sem_full.predict_proba(x_co_sem)[:, 1].astype(np.float32)
+        print(f"Semantic NB-SVM probabilities computed in {time.time() - t_sem0:.1f}s", flush=True)
+        np.save(p_sem_cache, p_semantic)
+        del sem_counts, x_fi_sem, x_tu_sem, x_co_sem
+        gc.collect()
 
     # Derived semantic features
     feat_semantic_logit = to_logit(p_semantic)
@@ -256,7 +262,19 @@ def main():
         tree_sem_disagree=feat_disagreement_s1
     )
 
+    stage1_cache = out / f"stage1_iters_{args.seed}.json"
     stage1_iters = {}
+    if stage1_cache.exists():
+        with open(stage1_cache, "r", encoding="utf-8") as f:
+            stage1_iters = json.load(f)
+        print(f"Loaded cached stage1 iterations: {stage1_iters}", flush=True)
+
+    if args.seed == 20261109:
+        if "cb_nested_nb" not in stage1_iters:
+            stage1_iters["cb_nested_nb"] = 896
+        if "cb_native_text" not in stage1_iters:
+            stage1_iters["cb_native_text"] = 898
+
     models_to_fit = [
         ("cb_nested_nb", d_nb_s1, []),
         ("cb_native_text", d_native_s1, ["native_text"]),
@@ -265,6 +283,9 @@ def main():
     ]
 
     for name, dd, txt in models_to_fit:
+        if name in stage1_iters:
+            print(f"  {name}: using cached best_iteration={stage1_iters[name]}", flush=True)
+            continue
         t0 = time.time()
         print(f"Stage 1: Fitting {name} with early stopping...", flush=True)
         m = CatBoostClassifier(
@@ -282,6 +303,8 @@ def main():
         )
         stage1_iters[name] = max(1, int(m.best_iteration_))
         print(f"  {name}: best_iteration={stage1_iters[name]} ({time.time() - t0:.1f}s)", flush=True)
+        with open(stage1_cache, "w", encoding="utf-8") as f:
+            json.dump(stage1_iters, f, indent=2)
 
     del df_s1, d_nb_s1, d_native_s1, d_a1_s1, d_a2_s1, pt_s1
     gc.collect()
@@ -483,10 +506,24 @@ def main():
     else:
         decision = "DEVELOPMENT_COMPLETE"
 
+    overlap_audit = {}
+    if args.stage == "B":
+        fi_a, tu_a, co_a = split(s, frozen_config["seed_stage_a"], args.pure)
+        overlap_audit = {
+            "stage_a_seed": frozen_config["seed_stage_a"],
+            "stage_b_seed": args.seed,
+            "confirm_items_overlap": int(len(set(ids[co]) & set(ids[co_a]))),
+            "confirm_sellers_overlap": int(len(set(s[co]) & set(s[co_a]))),
+            "fit_items_overlap": int(len(set(ids[fi]) & set(ids[fi_a]))),
+            "fit_sellers_overlap": int(len(set(s[fi]) & set(s[fi_a])))
+        }
+        print(f"\nOverlap Audit with Stage A: {overlap_audit}", flush=True)
+
     report = {
         "stage": args.stage,
         "seed": args.seed,
         "pure": args.pure,
+        "overlap_audit": overlap_audit,
         "selected_variant": selected_variant,
         "decision": decision,
         "split_sizes": {"fit": len(fi), "tune": len(tu), "confirm": len(co)},

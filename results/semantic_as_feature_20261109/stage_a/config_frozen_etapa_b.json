@@ -1,0 +1,16 @@
+{
+  "selected_variant": "cb_variant_a1",
+  "stage1_iterations": {
+    "cb_nested_nb": 896,
+    "cb_native_text": 898,
+    "cb_variant_a1": 883,
+    "cb_variant_a2": 894
+  },
+  "tune_hits": 9387,
+  "tune_accuracy": 0.9195728840125392,
+  "tune_logloss": 0.21605112554371314,
+  "tune_net_vs_base": 31,
+  "selection_criteria": "max tune hits, min tune logloss, min complexity",
+  "seed_stage_a": 20261109,
+  "pure": true
+}
