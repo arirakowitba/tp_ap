@@ -1,0 +1,58 @@
+{
+  "timestamp_utc": "2026-11-09 19:37:34",
+  "description": "High-Capacity Tree & Tabular Specialist (LGBM + CatBoost + Blend) with Lexical and Warranty Cues",
+  "npz_file": "results\\dual_regime_20261109\\subagent_trees_predictions.npz",
+  "npz_sha256": "feb740343e7b401bc2034c0a8c22f22eff4ad15d248724aafb360b5277758757",
+  "baseline_holdout": {
+    "seen_acc": 0.9354742196070609,
+    "unseen_acc": 0.8504908129876667,
+    "composite_acc": 0.9113559288084767
+  },
+  "models": {
+    "high_capacity_lgbm": {
+      "name": "High-Capacity LightGBM",
+      "acc_seen": 0.935773411788172,
+      "acc_unseen": 0.8429398439466398,
+      "acc_composite": 0.9094272452347452,
+      "fixes_seen": 39,
+      "breaks_seen": 36,
+      "net_seen": 3,
+      "fixes_unseen": 126,
+      "breaks_unseen": 156,
+      "net_unseen": -30,
+      "total_fixes": 165,
+      "total_breaks": 192,
+      "total_net": -27
+    },
+    "high_capacity_catboost": {
+      "name": "High-Capacity CatBoost",
+      "acc_seen": 0.9365712576044679,
+      "acc_unseen": 0.8635791593254467,
+      "acc_composite": 0.9158561001128817,
+      "fixes_seen": 46,
+      "breaks_seen": 35,
+      "net_seen": 11,
+      "fixes_unseen": 173,
+      "breaks_unseen": 121,
+      "net_unseen": 52,
+      "total_fixes": 219,
+      "total_breaks": 156,
+      "total_net": 63
+    },
+    "high_capacity_blend": {
+      "name": "High-Capacity Trees Blend (50/50)",
+      "acc_seen": 0.936870449785579,
+      "acc_unseen": 0.8557764913163856,
+      "acc_composite": 0.9138559843720219,
+      "fixes_seen": 38,
+      "breaks_seen": 24,
+      "net_seen": 14,
+      "fixes_unseen": 140,
+      "breaks_unseen": 119,
+      "net_unseen": 21,
+      "total_fixes": 178,
+      "total_breaks": 143,
+      "total_net": 35
+    }
+  }
+}
