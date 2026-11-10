@@ -1,0 +1,422 @@
+{
+  "title": "Fully Nested, Rate-Matched, Anchor-Aligned Selector Report (AG-0148 / CX-0152)",
+  "timestamp_utc": "2026-11-10T23:50:00Z",
+  "author": "Antigravity",
+  "anchor_used": {
+    "name": "EVT-143",
+    "file": "submission_slot5_surgical_quad_rank6_breakthrough.csv",
+    "score": 0.94761,
+    "hits_20998": 19898,
+    "sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8"
+  },
+  "taxonomy": {
+    "distribution_free_lower_bound": 0.0,
+    "identifiable_nonparametric_interval": [
+      0.0,
+      1.0
+    ],
+    "model_based_calibrated_status": "SENSITIVITY_RANGE_REPORTED"
+  },
+  "target": {
+    "score": 0.95,
+    "net_hits_required_20998": 51,
+    "net_hits_required_21000": 53
+  },
+  "grid_evaluations": {
+    "75": {
+      "k_test": 75,
+      "k_oof_total": 176,
+      "rate": 0.0025,
+      "total_fixes": 157,
+      "total_breaks": 19,
+      "net_oof": 138,
+      "precision_oof": 0.8920454545454546,
+      "flips_u2n": 107,
+      "flips_n2u": 69,
+      "fold_net_gains": [
+        23,
+        33,
+        25,
+        29,
+        28
+      ],
+      "unique_sellers": 166,
+      "unique_categories": 140,
+      "expected_public_flips": 52,
+      "precision_required_public": 1.0,
+      "seller_cluster_ci95_public_gain": [
+        35.76786256337392,
+        45.067624309392265
+      ],
+      "category_cluster_ci95_public_gain": [
+        35.76878612716763,
+        45.45921293800539
+      ],
+      "conservative_q05_public_gain": 36.547333333333334,
+      "prob_reach_095000_seller": 0.0,
+      "prob_reach_095000_cat": 0.0,
+      "prob_reach_095000_conservative": 0.0
+    },
+    "100": {
+      "k_test": 100,
+      "k_oof_total": 235,
+      "rate": 0.0033333333333333335,
+      "total_fixes": 204,
+      "total_breaks": 31,
+      "net_oof": 173,
+      "precision_oof": 0.8680851063829788,
+      "flips_u2n": 132,
+      "flips_n2u": 103,
+      "fold_net_gains": [
+        29,
+        41,
+        35,
+        35,
+        33
+      ],
+      "unique_sellers": 222,
+      "unique_categories": 193,
+      "expected_public_flips": 70,
+      "precision_required_public": 0.8714285714285714,
+      "seller_cluster_ci95_public_gain": [
+        45.257813608627785,
+        57.93361332154436
+      ],
+      "category_cluster_ci95_public_gain": [
+        45.29411764705882,
+        58.18812562893915
+      ],
+      "conservative_q05_public_gain": 46.05263157894737,
+      "prob_reach_095000_seller": 0.576,
+      "prob_reach_095000_cat": 0.598,
+      "prob_reach_095000_conservative": 0.576
+    },
+    "150": {
+      "k_test": 150,
+      "k_oof_total": 351,
+      "rate": 0.005,
+      "total_fixes": 304,
+      "total_breaks": 47,
+      "net_oof": 257,
+      "precision_oof": 0.8660968660968661,
+      "flips_u2n": 190,
+      "flips_n2u": 161,
+      "fold_net_gains": [
+        50,
+        62,
+        48,
+        54,
+        43
+      ],
+      "unique_sellers": 327,
+      "unique_categories": 285,
+      "expected_public_flips": 105,
+      "precision_required_public": 0.7428571428571429,
+      "seller_cluster_ci95_public_gain": [
+        69.12934696814932,
+        83.81305637982194
+      ],
+      "category_cluster_ci95_public_gain": [
+        68.81304792518995,
+        84.77449137265
+      ],
+      "conservative_q05_public_gain": 70.09366197183098,
+      "prob_reach_095000_seller": 1.0,
+      "prob_reach_095000_cat": 1.0,
+      "prob_reach_095000_conservative": 1.0
+    },
+    "250": {
+      "k_test": 250,
+      "k_oof_total": 585,
+      "rate": 0.008333333333333333,
+      "total_fixes": 490,
+      "total_breaks": 95,
+      "net_oof": 395,
+      "precision_oof": 0.8376068376068376,
+      "flips_u2n": 283,
+      "flips_n2u": 302,
+      "fold_net_gains": [
+        81,
+        81,
+        83,
+        77,
+        73
+      ],
+      "unique_sellers": 540,
+      "unique_categories": 447,
+      "expected_public_flips": 175,
+      "precision_required_public": 0.6457142857142857,
+      "seller_cluster_ci95_public_gain": [
+        106.77966101694913,
+        129.01068346054763
+      ],
+      "category_cluster_ci95_public_gain": [
+        107.11257659715685,
+        128.68671482412057
+      ],
+      "conservative_q05_public_gain": 108.41449992330114,
+      "prob_reach_095000_seller": 1.0,
+      "prob_reach_095000_cat": 1.0,
+      "prob_reach_095000_conservative": 1.0
+    },
+    "500": {
+      "k_test": 500,
+      "k_oof_total": 1170,
+      "rate": 0.016666666666666666,
+      "total_fixes": 865,
+      "total_breaks": 305,
+      "net_oof": 560,
+      "precision_oof": 0.7393162393162394,
+      "flips_u2n": 536,
+      "flips_n2u": 634,
+      "fold_net_gains": [
+        106,
+        114,
+        114,
+        120,
+        106
+      ],
+      "unique_sellers": 1072,
+      "unique_categories": 804,
+      "expected_public_flips": 350,
+      "precision_required_public": 0.5742857142857143,
+      "seller_cluster_ci95_public_gain": [
+        149.91134759479147,
+        184.4497546155644
+      ],
+      "category_cluster_ci95_public_gain": [
+        148.87302417122825,
+        183.82685712117765
+      ],
+      "conservative_q05_public_gain": 152.74804748516087,
+      "prob_reach_095000_seller": 1.0,
+      "prob_reach_095000_cat": 1.0,
+      "prob_reach_095000_conservative": 1.0
+    },
+    "750": {
+      "k_test": 750,
+      "k_oof_total": 1751,
+      "rate": 0.025,
+      "total_fixes": 1176,
+      "total_breaks": 575,
+      "net_oof": 601,
+      "precision_oof": 0.6716162193032553,
+      "flips_u2n": 800,
+      "flips_n2u": 951,
+      "fold_net_gains": [
+        118,
+        134,
+        138,
+        102,
+        109
+      ],
+      "unique_sellers": 1573,
+      "unique_categories": 1113,
+      "expected_public_flips": 525,
+      "precision_required_public": 0.5485714285714286,
+      "seller_cluster_ci95_public_gain": [
+        156.8574820080103,
+        204.5971918898094
+      ],
+      "category_cluster_ci95_public_gain": [
+        153.78107294617567,
+        202.80215447154475
+      ],
+      "conservative_q05_public_gain": 159.85722892373425,
+      "prob_reach_095000_seller": 1.0,
+      "prob_reach_095000_cat": 1.0,
+      "prob_reach_095000_conservative": 1.0
+    },
+    "1000": {
+      "k_test": 1000,
+      "k_oof_total": 2335,
+      "rate": 0.03333333333333333,
+      "total_fixes": 1456,
+      "total_breaks": 879,
+      "net_oof": 577,
+      "precision_oof": 0.6235546038543898,
+      "flips_u2n": 1058,
+      "flips_n2u": 1277,
+      "fold_net_gains": [
+        117,
+        135,
+        135,
+        95,
+        95
+      ],
+      "unique_sellers": 2063,
+      "unique_categories": 1381,
+      "expected_public_flips": 700,
+      "precision_required_public": 0.5371428571428571,
+      "seller_cluster_ci95_public_gain": [
+        145.39499993180485,
+        199.32006830329118
+      ],
+      "category_cluster_ci95_public_gain": [
+        145.6092175074096,
+        200.96941620355733
+      ],
+      "conservative_q05_public_gain": 149.47136720901574,
+      "prob_reach_095000_seller": 1.0,
+      "prob_reach_095000_cat": 1.0,
+      "prob_reach_095000_conservative": 1.0
+    }
+  },
+  "staged_candidates": {
+    "conservative": {
+      "name": "candidate_conservative_k75.csv",
+      "tier": "conservative",
+      "role": "Tier A: Conservative Feasible (Smallest rate-matched K with S_max >= 0.95000)",
+      "k_flips": 75,
+      "flips_u2n": 33,
+      "flips_n2u": 42,
+      "unique_sellers_affected": 73,
+      "unique_categories_affected": 69,
+      "csv_path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_nested_cx0152\\candidate_conservative_k75.csv",
+      "csv_sha256": "51eeadb7f3b0a605b31384df2a71f2866fcc44ba50ce0433b2296f6bdbf207df",
+      "id_target_hash": "287b9374f5a8119bf04605066e8e04175626c8150a24f4cdf3d084318fa9671c",
+      "diff_hash": "593450a514fefa247d930fde21f41a3c9a5c50b01f14e1b5ba144f8904de4af7",
+      "anchor_sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+      "deterministic_max_score": 0.9511817687398799,
+      "candidate_baseline_reverts": 0,
+      "oof_evidence": {
+        "k_test": 75,
+        "k_oof_total": 176,
+        "rate": 0.0025,
+        "total_fixes": 157,
+        "total_breaks": 19,
+        "net_oof": 138,
+        "precision_oof": 0.8920454545454546,
+        "flips_u2n": 107,
+        "flips_n2u": 69,
+        "fold_net_gains": [
+          23,
+          33,
+          25,
+          29,
+          28
+        ],
+        "unique_sellers": 166,
+        "unique_categories": 140,
+        "expected_public_flips": 52,
+        "precision_required_public": 1.0,
+        "seller_cluster_ci95_public_gain": [
+          35.76786256337392,
+          45.067624309392265
+        ],
+        "category_cluster_ci95_public_gain": [
+          35.76878612716763,
+          45.45921293800539
+        ],
+        "conservative_q05_public_gain": 36.547333333333334,
+        "prob_reach_095000_seller": 0.0,
+        "prob_reach_095000_cat": 0.0,
+        "prob_reach_095000_conservative": 0.0
+      }
+    },
+    "medium": {
+      "name": "candidate_medium_k150.csv",
+      "tier": "medium",
+      "role": "Tier B: Medium Support (Optimal trade-off between support and high precision)",
+      "k_flips": 150,
+      "flips_u2n": 74,
+      "flips_n2u": 76,
+      "unique_sellers_affected": 148,
+      "unique_categories_affected": 134,
+      "csv_path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_nested_cx0152\\candidate_medium_k150.csv",
+      "csv_sha256": "1ff6e53c2a52636926262fe4f4ef7f2c6fcc75e9582a3a4efb9f1a5061b8be3d",
+      "id_target_hash": "46802c6aabb0f827e63272c46cbf6f1d84512be92c5944967956b3fb3d80a07e",
+      "diff_hash": "191c5677a037c041027cfb40828573ce1ccd847943d4bee81bb0f58df80b4fc7",
+      "anchor_sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+      "deterministic_max_score": 0.9547535374797599,
+      "candidate_baseline_reverts": 0,
+      "oof_evidence": {
+        "k_test": 150,
+        "k_oof_total": 351,
+        "rate": 0.005,
+        "total_fixes": 304,
+        "total_breaks": 47,
+        "net_oof": 257,
+        "precision_oof": 0.8660968660968661,
+        "flips_u2n": 190,
+        "flips_n2u": 161,
+        "fold_net_gains": [
+          50,
+          62,
+          48,
+          54,
+          43
+        ],
+        "unique_sellers": 327,
+        "unique_categories": 285,
+        "expected_public_flips": 105,
+        "precision_required_public": 0.7428571428571429,
+        "seller_cluster_ci95_public_gain": [
+          69.12934696814932,
+          83.81305637982194
+        ],
+        "category_cluster_ci95_public_gain": [
+          68.81304792518995,
+          84.77449137265
+        ],
+        "conservative_q05_public_gain": 70.09366197183098,
+        "prob_reach_095000_seller": 1.0,
+        "prob_reach_095000_cat": 1.0,
+        "prob_reach_095000_conservative": 1.0
+      }
+    },
+    "broad": {
+      "name": "candidate_broad_k500.csv",
+      "tier": "broad",
+      "role": "Tier C: Broad Correction (Diversified multi-cluster ensemble)",
+      "k_flips": 500,
+      "flips_u2n": 269,
+      "flips_n2u": 231,
+      "unique_sellers_affected": 485,
+      "unique_categories_affected": 396,
+      "csv_path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_nested_cx0152\\candidate_broad_k500.csv",
+      "csv_sha256": "5a47985eff3f6de4d8db90b95a9f4eba2be0a0552dcc5cf57df94ae29e35ebd4",
+      "id_target_hash": "247b57a70c6b1dee965e576ab0efb99b14fe164bcc3d2d5ae5263dd1ad7ac33f",
+      "diff_hash": "f0885695e5e6c5d4197fe0d15cd0f0da9c41c8fd5bfebfe8f12ece2b89d415d9",
+      "anchor_sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+      "deterministic_max_score": 0.9714217915991998,
+      "candidate_baseline_reverts": 0,
+      "oof_evidence": {
+        "k_test": 500,
+        "k_oof_total": 1170,
+        "rate": 0.016666666666666666,
+        "total_fixes": 865,
+        "total_breaks": 305,
+        "net_oof": 560,
+        "precision_oof": 0.7393162393162394,
+        "flips_u2n": 536,
+        "flips_n2u": 634,
+        "fold_net_gains": [
+          106,
+          114,
+          114,
+          120,
+          106
+        ],
+        "unique_sellers": 1072,
+        "unique_categories": 804,
+        "expected_public_flips": 350,
+        "precision_required_public": 0.5742857142857143,
+        "seller_cluster_ci95_public_gain": [
+          149.91134759479147,
+          184.4497546155644
+        ],
+        "category_cluster_ci95_public_gain": [
+          148.87302417122825,
+          183.82685712117765
+        ],
+        "conservative_q05_public_gain": 152.74804748516087,
+        "prob_reach_095000_seller": 1.0,
+        "prob_reach_095000_cat": 1.0,
+        "prob_reach_095000_conservative": 1.0
+      }
+    }
+  },
+  "safe_fallback": "EVT-143 (submission_slot5_surgical_quad_rank6_breakthrough.csv, score 0.94761)",
+  "elapsed_seconds": 469.7
+}

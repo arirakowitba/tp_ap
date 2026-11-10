@@ -1,0 +1,24 @@
+{
+  "title": "Podium Baseline vs EVT-143 Alignment Audit (CX-0152)",
+  "timestamp_utc": "2026-11-10T23:35:00Z",
+  "total_test_rows": 30000,
+  "n_agree": 27350,
+  "n_disagree": 2650,
+  "disagreement_hash": "8419438ac890cff65045bfb61dddbb6d83715c904efe2869c9c4e80e9fed5c8b",
+  "breakdown": {
+    "both_used": 12621,
+    "both_new": 14729,
+    "base_used_evt_new": 1108,
+    "base_new_evt_used": 1542
+  },
+  "ag0146_defect_proof": {
+    "description": "AG-0146 evaluated baseline error score against EVT-143 condition, which inadvertently flipped EVT-143 back to the inferior baseline on 96.7% of rows.",
+    "status": "CONFIRMED_AND_DEFECT_RESOLVED"
+  },
+  "quarantine_policy": {
+    "policy": "RESTRICT_FLIPS_STRICTLY_TO_AGREEING_STRATUM",
+    "eligible_test_pool_size": 27350,
+    "quarantined_test_pool_size": 2650,
+    "loss_of_coverage": 8.83
+  }
+}
