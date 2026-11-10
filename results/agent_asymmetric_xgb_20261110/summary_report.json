@@ -1,0 +1,90 @@
+{
+  "model_name": "Asymmetric Lossguide XGBoost Specialist (max_leaves=120, max_depth=11, lr=0.035, n_estimators=600, SVD=150)",
+  "hyperparameters": {
+    "tree_method": "hist",
+    "grow_policy": "lossguide",
+    "max_leaves": 120,
+    "max_depth": 11,
+    "learning_rate": 0.035,
+    "n_estimators": 600,
+    "subsample": 0.85,
+    "colsample_bytree": 0.75,
+    "reg_alpha": 1.0,
+    "reg_lambda": 5.0,
+    "eval_metric": "logloss",
+    "n_svd_components": 150,
+    "random_state_base": 42
+  },
+  "cv_protocol": "StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=42) grouped strictly by seller_id",
+  "leak_free_audit": {
+    "seller_leakage": "ZERO seller overlap between train and validation across all 5 folds",
+    "seller_features": "ZERO seller identity features, ZERO seller target encoding, ZERO seller frequency in model input",
+    "svd_projection": "TfidfVectorizer and TruncatedSVD fit strictly inside each outer training fold text only",
+    "category_statistics": "Category smoothed target encoding and price medians computed strictly inside each outer training fold"
+  },
+  "n_train": 70000,
+  "n_test": 30000,
+  "global_accuracy": 0.8931428571428571,
+  "global_roc_auc": 0.9584221409338012,
+  "global_logloss": 0.26494185221378147,
+  "hits": 62520,
+  "total_duration_seconds": 461.59218549728394,
+  "peak_ram_mb": 1436.1796875,
+  "fold_metrics": [
+    {
+      "fold": 1,
+      "n_train": 56000,
+      "n_val": 14000,
+      "accuracy": 0.8928571428571429,
+      "roc_auc": 0.9573968685173068,
+      "logloss": 0.26853032256211345,
+      "elapsed_seconds": 84.7302234172821,
+      "ram_mb": 1428.19921875
+    },
+    {
+      "fold": 2,
+      "n_train": 56000,
+      "n_val": 14000,
+      "accuracy": 0.8998571428571429,
+      "roc_auc": 0.9625929138985493,
+      "logloss": 0.250838752758472,
+      "elapsed_seconds": 83.97669339179993,
+      "ram_mb": 1429.3359375
+    },
+    {
+      "fold": 3,
+      "n_train": 56000,
+      "n_val": 14000,
+      "accuracy": 0.8942857142857142,
+      "roc_auc": 0.9596164063189506,
+      "logloss": 0.25945864881362446,
+      "elapsed_seconds": 84.93224906921387,
+      "ram_mb": 1427.578125
+    },
+    {
+      "fold": 4,
+      "n_train": 56000,
+      "n_val": 14000,
+      "accuracy": 0.9,
+      "roc_auc": 0.960673232400307,
+      "logloss": 0.25497067850761923,
+      "elapsed_seconds": 87.3219211101532,
+      "ram_mb": 1436.1796875
+    },
+    {
+      "fold": 5,
+      "n_train": 56000,
+      "n_val": 14000,
+      "accuracy": 0.8787142857142857,
+      "roc_auc": 0.9515991200466817,
+      "logloss": 0.29091085842707826,
+      "elapsed_seconds": 83.98051166534424,
+      "ram_mb": 1428.4375
+    }
+  ],
+  "output_files": {
+    "oof_csv": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\results\\agent_asymmetric_xgb_20261110\\oof_asymmetric_xgb.csv",
+    "test_csv": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\results\\agent_asymmetric_xgb_20261110\\test_probabilities_asymmetric_xgb.csv",
+    "summary_json": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\results\\agent_asymmetric_xgb_20261110\\summary_report.json"
+  }
+}

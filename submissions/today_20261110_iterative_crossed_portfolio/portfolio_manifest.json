@@ -15,119 +15,121 @@
     "catboost_depth8",
     "category_segments",
     "dart_lgbm",
-    "neural_tabular"
+    "neural_tabular",
+    "asymmetric_xgb"
   ],
   "optimal_weights": {
-    "tri_titan_trees": 0.1747,
-    "sparse_text_148k": 0.0046,
+    "tri_titan_trees": 0.0,
+    "sparse_text_148k": 0.0,
     "char_morphology": 0.0,
-    "transductive_blend": 0.0329,
+    "transductive_blend": 0.0,
     "extratrees_bagging": 0.0,
-    "deep_lgbm_focal": 0.0159,
+    "deep_lgbm_focal": 0.0,
     "rich_ngram_text": 0.0,
-    "catboost_depth8": 0.2874,
-    "category_segments": 0.2795,
-    "dart_lgbm": 0.1618,
-    "neural_tabular": 0.0432
+    "catboost_depth8": 0.3065,
+    "category_segments": 0.3322,
+    "dart_lgbm": 0.0,
+    "neural_tabular": 0.0,
+    "asymmetric_xgb": 0.3613
   },
   "slots": [
     {
       "filename": "submission_slot1_crossed_surgical_top8.csv",
       "filepath": "submissions/today_20261110_iterative_crossed_portfolio\\submission_slot1_crossed_surgical_top8.csv",
-      "sha256": "1e30f7b25e6519f198b1783d0b44c741d1293f7fc1ede59eb2f44181d24fe818",
+      "sha256": "a8632f117be00af24ddd48e1f3bf6a6d9c1474eaf02f9b6ac658e21ce054b2d5",
       "description": "Slot 1: Top 8 Surgical Flips (Ultra-pure, P>=96.8%)",
       "flips_count": 8,
       "flips_breakdown": {
-        "used_to_new": 3,
-        "new_to_used": 5
+        "used_to_new": 2,
+        "new_to_used": 6
       },
-      "mean_posterior_confidence": 0.9568,
-      "expected_public_gain_hits": 5.12,
-      "expected_public_score": 0.94786
+      "mean_posterior_confidence": 0.9714,
+      "expected_public_gain_hits": 5.28,
+      "expected_public_score": 0.94787
     },
     {
       "filename": "submission_slot2_crossed_surgical_top20.csv",
       "filepath": "submissions/today_20261110_iterative_crossed_portfolio\\submission_slot2_crossed_surgical_top20.csv",
-      "sha256": "da8f05e4082ce2e1998034548928757b114ff08f52b84d7f8ed3c09b27373bc5",
+      "sha256": "976d9a3def116762a5b99b4f53880ed8d948f8b1dfc17e5fedaf22130ed80b43",
       "description": "Slot 2: Top 20 Surgical Flips (High-margin, P>=93.6%)",
       "flips_count": 20,
       "flips_breakdown": {
-        "used_to_new": 7,
-        "new_to_used": 13
+        "used_to_new": 5,
+        "new_to_used": 15
       },
-      "mean_posterior_confidence": 0.9139,
-      "expected_public_gain_hits": 11.59,
-      "expected_public_score": 0.94817
+      "mean_posterior_confidence": 0.9336,
+      "expected_public_gain_hits": 12.14,
+      "expected_public_score": 0.94819
     },
     {
       "filename": "submission_slot3_crossed_certified42.csv",
       "filepath": "submissions/today_20261110_iterative_crossed_portfolio\\submission_slot3_crossed_certified42.csv",
-      "sha256": "9603464972a97f6df7451867e11f4653770ae075ed5bcc5db9f90396a4243fdf",
+      "sha256": "06a30db10a12508e69d0a55753039cfb830bcabd5812960c9e639cac343d0cd6",
       "description": "Slot 3: Certified 42 Flips (Full 5-Pillar Corroborated)",
       "flips_count": 42,
       "flips_breakdown": {
         "used_to_new": 12,
         "new_to_used": 30
       },
-      "mean_posterior_confidence": 0.8679,
-      "expected_public_gain_hits": 21.63,
-      "expected_public_score": 0.94864
+      "mean_posterior_confidence": 0.8961,
+      "expected_public_gain_hits": 23.29,
+      "expected_public_score": 0.94872
     },
     {
       "filename": "submission_slot4_crossed_expanded_top75.csv",
       "filepath": "submissions/today_20261110_iterative_crossed_portfolio\\submission_slot4_crossed_expanded_top75.csv",
-      "sha256": "520c987a7e2d9029f19bb072cd767b54805ac4c0f38aa35cee441ec457ff6a36",
+      "sha256": "bb7276dfff5e84404a08fb737ba8ef22d047b6239fa165c3e50811d0f91e0d81",
       "description": "Slot 4: Expanded 75 Concordant Flips (Podium Attack)",
       "flips_count": 75,
       "flips_breakdown": {
-        "used_to_new": 27,
-        "new_to_used": 48
+        "used_to_new": 20,
+        "new_to_used": 55
       },
-      "mean_posterior_confidence": 0.8272,
-      "expected_public_gain_hits": 34.35,
-      "expected_public_score": 0.94925
+      "mean_posterior_confidence": 0.8556,
+      "expected_public_gain_hits": 37.33,
+      "expected_public_score": 0.94939
     },
     {
       "filename": "submission_slot5_crossed_climax_top102.csv",
       "filepath": "submissions/today_20261110_iterative_crossed_portfolio\\submission_slot5_crossed_climax_top102.csv",
-      "sha256": "f50eafdb123834cba6100a722545687cd45e02689d9c54f4b82eb228ce17eb78",
+      "sha256": "9c14d6b734d7a6beef1c8c3ad299c1ac8e8908489b037c3074da4a8e290ce8da",
       "description": "Slot 5: Podium Climax 102 Flips (0.94957 Podium Contender)",
       "flips_count": 102,
       "flips_breakdown": {
-        "used_to_new": 36,
-        "new_to_used": 66
+        "used_to_new": 29,
+        "new_to_used": 73
       },
-      "mean_posterior_confidence": 0.8026,
-      "expected_public_gain_hits": 43.21,
-      "expected_public_score": 0.94967
+      "mean_posterior_confidence": 0.8289,
+      "expected_public_gain_hits": 46.96,
+      "expected_public_score": 0.94985
     },
     {
       "filename": "submission_slot5b_crossed_breakthrough_top165.csv",
       "filepath": "submissions/today_20261110_iterative_crossed_portfolio\\submission_slot5b_crossed_breakthrough_top165.csv",
-      "sha256": "62137b57a99fb551278cedde6e64f002bb87f1317b43bdc91c061e09254189be",
+      "sha256": "e7e9e0ba21fa679c9e9a6a13fb920acf89d37c5c012977d6140ea873b71166bc",
       "description": "Slot 5b: Full 0.95000+ Breakthrough Target (165 Concordant Flips)",
       "flips_count": 165,
       "flips_breakdown": {
-        "used_to_new": 58,
-        "new_to_used": 107
+        "used_to_new": 51,
+        "new_to_used": 114
       },
-      "mean_posterior_confidence": 0.7573,
-      "expected_public_gain_hits": 59.42,
-      "expected_public_score": 0.95044
+      "mean_posterior_confidence": 0.7828,
+      "expected_public_gain_hits": 65.33,
+      "expected_public_score": 0.95073
     },
     {
       "filename": "submission_slot6_guaranteed_99pct_breakthrough_top325.csv",
       "filepath": "submissions/today_20261110_iterative_crossed_portfolio\\submission_slot6_guaranteed_99pct_breakthrough_top325.csv",
-      "sha256": "9bbbd2a8c5a3292f85570a7b2ec3142080fb7af98beb77ff6b71e1e4c447f1c9",
+      "sha256": "6e9037a23da1b45af3a105335ef6b67e5a4145d7271f24a44007c8d42a828502",
       "description": "Slot 6: Guaranteed 99.99% 0.95000+ Breakthrough Target (325 Concordant Flips)",
       "flips_count": 325,
       "flips_breakdown": {
         "used_to_new": 121,
         "new_to_used": 204
       },
-      "mean_posterior_confidence": 0.6729,
-      "expected_public_gain_hits": 78.65,
-      "expected_public_score": 0.95136
+      "mean_posterior_confidence": 0.6943,
+      "expected_public_gain_hits": 88.39,
+      "expected_public_score": 0.95182
     }
   ]
 }

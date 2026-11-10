@@ -128,6 +128,14 @@ if os.path.exists(mlp_path):
     streams['neural_tabular'] = mlp_df[p_mlp_col].values
     print("Loaded Stream: neural_tabular (Multi-Layer Perceptron 256-128-64)")
 
+# Stream 12: Asymmetric Lossguide XGBoost Specialist (OOF Acc 0.89314, ROC-AUC 0.95842, 120 leaves)
+xgb_path = 'results/agent_asymmetric_xgb_20261110/test_probabilities_asymmetric_xgb.csv'
+if os.path.exists(xgb_path):
+    xgb_df = pd.read_csv(xgb_path)
+    p_xgb_col = 'p_used_asymmetric_xgb' if 'p_used_asymmetric_xgb' in xgb_df.columns else 'p_used'
+    streams['asymmetric_xgb'] = xgb_df[p_xgb_col].values
+    print("Loaded Stream: asymmetric_xgb (Lossguide Asymmetric XGBoost, 120 leaves, depth 11)")
+
 # 4. Probe-Crossing Audit for Each Stream
 print("\n--- PROBE-CROSSING AUDIT PER STREAM ---")
 stream_names = list(streams.keys())
