@@ -1,72 +1,58 @@
 {
-  "generated_at": "2026-11-10 02:30:00 UTC",
-  "target_session": "2026-11-10 (Active Daily Quota)",
+  "generated_at": "2026-11-10 05:38:07 UTC",
+  "target_session": "2026-11-10 21:00 ART (Daily Quota Window)",
   "base_anchor": "EVT-143 (0.94761, 19898 hits)",
+  "ensemble": "Tri-Titan (45% XGB + 25% CAT + 30% LGB, OOF 0.92224)",
   "slots": [
     {
       "slot": 1,
       "name": "submission_slot1_octeto_quirurgico_puro.csv",
       "flips": 8,
-      "u2n": 4,
-      "n2u": 4,
-      "sha256": "defaca4c0bef0fcf09d3f3f699996e57c2dc86fb2f69ee69a4f607b042ac9e45",
-      "expected_gain": 5.599464,
-      "projected_hits": 19903.599464,
-      "projected_score": 0.9478807250214306,
-      "target": "0.94790+ (Consolidaci\u00f3n Top 5)",
-      "tactic": "Octeto Puro (4 U->N, 4 N->U, Balance 0)"
+      "sha256": "c3f6e6e002eb13ac650df74b026c3270300e49067fdf45652d084ed95daa263f",
+      "expected_gain": 5.114217688682799,
+      "projected_hits": 19903.114217688682,
+      "projected_score": 0.9478576158533518,
+      "target": "0.94790+ (Consolidaci\u00f3n Top 5)"
     },
     {
       "slot": 2,
-      "name": "submission_slot2_dodecaedro_plus_0km_moneda.csv",
-      "flips": 12,
-      "u2n": 7,
-      "n2u": 5,
-      "sha256": "fd243df9e2ec817330a001bd6fc821044405517def63aa89bae34455ca584bad",
-      "expected_gain": 8.0492295,
-      "projected_hits": 19906.0492295,
-      "projected_score": 0.9479973916325365,
-      "target": "0.94800+ (Top 5+)",
-      "tactic": "Dodecaedro (+ 0km Reales y Moneda 1905)"
+      "name": "submission_slot2_octeto_plus_0km_vehi.csv",
+      "flips": 11,
+      "sha256": "610f2aa9f958a9b6a7c4fdb1bfe65978782d6863695b0ce01432582bae45c946",
+      "expected_gain": 7.048222700697266,
+      "projected_hits": 19905.048222700698,
+      "projected_score": 0.9479497201019477,
+      "target": "0.94825+ (Top 5+)"
     },
     {
       "slot": 3,
       "name": "submission_slot3_consensus_margin95_top25.csv",
       "flips": 25,
-      "u2n": 12,
-      "n2u": 13,
-      "sha256": "2a2ed3f32096eb7fbe8c59647f8354cd60add871b73c23beb71b85fe0d44e24b",
-      "expected_gain": 16.4939422942158,
-      "projected_hits": 19914.493942294215,
-      "projected_score": 0.9483995591148784,
-      "target": "0.94840+ (Ataque a Top 4)",
-      "tactic": "Top 25 Consenso Multimodelo Fuerte"
+      "sha256": "6e816d948925e5f69a5faf4f6e44676c06f0b5e2b5db0a4023344f79f8f225b7",
+      "expected_gain": 15.837495423176875,
+      "projected_hits": 19913.837495423177,
+      "projected_score": 0.9483682967627001,
+      "target": "0.94880+ (Ataque a Top 4)"
     },
     {
       "slot": 4,
       "name": "submission_slot4_podium_attack_top50.csv",
       "flips": 50,
-      "u2n": 21,
-      "n2u": 29,
-      "sha256": "9ea97812d6d4ac52bf5d70d08e5c2e99f4c1e8208825fcf44d9df93971d2889e",
-      "expected_gain": 31.659097912737153,
-      "projected_hits": 19929.659097912736,
-      "projected_score": 0.9491217781651936,
-      "target": "0.94915+ (Asalto al Podio #3)",
-      "tactic": "Top 50 Superando a Gonzalo B\u00fchler 0.94895"
+      "sha256": "6a2ac3bdb0e26884df35c29de98402d9d80d18916e8cb40ffdfbbbe0eda90888",
+      "expected_gain": 30.674909162150144,
+      "projected_hits": 19928.67490916215,
+      "projected_score": 0.9490749075703472,
+      "target": "0.94930+ (Asalto al Podio #3)"
     },
     {
       "slot": 5,
       "name": "submission_slot5_climax_09500_breakthrough_top100.csv",
       "flips": 100,
-      "u2n": 37,
-      "n2u": 63,
-      "sha256": "7c2702d9ad93ab67c2520f1551bc25e89757c98a68fbf083da577455683de32c",
-      "expected_gain": 59.92371662925281,
-      "projected_hits": 19957.92371662925,
-      "projected_score": 0.9504678405862107,
-      "target": "0.95050+ (ROMPIENDO LA BARRERA DE 0.95000)",
-      "tactic": "Top 100 Asalto a Nicol\u00e1s Caveda 0.95095"
+      "sha256": "c384aa411d7356b506187900205325b73c56abffb505ba769384b2ff642fe47e",
+      "expected_gain": 58.369869741682905,
+      "projected_hits": 19956.369869741684,
+      "projected_score": 0.950393840829683,
+      "target": "0.95040+ (ROMPIENDO LA BARRERA DE 0.95000)"
     }
   ]
 }
