@@ -7713,7 +7713,7 @@ ID,condition
 7712,new
 7713,new
 7714,new
-7715,used
+7715,new
 7716,new
 7717,used
 7718,used
@@ -9527,7 +9527,7 @@ ID,condition
 9526,used
 9527,used
 9528,new
-9529,used
+9529,new
 9530,used
 9531,used
 9532,new
@@ -12724,7 +12724,7 @@ ID,condition
 12723,new
 12724,used
 12725,used
-12726,used
+12726,new
 12727,used
 12728,used
 12729,used
@@ -12875,7 +12875,7 @@ ID,condition
 12874,used
 12875,used
 12876,new
-12877,new
+12877,used
 12878,used
 12879,used
 12880,new
@@ -21935,7 +21935,7 @@ ID,condition
 21934,new
 21935,new
 21936,used
-21937,used
+21937,new
 21938,new
 21939,new
 21940,used
@@ -29515,7 +29515,7 @@ ID,condition
 29514,new
 29515,new
 29516,new
-29517,used
+29517,new
 29518,new
 29519,new
 29520,used

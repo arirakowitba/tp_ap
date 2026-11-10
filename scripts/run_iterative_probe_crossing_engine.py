@@ -136,6 +136,22 @@ if os.path.exists(xgb_path):
     streams['asymmetric_xgb'] = xgb_df[p_xgb_col].values
     print("Loaded Stream: asymmetric_xgb (Lossguide Asymmetric XGBoost, 120 leaves, depth 11)")
 
+# Stream 13: Semantic k-NN Metric Specialist (OOF Acc 0.79494, SVD 128 + Tabular Metric)
+knn_path = 'results/agent_semantic_knn_20261110/test_probabilities_semantic_knn.csv'
+if os.path.exists(knn_path):
+    knn_df = pd.read_csv(knn_path)
+    p_knn_col = 'p_used' if 'p_used' in knn_df.columns else knn_df.columns[1]
+    streams['semantic_knn'] = knn_df[p_knn_col].values
+    print("Loaded Stream: semantic_knn (Non-parametric metric similarity, k=35 cosine)")
+
+# Stream 14: Super-Learner Meta-Stacking (OOF Acc 0.92021, ROC-AUC 0.97332, LogLoss 0.20467)
+meta_path = 'results/agent_meta_stacking_20261110/test_probabilities_meta_stacking.csv'
+if os.path.exists(meta_path):
+    meta_df = pd.read_csv(meta_path)
+    p_meta_col = 'p_used' if 'p_used' in meta_df.columns else meta_df.columns[1]
+    streams['super_learner_stacking'] = meta_df[p_meta_col].values
+    print("Loaded Stream: super_learner_stacking (OOF Acc 0.92021, ROC-AUC 0.97332, 11-stream meta-stacking)")
+
 # 4. Probe-Crossing Audit for Each Stream
 print("\n--- PROBE-CROSSING AUDIT PER STREAM ---")
 stream_names = list(streams.keys())
