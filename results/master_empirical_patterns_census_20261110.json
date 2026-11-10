@@ -1,0 +1,39 @@
+{
+  "total_vectors": 54,
+  "strictly_invariant_count": 27723,
+  "elite_invariant_count": 29839,
+  "elite_disputed_count": 161,
+  "correlation_consensus_quad": 0.8873777649054004,
+  "pattern_stats": {
+    "repuesto": {
+      "count": 3,
+      "mean_p_used": 0.7424030772812972,
+      "anchor_used_pct": 100.0
+    },
+    "caja_sellada": {
+      "count": 2,
+      "mean_p_used": 0.6315577350471225,
+      "anchor_used_pct": 50.0
+    },
+    "usado_explicit": {
+      "count": 1,
+      "mean_p_used": 0.9897846035672828,
+      "anchor_used_pct": 100.0
+    },
+    "impecable": {
+      "count": 4,
+      "mean_p_used": 0.8353956244093733,
+      "anchor_used_pct": 50.0
+    },
+    "antiguo": {
+      "count": 20,
+      "mean_p_used": 0.6488775598927139,
+      "anchor_used_pct": 45.0
+    },
+    "reacondicionado": {
+      "count": 1,
+      "mean_p_used": 0.282580651534799,
+      "anchor_used_pct": 100.0
+    }
+  }
+}

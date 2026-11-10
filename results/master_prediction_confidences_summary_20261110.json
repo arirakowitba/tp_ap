@@ -1,0 +1,24 @@
+{
+  "total_items": 30000,
+  "invariance_tier_distribution": {
+    "INVARIANT_ALL": 27723,
+    "INVARIANT_ELITE": 2116,
+    "ELITE_DISPUTED": 161
+  },
+  "action_distribution": {
+    "KEEP_ANCHOR": 27939,
+    "UNCERTAIN_DISPUTED": 1906,
+    "EXPLORATORY_CANDIDATE": 113,
+    "CERTIFIED_FLIP": 42
+  },
+  "confidence_percentiles": {
+    "p10": 0.9445,
+    "p25": 0.9662,
+    "p50": 0.9803,
+    "p75": 0.9869,
+    "p90": 0.989,
+    "p99": 0.9898
+  },
+  "certified_flips_count": 42,
+  "exploratory_candidates_count": 113
+}
