@@ -1,0 +1,93 @@
+{
+  "manifest_title": "Pre-Opening Confirm Manifest (Agentes A-G)",
+  "timestamp_utc": "2026-11-10T19:40:00Z",
+  "confirm_fold": 4,
+  "confirm_samples_count": 14002,
+  "confirm_flips_count": 263,
+  "selector_architecture": "HistGradientBoostingClassifier(max_iter=45, max_leaf_nodes=15, min_samples_leaf=12)",
+  "features_used": [
+    "margin_base",
+    "margin_blend",
+    "delta_p",
+    "p_lgb",
+    "p_xgb",
+    "p_cb",
+    "p_text",
+    "is_isolated_seller",
+    "is_long_tail_cat",
+    "tree_agreement",
+    "text_tree_agreement",
+    "log1p_seller_freq",
+    "log1p_cat_freq",
+    "flip_direction"
+  ],
+  "tune_evaluation": {
+    "10": {
+      "k": 10,
+      "fixes": 10,
+      "breaks": 0,
+      "net": 10,
+      "precision": 1.0
+    },
+    "20": {
+      "k": 20,
+      "fixes": 20,
+      "breaks": 0,
+      "net": 20,
+      "precision": 1.0
+    },
+    "30": {
+      "k": 30,
+      "fixes": 27,
+      "breaks": 3,
+      "net": 24,
+      "precision": 0.9
+    },
+    "50": {
+      "k": 50,
+      "fixes": 42,
+      "breaks": 8,
+      "net": 34,
+      "precision": 0.84
+    },
+    "75": {
+      "k": 75,
+      "fixes": 62,
+      "breaks": 13,
+      "net": 49,
+      "precision": 0.8266666666666667
+    },
+    "100": {
+      "k": 100,
+      "fixes": 80,
+      "breaks": 20,
+      "net": 60,
+      "precision": 0.8
+    },
+    "150": {
+      "k": 150,
+      "fixes": 109,
+      "breaks": 41,
+      "net": 68,
+      "precision": 0.7266666666666667
+    }
+  },
+  "selected_rules": {
+    "tier_conservative": {
+      "k_tune_equivalent": 20,
+      "test_target_flips": 35,
+      "min_precision_req": 0.8
+    },
+    "tier_balanced": {
+      "k_tune_equivalent": 50,
+      "test_target_flips": 90,
+      "min_precision_req": 0.75
+    },
+    "tier_aggressive": {
+      "k_tune_equivalent": 90,
+      "test_target_flips": 160,
+      "min_precision_req": 0.7
+    }
+  },
+  "promotion_criterion": "Positive net hits in Confirm (Fold 4) with zero leakage and Q_0.05 maximization."
+}
