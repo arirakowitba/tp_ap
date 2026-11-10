@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-11-09 23:25:21",
+  "target_session": "2026-11-10 21:00 ART",
+  "base_anchor": "EVT-143 (0.94761, 19898 hits)",
+  "slots": [
+    {
+      "slot": 1,
+      "name": "submission_slot1_octeto_quirurgico_puro.csv",
+      "flips": 8,
+      "sha256": "defaca4c0bef0fcf09d3f3f699996e57c2dc86fb2f69ee69a4f607b042ac9e45",
+      "target": "0.94790+ (Top 5)"
+    },
+    {
+      "slot": 2,
+      "name": "submission_slot2_octeto_plus_0km_vehi.csv",
+      "flips": 11,
+      "sha256": "0f0cead0fa2449b2852ace2b12806ecea3baf92c979ab35b54945743f14c6a94",
+      "target": "0.94820+"
+    },
+    {
+      "slot": 3,
+      "name": "submission_slot3_consensus_margin95_top25.csv",
+      "flips": 25,
+      "sha256": "eb9bbdb4154febe4f4cb44cecf74867b8847799a031a4242f5efd6f561eb8b96",
+      "target": "0.94880+ (Top 4)"
+    },
+    {
+      "slot": 4,
+      "name": "submission_slot4_podium_attack_top60.csv",
+      "flips": 60,
+      "sha256": "fad59c969adf4450e062193cc193e7eb3e8c67aef2ee4c32b4ab2ee9d9f9aa29",
+      "target": "0.94920+ (Podium #3)"
+    },
+    {
+      "slot": 5,
+      "name": "submission_slot5_climax_09500_breakthrough_top110.csv",
+      "flips": 110,
+      "sha256": "a8655ed17c8f9c7699304025a73162c05404686c7f4560372ec1abf5a55372c0",
+      "target": "0.95050+ (Rank #2)"
+    }
+  ]
+}
