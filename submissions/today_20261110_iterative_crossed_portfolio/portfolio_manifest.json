@@ -102,6 +102,21 @@
       "mean_posterior_confidence": 0.7641,
       "expected_public_gain_hits": 61.01,
       "expected_public_score": 0.95052
+    },
+    {
+      "filename": "submission_slot6_guaranteed_99pct_breakthrough_top325.csv",
+      "filepath": "submissions/today_20261110_iterative_crossed_portfolio\\submission_slot6_guaranteed_99pct_breakthrough_top325.csv",
+      "sha256": "8c580716afbd247553860c012c421901ae2bab54948f78bd68f4a34f3998d8a2",
+      "description": "Slot 6: 99% Mathematical Confidence Target (Top 325 Flips, P(Score>=0.95)=98.90%)",
+      "flips_count": 325,
+      "flips_breakdown": {
+        "used_to_new": 120,
+        "new_to_used": 205
+      },
+      "mean_posterior_confidence": 0.6821,
+      "expected_public_gain_hits": 82.86,
+      "expected_public_score": 0.95156,
+      "mathematical_confidence_p095": 0.989
     }
   ]
 }
