@@ -1,0 +1,179 @@
+{
+  "model_name": "Category-Segmented Domain Specialists with Transductive Probe Augmentation",
+  "architecture": "Outer StratifiedGroupKFold(5) by seller_id + Domain Specialists (Books, Vehicles, Celulares, Electronics, Antiques) + Global Fallback",
+  "total_train_items": 70000,
+  "total_test_items": 30000,
+  "invariant_all_anchors_used": 27723,
+  "anchor_sample_weight": 0.4,
+  "train_sample_weight": 1.0,
+  "global_accuracy": 0.8728142857142858,
+  "global_roc_auc": 0.9455255199002109,
+  "global_logloss": 0.2986168385857571,
+  "total_correct": 61097,
+  "fold_metrics": [
+    {
+      "fold": 1,
+      "accuracy": 0.8777857142857143,
+      "roc_auc": 0.9489382019202459,
+      "logloss": 0.2881228463751276
+    },
+    {
+      "fold": 2,
+      "accuracy": 0.8697142857142857,
+      "roc_auc": 0.9458516468836411,
+      "logloss": 0.29832429139280975
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.8708571428571429,
+      "roc_auc": 0.945328139039915,
+      "logloss": 0.2988462229885625
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.8814285714285715,
+      "roc_auc": 0.947829405591657,
+      "logloss": 0.29063148475182815
+    },
+    {
+      "fold": 5,
+      "accuracy": 0.8642857142857143,
+      "roc_auc": 0.9394855411909083,
+      "logloss": 0.31715934613395735
+    }
+  ],
+  "domain_breakdown": {
+    "MLA3025_Libros": {
+      "count": 11825,
+      "percent_of_train": 16.892857142857142,
+      "percent_used": 71.6448202959831,
+      "correct": 10548,
+      "accuracy": 0.8920084566596195,
+      "roc_auc": 0.9348070533991095,
+      "logloss": 0.2780414698350162
+    },
+    "MLA1747_Repuestos_Autos": {
+      "count": 6131,
+      "percent_of_train": 8.758571428571429,
+      "percent_used": 16.53890066873267,
+      "correct": 5765,
+      "accuracy": 0.940303376284456,
+      "roc_auc": 0.9667024371328277,
+      "logloss": 0.1637702238922618
+    },
+    "MLA1051_Celulares": {
+      "count": 2327,
+      "percent_of_train": 3.3242857142857143,
+      "percent_used": 25.268586162440908,
+      "correct": 2118,
+      "accuracy": 0.9101847872797594,
+      "roc_auc": 0.9587347877621435,
+      "logloss": 0.2328970732597921
+    },
+    "MLA1000_Electr\u00f3nica": {
+      "count": 6672,
+      "percent_of_train": 9.531428571428572,
+      "percent_used": 55.33573141486811,
+      "correct": 5891,
+      "accuracy": 0.8829436450839329,
+      "roc_auc": 0.9480068459284359,
+      "logloss": 0.287139603402439
+    },
+    "Antiques_Home": {
+      "count": 6190,
+      "percent_of_train": 8.842857142857143,
+      "percent_used": 56.655896607431345,
+      "correct": 5297,
+      "accuracy": 0.855735056542811,
+      "roc_auc": 0.9301318559834699,
+      "logloss": 0.33496833301197854
+    },
+    "General_Other": {
+      "count": 36855,
+      "percent_of_train": 52.65,
+      "percent_used": 41.077194410527746,
+      "correct": 31478,
+      "accuracy": 0.8541039207705874,
+      "roc_auc": 0.9317332194860444,
+      "logloss": 0.32777268139464716
+    }
+  },
+  "top_category_breakdown": {
+    "MLA1227": {
+      "count": 3180,
+      "percent_used": 50.75471698113208,
+      "accuracy": 0.8839622641509434
+    },
+    "MLA2044": {
+      "count": 1359,
+      "percent_used": 74.61368653421634,
+      "accuracy": 0.8910963944076526
+    },
+    "MLA41287": {
+      "count": 629,
+      "percent_used": 86.80445151033386,
+      "accuracy": 0.8934817170111288
+    },
+    "MLA3530": {
+      "count": 542,
+      "percent_used": 40.22140221402214,
+      "accuracy": 0.7435424354243543
+    },
+    "MLA2038": {
+      "count": 468,
+      "percent_used": 93.58974358974359,
+      "accuracy": 0.9551282051282052
+    },
+    "MLA15171": {
+      "count": 410,
+      "percent_used": 62.4390243902439,
+      "accuracy": 0.8219512195121951
+    },
+    "MLA15328": {
+      "count": 333,
+      "percent_used": 98.49849849849849,
+      "accuracy": 0.960960960960961
+    },
+    "MLA15204": {
+      "count": 319,
+      "percent_used": 47.02194357366771,
+      "accuracy": 0.8369905956112853
+    },
+    "MLA1383": {
+      "count": 315,
+      "percent_used": 92.38095238095238,
+      "accuracy": 0.8825396825396825
+    },
+    "MLA41269": {
+      "count": 303,
+      "percent_used": 91.41914191419141,
+      "accuracy": 0.9273927392739274
+    },
+    "MLA2032": {
+      "count": 295,
+      "percent_used": 87.45762711864407,
+      "accuracy": 0.9050847457627119
+    },
+    "MLA3361": {
+      "count": 284,
+      "percent_used": 36.267605633802816,
+      "accuracy": 0.9577464788732394
+    },
+    "MLA85960": {
+      "count": 267,
+      "percent_used": 4.119850187265917,
+      "accuracy": 0.9625468164794008
+    },
+    "MLA41064": {
+      "count": 265,
+      "percent_used": 85.28301886792453,
+      "accuracy": 0.8943396226415095
+    },
+    "MLA119287": {
+      "count": 243,
+      "percent_used": 9.876543209876543,
+      "accuracy": 0.9218106995884774
+    }
+  },
+  "runtime_seconds": 451.94
+}
