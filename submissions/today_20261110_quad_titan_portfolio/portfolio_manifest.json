@@ -1,0 +1,93 @@
+{
+  "portfolio_date": "2026-11-10",
+  "anchor_event": "EVT-143",
+  "anchor_file": "submissions/portfolio_20261109_podium_ladder/submission_slot5_surgical_quad_rank6_breakthrough.csv",
+  "anchor_public_score": 0.94761,
+  "anchor_public_hits": 19898,
+  "slots": [
+    {
+      "filename": "submission_slot1_quad_titan_surgical_top8.csv",
+      "filepath": "submissions/today_20261110_quad_titan_portfolio\\submission_slot1_quad_titan_surgical_top8.csv",
+      "sha256": "6bc54728761a75f8fa4461df698e015f24be1cbe10bd6b4929b05c421892cc3e",
+      "description": "Slot 1: Top 8 Surgical Flips (Ultra-pure, P>=96.8%)",
+      "flips_count": 8,
+      "flips_breakdown": {
+        "used_to_new": 4,
+        "new_to_used": 4
+      },
+      "mean_posterior_confidence": 0.899,
+      "expected_public_gain_hits": 4.47,
+      "expected_public_score": 0.94783
+    },
+    {
+      "filename": "submission_slot2_quad_titan_surgical_top20.csv",
+      "filepath": "submissions/today_20261110_quad_titan_portfolio\\submission_slot2_quad_titan_surgical_top20.csv",
+      "sha256": "a08cbc25993ec709d580cea788eedcc9198f929ca1a8a31b7b1ccd2d812ecd66",
+      "description": "Slot 2: Top 20 Surgical Flips (High-margin, P>=93.6%)",
+      "flips_count": 20,
+      "flips_breakdown": {
+        "used_to_new": 4,
+        "new_to_used": 16
+      },
+      "mean_posterior_confidence": 0.885,
+      "expected_public_gain_hits": 10.78,
+      "expected_public_score": 0.94813
+    },
+    {
+      "filename": "submission_slot3_quad_titan_certified42.csv",
+      "filepath": "submissions/today_20261110_quad_titan_portfolio\\submission_slot3_quad_titan_certified42.csv",
+      "sha256": "39df325dcbf736069ccf3a16b5bbeb67c6343320cdfe06943027f1df54920b9b",
+      "description": "Slot 3: Certified 42 Flips (Full 5-Pillar Corroborated)",
+      "flips_count": 42,
+      "flips_breakdown": {
+        "used_to_new": 5,
+        "new_to_used": 37
+      },
+      "mean_posterior_confidence": 0.8678,
+      "expected_public_gain_hits": 21.62,
+      "expected_public_score": 0.94864
+    },
+    {
+      "filename": "submission_slot4_quad_titan_expanded_top75.csv",
+      "filepath": "submissions/today_20261110_quad_titan_portfolio\\submission_slot4_quad_titan_expanded_top75.csv",
+      "sha256": "13cbb96955e1a2c9c634b0a88c859a26ea2807c27e52209ff96bd5307d64dc90",
+      "description": "Slot 4: Expanded 75 Concordant Flips (Podium Attack)",
+      "flips_count": 75,
+      "flips_breakdown": {
+        "used_to_new": 20,
+        "new_to_used": 55
+      },
+      "mean_posterior_confidence": 0.8254,
+      "expected_public_gain_hits": 34.17,
+      "expected_public_score": 0.94924
+    },
+    {
+      "filename": "submission_slot5_quad_titan_climax_top102.csv",
+      "filepath": "submissions/today_20261110_quad_titan_portfolio\\submission_slot5_quad_titan_climax_top102.csv",
+      "sha256": "b631e08b4d3399a40d65d1855d1f85aa7271d25c8e9bf2d2d6ad3df714d4d3ec",
+      "description": "Slot 5: Podium Climax 102 Flips (0.94957 Podium Contender)",
+      "flips_count": 102,
+      "flips_breakdown": {
+        "used_to_new": 27,
+        "new_to_used": 75
+      },
+      "mean_posterior_confidence": 0.7875,
+      "expected_public_gain_hits": 41.05,
+      "expected_public_score": 0.94957
+    },
+    {
+      "filename": "submission_slot5b_quad_titan_breakthrough_top165.csv",
+      "filepath": "submissions/today_20261110_quad_titan_portfolio\\submission_slot5b_quad_titan_breakthrough_top165.csv",
+      "sha256": "f0c346def0e32f208c90a712317e5897a2ae60adb756dbdaf75d725b7b3d7ca1",
+      "description": "Slot 5b: Full 0.95000+ Breakthrough Target (165 Concordant Flips)",
+      "flips_count": 165,
+      "flips_breakdown": {
+        "used_to_new": 61,
+        "new_to_used": 104
+      },
+      "mean_posterior_confidence": 0.7202,
+      "expected_public_gain_hits": 50.87,
+      "expected_public_score": 0.95004
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "title": "Bayesian Posterior Confidence Estimation and Pattern Extrapolation",
+  "protocol": "CX-0143 Compliant Bounded Bayesian Updating (No Rank-Deficient Deconvolution)",
+  "pattern_extrapolations": {
+    "repuestos_averia": {
+      "description": "Art\u00edculos para repuesto o desarme expl\u00edcito",
+      "target_class": "used",
+      "train_precision": 0.963,
+      "test_matches_count": 12,
+      "agreements_with_anchor": 12,
+      "disagreements_with_anchor": 0,
+      "mean_p_used_quad": 0.8803
+    },
+    "no_funciona": {
+      "description": "Art\u00edculos que no funcionan o presentan fallas",
+      "target_class": "used",
+      "train_precision": 1.0,
+      "test_matches_count": 10,
+      "agreements_with_anchor": 10,
+      "disagreements_with_anchor": 0,
+      "mean_p_used_quad": 0.8128
+    },
+    "caja_sellada": {
+      "description": "Art\u00edculos sellados de f\u00e1brica, precintados o en bl\u00edster",
+      "target_class": "new",
+      "train_precision": 0.9189,
+      "test_matches_count": 17,
+      "agreements_with_anchor": 15,
+      "disagreements_with_anchor": 2,
+      "mean_p_used_quad": 0.2656
+    },
+    "digital_download": {
+      "description": "Descarga o env\u00edo digital inmediato garantizado",
+      "target_class": "new",
+      "train_precision": 1.0,
+      "test_matches_count": 2,
+      "agreements_with_anchor": 2,
+      "disagreements_with_anchor": 0,
+      "mean_p_used_quad": 0.0365
+    },
+    "digital_ebook": {
+      "description": "Contenido digital descargable (libros, ebooks, PDFs)",
+      "target_class": "new",
+      "train_precision": 0.9499,
+      "test_matches_count": 185,
+      "agreements_with_anchor": 177,
+      "disagreements_with_anchor": 8,
+      "mean_p_used_quad": 0.0965
+    },
+    "antiguedad_estricta": {
+      "description": "Antig\u00fcedades y objetos de \u00e9poca aut\u00e9nticos",
+      "target_class": "used",
+      "train_precision": 0.8957,
+      "test_matches_count": 867,
+      "agreements_with_anchor": 782,
+      "disagreements_with_anchor": 85,
+      "mean_p_used_quad": 0.8724
+    },
+    "usado_strict": {
+      "description": "Condici\u00f3n de usado declarada expl\u00edcitamente en el t\u00edtulo",
+      "target_class": "used",
+      "train_precision": 0.9833,
+      "test_matches_count": 242,
+      "agreements_with_anchor": 241,
+      "disagreements_with_anchor": 1,
+      "mean_p_used_quad": 0.9648
+    },
+    "un_solo_uso": {
+      "description": "Art\u00edculos con un solo uso o poqu\u00edsimo uso (100% used en train)",
+      "target_class": "used",
+      "train_precision": 1.0,
+      "test_matches_count": 41,
+      "agreements_with_anchor": 40,
+      "disagreements_with_anchor": 1,
+      "mean_p_used_quad": 0.8858
+    },
+    "como_nuevo": {
+      "description": "Art\u00edculos usados en condici\u00f3n como nuevo / igual a nuevo",
+      "target_class": "used",
+      "train_precision": 0.9741,
+      "test_matches_count": 93,
+      "agreements_with_anchor": 90,
+      "disagreements_with_anchor": 3,
+      "mean_p_used_quad": 0.8525
+    },
+    "impecable_vitrina": {
+      "description": "Art\u00edculos de vitrina o impecable estado (100% used en train)",
+      "target_class": "used",
+      "train_precision": 1.0,
+      "test_matches_count": 12,
+      "agreements_with_anchor": 11,
+      "disagreements_with_anchor": 1,
+      "mean_p_used_quad": 0.9293
+    },
+    "para_reparar": {
+      "description": "Art\u00edculos para reparar (100% used en train)",
+      "target_class": "used",
+      "train_precision": 1.0,
+      "test_matches_count": 15,
+      "agreements_with_anchor": 15,
+      "disagreements_with_anchor": 0,
+      "mean_p_used_quad": 0.8314
+    }
+  },
+  "posterior_summary": {
+    "total_items": 30000,
+    "agreements_with_anchor": 29601,
+    "disagreements_with_anchor": 399,
+    "disagreements_conf_gt_95": 9,
+    "disagreements_conf_gt_90": 24,
+    "mean_posterior_confidence": 0.9401761466666668,
+    "confidence_quantiles": {
+      "q25": 0.929,
+      "q50": 0.97505,
+      "q75": 0.9932,
+      "q90": 0.9982,
+      "q99": 0.9997
+    }
+  }
+}
