@@ -84,6 +84,20 @@ if os.path.exists(et_path):
 else:
     print("Stream extratrees_bagging not yet on disk (skipping for initial pass)")
 
+# Stream 6: Deep LightGBM Focal (if ready)
+deep_lgb_path = 'results/agent_deep_lgbm_focal_20261110/test_probabilities_deep_lgbm.csv'
+if os.path.exists(deep_lgb_path):
+    deep_lgb_df = pd.read_csv(deep_lgb_path)
+    streams['deep_lgbm_focal'] = deep_lgb_df['p_used_deep_lgbm'].values
+    print("Loaded Stream: deep_lgbm_focal (150 leaves, depth 12)")
+
+# Stream 7: Rich N-Gram Text (if ready)
+rich_text_path = 'results/agent_rich_ngram_text_20261110/test_probabilities_rich_ngram.csv'
+if os.path.exists(rich_text_path):
+    rich_text_df = pd.read_csv(rich_text_path)
+    streams['rich_ngram_text'] = rich_text_df['p_used_rich_ngram'].values
+    print("Loaded Stream: rich_ngram_text (140k words 1-3 + chars 2-6)")
+
 # 4. Probe-Crossing Audit for Each Stream
 print("\n--- PROBE-CROSSING AUDIT PER STREAM ---")
 stream_names = list(streams.keys())

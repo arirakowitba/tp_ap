@@ -1,19 +1,23 @@
 {
   "title": "Iterative Probe-Crossing Engine Report",
-  "timestamp": "2026-11-10T07:03:58Z",
+  "timestamp": "2026-11-10T07:17:28Z",
   "models_crossed": [
     "tri_titan_trees",
     "sparse_text_148k",
     "char_morphology",
     "transductive_blend",
-    "extratrees_bagging"
+    "extratrees_bagging",
+    "deep_lgbm_focal",
+    "rich_ngram_text"
   ],
   "optimal_weights": {
-    "tri_titan_trees": 0.5944,
-    "sparse_text_148k": 0.1369,
+    "tri_titan_trees": 0.6867,
+    "sparse_text_148k": 0.0,
     "char_morphology": 0.0,
-    "transductive_blend": 0.2686,
-    "extratrees_bagging": 0.0
+    "transductive_blend": 0.3133,
+    "extratrees_bagging": 0.0,
+    "deep_lgbm_focal": 0.0,
+    "rich_ngram_text": 0.0
   },
   "probe_audit": {
     "tri_titan_trees": {
@@ -45,12 +49,24 @@
       "agree_inv_elite": 0.5132325141776938,
       "winners_correct": 4,
       "total_winners": 7
+    },
+    "deep_lgbm_focal": {
+      "agree_inv_all": 0.8993254698264979,
+      "agree_inv_elite": 0.5841209829867675,
+      "winners_correct": 7,
+      "total_winners": 7
+    },
+    "rich_ngram_text": {
+      "agree_inv_all": 0.8623525592468347,
+      "agree_inv_elite": 0.5619092627599244,
+      "winners_correct": 7,
+      "total_winners": 7
     }
   },
   "disagreements_summary": {
-    "total": 428,
-    "conf_ge_95": 5,
-    "conf_ge_90": 12,
-    "conf_ge_85": 23
+    "total": 496,
+    "conf_ge_95": 6,
+    "conf_ge_90": 19,
+    "conf_ge_85": 42
   }
 }
