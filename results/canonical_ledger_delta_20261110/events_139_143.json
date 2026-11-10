@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-11-10",
+  "base_catalog": {
+    "path": "results/canonical_ledger_delta_20261108/events_134_138.json",
+    "counts": {
+      "total_events": 138,
+      "prior_anchor": "EVT-132 (score 0.94752)"
+    }
+  },
+  "delta_source": {
+    "antigravity_head": "0b4215d",
+    "binding_limitation": "Scores are associated by filename and commit chronology as reported from manual Kaggle submissions by Ariel Rakowszczyk. Con Npub=20998 estimado y score redondeado, public_hits es inferido."
+  },
+  "events": [
+    {
+      "proposed_event_id": "EVT-139",
+      "name": "submission_slot1_top20_rank4_probe.csv",
+      "score": 0.94723,
+      "public_hits": 19890,
+      "vector_commit": "03cd5b9b4c6e7bfe9e5e8c4cb3a91bdd8ffff628",
+      "normalized_vector_sha256": "1f6714794954beea3980da0912ba227415281252cc0c39d909e02e4a9110eeba",
+      "n_rows": 30000,
+      "n_flips_vs_prior_anchor": 20,
+      "direction": "new_to_used"
+    },
+    {
+      "proposed_event_id": "EVT-140",
+      "name": "submission_slot2_empirical_pure_used2new_top18.csv",
+      "score": 0.94728,
+      "public_hits": 19891,
+      "vector_commit": "7f7c787d5ec2061c4e424b03c52ac6c103c8cc1d",
+      "normalized_vector_sha256": "746ad20273a2c9673e918a203faf398df8f51c0ff5856e0beac6c1d2f107cdaa",
+      "n_rows": 30000,
+      "n_flips_vs_prior_anchor": 18,
+      "direction": "used_to_new"
+    },
+    {
+      "proposed_event_id": "EVT-141",
+      "name": "submission_slot3_12model_nested_meta_stacker.csv",
+      "score": 0.94214,
+      "public_hits": 19783,
+      "vector_commit": "7f7c787d5ec2061c4e424b03c52ac6c103c8cc1d",
+      "normalized_vector_sha256": "7d20c9f077ae4e829c7073141b3246da4282fe5064367a0c19567f942735015a",
+      "n_rows": 30000,
+      "n_flips_vs_prior_anchor": 636,
+      "direction": "mixed"
+    },
+    {
+      "proposed_event_id": "EVT-142",
+      "name": "submission_slot4_hybrid_seen_router_c4.csv",
+      "score": 0.93104,
+      "public_hits": 19550,
+      "vector_commit": "7f7c787d5ec2061c4e424b03c52ac6c103c8cc1d",
+      "normalized_vector_sha256": "86a4676d3946582eb079b074e536260293def6356a244dca278dad6724b97c3a",
+      "n_rows": 30000,
+      "n_flips_vs_prior_anchor": 749,
+      "direction": "mixed"
+    },
+    {
+      "proposed_event_id": "EVT-143",
+      "name": "submission_slot5_surgical_quad_rank6_breakthrough.csv",
+      "score": 0.94761,
+      "public_hits": 19898,
+      "vector_commit": "7f7c787d5ec2061c4e424b03c52ac6c103c8cc1d",
+      "normalized_vector_sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+      "n_rows": 30000,
+      "n_flips_vs_prior_anchor": 4,
+      "direction": "mixed"
+    }
+  ]
+}

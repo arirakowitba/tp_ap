@@ -1014,5 +1014,8 @@
       "justification": "Model consensus 65.5% (76/116 submissions)",
       "rank": 50
     }
-  ]
+  ],
+  "status": "BLOCKED",
+  "invalid_for_label_inference": true,
+  "block_reason": "Unweighted linear probe deconvolution on ill-conditioned system mixes distinct vector generations with unknown public membership and rounded scores. Individual label posteriors are uncalibrated and invalid."
 }

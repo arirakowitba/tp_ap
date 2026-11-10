@@ -1,0 +1,6 @@
+{
+  "status": "BLOCKED",
+  "invalid_for_label_inference": true,
+  "file": "results/item_label_confidences_from_probes.csv",
+  "reason": "Blocked per CX-0143: probe deconvolution on ill-conditioned rank-deficient system cannot infer individual test labels or assert calibrated probabilities."
+}
