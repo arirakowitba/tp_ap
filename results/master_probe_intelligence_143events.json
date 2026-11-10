@@ -1,0 +1,125 @@
+{
+  "summary": {
+    "total_events_cataloged": 54,
+    "current_anchor": "EVT-143",
+    "current_anchor_score": 0.94761,
+    "current_anchor_hits": 19898,
+    "total_items_in_test": 30000,
+    "items_never_flipped_vs_evt143": 27723,
+    "items_flipped_vs_evt143": 2277,
+    "verified_corrections_used_count": 4,
+    "verified_corrections_new_count": 8
+  },
+  "verified_corrections_to_used": [
+    {
+      "id": 11779,
+      "current": "new",
+      "target": "used",
+      "cue": "buen estado (100% used in train)",
+      "price": 699.99,
+      "title": "Telefonos Ip Avaya 4610-sw Buen Estado Sip/h323 - Oportunida",
+      "category_id": "MLA73040"
+    },
+    {
+      "id": 29386,
+      "current": "new",
+      "target": "used",
+      "cue": "excelente estado (99.2% used in train)",
+      "price": 250.0,
+      "title": "Fallout New Vegas Excelente Estado Ps3 Nuevo",
+      "category_id": "MLA90013"
+    },
+    {
+      "id": 4256,
+      "current": "new",
+      "target": "used",
+      "cue": "estampillas usadas (100% used in train)",
+      "price": 36.0,
+      "title": "Argentina - Imperdible Set De Estampillas Usadas!",
+      "category_id": "MLA2158"
+    },
+    {
+      "id": 11421,
+      "current": "new",
+      "target": "used",
+      "cue": "desarme (reparar/usado)",
+      "price": 150.0,
+      "title": "Desarme Netbook Bangho B-x0x1",
+      "category_id": "MLA84579"
+    }
+  ],
+  "verified_corrections_to_new": [
+    {
+      "id": 435,
+      "current": "used",
+      "target": "new",
+      "cue": "a estrenar (97.1% new in train)",
+      "price": 1160000.0,
+      "title": "Local Comercial A Estrenar - Fin De Obra 11/15 - 59 E/ 2 Y 3",
+      "category_id": "MLA79244"
+    },
+    {
+      "id": 3777,
+      "current": "used",
+      "target": "new",
+      "cue": "a estrenar (97.1% new in train)",
+      "price": 190.0,
+      "title": "Gap Chaleco Unico A Estrenar Talle S $190",
+      "category_id": "MLA109347"
+    },
+    {
+      "id": 19857,
+      "current": "used",
+      "target": "new",
+      "cue": "a estrenar (97.1% new in train)",
+      "price": 190.0,
+      "title": "Musculosa M/l Bien Larga A Estrenar",
+      "category_id": "MLA119326"
+    },
+    {
+      "id": 1477,
+      "current": "used",
+      "target": "new",
+      "cue": "sobres cerrados (98.1% new in train)",
+      "price": 100.0,
+      "title": "Figuritas Yu-gi-ho-10 Sobres Cerrados De 5 C/u !!oferta!!!!!",
+      "category_id": "MLA8290"
+    },
+    {
+      "id": 13224,
+      "current": "used",
+      "target": "new",
+      "cue": "sobres cerrados (98.1% new in train)",
+      "price": 33.0,
+      "title": "Figuritas Lote De 4 Sobres Cerrados De  Coleccion Magia 1982",
+      "category_id": "MLA7112"
+    },
+    {
+      "id": 6627,
+      "current": "used",
+      "target": "new",
+      "cue": "0 km sin rodar (81.5% new in train)",
+      "price": 150000.0,
+      "title": "2014 0 Km Sin Rodar Y Sin Patentar, Vendo Urgente",
+      "category_id": "MLA29614"
+    },
+    {
+      "id": 14438,
+      "current": "used",
+      "target": "new",
+      "cue": "0 km sin rodar (81.5% new in train)",
+      "price": 188300.0,
+      "title": "Chevrolet Onix 1.4 Lt \u00a80 Km\u00a8",
+      "category_id": "MLA117201"
+    },
+    {
+      "id": 15441,
+      "current": "used",
+      "target": "new",
+      "cue": "0 km sin rodar (81.5% new in train)",
+      "price": 250000.0,
+      "title": "Volkswagen Vento 2.5 Luxury 170 Hp  2013 , Igual A 0 Km",
+      "category_id": "MLA29483"
+    }
+  ]
+}
