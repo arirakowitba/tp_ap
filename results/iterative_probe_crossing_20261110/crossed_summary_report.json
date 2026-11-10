@@ -1,5 +1,9 @@
 {
   "title": "Iterative Probe-Crossing Engine Report",
+  "qualification_status": "EXPLORATORY / NO_QUALIFIED",
+  "invalid_as_ground_truth": true,
+  "invalid_for_label_inference": true,
+  "notes": "Blocked per CX-0144 / CX-0145. Heuristic ranking only; not qualified for Kaggle submission.",
   "timestamp": "2026-11-10T12:10:13Z",
   "models_crossed": [
     "tri_titan_trees",

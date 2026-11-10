@@ -1,4 +1,7 @@
 {
+  "status": "BLOCKED",
+  "invalid_for_label_inference": true,
+  "reason": "Blocked per CX-0143 and CX-0145: Probe deconvolution on rank-deficient system cannot infer individual test labels or calibrated probabilities.",
   "title": "Item Label Empirical Confidences and Bayesian Probe Deconvolution",
   "competition": "AP-2026-Q-2 (MercadoLibre Item Condition)",
   "total_test_items": 30000,
