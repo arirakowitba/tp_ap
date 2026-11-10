@@ -1,0 +1,186 @@
+name: Cloud Model Training (Zero Local RAM)
+
+on:
+  workflow_dispatch:
+    inputs:
+      model_type:
+        description: 'Model to train in cloud'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - 'all'
+          - 'catboost_depth8'
+          - 'pyramid_mlp'
+          - 'transductive_cycle2'
+
+jobs:
+  train-in-cloud:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: antigravity/overnight-recovery-coordination-20261030
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install Cloud Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy scipy pandas scikit-learn lightgbm xgboost catboost psutil kaggle
+
+      - name: Download Competition Data (if not present)
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: |
+          python -c "
+          import os, subprocess, zipfile
+
+          data_dir = 'data/ap_2026_q_2/raw'
+          tr_path = os.path.join(data_dir, 'train_data.jsonlines')
+          te_path = os.path.join(data_dir, 'test_data.jsonlines')
+
+          if os.path.exists(tr_path) and os.path.exists(te_path):
+              print(f'Data already present in {data_dir}.')
+          else:
+              print('Data not found locally in repo. Checking Kaggle credentials...')
+              user = os.environ.get('KAGGLE_USERNAME')
+              key = os.environ.get('KAGGLE_KEY')
+              if user and key:
+                  print('Kaggle credentials found. Downloading competition dataset...')
+                  os.makedirs(data_dir, exist_ok=True)
+                  os.environ['KAGGLE_CONFIG_DIR'] = '/tmp/.kaggle'
+                  os.makedirs('/tmp/.kaggle', exist_ok=True)
+                  with open('/tmp/.kaggle/kaggle.json', 'w') as kf:
+                      import json
+                      json.dump({'username': user, 'key': key}, kf)
+                  os.chmod('/tmp/.kaggle/kaggle.json', 0o600)
+                  subprocess.run(['kaggle', 'competitions', 'download', '-c', 'ap-2026-q-2', '-p', 'data/ap_2026_q_2'], check=True)
+                  for f in os.listdir('data/ap_2026_q_2'):
+                      if f.endswith('.zip'):
+                          with zipfile.ZipFile(os.path.join('data/ap_2026_q_2', f), 'r') as zf:
+                              zf.extractall(data_dir)
+                          print(f'Extracted {f}')
+              else:
+                  print('Notice: KAGGLE_USERNAME / KAGGLE_KEY repository secrets not set.')
+                  print('For zero-RAM cloud training via GitHub Actions, add KAGGLE_USERNAME and KAGGLE_KEY in repo Settings -> Secrets and variables -> Actions.')
+          "
+
+      - name: Display Cloud System Resources
+        run: |
+          python -c "
+          import psutil
+          mem = psutil.virtual_memory()
+          print(f'Cloud VM Total RAM: {mem.total / 1e9:.2f} GB')
+          print(f'Cloud VM CPU Cores: {psutil.cpu_count()}')
+          "
+
+      - name: Train CatBoost Depth 8 (Cloud)
+        if: ${{ github.event.inputs.model_type == 'all' || github.event.inputs.model_type == 'catboost_depth8' }}
+        run: |
+          python -c "
+          import os, json, time, numpy as np, pandas as pd
+          from sklearn.model_selection import StratifiedKFold
+          from sklearn.feature_extraction.text import TfidfVectorizer
+          from sklearn.decomposition import TruncatedSVD
+          from catboost import CatBoostClassifier
+          from sklearn.metrics import accuracy_score, roc_auc_score
+
+          print('=== CLOUD TRAINING: CATBOOST DEPTH 8 ===')
+          with open('data/ap_2026_q_2/raw/train_data.jsonlines', encoding='utf-8') as f:
+              tr_data = [json.loads(line) for line in f]
+          with open('data/ap_2026_q_2/raw/test_data.jsonlines', encoding='utf-8') as f:
+              te_data = [json.loads(line) for line in f]
+
+          tr_titles = [d.get('title', '') for d in tr_data]
+          te_titles = [d.get('title', '') for d in te_data]
+          y_train = np.array([1 if d['condition'] == 'new' else 0 for d in tr_data], dtype=np.int8)
+
+          print('Vectorizing text (120k TF-IDF + 150 SVD)...')
+          vec = TfidfVectorizer(ngram_range=(1, 2), min_df=3, max_features=120000, sublinear_tf=True)
+          X_all = vec.fit_transform(tr_titles + te_titles)
+          svd = TruncatedSVD(n_components=150, random_state=42)
+          X_svd = svd.fit_transform(X_all)
+          X_tr = X_svd[:len(tr_titles)]
+          X_te = X_svd[len(tr_titles):]
+
+          oof_cat = np.zeros(len(tr_titles), dtype=np.float32)
+          test_cat = np.zeros(len(te_titles), dtype=np.float32)
+          skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=777)
+
+          for fold, (train_idx, val_idx) in enumerate(skf.split(X_tr, y_train)):
+              clf = CatBoostClassifier(iterations=2000, learning_rate=0.035, depth=8, l2_leaf_reg=6.0, thread_count=-1, random_seed=777+fold, verbose=200)
+              clf.fit(X_tr[train_idx], y_train[train_idx], eval_set=(X_tr[val_idx], y_train[val_idx]), early_stopping_rounds=100)
+              v_p = clf.predict_proba(X_tr[val_idx])[:, 1]
+              oof_cat[val_idx] = v_p
+              test_cat += clf.predict_proba(X_te)[:, 1] / 5.0
+              print(f'Fold {fold+1} Acc: {accuracy_score(y_train[val_idx], (v_p >= 0.5).astype(int)):.5f}')
+
+          os.makedirs('results/deep_catboost_depth8_cloud', exist_ok=True)
+          np.savez_compressed('results/deep_catboost_depth8_cloud/catboost_depth8_predictions.npz', oof_cat=oof_cat, test_cat=test_cat)
+          print(f'Overall CatBoost OOF Acc: {accuracy_score(y_train, (oof_cat >= 0.5).astype(int)):.5f} | AUC: {roc_auc_score(y_train, oof_cat):.5f}')
+          "
+
+      - name: Train Pyramid MLP (Cloud)
+        if: ${{ github.event.inputs.model_type == 'all' || github.event.inputs.model_type == 'pyramid_mlp' }}
+        run: |
+          python -c "
+          import os, json, time, numpy as np, pandas as pd
+          from sklearn.model_selection import StratifiedKFold
+          from sklearn.feature_extraction.text import TfidfVectorizer
+          from sklearn.decomposition import TruncatedSVD
+          from sklearn.neural_network import MLPClassifier
+          from sklearn.metrics import accuracy_score, roc_auc_score
+
+          print('=== CLOUD TRAINING: PYRAMID MLP (1024-512-256-128) ===')
+          with open('data/ap_2026_q_2/raw/train_data.jsonlines', encoding='utf-8') as f:
+              tr_data = [json.loads(line) for line in f]
+          with open('data/ap_2026_q_2/raw/test_data.jsonlines', encoding='utf-8') as f:
+              te_data = [json.loads(line) for line in f]
+
+          tr_titles = [d.get('title', '') for d in tr_data]
+          te_titles = [d.get('title', '') for d in te_data]
+          y_train = np.array([1 if d['condition'] == 'new' else 0 for d in tr_data], dtype=np.int8)
+
+          print('Vectorizing text (120k TF-IDF + 200 SVD)...')
+          vec = TfidfVectorizer(ngram_range=(1, 2), min_df=3, max_features=120000, sublinear_tf=True)
+          X_all = vec.fit_transform(tr_titles + te_titles)
+          svd = TruncatedSVD(n_components=200, random_state=42)
+          X_svd = svd.fit_transform(X_all)
+          X_tr = X_svd[:len(tr_titles)]
+          X_te = X_svd[len(tr_titles):]
+
+          oof_mlp = np.zeros(len(tr_titles), dtype=np.float32)
+          test_mlp = np.zeros(len(te_titles), dtype=np.float32)
+          skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=9999)
+
+          for fold, (train_idx, val_idx) in enumerate(skf.split(X_tr, y_train)):
+              clf = MLPClassifier(hidden_layer_sizes=(1024, 512, 256, 128), activation='relu', solver='adam', alpha=1e-4, batch_size=256, early_stopping=True, max_iter=150, random_state=9999+fold)
+              clf.fit(X_tr[train_idx], y_train[train_idx])
+              v_p = clf.predict_proba(X_tr[val_idx])[:, 1]
+              oof_mlp[val_idx] = v_p
+              test_mlp += clf.predict_proba(X_te)[:, 1] / 5.0
+              print(f'Fold {fold+1} Acc: {accuracy_score(y_train[val_idx], (v_p >= 0.5).astype(int)):.5f}')
+
+          os.makedirs('results/deep_neural_stacker_cloud', exist_ok=True)
+          np.savez_compressed('results/deep_neural_stacker_cloud/neural_stacker_predictions.npz', oof_mlp=oof_mlp, test_mlp=test_mlp)
+          print(f'Overall Pyramid MLP OOF Acc: {accuracy_score(y_train, (oof_mlp >= 0.5).astype(int)):.5f} | AUC: {roc_auc_score(y_train, oof_mlp):.5f}')
+          "
+
+      - name: Commit and Push Cloud Artifacts to Branch
+        run: |
+          git config --local user.email "cloud-runner@github.com"
+          git config --local user.name "Cloud Runner"
+          git add results/
+          git status
+          git diff-index --quiet HEAD || git commit -m "feat(cloud): add cloud-trained model artifacts from GitHub Actions"
+          git push origin antigravity/overnight-recovery-coordination-20261030
