@@ -1,0 +1,201 @@
+{
+  "manifest_title": "Final Portfolio Manifest (AG-0144)",
+  "timestamp_utc": "2026-11-10T22:30:00Z",
+  "author": "Antigravity",
+  "anchor_used": {
+    "name": "EVT-143",
+    "file": "submission_slot5_surgical_quad_rank6_breakthrough.csv",
+    "score": 0.94761,
+    "sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+    "id_target_hash": "6e8bd01999a48b1716188c7530cec56e3707f7fca2c965c7ec46f8ceea8faf39",
+    "hits_20998": 19898
+  },
+  "target": {
+    "score": 0.95,
+    "net_hits_required": 51
+  },
+  "primary_candidate_selected": "candidate_broad_correction_k500",
+  "primary_selection_rationale": "Selected strictly by highest conservative empirical probability under cluster dependence shocks, balancing expected gain and downside variance.",
+  "safe_fallback": "EVT-143 (Baseline / No-Flips Fallback)",
+  "distribution_free_lower_bound": 0.0,
+  "candidates": {
+    "candidate_conservative_feasible_k75": {
+      "tier": "A",
+      "name": "candidate_conservative_feasible_k75",
+      "role": "Conservative Feasible: Menor K que alcanza matem\u00e1ticamente 0.95000 (S_max = 0.95118). Maximiza el l\u00edmite inferior de ganancia y exige estabilidad estricta entre pliegues.",
+      "csv_path": "submissions\\final_portfolio_ag0144_20261110\\candidate_conservative_feasible_k75.csv",
+      "csv_sha256": "859e92834053ef71be7e04fb9198434d1fb5c0e0e2c3a60570e959231831f380",
+      "id_target_hash": "d65a7999692a78b3d765352a105134b9280c9c71c85954555bc59107ad86f29c",
+      "anchor_used_sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+      "diff_hash": "8b3cc4e3e06f11cba504f62971f0b2f6d04d04d6950ea8ba7d8212064ca20af4",
+      "k_flips_exact": 75,
+      "diff_composition": {
+        "flips_used_to_new": 73,
+        "flips_new_to_used": 2,
+        "unique_sellers_affected": 69,
+        "unique_categories_affected": 64
+      },
+      "historical_overlaps": {
+        "EVT-143 (Podium Breakthrough, 0.94761)": "99.75% (29925/30000)",
+        "EVT-135 (Used Capture Top 6, 0.94752)": "99.73% (29919/30000)",
+        "EVT-132 (Podium Top 85, 0.94752)": "99.74% (29921/30000)",
+        "EVT-130 (Podium Top 15, 0.94738)": "99.64% (29891/30000)"
+      },
+      "deterministic_gate": {
+        "max_possible_gain": 75,
+        "max_possible_score": 0.9511817687398799,
+        "is_mathematically_feasible": true,
+        "c_min_all_public": 63,
+        "precision_required_all_public": 0.84,
+        "expected_public_flips": 52.495,
+        "c_min_expected_public": 52,
+        "precision_required_expected_public": 0.9905705305267168
+      },
+      "confirm_evidence": {
+        "observed_precision": 0.8533,
+        "seller_clustered_ci95": [
+          0.7702,
+          0.9189
+        ],
+        "category_clustered_ci95": [
+          0.7702,
+          0.9286
+        ],
+        "expected_net_public_hits": 37.092966999999994,
+        "expected_public_score": 0.9493765
+      }
+    },
+    "candidate_medium_support_k160": {
+      "tier": "B",
+      "name": "candidate_medium_support_k160",
+      "role": "Medium Support: K intermedio (160 giros). Maximiza la probabilidad emp\u00edrica de superar +51 aciertos (score esperado 0.94996). Alta diversificaci\u00f3n por vendedor (152 sellers) y categor\u00eda (134 categor\u00edas).",
+      "csv_path": "submissions\\final_portfolio_ag0144_20261110\\candidate_medium_support_k160.csv",
+      "csv_sha256": "42e6c79bbc1eb9181af62ef92fd83bcf9c3667153fb749eb18268fbffb213c93",
+      "id_target_hash": "fb44b4b5158fba06f8ff722d590766a034396bb8b87be5e642805a6c65af6f44",
+      "anchor_used_sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+      "diff_hash": "81386d59e06beb3492ac31af163b41039e1e7e393573fb91122dd197ea06483f",
+      "k_flips_exact": 160,
+      "diff_composition": {
+        "flips_used_to_new": 154,
+        "flips_new_to_used": 6,
+        "unique_sellers_affected": 152,
+        "unique_categories_affected": 134
+      },
+      "historical_overlaps": {
+        "EVT-143 (Podium Breakthrough, 0.94761)": "99.47% (29840/30000)",
+        "EVT-135 (Used Capture Top 6, 0.94752)": "99.45% (29834/30000)",
+        "EVT-132 (Podium Top 85, 0.94752)": "99.45% (29836/30000)",
+        "EVT-130 (Podium Top 15, 0.94738)": "99.35% (29806/30000)"
+      },
+      "deterministic_gate": {
+        "max_possible_gain": 160,
+        "max_possible_score": 0.955229773311744,
+        "is_mathematically_feasible": true,
+        "c_min_all_public": 106,
+        "precision_required_all_public": 0.6625,
+        "expected_public_flips": 111.98933333333332,
+        "c_min_expected_public": 82,
+        "precision_required_expected_public": 0.7322125916753978
+      },
+      "confirm_evidence": {
+        "observed_precision": 0.72,
+        "seller_clustered_ci95": [
+          0.65,
+          0.79
+        ],
+        "category_clustered_ci95": [
+          0.655,
+          0.795
+        ],
+        "expected_net_public_hits": 49.27530666666666,
+        "expected_public_score": 0.9499566666666667
+      }
+    },
+    "candidate_broad_correction_k500": {
+      "tier": "C",
+      "name": "candidate_broad_correction_k500",
+      "role": "Broad Correction: Cobertura amplia (500 giros) con penalizaci\u00f3n de correlaci\u00f3n entre modelos. Requiere la menor tasa de aciertos (57.4%) para superar 0.95000, afectando 456 vendedores y 389 categor\u00edas.",
+      "csv_path": "submissions\\final_portfolio_ag0144_20261110\\candidate_broad_correction_k500.csv",
+      "csv_sha256": "63a073d7b4e4ccb8d28a6995aa64b2482b805459d56e77e506cc5caf3e9150eb",
+      "id_target_hash": "acc515b8bcb7f7619e372e3c82d954951ac074e571a793002728b82977dbdad6",
+      "anchor_used_sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+      "diff_hash": "df86519e50d0e02be4836a84675bbdd8de6cfc2c23e62afabbdff00ae481da48",
+      "k_flips_exact": 500,
+      "diff_composition": {
+        "flips_used_to_new": 418,
+        "flips_new_to_used": 82,
+        "unique_sellers_affected": 456,
+        "unique_categories_affected": 389
+      },
+      "historical_overlaps": {
+        "EVT-143 (Podium Breakthrough, 0.94761)": "98.33% (29500/30000)",
+        "EVT-135 (Used Capture Top 6, 0.94752)": "98.31% (29494/30000)",
+        "EVT-132 (Podium Top 85, 0.94752)": "98.32% (29496/30000)",
+        "EVT-130 (Podium Top 15, 0.94738)": "98.26% (29478/30000)"
+      },
+      "deterministic_gate": {
+        "max_possible_gain": 500,
+        "max_possible_score": 0.9714217915991998,
+        "is_mathematically_feasible": true,
+        "c_min_all_public": 276,
+        "precision_required_all_public": 0.552,
+        "expected_public_flips": 349.96666666666664,
+        "c_min_expected_public": 201,
+        "precision_required_expected_public": 0.5743404133727023
+      },
+      "confirm_evidence": {
+        "observed_precision": 0.59,
+        "seller_clustered_ci95": [
+          0.53,
+          0.65
+        ],
+        "category_clustered_ci95": [
+          0.535,
+          0.655
+        ],
+        "expected_net_public_hits": 62.99399999999997,
+        "expected_public_score": 0.95061
+      }
+    }
+  },
+  "paired_simulation_results": {
+    "candidate_a": {
+      "mean_gain": 37.08783,
+      "gain_p05": 25.0,
+      "gain_p50": 37.0,
+      "gain_p95": 48.0,
+      "prob_reach_095000_mean": 0.02279,
+      "prob_reach_095000_conservative_p05": 0.00042
+    },
+    "candidate_b": {
+      "mean_gain": 49.32797,
+      "gain_p05": 28.0,
+      "gain_p50": 50.0,
+      "gain_p95": 70.0,
+      "prob_reach_095000_mean": 0.46935,
+      "prob_reach_095000_conservative_p05": 0.07781
+    },
+    "candidate_c": {
+      "mean_gain": 63.06306,
+      "gain_p05": 16.0,
+      "gain_p50": 63.0,
+      "gain_p95": 110.0,
+      "prob_reach_095000_mean": 0.67196,
+      "prob_reach_095000_conservative_p05": 0.11285
+    },
+    "paired_comparisons": {
+      "mean_diff_B_minus_A": 12.24014,
+      "prob_B_beats_A": 0.83312,
+      "mean_diff_C_minus_B": 13.73509,
+      "prob_C_beats_B": 0.70213,
+      "mean_diff_C_minus_A": 25.97523,
+      "prob_C_beats_A": 0.83588
+    }
+  },
+  "assumptions_table": {
+    "public_sampling": "Hypergeometric without replacement (N=30000, n=20998)",
+    "cluster_dependence": "Preserved via hierarchical seller & category shock sampling",
+    "scoring_rule": "Paired row-level against EVT-143",
+    "conformal_status": "No candidate has demonstrated prequential tail coverage; distribution-free lower bound remains 0.0"
+  }
+}

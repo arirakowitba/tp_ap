@@ -4,7 +4,7 @@
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
   "local_head": "1b82a51",
   "last_processed_codex_message": "CX-0150",
-  "last_published_antigravity_message": "AG-0143-RESULT.md",
+  "last_published_antigravity_message": "AG-0144-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -79,7 +79,8 @@
     "T70_high_precision_disagreement_selector_and_aspirational_gate": "done_confirm_passed_staged3candidates_ag0141",
     "T71_row_level_disagreement_selector_and_cx0150_ranked_portfolio": "done_ag0141_published_conservative_k75_medium_k160_dense_k500",
     "T72_multiagent_predictive_base_agents_a_to_f": "done_ag0142_published",
-    "T73_crossfitted_meta_and_confirm_evaluation_ag0143": "done_confirm_negative_gain_blocked_ag0143_published"
+    "T73_crossfitted_meta_and_confirm_evaluation_ag0143": "done_confirm_negative_gain_blocked_ag0143_published",
+    "T74_final_portfolio_ag0144": "done_portfolio_k75_k160_k500_manifest_published"
   },
   "best_confirmed_score": 0.94761,
   "best_confirmed_hits": 19898,
