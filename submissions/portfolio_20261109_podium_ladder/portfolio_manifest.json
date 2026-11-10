@@ -14,7 +14,10 @@
       "ID MLA8837524600 | El Cambio Del Poder - Alvin Toffler Plaz | Mean_P=0.86 | Votes=21/21",
       "ID MLA4786663937 | Diccionario Espa\u00f1ol - Italiano Ed Oceano | Mean_P=0.79 | Votes=21/21",
       "ID MLA3353845401 | Tasha Alexander - Herencia De Sangre | Mean_P=0.79 | Votes=21/21"
-    ]
+    ],
+    "exploratory": true,
+    "probability_calibrated": false,
+    "qualification_status": "HOLD"
   },
   {
     "slot": 2,
@@ -31,7 +34,10 @@
       "ID MLA8837524600 | El Cambio Del Poder - Alvin Toffler Plaz | Mean_P=0.86 | Votes=21/21",
       "ID MLA4786663937 | Diccionario Espa\u00f1ol - Italiano Ed Oceano | Mean_P=0.79 | Votes=21/21",
       "ID MLA3353845401 | Tasha Alexander - Herencia De Sangre | Mean_P=0.79 | Votes=21/21"
-    ]
+    ],
+    "exploratory": true,
+    "probability_calibrated": false,
+    "qualification_status": "HOLD"
   },
   {
     "slot": 3,
@@ -48,7 +54,10 @@
       "ID MLA8837524600 | El Cambio Del Poder - Alvin Toffler Plaz | Mean_P=0.86 | Votes=21/21",
       "ID MLA4786663937 | Diccionario Espa\u00f1ol - Italiano Ed Oceano | Mean_P=0.79 | Votes=21/21",
       "ID MLA3353845401 | Tasha Alexander - Herencia De Sangre | Mean_P=0.79 | Votes=21/21"
-    ]
+    ],
+    "exploratory": true,
+    "probability_calibrated": false,
+    "qualification_status": "HOLD"
   },
   {
     "slot": 4,
@@ -65,7 +74,10 @@
       "ID MLA8837524600 | El Cambio Del Poder - Alvin Toffler Plaz | Mean_P=0.86 | Votes=21/21",
       "ID MLA4786663937 | Diccionario Espa\u00f1ol - Italiano Ed Oceano | Mean_P=0.79 | Votes=21/21",
       "ID MLA3353845401 | Tasha Alexander - Herencia De Sangre | Mean_P=0.79 | Votes=21/21"
-    ]
+    ],
+    "exploratory": true,
+    "probability_calibrated": false,
+    "qualification_status": "HOLD"
   },
   {
     "slot": 5,
@@ -82,6 +94,9 @@
       "ID MLA8837524600 | El Cambio Del Poder - Alvin Toffler Plaz | Mean_P=0.86 | Votes=21/21",
       "ID MLA4786663937 | Diccionario Espa\u00f1ol - Italiano Ed Oceano | Mean_P=0.79 | Votes=21/21",
       "ID MLA3353845401 | Tasha Alexander - Herencia De Sangre | Mean_P=0.79 | Votes=21/21"
-    ]
+    ],
+    "exploratory": true,
+    "probability_calibrated": false,
+    "qualification_status": "HOLD"
   }
 ]

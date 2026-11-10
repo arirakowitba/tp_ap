@@ -1,12 +1,14 @@
-"""Real-Time Adaptive Sequential Bayesian Solver (AP-2026-Q-2).
+"""Exploratory Diagnostic Tool: Sequential Solver Monitor (AP-2026-Q-2).
 
-Computes exact batch slopes, updates posterior cluster distributions,
-and adaptively optimizes subsequent submissions to guarantee > 0.95000 on Slot 5.
+Status: EXPLORATORY (probability_calibrated=False).
+Monitors observed scores, logs empirical batch differences,
+and computes exploratory bounds under random public slice assumptions.
+NOTE: Public slice counts are random variables subject to hypergeometric sampling
+without replacement; estimated fixes/breaks are exploratory approximations, not
+calibrated guarantees (CX-0142 compliance).
 
 Usage:
     python scripts/solve_live_adaptive_slot.py --slot 1 --score 0.94810
-    python scripts/solve_live_adaptive_slot.py --slot 2 --score 0.94876
-    ...
 """
 
 import sys
@@ -155,31 +157,28 @@ def main():
         print(f"=== ADAPTIVE INFERENCE FOR SLOT {next_slot} & CLIMAX SLOT 5 ===")
         print("=" * 85)
 
-        # Bayesian projection
-        # If batch precision is strong (>= 80%), posterior confidence expands
+        # Exploratory projection
         if prec_batch >= 0.80:
-            print(f"CONFIRMACION DE ALTA PRECISION EMPIRICA ({prec_batch*100:.1f}% >= 80.0%).")
-            print(f"  - Senal verificada en test publico real.")
-            print(f"  - Varianza a posteriori reducida.")
-            print(f"  - Proyeccion Slot 5: Se ratifica o expande hacia meta >= 0.95076.")
-            print(f"\nSiguiente archivo a subir para Slot {next_slot}:")
+            print(f"EXPLORATORIO: Precision aparente de lote ({prec_batch*100:.1f}% >= 80.0%).")
+            print(f"  - Senal tentativa observada en feedback publico.")
+            print(f"  - NOTA: Sujeto a varianza hipergeometrica y shift de distribucion (exploratory=True).")
+            print(f"\nSiguiente candidato registrado para Slot {next_slot}:")
             print(f"  Archivo:    {next_info['filename']}")
             print(f"  Ruta:       {next_info['path']}")
             print(f"  Flips:      {next_info['flips_vs_anchor']}")
-            print(f"  Meta:       {next_info['role']}")
             print(f"  SHA-256 LF: {next_info['sha256_lf']}")
         elif prec_batch >= 0.65:
-            print(f"PRECISION MODERADA ({prec_batch*100:.1f}%). Pendiente positiva confirmada pero con friccion.")
-            print(f"  - Se recomienda continuar con Slot {next_slot} curado conservadoramente.")
-            print(f"\nSiguiente archivo a subir para Slot {next_slot}:")
+            print(f"EXPLORATORIO: Precision moderada ({prec_batch*100:.1f}%).")
+            print(f"  - Requiere aislamiento adicional de variables y validacion honesta.")
+            print(f"\nSiguiente candidato registrado para Slot {next_slot}:")
             print(f"  Archivo:    {next_info['filename']}")
             print(f"  Ruta:       {next_info['path']}")
             print(f"  Flips:      {next_info['flips_vs_anchor']}")
             print(f"  SHA-256 LF: {next_info['sha256_lf']}")
         else:
-            print(f"ALERTA: Precision baja en el lote ({prec_batch*100:.1f}% < 65.0%).")
+            print(f"ALERTA: Precision aparente baja ({prec_batch*100:.1f}% < 65.0%).")
             print(f"  - Detener avance ciego.")
-            print(f"  - No comprometer Slot {next_slot} sin aislamiento de features.")
+            print(f"  - Posible sobreajuste o quiebre de supuestos.")
     else:
         print("\n" + "=" * 85)
         print("=== SESION FINALIZADA: LOS 5 SLOTS FUERON COMPLETADOS ===")
