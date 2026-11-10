@@ -1,0 +1,487 @@
+{
+  "timestamp_utc": "2026-11-10 23:54:07",
+  "anchor_evt143": {
+    "file": "submission_slot5_surgical_quad_rank6_breakthrough.csv",
+    "score": 0.94761,
+    "hits": 19898,
+    "sha256_lf": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+    "id_target_map_hash": "6e8bd01999a48b1716188c7530cec56e3707f7fca2c965c7ec46f8ceea8faf39"
+  },
+  "taxonomy": {
+    "distribution_free_guarantee": "0.0% (Formalmente en 0% por falta de evaluaciones prequenciales de submissions genuinas)",
+    "identifiable_interval": "[0.0%, 100.0%] (Sin soporte de etiquetas en test)",
+    "model_based_calibrated_status": "Reportado como rango de sensibilidad [P_conservative, P_central]"
+  },
+  "target_condition": {
+    "score_threshold": 0.95,
+    "net_hits_required_20998": 51,
+    "net_hits_required_21000": 52
+  },
+  "portfolio_candidates": [
+    {
+      "id": "1_conservadora",
+      "name": "Conservadora",
+      "filename": "submission_reduced_1_conservadora.csv",
+      "path": "submissions\\portfolio_reduced_ag0150\\submission_reduced_1_conservadora.csv",
+      "k_flips": 100,
+      "flips_u2n": 50,
+      "flips_n2u": 50,
+      "sha256_lf": "1673a623b71c4173a808ee6c824ea93c5885ef6217592d81eaa2181c3763642b",
+      "id_target_map_hash": "81e9dfc09cca3918716983bbef281ad9e387e549743618537370951c79f7ea92",
+      "score_esperado": 0.9489385714285714,
+      "q05_score_publico": 0.9485671428571428,
+      "q10_score_publico": 0.9486528571428571,
+      "q05_ganancia_neta": 20.098085714285713,
+      "q10_ganancia_neta": 21.897914285714286,
+      "q50_ganancia_neta": 27.897342857142856,
+      "q95_ganancia_neta": 35.6966,
+      "p_score_ge_095000_central": 0.0,
+      "p_score_ge_095000_conservative": 0.0,
+      "p_score_gt_evt143": 1.0,
+      "expected_regret_hits": 0.0,
+      "expected_regret_score": 0.0,
+      "peor_outer_fold_net": 13,
+      "peor_seed_net": 93,
+      "peor_bootstrap_seller_q05": 19.798114285714284,
+      "peor_bootstrap_category_q05": 20.39805714285714,
+      "flips_seen_sellers": 54,
+      "flips_new_sellers": 46,
+      "flips_seen_pct": 54.0,
+      "precision_necesaria_publica": 0.8642857142857143,
+      "reversiones_evt143": 0,
+      "quarantined_violations": 0,
+      "status": "EXPLORATORY",
+      "recommendation_reason": "M\u00e1xima precisi\u00f3n OOF (70%), casi nulo riesgo de regret (<0.01 hits). Ideal para asegurar avance sin riesgo de ca\u00edda.",
+      "description": "Minimiza el riesgo a la baja y maximiza la tasa de ganancia por flip. Mayor precisi\u00f3n OOF.",
+      "fold_details": [
+        {
+          "fold": 0,
+          "k_ho": 47,
+          "fixes": 32,
+          "breaks": 15,
+          "net": 17,
+          "precision": 0.6808510638297872
+        },
+        {
+          "fold": 1,
+          "k_ho": 47,
+          "fixes": 36,
+          "breaks": 11,
+          "net": 25,
+          "precision": 0.7659574468085106
+        },
+        {
+          "fold": 2,
+          "k_ho": 47,
+          "fixes": 30,
+          "breaks": 17,
+          "net": 13,
+          "precision": 0.6382978723404256
+        },
+        {
+          "fold": 3,
+          "k_ho": 47,
+          "fixes": 33,
+          "breaks": 14,
+          "net": 19,
+          "precision": 0.7021276595744681
+        },
+        {
+          "fold": 4,
+          "k_ho": 47,
+          "fixes": 33,
+          "breaks": 14,
+          "net": 19,
+          "precision": 0.7021276595744681
+        }
+      ]
+    },
+    {
+      "id": "2_balanceada",
+      "name": "Balanceada",
+      "filename": "submission_reduced_2_balanceada.csv",
+      "path": "submissions\\portfolio_reduced_ag0150\\submission_reduced_2_balanceada.csv",
+      "k_flips": 250,
+      "flips_u2n": 125,
+      "flips_n2u": 125,
+      "sha256_lf": "cfc9442fe7f2cfc62214fc18443d133beb702aad7f84f00b5d99b7bdfccaf64c",
+      "id_target_map_hash": "89b012623a6248367e831db8937a29206b49500898c8e9e4823fd15f2db678f7",
+      "score_esperado": 0.9507385714285714,
+      "q05_score_publico": 0.9501671428571428,
+      "q10_score_publico": 0.9503085714285714,
+      "q05_ganancia_neta": 53.69488571428571,
+      "q10_ganancia_neta": 56.66460285714285,
+      "q50_ganancia_neta": 65.69374285714285,
+      "q95_ganancia_neta": 78.00756999999999,
+      "p_score_ge_095000_central": 0.974,
+      "p_score_ge_095000_conservative": 0.615,
+      "p_score_gt_evt143": 1.0,
+      "expected_regret_hits": 0.0,
+      "expected_regret_score": 0.0,
+      "peor_outer_fold_net": 27,
+      "peor_seed_net": 205,
+      "peor_bootstrap_seller_q05": 52.495,
+      "peor_bootstrap_category_q05": 50.98014428571428,
+      "flips_seen_sellers": 134,
+      "flips_new_sellers": 116,
+      "flips_seen_pct": 53.6,
+      "precision_necesaria_publica": 0.6457142857142857,
+      "reversiones_evt143": 0,
+      "quarantined_violations": 0,
+      "status": "EXPLORATORY",
+      "recommendation_reason": "RECOMENDADA: Mejor trade-off global. Q05 supera +53 aciertos netos, P(>=0.95000)=97.1% (central) / 61.2% (conservador) y regret esperado baj\u00edsimo (<0.05 hits).",
+      "description": "Maximiza P(score >= 0.95000) alcanzando Q05 >= +51 aciertos netos sobre EVT-143.",
+      "fold_details": [
+        {
+          "fold": 0,
+          "k_ho": 117,
+          "fixes": 88,
+          "breaks": 29,
+          "net": 59,
+          "precision": 0.7521367521367521
+        },
+        {
+          "fold": 1,
+          "k_ho": 117,
+          "fixes": 72,
+          "breaks": 45,
+          "net": 27,
+          "precision": 0.6153846153846154
+        },
+        {
+          "fold": 2,
+          "k_ho": 117,
+          "fixes": 77,
+          "breaks": 40,
+          "net": 37,
+          "precision": 0.6581196581196581
+        },
+        {
+          "fold": 3,
+          "k_ho": 117,
+          "fixes": 82,
+          "breaks": 35,
+          "net": 47,
+          "precision": 0.7008547008547008
+        },
+        {
+          "fold": 4,
+          "k_ho": 117,
+          "fixes": 83,
+          "breaks": 34,
+          "net": 49,
+          "precision": 0.7094017094017094
+        }
+      ]
+    },
+    {
+      "id": "3_agresiva",
+      "name": "Agresiva",
+      "filename": "submission_reduced_3_agresiva.csv",
+      "path": "submissions\\portfolio_reduced_ag0150\\submission_reduced_3_agresiva.csv",
+      "k_flips": 500,
+      "flips_u2n": 250,
+      "flips_n2u": 250,
+      "sha256_lf": "68457d821c50a090790fdd94fa7bec5483620526420ed1c57e6a77fc404689fe",
+      "id_target_map_hash": "95e26844826768b1a455c80e732c88fad74ae71cfe6c89cb03d9dbe357f54b38",
+      "score_esperado": 0.9522385714285714,
+      "q05_score_publico": 0.9514671428571428,
+      "q10_score_publico": 0.95161,
+      "q05_ganancia_neta": 80.99228571428571,
+      "q10_ganancia_neta": 83.99199999999999,
+      "q50_ganancia_neta": 97.19074285714285,
+      "q95_ganancia_neta": 115.18902857142857,
+      "p_score_ge_095000_central": 1.0,
+      "p_score_ge_095000_conservative": 0.999,
+      "p_score_gt_evt143": 1.0,
+      "expected_regret_hits": 0.0,
+      "expected_regret_score": 0.0,
+      "peor_outer_fold_net": 52,
+      "peor_seed_net": 320,
+      "peor_bootstrap_seller_q05": 79.7924,
+      "peor_bootstrap_category_q05": 78.87748714285715,
+      "flips_seen_sellers": 250,
+      "flips_new_sellers": 250,
+      "flips_seen_pct": 50.0,
+      "precision_necesaria_publica": 0.5728571428571428,
+      "reversiones_evt143": 0,
+      "quarantined_violations": 0,
+      "status": "EXPLORATORY",
+      "recommendation_reason": "M\u00e1ximo potencial de score (0.95228), pero mayor n\u00famero de flips (500) y mayor dependencia de supuestos de transporte.",
+      "description": "Maximiza el score esperado (+98 aciertos) sujeto al l\u00edmite expl\u00edcito de riesgo de Q05 > +51.",
+      "fold_details": [
+        {
+          "fold": 0,
+          "k_ho": 234,
+          "fixes": 152,
+          "breaks": 82,
+          "net": 70,
+          "precision": 0.6495726495726496
+        },
+        {
+          "fold": 1,
+          "k_ho": 234,
+          "fixes": 143,
+          "breaks": 91,
+          "net": 52,
+          "precision": 0.6111111111111112
+        },
+        {
+          "fold": 2,
+          "k_ho": 234,
+          "fixes": 145,
+          "breaks": 89,
+          "net": 56,
+          "precision": 0.6196581196581197
+        },
+        {
+          "fold": 3,
+          "k_ho": 234,
+          "fixes": 157,
+          "breaks": 77,
+          "net": 80,
+          "precision": 0.6709401709401709
+        },
+        {
+          "fold": 4,
+          "k_ho": 234,
+          "fixes": 151,
+          "breaks": 83,
+          "net": 68,
+          "precision": 0.6452991452991453
+        }
+      ]
+    },
+    {
+      "id": "4_hibrida",
+      "name": "H\u00edbrida",
+      "filename": "submission_reduced_4_hibrida.csv",
+      "path": "submissions\\portfolio_reduced_ag0150\\submission_reduced_4_hibrida.csv",
+      "k_flips": 150,
+      "flips_u2n": 75,
+      "flips_n2u": 75,
+      "sha256_lf": "b0f231f018db13a1c96876257c61806ad0c6baba3c1de5bd637c78fa7b6e26c3",
+      "id_target_map_hash": "b2ca625aedc1f00703e3127a426ab4111bd9def70c3a35db1c1a4fc040a4ffe3",
+      "score_esperado": 0.9496528571428571,
+      "q05_score_publico": 0.9491957142857143,
+      "q10_score_publico": 0.9492814285714285,
+      "q05_ganancia_neta": 33.29682857142857,
+      "q10_ganancia_neta": 35.09665714285714,
+      "q50_ganancia_neta": 42.895914285714284,
+      "q95_ganancia_neta": 52.495,
+      "p_score_ge_095000_central": 0.077,
+      "p_score_ge_095000_conservative": 0.0,
+      "p_score_gt_evt143": 1.0,
+      "expected_regret_hits": 0.0,
+      "expected_regret_score": 0.0,
+      "peor_outer_fold_net": 22,
+      "peor_seed_net": 139,
+      "peor_bootstrap_seller_q05": 32.99685714285714,
+      "peor_bootstrap_category_q05": 32.99685714285714,
+      "flips_seen_sellers": 87,
+      "flips_new_sellers": 63,
+      "flips_seen_pct": 57.99999999999999,
+      "precision_necesaria_publica": 0.7428571428571429,
+      "reversiones_evt143": 0,
+      "quarantined_violations": 0,
+      "status": "EXPLORATORY",
+      "recommendation_reason": "M\u00e1xima robustez metodol\u00f3gica por consenso un\u00e1nime de familias dis\u00edmiles (Tree, Linear y Text).",
+      "description": "Intersecci\u00f3n y consenso un\u00e1nime de se\u00f1ales independientes (Tree, Linear y Text Residual).",
+      "fold_details": [
+        {
+          "fold": 0,
+          "k_ho": 70,
+          "fixes": 51,
+          "breaks": 19,
+          "net": 32,
+          "precision": 0.7285714285714285
+        },
+        {
+          "fold": 1,
+          "k_ho": 70,
+          "fixes": 46,
+          "breaks": 24,
+          "net": 22,
+          "precision": 0.6571428571428571
+        },
+        {
+          "fold": 2,
+          "k_ho": 70,
+          "fixes": 49,
+          "breaks": 21,
+          "net": 28,
+          "precision": 0.7
+        },
+        {
+          "fold": 3,
+          "k_ho": 70,
+          "fixes": 48,
+          "breaks": 22,
+          "net": 26,
+          "precision": 0.6857142857142857
+        },
+        {
+          "fold": 4,
+          "k_ho": 71,
+          "fixes": 53,
+          "breaks": 18,
+          "net": 35,
+          "precision": 0.7464788732394366
+        }
+      ]
+    },
+    {
+      "id": "5_fallback",
+      "name": "Fallback (EVT-143)",
+      "filename": "submission_reduced_5_fallback.csv",
+      "path": "submissions\\portfolio_reduced_ag0150\\submission_reduced_5_fallback.csv",
+      "k_flips": 0,
+      "flips_u2n": 0,
+      "flips_n2u": 0,
+      "sha256_lf": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+      "id_target_map_hash": "6e8bd01999a48b1716188c7530cec56e3707f7fca2c965c7ec46f8ceea8faf39",
+      "score_esperado": 0.94761,
+      "q05_score_publico": 0.94761,
+      "q10_score_publico": 0.94761,
+      "q05_ganancia_neta": 0.0,
+      "q50_ganancia_neta": 0.0,
+      "q95_ganancia_neta": 0.0,
+      "p_score_ge_095000_central": 0.0,
+      "p_score_ge_095000_conservative": 0.0,
+      "p_score_gt_evt143": 0.0,
+      "expected_regret_hits": 0.0,
+      "expected_regret_score": 0.0,
+      "peor_outer_fold_net": 0,
+      "peor_seed_net": 0,
+      "peor_bootstrap_seller_q05": 0.0,
+      "peor_bootstrap_category_q05": 0.0,
+      "flips_seen_sellers": 0,
+      "flips_new_sellers": 0,
+      "flips_seen_pct": 0.0,
+      "precision_necesaria_publica": 0.0,
+      "reversiones_evt143": 0,
+      "quarantined_violations": 0,
+      "status": "QUALIFIED_ANCHOR",
+      "recommendation_reason": "Punto de anclaje base con 0 riesgo y score probado 0.94761.",
+      "description": "Ancla verificada EVT-143 sin modificaciones. Cero riesgo de degradaci\u00f3n."
+    }
+  ],
+  "overlap_matrix": {
+    "1_conservadora": {
+      "1_conservadora": {
+        "shared_flips": 100,
+        "jaccard": 1.0
+      },
+      "2_balanceada": {
+        "shared_flips": 100,
+        "jaccard": 0.4
+      },
+      "3_agresiva": {
+        "shared_flips": 100,
+        "jaccard": 0.2
+      },
+      "4_hibrida": {
+        "shared_flips": 98,
+        "jaccard": 0.6447368421052632
+      },
+      "5_fallback": {
+        "shared_flips": 0,
+        "jaccard": 0.0
+      }
+    },
+    "2_balanceada": {
+      "1_conservadora": {
+        "shared_flips": 100,
+        "jaccard": 0.4
+      },
+      "2_balanceada": {
+        "shared_flips": 250,
+        "jaccard": 1.0
+      },
+      "3_agresiva": {
+        "shared_flips": 250,
+        "jaccard": 0.5
+      },
+      "4_hibrida": {
+        "shared_flips": 148,
+        "jaccard": 0.5873015873015873
+      },
+      "5_fallback": {
+        "shared_flips": 0,
+        "jaccard": 0.0
+      }
+    },
+    "3_agresiva": {
+      "1_conservadora": {
+        "shared_flips": 100,
+        "jaccard": 0.2
+      },
+      "2_balanceada": {
+        "shared_flips": 250,
+        "jaccard": 0.5
+      },
+      "3_agresiva": {
+        "shared_flips": 500,
+        "jaccard": 1.0
+      },
+      "4_hibrida": {
+        "shared_flips": 150,
+        "jaccard": 0.3
+      },
+      "5_fallback": {
+        "shared_flips": 0,
+        "jaccard": 0.0
+      }
+    },
+    "4_hibrida": {
+      "1_conservadora": {
+        "shared_flips": 98,
+        "jaccard": 0.6447368421052632
+      },
+      "2_balanceada": {
+        "shared_flips": 148,
+        "jaccard": 0.5873015873015873
+      },
+      "3_agresiva": {
+        "shared_flips": 150,
+        "jaccard": 0.3
+      },
+      "4_hibrida": {
+        "shared_flips": 150,
+        "jaccard": 1.0
+      },
+      "5_fallback": {
+        "shared_flips": 0,
+        "jaccard": 0.0
+      }
+    },
+    "5_fallback": {
+      "1_conservadora": {
+        "shared_flips": 0,
+        "jaccard": 0.0
+      },
+      "2_balanceada": {
+        "shared_flips": 0,
+        "jaccard": 0.0
+      },
+      "3_agresiva": {
+        "shared_flips": 0,
+        "jaccard": 0.0
+      },
+      "4_hibrida": {
+        "shared_flips": 0,
+        "jaccard": 0.0
+      },
+      "5_fallback": {
+        "shared_flips": 0,
+        "jaccard": 1.0
+      }
+    }
+  },
+  "confinement_guarantee": {
+    "kaggle_submissions_sent": 0,
+    "api_quota_consumed": 0,
+    "zero_reversions_verified": true,
+    "quarantine_preserved": true
+  }
+}
