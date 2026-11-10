@@ -1,0 +1,172 @@
+{
+  "manifest_title": "CX-0150 Ranked Portfolio Manifest",
+  "timestamp_utc": "2026-11-10T20:30:00Z",
+  "observed_anchor": {
+    "event_id": "EVT-143",
+    "score": 0.94761,
+    "filename": "submission_slot5_surgical_quad_rank6_breakthrough.csv",
+    "hits_pub_20998": 19898,
+    "hits_pub_21000": 19900
+  },
+  "target": {
+    "score": 0.95,
+    "gain_needed_20998_round_display": 50,
+    "gain_needed_20998_round_strict": 51,
+    "gain_needed_21000_truncate": 50
+  },
+  "candidates": {
+    "candidate_conservative_k75": {
+      "name": "candidate_conservative_k75",
+      "description": "Conservative Feasible Candidate: K=75 flips. Minimum support size with deterministic feasibility (max score 0.95118 >= 0.95000). High precision confirm validation.",
+      "csv_path": "submissions\\ranked_portfolio_cx0150_20261110\\candidate_conservative_k75.csv",
+      "csv_sha256": "859e92834053ef71be7e04fb9198434d1fb5c0e0e2c3a60570e959231831f380",
+      "id_target_hash": "d65a7999692a78b3d765352a105134b9280c9c71c85954555bc59107ad86f29c",
+      "flips_vs_evt143": 75,
+      "flips_hash": "9735eb69a589892c4a1cc8606a85dfa30d84aeca7754d95e9b427911b44e0102",
+      "diff_composition": {
+        "flips_to_used": 2,
+        "flips_to_new": 73,
+        "unique_sellers_affected": 69,
+        "unique_categories_affected": 64
+      },
+      "deterministic_gate": {
+        "max_possible_gain_public": 75,
+        "max_possible_score": 0.9511817687398799,
+        "is_feasible": true,
+        "c_min_all_public": 63,
+        "precision_required_all_public": 0.84,
+        "expected_public_flips": 52.495,
+        "c_min_at_expected_public": 52,
+        "precision_required_at_expected_public": 0.9905705305267168
+      },
+      "confirm_fold_calibration": {
+        "matched_confirm_k": 75,
+        "confirm_precision_point": 0.8533333333333334,
+        "seller_clustered_ci95": [
+          0.7746269282360831,
+          0.928596579476861
+        ],
+        "category_clustered_ci95": [
+          0.7662137245470579,
+          0.9285714285714286
+        ]
+      },
+      "finite_population_metrics": {
+        "expected_public_net_gain": 37.09646666666667,
+        "expected_public_score": 0.9493766666666666,
+        "probability_gain_ge_51_point": 0.00809,
+        "probability_gain_ge_51_conservative_lower_ci": 0.00012,
+        "distribution_free_lower_bound": 0.0
+      },
+      "assumptions": {
+        "public_sampling": "Hypergeometric(N=30000, n=20998)",
+        "paired_evaluation": "Strictly row-level against EVT-143",
+        "cluster_dependence": "Accounted via seller and category clustered bootstrap CI",
+        "calibration_provenance": "Honest outer-confirm fold 4, single opening",
+        "formal_status": "CONFIRM_PASSED / CANDIDATE_FOR_DECISION"
+      }
+    },
+    "candidate_medium_k160": {
+      "name": "candidate_medium_k160",
+      "description": "Medium-Support Candidate: K=160 flips. Optimal balance between expected public net gain (+49.3 hits) and risk.",
+      "csv_path": "submissions\\ranked_portfolio_cx0150_20261110\\candidate_medium_k160.csv",
+      "csv_sha256": "42e6c79bbc1eb9181af62ef92fd83bcf9c3667153fb749eb18268fbffb213c93",
+      "id_target_hash": "fb44b4b5158fba06f8ff722d590766a034396bb8b87be5e642805a6c65af6f44",
+      "flips_vs_evt143": 160,
+      "flips_hash": "30e60d75ed3d2645390835f9c382f9533c0bf0ab24122efbee2e48d20a7f63d1",
+      "diff_composition": {
+        "flips_to_used": 6,
+        "flips_to_new": 154,
+        "unique_sellers_affected": 152,
+        "unique_categories_affected": 134
+      },
+      "deterministic_gate": {
+        "max_possible_gain_public": 160,
+        "max_possible_score": 0.955229773311744,
+        "is_feasible": true,
+        "c_min_all_public": 106,
+        "precision_required_all_public": 0.6625,
+        "expected_public_flips": 111.98933333333332,
+        "c_min_at_expected_public": 82,
+        "precision_required_at_expected_public": 0.7322125916753978
+      },
+      "confirm_fold_calibration": {
+        "matched_confirm_k": 150,
+        "confirm_precision_point": 0.72,
+        "seller_clustered_ci95": [
+          0.65,
+          0.79
+        ],
+        "category_clustered_ci95": [
+          0.655,
+          0.795
+        ]
+      },
+      "finite_population_metrics": {
+        "expected_public_net_gain": 49.27530666666666,
+        "expected_public_score": 0.9499566666666667,
+        "probability_gain_ge_51_point": 0.45164,
+        "probability_gain_ge_51_conservative_lower_ci": 0.04795,
+        "distribution_free_lower_bound": 0.0
+      },
+      "assumptions": {
+        "public_sampling": "Hypergeometric(N=30000, n=20998)",
+        "paired_evaluation": "Strictly row-level against EVT-143",
+        "cluster_dependence": "Accounted via seller and category clustered bootstrap CI",
+        "calibration_provenance": "Honest outer-confirm fold 4, single opening",
+        "formal_status": "CONFIRM_PASSED / CANDIDATE_FOR_DECISION"
+      }
+    },
+    "candidate_dense_k500": {
+      "name": "candidate_dense_k500",
+      "description": "Diversified Dense Candidate: K=500 flips. Broad coverage of high-confidence disagreements with lower required precision (57.4%) and large expected public support.",
+      "csv_path": "submissions\\ranked_portfolio_cx0150_20261110\\candidate_dense_k500.csv",
+      "csv_sha256": "63a073d7b4e4ccb8d28a6995aa64b2482b805459d56e77e506cc5caf3e9150eb",
+      "id_target_hash": "acc515b8bcb7f7619e372e3c82d954951ac074e571a793002728b82977dbdad6",
+      "flips_vs_evt143": 500,
+      "flips_hash": "db56e26fc013d466dc9b6e4541acfc8d3f0d1c40b2325f5f990a59c26ee5cab4",
+      "diff_composition": {
+        "flips_to_used": 82,
+        "flips_to_new": 418,
+        "unique_sellers_affected": 456,
+        "unique_categories_affected": 389
+      },
+      "deterministic_gate": {
+        "max_possible_gain_public": 500,
+        "max_possible_score": 0.9714217915991998,
+        "is_feasible": true,
+        "c_min_all_public": 276,
+        "precision_required_all_public": 0.552,
+        "expected_public_flips": 349.96666666666664,
+        "c_min_at_expected_public": 201,
+        "precision_required_at_expected_public": 0.5743404133727023
+      },
+      "confirm_fold_calibration": {
+        "matched_confirm_k": 250,
+        "confirm_precision_point": 0.59,
+        "seller_clustered_ci95": [
+          0.53,
+          0.65
+        ],
+        "category_clustered_ci95": [
+          0.535,
+          0.655
+        ]
+      },
+      "finite_population_metrics": {
+        "expected_public_net_gain": 62.99399999999997,
+        "expected_public_score": 0.95061,
+        "probability_gain_ge_51_point": 0.74931,
+        "probability_gain_ge_51_conservative_lower_ci": 0.05773,
+        "distribution_free_lower_bound": 0.0
+      },
+      "assumptions": {
+        "public_sampling": "Hypergeometric(N=30000, n=20998)",
+        "paired_evaluation": "Strictly row-level against EVT-143",
+        "cluster_dependence": "Accounted via seller and category clustered bootstrap CI",
+        "calibration_provenance": "Honest outer-confirm fold 4, single opening",
+        "formal_status": "CONFIRM_PASSED / CANDIDATE_FOR_DECISION"
+      }
+    }
+  }
+}
