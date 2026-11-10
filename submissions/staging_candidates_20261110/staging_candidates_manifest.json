@@ -1,0 +1,36 @@
+{
+  "candidate_w010": {
+    "candidate_id": "CAND-20261110-CANDIDATE_W010",
+    "weight": 0.1,
+    "csv_path": "submissions\\staging_candidates_20261110\\submission_candidate_w010.csv",
+    "csv_sha256": "e3cc3fe1de7f2f3decfdf2c0eb04417f11ea048aaa8f16fd03b7b74dc5b26753",
+    "id_target_hash": "d52f3a1ccb4d53a42f414da45130aa19cd7212d26c89246df8dca917f155f4cd",
+    "n_flips_vs_evt143": 2543,
+    "flips_vs_evt143_sha256": "ffdcb2c93f090671441b8a7c96e7e6f11196d4797b4ddf44c6d97051e870ca26",
+    "n_flips_vs_baseline": 131,
+    "used_count": 13752,
+    "new_count": 16248
+  },
+  "candidate_w035": {
+    "candidate_id": "CAND-20261110-CANDIDATE_W035",
+    "weight": 0.35,
+    "csv_path": "submissions\\staging_candidates_20261110\\submission_candidate_w035.csv",
+    "csv_sha256": "051366d4df54966e309a50177e099eea4cfaf5d4ee42352a5ce9d55283a62286",
+    "id_target_hash": "3cc7c402ac4638cb9da71a39200f4ab7397409de43fc577b08d7f2fe2335d786",
+    "n_flips_vs_evt143": 2100,
+    "flips_vs_evt143_sha256": "f5b9364d83b8e1bb0503bd670172540dc9c8c1ba2d22970086a8f3f67e563e6b",
+    "n_flips_vs_baseline": 648,
+    "used_count": 13829,
+    "new_count": 16171
+  },
+  "candidate_surgical_top25": {
+    "candidate_id": "CAND-20261110-SURGICAL-TOP25",
+    "csv_path": "submissions\\staging_candidates_20261110\\submission_candidate_surgical_w035_top25.csv",
+    "csv_sha256": "082b786ae89adc9392f338727565fe0fbfb1f647b022d649dd2f8b7d1d6fc786",
+    "id_target_hash": "3f5e4d4794b517c16409372610914b2049d9913e57c71d01974d2586f1c82635",
+    "n_flips_vs_evt143": 25,
+    "flips_vs_evt143_sha256": "dd6b8bd803973ccdb9f7da2c2bad2863de0e66ebb6d69f29bbafcdfcf097c533",
+    "used_count": 14166,
+    "new_count": 15834
+  }
+}

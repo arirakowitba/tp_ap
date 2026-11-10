@@ -1,0 +1,103 @@
+{
+  "title": "Rolling-Origin Retrospective Backtest & Calibrated Probability Audit",
+  "timestamp_utc": "2026-11-10T18:00:00Z",
+  "n_chronological_events": 123,
+  "n_rolling_steps": 103,
+  "backtest_metrics": {
+    "rmse": 0.0025793260082821725,
+    "mae": 0.0014807629459965524,
+    "empirical_90_coverage": 0.6699029126213593,
+    "mean_residual_bias": -0.00020084887584216306,
+    "std_residual_sigma": 0.0025714941932801993,
+    "brier_score_target_095": 0.0
+  },
+  "candidate_calibrated_probabilities": {
+    "candidate_w010": {
+      "predicted_score_point": 0.9443874060092343,
+      "percentile_5_score": 0.93695,
+      "sigma_residual": 0.0025714941932801993,
+      "prob_ge_095_point": 0.01453191238184981,
+      "prob_ge_095_block_bootstrap_95ci": [
+        3.054394969115304e-07,
+        0.045614302890157214
+      ],
+      "jackknife_sensitivity_range": [
+        0.0035162382340391263,
+        0.014927566158914662
+      ],
+      "leave_family_out_worst_case": 0.01453191238184981,
+      "leave_family_out_by_family": {
+        "portfolio_ladder": 0.022485221824344648,
+        "lexical_probe": 0.023892430757255445,
+        "surgical_quad": 0.014798984216506716,
+        "reference_anchor": 0.01453191238184981
+      },
+      "epistemic_status": "MODEL_BASED_NOT_GUARANTEED",
+      "distribution_free_guarantee": 0.0,
+      "identifiable_interval_no_assumptions": [
+        0.0,
+        1.0
+      ]
+    },
+    "candidate_w035": {
+      "predicted_score_point": 0.9443874060092343,
+      "percentile_5_score": 0.93695,
+      "sigma_residual": 0.0025714941932801993,
+      "prob_ge_095_point": 0.01453191238184981,
+      "prob_ge_095_block_bootstrap_95ci": [
+        4.6863660200513477e-07,
+        0.03880403979823197
+      ],
+      "jackknife_sensitivity_range": [
+        0.0035162382340391263,
+        0.014927566158914662
+      ],
+      "leave_family_out_worst_case": 0.01453191238184981,
+      "leave_family_out_by_family": {
+        "portfolio_ladder": 0.022485221824344648,
+        "lexical_probe": 0.023892430757255445,
+        "surgical_quad": 0.014798984216506716,
+        "reference_anchor": 0.01453191238184981
+      },
+      "epistemic_status": "MODEL_BASED_NOT_GUARANTEED",
+      "distribution_free_guarantee": 0.0,
+      "identifiable_interval_no_assumptions": [
+        0.0,
+        1.0
+      ]
+    },
+    "candidate_surgical_top25": {
+      "predicted_score_point": 0.9458899754645531,
+      "percentile_5_score": 0.9431320000000001,
+      "sigma_residual": 0.0025714941932801993,
+      "prob_ge_095_point": 0.05498788160406065,
+      "prob_ge_095_block_bootstrap_95ci": [
+        8.728451210449629e-05,
+        0.10670759841393035
+      ],
+      "jackknife_sensitivity_range": [
+        0.02420608345880837,
+        0.05585763259237331
+      ],
+      "leave_family_out_worst_case": 0.05498788160406065,
+      "leave_family_out_by_family": {
+        "portfolio_ladder": 0.07102726602769605,
+        "lexical_probe": 0.07361340025185059,
+        "surgical_quad": 0.05557599566323068,
+        "reference_anchor": 0.05498788160406065
+      },
+      "epistemic_status": "MODEL_BASED_NOT_GUARANTEED",
+      "distribution_free_guarantee": 0.0,
+      "identifiable_interval_no_assumptions": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  "epistemic_framework": {
+    "distribution_free_guarantee": "0.0% (n_verified = 0 < 19 required)",
+    "identifiable_interval_no_assumptions": "[0.0%, 100.0%]",
+    "model_based_prob_label": "MODEL_BASED_NOT_GUARANTEED",
+    "cv_train_evidence_label": "DEVELOPMENT_CV"
+  }
+}

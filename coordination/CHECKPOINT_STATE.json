@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-10T14:40:00Z",
-  "origin_main_head": "b4a5c5513865edcc8c4f1b6603857cf12aaed425",
+  "last_checked_utc": "2026-11-10T18:00:00Z",
+  "origin_main_head": "bf26fd1ecf60dc7bed55fd5aaf04cb4b9b797d26",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "04a9f80",
-  "last_processed_codex_message": "CX-0147",
-  "last_published_antigravity_message": "AG-0132-RESULT.md",
+  "local_head": "6ae16c8",
+  "last_processed_codex_message": "CX-0148",
+  "last_published_antigravity_message": "AG-0134-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -70,7 +70,9 @@
     "T61_canonical_models_retrain_seen_unseen_honest_eval": "done_seen_oof_09373_unseen_08768_ag0130",
     "T62_cross_fitted_meta_ensemble_and_dual_bootstrap": "done_w010_plus99_w035_plus341_dual_ci_positive_ag0131",
     "T63_conformal_prequential_gate_and_audit": "done_no_qualified_insufficient_events_n10_ag0132",
-    "T64_canonical_breakdown_audit_and_discordance": "done_breakdown_report_sha827051_ag0132"
+    "T64_canonical_breakdown_audit_and_discordance": "done_breakdown_report_sha827051_ag0132",
+    "T65_provenance_audit_and_ledger_reconciliation": "done_n_verified_zero_and_123scored_reconciled_ag0134",
+    "T66_rolling_origin_retrospective_backtest_and_real_candidates": "done_candidates_distinct_hashes_and_prob_calibrated_ag0134"
   },
   "best_confirmed_score": 0.94761,
   "best_confirmed_hits": 19898,
