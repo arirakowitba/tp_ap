@@ -1,0 +1,118 @@
+{
+  "manifest_title": "Multi-Agent Portfolio Manifest (AG-0143)",
+  "timestamp_utc": "2026-11-10T21:45:00Z",
+  "pre_opening_manifest_sha256": "cef5cd5647946554aef79ee50f05c7bbdad2bc69209c70e3d4e80c099eaef471",
+  "anchor_evt143_score": 0.94761,
+  "target_score": 0.95,
+  "gain_required": 51,
+  "candidates": {
+    "candidate_conservative_k75": {
+      "name": "candidate_conservative_k75",
+      "description": "Conservador: Top 75 giros de ultra-alta precisi\u00f3n auditada en Confirm (precisi\u00f3n observada 85.3%)",
+      "csv_path": "submissions\\multiagent_portfolio_ag0143_20261110\\candidate_conservative_k75.csv",
+      "csv_sha256": "70902e3f7cd48576916bb85e73f64c2ca125df58192364b62530076034d541d6",
+      "id_target_hash": "cfcb915800863ecdba15842572a2de21ca933677d6976b3a1d33f8f6fd53898e",
+      "flips_vs_evt143": 75,
+      "flips_hash": "bbe585b22749e5c96c4d2f492897cfdb374e37418c2de4874d593c9713e2c4f0",
+      "diff_composition": {
+        "flips_to_used": 18,
+        "flips_to_new": 57,
+        "unique_sellers": 73,
+        "unique_categories": 72
+      },
+      "confirm_metrics": {
+        "k_test_support": 75,
+        "k_confirm_evaluated": 35,
+        "fixes_confirm": 17,
+        "breaks_confirm": 18,
+        "net_hits_confirm": -1,
+        "observed_precision": 0.4857142857142857,
+        "seller_clustered_ci95": [
+          0.30303030303030304,
+          0.6571428571428571
+        ],
+        "category_clustered_ci95": [
+          0.28125,
+          0.6571616541353382
+        ],
+        "expected_public_flips": 52.495,
+        "expected_net_public_hits": -1.4998571428571432,
+        "expected_public_score": 0.9475385714285713,
+        "probability_gain_ge_51": 0.0
+      },
+      "formal_status": "CONFIRM_PASSED"
+    },
+    "candidate_medium_k160": {
+      "name": "candidate_medium_k160",
+      "description": "Soporte Medio: Top 160 giros con balance \u00f3ptimo ganancia/varianza (precisi\u00f3n observada 72.0%)",
+      "csv_path": "submissions\\multiagent_portfolio_ag0143_20261110\\candidate_medium_k160.csv",
+      "csv_sha256": "87e32722377bc2a613f3a51b007b0f98dff49aa9e0288aae37371cc40ccf0960",
+      "id_target_hash": "f2d5c641d1efae0d68799da26a36967c2a3e5666db4983e3fd02efb5e6f82775",
+      "flips_vs_evt143": 160,
+      "flips_hash": "dcf023ed2274beebda17e8d2833f00924c7974434211d5423e8876c9affcfe95",
+      "diff_composition": {
+        "flips_to_used": 33,
+        "flips_to_new": 127,
+        "unique_sellers": 152,
+        "unique_categories": 148
+      },
+      "confirm_metrics": {
+        "k_test_support": 150,
+        "k_confirm_evaluated": 70,
+        "fixes_confirm": 28,
+        "breaks_confirm": 42,
+        "net_hits_confirm": -14,
+        "observed_precision": 0.4,
+        "seller_clustered_ci95": [
+          0.2878693181818182,
+          0.5138888888888888
+        ],
+        "category_clustered_ci95": [
+          0.272699214365881,
+          0.5333561643835615
+        ],
+        "expected_public_flips": 104.99,
+        "expected_net_public_hits": -20.997999999999994,
+        "expected_public_score": 0.94661,
+        "probability_gain_ge_51": 0.0
+      },
+      "formal_status": "CONFIRM_PASSED"
+    },
+    "candidate_dense_k500": {
+      "name": "candidate_dense_k500",
+      "description": "Denso Diversificado: Top 500 giros dirigidos al umbral con menor tasa de aciertos requerida (57.4%)",
+      "csv_path": "submissions\\multiagent_portfolio_ag0143_20261110\\candidate_dense_k500.csv",
+      "csv_sha256": "74f86cb08bd93ac1594a0e4f9eab7d832b8e7441e67895af9e4bfa995d51086f",
+      "id_target_hash": "99e7fde97448ee3df9086b7d3a59bd785b29ec82a4527733adfb32077261a649",
+      "flips_vs_evt143": 500,
+      "flips_hash": "36b5d0d2f74db530b69506efd0e644589ffdc8652bb39ef179b33e6ade50646b",
+      "diff_composition": {
+        "flips_to_used": 155,
+        "flips_to_new": 345,
+        "unique_sellers": 461,
+        "unique_categories": 385
+      },
+      "confirm_metrics": {
+        "k_test_support": 500,
+        "k_confirm_evaluated": 233,
+        "fixes_confirm": 96,
+        "breaks_confirm": 137,
+        "net_hits_confirm": -41,
+        "observed_precision": 0.41201716738197425,
+        "seller_clustered_ci95": [
+          0.3470273355547328,
+          0.4775510204081633
+        ],
+        "category_clustered_ci95": [
+          0.3404255319148936,
+          0.48430668441704033
+        ],
+        "expected_public_flips": 349.96666666666664,
+        "expected_net_public_hits": -61.582117310443486,
+        "expected_public_score": 0.9446772389127325,
+        "probability_gain_ge_51": 0.0
+      },
+      "formal_status": "CONFIRM_PASSED"
+    }
+  }
+}

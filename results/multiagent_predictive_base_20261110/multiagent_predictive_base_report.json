@@ -1,0 +1,276 @@
+{
+  "title": "Multi-Agent Predictive Base Report (Agents A, B, C, D, E, audited by F)",
+  "timestamp_utc": "2026-11-10T21:00:00Z",
+  "data_hashes": {
+    "splits_csv_sha256": "91ee8fd2dc9e16ac52c5df19286e71d9bbfae9cede4a6394d342e698ed76c7fb",
+    "train_jsonlines_sha256": "aa49b8710d06f666eeb3cf65c256c8c4f90bf4dbb22c697e313a814ebf5e01cf",
+    "test_jsonlines_sha256": "05921bd73deba1c4ed5a4d564e0351729eae8f2ef197bc851e10f9099d277460",
+    "baseline_oof_sha256": "b881f26c71fc208fb87d31ed7888900bf067fa06239025501f150f5425b78d5a",
+    "evt143_sub_sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8"
+  },
+  "model_configs": {
+    "Agent_A_Text_SAGA": {
+      "name": "Agent A: Multi-Channel Word+Char TF-IDF SAGA Logistic",
+      "word_ngrams": [
+        1,
+        2
+      ],
+      "max_features_word": 35000,
+      "char_ngrams": [
+        3,
+        5
+      ],
+      "max_features_char": 30000,
+      "solver": "saga",
+      "C": 1.5,
+      "max_iter": 350,
+      "random_state": 42
+    },
+    "Agent_B_Tabular_LGB": {
+      "name": "Agent B: Structured Tabular & Attributes LightGBM",
+      "features": "log_price, rel_price_cat, cat_price_zscore, char_lens, word_lens, attr_counts, pic_counts, tags, warranties, shipping, listing_types",
+      "n_estimators": 400,
+      "learning_rate": 0.04,
+      "num_leaves": 63,
+      "max_depth": 7,
+      "random_state": 42
+    },
+    "Agent_C_Seller_TE": {
+      "name": "Agent C: Empirical Bayes Seller History Smoothing & Shrinkage",
+      "smoothing_m": 12.0,
+      "leave_one_out": true,
+      "isolated_seller_flag": true
+    },
+    "Agent_D_Text_Cat_Interactions": {
+      "name": "Agent D: Leakage-Free Category-Conditioned Residual Text Adjuster",
+      "method": "Category-level residual shrinkage + interaction text odds",
+      "alpha_shrinkage": 20.0
+    },
+    "Agent_E_Trees_Ensemble": {
+      "name": "Agent E: Compact Representation Trees (CatBoost D8, LightGBM 127L, XGBoost Lossguide)",
+      "cb_depth": 8,
+      "cb_lr": 0.04,
+      "lgb_leaves": 127,
+      "lgb_depth": 9,
+      "xgb_leaves": 120,
+      "xgb_depth": 11,
+      "svd_components": 120
+    }
+  },
+  "baseline_metrics": {
+    "name": "Ultimate Podium Engine (Baseline)",
+    "accuracy_dev": 0.9422836529876067,
+    "logloss_dev": 0.14834386799589644,
+    "hits_dev": 52766,
+    "total_dev": 55998
+  },
+  "paired_evaluations_dev": {
+    "Agent_A_Text_SAGA": {
+      "accuracy": 0.8176720597164184,
+      "logloss": 0.40323262735288773,
+      "fixes": 590,
+      "breaks": 7568,
+      "net_hits": -6978,
+      "seller_clustered_ci95": [
+        -0.13497410160158715,
+        -0.11549872490419245
+      ],
+      "category_clustered_ci95": [
+        -0.1362235608964521,
+        -0.11469640668679087
+      ],
+      "p_gt_zero_seller": 0.0,
+      "seen_seller_regime": {
+        "fixes": 369,
+        "breaks": 5513,
+        "net": -5144
+      },
+      "new_seller_regime": {
+        "fixes": 221,
+        "breaks": 2055,
+        "net": -1834
+      },
+      "disagreements_dev_vs_baseline": 8158,
+      "disagreements_test_vs_evt143": 4313
+    },
+    "Agent_B_Tabular_LGB": {
+      "accuracy": 0.8344048001714347,
+      "logloss": 0.367506345037228,
+      "fixes": 1416,
+      "breaks": 7457,
+      "net_hits": -6041,
+      "seller_clustered_ci95": [
+        -0.11505656515767063,
+        -0.10060929061276909
+      ],
+      "category_clustered_ci95": [
+        -0.11420686832845783,
+        -0.10237854097182339
+      ],
+      "p_gt_zero_seller": 0.0,
+      "seen_seller_regime": {
+        "fixes": 645,
+        "breaks": 4967,
+        "net": -4322
+      },
+      "new_seller_regime": {
+        "fixes": 771,
+        "breaks": 2490,
+        "net": -1719
+      },
+      "disagreements_dev_vs_baseline": 8873,
+      "disagreements_test_vs_evt143": 4407
+    },
+    "Agent_C_Seller_TE": {
+      "accuracy": 0.5369656059144969,
+      "logloss": 0.6906633674058268,
+      "fixes": 1729,
+      "breaks": 24426,
+      "net_hits": -22697,
+      "seller_clustered_ci95": [
+        -0.42493607408961526,
+        -0.3834268519448464
+      ],
+      "category_clustered_ci95": [
+        -0.4300711073407936,
+        -0.3806521465155473
+      ],
+      "p_gt_zero_seller": 0.0,
+      "seen_seller_regime": {
+        "fixes": 912,
+        "breaks": 17449,
+        "net": -16537
+      },
+      "new_seller_regime": {
+        "fixes": 817,
+        "breaks": 6977,
+        "net": -6160
+      },
+      "disagreements_dev_vs_baseline": 26155,
+      "disagreements_test_vs_evt143": 5530
+    },
+    "Agent_D_Text_Cat_Interactions": {
+      "accuracy": 0.8237972784742312,
+      "logloss": 0.4278057311537358,
+      "fixes": 601,
+      "breaks": 7236,
+      "net_hits": -6635,
+      "seller_clustered_ci95": [
+        -0.12909162994676782,
+        -0.10924950276891679
+      ],
+      "category_clustered_ci95": [
+        -0.1298796491853701,
+        -0.10800828023155004
+      ],
+      "p_gt_zero_seller": 0.0,
+      "seen_seller_regime": {
+        "fixes": 368,
+        "breaks": 5168,
+        "net": -4800
+      },
+      "new_seller_regime": {
+        "fixes": 233,
+        "breaks": 2068,
+        "net": -1835
+      },
+      "disagreements_dev_vs_baseline": 7837,
+      "disagreements_test_vs_evt143": 4102
+    },
+    "Agent_E_CatBoost_D8": {
+      "accuracy": 0.839369263187971,
+      "logloss": 0.3719223688391625,
+      "fixes": 1285,
+      "breaks": 7048,
+      "net_hits": -5763,
+      "seller_clustered_ci95": [
+        -0.10968379898598225,
+        -0.09660375221149917
+      ],
+      "category_clustered_ci95": [
+        -0.1073389504077408,
+        -0.09864295518801934
+      ],
+      "p_gt_zero_seller": 0.0,
+      "seen_seller_regime": {
+        "fixes": 634,
+        "breaks": 4948,
+        "net": -4314
+      },
+      "new_seller_regime": {
+        "fixes": 651,
+        "breaks": 2100,
+        "net": -1449
+      },
+      "disagreements_dev_vs_baseline": 8333,
+      "disagreements_test_vs_evt143": 2120
+    },
+    "Agent_E_LightGBM_127L": {
+      "accuracy": 0.8415479124254438,
+      "logloss": 0.35968206095984806,
+      "fixes": 1276,
+      "breaks": 6917,
+      "net_hits": -5641,
+      "seller_clustered_ci95": [
+        -0.10743072905173291,
+        -0.09418920096597407
+      ],
+      "category_clustered_ci95": [
+        -0.10499741033717187,
+        -0.09622436121700069
+      ],
+      "p_gt_zero_seller": 0.0,
+      "seen_seller_regime": {
+        "fixes": 634,
+        "breaks": 4869,
+        "net": -4235
+      },
+      "new_seller_regime": {
+        "fixes": 642,
+        "breaks": 2048,
+        "net": -1406
+      },
+      "disagreements_dev_vs_baseline": 8193,
+      "disagreements_test_vs_evt143": 2040
+    },
+    "Agent_E_XGBoost_Lossguide": {
+      "accuracy": 0.8405835922711525,
+      "logloss": 0.35866660722087923,
+      "fixes": 1273,
+      "breaks": 6968,
+      "net_hits": -5695,
+      "seller_clustered_ci95": [
+        -0.10912156408541812,
+        -0.0948775729345872
+      ],
+      "category_clustered_ci95": [
+        -0.10564076735433794,
+        -0.09736132011212188
+      ],
+      "p_gt_zero_seller": 0.0,
+      "seen_seller_regime": {
+        "fixes": 636,
+        "breaks": 4958,
+        "net": -4322
+      },
+      "new_seller_regime": {
+        "fixes": 637,
+        "breaks": 2010,
+        "net": -1373
+      },
+      "disagreements_dev_vs_baseline": 8241,
+      "disagreements_test_vs_evt143": 2070
+    }
+  },
+  "confirm_fold_status": {
+    "fold_index": 4,
+    "rows_count": 14002,
+    "status": "UNTOUCHED_VIRGIN_HOLDOUT",
+    "audit_comment": "Fold 4 was completely isolated during all base model feature extraction, tuning, and fitting."
+  },
+  "artifacts_sha256": {
+    "oof_multiagent_predictive_base_sha256": "65e8106f7ebc0afd6bbb228f488c6deb8fc84071f8916638b93a2ed25c0f4f95",
+    "test_probabilities_multiagent_predictive_base_sha256": "0fd37cc1fec863540fd6e323baf83f2dcc34614b90c114f98d4f0c20a2ef2893"
+  },
+  "elapsed_seconds": 2924.0711205005646
+}

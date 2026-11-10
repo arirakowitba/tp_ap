@@ -1,0 +1,207 @@
+{
+  "title": "Agent G: Cross-Fitted Meta-Model and Flip Selector Report (AG-0143)",
+  "timestamp_utc": "2026-11-10T21:45:00Z",
+  "pre_opening_manifest_sha256": "cef5cd5647946554aef79ee50f05c7bbdad2bc69209c70e3d4e80c099eaef471",
+  "meta_weights_by_fold": {
+    "fold_0": {
+      "p_agent_a_text": 0.22924398815802724,
+      "p_agent_b_tab": 0.32219392742555736,
+      "p_agent_c_seller": 0.0,
+      "p_agent_d_inter": 0.0,
+      "p_agent_e_cb": 0.0,
+      "p_agent_e_lgb": 0.24064355789723602,
+      "p_agent_e_xgb": 0.20791852651917933
+    },
+    "fold_1": {
+      "p_agent_a_text": 0.23339848049103207,
+      "p_agent_b_tab": 0.3201024627646183,
+      "p_agent_c_seller": 0.0,
+      "p_agent_d_inter": 0.0,
+      "p_agent_e_cb": 0.0,
+      "p_agent_e_lgb": 0.2889092117599904,
+      "p_agent_e_xgb": 0.15758984498435918
+    },
+    "fold_2": {
+      "p_agent_a_text": 0.24992706871516146,
+      "p_agent_b_tab": 0.3136757837731473,
+      "p_agent_c_seller": 0.0,
+      "p_agent_d_inter": 0.0,
+      "p_agent_e_cb": 0.0,
+      "p_agent_e_lgb": 0.2660336183811516,
+      "p_agent_e_xgb": 0.1703635291305397
+    },
+    "fold_3": {
+      "p_agent_a_text": 0.27818195389025735,
+      "p_agent_b_tab": 0.335701610249606,
+      "p_agent_c_seller": 0.0,
+      "p_agent_d_inter": 0.0,
+      "p_agent_e_cb": 0.0,
+      "p_agent_e_lgb": 0.30706038342947517,
+      "p_agent_e_xgb": 0.07905605243066155
+    }
+  },
+  "feasible_k_evaluations_confirm": {
+    "K_75": {
+      "k_test_support": 75,
+      "k_confirm_evaluated": 35,
+      "fixes_confirm": 17,
+      "breaks_confirm": 18,
+      "net_hits_confirm": -1,
+      "observed_precision": 0.4857142857142857,
+      "seller_clustered_ci95": [
+        0.30303030303030304,
+        0.6571428571428571
+      ],
+      "category_clustered_ci95": [
+        0.28125,
+        0.6571616541353382
+      ],
+      "expected_public_flips": 52.495,
+      "expected_net_public_hits": -1.4998571428571432,
+      "expected_public_score": 0.9475385714285713,
+      "probability_gain_ge_51": 0.0
+    },
+    "K_100": {
+      "k_test_support": 100,
+      "k_confirm_evaluated": 47,
+      "fixes_confirm": 22,
+      "breaks_confirm": 25,
+      "net_hits_confirm": -3,
+      "observed_precision": 0.46808510638297873,
+      "seller_clustered_ci95": [
+        0.3111111111111111,
+        0.6170212765957447
+      ],
+      "category_clustered_ci95": [
+        0.30434782608695654,
+        0.62
+      ],
+      "expected_public_flips": 69.99333333333333,
+      "expected_net_public_hits": -4.467659574468083,
+      "expected_public_score": 0.9473972340425532,
+      "probability_gain_ge_51": 0.0
+    },
+    "K_150": {
+      "k_test_support": 150,
+      "k_confirm_evaluated": 70,
+      "fixes_confirm": 28,
+      "breaks_confirm": 42,
+      "net_hits_confirm": -14,
+      "observed_precision": 0.4,
+      "seller_clustered_ci95": [
+        0.2878693181818182,
+        0.5138888888888888
+      ],
+      "category_clustered_ci95": [
+        0.272699214365881,
+        0.5333561643835615
+      ],
+      "expected_public_flips": 104.99,
+      "expected_net_public_hits": -20.997999999999994,
+      "expected_public_score": 0.94661,
+      "probability_gain_ge_51": 0.0
+    },
+    "K_250": {
+      "k_test_support": 250,
+      "k_confirm_evaluated": 117,
+      "fixes_confirm": 49,
+      "breaks_confirm": 68,
+      "net_hits_confirm": -19,
+      "observed_precision": 0.4188034188034188,
+      "seller_clustered_ci95": [
+        0.3277310924369748,
+        0.508478229105786
+      ],
+      "category_clustered_ci95": [
+        0.32456140350877194,
+        0.5181818181818182
+      ],
+      "expected_public_flips": 174.98333333333332,
+      "expected_net_public_hits": -28.41609686609686,
+      "expected_public_score": 0.9462567236467236,
+      "probability_gain_ge_51": 0.0
+    },
+    "K_500": {
+      "k_test_support": 500,
+      "k_confirm_evaluated": 233,
+      "fixes_confirm": 96,
+      "breaks_confirm": 137,
+      "net_hits_confirm": -41,
+      "observed_precision": 0.41201716738197425,
+      "seller_clustered_ci95": [
+        0.3470273355547328,
+        0.4775510204081633
+      ],
+      "category_clustered_ci95": [
+        0.3404255319148936,
+        0.48430668441704033
+      ],
+      "expected_public_flips": 349.96666666666664,
+      "expected_net_public_hits": -61.582117310443486,
+      "expected_public_score": 0.9446772389127325,
+      "probability_gain_ge_51": 0.0
+    },
+    "K_750": {
+      "k_test_support": 750,
+      "k_confirm_evaluated": 350,
+      "fixes_confirm": 138,
+      "breaks_confirm": 212,
+      "net_hits_confirm": -74,
+      "observed_precision": 0.3942857142857143,
+      "seller_clustered_ci95": [
+        0.34402100642073513,
+        0.4466382682463539
+      ],
+      "category_clustered_ci95": [
+        0.339389916867793,
+        0.4512647584831602
+      ],
+      "expected_public_flips": 524.9499999999999,
+      "expected_net_public_hits": -110.98942857142855,
+      "expected_public_score": 0.9423242857142856,
+      "probability_gain_ge_51": 0.0
+    },
+    "K_1000": {
+      "k_test_support": 1000,
+      "k_confirm_evaluated": 467,
+      "fixes_confirm": 167,
+      "breaks_confirm": 300,
+      "net_hits_confirm": -133,
+      "observed_precision": 0.3576017130620985,
+      "seller_clustered_ci95": [
+        0.3127593085106383,
+        0.400423842231336
+      ],
+      "category_clustered_ci95": [
+        0.3117698506673973,
+        0.404868274607742
+      ],
+      "expected_public_flips": 699.9333333333333,
+      "expected_net_public_hits": -199.33861527480371,
+      "expected_public_score": 0.9381167808708065,
+      "probability_gain_ge_51": 0.0
+    },
+    "K_1500": {
+      "k_test_support": 1500,
+      "k_confirm_evaluated": 664,
+      "fixes_confirm": 225,
+      "breaks_confirm": 439,
+      "net_hits_confirm": -214,
+      "observed_precision": 0.338855421686747,
+      "seller_clustered_ci95": [
+        0.2980332829046899,
+        0.378500188504644
+      ],
+      "category_clustered_ci95": [
+        0.3001470588235294,
+        0.3764634163041096
+      ],
+      "expected_public_flips": 1049.8999999999999,
+      "expected_net_public_hits": -338.37138554216864,
+      "expected_public_score": 0.9314955421686747,
+      "probability_gain_ge_51": 0.0
+    }
+  },
+  "portfolio_manifest_sha256": "318e7da54651d80d19205366ad8f29f9e7962c4ce26fc834158ffe27f5e5c6d3",
+  "total_elapsed_seconds": 27.653346300125122
+}

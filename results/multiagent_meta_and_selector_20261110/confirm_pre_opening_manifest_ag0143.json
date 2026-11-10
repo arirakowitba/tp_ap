@@ -1,0 +1,26 @@
+{
+  "manifest_title": "Pre-Opening Confirm Protocol Manifest (AG-0143)",
+  "timestamp_utc": "2026-11-10T21:30:00Z",
+  "confirm_fold": 4,
+  "confirm_rows_count": 14002,
+  "target_score": 0.95,
+  "anchor_evt143_score": 0.94761,
+  "gain_required_public_hits": 51,
+  "evaluated_k_support_sizes": [
+    75,
+    100,
+    150,
+    250,
+    500,
+    750,
+    1000,
+    1500
+  ],
+  "selector_architecture": "HistGradientBoostingClassifier(l2_regularization=2.0, max_iter=45, min_samples_leaf=15)",
+  "w_blend": 0.35,
+  "discarded_k_under_51": [
+    25,
+    35
+  ],
+  "discard_reason": "Mathematically impossible to add +51 public hits (K < 51 gives max score < 0.95000)"
+}
