@@ -1,0 +1,18 @@
+{
+  "history": [
+    {
+      "slot": 1,
+      "score": 0.94723,
+      "hits": 19890,
+      "delta_vs_anchor": -6,
+      "flips_total": 20,
+      "flips_pub_total": 14,
+      "precision_total": 0.2857142857142857,
+      "batch_flips_test": 20,
+      "batch_flips_pub": 14,
+      "batch_delta": -6,
+      "batch_precision": 0.2857142857142857
+    }
+  ],
+  "batches": []
+}
