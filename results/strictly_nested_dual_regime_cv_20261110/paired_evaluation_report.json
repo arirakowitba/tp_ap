@@ -1,0 +1,123 @@
+{
+  "pipeline": "Strictly Nested Dual-Regime CV (Zero-Leakage In-Fold Feature Fitting & Inner Iteration Freezing)",
+  "timestamp_utc": "2026-11-10T12:31:27Z",
+  "total_train_rows": 70000,
+  "total_test_rows": 30000,
+  "outer_splits": 5,
+  "models": [
+    "CatBoost Depth 8",
+    "LightGBM Leaves 127",
+    "Sparse Text Logistic SAGA"
+  ],
+  "qualification_status": "EXPLORATORY / VALIDATION_STAGE",
+  "baseline_comparison": {
+    "baseline_name": "Podium Engine (results/ultimate_podium_engine_23h/oof_predictions_podium_engine.csv)",
+    "baseline_accuracy": 0.9423,
+    "baseline_logloss": 0.14887298352438993,
+    "baseline_hits": 65961
+  },
+  "unseen_seller_regime": {
+    "description": "100% unseen sellers in outer holdout (pure seller-group)",
+    "accuracy": 0.8866714285714286,
+    "hits": 62067,
+    "logloss": 0.2694118566503095,
+    "roc_auc": 0.9556041702839956
+  },
+  "seen_seller_regime": {
+    "description": "Holdout items from sellers present in training set",
+    "sample_size": 32092,
+    "accuracy": 0.960769039012838,
+    "logloss": 0.14644255939239856
+  },
+  "deployment_mix_sensitivity": {
+    "description": "71.62% seen sellers / 28.38% unseen sellers mix",
+    "accuracy": 0.939740137169566
+  },
+  "paired_metrics": {
+    "delta_accuracy": -0.05562857142857147,
+    "delta_logloss": 0.12053887312591954,
+    "fixes": 2170,
+    "breaks": 6064,
+    "net_hits": -3894,
+    "seller_clustered_bootstrap_95ci": [
+      -0.060817543504187076,
+      -0.05133152880675641
+    ],
+    "seller_clustered_bootstrap_mean": -0.05578716038059765,
+    "probability_delta_gt_zero": 0.0,
+    "wilcoxon_fold_pvalue": 0.0625
+  },
+  "fold_details": [
+    {
+      "fold": 1,
+      "best_iter_cb": 787,
+      "best_iter_lgb": 279,
+      "weights": [
+        0.4642203388475127,
+        0.48898691923959414,
+        0.04679274191289324
+      ],
+      "unseen_accuracy": 0.8848571428571429,
+      "unseen_logloss": 0.2711298803378656,
+      "seen_accuracy": 0.9558045440398382,
+      "elapsed_seconds": 119.68143033981323
+    },
+    {
+      "fold": 2,
+      "best_iter_cb": 787,
+      "best_iter_lgb": 299,
+      "weights": [
+        0.5782526121064174,
+        0.3875410391647737,
+        0.03420634872880881
+      ],
+      "unseen_accuracy": 0.89,
+      "unseen_logloss": 0.26212080537895643,
+      "seen_accuracy": 0.9553473848555816,
+      "elapsed_seconds": 123.02391028404236
+    },
+    {
+      "fold": 3,
+      "best_iter_cb": 793,
+      "best_iter_lgb": 362,
+      "weights": [
+        0.5420207792859483,
+        0.4152849526390017,
+        0.04269426807504997
+      ],
+      "unseen_accuracy": 0.887,
+      "unseen_logloss": 0.2719357855000429,
+      "seen_accuracy": 0.9617067833698031,
+      "elapsed_seconds": 127.52353549003601
+    },
+    {
+      "fold": 4,
+      "best_iter_cb": 799,
+      "best_iter_lgb": 400,
+      "weights": [
+        0.28698892959771616,
+        0.6673873697883396,
+        0.0456237006139442
+      ],
+      "unseen_accuracy": 0.890484354907844,
+      "unseen_logloss": 0.26228417378433466,
+      "seen_accuracy": 0.972391202620496,
+      "elapsed_seconds": 130.33350372314453
+    },
+    {
+      "fold": 5,
+      "best_iter_cb": 776,
+      "best_iter_lgb": 324,
+      "weights": [
+        0.49078413512465285,
+        0.46257279321142636,
+        0.04664307166392067
+      ],
+      "unseen_accuracy": 0.8810169975717754,
+      "unseen_logloss": 0.27958616653709745,
+      "seen_accuracy": 0.9586174829510229,
+      "elapsed_seconds": 127.22547960281372
+    }
+  ],
+  "total_elapsed_seconds": 665.9356763362885
+}
