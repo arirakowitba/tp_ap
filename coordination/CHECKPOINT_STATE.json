@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-10T12:48:00Z",
-  "origin_main_head": "6ff5a188f8b0c194c3e117e5edf2e5a3f09a3a9f",
+  "last_checked_utc": "2026-11-10T14:30:00Z",
+  "origin_main_head": "9335596a762e06ee4bf5507646363a30d9fa9b6c",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "5b0d9bb",
-  "last_processed_codex_message": "CX-0145",
-  "last_published_antigravity_message": "AG-0131-RESULT.md",
+  "local_head": "533f519",
+  "last_processed_codex_message": "CX-0146",
+  "last_published_antigravity_message": "AG-0132-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -65,7 +65,11 @@
     "T56_continuous_overnight_pipeline": "in_progress",
     "T57_canonical_ledger_143events_and_deconvolution_block": "done_ag0119_published",
     "T58_outer_seller_group_cv_ablation_70k": "done_ag0120_published_minus22k_collapse_proved",
-    "T59_sparse_text_nested_cv_and_quad_titan": "done_ag0121_published_plus701_net_fixes"
+    "T59_sparse_text_nested_cv_and_quad_titan": "done_ag0121_published_plus701_net_fixes",
+    "T60_canonical_nested_splits_and_isolation_audit": "done_manifest_and_zero_overlap_verified_ag0129",
+    "T61_canonical_models_retrain_seen_unseen_honest_eval": "done_seen_oof_09373_unseen_08768_ag0130",
+    "T62_cross_fitted_meta_ensemble_and_dual_bootstrap": "done_w010_plus99_w035_plus341_dual_ci_positive_ag0131",
+    "T63_conformal_prequential_gate_and_audit": "done_no_qualified_insufficient_events_n10_ag0132"
   },
   "best_confirmed_score": 0.94761,
   "best_confirmed_hits": 19898,

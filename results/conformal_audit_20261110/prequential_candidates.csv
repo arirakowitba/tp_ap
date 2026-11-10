@@ -1,0 +1,3 @@
+candidate_id,policy_family,vector_sha256,predicted_public_score,frozen_time_utc
+CAND-20261110-HYPOTHESIS-W010,surgical_quad_probe,3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8,0.94817,2026-11-10T12:00:00Z
+CAND-20261110-HYPOTHESIS-W035,surgical_quad_probe,3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8,0.95038,2026-11-10T12:00:00Z

@@ -1,0 +1,74 @@
+{
+  "candidate_count": 2,
+  "does_not_guarantee": "Coverage under policy drift, post-hoc predictions, non-comparable probes, or adversarial dependence. It does not infer individual labels.",
+  "guarantee_scope": "Finite-sample marginal coverage under exchangeability of prior frozen prequential events and the new candidate; Bonferroni family-wise correction.",
+  "method": "one_sided_split_conformal_prequential_score_gate",
+  "results": [
+    {
+      "candidate_id": "CAND-20261110-HYPOTHESIS-W010",
+      "conformal_order_index": 11,
+      "familywise_confidence": 0.95,
+      "lower_public_score_bound": null,
+      "n_rejected": 2,
+      "n_valid_prequential": 10,
+      "overprediction_quantile": null,
+      "per_candidate_coverage": 0.975,
+      "policy_family": "surgical_quad_probe",
+      "predicted_public_score": 0.94817,
+      "qualified": false,
+      "reasons": [
+        "insufficient_prequential_events:n=10,required_at_least=39"
+      ],
+      "rejected_events": [
+        {
+          "event_id": "EVT-141",
+          "reasons": [
+            "not_comparable"
+          ]
+        },
+        {
+          "event_id": "EVT-142",
+          "reasons": [
+            "not_comparable"
+          ]
+        }
+      ],
+      "status": "NO_QUALIFIED",
+      "target": 0.95,
+      "vector_sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8"
+    },
+    {
+      "candidate_id": "CAND-20261110-HYPOTHESIS-W035",
+      "conformal_order_index": 11,
+      "familywise_confidence": 0.95,
+      "lower_public_score_bound": null,
+      "n_rejected": 2,
+      "n_valid_prequential": 10,
+      "overprediction_quantile": null,
+      "per_candidate_coverage": 0.975,
+      "policy_family": "surgical_quad_probe",
+      "predicted_public_score": 0.95038,
+      "qualified": false,
+      "reasons": [
+        "insufficient_prequential_events:n=10,required_at_least=39"
+      ],
+      "rejected_events": [
+        {
+          "event_id": "EVT-141",
+          "reasons": [
+            "not_comparable"
+          ]
+        },
+        {
+          "event_id": "EVT-142",
+          "reasons": [
+            "not_comparable"
+          ]
+        }
+      ],
+      "status": "NO_QUALIFIED",
+      "target": 0.95,
+      "vector_sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8"
+    }
+  ]
+}
