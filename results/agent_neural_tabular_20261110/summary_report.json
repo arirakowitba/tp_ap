@@ -1,0 +1,89 @@
+{
+  "model_name": "Calibrated Neural Tabular Network (MLPClassifier 256-128-64)",
+  "architecture": {
+    "hidden_layer_sizes": [
+      256,
+      128,
+      64
+    ],
+    "activation": "relu",
+    "alpha": 0.01,
+    "batch_size": 256,
+    "learning_rate_init": 0.001,
+    "max_iter": 40,
+    "early_stopping": true,
+    "validation_fraction": 0.1
+  },
+  "cv_protocol": "StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=42) grouped by seller_id",
+  "zero_seller_leakage": true,
+  "item_intrinsic_features_only": true,
+  "n_train": 70000,
+  "n_test": 30000,
+  "n_tabular_features": 37,
+  "n_svd_features": 128,
+  "total_features": 165,
+  "global_accuracy": 0.8404,
+  "global_roc_auc": 0.9179720799926026,
+  "global_logloss": 0.3696351331390124,
+  "hits": 58828,
+  "total_duration_seconds": 386.2882037162781,
+  "fold_metrics": [
+    {
+      "fold": 1,
+      "accuracy": 0.85,
+      "roc_auc": 0.9268275115347971,
+      "logloss": 0.3518275193607736,
+      "n_iterations": 28,
+      "fit_time_seconds": 53.849894285202026,
+      "total_fold_seconds": 68.01185917854309
+    },
+    {
+      "fold": 2,
+      "accuracy": 0.8484285714285714,
+      "roc_auc": 0.9240789194280943,
+      "logloss": 0.3647628620219284,
+      "n_iterations": 35,
+      "fit_time_seconds": 74.73856925964355,
+      "total_fold_seconds": 91.23349213600159
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.8377142857142857,
+      "roc_auc": 0.9163782926010416,
+      "logloss": 0.371614694461366,
+      "n_iterations": 27,
+      "fit_time_seconds": 54.53342652320862,
+      "total_fold_seconds": 72.99810338020325
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.8388571428571429,
+      "roc_auc": 0.9118735257720425,
+      "logloss": 0.382585522571972,
+      "n_iterations": 29,
+      "fit_time_seconds": 58.98862814903259,
+      "total_fold_seconds": 77.3874921798706
+    },
+    {
+      "fold": 5,
+      "accuracy": 0.827,
+      "roc_auc": 0.9123705082501163,
+      "logloss": 0.37738506727902205,
+      "n_iterations": 18,
+      "fit_time_seconds": 35.823513984680176,
+      "total_fold_seconds": 53.002888679504395
+    }
+  ],
+  "output_files": {
+    "oof_csv": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\results\\agent_neural_tabular_20261110\\oof_neural_tabular.csv",
+    "test_csv": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\results\\agent_neural_tabular_20261110\\test_probabilities_neural_tabular.csv"
+  },
+  "leak_free_audit": {
+    "seller_overlap_across_folds": 0,
+    "seller_identity_features": 0,
+    "seller_target_encoding": 0,
+    "scaler_fitted_strictly_on_train": true,
+    "svd_fitted_strictly_on_train": true,
+    "category_freq_fitted_strictly_on_train": true
+  }
+}

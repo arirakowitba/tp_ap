@@ -112,6 +112,22 @@ if os.path.exists(cat_seg_path):
     streams['category_segments'] = cat_seg_df['p_used'].values
     print("Loaded Stream: category_segments (Domain Specialists: Autos, Celulares, Libros, Electronics)")
 
+# Stream 10: DART LightGBM Specialist (OOF Acc 0.88836, ROC-AUC 0.95527, num_leaves 90, drop_rate 0.15)
+dart_path = 'results/agent_dart_lgbm_20261110/test_probabilities_dart_lgbm.csv'
+if os.path.exists(dart_path):
+    dart_df = pd.read_csv(dart_path)
+    p_dart_col = 'p_used_dart_lgbm' if 'p_used_dart_lgbm' in dart_df.columns else 'p_used'
+    streams['dart_lgbm'] = dart_df[p_dart_col].values
+    print("Loaded Stream: dart_lgbm (Dropouts meet Multiple Additive Regression Trees)")
+
+# Stream 11: Calibrated Neural Tabular Specialist (OOF Acc 0.84040, ROC-AUC 0.91797, MLP 256-128-64)
+mlp_path = 'results/agent_neural_tabular_20261110/test_probabilities_neural_tabular.csv'
+if os.path.exists(mlp_path):
+    mlp_df = pd.read_csv(mlp_path)
+    p_mlp_col = 'p_used' if 'p_used' in mlp_df.columns else mlp_df.columns[1]
+    streams['neural_tabular'] = mlp_df[p_mlp_col].values
+    print("Loaded Stream: neural_tabular (Multi-Layer Perceptron 256-128-64)")
+
 # 4. Probe-Crossing Audit for Each Stream
 print("\n--- PROBE-CROSSING AUDIT PER STREAM ---")
 stream_names = list(streams.keys())
@@ -185,7 +201,10 @@ def loss_fn(weights):
             pen += 0.5 * (p_u - 0.5)
         elif win['expected'] == 'used' and p_u < 0.5:
             pen += 0.5 * (0.5 - p_u)
-    return ll + pen
+            
+    # Diversity entropy prior: slight penalty on hyper-concentration
+    reg = 0.02 * np.sum((w - 1.0/len(w)) ** 2)
+    return ll + pen + reg
 
 init_weights = np.ones(n_models) / n_models
 bounds = [(0.0, 1.0)] * n_models

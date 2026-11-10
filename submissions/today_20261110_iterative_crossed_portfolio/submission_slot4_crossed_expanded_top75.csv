@@ -2035,7 +2035,7 @@ ID,condition
 2034,new
 2035,used
 2036,new
-2037,new
+2037,used
 2038,new
 2039,used
 2040,new
@@ -3054,7 +3054,7 @@ ID,condition
 3053,used
 3054,used
 3055,new
-3056,used
+3056,new
 3057,new
 3058,new
 3059,new
@@ -3350,7 +3350,7 @@ ID,condition
 3349,new
 3350,used
 3351,new
-3352,used
+3352,new
 3353,new
 3354,used
 3355,used
@@ -7038,7 +7038,7 @@ ID,condition
 7037,used
 7038,new
 7039,new
-7040,used
+7040,new
 7041,new
 7042,used
 7043,new
@@ -7713,7 +7713,7 @@ ID,condition
 7712,new
 7713,new
 7714,new
-7715,used
+7715,new
 7716,new
 7717,used
 7718,used
@@ -8252,7 +8252,7 @@ ID,condition
 8251,new
 8252,new
 8253,new
-8254,used
+8254,new
 8255,new
 8256,new
 8257,used
@@ -8430,7 +8430,7 @@ ID,condition
 8429,new
 8430,new
 8431,new
-8432,new
+8432,used
 8433,new
 8434,new
 8435,used
@@ -8648,7 +8648,7 @@ ID,condition
 8647,used
 8648,used
 8649,new
-8650,used
+8650,new
 8651,used
 8652,new
 8653,used
@@ -9517,7 +9517,7 @@ ID,condition
 9516,new
 9517,new
 9518,new
-9519,new
+9519,used
 9520,new
 9521,new
 9522,new
@@ -9730,7 +9730,7 @@ ID,condition
 9729,new
 9730,new
 9731,used
-9732,new
+9732,used
 9733,new
 9734,new
 9735,new
@@ -9878,7 +9878,7 @@ ID,condition
 9877,used
 9878,new
 9879,new
-9880,used
+9880,new
 9881,used
 9882,used
 9883,new
@@ -9939,7 +9939,7 @@ ID,condition
 9938,new
 9939,used
 9940,new
-9941,used
+9941,new
 9942,new
 9943,new
 9944,used
@@ -10354,7 +10354,7 @@ ID,condition
 10353,used
 10354,new
 10355,new
-10356,new
+10356,used
 10357,used
 10358,used
 10359,used
@@ -11158,7 +11158,7 @@ ID,condition
 11157,used
 11158,new
 11159,used
-11160,used
+11160,new
 11161,new
 11162,used
 11163,new
@@ -14225,7 +14225,7 @@ ID,condition
 14224,used
 14225,new
 14226,used
-14227,new
+14227,used
 14228,used
 14229,used
 14230,used
@@ -16566,7 +16566,7 @@ ID,condition
 16565,new
 16566,used
 16567,new
-16568,used
+16568,new
 16569,new
 16570,new
 16571,new
@@ -16844,7 +16844,7 @@ ID,condition
 16843,used
 16844,new
 16845,new
-16846,new
+16846,used
 16847,used
 16848,new
 16849,used
@@ -17661,7 +17661,7 @@ ID,condition
 17660,used
 17661,new
 17662,new
-17663,new
+17663,used
 17664,new
 17665,new
 17666,new
@@ -18485,7 +18485,7 @@ ID,condition
 18484,used
 18485,new
 18486,used
-18487,used
+18487,new
 18488,new
 18489,new
 18490,used
@@ -19023,7 +19023,7 @@ ID,condition
 19022,used
 19023,used
 19024,used
-19025,used
+19025,new
 19026,new
 19027,new
 19028,used
@@ -19237,7 +19237,7 @@ ID,condition
 19236,new
 19237,new
 19238,new
-19239,new
+19239,used
 19240,used
 19241,new
 19242,new
@@ -19490,7 +19490,7 @@ ID,condition
 19489,used
 19490,new
 19491,new
-19492,new
+19492,used
 19493,new
 19494,used
 19495,new
@@ -19589,7 +19589,7 @@ ID,condition
 19588,new
 19589,used
 19590,used
-19591,new
+19591,used
 19592,new
 19593,new
 19594,used
@@ -19851,7 +19851,7 @@ ID,condition
 19850,used
 19851,new
 19852,new
-19853,new
+19853,used
 19854,new
 19855,new
 19856,new
@@ -20218,7 +20218,7 @@ ID,condition
 20217,used
 20218,new
 20219,new
-20220,used
+20220,new
 20221,used
 20222,new
 20223,new
@@ -21120,7 +21120,7 @@ ID,condition
 21119,used
 21120,used
 21121,new
-21122,new
+21122,used
 21123,new
 21124,used
 21125,used
@@ -22089,7 +22089,7 @@ ID,condition
 22088,new
 22089,new
 22090,new
-22091,new
+22091,used
 22092,used
 22093,used
 22094,new
@@ -22220,11 +22220,11 @@ ID,condition
 22219,used
 22220,new
 22221,used
-22222,used
+22222,new
 22223,new
 22224,used
 22225,new
-22226,new
+22226,used
 22227,used
 22228,new
 22229,used
@@ -22293,13 +22293,13 @@ ID,condition
 22292,new
 22293,new
 22294,used
-22295,used
+22295,new
 22296,used
 22297,new
 22298,used
 22299,new
 22300,new
-22301,used
+22301,new
 22302,new
 22303,used
 22304,used
@@ -22537,7 +22537,7 @@ ID,condition
 22536,new
 22537,new
 22538,new
-22539,new
+22539,used
 22540,used
 22541,new
 22542,new
@@ -24068,7 +24068,7 @@ ID,condition
 24067,used
 24068,used
 24069,new
-24070,new
+24070,used
 24071,new
 24072,new
 24073,used
@@ -24176,7 +24176,7 @@ ID,condition
 24175,used
 24176,new
 24177,used
-24178,new
+24178,used
 24179,new
 24180,used
 24181,new
@@ -24722,7 +24722,7 @@ ID,condition
 24721,used
 24722,new
 24723,new
-24724,new
+24724,used
 24725,new
 24726,new
 24727,new
@@ -25058,7 +25058,7 @@ ID,condition
 25057,used
 25058,used
 25059,new
-25060,new
+25060,used
 25061,used
 25062,used
 25063,used
@@ -25388,7 +25388,7 @@ ID,condition
 25387,used
 25388,used
 25389,used
-25390,new
+25390,used
 25391,new
 25392,used
 25393,used
@@ -26705,7 +26705,7 @@ ID,condition
 26704,used
 26705,new
 26706,new
-26707,used
+26707,new
 26708,used
 26709,new
 26710,new
@@ -26832,7 +26832,7 @@ ID,condition
 26831,new
 26832,new
 26833,new
-26834,used
+26834,new
 26835,used
 26836,used
 26837,new
@@ -28003,7 +28003,7 @@ ID,condition
 28002,new
 28003,new
 28004,used
-28005,new
+28005,used
 28006,new
 28007,new
 28008,used
@@ -29279,7 +29279,7 @@ ID,condition
 29278,used
 29279,new
 29280,used
-29281,new
+29281,used
 29282,new
 29283,used
 29284,new
@@ -29666,7 +29666,7 @@ ID,condition
 29665,new
 29666,new
 29667,used
-29668,new
+29668,used
 29669,used
 29670,new
 29671,new
