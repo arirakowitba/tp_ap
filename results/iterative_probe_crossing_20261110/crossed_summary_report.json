@@ -1,6 +1,6 @@
 {
   "title": "Iterative Probe-Crossing Engine Report",
-  "timestamp": "2026-11-10T12:03:30Z",
+  "timestamp": "2026-11-10T12:10:13Z",
   "models_crossed": [
     "tri_titan_trees",
     "sparse_text_148k",
@@ -15,23 +15,25 @@
     "neural_tabular",
     "asymmetric_xgb",
     "semantic_knn",
-    "super_learner_stacking"
+    "super_learner_stacking",
+    "catboost_depth9"
   ],
   "optimal_weights": {
-    "tri_titan_trees": 0.0,
-    "sparse_text_148k": 0.0,
+    "tri_titan_trees": 0.0947,
+    "sparse_text_148k": 0.0155,
     "char_morphology": 0.0,
-    "transductive_blend": 0.0,
+    "transductive_blend": 0.0309,
     "extratrees_bagging": 0.0,
-    "deep_lgbm_focal": 0.0,
+    "deep_lgbm_focal": 0.0235,
     "rich_ngram_text": 0.0,
-    "catboost_depth8": 0.0,
-    "category_segments": 0.1484,
-    "dart_lgbm": 0.0,
-    "neural_tabular": 0.0,
-    "asymmetric_xgb": 0.2361,
+    "catboost_depth8": 0.1342,
+    "category_segments": 0.1329,
+    "dart_lgbm": 0.0849,
+    "neural_tabular": 0.0378,
+    "asymmetric_xgb": 0.1361,
     "semantic_knn": 0.0,
-    "super_learner_stacking": 0.6155
+    "super_learner_stacking": 0.1677,
+    "catboost_depth9": 0.1418
   },
   "probe_audit": {
     "tri_titan_trees": {
@@ -117,12 +119,18 @@
       "agree_inv_elite": 0.6498109640831758,
       "winners_correct": 5,
       "total_winners": 7
+    },
+    "catboost_depth9": {
+      "agree_inv_all": 0.963243516213974,
+      "agree_inv_elite": 0.6219281663516069,
+      "winners_correct": 3,
+      "total_winners": 7
     }
   },
   "disagreements_summary": {
-    "total": 418,
-    "conf_ge_95": 7,
-    "conf_ge_90": 20,
-    "conf_ge_85": 36
+    "total": 355,
+    "conf_ge_95": 5,
+    "conf_ge_90": 9,
+    "conf_ge_85": 23
   }
 }

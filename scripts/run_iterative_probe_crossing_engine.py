@@ -152,6 +152,14 @@ if os.path.exists(meta_path):
     streams['super_learner_stacking'] = meta_df[p_meta_col].values
     print("Loaded Stream: super_learner_stacking (OOF Acc 0.92021, ROC-AUC 0.97332, 11-stream meta-stacking)")
 
+# Stream 15: Enhanced CatBoost Depth 9 Champion (OOF Acc 0.89994, ROC-AUC 0.96103, 750 iters)
+cat9_path = 'results/agent_catboost_depth9_20261110/test_probabilities_catboost_depth9.csv'
+if os.path.exists(cat9_path):
+    cat9_df = pd.read_csv(cat9_path)
+    p_cat9_col = 'p_used' if 'p_used' in cat9_df.columns else cat9_df.columns[1]
+    streams['catboost_depth9'] = cat9_df[p_cat9_col].values
+    print("Loaded Stream: catboost_depth9 (Oblivious Trees, Depth 9, Bayesian Bootstrap)")
+
 # 4. Probe-Crossing Audit for Each Stream
 print("\n--- PROBE-CROSSING AUDIT PER STREAM ---")
 stream_names = list(streams.keys())
