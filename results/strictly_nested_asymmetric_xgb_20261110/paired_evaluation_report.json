@@ -1,0 +1,88 @@
+{
+  "pipeline": "Strictly Nested Asymmetric Lossguide XGBoost Specialist",
+  "timestamp_utc": "2026-11-10T12:46:37Z",
+  "total_train_rows": 70000,
+  "total_test_rows": 30000,
+  "outer_splits": 5,
+  "model_architecture": "XGBClassifier(tree_method='hist', grow_policy='lossguide', max_leaves=120, max_depth=11, lr=0.035)",
+  "qualification_status": "EXPLORATORY / VALIDATION_STAGE",
+  "baseline_comparison": {
+    "baseline_name": "Podium Engine (results/ultimate_podium_engine_23h/oof_predictions_podium_engine.csv)",
+    "baseline_accuracy": 0.9423,
+    "baseline_logloss": 0.14887298352438993,
+    "baseline_hits": 65961
+  },
+  "unseen_seller_regime": {
+    "description": "100% unseen sellers in outer holdout (pure seller-group)",
+    "accuracy": 0.8843571428571428,
+    "hits": 61905,
+    "logloss": 0.27192807747112946,
+    "roc_auc": 0.9542329424201607
+  },
+  "seen_seller_regime": {
+    "description": "Holdout items from sellers present in training set",
+    "sample_size": 32092,
+    "accuracy": 0.9716751838464415,
+    "logloss": 0.12033178084986192
+  },
+  "deployment_mix_sensitivity": {
+    "description": "71.62% seen sellers / 28.38% unseen sellers mix",
+    "accuracy": 0.9468943238136784
+  },
+  "paired_metrics": {
+    "delta_accuracy": -0.057942857142857185,
+    "delta_logloss": 0.12305509394673952,
+    "fixes": 2180,
+    "breaks": 6236,
+    "net_hits": -4056,
+    "seller_clustered_bootstrap_95ci": [
+      -0.06298197315537729,
+      -0.05372662608658106
+    ],
+    "seller_clustered_bootstrap_mean": -0.058103588781139595,
+    "probability_delta_gt_zero": 0.0
+  },
+  "fold_details": [
+    {
+      "fold": 1,
+      "best_iter_xgb": 340,
+      "unseen_accuracy": 0.8820714285714286,
+      "unseen_logloss": 0.27540230891377604,
+      "seen_accuracy": 0.9618736383442266,
+      "elapsed_seconds": 55.99772548675537
+    },
+    {
+      "fold": 2,
+      "best_iter_xgb": 442,
+      "unseen_accuracy": 0.8867142857142857,
+      "unseen_logloss": 0.263031997527307,
+      "seen_accuracy": 0.9725214676034348,
+      "elapsed_seconds": 66.62673139572144
+    },
+    {
+      "fold": 3,
+      "best_iter_xgb": 485,
+      "unseen_accuracy": 0.8860714285714286,
+      "unseen_logloss": 0.27234055160174575,
+      "seen_accuracy": 0.9785870584557674,
+      "elapsed_seconds": 72.47581076622009
+    },
+    {
+      "fold": 4,
+      "best_iter_xgb": 419,
+      "unseen_accuracy": 0.8859122731818831,
+      "unseen_logloss": 0.26588053603272777,
+      "seen_accuracy": 0.9706754016534082,
+      "elapsed_seconds": 71.18096041679382
+    },
+    {
+      "fold": 5,
+      "best_iter_xgb": 445,
+      "unseen_accuracy": 0.8810169975717754,
+      "unseen_logloss": 0.2829825500829311,
+      "seen_accuracy": 0.9747365158090514,
+      "elapsed_seconds": 74.71769595146179
+    }
+  ],
+  "total_elapsed_seconds": 372.46929121017456
+}
