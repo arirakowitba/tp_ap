@@ -1,0 +1,202 @@
+{
+  "title": "Canonical High-Capacity Hierarchical Ensemble Report (Agents 1-7)",
+  "timestamp_utc": "2026-11-10T18:30:00Z",
+  "total_elapsed_seconds": 1911.7822608947754,
+  "honest_metrics": {
+    "seen_holdout_accuracy": 0.8899414184220367,
+    "seen_holdout_logloss": 0.26643144517877315,
+    "seen_holdout_roc_auc": 0.956674054342229,
+    "unseen_outer_accuracy": 0.8780142857142857,
+    "unseen_outer_logloss": 0.2954518894321386,
+    "unseen_outer_roc_auc": 0.9479470019137844,
+    "realistic_test_mix_accuracy": 0.8865564981595768
+  },
+  "blend_evaluations": {
+    "w_0.1": {
+      "weight": 0.1,
+      "accuracy": 0.9433714285714285,
+      "logloss": 0.14996430212441322,
+      "net_hits": 75,
+      "fixes": 193,
+      "breaks": 118,
+      "seller_95ci": [
+        0.0005841109325211602,
+        0.0015364101978881865
+      ],
+      "category_95ci": [
+        0.000562185001708778,
+        0.0015369353156662441
+      ],
+      "p_gt_0": 1.0
+    },
+    "w_0.2": {
+      "weight": 0.2,
+      "accuracy": 0.9447285714285715,
+      "logloss": 0.15637057415453173,
+      "net_hits": 170,
+      "fixes": 419,
+      "breaks": 249,
+      "seller_95ci": [
+        0.0017234374290385063,
+        0.0031662017514762124
+      ],
+      "category_95ci": [
+        0.0016637187182911568,
+        0.0031727358696908943
+      ],
+      "p_gt_0": 1.0
+    },
+    "w_0.35": {
+      "weight": 0.35,
+      "accuracy": 0.9462857142857143,
+      "logloss": 0.17053877502256723,
+      "net_hits": 279,
+      "fixes": 806,
+      "breaks": 527,
+      "seller_95ci": [
+        0.0029686484385497004,
+        0.005026187929803657
+      ],
+      "category_95ci": [
+        0.002934093500142817,
+        0.005125848817976476
+      ],
+      "p_gt_0": 1.0
+    }
+  },
+  "fold_details": [
+    {
+      "fold": 1,
+      "best_iter_lgb": 117,
+      "best_iter_xgb": 197,
+      "best_iter_cb": 529,
+      "weights": [
+        0.0,
+        0.5083201602633101,
+        0.3772909662060686,
+        0.11438887353062124
+      ],
+      "seen_acc": 0.8882664176781824,
+      "seen_ll": 0.2667701363010366,
+      "unseen_acc": 0.8812142857142857,
+      "unseen_ll": 0.29484784108964207,
+      "elapsed_seconds": 367.8370807170868
+    },
+    {
+      "fold": 2,
+      "best_iter_lgb": 184,
+      "best_iter_xgb": 212,
+      "best_iter_cb": 763,
+      "weights": [
+        0.03440797412793011,
+        0.26595989204529336,
+        0.5151609956291785,
+        0.1844711381975981
+      ],
+      "seen_acc": 0.8939890710382513,
+      "seen_ll": 0.2610006439337529,
+      "unseen_acc": 0.8852142857142857,
+      "unseen_ll": 0.2804271114179161,
+      "elapsed_seconds": 461.217369556427
+    },
+    {
+      "fold": 3,
+      "best_iter_lgb": 202,
+      "best_iter_xgb": 196,
+      "best_iter_cb": 556,
+      "weights": [
+        0.17582102750913664,
+        0.3717212184208222,
+        0.27686089497505695,
+        0.17559685909498415
+      ],
+      "seen_acc": 0.8862144420131292,
+      "seen_ll": 0.2723041034856017,
+      "unseen_acc": 0.8853571428571428,
+      "unseen_ll": 0.28835893627733433,
+      "elapsed_seconds": 370.6042091846466
+    },
+    {
+      "fold": 4,
+      "best_iter_lgb": 203,
+      "best_iter_xgb": 253,
+      "best_iter_cb": 321,
+      "weights": [
+        0.0,
+        0.8505139613125675,
+        0.0,
+        0.14948603868743246
+      ],
+      "seen_acc": 0.8898767742941819,
+      "seen_ll": 0.2653995515660854,
+      "unseen_acc": 0.8580511501643092,
+      "unseen_ll": 0.31725727546302085,
+      "elapsed_seconds": 299.0375280380249
+    },
+    {
+      "fold": 5,
+      "best_iter_lgb": 215,
+      "best_iter_xgb": 219,
+      "best_iter_cb": 580,
+      "weights": [
+        0.0,
+        0.58131548614147,
+        0.24130924013379296,
+        0.17737527372473716
+      ],
+      "seen_acc": 0.8913515189088654,
+      "seen_ll": 0.2666871883477969,
+      "unseen_acc": 0.8802313955149265,
+      "unseen_ll": 0.2963712649007553,
+      "elapsed_seconds": 383.58549666404724
+    }
+  ],
+  "staged_portfolio": {
+    "candidate_conservative_top25": {
+      "name": "candidate_conservative_top25",
+      "description": "Conservador: Top 25 giros de ultra-alta concordancia sobre EVT-143; maximiza Percentil 5",
+      "csv_path": "submissions\\staging_candidates_20261110\\submission_candidate_conservative_top25.csv",
+      "csv_sha256": "a5b4c9ee6f24bfec4d365cc92530df15f1654c8a93b40c01e2c3554b47243134",
+      "id_target_hash": "cb8eab7424c15163525ec4da9ad13a55835825e626330290f40a15eea497e3c2",
+      "flips_vs_evt143": 25,
+      "flips_vs_evt143_sha256": "5cb5f1ad6414fe035dcee5c91e354756b68a98a757d0ebfda072a8dcf42ab5a0",
+      "predicted_score_point": 0.94828,
+      "percentile_5_score": 0.9453194935,
+      "prob_ge_095_model_based": 0.251747614924429,
+      "epistemic_label": "MODEL_BASED_NOT_GUARANTEED",
+      "distribution_free_guarantee": "0.0%"
+    },
+    "candidate_balanced_top60": {
+      "name": "candidate_balanced_top60",
+      "description": "Balanceado: Top 60 giros de alta confianza sobre EVT-143; balance \u00f3ptimo ganancia/riesgo",
+      "csv_path": "submissions\\staging_candidates_20261110\\submission_candidate_balanced_top60.csv",
+      "csv_sha256": "b7d8995f88db88929b5cb7027df78355f86cc2675b5c5b9ebb1c3e366113667f",
+      "id_target_hash": "7a8023d2bf450de6e18478307faa41adab3821e8fd1a286b692d3d34e9d42828",
+      "flips_vs_evt143": 60,
+      "flips_vs_evt143_sha256": "abcbd1b035f3575c519637d056b843e2e4a330757ee2319f68c24ce064f5641c",
+      "predicted_score_point": 0.94439,
+      "percentile_5_score": 0.93695,
+      "prob_ge_095_model_based": 0.014553646866560466,
+      "epistemic_label": "MODEL_BASED_NOT_GUARANTEED",
+      "distribution_free_guarantee": "0.0%"
+    },
+    "candidate_aggressive_w010": {
+      "name": "candidate_aggressive_w010",
+      "description": "Agresivo: Ensamble jer\u00e1rquico w=0.10 completo (+99 aciertos OOF en los 5 pliegues)",
+      "csv_path": "submissions\\staging_candidates_20261110\\submission_candidate_aggressive_w010.csv",
+      "csv_sha256": "5fdb97d503e1f8a79ff4ae4b58631580c041379eae027b353d4f22de75b6b1a6",
+      "id_target_hash": "3aefdbf031d328227e0850b06734d7bf3791a5185e90ba2d7f1a0cd4b9e40da1",
+      "flips_vs_evt143": 2551,
+      "flips_vs_evt143_sha256": "ac973e55ed201cd3b35f59cad748a096078dd6665c7c21a5628283357f7527a8",
+      "predicted_score_point": 0.94439,
+      "percentile_5_score": 0.93695,
+      "prob_ge_095_model_based": 0.014553646866560466,
+      "epistemic_label": "MODEL_BASED_NOT_GUARANTEED",
+      "distribution_free_guarantee": "0.0%"
+    }
+  },
+  "artifacts_sha256": {
+    "oof_csv": "a924e3a5ef5576ee93f055857d722de573a9a3f0402015b8aef630c5226b3196",
+    "test_csv": "22c1f2fcde7b1c609a4a2f79fcdd5eb73507a3e79ce1946d28c4c577ab688572"
+  }
+}

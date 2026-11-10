@@ -1,0 +1,44 @@
+{
+  "candidate_conservative_top25": {
+    "name": "candidate_conservative_top25",
+    "description": "Conservador: Top 25 giros de ultra-alta concordancia sobre EVT-143; maximiza Percentil 5",
+    "csv_path": "submissions\\staging_candidates_20261110\\submission_candidate_conservative_top25.csv",
+    "csv_sha256": "a5b4c9ee6f24bfec4d365cc92530df15f1654c8a93b40c01e2c3554b47243134",
+    "id_target_hash": "cb8eab7424c15163525ec4da9ad13a55835825e626330290f40a15eea497e3c2",
+    "flips_vs_evt143": 25,
+    "flips_vs_evt143_sha256": "5cb5f1ad6414fe035dcee5c91e354756b68a98a757d0ebfda072a8dcf42ab5a0",
+    "predicted_score_point": 0.94828,
+    "percentile_5_score": 0.9453194935,
+    "prob_ge_095_model_based": 0.251747614924429,
+    "epistemic_label": "MODEL_BASED_NOT_GUARANTEED",
+    "distribution_free_guarantee": "0.0%"
+  },
+  "candidate_balanced_top60": {
+    "name": "candidate_balanced_top60",
+    "description": "Balanceado: Top 60 giros de alta confianza sobre EVT-143; balance \u00f3ptimo ganancia/riesgo",
+    "csv_path": "submissions\\staging_candidates_20261110\\submission_candidate_balanced_top60.csv",
+    "csv_sha256": "b7d8995f88db88929b5cb7027df78355f86cc2675b5c5b9ebb1c3e366113667f",
+    "id_target_hash": "7a8023d2bf450de6e18478307faa41adab3821e8fd1a286b692d3d34e9d42828",
+    "flips_vs_evt143": 60,
+    "flips_vs_evt143_sha256": "abcbd1b035f3575c519637d056b843e2e4a330757ee2319f68c24ce064f5641c",
+    "predicted_score_point": 0.94439,
+    "percentile_5_score": 0.93695,
+    "prob_ge_095_model_based": 0.014553646866560466,
+    "epistemic_label": "MODEL_BASED_NOT_GUARANTEED",
+    "distribution_free_guarantee": "0.0%"
+  },
+  "candidate_aggressive_w010": {
+    "name": "candidate_aggressive_w010",
+    "description": "Agresivo: Ensamble jer\u00e1rquico w=0.10 completo (+99 aciertos OOF en los 5 pliegues)",
+    "csv_path": "submissions\\staging_candidates_20261110\\submission_candidate_aggressive_w010.csv",
+    "csv_sha256": "5fdb97d503e1f8a79ff4ae4b58631580c041379eae027b353d4f22de75b6b1a6",
+    "id_target_hash": "3aefdbf031d328227e0850b06734d7bf3791a5185e90ba2d7f1a0cd4b9e40da1",
+    "flips_vs_evt143": 2551,
+    "flips_vs_evt143_sha256": "ac973e55ed201cd3b35f59cad748a096078dd6665c7c21a5628283357f7527a8",
+    "predicted_score_point": 0.94439,
+    "percentile_5_score": 0.93695,
+    "prob_ge_095_model_based": 0.014553646866560466,
+    "epistemic_label": "MODEL_BASED_NOT_GUARANTEED",
+    "distribution_free_guarantee": "0.0%"
+  }
+}
