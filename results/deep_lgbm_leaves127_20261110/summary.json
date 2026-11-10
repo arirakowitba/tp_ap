@@ -1,0 +1,66 @@
+{
+  "model": "High-Capacity LightGBM 127-Leaves Specialist",
+  "n_train": 70000,
+  "n_test": 30000,
+  "features_count": 242,
+  "svd_components": 200,
+  "lgbm_params": {
+    "n_estimators": 2500,
+    "learning_rate": 0.02,
+    "num_leaves": 127,
+    "min_child_samples": 30,
+    "subsample": 0.75,
+    "colsample_bytree": 0.65,
+    "random_state": 4242,
+    "n_jobs": 16,
+    "verbose": -1,
+    "objective": "binary",
+    "metric": "binary_logloss"
+  },
+  "cv_folds": [
+    {
+      "fold": 1,
+      "accuracy": 0.8908571428571429,
+      "logloss": 0.2684411259633825,
+      "auc": 0.9564558584030641,
+      "best_iteration": 663
+    },
+    {
+      "fold": 2,
+      "accuracy": 0.8907857142857143,
+      "logloss": 0.26406264822693737,
+      "auc": 0.957891700667139,
+      "best_iteration": 627
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.8947142857142857,
+      "logloss": 0.25633656810002303,
+      "auc": 0.9602537782611869,
+      "best_iteration": 702
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.8901428571428571,
+      "logloss": 0.26447167618403655,
+      "auc": 0.9576380739417514,
+      "best_iteration": 670
+    },
+    {
+      "fold": 5,
+      "accuracy": 0.8926428571428572,
+      "logloss": 0.2607501483551399,
+      "auc": 0.9585888726773275,
+      "best_iteration": 650
+    }
+  ],
+  "oof_accuracy": 0.8918285714285714,
+  "oof_roc_auc": 0.9581690781175077,
+  "oof_logloss": 0.26281243321557984,
+  "test_used_count": 13489,
+  "runtime_seconds": 746.11,
+  "artifacts": {
+    "predictions_npz": "results\\deep_lgbm_leaves127_20261110\\lgbm_leaves127_predictions.npz",
+    "summary_json": "results\\deep_lgbm_leaves127_20261110\\summary.json"
+  }
+}
