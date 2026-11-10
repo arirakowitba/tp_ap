@@ -1,0 +1,66 @@
+{
+  "title": "Repaired Multi-Agent Predictive Base Manifest (CX-0151 Compliance)",
+  "timestamp_utc": "2026-11-10T22:45:00Z",
+  "contamination_status": {
+    "is_fold4_contaminated_as_virgin_confirm": true,
+    "presence_in_folds_0_to_3_fit": {
+      "present_in_fold_0_fit": 12431,
+      "present_in_fold_1_fit": 12431,
+      "present_in_fold_2_fit": 12431,
+      "present_in_fold_3_fit": 12431
+    },
+    "classification": "REPLAY_DEVELOPMENT_EVIDENCE_NOT_VIRGIN_CONFIRM"
+  },
+  "split_disjunction_audit": {
+    "fold_0": {
+      "fit_rows": 49574,
+      "unseen_rows": 14000,
+      "seen_rows": 6426,
+      "row_overlap": 0,
+      "seller_overlap": 0,
+      "id_overlap": 0
+    },
+    "fold_1": {
+      "fit_rows": 49595,
+      "unseen_rows": 14000,
+      "seen_rows": 6405,
+      "row_overlap": 0,
+      "seller_overlap": 0,
+      "id_overlap": 0
+    },
+    "fold_2": {
+      "fit_rows": 49602,
+      "unseen_rows": 14000,
+      "seen_rows": 6398,
+      "row_overlap": 0,
+      "seller_overlap": 0,
+      "id_overlap": 0
+    },
+    "fold_3": {
+      "fit_rows": 49591,
+      "unseen_rows": 13998,
+      "seen_rows": 6411,
+      "row_overlap": 0,
+      "seller_overlap": 0,
+      "id_overlap": 0
+    },
+    "fold_4": {
+      "fit_rows": 49546,
+      "unseen_rows": 14002,
+      "seen_rows": 6452,
+      "row_overlap": 0,
+      "seller_overlap": 0,
+      "id_overlap": 0
+    }
+  },
+  "old_artifacts_superseded": {
+    "old_oof_sha256": "65e8106f7ebc0afd6bbb228f488c6deb8fc84071f8916638b93a2ed25c0f4f95",
+    "old_test_sha256": "0fd37cc1fec863540fd6e323baf83f2dcc34614b90c114f98d4f0c20a2ef2893",
+    "defect_confirmed": "Fold 4 predictions were 100% zero in old OOF"
+  },
+  "repaired_artifacts": {
+    "repaired_oof_sha256": "c1ed5f171cf9d0e0964c03ea23cc4fe72f468f02f9c0459581752cdcb5153646",
+    "repaired_test_sha256": "e867175aa5122ff27958cad0a3557317d81198cdb22520f240f591419aef10f0"
+  },
+  "elapsed_seconds": 250.6
+}

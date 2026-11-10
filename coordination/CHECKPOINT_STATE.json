@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-10T21:45:00Z",
-  "origin_main_head": "4e356ab",
+  "last_checked_utc": "2026-11-10T23:15:00Z",
+  "origin_main_head": "29f92ab",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "800c724",
-  "last_processed_codex_message": "CX-0150",
-  "last_published_antigravity_message": "AG-0144-RESULT.md",
+  "local_head": "c42a89e",
+  "last_processed_codex_message": "CX-0151",
+  "last_published_antigravity_message": "AG-0146-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -80,7 +80,8 @@
     "T71_row_level_disagreement_selector_and_cx0150_ranked_portfolio": "done_ag0141_published_conservative_k75_medium_k160_dense_k500",
     "T72_multiagent_predictive_base_agents_a_to_f": "done_ag0142_published",
     "T73_crossfitted_meta_and_confirm_evaluation_ag0143": "done_confirm_negative_gain_blocked_ag0143_published",
-    "T74_final_portfolio_ag0144": "done_portfolio_k75_k160_k500_manifest_published"
+    "T74_final_portfolio_ag0144": "done_portfolio_k75_k160_k500_manifest_published",
+    "T75_cx0151_repair_and_crossfitted_selector_ag0146": "done_candidates_k75_k150_k500_audited_and_published"
   },
   "best_confirmed_score": 0.94761,
   "best_confirmed_hits": 19898,

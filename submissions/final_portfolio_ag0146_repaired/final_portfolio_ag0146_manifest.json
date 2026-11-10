@@ -1,0 +1,395 @@
+{
+  "title": "Fully Cross-Fitted Baseline-Error Selector Report (AG-0146 / CX-0151)",
+  "timestamp_utc": "2026-11-10T23:00:00Z",
+  "author": "Antigravity",
+  "anchor_used": {
+    "name": "EVT-143",
+    "file": "submission_slot5_surgical_quad_rank6_breakthrough.csv",
+    "score": 0.94761,
+    "hits_20998": 19898,
+    "sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8"
+  },
+  "target": {
+    "score": 0.95,
+    "net_hits_required": 51
+  },
+  "distribution_free_lower_bound": 0.0,
+  "grid_evaluations": {
+    "75": {
+      "k": 75,
+      "fixes": 62,
+      "breaks": 13,
+      "net_oof": 49,
+      "precision_oof": 0.8266666666666667,
+      "flips_u2n": 21,
+      "flips_n2u": 54,
+      "unique_sellers": 74,
+      "unique_categories": 68,
+      "fold_net_gains": [
+        14,
+        8,
+        6,
+        11,
+        10
+      ],
+      "seller_cluster_ci95": [
+        36.0,
+        61.0
+      ],
+      "seller_cluster_p05": 38.0,
+      "expected_public_flips": 52.495,
+      "c_min_required_public": 52,
+      "precision_required_public": 0.9905705305267168,
+      "prob_reach_095000_cluster": 0.0095
+    },
+    "100": {
+      "k": 100,
+      "fixes": 83,
+      "breaks": 17,
+      "net_oof": 66,
+      "precision_oof": 0.83,
+      "flips_u2n": 25,
+      "flips_n2u": 75,
+      "unique_sellers": 99,
+      "unique_categories": 90,
+      "fold_net_gains": [
+        17,
+        7,
+        8,
+        13,
+        21
+      ],
+      "seller_cluster_ci95": [
+        51.0,
+        79.0
+      ],
+      "seller_cluster_p05": 53.0,
+      "expected_public_flips": 69.99333333333333,
+      "c_min_required_public": 61,
+      "precision_required_public": 0.8715115725307173,
+      "prob_reach_095000_cluster": 0.3152
+    },
+    "150": {
+      "k": 150,
+      "fixes": 122,
+      "breaks": 28,
+      "net_oof": 94,
+      "precision_oof": 0.8133333333333334,
+      "flips_u2n": 40,
+      "flips_n2u": 110,
+      "unique_sellers": 147,
+      "unique_categories": 134,
+      "fold_net_gains": [
+        19,
+        13,
+        16,
+        21,
+        25
+      ],
+      "seller_cluster_ci95": [
+        74.0,
+        114.0
+      ],
+      "seller_cluster_p05": 78.0,
+      "expected_public_flips": 104.99,
+      "c_min_required_public": 78,
+      "precision_required_public": 0.7429278978950377,
+      "prob_reach_095000_cluster": 0.9156
+    },
+    "250": {
+      "k": 250,
+      "fixes": 194,
+      "breaks": 56,
+      "net_oof": 138,
+      "precision_oof": 0.776,
+      "flips_u2n": 65,
+      "flips_n2u": 185,
+      "unique_sellers": 244,
+      "unique_categories": 210,
+      "fold_net_gains": [
+        30,
+        22,
+        25,
+        29,
+        32
+      ],
+      "seller_cluster_ci95": [
+        110.0,
+        164.0
+      ],
+      "seller_cluster_p05": 114.0,
+      "expected_public_flips": 174.98333333333332,
+      "c_min_required_public": 113,
+      "precision_required_public": 0.645775788170302,
+      "prob_reach_095000_cluster": 0.9988
+    },
+    "500": {
+      "k": 500,
+      "fixes": 363,
+      "breaks": 137,
+      "net_oof": 226,
+      "precision_oof": 0.726,
+      "flips_u2n": 144,
+      "flips_n2u": 356,
+      "unique_sellers": 483,
+      "unique_categories": 400,
+      "fold_net_gains": [
+        43,
+        44,
+        43,
+        43,
+        53
+      ],
+      "seller_cluster_ci95": [
+        188.0,
+        266.0
+      ],
+      "seller_cluster_p05": 194.0,
+      "expected_public_flips": 349.96666666666664,
+      "c_min_required_public": 201,
+      "precision_required_public": 0.5743404133727023,
+      "prob_reach_095000_cluster": 1.0
+    },
+    "750": {
+      "k": 750,
+      "fixes": 519,
+      "breaks": 231,
+      "net_oof": 288,
+      "precision_oof": 0.692,
+      "flips_u2n": 231,
+      "flips_n2u": 519,
+      "unique_sellers": 715,
+      "unique_categories": 562,
+      "fold_net_gains": [
+        54,
+        58,
+        53,
+        49,
+        74
+      ],
+      "seller_cluster_ci95": [
+        240.0,
+        340.025
+      ],
+      "seller_cluster_p05": 247.95,
+      "expected_public_flips": 524.9499999999999,
+      "c_min_required_public": 288,
+      "precision_required_public": 0.5486236784455664,
+      "prob_reach_095000_cluster": 1.0
+    },
+    "1000": {
+      "k": 1000,
+      "fixes": 675,
+      "breaks": 325,
+      "net_oof": 350,
+      "precision_oof": 0.675,
+      "flips_u2n": 326,
+      "flips_n2u": 674,
+      "unique_sellers": 942,
+      "unique_categories": 722,
+      "fold_net_gains": [
+        62,
+        73,
+        70,
+        53,
+        92
+      ],
+      "seller_cluster_ci95": [
+        295.975,
+        404.025
+      ],
+      "seller_cluster_p05": 305.0,
+      "expected_public_flips": 699.9333333333333,
+      "c_min_required_public": 376,
+      "precision_required_public": 0.5371940184779503,
+      "prob_reach_095000_cluster": 1.0
+    },
+    "1500": {
+      "k": 1500,
+      "fixes": 937,
+      "breaks": 563,
+      "net_oof": 374,
+      "precision_oof": 0.6246666666666667,
+      "flips_u2n": 540,
+      "flips_n2u": 960,
+      "unique_sellers": 1371,
+      "unique_categories": 975,
+      "fold_net_gains": [
+        64,
+        82,
+        72,
+        55,
+        101
+      ],
+      "seller_cluster_ci95": [
+        303.975,
+        445.0
+      ],
+      "seller_cluster_p05": 313.0,
+      "expected_public_flips": 1049.8999999999999,
+      "c_min_required_public": 551,
+      "precision_required_public": 0.5248118868463664,
+      "prob_reach_095000_cluster": 1.0
+    },
+    "2500": {
+      "k": 2500,
+      "fixes": 1398,
+      "breaks": 1102,
+      "net_oof": 296,
+      "precision_oof": 0.5592,
+      "flips_u2n": 1038,
+      "flips_n2u": 1462,
+      "unique_sellers": 2208,
+      "unique_categories": 1444,
+      "fold_net_gains": [
+        47,
+        69,
+        61,
+        31,
+        88
+      ],
+      "seller_cluster_ci95": [
+        193.975,
+        392.0
+      ],
+      "seller_cluster_p05": 214.95,
+      "expected_public_flips": 1749.8333333333333,
+      "c_min_required_public": 901,
+      "precision_required_public": 0.5149061815410991,
+      "prob_reach_095000_cluster": 0.9984
+    }
+  },
+  "staged_candidates": {
+    "conservative": {
+      "name": "candidate_conservative_k75.csv",
+      "tier": "conservative",
+      "role": "Tier A: Conservative Feasible (Smallest K with S_max >= 0.95000)",
+      "k_flips": 75,
+      "flips_u2n": 4,
+      "flips_n2u": 71,
+      "unique_sellers_affected": 74,
+      "unique_categories_affected": 72,
+      "csv_path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\final_portfolio_ag0146_repaired\\candidate_conservative_k75.csv",
+      "csv_sha256": "974fe8843b2a9a3797695ea11273a35bfbdbc6d2fd62bc17f12c51074cce63f1",
+      "id_target_hash": "d18b8042c0da8d7a9dc6c79075889d80cff2edaedd750ec889f809b1f199d33a",
+      "diff_hash": "7398d185bd2f5d4e5eba5dd8e70be23a3de0c333e662498a77bae5c018fcf94a",
+      "anchor_sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+      "deterministic_max_score": 0.9511817687398799,
+      "oof_evidence": {
+        "k": 75,
+        "fixes": 62,
+        "breaks": 13,
+        "net_oof": 49,
+        "precision_oof": 0.8266666666666667,
+        "flips_u2n": 21,
+        "flips_n2u": 54,
+        "unique_sellers": 74,
+        "unique_categories": 68,
+        "fold_net_gains": [
+          14,
+          8,
+          6,
+          11,
+          10
+        ],
+        "seller_cluster_ci95": [
+          36.0,
+          61.0
+        ],
+        "seller_cluster_p05": 38.0,
+        "expected_public_flips": 52.495,
+        "c_min_required_public": 52,
+        "precision_required_public": 0.9905705305267168,
+        "prob_reach_095000_cluster": 0.0095
+      }
+    },
+    "medium": {
+      "name": "candidate_medium_k150.csv",
+      "tier": "medium",
+      "role": "Tier B: Medium Support (Balanced support & high cluster precision)",
+      "k_flips": 150,
+      "flips_u2n": 7,
+      "flips_n2u": 143,
+      "unique_sellers_affected": 142,
+      "unique_categories_affected": 133,
+      "csv_path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\final_portfolio_ag0146_repaired\\candidate_medium_k150.csv",
+      "csv_sha256": "0943c94a3fc9206fed017135d865e60622c386c2319e43ca5295ebe389dfee7c",
+      "id_target_hash": "09e7053791e9a7be397d560a0d8f87f3e84e058b3122f082ce54a851e32166cc",
+      "diff_hash": "14a4b7c7a4f716eb90c5b8ee2e6007c54cefabbe4979cd9485135cbe50b58ab6",
+      "anchor_sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+      "deterministic_max_score": 0.9547535374797599,
+      "oof_evidence": {
+        "k": 150,
+        "fixes": 122,
+        "breaks": 28,
+        "net_oof": 94,
+        "precision_oof": 0.8133333333333334,
+        "flips_u2n": 40,
+        "flips_n2u": 110,
+        "unique_sellers": 147,
+        "unique_categories": 134,
+        "fold_net_gains": [
+          19,
+          13,
+          16,
+          21,
+          25
+        ],
+        "seller_cluster_ci95": [
+          74.0,
+          114.0
+        ],
+        "seller_cluster_p05": 78.0,
+        "expected_public_flips": 104.99,
+        "c_min_required_public": 78,
+        "precision_required_public": 0.7429278978950377,
+        "prob_reach_095000_cluster": 0.9156
+      }
+    },
+    "broad": {
+      "name": "candidate_broad_k500.csv",
+      "tier": "broad",
+      "role": "Tier C: Broad Correction (Diversified multi-cluster ensemble)",
+      "k_flips": 500,
+      "flips_u2n": 42,
+      "flips_n2u": 458,
+      "unique_sellers_affected": 454,
+      "unique_categories_affected": 396,
+      "csv_path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\final_portfolio_ag0146_repaired\\candidate_broad_k500.csv",
+      "csv_sha256": "a009b6fc72e4bd734f2b2d1ea5c1bb55156209dbe06af2ba2f3871c4461a8d66",
+      "id_target_hash": "582c30f41666ab5913636646413e90c9652f891bba27233a3ffa6cf657fc6c6b",
+      "diff_hash": "4e565f4e085b9e907af722add41fea5522fd93a63428cb7ed55826102139ea76",
+      "anchor_sha256": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+      "deterministic_max_score": 0.9714217915991998,
+      "oof_evidence": {
+        "k": 500,
+        "fixes": 363,
+        "breaks": 137,
+        "net_oof": 226,
+        "precision_oof": 0.726,
+        "flips_u2n": 144,
+        "flips_n2u": 356,
+        "unique_sellers": 483,
+        "unique_categories": 400,
+        "fold_net_gains": [
+          43,
+          44,
+          43,
+          43,
+          53
+        ],
+        "seller_cluster_ci95": [
+          188.0,
+          266.0
+        ],
+        "seller_cluster_p05": 194.0,
+        "expected_public_flips": 349.96666666666664,
+        "c_min_required_public": 201,
+        "precision_required_public": 0.5743404133727023,
+        "prob_reach_095000_cluster": 1.0
+      }
+    }
+  },
+  "safe_fallback": "EVT-143 (submission_slot5_surgical_quad_rank6_breakthrough.csv, score 0.94761)",
+  "elapsed_seconds": 97.1
+}
