@@ -1,0 +1,48 @@
+{
+  "manifest_id": "FROZEN_ESTIMATOR_V1",
+  "frozen_at_utc": "2026-11-10T19:30:00Z",
+  "base_commit_sha": "9a1daaa",
+  "transfer_dataset": {
+    "path": "results/calibrated_transfer_backtest_20261110/strictly_causal_transfer_dataset.csv",
+    "sha256": "bcee6bdecb42ee7e29a9888b45ecedd139334547ea36f67d475de7291edeb8dd",
+    "n_events": 123
+  },
+  "features": [
+    "anchor_score_at_t",
+    "flips_proxy",
+    "is_probe",
+    "is_surgical",
+    "is_stacker",
+    "is_router",
+    "is_ladder",
+    "prior_events_count",
+    "variants_explored",
+    "tune_confirm_separated"
+  ],
+  "model_specification": {
+    "primary_model": "Ridge Regression",
+    "alpha": 10.0,
+    "bayesian_family_shrinkage": true,
+    "bayesian_prior_weight": 5.0,
+    "residual_sigma_calibrated": 0.002541,
+    "out_of_time_rmse": 0.002545,
+    "out_of_time_mae": 0.001299
+  },
+  "selection_correction": {
+    "m_submissions_inspected": 106,
+    "public_sample_size": 20998,
+    "se_binomial_leaderboard": 0.001538,
+    "expected_max_z": 2.388,
+    "winners_curse_bias": 0.00367,
+    "observed_anchor_evt143": 0.94761,
+    "debiased_anchor_evt143": 0.94394,
+    "observed_anchor_evt132": 0.94752,
+    "debiased_anchor_evt132": 0.94385
+  },
+  "epistemic_invariants": {
+    "distribution_free_lower_bound": 0.0,
+    "historical_events_ge_095000": 0,
+    "tail_extrapolation_warning": "Zero historical events >= 0.95000. Any point probability is a model-based extrapolation."
+  },
+  "seed": 42
+}
