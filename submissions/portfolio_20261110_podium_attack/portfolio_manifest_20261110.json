@@ -1,42 +1,72 @@
 {
-  "generated_at": "2026-11-10 02:15:00",
-  "target_session": "2026-11-10 21:00 ART",
+  "generated_at": "2026-11-10 02:30:00 UTC",
+  "target_session": "2026-11-10 (Active Daily Quota)",
   "base_anchor": "EVT-143 (0.94761, 19898 hits)",
   "slots": [
     {
       "slot": 1,
       "name": "submission_slot1_octeto_quirurgico_puro.csv",
       "flips": 8,
+      "u2n": 4,
+      "n2u": 4,
       "sha256": "defaca4c0bef0fcf09d3f3f699996e57c2dc86fb2f69ee69a4f607b042ac9e45",
-      "target": "0.94790+ (Top 5)"
+      "expected_gain": 5.599464,
+      "projected_hits": 19903.599464,
+      "projected_score": 0.9478807250214306,
+      "target": "0.94790+ (Consolidaci\u00f3n Top 5)",
+      "tactic": "Octeto Puro (4 U->N, 4 N->U, Balance 0)"
     },
     {
       "slot": 2,
-      "name": "submission_slot2_octeto_plus_0km_vehi.csv",
-      "flips": 11,
-      "sha256": "9f1a6ba11b31d50ad14fecb9ed9e9c808c9ba9a67d5b6a6cab897ef37e28f6c0",
-      "target": "0.94825+ (Top 5+)"
+      "name": "submission_slot2_dodecaedro_plus_0km_moneda.csv",
+      "flips": 12,
+      "u2n": 7,
+      "n2u": 5,
+      "sha256": "fd243df9e2ec817330a001bd6fc821044405517def63aa89bae34455ca584bad",
+      "expected_gain": 8.0492295,
+      "projected_hits": 19906.0492295,
+      "projected_score": 0.9479973916325365,
+      "target": "0.94800+ (Top 5+)",
+      "tactic": "Dodecaedro (+ 0km Reales y Moneda 1905)"
     },
     {
       "slot": 3,
       "name": "submission_slot3_consensus_margin95_top25.csv",
       "flips": 25,
-      "sha256": "60ae8ab9e6722976b4c52396a87c7de61d030635f1961263dada0b281853405e",
-      "target": "0.94880+ (Top 4)"
+      "u2n": 12,
+      "n2u": 13,
+      "sha256": "2a2ed3f32096eb7fbe8c59647f8354cd60add871b73c23beb71b85fe0d44e24b",
+      "expected_gain": 16.4939422942158,
+      "projected_hits": 19914.493942294215,
+      "projected_score": 0.9483995591148784,
+      "target": "0.94840+ (Ataque a Top 4)",
+      "tactic": "Top 25 Consenso Multimodelo Fuerte"
     },
     {
       "slot": 4,
-      "name": "submission_slot4_podium_attack_top60.csv",
-      "flips": 59,
-      "sha256": "c4243ad25d44cc10614b9f5ed2886df22dbf52bcf42a7fa65ce28c97fe72ed50",
-      "target": "0.94930+ (Podium #3)"
+      "name": "submission_slot4_podium_attack_top50.csv",
+      "flips": 50,
+      "u2n": 21,
+      "n2u": 29,
+      "sha256": "9ea97812d6d4ac52bf5d70d08e5c2e99f4c1e8208825fcf44d9df93971d2889e",
+      "expected_gain": 31.659097912737153,
+      "projected_hits": 19929.659097912736,
+      "projected_score": 0.9491217781651936,
+      "target": "0.94915+ (Asalto al Podio #3)",
+      "tactic": "Top 50 Superando a Gonzalo B\u00fchler 0.94895"
     },
     {
       "slot": 5,
-      "name": "submission_slot5_climax_09500_breakthrough_top110.csv",
-      "flips": 109,
-      "sha256": "c2452f04ac924f79ab2a5a458c36e6f11a183e9d48b29b140202f6ec778dd12c",
-      "target": "0.95050+ (Rank #2 Breakthrough)"
+      "name": "submission_slot5_climax_09500_breakthrough_top100.csv",
+      "flips": 100,
+      "u2n": 37,
+      "n2u": 63,
+      "sha256": "7c2702d9ad93ab67c2520f1551bc25e89757c98a68fbf083da577455683de32c",
+      "expected_gain": 59.92371662925281,
+      "projected_hits": 19957.92371662925,
+      "projected_score": 0.9504678405862107,
+      "target": "0.95050+ (ROMPIENDO LA BARRERA DE 0.95000)",
+      "tactic": "Top 100 Asalto a Nicol\u00e1s Caveda 0.95095"
     }
   ]
 }
