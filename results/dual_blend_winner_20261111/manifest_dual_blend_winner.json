@@ -1,0 +1,76 @@
+{
+  "model_name": "Dual_Blend_50_50_LightGBM_CatBoost",
+  "description": "Purified dual blend removing noisy in-sample text specialist from Podium Engine architecture",
+  "status": "QUALIFIED_NEW_OOF_BENCHMARK",
+  "parent_baseline": "Podium Engine (results/ultimate_podium_engine_23h/)",
+  "full_oof_metrics": {
+    "n_samples": 70000,
+    "hits": 65983,
+    "accuracy": 0.94261,
+    "logloss": 0.14787,
+    "roc_auc": 0.98612,
+    "delta_hits_vs_podium": 22,
+    "fixes_vs_podium": 109,
+    "breaks_vs_podium": 87
+  },
+  "per_fold_metrics": [
+    {
+      "fold": 1,
+      "hits_podium": 13240,
+      "hits_dual_blend": 13251,
+      "delta_hits": 11,
+      "accuracy": 0.9465,
+      "logloss": 0.14153,
+      "roc_auc": 0.98725
+    },
+    {
+      "fold": 2,
+      "hits_podium": 13167,
+      "hits_dual_blend": 13173,
+      "delta_hits": 6,
+      "accuracy": 0.94093,
+      "logloss": 0.1479,
+      "roc_auc": 0.98618
+    },
+    {
+      "fold": 3,
+      "hits_podium": 13188,
+      "hits_dual_blend": 13193,
+      "delta_hits": 5,
+      "accuracy": 0.94236,
+      "logloss": 0.15214,
+      "roc_auc": 0.98528
+    },
+    {
+      "fold": 4,
+      "hits_podium": 13183,
+      "hits_dual_blend": 13187,
+      "delta_hits": 4,
+      "accuracy": 0.94193,
+      "logloss": 0.14837,
+      "roc_auc": 0.98617
+    },
+    {
+      "fold": 5,
+      "hits_podium": 13183,
+      "hits_dual_blend": 13179,
+      "delta_hits": -4,
+      "accuracy": 0.94136,
+      "logloss": 0.14939,
+      "roc_auc": 0.98576
+    }
+  ],
+  "test_projections": {
+    "n_samples": 30000,
+    "disagreements_with_podium": 108,
+    "disagreements_with_s4": 2677,
+    "block_a_preservation": "All preserved as 'used' matching S4",
+    "block_b_preservation": "All preserved as 'used' matching S4"
+  },
+  "file_hashes": {
+    "oof_csv": "oof_predictions_dual_blend_winner.csv",
+    "oof_sha256": "0e5df2a7350db817c7a0badff8809cae47e28b4d5d3abaca21edcf8a6c4d6a32",
+    "test_csv": "test_probabilities_dual_blend_winner.csv",
+    "test_sha256": "4c16d1eb75c41b329c21bc9333aca7786c3cd72e1effc7e09bf323b6a676df21"
+  }
+}

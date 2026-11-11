@@ -1,0 +1,7 @@
+candidate,features,model,accuracy,hits_fold1,delta_hits_vs_podium,fixes_vs_podium,breaks_vs_podium,log_loss,status
+C0_Podium_Baseline_Blend,F130_Podium_Original,Optimal_Convex_Blend,0.94571,13240,0,0,0,0.14267,REFERENCE_BASELINE
+C1_LGBM_Base_Reproduction,F130_Base,LightGBM_800,0.885,12390,-850,49,899,0.31752,REJECT
+C2_LGBM_Enriched_F150,F150_Domain_Regex_and_Commercial,LightGBM_800_Leaves63,0.88671,12414,-826,58,884,0.31954,REJECT
+C3_XGBoost_Enriched_F150,F150_Domain_Regex_and_Commercial,XGBoost_Hist_600,0.88421,12379,-861,51,912,0.3063,REJECT
+C4_Podium_plus_Enriched_LGBM,Podium_Blend_plus_F150,Convex_Ensemble_65_35,0.92964,13015,-225,31,256,0.1749,REJECT
+C5_Podium_Triad_Ensemble,Podium_plus_LGB_plus_XGB,Convex_Triad_55_25_20,0.92314,12924,-316,34,350,0.18658,REJECT

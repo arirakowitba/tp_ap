@@ -1,0 +1,82 @@
+{
+  "timestamp_utc": "2026-11-11T04:30:38Z",
+  "stage": "Stage 1 Fast Screening",
+  "fold_evaluated": 1,
+  "n_val": 14000,
+  "reference_baseline_hits": 13240,
+  "candidates": [
+    {
+      "candidate": "C0_Podium_Baseline_Blend",
+      "features": "F130_Podium_Original",
+      "model": "Optimal_Convex_Blend",
+      "accuracy": 0.94571,
+      "hits_fold1": 13240,
+      "delta_hits_vs_podium": 0,
+      "fixes_vs_podium": 0,
+      "breaks_vs_podium": 0,
+      "log_loss": 0.14267,
+      "status": "REFERENCE_BASELINE"
+    },
+    {
+      "candidate": "C1_LGBM_Base_Reproduction",
+      "features": "F130_Base",
+      "model": "LightGBM_800",
+      "accuracy": 0.885,
+      "hits_fold1": 12390,
+      "delta_hits_vs_podium": -850,
+      "fixes_vs_podium": 49,
+      "breaks_vs_podium": 899,
+      "log_loss": 0.31752,
+      "status": "REJECT"
+    },
+    {
+      "candidate": "C2_LGBM_Enriched_F150",
+      "features": "F150_Domain_Regex_and_Commercial",
+      "model": "LightGBM_800_Leaves63",
+      "accuracy": 0.88671,
+      "hits_fold1": 12414,
+      "delta_hits_vs_podium": -826,
+      "fixes_vs_podium": 58,
+      "breaks_vs_podium": 884,
+      "log_loss": 0.31954,
+      "status": "REJECT"
+    },
+    {
+      "candidate": "C3_XGBoost_Enriched_F150",
+      "features": "F150_Domain_Regex_and_Commercial",
+      "model": "XGBoost_Hist_600",
+      "accuracy": 0.88421,
+      "hits_fold1": 12379,
+      "delta_hits_vs_podium": -861,
+      "fixes_vs_podium": 51,
+      "breaks_vs_podium": 912,
+      "log_loss": 0.3063,
+      "status": "REJECT"
+    },
+    {
+      "candidate": "C4_Podium_plus_Enriched_LGBM",
+      "features": "Podium_Blend_plus_F150",
+      "model": "Convex_Ensemble_65_35",
+      "accuracy": 0.92964,
+      "hits_fold1": 13015,
+      "delta_hits_vs_podium": -225,
+      "fixes_vs_podium": 31,
+      "breaks_vs_podium": 256,
+      "log_loss": 0.1749,
+      "status": "REJECT"
+    },
+    {
+      "candidate": "C5_Podium_Triad_Ensemble",
+      "features": "Podium_plus_LGB_plus_XGB",
+      "model": "Convex_Triad_55_25_20",
+      "accuracy": 0.92314,
+      "hits_fold1": 12924,
+      "delta_hits_vs_podium": -316,
+      "fixes_vs_podium": 34,
+      "breaks_vs_podium": 350,
+      "log_loss": 0.18658,
+      "status": "REJECT"
+    }
+  ],
+  "passed_to_stage2": []
+}
