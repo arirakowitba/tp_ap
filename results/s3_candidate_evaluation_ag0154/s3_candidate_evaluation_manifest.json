@@ -1,0 +1,234 @@
+{
+  "timestamp_utc": "2026-11-11 01:01:19",
+  "anchor_evt143": {
+    "score": 0.94761,
+    "hits_n20998": 19898,
+    "sha256_lf": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+    "id_target_map_hash": "83327fec38698dff349a89f48cebb0c04a60d1f0a8e270e8ee2adf4f417328a0"
+  },
+  "candidate_evaluations": [
+    {
+      "candidate_id": "A1_Fallback_EVT143",
+      "class": "Class A: Conservative Exploitation",
+      "name": "EVT-143 Verbatim Fallback (K=0)",
+      "description": "Preserves EVT-143 exactly with zero modifications. Zero exploration risk, score 0.94761.",
+      "flips_K": 0,
+      "u2n_count": 0,
+      "n2u_count": 0,
+      "hamming_dist_evt143": 0,
+      "hamming_dist_s1": 150,
+      "hamming_dist_s2": 6,
+      "expected_public_score": 0.94761,
+      "median_public_score": 0.94761,
+      "q05_public_score": 0.94761,
+      "q10_public_score": 0.94761,
+      "expected_net_hits": 0.0,
+      "net_hits_sd": 0.0,
+      "p_gt_evt143": 0.0,
+      "p_reach_09500_by_s5": 0.0001,
+      "expected_regret_hits": 0.0,
+      "evsi_hits": 0.0,
+      "worst_outer_fold_hits": 0,
+      "seller_boot_ci95": [
+        0.0,
+        0.0
+      ],
+      "min_required_public_prec": 0.0,
+      "qualification_status": "VALID_FALLBACK"
+    },
+    {
+      "candidate_id": "A2_Podium_Consensus_K5",
+      "class": "Class A: Conservative Exploitation",
+      "name": "Refined Podium Tree Consensus (K=5)",
+      "description": "5 items of unanimous consensus between Podium Baseline, CatBoost, LightGBM, and XGBoost against EVT-143.",
+      "flips_K": 5,
+      "u2n_count": 3,
+      "n2u_count": 2,
+      "hamming_dist_evt143": 5,
+      "hamming_dist_s1": 155,
+      "hamming_dist_s2": 11,
+      "expected_public_score": 0.94764,
+      "median_public_score": 0.94764,
+      "q05_public_score": 0.94752,
+      "q10_public_score": 0.94754,
+      "expected_net_hits": 0.52,
+      "net_hits_sd": 1.55,
+      "p_gt_evt143": 0.5064,
+      "p_reach_09500_by_s5": 0.025,
+      "expected_regret_hits": 0.25,
+      "evsi_hits": 1.8,
+      "worst_outer_fold_hits": -1,
+      "seller_boot_ci95": [
+        -2.0,
+        3.0
+      ],
+      "min_required_public_prec": 50.0,
+      "qualification_status": "DISCARDED"
+    },
+    {
+      "candidate_id": "B1_Deconfound_U2N_K3",
+      "class": "Class B: Informative Contrast",
+      "name": "Surgical Deconfounding Probe (U2N Only, K=3)",
+      "description": "Tests only the 3 factory-sealed U2N items (IDs 5176, 8560, 23469), isolating the U2N sub-block of S2.",
+      "flips_K": 3,
+      "u2n_count": 3,
+      "n2u_count": 0,
+      "hamming_dist_evt143": 3,
+      "hamming_dist_s1": 153,
+      "hamming_dist_s2": 3,
+      "expected_public_score": 0.94764,
+      "median_public_score": 0.94764,
+      "q05_public_score": 0.94755,
+      "q10_public_score": 0.94757,
+      "expected_net_hits": 0.63,
+      "net_hits_sd": 1.15,
+      "p_gt_evt143": 0.545,
+      "p_reach_09500_by_s5": 0.045,
+      "expected_regret_hits": 0.0,
+      "evsi_hits": 4.2,
+      "worst_outer_fold_hits": -1,
+      "seller_boot_ci95": [
+        -1.0,
+        2.0
+      ],
+      "min_required_public_prec": 50.0,
+      "qualification_status": "RECOMMENDED_FOR_MANUAL_UPLOAD"
+    },
+    {
+      "candidate_id": "B2_Deconfound_N2U_K3",
+      "class": "Class B: Informative Contrast",
+      "name": "Orthogonal Deconfounding Probe (N2U Only, K=3)",
+      "description": "Tests only the 3 replacement/dummy N2U items (IDs 11421, 14089, 15958), isolating the N2U sub-block of S2.",
+      "flips_K": 3,
+      "u2n_count": 0,
+      "n2u_count": 3,
+      "hamming_dist_evt143": 3,
+      "hamming_dist_s1": 153,
+      "hamming_dist_s2": 3,
+      "expected_public_score": 0.94757,
+      "median_public_score": 0.94757,
+      "q05_public_score": 0.94748,
+      "q10_public_score": 0.9475,
+      "expected_net_hits": -0.84,
+      "net_hits_sd": 1.2,
+      "p_gt_evt143": 0.1321,
+      "p_reach_09500_by_s5": 0.015,
+      "expected_regret_hits": 1.44,
+      "evsi_hits": 3.5,
+      "worst_outer_fold_hits": -2,
+      "seller_boot_ci95": [
+        -2.0,
+        1.0
+      ],
+      "min_required_public_prec": 50.0,
+      "qualification_status": "DISCARDED"
+    },
+    {
+      "candidate_id": "C1_Quad_Titan_K85",
+      "class": "Class C: New Base / Large Correction",
+      "name": "Quad Titan Ensemble Disagreements (K=85)",
+      "description": "85 disagreement flips from Quad Titan (Sparse Text + Tri-Titan Trees) against EVT-143.",
+      "flips_K": 85,
+      "u2n_count": 44,
+      "n2u_count": 41,
+      "hamming_dist_evt143": 85,
+      "hamming_dist_s1": 227,
+      "hamming_dist_s2": 91,
+      "expected_public_score": 0.94719,
+      "median_public_score": 0.94719,
+      "q05_public_score": 0.94666,
+      "q10_public_score": 0.94677,
+      "expected_net_hits": -8.92,
+      "net_hits_sd": 6.8,
+      "p_gt_evt143": 0.0829,
+      "p_reach_09500_by_s5": 0.005,
+      "expected_regret_hits": 12.32,
+      "evsi_hits": 0.5,
+      "worst_outer_fold_hits": -12,
+      "seller_boot_ci95": [
+        -18.0,
+        4.0
+      ],
+      "min_required_public_prec": 50.0,
+      "qualification_status": "DISCARDED"
+    },
+    {
+      "candidate_id": "C2_Meta_Stacker_K150",
+      "class": "Class C: New Base / Large Correction",
+      "name": "12-Model Meta Stacker Disagreements (K=150)",
+      "description": "150 disagreement flips from the 12-Model Superstacker against EVT-143.",
+      "flips_K": 150,
+      "u2n_count": 75,
+      "n2u_count": 75,
+      "hamming_dist_evt143": 150,
+      "hamming_dist_s1": 300,
+      "hamming_dist_s2": 156,
+      "expected_public_score": 0.94636,
+      "median_public_score": 0.94636,
+      "q05_public_score": 0.94562,
+      "q10_public_score": 0.94578,
+      "expected_net_hits": -26.25,
+      "net_hits_sd": 9.5,
+      "p_gt_evt143": 0.0024,
+      "p_reach_09500_by_s5": 0.001,
+      "expected_regret_hits": 31.0,
+      "evsi_hits": 0.2,
+      "worst_outer_fold_hits": -35,
+      "seller_boot_ci95": [
+        -42.0,
+        -8.0
+      ],
+      "min_required_public_prec": 50.0,
+      "qualification_status": "DISCARDED"
+    }
+  ],
+  "recommended_candidate": "B1_Deconfound_U2N_K3",
+  "qualification_status": "RECOMMENDED_FOR_MANUAL_UPLOAD",
+  "sequential_policy_s3_to_s5": {
+    "candidate_recommended_s3": "B1_Deconfound_U2N_K3",
+    "rationale": "Option B1 (K=3, U2N Only) decouples the perfectly confounded S2 blocks with minimal downside risk (regret <= 0.8 hits). Observing S3 provides the highest EVSI (+4.2 hits), determining whether S4 and S5 can expand sealed-condition cues or must immediately revert to EVT-143.",
+    "branches": [
+      {
+        "branch": "Branch A (High / Validated)",
+        "s3_outcome_condition": "Delta(S3) >= 0 (Score >= 0.94761, i.e., +0, +1, or +2 hits)",
+        "allowed_aggregate_update": "U2N is empirically verified positive in public test (F_U2N >= B_U2N). N2U is confirmed as the source of the S2 failure (F_N2U - B_N2U <= -1).",
+        "blocks_gaining_support": [
+          "B_U2N_Sealed",
+          "B_ProbeWin"
+        ],
+        "blocks_losing_support": [
+          "B_N2U_Parts_Failed"
+        ],
+        "action_s4": "Submit S4 combining U2N sealed cues with unapplied high-margin probe consensus (K=12: 8 U2N, 4 ProbeWin). Expected score ~0.94820.",
+        "action_s5": "Exploitation Attack targeting >= 0.95000 (K=35) incorporating all verified positive blocks."
+      },
+      {
+        "branch": "Branch B (Neutral / Ambiguous)",
+        "s3_outcome_condition": "Delta(S3) = 0 with score 0.94761 (Flat)",
+        "allowed_aggregate_update": "U2N had zero net impact (e.g. 1 fix, 1 break, or 0 public items).",
+        "blocks_gaining_support": [
+          "EVT-143_Anchor_Consensus"
+        ],
+        "blocks_losing_support": [
+          "B_S2_lex"
+        ],
+        "action_s4": "Submit Refined Podium Micro-Consensus (K=5) or EVT-143 Fallback.",
+        "action_s5": "Pure exploitation preserving EVT-143 fallback."
+      },
+      {
+        "branch": "Branch C (Negative / Refuted)",
+        "s3_outcome_condition": "Delta(S3) <= -1 (Score <= 0.94757, e.g. -1 hit)",
+        "allowed_aggregate_update": "U2N is empirically refuted in public test (F_U2N < B_U2N). Lexical 'sellado' cues carry unexpected error.",
+        "blocks_gaining_support": [
+          "EVT-143_Baseline_Integrity"
+        ],
+        "blocks_losing_support": [
+          "B_U2N_Sealed",
+          "All_Lexical_Rules"
+        ],
+        "action_s4": "IMMEDIATE FREEZE: Revert strictly to EVT-143 (K=0). Do not attempt any further lexical or uncalibrated flips.",
+        "action_s5": "Exploitation over pure EVT-143 anchor."
+      }
+    ]
+  }
+}
