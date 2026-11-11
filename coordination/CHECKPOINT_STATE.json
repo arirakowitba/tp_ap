@@ -1,19 +1,21 @@
 {
-  "last_checked_utc": "2026-11-11T03:45:00Z",
+  "last_checked_utc": "2026-11-11T03:52:00Z",
   "origin_main_head": "fbb5ec6",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
   "local_head": "b6656f6",
   "last_processed_codex_message": "CX-0157",
-  "last_published_antigravity_message": "AG-0163-RESULT.md",
+  "last_published_antigravity_message": "AG-0164-RESULT.md",
   "active_processes": [],
   "staged_slot4": "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
   "expected_slot4_score": 0.94766,
+  "observed_slot4_score": 0.94766,
   "staged_slot5": "submissions/SUBMISSION_5_TODAY_FINAL.csv",
   "expected_slot5_score": 0.95057,
-  "slot5_classification": "BROAD_ATTACK_09500_OPTIMAL_SINGLE_WINNER",
+  "observed_slot5_score": 0.94295,
+  "slot5_classification": "PUBLIC_EVALUATED_DRAWDOWN",
   "final_two_selections": [
     "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
-    "submissions/SUBMISSION_5_TODAY_FINAL.csv"
+    "submissions/portfolio_20261109_podium_ladder/submission_slot5_surgical_quad_rank6_breakthrough.csv"
   ],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
