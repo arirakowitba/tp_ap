@@ -249,47 +249,55 @@ def validate_gate_b(
 def validate_gate_c(
     claims: dict,
     calibration_artifact_path: Path = None,
-    min_prequential_events: int = 5,
-    min_empirical_coverage: float = 0.80,
 ) -> dict:
-    """Gate C validator:
-    - Blocks any numeric public probability (e.g. P(>S4), P(>=0.95000)) or public Q05 / interval
-      unless backed by a verified prequential calibration artifact with >= min_prequential_events
-      sequential out-of-sample events and empirically computed coverage >= min_empirical_coverage.
-    - Recomputes coverage directly from the events list inside the artifact (never trusting a
-      hardcoded coverage float).
+    """Gate C validator (tightened per CX-0164):
+    - Separates (a) score intervals (public_q05 / public_q95 / expected_public_score) backed by
+      prequential interval coverage from (b) threshold-exceedance probabilities (prob_beat_s4,
+      prob_reach_09500, P(>S4), P(>=0.95000)) backed by preregistered probability forecasts
+      with Brier/logloss/calibration verification.
+    - By default all public probabilities and quantiles must be 'NO_IDENTIFIABLE'.
+    - For a 95% bound (alpha=0.05), requires sample size n >= ceil(1 / alpha) (at least n >= 20
+      sequential prequential events; n=5 is rejected) and recomputed empirical coverage >= claimed
+      confidence level (e.g. >= 0.95 for a 95% bound; 0.80 coverage is rejected).
+    - Interval coverage alone CANNOT calibrate threshold probabilities; threshold probability
+      claims require preregistered `pred_prob` and `exceeded_threshold` per event, n >= 20,
+      recomputed Brier score <= 0.20, and calibration error <= 0.10.
     """
-    restricted_keys = [
-        "expected_public_score",
-        "prob_beat_s4",
-        "prob_reach_09500",
-        "public_q05",
-        "public_q95",
-        "P(>S4)",
-        "P(>=0.95000)",
-    ]
-    numeric_claims = {}
+    interval_keys = ["expected_public_score", "public_q05", "public_q95"]
+    prob_keys = ["prob_beat_s4", "prob_reach_09500", "P(>S4)", "P(>=0.95000)"]
+    restricted_keys = interval_keys + prob_keys
+
+    numeric_intervals = {}
+    numeric_probs = {}
     for k in restricted_keys:
         if k in claims and claims[k] is not None:
             val_str = str(claims[k]).strip().upper()
             if val_str != "NO_IDENTIFIABLE":
-                numeric_claims[k] = claims[k]
+                if k in interval_keys:
+                    numeric_intervals[k] = claims[k]
+                else:
+                    numeric_probs[k] = claims[k]
 
-    if not numeric_claims:
+    if not numeric_intervals and not numeric_probs:
         return {"status": "PASS_NO_IDENTIFIABLE_DECLARED", "numeric_claims": 0}
 
+    all_claimed = list(numeric_intervals.keys()) + list(numeric_probs.keys())
     if calibration_artifact_path is None or not Path(calibration_artifact_path).exists():
         raise GateViolationError(
-            f"Gate C: Numeric public claims {list(numeric_claims.keys())} blocked — "
+            f"Gate C: Numeric public claims {all_claimed} blocked — "
             f"missing prequential calibration artifact (must be 'NO_IDENTIFIABLE')."
         )
 
     art = json.loads(Path(calibration_artifact_path).read_text(encoding="utf-8"))
     events = art.get("prequential_events", [])
-    if not isinstance(events, list) or len(events) < min_prequential_events:
+    claimed_confidence = float(claims.get("claimed_confidence_level", art.get("claimed_confidence_level", 0.95)))
+    alpha = max(1e-6, 1.0 - claimed_confidence)
+    min_required_n = max(20, int(np.ceil(1.0 / alpha)))
+
+    if not isinstance(events, list) or len(events) < min_required_n:
         raise GateViolationError(
-            f"Gate C: Prequential calibration artifact requires >= {min_prequential_events} sequential events, "
-            f"found {len(events) if isinstance(events, list) else 0}"
+            f"Gate C: Sample size n={len(events) if isinstance(events, list) else 0} is insufficient "
+            f"to sustain a {claimed_confidence*100:.0f}% bound or probability claim (requires >= {min_required_n} sequential prequential events)."
         )
 
     # Verify chronological sequential ordering and recompute empirical coverage from events
@@ -315,12 +323,49 @@ def validate_gate_c(
         raise GateViolationError(
             f"Gate C: Artifact declared coverage ({declared_cov}) != recomputed coverage ({recomputed_cov:.4f})"
         )
-    if recomputed_cov < min_empirical_coverage:
+    if recomputed_cov + 1e-9 < claimed_confidence:
         raise GateViolationError(
-            f"Gate C: Recomputed empirical coverage ({recomputed_cov:.3f}) < minimum ({min_empirical_coverage})"
+            f"Gate C: Recomputed empirical coverage ({recomputed_cov:.3f}) < claimed confidence level ({claimed_confidence:.3f})"
         )
 
-    return {"status": "PASS_CALIBRATED", "recomputed_coverage": recomputed_cov, "n_events": len(events)}
+    recomputed_brier = None
+    if numeric_probs:
+        if art.get("calibration_type") != "threshold_probability_and_interval":
+            raise GateViolationError(
+                f"Gate C: Interval coverage alone cannot calibrate threshold probabilities {list(numeric_probs.keys())}; "
+                f"requires preregistered probability forecasts with Brier/logloss/calibration verification."
+            )
+        sq_errors = []
+        probs_list = []
+        outcomes_list = []
+        for idx, ev in enumerate(events):
+            if "pred_prob" not in ev or "exceeded_threshold" not in ev:
+                raise GateViolationError(
+                    f"Gate C: Event {idx} missing preregistered 'pred_prob' or 'exceeded_threshold' for probability calibration"
+                )
+            p_hat = float(ev["pred_prob"])
+            y_ev = float(ev["exceeded_threshold"])
+            sq_errors.append((p_hat - y_ev) ** 2)
+            probs_list.append(p_hat)
+            outcomes_list.append(y_ev)
+        recomputed_brier = float(np.mean(sq_errors))
+        declared_brier = float(art.get("measured_brier_score", -1.0))
+        if abs(recomputed_brier - declared_brier) > 1e-4:
+            raise GateViolationError(
+                f"Gate C: Declared Brier ({declared_brier}) != recomputed Brier ({recomputed_brier:.4f})"
+            )
+        mean_cal_err = abs(float(np.mean(probs_list)) - float(np.mean(outcomes_list)))
+        if recomputed_brier > 0.20 or mean_cal_err > 0.10:
+            raise GateViolationError(
+                f"Gate C: Threshold probability forecasts poorly calibrated (Brier={recomputed_brier:.4f}, mean_cal_err={mean_cal_err:.4f})"
+            )
+
+    return {
+        "status": "PASS_CALIBRATED",
+        "recomputed_coverage": recomputed_cov,
+        "recomputed_brier": recomputed_brier,
+        "n_events": len(events),
+    }
 
 
 # =============================================================================
@@ -868,29 +913,42 @@ class TestPreventiveGates(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as tmpdir:
             tmp = Path(tmpdir)
-            # 2. POSITIVE FIXTURE B: Valid prequential calibration artifact with 5 covered events
-            valid_art = tmp / "valid_cal.json"
-            valid_events = [
+            # 2. POSITIVE FIXTURE B: 20 sequential prequential events with 95% coverage + calibrated Brier
+            valid_art = tmp / "valid_cal_20.json"
+            valid_events_20 = [
                 {
-                    "event_id": f"EVT-{150+i}",
-                    "timestamp_utc": f"2026-11-0{i+1}T12:00:00Z",
+                    "event_id": f"EVT-{100+i:03d}",
+                    "timestamp_utc": f"2026-10-{10+i:02d}T12:00:00Z",
                     "pred_q05": 0.9465,
                     "pred_q95": 0.9485,
-                    "observed_public_score": 0.9475,
+                    "observed_public_score": 0.9475 if i < 19 else 0.9460,
+                    "pred_prob": 0.60,
+                    "exceeded_threshold": 1 if i < 12 else 0,
                     "fitted_using_event_outcome": False,
                 }
-                for i in range(5)
+                for i in range(20)
             ]
+            # 12/20 = 0.60 exceeded, pred_prob = 0.60 -> Brier = 12*(0.4^2)/20 + 8*(0.6^2)/20 = 0.24 -> use sharper calibrated probs:
+            for i, ev in enumerate(valid_events_20):
+                ev["pred_prob"] = 0.85 if i < 12 else 0.15
+                ev["exceeded_threshold"] = 1 if i < 12 else 0
+            brier_val = float(np.mean([(ev["pred_prob"] - ev["exceeded_threshold"]) ** 2 for ev in valid_events_20]))
             valid_art.write_text(
-                json.dumps({"prequential_events": valid_events, "measured_empirical_coverage": 1.0}),
+                json.dumps({
+                    "calibration_type": "threshold_probability_and_interval",
+                    "claimed_confidence_level": 0.95,
+                    "prequential_events": valid_events_20,
+                    "measured_empirical_coverage": 0.95,
+                    "measured_brier_score": brier_val,
+                }),
                 encoding="utf-8",
             )
             res_cal = validate_gate_c(
-                claims={"prob_beat_s4": 0.55, "public_q05": 0.9468},
+                claims={"prob_beat_s4": 0.60, "public_q05": 0.9468, "claimed_confidence_level": 0.95},
                 calibration_artifact_path=valid_art,
             )
-            self.assertEqual(res_cal["recomputed_coverage"], 1.0)
-            self.record_fixture("Gate C", "POSITIVE", "Verified prequential artifact (5 sequential events, 100% coverage)", "PASS", f"coverage={res_cal['recomputed_coverage']}")
+            self.assertEqual(res_cal["recomputed_coverage"], 0.95)
+            self.record_fixture("Gate C", "POSITIVE", "20 sequential events, 95% coverage + Brier=0.0225 calibrated", "PASS", f"n=20, cov={res_cal['recomputed_coverage']}, brier={res_cal['recomputed_brier']:.4f}")
 
             # 3. NEGATIVE FIXTURE 1: Uncalibrated S5 claims without artifact must FAIL
             with self.assertRaises(GateViolationError) as ctx1:
@@ -906,30 +964,66 @@ class TestPreventiveGates(unittest.TestCase):
             self.assertIn("missing prequential calibration artifact", str(ctx1.exception))
             self.record_fixture("Gate C", "NEGATIVE", "Uncalibrated S5 claims (0.95057, 98.9%, 66.0%, Q05=0.94847)", "REJECTED_AS_EXPECTED", str(ctx1.exception))
 
-            # 4. NEGATIVE FIXTURE 2: Artifact with low empirical coverage (1/5 = 20%) must FAIL
-            bad_art = tmp / "bad_cal.json"
-            bad_events = [
-                {
-                    "event_id": f"EVT-{150+i}",
-                    "timestamp_utc": f"2026-11-0{i+1}T12:00:00Z",
-                    "pred_q05": 0.9485,
-                    "pred_q95": 0.9515,
-                    "observed_public_score": 0.94295 if i > 0 else 0.9490,
-                    "fitted_using_event_outcome": False,
-                }
-                for i in range(5)
-            ]
-            bad_art.write_text(
-                json.dumps({"prequential_events": bad_events, "measured_empirical_coverage": 0.20}),
+            # 4. NEGATIVE FIXTURE 2 (CX-0164 i): Only 5 prequential events must FAIL for 95% bound/prob
+            art_5 = tmp / "only_5_events.json"
+            art_5.write_text(
+                json.dumps({
+                    "prequential_events": valid_events_20[:5],
+                    "measured_empirical_coverage": 1.0,
+                }),
                 encoding="utf-8",
             )
-            with self.assertRaises(GateViolationError) as ctx2:
+            with self.assertRaises(GateViolationError) as ctx_n5:
                 validate_gate_c(
-                    claims={"public_q05": 0.94847},
-                    calibration_artifact_path=bad_art,
+                    claims={"public_q05": 0.9468, "claimed_confidence_level": 0.95},
+                    calibration_artifact_path=art_5,
                 )
-            self.assertIn("< minimum", str(ctx2.exception))
-            self.record_fixture("Gate C", "NEGATIVE", "Prequential artifact failing empirical coverage (0.20 < 0.80)", "REJECTED_AS_EXPECTED", str(ctx2.exception))
+            self.assertIn("Sample size n=5 is insufficient", str(ctx_n5.exception))
+            self.record_fixture("Gate C", "NEGATIVE", "Only 5 sequential events used for 95% bound (CX-0164 i)", "REJECTED_AS_EXPECTED", str(ctx_n5.exception))
+
+            # 5. NEGATIVE FIXTURE 3 (CX-0164 ii): 0.80 coverage used to claim a 95% bound must FAIL
+            art_cov80 = tmp / "cov_80_for_95.json"
+            events_80 = [
+                {
+                    **ev,
+                    "observed_public_score": 0.9475 if i < 16 else 0.9420,
+                }
+                for i, ev in enumerate(valid_events_20)
+            ]
+            art_cov80.write_text(
+                json.dumps({
+                    "claimed_confidence_level": 0.95,
+                    "prequential_events": events_80,
+                    "measured_empirical_coverage": 0.80,
+                }),
+                encoding="utf-8",
+            )
+            with self.assertRaises(GateViolationError) as ctx_cov80:
+                validate_gate_c(
+                    claims={"public_q05": 0.9468, "claimed_confidence_level": 0.95},
+                    calibration_artifact_path=art_cov80,
+                )
+            self.assertIn("< claimed confidence level (0.950)", str(ctx_cov80.exception))
+            self.record_fixture("Gate C", "NEGATIVE", "0.80 empirical coverage used for 95% bound claim (CX-0164 ii)", "REJECTED_AS_EXPECTED", str(ctx_cov80.exception))
+
+            # 6. NEGATIVE FIXTURE 4 (CX-0164 iii): Interval coverage presented as threshold-probability calibration must FAIL
+            art_interval_only = tmp / "interval_only_20.json"
+            art_interval_only.write_text(
+                json.dumps({
+                    "calibration_type": "interval_only",
+                    "claimed_confidence_level": 0.95,
+                    "prequential_events": valid_events_20,
+                    "measured_empirical_coverage": 0.95,
+                }),
+                encoding="utf-8",
+            )
+            with self.assertRaises(GateViolationError) as ctx_int_only:
+                validate_gate_c(
+                    claims={"P(>S4)": 0.75, "public_q05": 0.9468, "claimed_confidence_level": 0.95},
+                    calibration_artifact_path=art_interval_only,
+                )
+            self.assertIn("Interval coverage alone cannot calibrate threshold probabilities", str(ctx_int_only.exception))
+            self.record_fixture("Gate C", "NEGATIVE", "Interval coverage presented as threshold-probability calibration (CX-0164 iii)", "REJECTED_AS_EXPECTED", str(ctx_int_only.exception))
 
     # -------------------------------------------------------------------------
     # GATE D TESTS

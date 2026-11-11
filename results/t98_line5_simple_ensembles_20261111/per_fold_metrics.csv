@@ -1,0 +1,6 @@
+outer_fold,selected_unseen_rule,unseen_hits_T97_PolicyA,unseen_hits_CX0164_Clean_A,unseen_hits_CX0164_Clean_B,unseen_hits_CX0164_Clean_C,unseen_hits_Line1_M3,unseen_hits_Line2_CB,unseen_hits_Line3_LGB,unseen_hits_Line4_NewSeller,unseen_hits_Line5_E1_Equal4,unseen_hits_Line5_E2_Convex4,unseen_hits_Line5_E3_Logit4,unseen_hits_Line5_E4_Equal3Tree,unseen_hits_Line5_E5_Confirm,seen_hits_CX0164_Clean_A,seen_hits_CX0164_Clean_B,seen_hits_Line2_CB,seen_hits_Line3_LGB,seen_hits_Line4_NewSeller,seen_hits_Line5_Dual_LGB_CB,seen_hits_Line5_Inner_Convex,seen_hits_Line5_Prereg_Blend
+1,E3_Logit_Stack_4Way,11563,12154,12112,12154,12173,12658,12811,12828,12794,12827,12829,12836,12829,5939,5949,6095,6122,6015,6126,6098,6130
+2,E2_Convex_4Way,11798,12241,12197,12242,12286,12715,12833,12876,12866,12872,12876,12878,12872,5900,5890,6034,6079,5965,6065,6033,6075
+3,E3_Logit_Stack_4Way,11687,12214,12150,12191,12212,12693,12823,12864,12852,12868,12871,12878,12871,5891,5886,6020,6071,5973,6075,6028,6075
+4,E3_Logit_Stack_4Way,11380,12089,12022,12112,12023,12718,12810,12865,12837,12873,12870,12870,12870,5955,5951,6113,6133,6018,6134,6115,6139
+5,E3_Logit_Stack_4Way,11575,12047,12060,12066,12003,12610,12719,12813,12762,12818,12814,12814,12814,5885,5880,6004,6045,5952,6039,6002,6047

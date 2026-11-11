@@ -1,5 +1,6 @@
 {
-  "status": "DEVELOPMENT_ONLY",
+  "status": "DIAGNOSTIC_IN_SAMPLE_STACK_FEATURES / DEVELOPMENT_ONLY",
+  "cx0164_diagnostic_limitation": "In this diagnostic run of the historical Podium recipe, fit_predict computed ptxT = lr.predict_proba(XT) in-sample on the fit set and computed seller_te/cat_te via row-level StratifiedKFold(5) within the fit set (where other items of the same seller are present in train subfolds, while outer/inner val has 0 seen sellers). Moreover, seen_rows=0 in all outer-val folds by construction. Results are strictly diagnostic and never promoted.",
   "submission_generated": false,
   "kaggle_api_used": false,
   "git_head_at_run": "0477228c82ebb37b8387c20a730c68bd684fad9e",

@@ -1,0 +1,40 @@
+{
+  "outer_fold": 5,
+  "components": [
+    "CB_enriched_unseen_safe",
+    "CB_enriched_with_seller",
+    "CB_clean_baseline",
+    "p_text_saga",
+    "p_attr_saga"
+  ],
+  "w_unseen": [
+    0.7776072348317368,
+    0.2223927651682632,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "w_seen": [
+    0.9978774408703559,
+    0.0,
+    0.0,
+    0.0,
+    0.0021225591296442207
+  ],
+  "threshold": 0.5,
+  "inner_oof_unseen_acc": {
+    "CB_clean_baseline": 0.82795,
+    "CB_enriched_unseen_safe": 0.90143,
+    "CB_enriched_with_seller_unseen_mode": 0.89992,
+    "blend_unseen": 0.90173
+  },
+  "inner_oof_causal_seen_acc": {
+    "n_causal_seen_in_fit": 27309,
+    "CB_enriched_unseen_safe": 0.91896,
+    "CB_enriched_with_seller_causal": 0.95434,
+    "blend_seen": 0.95434
+  },
+  "p_text_oof_sha256": "d95e54c56618f5833900bf8193867cd1ec5bd16458f13a2ebe62fd5fcdd3449e",
+  "cat_te_oof_sha256": "6a16c47fbc231c39c9fde332fdfb27192ed1e4e2675a9e2d5b351b365051031a",
+  "frozen_at_utc": "2026-11-11T16:57:57Z"
+}

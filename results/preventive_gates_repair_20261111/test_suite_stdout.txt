@@ -8,7 +8,7 @@ test_gate_g_positive_and_negative_fixtures (tests.test_preventive_gates.TestPrev
 test_gate_h_positive_and_negative_fixtures (tests.test_preventive_gates.TestPreventiveGates.test_gate_h_positive_and_negative_fixtures) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 1.026s
+Ran 8 tests in 1.279s
 
 OK
   [Gate A | POSITIVE] cand_oof_pos (+25 derived hits) -> PASS: delta_hits=25
@@ -20,12 +20,14 @@ OK
   [Gate B | NEGATIVE] execute_meta_lofo_tournament.py slicing global OOF -> REJECTED_AS_EXPECTED: Gate B: Script slices precomputed global OOF as inner-OOF instead of retraining
   [Gate B | NEGATIVE] Early stopping on outer val_idx -> REJECTED_AS_EXPECTED: Gate B: Script uses early_stopping_rounds evaluated on outer val_idx
   [Gate C | POSITIVE] NO_IDENTIFIABLE declared for all public probability/Q05 fields -> PASS: PASS_NO_IDENTIFIABLE_DECLARED
-  [Gate C | POSITIVE] Verified prequential artifact (5 sequential events, 100% coverage) -> PASS: coverage=1.0
+  [Gate C | POSITIVE] 20 sequential events, 95% coverage + Brier=0.0225 calibrated -> PASS: n=20, cov=0.95, brier=0.0225
   [Gate C | NEGATIVE] Uncalibrated S5 claims (0.95057, 98.9%, 66.0%, Q05=0.94847) -> REJECTED_AS_EXPECTED: Gate C: Numeric public claims ['expected_public_score', 'public_q05', 'P(>S4)', 'P(>=0.95000)'] blocked — missing prequential calibration artifact (must be 'NO_IDENTIFIABLE').
-  [Gate C | NEGATIVE] Prequential artifact failing empirical coverage (0.20 < 0.80) -> REJECTED_AS_EXPECTED: Gate C: Recomputed empirical coverage (0.200) < minimum (0.8)
+  [Gate C | NEGATIVE] Only 5 sequential events used for 95% bound (CX-0164 i) -> REJECTED_AS_EXPECTED: Gate C: Sample size n=5 is insufficient to sustain a 95% bound or probability claim (requires >= 20 sequential prequential events).
+  [Gate C | NEGATIVE] 0.80 empirical coverage used for 95% bound claim (CX-0164 ii) -> REJECTED_AS_EXPECTED: Gate C: Recomputed empirical coverage (0.800) < claimed confidence level (0.950)
+  [Gate C | NEGATIVE] Interval coverage presented as threshold-probability calibration (CX-0164 iii) -> REJECTED_AS_EXPECTED: Gate C: Interval coverage alone cannot calibrate threshold probabilities ['P(>S4)']; requires preregistered probability forecasts with Brier/logloss/calibration verification.
   [Gate D | POSITIVE] Live repo submissions/ clean + rejected/ holds quarantined CSVs -> PASS: quarantined_csvs=19
-  [Gate D | NEGATIVE] Rejected CSV left inside active submissions/ -> REJECTED_AS_EXPECTED: Gate D: Rejected artifact 'C:\Users\arira\AppData\Local\Temp\tmpvsp3f9n7\submissions\SUBMISSION_CANDIDATE_3_CONSERVATIVE_OVERLAY_K15.csv' found inside active submissions/!
-  [Gate D | NEGATIVE] Active manifest listing REJECTED_NET_NEGATIVE_MINUS64 entry -> REJECTED_AS_EXPECTED: Gate D: Active manifest 'C:\Users\arira\AppData\Local\Temp\tmpvsp3f9n7\active_manifest.json' contains rejected/degraded entry 'opt2.csv' (REJECTED_NET_NEGATIVE_MINUS64)
+  [Gate D | NEGATIVE] Rejected CSV left inside active submissions/ -> REJECTED_AS_EXPECTED: Gate D: Rejected artifact 'C:\Users\arira\AppData\Local\Temp\tmp54w2i9y5\submissions\SUBMISSION_CANDIDATE_3_CONSERVATIVE_OVERLAY_K15.csv' found inside active submissions/!
+  [Gate D | NEGATIVE] Active manifest listing REJECTED_NET_NEGATIVE_MINUS64 entry -> REJECTED_AS_EXPECTED: Gate D: Active manifest 'C:\Users\arira\AppData\Local\Temp\tmp54w2i9y5\active_manifest.json' contains rejected/degraded entry 'opt2.csv' (REJECTED_NET_NEGATIVE_MINUS64)
   [Gate E | POSITIVE] Nested CV structural proof (disjoint outer/inner + refit SHAs) -> PASS: verified=nested
   [Gate E | NEGATIVE] Nested claim leaking outer_val index into inner split -> REJECTED_AS_EXPECTED: Gate E (nested): Inner split 0 leaks outer_val indices
   [Gate E | POSITIVE] Temporal forward split max(t_train)<min(t_val) + refit SHA -> PASS: verified=temporal

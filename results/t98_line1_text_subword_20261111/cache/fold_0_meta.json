@@ -1,0 +1,20 @@
+{
+  "m0_diag": {
+    "vocab_word": 29462,
+    "vocab_char": 60000,
+    "n_iter": 24,
+    "seconds": 27.81
+  },
+  "m1_diag": {
+    "vocab_word": 80000,
+    "vocab_char": 80000
+  },
+  "m2_diag": {
+    "vocab_char": 60000,
+    "vocab_char_wb": 60000,
+    "total_subword_features": 120000,
+    "nb_r_min": -3.537285089492798,
+    "nb_r_max": 2.794027090072632,
+    "nb_r_std": 0.7561695575714111
+  }
+}

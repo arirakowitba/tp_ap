@@ -1,0 +1,40 @@
+{
+  "outer_fold": 4,
+  "components": [
+    "CB_enriched_unseen_safe",
+    "CB_enriched_with_seller",
+    "CB_clean_baseline",
+    "p_text_saga",
+    "p_attr_saga"
+  ],
+  "w_unseen": [
+    0.7133409241336971,
+    0.2857355253237588,
+    0.0,
+    0.0009235505425440701,
+    0.0
+  ],
+  "w_seen": [
+    0.9952851148847105,
+    0.0,
+    0.0,
+    0.0,
+    0.004714885115289606
+  ],
+  "threshold": 0.5,
+  "inner_oof_unseen_acc": {
+    "CB_clean_baseline": 0.8315,
+    "CB_enriched_unseen_safe": 0.90099,
+    "CB_enriched_with_seller_unseen_mode": 0.89897,
+    "blend_unseen": 0.90153
+  },
+  "inner_oof_causal_seen_acc": {
+    "n_causal_seen_in_fit": 27133,
+    "CB_enriched_unseen_safe": 0.91966,
+    "CB_enriched_with_seller_causal": 0.95681,
+    "blend_seen": 0.95681
+  },
+  "p_text_oof_sha256": "8d5fb66ceb6f094a53da5b0ae3122519e23fcafeaf62d08e5bb3d94b0a4c336f",
+  "cat_te_oof_sha256": "25636f9f5daeab6c45edd1e5f765f1bb27f1548234114ced5c5d96429e86693c",
+  "frozen_at_utc": "2026-11-11T16:41:41Z"
+}

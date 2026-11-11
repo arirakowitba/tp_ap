@@ -1,0 +1,71 @@
+{
+  "outer_fold": 4,
+  "clean_podium_wA": [
+    0.8,
+    0.15,
+    0.05
+  ],
+  "clean_podium_stkC": {
+    "coef": [
+      0.8199196516428534,
+      0.1729793690483726,
+      -0.12681975222474537
+    ],
+    "intercept": 0.0200557653701229,
+    "C": 1.0,
+    "non_negative": false
+  },
+  "inner_oof_candidates_unseen": {
+    "E1_Equal_4Way": {
+      "hits": 45218,
+      "acc": 0.912794,
+      "logloss": 0.228635
+    },
+    "E2_Convex_4Way": {
+      "hits": 45335,
+      "acc": 0.915156,
+      "logloss": 0.211634
+    },
+    "E3_Logit_Stack_4Way": {
+      "hits": 45343,
+      "acc": 0.915318,
+      "logloss": 0.21156
+    },
+    "E4_Equal_3Tree_Spec": {
+      "hits": 45283,
+      "acc": 0.914106,
+      "logloss": 0.216402
+    }
+  },
+  "selected_unseen_confirm_rule": "E3_Logit_Stack_4Way",
+  "w_e2_unseen_L1_L2_L3_L4": [
+    0.0,
+    1.0408340855860843e-17,
+    0.2860756386035589,
+    0.7139243613964412
+  ],
+  "stk_e3_unseen_L1_L2_L3_L4": {
+    "coef": [
+      0.0,
+      0.0,
+      0.28639822442023743,
+      0.6537421043743425
+    ],
+    "intercept": 0.0008581395164248196,
+    "C": 0.5,
+    "non_negative": true
+  },
+  "w_seen_inner_convex_L1_L2_L3_L4": [
+    6.938893903907228e-18,
+    0.9304312174750023,
+    0.01097718624895565,
+    0.058591596276042046
+  ],
+  "w_seen_prereg_L1_L2_L3_L4": [
+    0.05,
+    0.35,
+    0.45,
+    0.15
+  ],
+  "frozen_at_utc": "2026-11-11T17:15:52Z"
+}

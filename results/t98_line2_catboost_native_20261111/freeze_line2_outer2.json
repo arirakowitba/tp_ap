@@ -1,0 +1,40 @@
+{
+  "outer_fold": 3,
+  "components": [
+    "CB_enriched_unseen_safe",
+    "CB_enriched_with_seller",
+    "CB_clean_baseline",
+    "p_text_saga",
+    "p_attr_saga"
+  ],
+  "w_unseen": [
+    0.757584930686661,
+    0.24142436610478088,
+    0.0009907032085581548,
+    0.0,
+    0.0
+  ],
+  "w_seen": [
+    0.9969919922287681,
+    0.0,
+    0.0,
+    0.0,
+    0.003008007771231867
+  ],
+  "threshold": 0.5,
+  "inner_oof_unseen_acc": {
+    "CB_clean_baseline": 0.83,
+    "CB_enriched_unseen_safe": 0.89815,
+    "CB_enriched_with_seller_unseen_mode": 0.89692,
+    "blend_unseen": 0.89793
+  },
+  "inner_oof_causal_seen_acc": {
+    "n_causal_seen_in_fit": 27189,
+    "CB_enriched_unseen_safe": 0.91416,
+    "CB_enriched_with_seller_causal": 0.95414,
+    "blend_seen": 0.9541
+  },
+  "p_text_oof_sha256": "c8887be88f96f582b9a41c2466ae2dc399ac210f3a978f0c4ae4e33e3e42b231",
+  "cat_te_oof_sha256": "ddbe937c66f46c3b9dd0c9cb9b5bd40be4c403769c7e28657ca601fd99b4258b",
+  "frozen_at_utc": "2026-11-11T16:24:34Z"
+}

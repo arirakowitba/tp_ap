@@ -1,0 +1,111 @@
+{
+  "outer_fold": 5,
+  "selected_hp": {
+    "num_leaves": 55,
+    "colsample_bytree": 0.7,
+    "min_child_samples": 40
+  },
+  "n_estimators": 900,
+  "seeds": [
+    42,
+    2026,
+    777
+  ],
+  "m0_inner_oof_hits": 42942,
+  "m0_inner_oof_acc": 0.865243,
+  "m0_inner_oof_logloss": 0.319933,
+  "m1_3seed_inner_oof_hits": 45230,
+  "m1_3seed_inner_oof_acc": 0.911344,
+  "m1_3seed_inner_oof_logloss": 0.222719,
+  "hp_grid_results_1seed": [
+    {
+      "grid_idx": 0,
+      "hp": {
+        "num_leaves": 55,
+        "colsample_bytree": 0.7,
+        "min_child_samples": 20
+      },
+      "inner_oof_logloss": 0.222034,
+      "inner_oof_acc": 0.910961,
+      "inner_oof_hits": 45211
+    },
+    {
+      "grid_idx": 1,
+      "hp": {
+        "num_leaves": 55,
+        "colsample_bytree": 0.7,
+        "min_child_samples": 40
+      },
+      "inner_oof_logloss": 0.221902,
+      "inner_oof_acc": 0.911606,
+      "inner_oof_hits": 45243
+    },
+    {
+      "grid_idx": 2,
+      "hp": {
+        "num_leaves": 55,
+        "colsample_bytree": 0.8,
+        "min_child_samples": 20
+      },
+      "inner_oof_logloss": 0.222613,
+      "inner_oof_acc": 0.911142,
+      "inner_oof_hits": 45220
+    },
+    {
+      "grid_idx": 3,
+      "hp": {
+        "num_leaves": 55,
+        "colsample_bytree": 0.8,
+        "min_child_samples": 40
+      },
+      "inner_oof_logloss": 0.22237,
+      "inner_oof_acc": 0.911485,
+      "inner_oof_hits": 45237
+    },
+    {
+      "grid_idx": 4,
+      "hp": {
+        "num_leaves": 95,
+        "colsample_bytree": 0.7,
+        "min_child_samples": 20
+      },
+      "inner_oof_logloss": 0.227945,
+      "inner_oof_acc": 0.911183,
+      "inner_oof_hits": 45222
+    },
+    {
+      "grid_idx": 5,
+      "hp": {
+        "num_leaves": 95,
+        "colsample_bytree": 0.7,
+        "min_child_samples": 40
+      },
+      "inner_oof_logloss": 0.227957,
+      "inner_oof_acc": 0.911586,
+      "inner_oof_hits": 45242
+    },
+    {
+      "grid_idx": 6,
+      "hp": {
+        "num_leaves": 95,
+        "colsample_bytree": 0.8,
+        "min_child_samples": 20
+      },
+      "inner_oof_logloss": 0.229356,
+      "inner_oof_acc": 0.911183,
+      "inner_oof_hits": 45222
+    },
+    {
+      "grid_idx": 7,
+      "hp": {
+        "num_leaves": 95,
+        "colsample_bytree": 0.8,
+        "min_child_samples": 40
+      },
+      "inner_oof_logloss": 0.22868,
+      "inner_oof_acc": 0.911223,
+      "inner_oof_hits": 45224
+    }
+  ],
+  "frozen_at_utc": "2026-11-11T16:27:25Z"
+}
