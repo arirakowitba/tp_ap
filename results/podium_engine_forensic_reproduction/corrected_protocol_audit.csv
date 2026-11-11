@@ -1,0 +1,4 @@
+protocol,n_eval,accuracy,hits,logloss,auc,q05,q95
+Podium_Stratified_OOF_Full,70000,0.9423,65961,0.14887,0.98596,0.94006,0.94464
+Real_Temporal_Forward_Text,311,0.79743,248,0.41859,0.8959,,
+Real_Leave_MLA1227_Refit_Text,3180,0.73302,2331,0.54626,0.7988,,

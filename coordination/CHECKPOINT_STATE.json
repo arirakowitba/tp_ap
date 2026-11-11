@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-11T05:25:00Z",
-  "origin_main_head": "a44b344",
+  "last_checked_utc": "2026-11-11T05:55:00Z",
+  "origin_main_head": "ea94f67",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "971a6ef",
-  "last_processed_codex_message": "CX-0159",
-  "last_published_antigravity_message": "AG-0170-RESULT.md",
+  "local_head": "f389b93",
+  "last_processed_codex_message": "CX-0160",
+  "last_published_antigravity_message": "AG-0173-RESULT.md",
   "active_processes": [],
   "staged_slot4": "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
   "expected_slot4_score": 0.94766,
@@ -107,8 +107,12 @@
     "T87_s4_official_confirmation_094766_new_tournament_record": "done_plus1_hit_algebraic_transfer_confirmed",
     "T88_bayesian_transfer_model_and_cx0157_compliance": "done_bayesian_transfer_manifest_and_ag0161_published",
     "T89_broad_s5_frontier_and_09500_grid": "done_132evals_pareto_frontier_7candidates_staged",
-    "T90_overnight_sprint_master_rebuild": "done_ag0170_published_portfolio_audited_and_staged"
+    "T90_overnight_sprint_master_rebuild": "done_ag0170_published_portfolio_audited_and_staged",
+    "T91_podium_engine_reproduction_and_gap_audit": "done_ag0173_published_podium_verified_65961hits_and_clusters_mapped"
   },
+  "podium_baseline_oof_accuracy": 0.9423,
+  "podium_baseline_oof_hits": 65961,
+  "ag0168_portfolio_status": "BLOCKED_DO_NOT_UPLOAD",
   "best_confirmed_score": 0.94766,
   "best_confirmed_hits": 19899,
   "best_confirmed_anchor": "EVT-154 (SUBMISSION_4_TODAY_RECOMMENDED.csv)"

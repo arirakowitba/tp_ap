@@ -1,0 +1,71 @@
+{
+  "total_errors": 4039,
+  "overall_error_rate": 0.0577,
+  "false_positives_pred_used_true_new": 2180,
+  "false_negatives_pred_new_true_used": 1859,
+  "error_rate_by_seller_volume": {
+    "high_volume_ge_10": {
+      "n_items": 27390,
+      "accuracy": 0.96984,
+      "errors": 826
+    },
+    "medium_volume_2_to_9": {
+      "n_items": 22684,
+      "accuracy": 0.94825,
+      "errors": 1174
+    },
+    "singleton_1_item": {
+      "n_items": 19926,
+      "accuracy": 0.89767,
+      "errors": 2039
+    }
+  },
+  "top_12_error_categories": {
+    "MLA1227": 116,
+    "MLA2044": 73,
+    "MLA3530": 67,
+    "MLA15171": 33,
+    "MLA41287": 28,
+    "MLA15204": 25,
+    "MLA1474": 22,
+    "MLA1635": 22,
+    "MLA1383": 20,
+    "MLA15226": 18,
+    "MLA370638": 18,
+    "MLA370630": 17
+  },
+  "top_12_false_positive_keywords": {
+    "para": 117,
+    "talle": 75,
+    "lote": 51,
+    "original": 46,
+    "cuero": 43,
+    "campera": 37,
+    "libro": 33,
+    "mesa": 33,
+    "antiguo": 32,
+    "antigua": 31,
+    "mujer": 29,
+    "argentina": 28
+  },
+  "top_12_false_negative_keywords": {
+    "para": 150,
+    "original": 69,
+    "nuevo": 52,
+    "cuero": 34,
+    "mujer": 32,
+    "samsung": 31,
+    "libro": 29,
+    "talle": 28,
+    "digital": 27,
+    "caja": 22,
+    "mesa": 20,
+    "cable": 20
+  },
+  "priority_predictive_gaps": [
+    "1. Vendedores singleton con t\u00edtulos ambiguos (tasa de error 10.2% vs 2.1% en vendedores frecuentes).",
+    "2. Coleccionismo y antig\u00fcedades sin uso (palabras 'antiguo', 'retro' que en realidad son stock sin abrir).",
+    "3. Repuestos y autopartes comercializadas por tiendas oficiales (palabras de 'despiece' o 'recambio' en cajas nuevas).",
+    "4. Art\u00edculos reacondicionados/impecables vendidos con garant\u00eda oficial."
+  ]
+}

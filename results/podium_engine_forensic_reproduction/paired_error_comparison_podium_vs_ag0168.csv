@@ -1,0 +1,6 @@
+categoria,n_items,pct
+Ambos Correctos (Consenso Válido),57065,81.52
+Ambos Incorrectos (Huecos Duros Comunes),3133,4.48
+"Podium Correcto, AG-0168 Incorrecto (Ventaja Podium)",8896,12.71
+"AG-0168 Correcto, Podium Incorrecto (Señal Complementaria)",906,1.29
+VENTAJA NETA PODIUM (Podium - AG),7990,11.41

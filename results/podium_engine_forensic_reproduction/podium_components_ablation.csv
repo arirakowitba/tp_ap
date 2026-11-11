@@ -1,0 +1,6 @@
+component,accuracy,hits_70k,log_loss,roc_auc,delta_hits_vs_best
+1_Text_Specialist_Linear,0.90556,63389,0.2765,0.96722,-2572
+2_CatBoost_Depth8_Native,0.93979,65785,0.1562,0.98456,-176
+3_LightGBM_F130_Bagged,0.94139,65897,0.15219,0.98583,-64
+4_Dual_Blend_LGB_plus_CB,0.94241,65969,0.14763,0.98617,8
+5_Podium_Engine_Optimal_Stack,0.9423,65961,0.14887,0.98596,0
