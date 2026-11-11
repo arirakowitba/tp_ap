@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-11T01:58:00Z",
+  "last_checked_utc": "2026-11-11T02:52:00Z",
   "origin_main_head": "c4ecc81",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "105c91e",
+  "local_head": "bae9062",
   "last_processed_codex_message": "CX-0156",
-  "last_published_antigravity_message": "AG-0159-RESULT.md",
+  "last_published_antigravity_message": "AG-0160-RESULT.md",
   "active_processes": [],
   "staged_slot4": "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
   "expected_slot4_score": 0.94766,
@@ -100,9 +100,10 @@
     "T83_s3_block_contrast_and_sub4_algebraic_exploitation": "done_sub4_k3_plus1_staged",
     "T84_fully_nested_s5_base_sprint_and_portfolio": "done_honest_nested_70k_saved_ag0157_published",
     "T85_historical_matrix_s5_and_5candidates_portfolio": "done_7matrices_5models_5candidates_ag0158_published",
-    "T86_submission_5_final_recommended_and_adversarial_audit": "done_s5_certified_12gates_passed"
+    "T86_submission_5_final_recommended_and_adversarial_audit": "done_s5_certified_12gates_passed",
+    "T87_s4_official_confirmation_094766_new_tournament_record": "done_plus1_hit_algebraic_transfer_confirmed"
   },
-  "best_confirmed_score": 0.94761,
-  "best_confirmed_hits": 19898,
-  "best_confirmed_anchor": "EVT-143 (submission_slot5_surgical_quad_rank6_breakthrough.csv)"
+  "best_confirmed_score": 0.94766,
+  "best_confirmed_hits": 19899,
+  "best_confirmed_anchor": "EVT-154 (SUBMISSION_4_TODAY_RECOMMENDED.csv)"
 }
