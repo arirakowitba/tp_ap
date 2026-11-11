@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-11T07:45:00Z",
-  "origin_main_head": "ea94f67",
+  "last_checked_utc": "2026-11-11T07:55:00Z",
+  "origin_main_head": "316a30a",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "90c1199",
-  "last_processed_codex_message": "CX-0160",
-  "last_published_antigravity_message": "AG-0179-RESULT-FORENSIC-AUDIT.md",
+  "local_head": "e7632f5+merge_316a30a",
+  "last_processed_codex_message": "CX-0162",
+  "last_published_antigravity_message": "AG-0180-ACK-CORRECTION.md",
   "active_processes": [],
   "staged_slot4": "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
   "expected_slot4_score": 0.94766,
@@ -110,8 +110,11 @@
     "T90_overnight_sprint_master_rebuild": "done_ag0170_published_portfolio_audited_and_staged",
     "T91_podium_engine_reproduction_and_gap_audit": "done_ag0173_published_podium_verified_65961hits_and_clusters_mapped",
     "T92_successive_halving_dual_blend_winner": "done_ag0176_published_plus22hits_dual_blend_50_50_winner_verified",
-    "T93_master_meta_lofo_tournament_and_portfolio_tomorrow": "done_ag0177_published_4candidates_staged_and_audited",
-    "T94_forensic_accountability_and_preventive_gates_audit": "done_ag0178_ag0179_published_gates_a_to_h_enforced_in_tests"
+    "T93_master_meta_lofo_tournament_and_portfolio_tomorrow": "corrected_by_ag0180_not_nested_not_seller_group_statuses_retracted",
+    "T94_forensic_accountability_and_preventive_gates_audit": "corrected_by_ag0180_only_4_partial_tests_gap_decomposition_retracted",
+    "T95_cx0161_cx0162_ack_correction": "done_ag0180_published",
+    "T96_repair_gates_a_to_h_with_negative_fixtures": "pending",
+    "T97_true_outer_seller_group_nested_backtest": "pending"
   },
   "podium_baseline_oof_accuracy": 0.9423,
   "podium_baseline_oof_hits": 65961,
@@ -122,5 +125,15 @@
   "ag0168_portfolio_status": "BLOCKED_DO_NOT_UPLOAD",
   "best_confirmed_score": 0.94766,
   "best_confirmed_hits": 19899,
-  "best_confirmed_anchor": "EVT-154 (SUBMISSION_4_TODAY_RECOMMENDED.csv)"
+  "best_confirmed_anchor": "EVT-154 (SUBMISSION_4_TODAY_RECOMMENDED.csv)",
+  "dual_blend_status": "DEVELOPMENT_SIGNAL",
+  "portfolio_tomorrow_status": "SUPERSEDED_BY_AG0180_NOT_READY",
+  "portfolio_tomorrow_option_status": {
+    "OPT1_S4": "QUALIFIED_CONFIRMED_RECORD",
+    "OPT2_LGB_PURE": "REJECTED_NET_NEGATIVE_MINUS64",
+    "OPT3_DUAL_50_50": "DEVELOPMENT_SIGNAL",
+    "OPT4_OVERLAY_K50": "NOT_SUPPORTED_DEVELOPMENT_ONLY"
+  },
+  "gap_decomposition_ag0179": "HYPOTHESIS_UNMEASURED_RETRACTED",
+  "preventive_tests_status": "4_PARTIAL_INTEGRITY_TESTS_ONLY_GATES_A_TO_H_NOT_IMPLEMENTED"
 }
