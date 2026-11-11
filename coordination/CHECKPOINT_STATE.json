@@ -8,12 +8,12 @@
   "active_processes": [],
   "staged_slot4": "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
   "expected_slot4_score": 0.94766,
-  "staged_slot5": "submissions/SUBMISSION_5_CANDIDATE_C_OPT_B2_K250_CB.csv",
+  "staged_slot5": "submissions/SUBMISSION_5_TODAY_FINAL.csv",
   "expected_slot5_score": 0.95057,
   "slot5_classification": "BROAD_ATTACK_09500_OPTIMAL_SINGLE_WINNER",
   "final_two_selections": [
     "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
-    "submissions/SUBMISSION_5_CANDIDATE_C_OPT_B2_K250_CB.csv"
+    "submissions/SUBMISSION_5_TODAY_FINAL.csv"
   ],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",

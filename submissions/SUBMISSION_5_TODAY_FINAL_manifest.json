@@ -1,0 +1,99 @@
+{
+  "submission_file": "submissions/SUBMISSION_5_TODAY_FINAL.csv",
+  "candidate_id": "T09_K250_CB",
+  "description": "CatBoost Depth-8 Pure N2U Flips K=250 (Tournament Winner for S5)",
+  "source_reference_submission": "submissions/SUBMISSION_5_CANDIDATE_C_OPT_B2_K250_CB.csv",
+  "baseline_s4_submission": "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
+  "generation_timestamp_utc": "2026-11-11T03:44:45Z",
+  "file_integrity": {
+    "total_rows": 30000,
+    "columns": [
+      "ID",
+      "condition"
+    ],
+    "sha256_raw": "465e0d4747efebb02f487349d643daa4aa14f59f0554df3c3a73f7644d0ae65f",
+    "sha256_lf": "465e0d4747efebb02f487349d643daa4aa14f59f0554df3c3a73f7644d0ae65f",
+    "map_hash": "98cc15046bcc8d179897333b7653b22cb742b01ce7112e340eaac92a344612cd",
+    "null_count": 0,
+    "condition_distribution": {
+      "new": 15584,
+      "used": 14416
+    }
+  },
+  "flips_analysis": {
+    "flips_vs_s4": 250,
+    "flips_n2u_vs_s4": 250,
+    "flips_u2n_vs_s4": 0,
+    "flips_vs_evt143": 253,
+    "flips_n2u_vs_evt143": 253,
+    "flips_u2n_vs_evt143": 0,
+    "overlap_with_s1": 4,
+    "refuted_block_a_u2n_in_flips": 0,
+    "confirmed_block_b_in_s5": 3,
+    "directional_purity": "100.0% Pure N2U"
+  },
+  "model_based_estimates": {
+    "status": "ESTIMATION_ONLY_NO_UNCONDITIONAL_GUARANTEE",
+    "shrunk_expected_public_score": 0.95057,
+    "shrunk_expected_public_hits": 19960.1,
+    "shrunk_expected_public_delta_hits": 61.08,
+    "theoretical_max_gain_hits": 175.0,
+    "credible_intervals_score": {
+      "q05_conservative": 0.94847,
+      "q50_median": 0.95057,
+      "q95_optimistic": 0.95268
+    },
+    "probabilities_model_based": {
+      "p_beat_s4": 0.9885,
+      "p_reach_09500": 0.66
+    },
+    "option_value": {
+      "e_max_s4_s5_hits": 19960.19,
+      "e_max_s4_s5_score": 0.95058,
+      "penalized_utility": 0.95049
+    },
+    "private_leaderboard_risk": {
+      "sigma_private_hits": 12.14,
+      "var05_private_hits": 6.22,
+      "drawdown_risk": "MINIMAL_POSITIVE_EXPECTED_VARIANCE"
+    },
+    "stress_tests": {
+      "worst_family_net_oof_hits": 265.0,
+      "worst_day_net_oof_hits": 1.0,
+      "double_transfer_error_q05_score": 0.94837,
+      "inverted_unseen_seller_delta_hits": 52.75
+    }
+  },
+  "epistemological_classification": {
+    "distribution_free_guarantee": "NONE (unprobed test labels are unknown; individual labels NO_IDENTIFIABLE)",
+    "model_based_probability": "P(>=0.95000) = 66.0% under Bayesian transfer posterior with prequential shrinkage",
+    "sensitivity_interval": "Under doubled epistemic error, Q05 = 0.94837 (> S4); under inverted unseen seller shift, net hits = +52.75 (> +50)",
+    "unidentifiable_scope": "Specific test item labels remain NO_IDENTIFIABLE; edge is strictly collective on the N2U cohort"
+  },
+  "selection_recommendation_private_lb": {
+    "selection_1": {
+      "file": "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
+      "score_public": 0.94766,
+      "role": "PROVEN_RECORD_HOLDER_ZERO_RISK_SHIELD"
+    },
+    "selection_2": {
+      "file": "submissions/SUBMISSION_5_TODAY_FINAL.csv",
+      "score_expected": 0.95057,
+      "role": "OPTIMAL_ATTACK_09500_BARRIER"
+    }
+  },
+  "quality_gates": {
+    "check_1_30000_rows": "PASSED",
+    "check_2_ids_1_to_30000": "PASSED",
+    "check_3_columns_and_polarity": "PASSED",
+    "check_4_zero_nulls": "PASSED",
+    "check_5_join_by_id": "PASSED",
+    "check_6_comparison_s4_evt143": "PASSED",
+    "check_7_flip_count_direction": "PASSED",
+    "check_8_refuted_blocks_excluded": "PASSED",
+    "check_9_audited_candidate_match": "PASSED",
+    "check_10_deterministic_reproduction": "PASSED",
+    "check_11_no_hardcoded_literals": "PASSED",
+    "check_12_sha256_and_map_hash": "PASSED"
+  }
+}
