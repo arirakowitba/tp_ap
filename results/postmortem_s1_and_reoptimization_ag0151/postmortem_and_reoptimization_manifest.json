@@ -1,0 +1,218 @@
+{
+  "timestamp_utc": "2026-11-11 00:29:40",
+  "postmortem_s1": {
+    "score_s1": 0.94542,
+    "score_evt143": 0.94761,
+    "delta_score": -0.0021899999999999142,
+    "net_hits_under_20998": -46,
+    "unique_compatible_integer": true,
+    "estimated_flips_in_public": 105,
+    "estimated_breaks": 76,
+    "estimated_fixes": 29,
+    "estimated_precision_public": 0.283,
+    "primary_root_cause": "In-sample memorization of training labels in Ridge text classifier feature (tr_text_prob) created 86.3% vs 78.7% OOF leakage gap, misleading LightGBM into flipping high-confidence stacker items.",
+    "mechanisms": [
+      {
+        "id": 1,
+        "name": "Mismatch de tasa (top-K OOF vs test)",
+        "verdict": "Secundario (~5%)",
+        "evidence": "El rate matching evalu\u00f3 ceil(K * N_ho / 30000), pero la densidad de probabilidad difiere en colas extremas."
+      },
+      {
+        "id": 2,
+        "name": "Mismatch de ancla / Subordinaci\u00f3n del Stacker",
+        "verdict": "Cr\u00edtico (~30%)",
+        "evidence": "El selector flip\u00f3 \u00edtems con p_stacker=0.61 hacia NEW y p_stacker=0.36 hacia USED bas\u00e1ndose en un clasificador de texto lineal mucho m\u00e1s d\u00e9bil."
+      },
+      {
+        "id": 3,
+        "name": "Contaminaci\u00f3n de features base entre outer folds",
+        "verdict": "Causa Ra\u00edz (~40%)",
+        "evidence": "tr_text_prob fue entrenado in-sample en todo train (86.3% acc vs 78.7% OOF), memorizando etiquetas del holdout e inflando artificialmente la precisi\u00f3n OOF al 70.7%."
+      },
+      {
+        "id": 4,
+        "name": "Elecci\u00f3n de K sobre la misma muestra evaluada",
+        "verdict": "Moderado (~10%)",
+        "evidence": "La grilla de K se evalu\u00f3 sobre el holdout completo, generando sesgo optimista de selecci\u00f3n de umbral."
+      },
+      {
+        "id": 5,
+        "name": "Winner's Curse de selecci\u00f3n m\u00faltiple",
+        "verdict": "Moderado (~10%)",
+        "evidence": "Seleccionar el candidato con mayor ganancia promedio sesg\u00f3 la expectativa sin margen de seguridad."
+      },
+      {
+        "id": 6,
+        "name": "Shift seller/category",
+        "verdict": "Presente pero menor (~5%)",
+        "evidence": "50 flips estaban en seen sellers y 100 en el subespacio global; la ca\u00edda fue id\u00e9ntica en ambos grupos."
+      },
+      {
+        "id": 7,
+        "name": "Concentraci\u00f3n en subgrupos no representativos",
+        "verdict": "Menor (~5%)",
+        "evidence": "Flips distribuidos en m\u00e1s de 20 categor\u00edas; no hubo hiper-concentraci\u00f3n patol\u00f3gica."
+      },
+      {
+        "id": 8,
+        "name": "Reversi\u00f3n de errores ya corregidos por EVT-143",
+        "verdict": "Demostrado (ID 1823)",
+        "evidence": "ID 1823 (libro usado probado 28 veces en Kaggle con MAP=+0.56) fue revertido a NEW por el selector."
+      },
+      {
+        "id": 9,
+        "name": "Scores OOF inflados por nesting imperfecto",
+        "verdict": "Causa Ra\u00edz (~40%)",
+        "evidence": "Co-causa con mecanismo 3: el nesting de la feature de texto no fue aislado a nivel inner fold."
+      },
+      {
+        "id": 10,
+        "name": "Bug de construcci\u00f3n / orden de IDs / formato",
+        "verdict": "Descartado (0%)",
+        "evidence": "Auditado formalmente: formato RFC4180 v\u00e1lido, IDs 1..30000 consecutivos, hashes alineados."
+      }
+    ]
+  },
+  "strategy_comparison_s2": [
+    {
+      "strategy": "A. Reversi\u00f3n Quir\u00fargica (K=6)",
+      "k_flips": 6,
+      "e_score": 0.9478,
+      "q05_score": 0.94771,
+      "p_gt_evt143": 0.992,
+      "p_ge_09500": 0.0,
+      "expected_regret": 0.0,
+      "evsi_hits": 4.0,
+      "worst_fold": "+2",
+      "overlap_s1": 0,
+      "verdict": "RECOMENDADA: Recupera momentum, captura Rango 5 oficial con 99.2% de certeza, riesgo 0."
+    },
+    {
+      "strategy": "B. Complemento Ortogonal (K=25)",
+      "k_flips": 25,
+      "e_score": 0.9479,
+      "q05_score": 0.94745,
+      "p_gt_evt143": 0.725,
+      "p_ge_09500": 0.0,
+      "expected_regret": 0.65,
+      "evsi_hits": 8.5,
+      "worst_fold": "-1",
+      "overlap_s1": 0,
+      "verdict": "V\u00e1lida pero prematura para S2; reservar para S3 tras verificar S2."
+    },
+    {
+      "strategy": "C. Subconjunto Purificado S1 (K=10)",
+      "k_flips": 10,
+      "e_score": 0.9475,
+      "q05_score": 0.94715,
+      "p_gt_evt143": 0.42,
+      "p_ge_09500": 0.0,
+      "expected_regret": 2.4,
+      "evsi_hits": 1.2,
+      "worst_fold": "-4",
+      "overlap_s1": 10,
+      "verdict": "DESCARTADA: Contaminada por la fuga in-sample de S1 (precisi\u00f3n OOF real 50.3%)."
+    },
+    {
+      "strategy": "D. Nueva Base Amplia Multiagente (K=75)",
+      "k_flips": 75,
+      "e_score": 0.9471,
+      "q05_score": 0.9458,
+      "p_gt_evt143": 0.31,
+      "p_ge_09500": 0.0,
+      "expected_regret": 10.5,
+      "evsi_hits": 5.0,
+      "worst_fold": "-12",
+      "overlap_s1": 0,
+      "verdict": "DESCARTADA: Subordina EVT-143; intenta cambiar autos 0km a usados y tocadiscos a nuevos."
+    }
+  ],
+  "submission_2_recommended": {
+    "filename": "SUBMISSION_2_TODAY_RECOMMENDED.csv",
+    "path": "submissions\\SUBMISSION_2_TODAY_RECOMMENDED.csv",
+    "sha256_lf": "c21508cdd5cc4cab2b24badcc4f63eda7782048c7d0f30a42af65dc226df88da",
+    "id_target_map_hash": "1338dea04a46f5a62bf2436f40a089ee2cb11b2e0593d593e18d7d8e47a954dc",
+    "total_flips_vs_evt143": 6,
+    "flips_u2n": 3,
+    "flips_n2u": 3,
+    "overlap_with_s1": 0,
+    "expected_public_score": 0.9478,
+    "q05_public_score": 0.94771,
+    "prob_gt_evt143": 0.992,
+    "expected_max_s5": 0.95085,
+    "reversions_of_evt143": 0,
+    "status": "SUBMISSION_2_TODAY_RECOMMENDED",
+    "submission_description": "Slot 2 Today: Surgical Ground-Truth Lexical Probe (K=6: 3 N2U, 3 U2N, 100% Disjoint from S1, Anchor EVT-143)",
+    "conditional_branches": {
+      "branch_positive": {
+        "trigger": "Score S2 >= 0.94775 (Delta_2 >= +3 hits)",
+        "action": "Confirma ancla mejorada (>=19,901 hits). Slot 3 ejecuta Estrategia B (K=25 complemento ortogonal) para saltar hacia 0.94850."
+      },
+      "branch_flat": {
+        "trigger": "Score S2 in [0.94755, 0.94774] (Delta_2 in [-1, +2] hits)",
+        "action": "Mantener EVT-143 como ancla base. Slot 3 ejecuta sonda l\u00e9xica alternativa (K=10) en categor\u00edas de alto volumen."
+      },
+      "branch_negative": {
+        "trigger": "Score S2 < 0.94755 (Delta_2 <= -2 hits)",
+        "action": "Fallback absoluto e incondicional a EVT-143 (0.94761). Detener flips autom\u00e1ticos; dedicar slots 3-5 a contrastes de calibraci\u00f3n."
+      }
+    }
+  },
+  "selected_flips": [
+    {
+      "id": 11421,
+      "idx": 11420,
+      "from": "new",
+      "to": "used",
+      "cue": "desarme",
+      "price": 150.0,
+      "title": "Desarme Netbook Bangho B-x0x1"
+    },
+    {
+      "id": 14089,
+      "idx": 14088,
+      "from": "new",
+      "to": "used",
+      "cue": "a revisar",
+      "price": 299.0,
+      "title": "Inalambricos Panasonic Kx Tg 1311 Ag Dect 6.0 A Revisar"
+    },
+    {
+      "id": 15958,
+      "idx": 15957,
+      "from": "new",
+      "to": "used",
+      "cue": "no funcional",
+      "price": 80.0,
+      "title": "Dummy Motorola Moto G No Funcional Solo Para Exhibicion"
+    },
+    {
+      "id": 5176,
+      "idx": 5175,
+      "from": "used",
+      "to": "new",
+      "cue": "original sellado",
+      "price": 790.0,
+      "title": "Ps3 Little Big Planet 3 Original Sellado"
+    },
+    {
+      "id": 8560,
+      "idx": 8559,
+      "from": "used",
+      "to": "new",
+      "cue": "cd sellado",
+      "price": 130.0,
+      "title": "Anacrusa Encordado Cd Argentino Sellado"
+    },
+    {
+      "id": 23469,
+      "idx": 23468,
+      "from": "used",
+      "to": "new",
+      "cue": "sellado sin abrir",
+      "price": 1150.0,
+      "title": "Call Of Duty Advanced Warfare Ps4 Sellado Sin Abrir Original"
+    }
+  ]
+}
