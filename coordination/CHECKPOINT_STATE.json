@@ -1,13 +1,11 @@
 {
-  "last_checked_utc": "2026-11-11T10:11:00Z",
+  "last_checked_utc": "2026-11-11T13:26:00Z",
   "origin_main_head": "65e57c5",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "d761568+merge_65e57c5",
+  "local_head": "0477228",
   "last_processed_codex_message": "CX-0163",
-  "last_published_antigravity_message": "AG-0181-RESULT-PREVENTIVE-GATES-T96.md",
-  "active_processes": [
-    "python -u scripts/seller_group_nested_podium_validation.py (task-14043, outer fold 3 of 5 in progress)"
-  ],
+  "last_published_antigravity_message": "AG-0182-RESULT-OUTER-SELLER-GROUP-NESTED-T97.md",
+  "active_processes": [],
   "staged_slot4": "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
   "expected_slot4_score": 0.94766,
   "observed_slot4_score": 0.94766,
@@ -116,24 +114,32 @@
     "T94_forensic_accountability_and_preventive_gates_audit": "corrected_by_ag0180_only_4_partial_tests_gap_decomposition_retracted",
     "T95_cx0161_cx0162_ack_correction": "done_ag0180_published",
     "T96_repair_gates_a_to_h_with_negative_fixtures": "done_ag0181_published_32_fixtures_8_gates_verified",
-    "T97_true_outer_seller_group_nested_backtest": "in_progress_task14043_outer_fold_3_of_5"
+    "T97_true_outer_seller_group_nested_backtest": "done_ag0182_published_25_fits_B_minus36_C_plus311_development_only"
   },
   "podium_baseline_oof_accuracy": 0.9423,
   "podium_baseline_oof_hits": 65961,
   "dual_blend_winner_oof_accuracy": 0.94261,
   "dual_blend_winner_oof_hits": 65983,
+  "outer_seller_group_nested_results": {
+    "policy_A_podium_hits": 58003,
+    "policy_B_dual5050_hits": 57967,
+    "policy_B_delta_vs_A": -36,
+    "policy_C_logstack_hits": 58314,
+    "policy_C_delta_vs_A": 311,
+    "status": "DEVELOPMENT_ONLY"
+  },
   "portfolio_tomorrow_directory": "rejected/portfolio_tomorrow_20261111_ag0177_superseded",
   "portfolio_tomorrow_count": 4,
   "ag0168_portfolio_status": "BLOCKED_DO_NOT_UPLOAD",
   "best_confirmed_score": 0.94766,
   "best_confirmed_hits": 19899,
   "best_confirmed_anchor": "EVT-154 (SUBMISSION_4_TODAY_RECOMMENDED.csv)",
-  "dual_blend_status": "DEVELOPMENT_SIGNAL",
+  "dual_blend_status": "REJECTED_IN_UNSEEN_SELLER_REGIME_MINUS36_HITS",
   "portfolio_tomorrow_status": "SUPERSEDED_BY_AG0180_NOT_READY",
   "portfolio_tomorrow_option_status": {
     "OPT1_S4": "QUALIFIED_CONFIRMED_RECORD",
     "OPT2_LGB_PURE": "REJECTED_NET_NEGATIVE_MINUS64",
-    "OPT3_DUAL_50_50": "DEVELOPMENT_SIGNAL",
+    "OPT3_DUAL_50_50": "REJECTED_IN_UNSEEN_SELLER_REGIME_MINUS36_HITS",
     "OPT4_OVERLAY_K50": "NOT_SUPPORTED_DEVELOPMENT_ONLY"
   },
   "gap_decomposition_ag0179": "HYPOTHESIS_UNMEASURED_RETRACTED",

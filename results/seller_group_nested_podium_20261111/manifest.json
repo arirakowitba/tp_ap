@@ -1,0 +1,310 @@
+{
+  "status": "DEVELOPMENT_ONLY",
+  "submission_generated": false,
+  "kaggle_api_used": false,
+  "git_head_at_run": "0477228c82ebb37b8387c20a730c68bd684fad9e",
+  "script": "scripts/seller_group_nested_podium_validation.py",
+  "script_sha256": "45fa78ff8a1e9d08a1a0a125271c86f4ef8b728f4a677803c563f4fc09e81545",
+  "config": {
+    "outer": {
+      "cv": "StratifiedGroupKFold",
+      "n_splits": 5,
+      "shuffle": true,
+      "random_state": 42,
+      "groups": "seller_id"
+    },
+    "inner": {
+      "cv": "StratifiedGroupKFold",
+      "n_splits": 4,
+      "shuffle": true,
+      "random_state": "1000+outer_fold",
+      "groups": "seller_id"
+    },
+    "tfidf_word": {
+      "ngram_range": [
+        1,
+        2
+      ],
+      "max_features": 40000,
+      "min_df": 3,
+      "sublinear_tf": true
+    },
+    "tfidf_char": {
+      "ngram_range": [
+        3,
+        5
+      ],
+      "analyzer": "char_wb",
+      "max_features": 60000,
+      "min_df": 5,
+      "sublinear_tf": true
+    },
+    "svd": {
+      "n_components": 64,
+      "random_state": 42
+    },
+    "text_lr": {
+      "C": 1.5,
+      "max_iter": 800,
+      "solver": "saga",
+      "random_state": 42
+    },
+    "te": {
+      "cv": "StratifiedKFold(5, shuffle, 42) within fit set",
+      "m_cat": 10.0,
+      "m_seller": 5.0
+    },
+    "lgb": {
+      "n_estimators": 900,
+      "learning_rate": 0.025,
+      "num_leaves": 55,
+      "subsample": 0.85,
+      "colsample_bytree": 0.8,
+      "min_child_samples": 20,
+      "seeds": [
+        42,
+        2026,
+        777
+      ],
+      "early_stopping": null
+    },
+    "cb": {
+      "iterations": 1400,
+      "depth": 8,
+      "learning_rate": 0.035,
+      "loss_function": "Logloss",
+      "text_features": [
+        "title"
+      ],
+      "cat_features": [
+        "seller_id",
+        "category_id"
+      ],
+      "random_seed": "42+outer_fold",
+      "early_stopping": null
+    },
+    "policy_A": {
+      "type": "convex LGB/CB/Text",
+      "fit_on": "inner-OOF",
+      "x0": [
+        0.45,
+        0.4,
+        0.15
+      ],
+      "bounds": [
+        [
+          0.05,
+          0.8
+        ],
+        [
+          0.05,
+          0.8
+        ],
+        [
+          0.05,
+          0.5
+        ]
+      ],
+      "objective": "logloss"
+    },
+    "policy_B": {
+      "type": "fixed 0.5*LGB+0.5*CB",
+      "free_params": 0
+    },
+    "policy_C": {
+      "type": "LogisticRegression(C=1.0) on logit[LGB,CB,Text]",
+      "fit_on": "inner-OOF"
+    },
+    "threshold": 0.5,
+    "bootstrap": {
+      "type": "two-way crossed cluster bootstrap seller x category (Poisson(1) product weights)",
+      "n_boot": 2000,
+      "seed": 20261111
+    },
+    "n_threads": 16
+  },
+  "versions": {
+    "python": "3.12.7",
+    "sklearn": "1.8.0",
+    "lightgbm": "4.6.0",
+    "catboost": "1.2.10",
+    "numpy": "2.4.2"
+  },
+  "reused_stratified_oof": false,
+  "seen_new_note": "Outer folds are seller-disjoint, so fold-local seen rows in outer-val are 0 by construction; this experiment measures transport to unseen sellers only. Test has ~69% seen-seller rows; no public-score gain is estimated here.",
+  "frozen_policies": [
+    {
+      "outer_fold": 1,
+      "wA_lgb_cb_txt": [
+        0.4396264105192336,
+        0.05094305358916058,
+        0.5094305358916058
+      ],
+      "C_coef": [
+        0.5845025048310003,
+        -0.08532611678890563,
+        -0.15251571106682169
+      ],
+      "C_intercept": -0.035744083413533564,
+      "threshold": 0.5,
+      "inner_oof_acc": {
+        "lgb": 0.8270714285714286,
+        "cb": 0.8066964285714285,
+        "txt": 0.8018571428571428
+      },
+      "frozen_at_utc": "2026-11-11T08:44:14Z"
+    },
+    {
+      "outer_fold": 2,
+      "wA_lgb_cb_txt": [
+        0.42427716421142714,
+        0.05233843961714299,
+        0.52338439617143
+      ],
+      "C_coef": [
+        0.5808246261718907,
+        -0.09543533352182092,
+        -0.15713195564960464
+      ],
+      "C_intercept": -0.05239827678737115,
+      "threshold": 0.5,
+      "inner_oof_acc": {
+        "lgb": 0.8204642857142858,
+        "cb": 0.8000714285714285,
+        "txt": 0.7961607142857143
+      },
+      "frozen_at_utc": "2026-11-11T09:40:32Z"
+    },
+    {
+      "outer_fold": 3,
+      "wA_lgb_cb_txt": [
+        0.41415792952320185,
+        0.05325837004334529,
+        0.5325837004334528
+      ],
+      "C_coef": [
+        0.5883729134204928,
+        -0.10849427597762079,
+        -0.15572197111488384
+      ],
+      "C_intercept": -0.009026273058865544,
+      "threshold": 0.5,
+      "inner_oof_acc": {
+        "lgb": 0.8213035714285715,
+        "cb": 0.803375,
+        "txt": 0.7994285714285714
+      },
+      "frozen_at_utc": "2026-11-11T10:16:22Z"
+    },
+    {
+      "outer_fold": 4,
+      "wA_lgb_cb_txt": [
+        0.4535724459163206,
+        0.0496752321894254,
+        0.496752321894254
+      ],
+      "C_coef": [
+        0.569200281339736,
+        -0.05603338391465148,
+        -0.15679263934203702
+      ],
+      "C_intercept": -0.005915550188616503,
+      "threshold": 0.5,
+      "inner_oof_acc": {
+        "lgb": 0.8285357142857143,
+        "cb": 0.8118035714285714,
+        "txt": 0.80825
+      },
+      "frozen_at_utc": "2026-11-11T10:47:20Z"
+    },
+    {
+      "outer_fold": 5,
+      "wA_lgb_cb_txt": [
+        0.4577311762851653,
+        0.04929716579225771,
+        0.492971657922577
+      ],
+      "C_coef": [
+        0.6111022528803605,
+        -0.15412630948061032,
+        -0.08185629908118675
+      ],
+      "C_intercept": -0.009014649777101761,
+      "threshold": 0.5,
+      "inner_oof_acc": {
+        "lgb": 0.8263928571428572,
+        "cb": 0.8056607142857143,
+        "txt": 0.8025892857142857
+      },
+      "frozen_at_utc": "2026-11-11T13:06:58Z"
+    }
+  ],
+  "summary": {
+    "lgb": {
+      "hits": 58333,
+      "accuracy": 0.83333,
+      "logloss": 0.45167
+    },
+    "cb": {
+      "hits": 56874,
+      "accuracy": 0.81249,
+      "logloss": 0.45312
+    },
+    "txt": {
+      "hits": 56552,
+      "accuracy": 0.80789,
+      "logloss": 0.42691
+    },
+    "A": {
+      "hits": 58003,
+      "accuracy": 0.82861,
+      "logloss": 0.40147
+    },
+    "B": {
+      "hits": 57967,
+      "accuracy": 0.8281,
+      "logloss": 0.43308
+    },
+    "C": {
+      "hits": 58314,
+      "accuracy": 0.83306,
+      "logloss": 0.3778
+    }
+  },
+  "comparisons": {
+    "B_vs_A": {
+      "delta_hits_70k": -36,
+      "fixes": 511,
+      "breaks": 547,
+      "folds_positive": 2,
+      "folds_zero": 0,
+      "worst_fold_delta": -27,
+      "boot_delta_hits_median": -35.59932068502398,
+      "boot_delta_hits_q05": -139.3569450287225,
+      "boot_delta_hits_q95": 70.03601001994788,
+      "boot_frac_gt0": 0.2845,
+      "delta_logloss": 0.031617,
+      "boot_delta_logloss_q05": 0.026316759013309907,
+      "boot_delta_logloss_q95": 0.03728583245706294
+    },
+    "C_vs_A": {
+      "delta_hits_70k": 311,
+      "fixes": 1610,
+      "breaks": 1299,
+      "folds_positive": 5,
+      "folds_zero": 0,
+      "worst_fold_delta": 2,
+      "boot_delta_hits_median": 304.8366548172688,
+      "boot_delta_hits_q05": 102.69079197895765,
+      "boot_delta_hits_q95": 558.0099273453377,
+      "boot_frac_gt0": 0.994,
+      "delta_logloss": -0.023666,
+      "boot_delta_logloss_q05": -0.031178127736821135,
+      "boot_delta_logloss_q95": -0.017518953585503618
+    }
+  },
+  "paired_predictions_file": "paired_outer_val_predictions.csv",
+  "paired_predictions_sha256": "496eb66b8454740c2be531089b966e6156fc831c4f24a035407ec95665997110",
+  "per_fold_sha256": "440aef641bd3d2adf0de544a173eb5593b9af17577ff0cbb364d67d6605dfda6",
+  "runtime_minutes": 323.6
+}
