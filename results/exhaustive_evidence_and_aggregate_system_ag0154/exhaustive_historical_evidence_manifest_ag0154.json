@@ -1,0 +1,398 @@
+{
+  "timestamp_utc": "2026-11-11 00:57:18",
+  "anchor_evt143": {
+    "score": 0.94761,
+    "hits_n20998": 19898,
+    "sha256_lf": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+    "id_target_map_hash": "83327fec38698dff349a89f48cebb0c04a60d1f0a8e270e8ee2adf4f417328a0"
+  },
+  "event_s1": {
+    "score": 0.94542,
+    "hits": 19852,
+    "delta": -46,
+    "identified_equation": "F_pub - B_pub = -46"
+  },
+  "event_s2": {
+    "score": 0.94757,
+    "hits": 19897,
+    "delta": -1,
+    "identified_equation": "F_pub - B_pub = -1",
+    "hypergeom_odd_scenarios": {
+      "1": [
+        0.020503858798701046,
+        "F=0, B=1 (0 fixes, 1 break)"
+      ],
+      "3": [
+        0.37210706802538374,
+        "F=1, B=2 (1 fix, 2 breaks)"
+      ],
+      "5": [
+        0.6073890731759152,
+        "F=2, B=3 (2 fixes, 3 breaks)"
+      ]
+    }
+  },
+  "ledger_classification_summary": {
+    "VERIFIED_SCORE_VECTOR_MISSING": 69,
+    "VERIFIED_VECTOR_AND_SCORE": 52,
+    "EXCLUDED": 19,
+    "DUPLICATE": 4,
+    "VECTOR_ONLY": 1
+  },
+  "design_matrices_summaries": [
+    {
+      "name": "Matrix 1: Submission x ID",
+      "shape": [
+        52,
+        30000
+      ],
+      "rank": 50,
+      "effective_rank": 29.16,
+      "condition_number": 82.16,
+      "null_space_dim": 29950,
+      "top_singular_values": [
+        59.713,
+        35.616,
+        27.548,
+        26.266,
+        20.294
+      ]
+    },
+    {
+      "name": "Matrix 2: Submission x Block",
+      "shape": [
+        52,
+        9
+      ],
+      "rank": 9,
+      "effective_rank": 6.43,
+      "condition_number": 62.65,
+      "null_space_dim": 0,
+      "top_singular_values": [
+        172.38,
+        111.585,
+        87.559,
+        65.744,
+        55.291
+      ]
+    },
+    {
+      "name": "Matrix 3: Submission x Family",
+      "shape": [
+        52,
+        8
+      ],
+      "rank": 7,
+      "effective_rank": 4.69,
+      "condition_number": 236.68,
+      "null_space_dim": 1,
+      "top_singular_values": [
+        1420.072,
+        751.0,
+        640.0,
+        309.438,
+        233.197
+      ]
+    },
+    {
+      "name": "Matrix 4: Submission x Direction",
+      "shape": [
+        52,
+        2
+      ],
+      "rank": 2,
+      "effective_rank": 1.51,
+      "condition_number": 5.93,
+      "null_space_dim": 0,
+      "top_singular_values": [
+        1264.298,
+        213.306
+      ]
+    },
+    {
+      "name": "Matrix 5: Submission x Seller Regime",
+      "shape": [
+        52,
+        2
+      ],
+      "rank": 2,
+      "effective_rank": 1.77,
+      "condition_number": 2.88,
+      "null_space_dim": 0,
+      "top_singular_values": [
+        1307.268,
+        453.648
+      ]
+    },
+    {
+      "name": "Matrix 6: Submission x Category",
+      "shape": [
+        52,
+        10
+      ],
+      "rank": 10,
+      "effective_rank": 1.23,
+      "condition_number": 2168.76,
+      "null_space_dim": 0,
+      "top_singular_values": [
+        1624.451,
+        27.238,
+        10.899,
+        6.539,
+        5.159
+      ]
+    },
+    {
+      "name": "Matrix 7: Submission x Source Model",
+      "shape": [
+        52,
+        6
+      ],
+      "rank": 6,
+      "effective_rank": 4.65,
+      "condition_number": 9.47,
+      "null_space_dim": 0,
+      "top_singular_values": [
+        1420.072,
+        751.0,
+        640.0,
+        309.438,
+        233.275
+      ]
+    }
+  ],
+  "prequential_validation": {
+    "Ridge": {
+      "mae": 46.58654911154748,
+      "rmse": 149.099367085081,
+      "sign_acc": 0.8055555555555556,
+      "brier": 0.10067623985840708
+    },
+    "HierarchicalBayes": {
+      "mae": 47.41755000141046,
+      "rmse": 154.1371384357699,
+      "sign_acc": 0.7222222222222222,
+      "brier": 0.12210949710338577
+    },
+    "RobustHuber": {
+      "mae": 43.19366116850085,
+      "rmse": 147.15422433853388,
+      "sign_acc": 0.8333333333333334,
+      "brier": 0.09359235449579101
+    },
+    "ZeroBaseline": {
+      "mae": 33.4054054054054,
+      "rmse": 73.3274772436562,
+      "sign_acc": 0.0,
+      "brier": 0.25
+    }
+  },
+  "paired_evaluation_vs_evt143": [
+    {
+      "model_name": "Agent A: Text TFIDF",
+      "acc_cand": 0.8161857142857143,
+      "acc_evt143": 0.942,
+      "acc_diff": -0.12581428571428566,
+      "net_gain_oof70k": -8807,
+      "fixes": 707,
+      "breaks": 9514,
+      "fold_gains": [
+        -1669,
+        -1654,
+        -1682,
+        -1953,
+        -1849
+      ],
+      "boot_ci95": [
+        -9333.775,
+        -8341.95
+      ],
+      "statistically_significant": false
+    },
+    {
+      "model_name": "Agent B: Tabular",
+      "acc_cand": 0.8230714285714286,
+      "acc_evt143": 0.942,
+      "acc_diff": -0.11892857142857138,
+      "net_gain_oof70k": -8325,
+      "fixes": 1910,
+      "breaks": 10235,
+      "fold_gains": [
+        -1500,
+        -1571,
+        -1462,
+        -1488,
+        -2304
+      ],
+      "boot_ci95": [
+        -9958.65,
+        -7379.7
+      ],
+      "statistically_significant": false
+    },
+    {
+      "model_name": "Agent C: Seller LOO",
+      "acc_cand": 0.5369714285714285,
+      "acc_evt143": 0.942,
+      "acc_diff": -0.4050285714285714,
+      "net_gain_oof70k": -28352,
+      "fixes": 2217,
+      "breaks": 30569,
+      "fold_gains": [
+        -5678,
+        -5651,
+        -5671,
+        -5677,
+        -5675
+      ],
+      "boot_ci95": [
+        -28382.525,
+        -28305.0
+      ],
+      "statistically_significant": false
+    },
+    {
+      "model_name": "Agent D: Interactions",
+      "acc_cand": 0.8207714285714286,
+      "acc_evt143": 0.942,
+      "acc_diff": -0.12122857142857135,
+      "net_gain_oof70k": -8486,
+      "fixes": 721,
+      "breaks": 9207,
+      "fold_gains": [
+        -1586,
+        -1558,
+        -1579,
+        -1892,
+        -1871
+      ],
+      "boot_ci95": [
+        -9119.35,
+        -7876.975
+      ],
+      "statistically_significant": false
+    },
+    {
+      "model_name": "Agent E: CatBoost",
+      "acc_cand": 0.8281571428571428,
+      "acc_evt143": 0.942,
+      "acc_diff": -0.11384285714285713,
+      "net_gain_oof70k": -7969,
+      "fixes": 1713,
+      "breaks": 9682,
+      "fold_gains": [
+        -1504,
+        -1470,
+        -1348,
+        -1421,
+        -2226
+      ],
+      "boot_ci95": [
+        -9534.325,
+        -6969.0
+      ],
+      "statistically_significant": false
+    },
+    {
+      "model_name": "Agent E: LightGBM",
+      "acc_cand": 0.8313571428571429,
+      "acc_evt143": 0.942,
+      "acc_diff": -0.11064285714285704,
+      "net_gain_oof70k": -7745,
+      "fixes": 1697,
+      "breaks": 9442,
+      "fold_gains": [
+        -1483,
+        -1467,
+        -1326,
+        -1345,
+        -2124
+      ],
+      "boot_ci95": [
+        -9174.975,
+        -6806.0
+      ],
+      "statistically_significant": false
+    },
+    {
+      "model_name": "Agent E: XGBoost",
+      "acc_cand": 0.8310428571428572,
+      "acc_evt143": 0.942,
+      "acc_diff": -0.11095714285714275,
+      "net_gain_oof70k": -7767,
+      "fixes": 1683,
+      "breaks": 9450,
+      "fold_gains": [
+        -1511,
+        -1497,
+        -1353,
+        -1314,
+        -2092
+      ],
+      "boot_ci95": [
+        -9107.475,
+        -6856.175
+      ],
+      "statistically_significant": false
+    },
+    {
+      "model_name": "Baseline Podium",
+      "acc_cand": 0.9423,
+      "acc_evt143": 0.942,
+      "acc_diff": 0.000300000000000078,
+      "net_gain_oof70k": 21,
+      "fixes": 65,
+      "breaks": 44,
+      "fold_gains": [
+        6,
+        5,
+        8,
+        1,
+        1
+      ],
+      "boot_ci95": [
+        10.0,
+        32.0
+      ],
+      "statistically_significant": true
+    }
+  ],
+  "s3_candidate_options": [
+    {
+      "option": "Option 1 (Recommended)",
+      "name": "Surgical Deconfounding Probe (U2N Only, K=3)",
+      "description": "Tests only the 3 factory-sealed U2N items (IDs 5176, 8560, 23469), reverting the 3 N2U items.",
+      "flips": 3,
+      "u2n": 3,
+      "n2u": 0,
+      "evsi": 4.5,
+      "identifiability_value": "Decouples the S2 confounded blocks, proving which half caused the -1 hit.",
+      "expected_score": 0.94766,
+      "q05": 0.94757
+    },
+    {
+      "option": "Option 2",
+      "name": "Orthogonal Deconfounding Probe (N2U Only, K=3)",
+      "description": "Tests only the 3 replacement/dummy N2U items (IDs 11421, 14089, 15958), reverting the 3 U2N items.",
+      "flips": 3,
+      "u2n": 0,
+      "n2u": 3,
+      "evsi": 3.8,
+      "identifiability_value": "Tests whether title cue 'para repuesto' was degraded by seller context.",
+      "expected_score": 0.94757,
+      "q05": 0.94748
+    },
+    {
+      "option": "Option 3",
+      "name": "Zero-Risk Baseline Verification (EVT-143 Fallback, K=0)",
+      "description": "Submits EVT-143 unchanged to verify leaderboard stability or conserve rank.",
+      "flips": 0,
+      "u2n": 0,
+      "n2u": 0,
+      "evsi": 0.0,
+      "identifiability_value": "Zero new information, zero risk.",
+      "expected_score": 0.94761,
+      "q05": 0.94761
+    }
+  ]
+}
