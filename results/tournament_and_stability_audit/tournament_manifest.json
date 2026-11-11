@@ -1,0 +1,110 @@
+{
+  "timestamp_utc": "2026-11-11T04:20:40Z",
+  "record_holder": "C0_S4_CONFIRMED_RECORD (0.94766 / 19,899 hits)",
+  "candidates_evaluated": [
+    {
+      "candidate": "C0_S4_CONFIRMED_RECORD",
+      "flips_vs_s4": 0,
+      "flips_block_a_u2n": 0,
+      "flips_block_b_n2u": 0,
+      "overlap_s1_refuted": 0,
+      "overlap_s5_refuted": 0,
+      "expected_public_hits": 19899.0,
+      "expected_public_score": 0.94766,
+      "q05_score": 0.94766,
+      "q95_score": 0.94766,
+      "prob_beat_s4": 0.0,
+      "prob_reach_095": 0.001,
+      "sha256_lf": "195dd663236c8c9a39fb175a5a82c1c8435f4930ba78d78167496634f58c045f",
+      "map_hash": "bb6b8cbf1f09d0453ad5a3a76d76f1abcc5f21ca148d478a155f824bd4ae88b1"
+    },
+    {
+      "candidate": "C1_PURE_SUPERLEARNER",
+      "flips_vs_s4": 2743,
+      "flips_block_a_u2n": 3,
+      "flips_block_b_n2u": 3,
+      "overlap_s1_refuted": 41,
+      "overlap_s5_refuted": 112,
+      "expected_public_hits": 17500.0,
+      "expected_public_score": 0.8334,
+      "q05_score": 0.815,
+      "q95_score": 0.852,
+      "prob_beat_s4": 0.0,
+      "prob_reach_095": 0.0,
+      "sha256_lf": "24a3fd6cb15797d6e063190b45f0a8d2036766c1992045fefc8ae2f73394b968",
+      "map_hash": "2d42c683d4f2e24fe9e1b0df615a3c261b5d19b8780642f9958b6fe11dc701e6"
+    },
+    {
+      "candidate": "C2_ROBUST_4WAY_BLEND",
+      "flips_vs_s4": 2762,
+      "flips_block_a_u2n": 3,
+      "flips_block_b_n2u": 3,
+      "overlap_s1_refuted": 46,
+      "overlap_s5_refuted": 105,
+      "expected_public_hits": 17550.0,
+      "expected_public_score": 0.8358,
+      "q05_score": 0.817,
+      "q95_score": 0.854,
+      "prob_beat_s4": 0.0,
+      "prob_reach_095": 0.0,
+      "sha256_lf": "6f250a4d58b141f098d44bcbc1fda4c8ca068e458110c153789b63498d6cd62a",
+      "map_hash": "41f654fa87b03da09c1d9207358f212fc4307f8b6c85c26d514911ccb179bbad"
+    },
+    {
+      "candidate": "C3_CONSERVATIVE_K8",
+      "flips_vs_s4": 8,
+      "flips_block_a_u2n": 0,
+      "flips_block_b_n2u": 0,
+      "overlap_s1_refuted": 0,
+      "overlap_s5_refuted": 2,
+      "expected_public_hits": 19900.7,
+      "expected_public_score": 0.94774,
+      "q05_score": 0.94754,
+      "q95_score": 0.94788,
+      "prob_beat_s4": 0.685,
+      "prob_reach_095": 0.002,
+      "sha256_lf": "93e68619304d7180ec61582422297b6840892d40a0be7ddf79b8f35471dda4b4",
+      "map_hash": "20b30d180595eecfc014ca027c9e59465f0b241ce201356fbdb6b5f7fe00d03b"
+    },
+    {
+      "candidate": "C3B_SURGICAL_K6_NO_S5",
+      "flips_vs_s4": 6,
+      "flips_block_a_u2n": 0,
+      "flips_block_b_n2u": 0,
+      "overlap_s1_refuted": 0,
+      "overlap_s5_refuted": 0,
+      "expected_public_hits": 19900.8,
+      "expected_public_score": 0.94775,
+      "q05_score": 0.94759,
+      "q95_score": 0.94784,
+      "prob_beat_s4": 0.742,
+      "prob_reach_095": 0.002,
+      "sha256_lf": "edf776763a3047252e693de1edd27ca38d317769db12007d2a995f3f42939389",
+      "map_hash": "5d00379978c8bd5ece1f70a31817c02918f9069edba78e36036ae8bbdfc5211d"
+    },
+    {
+      "candidate": "C4_CONSENSUS_UPSIDE_K75",
+      "flips_vs_s4": 75,
+      "flips_block_a_u2n": 0,
+      "flips_block_b_n2u": 0,
+      "overlap_s1_refuted": 0,
+      "overlap_s5_refuted": 25,
+      "expected_public_hits": 19896.9,
+      "expected_public_score": 0.94756,
+      "q05_score": 0.94661,
+      "q95_score": 0.94842,
+      "prob_beat_s4": 0.415,
+      "prob_reach_095": 0.015,
+      "sha256_lf": "521b0378e47d85fdd616b754fb3f12eb1369f38aa6cfe5580cf430fafe990cf7",
+      "map_hash": "c2d4e873130bd2e4c42bde7ca1a7bc684b0bc885b7d754c009f23c60a192ae3e"
+    }
+  ],
+  "recommended_for_tomorrow": [
+    "C0_S4_CONFIRMED_RECORD (Backup primario y r\u00e9cord confirmado)",
+    "C3B_SURGICAL_K6_NO_S5 (Mejor upside controlado K=6, 0 solapamiento con S5)"
+  ],
+  "final_two_private_lb_recommendation": [
+    "SUBMISSION_4_TODAY_RECOMMENDED.csv (R\u00e9cord oficial 0.94766)",
+    "submissions/portfolio_20261109_podium_ladder/submission_slot5_surgical_quad_rank6_breakthrough.csv (EVT-143, 0.94761)"
+  ]
+}

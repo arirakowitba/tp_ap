@@ -1,0 +1,37 @@
+{
+  "total_disagreements": 2743,
+  "agreement_rate_with_s4": 0.9085666666666666,
+  "n2u_disagreements": 1215,
+  "u2n_disagreements": 1528,
+  "seen_seller_disagreements": 1205,
+  "unseen_seller_disagreements": 1538,
+  "top_10_categories": {
+    "MLA1227": 99,
+    "MLA3530": 43,
+    "MLA2044": 42,
+    "MLA15171": 23,
+    "MLA1902": 17,
+    "MLA1458": 16,
+    "MLA41287": 13,
+    "MLA1383": 13,
+    "MLA6009": 12,
+    "MLA15204": 11
+  },
+  "top_15_disagreement_words": {
+    "para": 201,
+    "original": 76,
+    "nuevo": 52,
+    "cuero": 48,
+    "talle": 48,
+    "mujer": 40,
+    "mesa": 39,
+    "madera": 37,
+    "samsung": 37,
+    "lote": 36,
+    "vestido": 34,
+    "remera": 33,
+    "zapatillas": 31,
+    "juego": 29,
+    "argentina": 28
+  }
+}
