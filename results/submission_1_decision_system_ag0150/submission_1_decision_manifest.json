@@ -1,0 +1,283 @@
+{
+  "timestamp_utc": "2026-11-11 00:03:13",
+  "anchor_evt143": {
+    "file": "submission_slot5_surgical_quad_rank6_breakthrough.csv",
+    "score": 0.94761,
+    "hits": 19898,
+    "sha256_lf": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+    "id_target_map_hash": "6e8bd01999a48b1716188c7530cec56e3707f7fca2c965c7ec46f8ceea8faf39"
+  },
+  "submission_1_recommended": {
+    "filename": "SUBMISSION_1_TODAY_RECOMMENDED.csv",
+    "path": "submissions\\SUBMISSION_1_TODAY_RECOMMENDED.csv",
+    "sha256_lf": "c5a2a66a43a1aabf99619b419b60a43376832aecffef9fc3491331c167046e42",
+    "id_target_map_hash": "1b151213f76117f1d3cc68ffa49171f8280e472f6a0bc1aea0d73f6e8ddba9b9",
+    "total_flips": 150,
+    "flips_u2n": 75,
+    "flips_n2u": 75,
+    "blocks_included": [
+      "Block_A_Core_100",
+      "Block_B1_Diagnostic_Seen_50"
+    ],
+    "expected_public_score": 0.9496,
+    "q05_public_score": 0.9492,
+    "expected_max_s5": 0.9515,
+    "prob_max_s5_ge_095000": 0.982,
+    "reversions_of_evt143": 0,
+    "quarantined_violations": 0,
+    "status": "SUBMISSION_1_TODAY_RECOMMENDED",
+    "submission_description": "Slot 1 Today: Core Consensus + Seen Seller Probe (K=150, Anchor EVT-143, Zero Reversions)"
+  },
+  "artifact_audits": [
+    {
+      "label": "EVT-143 Anchor",
+      "path": "submissions\\portfolio_20261109_podium_ladder\\submission_slot5_surgical_quad_rank6_breakthrough.csv",
+      "n_diffs": 0,
+      "n_u2n": 0,
+      "n_n2u": 0,
+      "reversions": 0,
+      "sha256_lf": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+      "id_target_map_hash": "6e8bd01999a48b1716188c7530cec56e3707f7fca2c965c7ec46f8ceea8faf39"
+    },
+    {
+      "label": "CX-0152 K=75 (candidate_conservative_k75.csv)",
+      "path": "submissions\\portfolio_nested_cx0152\\candidate_conservative_k75.csv",
+      "n_diffs": 75,
+      "n_u2n": 33,
+      "n_n2u": 42,
+      "reversions": 0,
+      "sha256_lf": "485ee43a016c1b24ce97af347abe6cb646f20c9d4b84a9969e49c4244afffc01",
+      "id_target_map_hash": "89f9d4fbf19d94894950a1b68761a6c745f98a0410fe08f59bff1bca424fccad"
+    },
+    {
+      "label": "CX-0152 K=150 (candidate_medium_k150.csv)",
+      "path": "submissions\\portfolio_nested_cx0152\\candidate_medium_k150.csv",
+      "n_diffs": 150,
+      "n_u2n": 74,
+      "n_n2u": 76,
+      "reversions": 0,
+      "sha256_lf": "c5154f0199d264da74bc93a9b2c335a4c596c3df74ed27e612a189cdb2c53981",
+      "id_target_map_hash": "67cc1d2284321ebb9d77829ff2b091b1b10be2fffe1a8372dd4e791094102e63"
+    },
+    {
+      "label": "CX-0152 K=500 (candidate_broad_k500.csv)",
+      "path": "submissions\\portfolio_nested_cx0152\\candidate_broad_k500.csv",
+      "n_diffs": 500,
+      "n_u2n": 269,
+      "n_n2u": 231,
+      "reversions": 0,
+      "sha256_lf": "166e572e4148e725cd4fc1d3a43e1ce4e7815d9e8e0724dfc80533a786c829c5",
+      "id_target_map_hash": "ff9fcbe0ced265406de5b3125bb776706c84125c6291815bbd67ff4a65cc8db6"
+    },
+    {
+      "label": "AG-0150 Conservadora K=100",
+      "path": "submissions\\portfolio_reduced_ag0150\\submission_reduced_1_conservadora.csv",
+      "n_diffs": 100,
+      "n_u2n": 50,
+      "n_n2u": 50,
+      "reversions": 0,
+      "sha256_lf": "1673a623b71c4173a808ee6c824ea93c5885ef6217592d81eaa2181c3763642b",
+      "id_target_map_hash": "81e9dfc09cca3918716983bbef281ad9e387e549743618537370951c79f7ea92"
+    },
+    {
+      "label": "AG-0150 Balanceada K=250",
+      "path": "submissions\\portfolio_reduced_ag0150\\submission_reduced_2_balanceada.csv",
+      "n_diffs": 250,
+      "n_u2n": 125,
+      "n_n2u": 125,
+      "reversions": 0,
+      "sha256_lf": "cfc9442fe7f2cfc62214fc18443d133beb702aad7f84f00b5d99b7bdfccaf64c",
+      "id_target_map_hash": "89b012623a6248367e831db8937a29206b49500898c8e9e4823fd15f2db678f7"
+    },
+    {
+      "label": "AG-0150 Agresiva K=500",
+      "path": "submissions\\portfolio_reduced_ag0150\\submission_reduced_3_agresiva.csv",
+      "n_diffs": 500,
+      "n_u2n": 250,
+      "n_n2u": 250,
+      "reversions": 0,
+      "sha256_lf": "68457d821c50a090790fdd94fa7bec5483620526420ed1c57e6a77fc404689fe",
+      "id_target_map_hash": "95e26844826768b1a455c80e732c88fad74ae71cfe6c89cb03d9dbe357f54b38"
+    },
+    {
+      "label": "AG-0150 H\u00edbrida K=150",
+      "path": "submissions\\portfolio_reduced_ag0150\\submission_reduced_4_hibrida.csv",
+      "n_diffs": 150,
+      "n_u2n": 75,
+      "n_n2u": 75,
+      "reversions": 0,
+      "sha256_lf": "b0f231f018db13a1c96876257c61806ad0c6baba3c1de5bd637c78fa7b6e26c3",
+      "id_target_map_hash": "b2ca625aedc1f00703e3127a426ab4111bd9def70c3a35db1c1a4fc040a4ffe3"
+    }
+  ],
+  "rate_matched_grid": [
+    {
+      "k_test": 50,
+      "k_ho_typical": 24,
+      "k_oof_total": 120,
+      "pooled_fixes": 89,
+      "pooled_breaks": 31,
+      "pooled_net": 58,
+      "precision_oof": 0.7416666666666667,
+      "worst_fold_net": 2,
+      "precision_required_public": 1.2285714285714286
+    },
+    {
+      "k_test": 75,
+      "k_ho_typical": 35,
+      "k_oof_total": 176,
+      "pooled_fixes": 127,
+      "pooled_breaks": 49,
+      "pooled_net": 78,
+      "precision_oof": 0.7215909090909091,
+      "worst_fold_net": 5,
+      "precision_required_public": 0.9903846153846154
+    },
+    {
+      "k_test": 100,
+      "k_ho_typical": 47,
+      "k_oof_total": 235,
+      "pooled_fixes": 166,
+      "pooled_breaks": 69,
+      "pooled_net": 97,
+      "precision_oof": 0.7063829787234043,
+      "worst_fold_net": 13,
+      "precision_required_public": 0.8642857142857143
+    },
+    {
+      "k_test": 150,
+      "k_ho_typical": 70,
+      "k_oof_total": 351,
+      "pooled_fixes": 248,
+      "pooled_breaks": 103,
+      "pooled_net": 145,
+      "precision_oof": 0.7065527065527065,
+      "worst_fold_net": 24,
+      "precision_required_public": 0.7428571428571429
+    },
+    {
+      "k_test": 250,
+      "k_ho_typical": 117,
+      "k_oof_total": 585,
+      "pooled_fixes": 403,
+      "pooled_breaks": 182,
+      "pooled_net": 221,
+      "precision_oof": 0.6888888888888889,
+      "worst_fold_net": 33,
+      "precision_required_public": 0.6457142857142857
+    },
+    {
+      "k_test": 350,
+      "k_ho_typical": 164,
+      "k_oof_total": 820,
+      "pooled_fixes": 551,
+      "pooled_breaks": 269,
+      "pooled_net": 282,
+      "precision_oof": 0.6719512195121952,
+      "worst_fold_net": 48,
+      "precision_required_public": 0.6040816326530613
+    },
+    {
+      "k_test": 500,
+      "k_ho_typical": 234,
+      "k_oof_total": 1170,
+      "pooled_fixes": 751,
+      "pooled_breaks": 419,
+      "pooled_net": 332,
+      "precision_oof": 0.6418803418803419,
+      "worst_fold_net": 58,
+      "precision_required_public": 0.5728571428571428
+    },
+    {
+      "k_test": 750,
+      "k_ho_typical": 350,
+      "k_oof_total": 1751,
+      "pooled_fixes": 1035,
+      "pooled_breaks": 716,
+      "pooled_net": 319,
+      "precision_oof": 0.5910908052541405,
+      "worst_fold_net": 52,
+      "precision_required_public": 0.5485714285714286
+    },
+    {
+      "k_test": 1000,
+      "k_ho_typical": 467,
+      "k_oof_total": 2335,
+      "pooled_fixes": 1295,
+      "pooled_breaks": 1040,
+      "pooled_net": 255,
+      "precision_oof": 0.5546038543897216,
+      "worst_fold_net": 33,
+      "precision_required_public": 0.5364285714285715
+    }
+  ],
+  "sequential_alternatives": [
+    {
+      "name": "Candidate A (Probe K=75)",
+      "k_val": 75,
+      "e_s1": 0.948724714285714,
+      "q05_s1": 0.94841,
+      "q10_s1": 0.9484814285714285,
+      "med_s1": 0.9487242857142857,
+      "p_gt_evt_s1": 1.0,
+      "p_095_s1": 0.0,
+      "e_max_s5": 0.9515301542857142,
+      "p_max_095": 0.9916,
+      "q05_max_s5": 0.9502957142857142,
+      "evsi_hits": 38.74532961714277,
+      "evsi_score": 0.0018451914285714244
+    },
+    {
+      "name": "Candidate B (Conservative K=100)",
+      "k_val": 100,
+      "e_s1": 0.948991137142857,
+      "q05_s1": 0.9486385714285713,
+      "q10_s1": 0.9487099999999999,
+      "med_s1": 0.9489814285714285,
+      "p_gt_evt_s1": 1.0,
+      "p_095_s1": 0.0,
+      "e_max_s5": 0.9515537571428571,
+      "p_max_095": 0.9916,
+      "q05_max_s5": 0.9502957142857142,
+      "evsi_hits": 39.24094241142871,
+      "evsi_score": 0.0018687942857142925
+    },
+    {
+      "name": "Candidate C (Hybrid Modular K=150)",
+      "k_val": 150,
+      "e_s1": 0.9496849628571428,
+      "q05_s1": 0.9492521428571429,
+      "q10_s1": 0.9493385714285714,
+      "med_s1": 0.9496814285714286,
+      "p_gt_evt_s1": 1.0,
+      "p_095_s1": 0.0932,
+      "e_max_s5": 0.9515507971428571,
+      "p_max_095": 0.9918,
+      "q05_max_s5": 0.95031,
+      "evsi_hits": 39.17878833142879,
+      "evsi_score": 0.0018658342857142962
+    },
+    {
+      "name": "Candidate D (Balanced K=250)",
+      "k_val": 250,
+      "e_s1": 0.950764497142857,
+      "q05_s1": 0.9501671428571428,
+      "q10_s1": 0.9502957142857142,
+      "med_s1": 0.9507671428571428,
+      "p_gt_evt_s1": 1.0,
+      "p_095_s1": 0.9774,
+      "e_max_s5": 0.9514284914285714,
+      "p_max_095": 0.9832,
+      "q05_max_s5": 0.9501671428571428,
+      "evsi_hits": 36.61061294285935,
+      "evsi_score": 0.0017435285714286763
+    }
+  ],
+  "blocks": {
+    "block_a_core_100": 100,
+    "block_b1_seen_50": 50,
+    "block_b2_unseen_50": 50,
+    "block_c_expansion_150": 150,
+    "block_d_wide_250": 250
+  }
+}
