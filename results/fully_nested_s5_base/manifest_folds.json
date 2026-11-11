@@ -1,0 +1,122 @@
+{
+  "title": "Fully Nested S5 Multiagent Predictive Base Manifest",
+  "timestamp_utc": "2026-11-11T01:39:55Z",
+  "splits_csv_sha256": "91ee8fd2dc9e16ac52c5df19286e71d9bbfae9cede4a6394d342e698ed76c7fb",
+  "paired_csv_sha256": "b24cd92f46179fcfddfec6e2478b59b379df2c347a1dcc920bb60bf80b787276",
+  "test_probabilities_sha256": "19eac7d49d61f02b604cf76a3fc15f90631444b4ade0db2714926c6b043b59c3",
+  "n_outer_folds": 5,
+  "n_inner_folds_per_outer": 4,
+  "random_seed": 42,
+  "fold_details": [
+    {
+      "outer_fold": 0,
+      "n_outer_train": 56000,
+      "n_outer_val": 14000,
+      "inner_folds": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "weights": [
+        0.18956595547728292,
+        0.0,
+        0.8104340445227171,
+        0.0
+      ],
+      "inner_oof_accuracy": 0.8743214285714286,
+      "inner_oof_logloss": 0.31759351327422175,
+      "outer_val_accuracy": 0.8639285714285714,
+      "outer_val_logloss": 0.31964609312401704,
+      "elapsed_seconds": 112.83455443382263
+    },
+    {
+      "outer_fold": 1,
+      "n_outer_train": 56000,
+      "n_outer_val": 14000,
+      "inner_folds": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "weights": [
+        0.1983044916107329,
+        0.0,
+        0.8016955083892672,
+        0.0
+      ],
+      "inner_oof_accuracy": 0.8699285714285714,
+      "inner_oof_logloss": 0.32141141829046077,
+      "outer_val_accuracy": 0.8825714285714286,
+      "outer_val_logloss": 0.3059214853723006,
+      "elapsed_seconds": 104.6149353981018
+    },
+    {
+      "outer_fold": 2,
+      "n_outer_train": 56000,
+      "n_outer_val": 14000,
+      "inner_folds": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "weights": [
+        0.1923902084736763,
+        0.0,
+        0.8076097915263237,
+        0.0
+      ],
+      "inner_oof_accuracy": 0.8671607142857143,
+      "inner_oof_logloss": 0.3196090147207878,
+      "outer_val_accuracy": 0.8728571428571429,
+      "outer_val_logloss": 0.3158700968819815,
+      "elapsed_seconds": 105.79894137382507
+    },
+    {
+      "outer_fold": 3,
+      "n_outer_train": 56002,
+      "n_outer_val": 13998,
+      "inner_folds": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "weights": [
+        0.20673754190635726,
+        0.0,
+        0.7932624580936426,
+        0.0
+      ],
+      "inner_oof_accuracy": 0.8750758901467804,
+      "inner_oof_logloss": 0.3167205591529012,
+      "outer_val_accuracy": 0.8749821403057579,
+      "outer_val_logloss": 0.3138495078168498,
+      "elapsed_seconds": 105.5343132019043
+    },
+    {
+      "outer_fold": 4,
+      "n_outer_train": 55998,
+      "n_outer_val": 14002,
+      "inner_folds": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "weights": [
+        0.1956276006837261,
+        0.0,
+        0.8043723993162739,
+        0.0
+      ],
+      "inner_oof_accuracy": 0.8728526018786386,
+      "inner_oof_logloss": 0.3176329665545168,
+      "outer_val_accuracy": 0.869518640194258,
+      "outer_val_logloss": 0.3258232225648023,
+      "elapsed_seconds": 105.01997518539429
+    }
+  ]
+}

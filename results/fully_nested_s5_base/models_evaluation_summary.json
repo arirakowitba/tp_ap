@@ -1,0 +1,157 @@
+[
+  {
+    "model_name": "Agent A1 (Text Logistic)",
+    "accuracy": 0.8167857142857143,
+    "logloss": 0.4047895836723764,
+    "roc_auc": 0.8963104838082151,
+    "total_hits": 57175,
+    "fixes_vs_evt143_proxy": 739,
+    "breaks_vs_evt143_proxy": 9504,
+    "net_vs_evt143_proxy": -8765,
+    "seller_clustered_95ci": [
+      -0.13543470797138912,
+      -0.11706930573209888
+    ],
+    "seller_p_gt_zero": 0.0,
+    "category_clustered_95ci": [
+      -0.1380075295291967,
+      -0.11471758232200466
+    ],
+    "category_p_gt_zero": 0.0,
+    "fold_accuracies": [
+      0.8209285714285715,
+      0.8235,
+      0.8218571428571428,
+      0.802686098014002,
+      0.8149550064276532
+    ],
+    "worst_fold": 3,
+    "worst_fold_accuracy": 0.802686098014002,
+    "acc_recurring_sellers": 0.8300714941886008,
+    "acc_singleton_sellers": 0.783398574726488
+  },
+  {
+    "model_name": "Agent A2 (Text Ridge Platt)",
+    "accuracy": 0.8157714285714286,
+    "logloss": 0.48001057793599217,
+    "roc_auc": 0.8918346322917751,
+    "total_hits": 57104,
+    "fixes_vs_evt143_proxy": 752,
+    "breaks_vs_evt143_proxy": 9588,
+    "net_vs_evt143_proxy": -8836,
+    "seller_clustered_95ci": [
+      -0.13601245666309603,
+      -0.11793238272897821
+    ],
+    "seller_p_gt_zero": 0.0,
+    "category_clustered_95ci": [
+      -0.14146952327254966,
+      -0.11474051981383449
+    ],
+    "category_p_gt_zero": 0.0,
+    "fold_accuracies": [
+      0.8157857142857143,
+      0.8246428571428571,
+      0.8201428571428572,
+      0.8029718531218746,
+      0.8153120982716755
+    ],
+    "worst_fold": 3,
+    "worst_fold_accuracy": 0.8029718531218746,
+    "acc_recurring_sellers": 0.8281543315892479,
+    "acc_singleton_sellers": 0.7846532169025394
+  },
+  {
+    "model_name": "Agent B1 (LightGBM Tabular)",
+    "accuracy": 0.8554285714285714,
+    "logloss": 0.3249481255727888,
+    "roc_auc": 0.9404836253541338,
+    "total_hits": 59880,
+    "fixes_vs_evt143_proxy": 2380,
+    "breaks_vs_evt143_proxy": 8440,
+    "net_vs_evt143_proxy": -6060,
+    "seller_clustered_95ci": [
+      -0.09375310984276737,
+      -0.0807297282784992
+    ],
+    "seller_p_gt_zero": 0.0,
+    "category_clustered_95ci": [
+      -0.09281310275355006,
+      -0.08163082609962151
+    ],
+    "category_p_gt_zero": 0.0,
+    "fold_accuracies": [
+      0.8435714285714285,
+      0.866,
+      0.8553571428571428,
+      0.8578368338334048,
+      0.8543779460077132
+    ],
+    "worst_fold": 0,
+    "worst_fold_accuracy": 0.8435714285714285,
+    "acc_recurring_sellers": 0.8597475735910852,
+    "acc_singleton_sellers": 0.8445749272307538
+  },
+  {
+    "model_name": "Agent B2 (CatBoost Tabular)",
+    "accuracy": 0.8495142857142857,
+    "logloss": 0.3359467852210624,
+    "roc_auc": 0.939329259519979,
+    "total_hits": 59466,
+    "fixes_vs_evt143_proxy": 2391,
+    "breaks_vs_evt143_proxy": 8865,
+    "net_vs_evt143_proxy": -6474,
+    "seller_clustered_95ci": [
+      -0.10076301670178162,
+      -0.08568081834117963
+    ],
+    "seller_p_gt_zero": 0.0,
+    "category_clustered_95ci": [
+      -0.09932831907972599,
+      -0.08699369397420303
+    ],
+    "category_p_gt_zero": 0.0,
+    "fold_accuracies": [
+      0.8380714285714286,
+      0.8647857142857143,
+      0.85,
+      0.8486926703814831,
+      0.8460219968575917
+    ],
+    "worst_fold": 0,
+    "worst_fold_accuracy": 0.8380714285714286,
+    "acc_recurring_sellers": 0.8517194552062947,
+    "acc_singleton_sellers": 0.8439726989862492
+  },
+  {
+    "model_name": "Agent D (Convex Stacking Meta)",
+    "accuracy": 0.8727714285714285,
+    "logloss": 0.31622242322111005,
+    "roc_auc": 0.949970436154228,
+    "total_hits": 61094,
+    "fixes_vs_evt143_proxy": 2156,
+    "breaks_vs_evt143_proxy": 7002,
+    "net_vs_evt143_proxy": -4846,
+    "seller_clustered_95ci": [
+      -0.07489800651244553,
+      -0.06406248925306196
+    ],
+    "seller_p_gt_zero": 0.0,
+    "category_clustered_95ci": [
+      -0.07409679211199241,
+      -0.06509197404659087
+    ],
+    "category_p_gt_zero": 0.0,
+    "fold_accuracies": [
+      0.8639285714285714,
+      0.8825714285714286,
+      0.8728571428571429,
+      0.8749821403057579,
+      0.869518640194258
+    ],
+    "worst_fold": 0,
+    "worst_fold_accuracy": 0.8639285714285714,
+    "acc_recurring_sellers": 0.8801174262092104,
+    "acc_singleton_sellers": 0.8543109505169125
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "candidate_1_consensus_k20": {
+    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_nested_s5_candidates\\candidate_s5_consensus_core_k20.csv",
+    "sha256_lf": "5a2ab7b2f8e3b2c36d404fe601c631dd9a7c5101230dfdb2bad379734134682a",
+    "map_hash": "b6e362bfb4b34fc0c6c37ccd7f30cd4f67d676e6ad89b0423786c6b28307347c",
+    "flips_vs_s4": 20,
+    "flips_vs_evt143": 23,
+    "direction": "N2U_only"
+  },
+  "candidate_2_stability_k50": {
+    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_nested_s5_candidates\\candidate_s5_high_stability_n2u_k50.csv",
+    "sha256_lf": "b68171ba8b05bda3fc3e553d38b091c59f387600b560427b0308f5444292a8ee",
+    "map_hash": "9be5ddf57f6293321bbb61851dc276614f5a06ca43edaca84ed86e510d0a4a59",
+    "flips_vs_s4": 50,
+    "flips_vs_evt143": 53,
+    "direction": "N2U_only"
+  },
+  "candidate_3_diverse_k100": {
+    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_nested_s5_candidates\\candidate_s5_diverse_k100.csv",
+    "sha256_lf": "4f7ef86f26e5b37dce6c20afcda27da9b05a55b31fdcbf724166689405f8e64e",
+    "map_hash": "00c8adfc10afe8c5f8373c28f99ab28c05225e44deda1052f3fd5499482fb310",
+    "flips_vs_s4": 90,
+    "flips_vs_evt143": 93,
+    "direction": "N2U_80_plus_U2N_20"
+  },
+  "fallback_recommended_s4": {
+    "path": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\SUBMISSION_4_TODAY_RECOMMENDED.csv",
+    "sha256_lf": "195dd663236c8c9a39fb175a5a82c1c8435f4930ba78d78167496634f58c045f",
+    "expected_hits": 19899,
+    "expected_score": 0.94766
+  }
+}
