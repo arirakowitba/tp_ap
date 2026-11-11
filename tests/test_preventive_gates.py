@@ -981,6 +981,23 @@ class TestPreventiveGates(unittest.TestCase):
             self.assertIn("Sample size n=5 is insufficient", str(ctx_n5.exception))
             self.record_fixture("Gate C", "NEGATIVE", "Only 5 sequential events used for 95% bound (CX-0164 i)", "REJECTED_AS_EXPECTED", str(ctx_n5.exception))
 
+            # 4b. NEGATIVE FIXTURE 2b (Exact old AG-0181 fixture: n=5 events + coverage=0.80): must FAIL for probabilities and 95% claims
+            art_5_cov80 = tmp / "old_ag0181_5_events_cov80.json"
+            art_5_cov80.write_text(
+                json.dumps({
+                    "prequential_events": valid_events_20[:5],
+                    "measured_empirical_coverage": 0.80,
+                }),
+                encoding="utf-8",
+            )
+            with self.assertRaises(GateViolationError) as ctx_n5_80:
+                validate_gate_c(
+                    claims={"prob_beat_s4": 0.65, "public_q05": 0.9468, "claimed_confidence_level": 0.95},
+                    calibration_artifact_path=art_5_cov80,
+                )
+            self.assertIn("Sample size n=5 is insufficient", str(ctx_n5_80.exception))
+            self.record_fixture("Gate C", "NEGATIVE", "Old AG-0181 fixture (n=5 events, coverage=0.80) used for prob/95% claim", "REJECTED_AS_EXPECTED", str(ctx_n5_80.exception))
+
             # 5. NEGATIVE FIXTURE 3 (CX-0164 ii): 0.80 coverage used to claim a 95% bound must FAIL
             art_cov80 = tmp / "cov_80_for_95.json"
             events_80 = [

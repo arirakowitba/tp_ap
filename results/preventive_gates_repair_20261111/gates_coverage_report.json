@@ -1,10 +1,10 @@
 {
   "test_file": "tests/test_preventive_gates.py",
-  "test_file_sha256": "54415bbb678a95bda907c227cb64f73d66b0778c7efe543bc2d276633c382040",
-  "test_file_sha256_lf": "54415bbb678a95bda907c227cb64f73d66b0778c7efe543bc2d276633c382040",
+  "test_file_sha256": "929d3655ac8da73852b4bde7a5aeff7c34edcd844fc1efdb0cd16bf9696ba7c6",
+  "test_file_sha256_lf": "929d3655ac8da73852b4bde7a5aeff7c34edcd844fc1efdb0cd16bf9696ba7c6",
   "total_gates_covered": 8,
   "all_gates_a_to_h_present": true,
-  "total_fixture_assertions": 34,
+  "total_fixture_assertions": 35,
   "gates": {
     "Gate A": {
       "positive_fixtures": 1,
@@ -76,7 +76,7 @@
     },
     "Gate C": {
       "positive_fixtures": 2,
-      "negative_fixtures": 4,
+      "negative_fixtures": 5,
       "cases": [
         {
           "gate": "Gate C",
@@ -103,6 +103,13 @@
           "gate": "Gate C",
           "fixture_type": "NEGATIVE",
           "name": "Only 5 sequential events used for 95% bound (CX-0164 i)",
+          "outcome": "REJECTED_AS_EXPECTED",
+          "detail": "Gate C: Sample size n=5 is insufficient to sustain a 95% bound or probability claim (requires >= 20 sequential prequential events)."
+        },
+        {
+          "gate": "Gate C",
+          "fixture_type": "NEGATIVE",
+          "name": "Old AG-0181 fixture (n=5 events, coverage=0.80) used for prob/95% claim",
           "outcome": "REJECTED_AS_EXPECTED",
           "detail": "Gate C: Sample size n=5 is insufficient to sustain a 95% bound or probability claim (requires >= 20 sequential prequential events)."
         },
@@ -138,14 +145,14 @@
           "fixture_type": "NEGATIVE",
           "name": "Rejected CSV left inside active submissions/",
           "outcome": "REJECTED_AS_EXPECTED",
-          "detail": "Gate D: Rejected artifact 'C:\\Users\\arira\\AppData\\Local\\Temp\\tmp5t0r8zag\\submissions\\SUBMISSION_CANDIDATE_3_CONSERVATIVE_OVERLAY_K15.csv' found inside active submissions/!"
+          "detail": "Gate D: Rejected artifact 'C:\\Users\\arira\\AppData\\Local\\Temp\\tmpfaukr39c\\submissions\\SUBMISSION_CANDIDATE_3_CONSERVATIVE_OVERLAY_K15.csv' found inside active submissions/!"
         },
         {
           "gate": "Gate D",
           "fixture_type": "NEGATIVE",
           "name": "Active manifest listing REJECTED_NET_NEGATIVE_MINUS64 entry",
           "outcome": "REJECTED_AS_EXPECTED",
-          "detail": "Gate D: Active manifest 'C:\\Users\\arira\\AppData\\Local\\Temp\\tmp5t0r8zag\\active_manifest.json' contains rejected/degraded entry 'opt2.csv' (REJECTED_NET_NEGATIVE_MINUS64)"
+          "detail": "Gate D: Active manifest 'C:\\Users\\arira\\AppData\\Local\\Temp\\tmpfaukr39c\\active_manifest.json' contains rejected/degraded entry 'opt2.csv' (REJECTED_NET_NEGATIVE_MINUS64)"
         }
       ]
     },
