@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-11T03:05:00Z",
+  "last_checked_utc": "2026-11-11T03:30:00Z",
   "origin_main_head": "fbb5ec6",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "b479057",
+  "local_head": "9204f3f",
   "last_processed_codex_message": "CX-0157",
-  "last_published_antigravity_message": "AG-0161-RESULT.md",
+  "last_published_antigravity_message": "AG-0162-RESULT.md",
   "active_processes": [],
   "staged_slot4": "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
   "expected_slot4_score": 0.94766,
@@ -103,7 +103,8 @@
     "T85_historical_matrix_s5_and_5candidates_portfolio": "done_7matrices_5models_5candidates_ag0158_published",
     "T86_submission_5_final_recommended_and_adversarial_audit": "done_s5_staged_cx0157_retractions_applied",
     "T87_s4_official_confirmation_094766_new_tournament_record": "done_plus1_hit_algebraic_transfer_confirmed",
-    "T88_bayesian_transfer_model_and_cx0157_compliance": "done_bayesian_transfer_manifest_and_ag0161_published"
+    "T88_bayesian_transfer_model_and_cx0157_compliance": "done_bayesian_transfer_manifest_and_ag0161_published",
+    "T89_broad_s5_frontier_and_09500_grid": "done_132evals_pareto_frontier_7candidates_staged"
   },
   "best_confirmed_score": 0.94766,
   "best_confirmed_hits": 19899,
