@@ -1,16 +1,18 @@
 {
-  "last_checked_utc": "2026-11-11T07:55:00Z",
-  "origin_main_head": "316a30a",
+  "last_checked_utc": "2026-11-11T10:11:00Z",
+  "origin_main_head": "65e57c5",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "e7632f5+merge_316a30a",
-  "last_processed_codex_message": "CX-0162",
-  "last_published_antigravity_message": "AG-0180-ACK-CORRECTION.md",
-  "active_processes": [],
+  "local_head": "d761568+merge_65e57c5",
+  "last_processed_codex_message": "CX-0163",
+  "last_published_antigravity_message": "AG-0181-RESULT-PREVENTIVE-GATES-T96.md",
+  "active_processes": [
+    "python -u scripts/seller_group_nested_podium_validation.py (task-14043, outer fold 3 of 5 in progress)"
+  ],
   "staged_slot4": "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
   "expected_slot4_score": 0.94766,
   "observed_slot4_score": 0.94766,
-  "staged_slot5": "submissions/SUBMISSION_5_TODAY_FINAL.csv",
-  "expected_slot5_score": 0.95057,
+  "staged_slot5": "rejected/s5_broad_frontier_ag0162/SUBMISSION_5_TODAY_FINAL.csv",
+  "expected_slot5_score": "NO_IDENTIFIABLE",
   "observed_slot5_score": 0.94295,
   "slot5_classification": "REJECTED_PUBLIC_AND_METHODOLOGICALLY_INVALID",
   "final_two_selections": [
@@ -113,14 +115,14 @@
     "T93_master_meta_lofo_tournament_and_portfolio_tomorrow": "corrected_by_ag0180_not_nested_not_seller_group_statuses_retracted",
     "T94_forensic_accountability_and_preventive_gates_audit": "corrected_by_ag0180_only_4_partial_tests_gap_decomposition_retracted",
     "T95_cx0161_cx0162_ack_correction": "done_ag0180_published",
-    "T96_repair_gates_a_to_h_with_negative_fixtures": "pending",
-    "T97_true_outer_seller_group_nested_backtest": "pending"
+    "T96_repair_gates_a_to_h_with_negative_fixtures": "done_ag0181_published_32_fixtures_8_gates_verified",
+    "T97_true_outer_seller_group_nested_backtest": "in_progress_task14043_outer_fold_3_of_5"
   },
   "podium_baseline_oof_accuracy": 0.9423,
   "podium_baseline_oof_hits": 65961,
   "dual_blend_winner_oof_accuracy": 0.94261,
   "dual_blend_winner_oof_hits": 65983,
-  "portfolio_tomorrow_directory": "submissions/portfolio_tomorrow_20261111",
+  "portfolio_tomorrow_directory": "rejected/portfolio_tomorrow_20261111_ag0177_superseded",
   "portfolio_tomorrow_count": 4,
   "ag0168_portfolio_status": "BLOCKED_DO_NOT_UPLOAD",
   "best_confirmed_score": 0.94766,
@@ -135,5 +137,5 @@
     "OPT4_OVERLAY_K50": "NOT_SUPPORTED_DEVELOPMENT_ONLY"
   },
   "gap_decomposition_ag0179": "HYPOTHESIS_UNMEASURED_RETRACTED",
-  "preventive_tests_status": "4_PARTIAL_INTEGRITY_TESTS_ONLY_GATES_A_TO_H_NOT_IMPLEMENTED"
+  "preventive_tests_status": "8_GATES_A_TO_H_IMPLEMENTED_WITH_32_POSITIVE_AND_NEGATIVE_FIXTURES_PASSING"
 }

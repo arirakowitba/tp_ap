@@ -1,0 +1,45 @@
+test_gate_a_positive_and_negative_fixtures (tests.test_preventive_gates.TestPreventiveGates.test_gate_a_positive_and_negative_fixtures) ... ok
+test_gate_b_positive_and_negative_fixtures (tests.test_preventive_gates.TestPreventiveGates.test_gate_b_positive_and_negative_fixtures) ... ok
+test_gate_c_positive_and_negative_fixtures (tests.test_preventive_gates.TestPreventiveGates.test_gate_c_positive_and_negative_fixtures) ... ok
+test_gate_d_positive_live_repo_and_negative_fixtures (tests.test_preventive_gates.TestPreventiveGates.test_gate_d_positive_live_repo_and_negative_fixtures) ... ok
+test_gate_e_positive_and_negative_fixtures_all_four_procedures (tests.test_preventive_gates.TestPreventiveGates.test_gate_e_positive_and_negative_fixtures_all_four_procedures) ... ok
+test_gate_f_positive_and_negative_fixtures_including_k15_bug (tests.test_preventive_gates.TestPreventiveGates.test_gate_f_positive_and_negative_fixtures_including_k15_bug) ... ok
+test_gate_g_positive_and_negative_fixtures (tests.test_preventive_gates.TestPreventiveGates.test_gate_g_positive_and_negative_fixtures) ... ok
+test_gate_h_positive_and_negative_fixtures (tests.test_preventive_gates.TestPreventiveGates.test_gate_h_positive_and_negative_fixtures) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.026s
+
+OK
+  [Gate A | POSITIVE] cand_oof_pos (+25 derived hits) -> PASS: delta_hits=25
+  [Gate A | NEGATIVE] LightGBM pure (-64 hits) marked READY -> REJECTED_AS_EXPECTED: Gate A: Candidate 'BEST_PURE_LIGHTGBM' with status 'READY_FOR_MANUAL_REVIEW' has non-positive delta_hits=-64 (cand=65897, strong_baseline=65961); promotion forbidden.
+  [Gate A | NEGATIVE] Spoofed manifest oof_hits=66000 vs actual 65897 -> REJECTED_AS_EXPECTED: Gate A: Manifest oof_hits (66000) != derived hits (65897)
+  [Gate A | NEGATIVE] P3_Best_Blend_Dual_Blend (-12 DEGRADED_IN_HOLDOUT in eval CSV) -> REJECTED_AS_EXPECTED: Gate A: Promoted candidate 'P3_Best_Blend_Dual_Blend' has degraded status 'DEGRADED_IN_HOLDOUT' in eval CSV
+  [Gate B | POSITIVE] Seller-disjoint 5x4 outer+inner refit provenance + script AST -> PASS: distinct_fit_shas=25
+  [Gate B | NEGATIVE] Non-disjoint seller split (StratifiedKFold leakage) -> REJECTED_AS_EXPECTED: Gate B: Outer fold 0 shares 272 sellers between outer-train and outer-val!
+  [Gate B | NEGATIVE] execute_meta_lofo_tournament.py slicing global OOF -> REJECTED_AS_EXPECTED: Gate B: Script slices precomputed global OOF as inner-OOF instead of retraining
+  [Gate B | NEGATIVE] Early stopping on outer val_idx -> REJECTED_AS_EXPECTED: Gate B: Script uses early_stopping_rounds evaluated on outer val_idx
+  [Gate C | POSITIVE] NO_IDENTIFIABLE declared for all public probability/Q05 fields -> PASS: PASS_NO_IDENTIFIABLE_DECLARED
+  [Gate C | POSITIVE] Verified prequential artifact (5 sequential events, 100% coverage) -> PASS: coverage=1.0
+  [Gate C | NEGATIVE] Uncalibrated S5 claims (0.95057, 98.9%, 66.0%, Q05=0.94847) -> REJECTED_AS_EXPECTED: Gate C: Numeric public claims ['expected_public_score', 'public_q05', 'P(>S4)', 'P(>=0.95000)'] blocked — missing prequential calibration artifact (must be 'NO_IDENTIFIABLE').
+  [Gate C | NEGATIVE] Prequential artifact failing empirical coverage (0.20 < 0.80) -> REJECTED_AS_EXPECTED: Gate C: Recomputed empirical coverage (0.200) < minimum (0.8)
+  [Gate D | POSITIVE] Live repo submissions/ clean + rejected/ holds quarantined CSVs -> PASS: quarantined_csvs=19
+  [Gate D | NEGATIVE] Rejected CSV left inside active submissions/ -> REJECTED_AS_EXPECTED: Gate D: Rejected artifact 'C:\Users\arira\AppData\Local\Temp\tmpvsp3f9n7\submissions\SUBMISSION_CANDIDATE_3_CONSERVATIVE_OVERLAY_K15.csv' found inside active submissions/!
+  [Gate D | NEGATIVE] Active manifest listing REJECTED_NET_NEGATIVE_MINUS64 entry -> REJECTED_AS_EXPECTED: Gate D: Active manifest 'C:\Users\arira\AppData\Local\Temp\tmpvsp3f9n7\active_manifest.json' contains rejected/degraded entry 'opt2.csv' (REJECTED_NET_NEGATIVE_MINUS64)
+  [Gate E | POSITIVE] Nested CV structural proof (disjoint outer/inner + refit SHAs) -> PASS: verified=nested
+  [Gate E | NEGATIVE] Nested claim leaking outer_val index into inner split -> REJECTED_AS_EXPECTED: Gate E (nested): Inner split 0 leaks outer_val indices
+  [Gate E | POSITIVE] Temporal forward split max(t_train)<min(t_val) + refit SHA -> PASS: verified=temporal
+  [Gate E | NEGATIVE] Temporal claim with overlapping timestamps / post-hoc OOF slice -> REJECTED_AS_EXPECTED: Gate E (temporal): Causal violation max(train_t)=135 >= min(val_t)=130
+  [Gate E | POSITIVE] Leave-family split excluding MLA1227 from fit + refit SHA -> PASS: verified=leave-family
+  [Gate E | NEGATIVE] Leave-family claim via post-hoc OOF filtering without refit -> REJECTED_AS_EXPECTED: Gate E (leave-family): Filtering OOF rows without refit is invalid
+  [Gate E | POSITIVE] Two-way seller x category cluster bootstrap weights -> PASS: verified=seller_category_bootstrap
+  [Gate E | NEGATIVE] Bootstrap claim using IID row resampling within sellerxcat cluster -> REJECTED_AS_EXPECTED: Gate E (bootstrap): Items in the same (seller, category) cluster received independent IID weights
+  [Gate F | POSITIVE] S4 anchor SHA-256 + id_target_hash + flips=0 -> PASS: sha256=bb73f1ff1b5fdc76...
+  [Gate F | NEGATIVE] SUBMISSION_CANDIDATE_3_CONSERVATIVE_OVERLAY_K15.csv (K15 vs 8 actual flips) -> REJECTED_AS_EXPECTED: Gate F: Declared K=15 in 'SUBMISSION_CANDIDATE_3_CONSERVATIVE_OVERLAY_K15.csv' != actual flips=8
+  [Gate F | NEGATIVE] Tampered id_target_hash with valid file SHA -> REJECTED_AS_EXPECTED: Gate F: ID/target hash mismatch for 'SUBMISSION_4_TODAY_RECOMMENDED.csv': declared=0000000000000000000000000000000000000000000000000000000000000000, actual=c0497e08e453037fa88f96efcc89771c73b820f76b345f1a9109364828dd93dd
+  [Gate G | POSITIVE] S4 CSV format (30000 rows, IDs 1..30000, valid classes, 0 nulls) -> PASS: used_rate=0.4722
+  [Gate G | NEGATIVE] Duplicate IDs [1, 1, 3, 4] -> REJECTED_AS_EXPECTED: Gate G: Duplicate IDs detected (3 unique)
+  [Gate G | NEGATIVE] Null condition value in row 2 -> REJECTED_AS_EXPECTED: Gate G: CSV contains NaN/null values
+  [Gate H | POSITIVE] AG-0180-ACK-CORRECTION.md opens with negative results & discloses all failures -> PASS: heading='0. Resumen negativo primero'
+  [Gate H | NEGATIVE] AG-0177-RESULT.md opening with celebratory claims before negative results -> REJECTED_AS_EXPECTED: Gate H: First section heading '1. Resumen Ejecutivo del Cierre de Sprint' does not expose negative results / failed gates first
+  [Gate H | NEGATIVE] Report omitting degraded model P3 (-12) from opening negative section -> REJECTED_AS_EXPECTED: Gate H: Negative/failed item 'P3_Best_Blend_Dual_Blend (-12)' omitted from the opening negative results section
