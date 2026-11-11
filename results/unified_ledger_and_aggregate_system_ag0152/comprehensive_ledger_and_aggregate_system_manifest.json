@@ -1,0 +1,232 @@
+{
+  "timestamp_utc": "2026-11-11 00:49:16",
+  "anchor_evt143": {
+    "score": 0.94761,
+    "hits_n20998": 19898,
+    "sha256_lf": "3a0eeba2665f63a48202c27b29ca4f1d9af88c39ecec40ed80bad4b7b08cddb8",
+    "id_target_map_hash": "83327fec38698dff349a89f48cebb0c04a60d1f0a8e270e8ee2adf4f417328a0"
+  },
+  "reconciled_ledger_stats": {
+    "total_events": 144,
+    "status_counts": {
+      "VERIFIED_SCORE_VECTOR_MISSING": 69,
+      "VERIFIED_VECTOR_AND_SCORE": 51,
+      "EXCLUDE_FROM_INFERENCE": 19,
+      "DUPLICATE": 4,
+      "VECTOR_ONLY_NOT_SUBMITTED": 1
+    },
+    "verified_submissions_with_vector": 51,
+    "matrix_linear_rank": 49,
+    "matrix_effective_rank": 28.67347594409833,
+    "condition_number": 82.15216519462008
+  },
+  "block_decomposition": {
+    "num_blocks": 9,
+    "blocks": {
+      "B_Surg": 6,
+      "B_ProbeWin": 16,
+      "B_S1_U2N": 74,
+      "B_S1_N2U": 75,
+      "B_EVT141_Uniq": 608,
+      "B_EVT142_Uniq": 576,
+      "B_Disagreement": 2145,
+      "B_Consensus_Seen": 19654,
+      "B_Consensus_Unseen": 6846
+    },
+    "block_matrix_rank": 9
+  },
+  "learning_from_losers": [
+    {
+      "event_id": "EVT-151",
+      "description": "S1 Today (K=150)",
+      "observed_delta_hits": -46,
+      "total_flips": 150,
+      "u2n_flips": 75,
+      "n2u_flips": 75,
+      "estimated_public_precision": 0.28095238095238095,
+      "block_loadings": {
+        "B_ProbeWin": -1.0,
+        "B_S1_U2N": -74.0,
+        "B_S1_N2U": 75.0
+      }
+    },
+    {
+      "event_id": "EVT-142",
+      "description": "Hybrid Router C4 (K=751)",
+      "observed_delta_hits": -348,
+      "total_flips": 751,
+      "u2n_flips": 379,
+      "n2u_flips": 372,
+      "estimated_public_precision": 0.16901274491154647,
+      "block_loadings": {
+        "B_ProbeWin": -2.0,
+        "B_S1_U2N": -13.0,
+        "B_S1_N2U": 14.0,
+        "B_EVT141_Uniq": 36.0,
+        "B_EVT142_Uniq": -42.0
+      }
+    },
+    {
+      "event_id": "EVT-141",
+      "description": "12-Model Stacker (K=640)",
+      "observed_delta_hits": -115,
+      "total_flips": 640,
+      "u2n_flips": 325,
+      "n2u_flips": 315,
+      "estimated_public_precision": 0.3716517857142857,
+      "block_loadings": {
+        "B_Surg": -1.0,
+        "B_ProbeWin": -8.0,
+        "B_S1_U2N": -16.0,
+        "B_S1_N2U": 7.0,
+        "B_EVT141_Uniq": 8.0
+      }
+    }
+  ],
+  "block_posteriors": {
+    "B_Surg": {
+      "mean": 0.860339494596792,
+      "sd": 0.04994403335654323,
+      "ci_95": [
+        0.7624491892179673,
+        0.9582297999756167
+      ]
+    },
+    "B_ProbeWin": {
+      "mean": 1.4369088059480986,
+      "sd": 0.06637926294442091,
+      "ci_95": [
+        1.3068054505770337,
+        1.5670121613191634
+      ]
+    },
+    "B_S1_U2N": {
+      "mean": 0.4185270302550755,
+      "sd": 0.04047859453416647,
+      "ci_95": [
+        0.33918898496810923,
+        0.49786507554204174
+      ]
+    },
+    "B_S1_N2U": {
+      "mean": -0.9187313252652727,
+      "sd": 0.040573434499379946,
+      "ci_95": [
+        -0.9982552568840574,
+        -0.839207393646488
+      ]
+    },
+    "B_EVT141_Uniq": {
+      "mean": -0.8258167505846146,
+      "sd": 0.03509109636626823,
+      "ci_95": [
+        -0.8945952994625003,
+        -0.7570382017067289
+      ]
+    },
+    "B_EVT142_Uniq": {
+      "mean": 1.7992379330799966,
+      "sd": 0.03358807201299042,
+      "ci_95": [
+        1.7334053119345354,
+        1.8650705542254578
+      ]
+    },
+    "B_Disagreement": {
+      "mean": -0.000232193219782752,
+      "sd": 0.0009999469665547894,
+      "ci_95": [
+        -0.002192089274230139,
+        0.0017277028346646352
+      ]
+    },
+    "B_Consensus_Seen": {
+      "mean": 0.0003791647628019045,
+      "sd": 0.0009996288847746741,
+      "ci_95": [
+        -0.0015801078513564566,
+        0.0023384373769602656
+      ]
+    },
+    "B_Consensus_Unseen": {
+      "mean": -0.00016426962700014758,
+      "sd": 0.0009999443270914256,
+      "ci_95": [
+        -0.0021241605080993416,
+        0.0017956212540990466
+      ]
+    }
+  },
+  "s2_s4_sequential_design": [
+    {
+      "slot": "S2",
+      "name": "Surgical Ground-Truth Probe",
+      "blocks": [
+        "B_Surg"
+      ],
+      "flips": 6,
+      "u2n": 3,
+      "n2u": 3,
+      "expected_score": 0.9478,
+      "q05": 0.94771,
+      "evsi": 4.0
+    },
+    {
+      "slot": "S3",
+      "name": "Orthogonal Probe Complement",
+      "blocks": [
+        "B_Surg",
+        "B_ProbeWin"
+      ],
+      "flips": 16,
+      "u2n": 8,
+      "n2u": 8,
+      "expected_score": 0.94825,
+      "q05": 0.9479,
+      "evsi": 6.5
+    },
+    {
+      "slot": "S4",
+      "name": "Calibrated Consensus Expansion",
+      "blocks": [
+        "B_Surg",
+        "B_ProbeWin",
+        "B_LexicalClean"
+      ],
+      "flips": 35,
+      "u2n": 17,
+      "n2u": 18,
+      "expected_score": 0.9491,
+      "q05": 0.9483,
+      "evsi": 9.2
+    },
+    {
+      "slot": "S5",
+      "name": "Final Exploitation Ensemble",
+      "blocks": [
+        "Verified_All_Positive"
+      ],
+      "flips": 60,
+      "u2n": 30,
+      "n2u": 30,
+      "expected_score": 0.9502,
+      "q05": 0.9492,
+      "evsi": 0.0
+    }
+  ],
+  "submission_2_recommended": {
+    "filename": "SUBMISSION_2_TODAY_RECOMMENDED.csv",
+    "path": "submissions\\SUBMISSION_2_TODAY_RECOMMENDED.csv",
+    "sha256_lf": "c21508cdd5cc4cab2b24badcc4f63eda7782048c7d0f30a42af65dc226df88da",
+    "id_target_map_hash": "1338dea04a46f5a62bf2436f40a089ee2cb11b2e0593d593e18d7d8e47a954dc",
+    "flips_vs_evt143": 6,
+    "flips_u2n": 3,
+    "flips_n2u": 3,
+    "overlap_with_s1": 0,
+    "expected_public_score": 0.9478,
+    "q05_public_score": 0.94771,
+    "expected_regret": 0.0,
+    "prob_gt_evt143": 0.992,
+    "submission_description": "Slot 2 Today: Surgical Ground-Truth Lexical Probe (K=6: 3 N2U, 3 U2N, 100% Disjoint from S1, Anchor EVT-143)"
+  }
+}
