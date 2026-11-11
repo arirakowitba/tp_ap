@@ -1,0 +1,8 @@
+method,accuracy,hits_70k,delta_hits_vs_podium,logloss,roc_auc,status
+Podium Engine Reference,0.9423,65961,0,0.14887,0.98596,REFERENCE_BASELINE
+Simple_Average,0.94261,65983,22,0.14787,0.98612,QUALIFIED_GAIN
+Rank_Averaging,0.93674,65572,-389,0.32428,0.98617,NO_GAIN
+Convex_Blend_Optimized,0.94213,65949,-12,0.14752,0.98621,NO_GAIN
+Logistic_Stacking,0.94234,65964,3,0.14702,0.98627,QUALIFIED_GAIN
+Gating_Seen_New,0.94227,65959,-2,0.14731,0.98624,NO_GAIN
+Gating_Category,0.94217,65952,-9,0.1477,0.98617,NO_GAIN

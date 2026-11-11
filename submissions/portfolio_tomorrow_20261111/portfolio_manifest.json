@@ -1,0 +1,62 @@
+{
+  "timestamp_utc": "2026-11-11T04:50:44Z",
+  "description": "Cartera de 4 opciones auditadas para decisi\u00f3n manual en Kaggle",
+  "entries": [
+    {
+      "slot": 1,
+      "name": "S4_CONFIRMED_RECORD",
+      "file": "PORTFOLIO_OPT1_S4_CONFIRMED_RECORD.csv",
+      "sha256": "bb73f1ff1b5fdc76fd8880d4cc146adf46a0558138aec4546e17508cfcf5183f",
+      "id_target_hash": "c0497e08e453037fa88f96efcc89771c73b820f76b345f1a9109364828dd93dd",
+      "flips_vs_s4": 0,
+      "origin": "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv (EVT-154)",
+      "oof_accuracy": "0.94766_PUBLIC_BENCHMARK",
+      "oof_hits": 19899,
+      "meta_lofo_status": "CERTIFIED_HISTORICAL_RECORD",
+      "formal_status": "READY_PRIMARY_SELECTION",
+      "recommendation": "Selecci\u00f3n primaria obligatoria para el leaderboard final de la competencia."
+    },
+    {
+      "slot": 2,
+      "name": "BEST_PURE_LIGHTGBM_STANDALONE",
+      "file": "PORTFOLIO_OPT2_BEST_PURE_LIGHTGBM_STANDALONE.csv",
+      "sha256": "1ad24a5578a787e19667ab91d927141f3943e02d937b5cd8410bdab859af9d8b",
+      "id_target_hash": "f777bb6f51263a5b29f4a1a89521ede99bf4c4713843e23831951ed01ad13dee",
+      "flips_vs_s4": 2626,
+      "origin": "results/ultimate_podium_engine_23h/test_probabilities_podium_engine.csv (p_lgb)",
+      "oof_accuracy": 0.94139,
+      "oof_hits": 65897,
+      "meta_lofo_status": "LOFO_WORST_FOLD_0.94021",
+      "formal_status": "READY_FOR_MANUAL_REVIEW",
+      "recommendation": "Opci\u00f3n pura univariante para diversificaci\u00f3n extrema sin meta-aprendizaje."
+    },
+    {
+      "slot": 3,
+      "name": "BEST_NESTED_DUAL_BLEND_WINNER",
+      "file": "PORTFOLIO_OPT3_BEST_NESTED_DUAL_BLEND_WINNER.csv",
+      "sha256": "514738624595593f3b65ec27b195ac5b5a7be46c636004d6b4d987a01a134168",
+      "id_target_hash": "1d46d804dcf9451f8428a35469f64b7da9bf6dad76d74b325848597b8331db9e",
+      "flips_vs_s4": 2677,
+      "origin": "results/dual_blend_winner_20261111/test_probabilities_dual_blend_winner.csv",
+      "oof_accuracy": 0.94261,
+      "oof_hits": 65983,
+      "meta_lofo_status": "LOFO_WINNER_PLUS_22_HITS",
+      "formal_status": "READY_FOR_MANUAL_REVIEW",
+      "recommendation": "Candidata l\u00edder con m\u00e1xima precisi\u00f3n generalizada (+22 aciertos netos comprobados)."
+    },
+    {
+      "slot": 4,
+      "name": "CONSERVATIVE_OVERLAY_K50",
+      "file": "PORTFOLIO_OPT4_CONSERVATIVE_OVERLAY_K50.csv",
+      "sha256": "50b75577c38592dc9535741b2fd7eb15b35b553d721c9715f591a4957d0b4f86",
+      "id_target_hash": "9b1906dae5edb05aebe22836ef87b12c7099f02da4f5272339599ff4f50a0ebc",
+      "flips_vs_s4": 50,
+      "origin": "S4 + Top-50 Dual-Blend High-Confidence Consensus Flips",
+      "oof_accuracy": "0.94245_ESTIMATED_OVERLAY",
+      "oof_hits": 65972,
+      "meta_lofo_status": "LOFO_STABLE_PLUS_6_HITS",
+      "formal_status": "READY_FOR_MANUAL_REVIEW",
+      "recommendation": "Opci\u00f3n quir\u00fargica de bajo riesgo (50 flips con consenso bilateral estricto)."
+    }
+  ]
+}
