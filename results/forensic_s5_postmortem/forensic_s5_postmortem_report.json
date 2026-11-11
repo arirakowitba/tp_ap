@@ -1,0 +1,26 @@
+{
+  "submitted_file": "submissions/SUBMISSION_5_TODAY_FINAL.csv",
+  "sha256_lf": "465e0d4747efebb02f487349d643daa4aa14f59f0554df3c3a73f7644d0ae65f",
+  "map_hash": "98cc15046bcc8d179897333b7653b22cb742b01ce7112e340eaac92a344612cd",
+  "matched_tournament_candidate": "T09_K250_CB",
+  "observed_public_score": 0.94295,
+  "observed_public_hits": 19800,
+  "delta_vs_s4_hits": -99,
+  "empirical_public_precision": 21.71,
+  "empirical_breaks": 137,
+  "empirical_fixes": 38,
+  "flips_vs_s4": 250,
+  "flips_n2u": 250,
+  "flips_u2n": 0,
+  "sellers_breakdown": {
+    "seen": 100,
+    "unseen": 150
+  },
+  "overlaps": {
+    "overlap_s1": 4,
+    "overlap_s2": 0,
+    "overlap_s3": 0
+  },
+  "critical_hypothesis_verdict": "CONFIRMED_ROOT_CAUSE",
+  "root_cause_summary": "pred_anchor_oof was a noisy regex proxy (94.20% train, 2662 test disagreements vs S4). CatBoost learned to correct the strawman proxy in train, but when applied to the superior S4 anchor (0.94766), it contradicted true 'new' labels with 78.3% error rate."
+}

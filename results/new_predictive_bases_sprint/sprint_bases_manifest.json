@@ -1,0 +1,127 @@
+{
+  "status": "COMPLETED",
+  "timestamp_utc": "2026-11-11T04:07:19Z",
+  "elapsed_seconds": 449.97,
+  "bases_summary": [
+    {
+      "model_name": "Base_A1_Logistic_Text",
+      "accuracy": 0.80396,
+      "logloss": 0.43377,
+      "roc_auc": 0.88094,
+      "total_hits": 56277,
+      "net_vs_podium": -9684,
+      "worst_fold_acc": 0.78361,
+      "fold_std": 0.01123,
+      "acc_early_time": 0.80397,
+      "acc_late_time": 0.80064,
+      "acc_no_mla1227": 0.80901,
+      "acc_seen_sellers": 0.82296,
+      "acc_unseen_sellers": 0.7562,
+      "boot_seller_q05": -10460.2,
+      "boot_seller_q95": -9031.7
+    },
+    {
+      "model_name": "Base_A2_Ridge_Text",
+      "accuracy": 0.80514,
+      "logloss": 0.43452,
+      "roc_auc": 0.8806,
+      "total_hits": 56360,
+      "net_vs_podium": -9601,
+      "worst_fold_acc": 0.78218,
+      "fold_std": 0.01222,
+      "acc_early_time": 0.80522,
+      "acc_late_time": 0.78778,
+      "acc_no_mla1227": 0.81076,
+      "acc_seen_sellers": 0.82518,
+      "acc_unseen_sellers": 0.75479,
+      "boot_seller_q05": -10389.8,
+      "boot_seller_q95": -8910.2
+    },
+    {
+      "model_name": "Base_B1_LightGBM_Audited",
+      "accuracy": 0.80186,
+      "logloss": 0.46071,
+      "roc_auc": 0.87783,
+      "total_hits": 56130,
+      "net_vs_podium": -9831,
+      "worst_fold_acc": 0.78218,
+      "fold_std": 0.01309,
+      "acc_early_time": 0.80202,
+      "acc_late_time": 0.76527,
+      "acc_no_mla1227": 0.80834,
+      "acc_seen_sellers": 0.81513,
+      "acc_unseen_sellers": 0.76849,
+      "boot_seller_q05": -10739.0,
+      "boot_seller_q95": -9066.6
+    },
+    {
+      "model_name": "Base_B2_CatBoost_Audited",
+      "accuracy": 0.79969,
+      "logloss": 0.44545,
+      "roc_auc": 0.87722,
+      "total_hits": 55978,
+      "net_vs_podium": -9983,
+      "worst_fold_acc": 0.78004,
+      "fold_std": 0.0133,
+      "acc_early_time": 0.79998,
+      "acc_late_time": 0.73312,
+      "acc_no_mla1227": 0.80557,
+      "acc_seen_sellers": 0.81499,
+      "acc_unseen_sellers": 0.76122,
+      "boot_seller_q05": -10953.6,
+      "boot_seller_q95": -9189.0
+    },
+    {
+      "model_name": "Base_D_SuperLearner_Stack",
+      "accuracy": 0.82816,
+      "logloss": 0.39523,
+      "roc_auc": 0.90438,
+      "total_hits": 57971,
+      "net_vs_podium": -7990,
+      "worst_fold_acc": 0.80226,
+      "fold_std": 0.01518,
+      "acc_early_time": 0.82827,
+      "acc_late_time": 0.80386,
+      "acc_no_mla1227": 0.83342,
+      "acc_seen_sellers": 0.84355,
+      "acc_unseen_sellers": 0.78947,
+      "boot_seller_q05": -8853.9,
+      "boot_seller_q95": -7351.3
+    }
+  ],
+  "best_base": "Base_D_SuperLearner_Stack",
+  "best_base_accuracy": 0.82816,
+  "best_base_logloss": 0.39523,
+  "best_base_net_vs_podium": -7990,
+  "disagreements_with_s4_count": 2743,
+  "portfolio_candidates": [
+    {
+      "name": "C1_PURE_TRAIN_ONLY_SUPERLEARNER",
+      "file": "submissions\\new_bases_portfolio_20261111\\SUBMISSION_CANDIDATE_1_PURE_TRAIN_ONLY_SUPERLEARNER.csv",
+      "sha256_lf": "24a3fd6cb15797d6e063190b45f0a8d2036766c1992045fefc8ae2f73394b968",
+      "map_hash": "2d42c683d4f2e24fe9e1b0df615a3c261b5d19b8780642f9958b6fe11dc701e6",
+      "flips_vs_s4": 2743
+    },
+    {
+      "name": "C2_ROBUST_4WAY_BLEND",
+      "file": "submissions\\new_bases_portfolio_20261111\\SUBMISSION_CANDIDATE_2_ROBUST_4WAY_BLEND.csv",
+      "sha256_lf": "6f250a4d58b141f098d44bcbc1fda4c8ca068e458110c153789b63498d6cd62a",
+      "map_hash": "41f654fa87b03da09c1d9207358f212fc4307f8b6c85c26d514911ccb179bbad",
+      "flips_vs_s4": 2762
+    },
+    {
+      "name": "C3_CONSERVATIVE_OVERLAY_K15",
+      "file": "submissions\\new_bases_portfolio_20261111\\SUBMISSION_CANDIDATE_3_CONSERVATIVE_OVERLAY_K15.csv",
+      "sha256_lf": "93e68619304d7180ec61582422297b6840892d40a0be7ddf79b8f35471dda4b4",
+      "map_hash": "20b30d180595eecfc014ca027c9e59465f0b241ce201356fbdb6b5f7fe00d03b",
+      "flips_vs_s4": 8
+    },
+    {
+      "name": "C4_BROAD_UPSIDE_K75",
+      "file": "submissions\\new_bases_portfolio_20261111\\SUBMISSION_CANDIDATE_4_BROAD_UPSIDE_K75.csv",
+      "sha256_lf": "521b0378e47d85fdd616b754fb3f12eb1369f38aa6cfe5580cf430fafe990cf7",
+      "map_hash": "c2d4e873130bd2e4c42bde7ca1a7bc684b0bc885b7d754c009f23c60a192ae3e",
+      "flips_vs_s4": 75
+    }
+  ]
+}

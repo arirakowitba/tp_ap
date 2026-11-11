@@ -1,0 +1,6 @@
+fold,selected_variant,selected_k,dev_net_hits,heldout_k,heldout_fixes,heldout_breaks,heldout_net_hits,heldout_precision,heldout_seen,heldout_unseen
+1,V10_catboost_depth8_n2u,350,233,163,115,48,67,0.7055214723926381,58,105
+2,V10_catboost_depth8_n2u,350,229,163,114,49,65,0.6993865030674846,72,91
+3,V10_catboost_depth8_n2u,350,243,163,101,62,39,0.6196319018404908,57,106
+4,V10_catboost_depth8_n2u,350,249,163,108,55,53,0.6625766871165644,47,116
+5,V10_catboost_depth8_n2u,350,241,163,113,50,63,0.6932515337423313,63,100

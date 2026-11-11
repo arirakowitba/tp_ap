@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETED_AND_REJECTED",
+  "verdict": "CLOSED_PERMANENTLY",
+  "total_heldout_flips": 815,
+  "total_fixes": 551,
+  "total_breaks": 264,
+  "total_net_heldout": 287,
+  "aggregate_precision": 0.6761,
+  "worst_fold": 39,
+  "fold_dispersion": 11.61,
+  "bootstrap_seller": {
+    "q05": 234.0,
+    "q50": 286.0,
+    "q95": 338.0
+  },
+  "bootstrap_category": {
+    "q05": 230.9,
+    "q50": 289.5,
+    "q95": 338.0
+  },
+  "leave_time": {
+    "net_early": 288,
+    "net_late": -1
+  }
+}
