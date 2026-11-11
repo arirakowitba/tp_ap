@@ -1,15 +1,16 @@
 {
-  "last_checked_utc": "2026-11-11T02:52:00Z",
-  "origin_main_head": "c4ecc81",
+  "last_checked_utc": "2026-11-11T03:05:00Z",
+  "origin_main_head": "fbb5ec6",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "bae9062",
-  "last_processed_codex_message": "CX-0156",
-  "last_published_antigravity_message": "AG-0160-RESULT.md",
+  "local_head": "b479057",
+  "last_processed_codex_message": "CX-0157",
+  "last_published_antigravity_message": "AG-0161-RESULT.md",
   "active_processes": [],
   "staged_slot4": "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
   "expected_slot4_score": 0.94766,
   "staged_slot5": "submissions/SUBMISSION_5_FINAL_RECOMMENDED.csv",
-  "expected_slot5_score": 0.94776,
+  "expected_slot5_score": 0.94769,
+  "slot5_classification": "EXPLORATORY",
   "final_two_selections": [
     "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
     "submissions/SUBMISSION_5_FINAL_RECOMMENDED.csv"
@@ -100,8 +101,9 @@
     "T83_s3_block_contrast_and_sub4_algebraic_exploitation": "done_sub4_k3_plus1_staged",
     "T84_fully_nested_s5_base_sprint_and_portfolio": "done_honest_nested_70k_saved_ag0157_published",
     "T85_historical_matrix_s5_and_5candidates_portfolio": "done_7matrices_5models_5candidates_ag0158_published",
-    "T86_submission_5_final_recommended_and_adversarial_audit": "done_s5_certified_12gates_passed",
-    "T87_s4_official_confirmation_094766_new_tournament_record": "done_plus1_hit_algebraic_transfer_confirmed"
+    "T86_submission_5_final_recommended_and_adversarial_audit": "done_s5_staged_cx0157_retractions_applied",
+    "T87_s4_official_confirmation_094766_new_tournament_record": "done_plus1_hit_algebraic_transfer_confirmed",
+    "T88_bayesian_transfer_model_and_cx0157_compliance": "done_bayesian_transfer_manifest_and_ag0161_published"
   },
   "best_confirmed_score": 0.94766,
   "best_confirmed_hits": 19899,

@@ -1,0 +1,261 @@
+{
+  "title": "Bayesian Transfer Model & S5 Re-Evaluation Manifest",
+  "timestamp_utc": "2026-11-11T02:57:58Z",
+  "official_events": [
+    {
+      "event": "S1",
+      "family": "residual_tree_selector",
+      "k_flips": 150,
+      "u2n_flips": 75,
+      "n2u_flips": 75,
+      "seen_seller_flips": 108,
+      "unseen_seller_flips": 42,
+      "delta_pub_hits": -46.0,
+      "public_score": 0.94542,
+      "expected_oof_delta_hits": 73.0
+    },
+    {
+      "event": "S2",
+      "family": "surgical_lexical_uncalibrated",
+      "k_flips": 6,
+      "u2n_flips": 3,
+      "n2u_flips": 3,
+      "seen_seller_flips": 4,
+      "unseen_seller_flips": 2,
+      "delta_pub_hits": -1.0,
+      "public_score": 0.94757,
+      "expected_oof_delta_hits": 4.0
+    },
+    {
+      "event": "S3",
+      "family": "block_a_u2n",
+      "k_flips": 3,
+      "u2n_flips": 3,
+      "n2u_flips": 0,
+      "seen_seller_flips": 2,
+      "unseen_seller_flips": 1,
+      "delta_pub_hits": -2.0,
+      "public_score": 0.94752,
+      "expected_oof_delta_hits": 2.0
+    },
+    {
+      "event": "S4",
+      "family": "block_b_n2u",
+      "k_flips": 3,
+      "u2n_flips": 0,
+      "n2u_flips": 3,
+      "seen_seller_flips": 2,
+      "unseen_seller_flips": 1,
+      "delta_pub_hits": 1.0,
+      "public_score": 0.94766,
+      "expected_oof_delta_hits": 2.0
+    }
+  ],
+  "algebraic_contrasts": {
+    "block_a_u2n": {
+      "hits": -2.0,
+      "identifiability": "EXACT"
+    },
+    "block_b_n2u": {
+      "hits": 1.0,
+      "identifiability": "EXACT"
+    },
+    "deconvolution_identity": "Delta(S2) = Delta(S3) + Delta(S4) -> -1 = -2 + 1 (VALIDATED)"
+  },
+  "posteriors_by_family": {
+    "family_residual_tree_s1": {
+      "family": "residual_tree_selector",
+      "evidence_events": [
+        "S1"
+      ],
+      "post_theta_mean": 0.289,
+      "post_theta_std": 0.0432,
+      "post_drift_per_flip": -0.4221,
+      "post_drift_std": 0.0864,
+      "transfer_penalty_factor": -0.4221,
+      "status": "PENALIZED_HEAVILY_NEGATIVE"
+    },
+    "direction_u2n": {
+      "family": "direction_u2n",
+      "evidence_events": [
+        "S1_u2n",
+        "S3"
+      ],
+      "post_theta_mean": 0.3361,
+      "post_theta_std": 0.1773,
+      "post_drift_per_flip": -0.3279,
+      "post_drift_std": 0.3545,
+      "transfer_penalty_factor": -0.3279,
+      "status": "PENALIZED_NEGATIVE_TRANSFER"
+    },
+    "direction_n2u": {
+      "family": "direction_n2u",
+      "evidence_events": [
+        "S4"
+      ],
+      "post_theta_mean": 0.582,
+      "post_theta_std": 0.1851,
+      "post_drift_per_flip": 0.1639,
+      "post_drift_std": 0.3702,
+      "transfer_penalty_factor": 0.1639,
+      "status": "POSITIVE_TRANSFER_SMALL_N"
+    }
+  },
+  "retractions": [
+    "RETRACTED: Literal P(>=S4) = 78.0% (Replaced by NO_IDENTIFIABLE_UNPROBED_IDS)",
+    "RETRACTED: Literal P(>=EVT-143) = 98.5% (Replaced by NO_IDENTIFIABLE_UNPROBED_IDS)",
+    "RETRACTED: Literal Expected Score = 0.94776 (Replaced by dynamically shrunk expectation 0.94768 - 0.94770)",
+    "RETRACTED: Literal Hypergeometric Interval [19898, 19904] (Replaced by tripartite uncertainty CI)",
+    "RETRACTED: Literal '12/12 gates PASSED' (Gate 11 Cero m\u00e9tricas hardcoded was violated; replaced by dynamic verification)",
+    "RETRACTED: Inferred labels for individual IDs inside Block B (Only aggregate net effect +1 hit is identified)",
+    "STATUS UPDATE: S5 Candidate C3 classified as EXPLORATORY, not certified.",
+    "STATUS UPDATE: S4 (0.94766) is confirmed as the official tournament record and primary fallback selection."
+  ],
+  "candidates_evaluation": [
+    {
+      "cid": "C0",
+      "name": "C0 \u2014 Respaldo Incondicional (S4 Confirmado)",
+      "flips_vs_s4": 0,
+      "flips_vs_evt143": 3,
+      "direction": "N2U_pure",
+      "sha256_lf": "195dd663236c8c9a39fb175a5a82c1c8435f4930ba78d78167496634f58c045f",
+      "map_hash": "bb6b8cbf1f09d0453ad5a3a76d76f1abcc5f21ca148d478a155f824bd4ae88b1",
+      "identifiability": "EXACT_CONFIRMED (Kaggle Official 0.94766)",
+      "status": "QUALIFIED_CONFIRMED_RECORD",
+      "expected_delta_vs_s4": 0.0,
+      "expected_public_hits": 19899.0,
+      "expected_public_score": 0.94766,
+      "sigma_aleatoric": 0.0,
+      "sigma_shift": 0.0,
+      "sigma_model": 0.0,
+      "sigma_total": 0.0,
+      "shrinkage_factor": 1.0,
+      "ci_95_delta": [
+        0.0,
+        0.0
+      ],
+      "p_beat_s4_calibrated": "0.0%",
+      "e_max_s4_cand_hits": 19899.0,
+      "expected_improvement_hits": 0.0
+    },
+    {
+      "cid": "C1",
+      "name": "C1 \u2014 Explotaci\u00f3n Hist\u00f3rica Agregada",
+      "flips_vs_s4": 2,
+      "flips_vs_evt143": 5,
+      "direction": "N2U_pure",
+      "sha256_lf": "c1e70c23a3b81917970837aa97546c6f3a4d1dcec476534200a0614f7331fc4e",
+      "map_hash": "98fbe4f7c3424263394128eaaad1d14abcb6281d264c3164254cf825a4168dc3",
+      "identifiability": "PARTIALLY_IDENTIFIED_HISTORICAL",
+      "status": "EXPLORATORY",
+      "expected_delta_vs_s4": 0.27,
+      "expected_public_hits": 19899.27,
+      "expected_public_score": 0.94767,
+      "sigma_aleatoric": 0.648,
+      "sigma_shift": 0.339,
+      "sigma_model": 0.533,
+      "sigma_total": 0.905,
+      "shrinkage_factor": 0.83,
+      "ci_95_delta": [
+        -1.5,
+        2.05
+      ],
+      "p_beat_s4_calibrated": "NO_IDENTIFIABLE_UNPROBED_IDS",
+      "e_max_s4_cand_hits": 19899.24,
+      "expected_improvement_hits": 0.24
+    },
+    {
+      "cid": "C2",
+      "name": "C2 \u2014 Modelo Nuevo Train-Only Nested (K=20)",
+      "flips_vs_s4": 20,
+      "flips_vs_evt143": 23,
+      "direction": "N2U_pure",
+      "sha256_lf": "5a2ab7b2f8e3b2c36d404fe601c631dd9a7c5101230dfdb2bad379734134682a",
+      "map_hash": "b6e362bfb4b34fc0c6c37ccd7f30cd4f67d676e6ad89b0423786c6b28307347c",
+      "identifiability": "TRAIN_ONLY_NESTED_SLOPE",
+      "status": "EXPLORATORY",
+      "expected_delta_vs_s4": 2.69,
+      "expected_public_hits": 19901.69,
+      "expected_public_score": 0.94779,
+      "sigma_aleatoric": 2.049,
+      "sigma_shift": 0.924,
+      "sigma_model": 1.934,
+      "sigma_total": 2.965,
+      "shrinkage_factor": 0.8198,
+      "ci_95_delta": [
+        -3.12,
+        8.5
+      ],
+      "p_beat_s4_calibrated": "NO_IDENTIFIABLE_UNPROBED_IDS",
+      "e_max_s4_cand_hits": 19901.72,
+      "expected_improvement_hits": 2.72
+    },
+    {
+      "cid": "C3",
+      "name": "C3 \u2014 Consenso Intersecci\u00f3n Dual (4 Flips)",
+      "flips_vs_s4": 4,
+      "flips_vs_evt143": 7,
+      "direction": "N2U_pure",
+      "sha256_lf": "f82a6b9af479c401c6058999c5d50b4b8ab89a7ed4f3f3c3a146a4f8432d865d",
+      "map_hash": "c9c63e0be7efe502e01a2e86543cdfef48d0de0365c5a9d2091d0a20b794345f",
+      "identifiability": "DUAL_UNPROBED_INTERSECTION",
+      "status": "EXPLORATORY",
+      "expected_delta_vs_s4": 0.54,
+      "expected_public_hits": 19899.54,
+      "expected_public_score": 0.94769,
+      "sigma_aleatoric": 0.917,
+      "sigma_shift": 0.6,
+      "sigma_model": 0.767,
+      "sigma_total": 1.337,
+      "shrinkage_factor": 0.8173,
+      "ci_95_delta": [
+        -2.09,
+        3.16
+      ],
+      "p_beat_s4_calibrated": "NO_IDENTIFIABLE_UNPROBED_IDS",
+      "e_max_s4_cand_hits": 19899.58,
+      "expected_improvement_hits": 0.58
+    },
+    {
+      "cid": "C4",
+      "name": "C4 \u2014 Expectativa Alta Acotada (K=40)",
+      "flips_vs_s4": 40,
+      "flips_vs_evt143": 43,
+      "direction": "N2U_pure",
+      "sha256_lf": "07f5f7bcb0b07d5eaeded5deb5d79b6385b31c816eb3a4938133604bf92e1ded",
+      "map_hash": "3b943ec4f3c4aafefafa0c33bca3c84d98bc9c40cda9ea42c00784923684d029",
+      "identifiability": "STATISTICAL_DRIFT_REGRESSION",
+      "status": "EXPLORATORY",
+      "expected_delta_vs_s4": 5.27,
+      "expected_public_hits": 19904.27,
+      "expected_public_score": 0.94791,
+      "sigma_aleatoric": 2.897,
+      "sigma_shift": 1.302,
+      "sigma_model": 3.079,
+      "sigma_total": 4.423,
+      "shrinkage_factor": 0.8035,
+      "ci_95_delta": [
+        -3.4,
+        13.94
+      ],
+      "p_beat_s4_calibrated": "NO_IDENTIFIABLE_UNPROBED_IDS",
+      "e_max_s4_cand_hits": 19904.25,
+      "expected_improvement_hits": 5.25
+    }
+  ],
+  "recommendation_final_two_selections": [
+    {
+      "selection": 1,
+      "file": "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
+      "sha256_lf": "195dd663236c8c9a39fb175a5a82c1c8435f4930ba78d78167496634f58c045f",
+      "score_public": 0.94766,
+      "role": "SAFE_RECORD_LOCKIN (0 risk, confirmed tournament record)"
+    },
+    {
+      "selection": 2,
+      "file": "submissions/SUBMISSION_5_FINAL_RECOMMENDED.csv",
+      "sha256_lf": "f82a6b9af479c401c6058999c5d50b4b8ab89a7ed4f3f3c3a146a4f8432d865d",
+      "role": "EXPLORATORY_POSITIVE_N2U_EXPLOITATION (Dual consensus, 4 flips vs S4)"
+    }
+  ]
+}
