@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-11T01:45:00Z",
+  "last_checked_utc": "2026-11-11T01:50:00Z",
   "origin_main_head": "c4ecc81",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "68ed270",
+  "local_head": "21a6a04",
   "last_processed_codex_message": "CX-0156",
-  "last_published_antigravity_message": "AG-0157-RESULT.md",
+  "last_published_antigravity_message": "AG-0158-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -90,7 +90,8 @@
     "T81_exhaustive_evidence_7matrices_and_s3_design_ag0154": "done_ag0154_published_sub3_staged",
     "T82_cx0155_audit_compliance_and_honest_nested_backtest": "done_honest_nested_pairs_saved_evidence_gate_published",
     "T83_s3_block_contrast_and_sub4_algebraic_exploitation": "done_sub4_k3_plus1_staged",
-    "T84_fully_nested_s5_base_sprint_and_portfolio": "done_honest_nested_70k_saved_ag0157_published"
+    "T84_fully_nested_s5_base_sprint_and_portfolio": "done_honest_nested_70k_saved_ag0157_published",
+    "T85_historical_matrix_s5_and_5candidates_portfolio": "done_7matrices_5models_5candidates_ag0158_published"
   },
   "best_confirmed_score": 0.94761,
   "best_confirmed_hits": 19898,

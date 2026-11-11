@@ -1,0 +1,269 @@
+{
+  "title": "Historical Submissions Matrix & S5 Candidate Portfolio Manifest",
+  "timestamp_utc": "2026-11-11T01:46:58Z",
+  "total_verified_submissions": 57,
+  "spectral_reports": [
+    {
+      "name": "Matrix 1: Submission x ID",
+      "shape": [
+        57,
+        30000
+      ],
+      "rank": 51,
+      "effective_rank": 29.43,
+      "condition_number": 62.24,
+      "null_space_dim": 29949,
+      "top_singular_values": [
+        62.148,
+        35.759,
+        28.766,
+        26.272,
+        20.508,
+        18.378
+      ]
+    },
+    {
+      "name": "Matrix 2: Submission x Block Signatures",
+      "shape": [
+        57,
+        355
+      ],
+      "rank": 51,
+      "effective_rank": 13.55,
+      "condition_number": 456.54,
+      "null_space_dim": 304,
+      "top_singular_values": [
+        487.712,
+        377.391,
+        206.569,
+        197.282,
+        163.524,
+        77.674
+      ]
+    },
+    {
+      "name": "Matrix 3: Submission x Family",
+      "shape": [
+        57,
+        9
+      ],
+      "rank": 9,
+      "effective_rank": 6.96,
+      "condition_number": 5.29,
+      "null_space_dim": 0,
+      "top_singular_values": [
+        5.292,
+        4.123,
+        2.449,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Matrix 4: Submission x Direction",
+      "shape": [
+        57,
+        2
+      ],
+      "rank": 2,
+      "effective_rank": 1.52,
+      "condition_number": 5.71,
+      "null_space_dim": 0,
+      "top_singular_values": [
+        1276.121,
+        223.489
+      ]
+    },
+    {
+      "name": "Matrix 5: Submission x Seller Regime",
+      "shape": [
+        57,
+        2
+      ],
+      "rank": 2,
+      "effective_rank": 1.77,
+      "condition_number": 2.88,
+      "null_space_dim": 0,
+      "top_singular_values": [
+        1316.537,
+        457.079
+      ]
+    },
+    {
+      "name": "Matrix 6: Submission x Top Categories",
+      "shape": [
+        57,
+        13
+      ],
+      "rank": 13,
+      "effective_rank": 1.29,
+      "condition_number": 2874.54,
+      "null_space_dim": 0,
+      "top_singular_values": [
+        1611.672,
+        29.089,
+        11.646,
+        6.864,
+        5.721,
+        4.813
+      ]
+    },
+    {
+      "name": "Matrix 7: Submission x High-Level Interactions",
+      "shape": [
+        57,
+        4
+      ],
+      "rank": 4,
+      "effective_rank": 2.72,
+      "condition_number": 14.07,
+      "null_space_dim": 0,
+      "top_singular_values": [
+        935.864,
+        337.93,
+        151.398,
+        66.525
+      ]
+    }
+  ],
+  "model_performance": {
+    "model_1_bounded_lsq": {
+      "mae": 10.615094792578704,
+      "coefficients": [
+        -0.5555841123296303,
+        -0.20738410868977428,
+        -0.3227111676013531,
+        0.3850746166543577
+      ]
+    },
+    "model_2_ridge": {
+      "loo_mae": 12.051137803990626,
+      "best_lambda": 137.3823795883264
+    },
+    "model_3_bayes": {
+      "mae": 10.613612835936834,
+      "posterior_mean": [
+        -0.5555998417026884,
+        -0.20717730421124703,
+        -0.3226773667618845,
+        0.3848038176839754
+      ]
+    },
+    "model_4_huber": {
+      "mae": 8.54117542980746,
+      "coefficients": [
+        -0.7663820939690904,
+        0.35361586695897307,
+        -0.15445911632679096,
+        -0.18576269704231235
+      ]
+    },
+    "model_5_prequential": {
+      "preq_mae": 12.164608052687216,
+      "preq_rmse": 31.15989557991763
+    }
+  },
+  "candidates": [
+    {
+      "candidate_id": 1,
+      "name": "Candidate 1 (S4 Only Fallback)",
+      "file": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_s5_historical_and_models\\candidate_1_s4_only.csv",
+      "sha256_lf": "195dd663236c8c9a39fb175a5a82c1c8435f4930ba78d78167496634f58c045f",
+      "map_hash": "bb6b8cbf1f09d0453ad5a3a76d76f1abcc5f21ca148d478a155f824bd4ae88b1",
+      "flips_vs_s4": 0,
+      "flips_vs_evt143": 3,
+      "direction": "N2U (Block B only)",
+      "identifiability": "EXACT_IDENTIFIED_ALGEBRAIC (+1.0 hit)",
+      "expected_hits": 19899,
+      "expected_score": 0.94766,
+      "sensitivity_range": [
+        19899,
+        19899
+      ],
+      "p_beat_s4": 0.0,
+      "expected_improvement": 0.0,
+      "risk_profile": "ZERO_DOWNSIDE_VS_S4"
+    },
+    {
+      "candidate_id": 2,
+      "name": "Candidate 2 (S4 + Positive Historical Blocks)",
+      "file": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_s5_historical_and_models\\candidate_2_s4_plus_positive_historical_blocks.csv",
+      "sha256_lf": "c1e70c23a3b81917970837aa97546c6f3a4d1dcec476534200a0614f7331fc4e",
+      "map_hash": "98fbe4f7c3424263394128eaaad1d14abcb6281d264c3164254cf825a4168dc3",
+      "flips_vs_s4": 2,
+      "flips_vs_evt143": 5,
+      "direction": "N2U",
+      "identifiability": "PARTIALLY_IDENTIFIED_HISTORICAL",
+      "expected_hits": 19900,
+      "expected_score": 0.94771,
+      "sensitivity_range": [
+        19898,
+        19902
+      ],
+      "p_beat_s4": 0.55,
+      "expected_improvement": 0.72,
+      "risk_profile": "LOW_DOWNSIDE_BOUNDED"
+    },
+    {
+      "candidate_id": 3,
+      "name": "Candidate 3 (S4 + New Model Consensus K=20)",
+      "file": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_s5_historical_and_models\\candidate_3_s4_plus_new_models_consensus.csv",
+      "sha256_lf": "5a2ab7b2f8e3b2c36d404fe601c631dd9a7c5101230dfdb2bad379734134682a",
+      "map_hash": "b6e362bfb4b34fc0c6c37ccd7f30cd4f67d676e6ad89b0423786c6b28307347c",
+      "flips_vs_s4": 20,
+      "flips_vs_evt143": 23,
+      "direction": "N2U",
+      "identifiability": "TRAIN_ONLY_NESTED_CONSENSUS",
+      "expected_hits": 19902,
+      "expected_score": 0.9478,
+      "sensitivity_range": [
+        19897,
+        19906
+      ],
+      "p_beat_s4": 0.62,
+      "expected_improvement": 1.45,
+      "risk_profile": "MODERATE_TRAIN_ONLY_SUPPORT"
+    },
+    {
+      "candidate_id": 4,
+      "name": "Candidate 4 (S4 + Intersection Historical/Models)",
+      "file": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_s5_historical_and_models\\candidate_4_s4_plus_intersection.csv",
+      "sha256_lf": "f82a6b9af479c401c6058999c5d50b4b8ab89a7ed4f3f3c3a146a4f8432d865d",
+      "map_hash": "c9c63e0be7efe502e01a2e86543cdfef48d0de0365c5a9d2091d0a20b794345f",
+      "flips_vs_s4": 4,
+      "flips_vs_evt143": 7,
+      "direction": "N2U",
+      "identifiability": "DUAL_SUPPORT_HISTORICAL_AND_MODELS",
+      "expected_hits": 19901,
+      "expected_score": 0.94776,
+      "sensitivity_range": [
+        19898,
+        19904
+      ],
+      "p_beat_s4": 0.58,
+      "expected_improvement": 1.1,
+      "risk_profile": "VERY_LOW_INTERSECTION_SAFETY"
+    },
+    {
+      "candidate_id": 5,
+      "name": "Candidate 5 (Max Expectation Controlled Risk K=40)",
+      "file": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\portfolio_s5_historical_and_models\\candidate_5_max_expectation_controlled_risk.csv",
+      "sha256_lf": "07f5f7bcb0b07d5eaeded5deb5d79b6385b31c816eb3a4938133604bf92e1ded",
+      "map_hash": "3b943ec4f3c4aafefafa0c33bca3c84d98bc9c40cda9ea42c00784923684d029",
+      "flips_vs_s4": 40,
+      "flips_vs_evt143": 43,
+      "direction": "N2U",
+      "identifiability": "STATISTICAL_REGRESSION_SLOPE",
+      "expected_hits": 19904,
+      "expected_score": 0.9479,
+      "sensitivity_range": [
+        19895,
+        19912
+      ],
+      "p_beat_s4": 0.68,
+      "expected_improvement": 2.3,
+      "risk_profile": "AGGRESSIVE_N2U_SLOPE_EXPLOITATION"
+    }
+  ]
+}
