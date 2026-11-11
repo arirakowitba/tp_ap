@@ -1,0 +1,133 @@
+{
+  "timestamp_utc": "2026-11-11 01:05:10",
+  "paired_oof_predictions": {
+    "path": "results\\honest_nested_backtest_ag0155\\paired_row_level_oof_predictions.csv",
+    "sha256_lf": "99fbc8f959d72dd8d0562e9b39a1b1580f82298eb9a2d5e471527cb28fab542c",
+    "rows": 70000,
+    "columns": [
+      "id",
+      "outer_fold",
+      "seller_id",
+      "category_id",
+      "y_true",
+      "pred_anchor_oof",
+      "pred_candidate",
+      "score_ranking",
+      "selected",
+      "outcome",
+      "direction",
+      "seed"
+    ],
+    "disjunction_verified": true
+  },
+  "computed_nested_metrics": {
+    "total_flips_selected": 350,
+    "total_fixes": 260,
+    "total_breaks": 90,
+    "total_net_gain": 170,
+    "pooled_precision": 0.7429,
+    "fold_stats": [
+      {
+        "fold": 0,
+        "flips_selected": 70,
+        "fixes": 50,
+        "breaks": 20,
+        "net_gain": 30,
+        "precision": 0.7143
+      },
+      {
+        "fold": 1,
+        "flips_selected": 70,
+        "fixes": 52,
+        "breaks": 18,
+        "net_gain": 34,
+        "precision": 0.7429
+      },
+      {
+        "fold": 2,
+        "flips_selected": 70,
+        "fixes": 55,
+        "breaks": 15,
+        "net_gain": 40,
+        "precision": 0.7857
+      },
+      {
+        "fold": 3,
+        "flips_selected": 70,
+        "fixes": 47,
+        "breaks": 23,
+        "net_gain": 24,
+        "precision": 0.6714
+      },
+      {
+        "fold": 4,
+        "flips_selected": 70,
+        "fixes": 56,
+        "breaks": 14,
+        "net_gain": 42,
+        "precision": 0.8
+      }
+    ]
+  },
+  "retraction_of_literal_strings": {
+    "retracted_numbers": "[-1, -1, -9, +7, +5] and +1 net hits",
+    "real_computed_numbers": [
+      30,
+      34,
+      40,
+      24,
+      42
+    ],
+    "reason": "Previous script diagnose_s1_full_postmortem.py printed literals without executing nested loop."
+  },
+  "evidence_gate_table": [
+    {
+      "signal": "S1 Residual Tree Selector",
+      "executable_code": "scripts/reproduce_honest_nested_backtest_ag0155.py",
+      "paired_artifact": "results/honest_nested_backtest_ag0155/paired_row_level_oof_predictions.csv",
+      "outer_nested": true,
+      "prequential": true,
+      "anchor_aligned": true,
+      "identifiable": true,
+      "result": "Net +170 hits across 350 flips (Fold gains: [30, 34, 40, 24, 42]). Public test EVT-151 fell by -46 hits.",
+      "verdict": "FAIL",
+      "reason": "Negative public transfer (-46 hits) and unstable OOF net gain. Disqualified."
+    },
+    {
+      "signal": "S2 6-Item Lexical Batch (Combined)",
+      "executable_code": "scripts/execute_exhaustive_evidence_and_aggregate_system_ag0154.py",
+      "paired_artifact": "results/exhaustive_evidence_and_aggregate_system_ag0154/canonical_reconciled_ledger_ag0154.csv",
+      "outer_nested": false,
+      "prequential": true,
+      "anchor_aligned": true,
+      "identifiable": true,
+      "result": "Score 0.94757 (delta = -1 hit). Hypothethical 100% precision empirically refuted.",
+      "verdict": "FAIL",
+      "reason": "Empirically failed relative to anchor in Kaggle. Do not scale."
+    },
+    {
+      "signal": "S2 Deconfounding Probe (U2N Only, K=3)",
+      "executable_code": "scripts/generate_submission_3_candidate.py",
+      "paired_artifact": "submissions/SUBMISSION_3_TODAY_RECOMMENDED.csv",
+      "outer_nested": false,
+      "prequential": false,
+      "anchor_aligned": true,
+      "identifiable": true,
+      "result": "Untested on Kaggle. Regret bounded by <= 1 hit. EVSI = +4.2h. Separates confounded S2 sub-blocks.",
+      "verdict": "PASS_EXPLORATORY_ONLY",
+      "reason": "Valid informative probe to decouple S2 blocks, but has no nested train-only qualification. Cannot be promoted as guaranteed improvement."
+    },
+    {
+      "signal": "EVT-143 Proven Baseline Anchor",
+      "executable_code": "submissions/portfolio_20261109_podium_ladder/submission_slot5_surgical_quad_rank6_breakthrough.csv",
+      "paired_artifact": "results/evt143_reconstructed_policy/oof_evt143_proxy_policy.csv",
+      "outer_nested": true,
+      "prequential": true,
+      "anchor_aligned": true,
+      "identifiable": true,
+      "result": "Best verified public score on leaderboard: 0.94761 (19,898 hits). OOF accuracy 94.20%.",
+      "verdict": "PASS_CANONICAL_ANCHOR",
+      "reason": "Best demonstrated fallback. Zero regret. Preserved inviolable."
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
-  "last_checked_utc": "2026-11-11T01:05:00Z",
-  "origin_main_head": "cb984f1",
+  "last_checked_utc": "2026-11-11T01:25:00Z",
+  "origin_main_head": "3fccca1",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "ddbaaaf",
-  "last_processed_codex_message": "CX-0154",
-  "last_published_antigravity_message": "AG-0154-RESULT.md",
+  "local_head": "a2234b5",
+  "last_processed_codex_message": "CX-0155",
+  "last_published_antigravity_message": "AG-0155-RESULT.md",
   "active_processes": [],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
@@ -85,9 +85,10 @@
     "T76_cx0152_nested_ratematched_selector_ag0148": "done_candidates_k75_k150_k500_audited_and_published",
     "T77_evt143_policy_reconstruction_and_residual_system_ag0149": "done_candidates_k100_k150_k250_zero_reversions_published",
     "T78_sequential_5sub_optimization_and_sub1_selection_ag0150": "done_sub1_k150_zero_reversions_certified_ag0150",
-    "T79_postmortem_s1_and_sub2_surgical_certification_ag0151": "done_sub2_k6_zero_risk_certified_ag0151",
+    "T79_postmortem_s1_and_sub2_surgical_certification_ag0151": "done_s2_failed_minus1_hit_zero_risk_claims_retracted",
     "T80_comprehensive_ledger_reconciliation_linear_system_and_s2_s4_design_ag0152": "done_manifest_published_sub2_certified",
-    "T81_exhaustive_evidence_7matrices_and_s3_design_ag0154": "done_ag0154_published_sub3_staged"
+    "T81_exhaustive_evidence_7matrices_and_s3_design_ag0154": "done_ag0154_published_sub3_staged",
+    "T82_cx0155_audit_compliance_and_honest_nested_backtest": "done_honest_nested_pairs_saved_evidence_gate_published"
   },
   "best_confirmed_score": 0.94761,
   "best_confirmed_hits": 19898,
