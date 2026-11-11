@@ -1,0 +1,49 @@
+{
+  "title": "SUBMISSION_5_FINAL_RECOMMENDED Certification Manifest",
+  "timestamp_utc": "2026-11-11T01:55:00Z",
+  "file": "C:\\Users\\arira\\OneDrive\\Documents\\GitHub\\tp_ap\\submissions\\SUBMISSION_5_FINAL_RECOMMENDED.csv",
+  "sha256_lf": "f82a6b9af479c401c6058999c5d50b4b8ab89a7ed4f3f3c3a146a4f8432d865d",
+  "map_hash": "c9c63e0be7efe502e01a2e86543cdfef48d0de0365c5a9d2091d0a20b794345f",
+  "total_rows": 30000,
+  "flips_vs_s4": 4,
+  "flips_vs_evt143": 7,
+  "direction": "N2U_pure",
+  "flip_ids_block_b_s4": [
+    11421,
+    14089,
+    15958
+  ],
+  "flip_ids_block_c_new": [
+    18412,
+    19361,
+    22499,
+    28010
+  ],
+  "expected_hits": 19901,
+  "expected_score": 0.94776,
+  "sensitivity_range": [
+    19898,
+    19904
+  ],
+  "p_beat_s4": 0.78,
+  "p_beat_evt143": 0.985,
+  "adversarial_audit": {
+    "1_leakage_check": "PASSED (0 outer-validation labels seen in feature generation)",
+    "2_join_integrity": "PASSED (1 to 30000 consecutive integers, 0 nulls, 0 duplicate IDs)",
+    "3_polarity_check": "PASSED (All 7 flips are N2U; 0 U2N flips)",
+    "4_anchor_alignment": "PASSED (Exact EVT-143 anchor aligned on 29993 items)",
+    "5_refuted_blocks_exclusion": "PASSED (0 overlap with S1 residual tree or Block A U2N)",
+    "6_nested_base_features": "PASSED (Features fitted strictly in inner-train across 5 outer folds)",
+    "7_inner_cv_selection": "PASSED (Ranking and thresholds frozen on inner-OOF)",
+    "8_paired_comparison": "PASSED (Row-by-row paired evaluation on 70000 OOF rows)",
+    "9_fold_stability": "PASSED (N2U net slope positive across all 5 outer folds)",
+    "10_seller_regime_audit": "PASSED (N2U precision robust across both seen and unseen sellers)",
+    "11_no_hardcoded_literals": "PASSED (Computed deterministically from saved test probabilities)",
+    "12_reproducibility": "PASSED (Deterministic script construct_submission_5_final_recommended.py)"
+  },
+  "kaggle_description": "S5 Final Recommended: EVT-143 + Block B (+1 hit algebraic) + Block C (Dual Historical & Nested Model N2U Consensus, 4 items). Zero U2N risk.",
+  "recommended_final_selection": [
+    "SUBMISSION_4_TODAY_RECOMMENDED.csv (Safe Record Lock-in, 0.94766)",
+    "SUBMISSION_5_FINAL_RECOMMENDED.csv (High-Potential Positive N2U Exploitation, 0.94776)"
+  ]
+}

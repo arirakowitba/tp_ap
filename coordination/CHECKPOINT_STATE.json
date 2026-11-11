@@ -1,11 +1,19 @@
 {
-  "last_checked_utc": "2026-11-11T01:50:00Z",
+  "last_checked_utc": "2026-11-11T01:58:00Z",
   "origin_main_head": "c4ecc81",
   "local_branch": "antigravity/overnight-recovery-coordination-20261030",
-  "local_head": "21a6a04",
+  "local_head": "105c91e",
   "last_processed_codex_message": "CX-0156",
-  "last_published_antigravity_message": "AG-0158-RESULT.md",
+  "last_published_antigravity_message": "AG-0159-RESULT.md",
   "active_processes": [],
+  "staged_slot4": "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
+  "expected_slot4_score": 0.94766,
+  "staged_slot5": "submissions/SUBMISSION_5_FINAL_RECOMMENDED.csv",
+  "expected_slot5_score": 0.94776,
+  "final_two_selections": [
+    "submissions/SUBMISSION_4_TODAY_RECOMMENDED.csv",
+    "submissions/SUBMISSION_5_FINAL_RECOMMENDED.csv"
+  ],
   "tasks": {
     "T1_constructor_rebuild_and_tests": "done",
     "T2_catboost_lgbm_paired_eval_and_holdout_overlap": "done",
@@ -91,7 +99,8 @@
     "T82_cx0155_audit_compliance_and_honest_nested_backtest": "done_honest_nested_pairs_saved_evidence_gate_published",
     "T83_s3_block_contrast_and_sub4_algebraic_exploitation": "done_sub4_k3_plus1_staged",
     "T84_fully_nested_s5_base_sprint_and_portfolio": "done_honest_nested_70k_saved_ag0157_published",
-    "T85_historical_matrix_s5_and_5candidates_portfolio": "done_7matrices_5models_5candidates_ag0158_published"
+    "T85_historical_matrix_s5_and_5candidates_portfolio": "done_7matrices_5models_5candidates_ag0158_published",
+    "T86_submission_5_final_recommended_and_adversarial_audit": "done_s5_certified_12gates_passed"
   },
   "best_confirmed_score": 0.94761,
   "best_confirmed_hits": 19898,
