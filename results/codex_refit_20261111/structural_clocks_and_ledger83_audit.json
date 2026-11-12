@@ -1,0 +1,272 @@
+{
+  "source_archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+  "runner_sha256": "33660b5e8fc900e73010bb1eb013f438e818a564d0c47d1182636d2d98cc4732",
+  "parent_pairs_sha256": "cac323e81ad9cb589e88fddad205a5ac5685c5eedb54b938253ad322ff5e190e",
+  "cache_sha256": "cce0bf31ba7e3251e8f567877f00e27c9aedb9a23918aea37461e3822f32734f",
+  "scope": "new structural clocks only; base still contains duration and causal seller history",
+  "development_reused": true,
+  "fit_rows": 49472,
+  "holdout_rows": 20528,
+  "arms": {
+    "clocks_only": {
+      "model_sha256": "ee7b835de514eb002672ff75b53ec17a0b7f7e58f868d499813effe7bb7f3b41",
+      "p_control": {
+        "all": {
+          "n": 20528,
+          "hits": 18935,
+          "baseline_hits": 18945,
+          "net": -10,
+          "fixes": 142,
+          "breaks": 152,
+          "logloss": 0.19343661316842206,
+          "baseline_logloss": 0.19377533972406855,
+          "seller_q05": -39.05,
+          "seller_q95": 20
+        },
+        "seen": {
+          "n": 6528,
+          "hits": 6187,
+          "baseline_hits": 6199,
+          "net": -12,
+          "fixes": 21,
+          "breaks": 33,
+          "logloss": 0.13640716137383757,
+          "baseline_logloss": 0.13442784716822953,
+          "seller_q05": -24,
+          "seller_q95": 0
+        },
+        "new": {
+          "n": 14000,
+          "hits": 12748,
+          "baseline_hits": 12746,
+          "net": 2,
+          "fixes": 121,
+          "breaks": 119,
+          "logloss": 0.22002863183378266,
+          "baseline_logloss": 0.22144822768153405,
+          "seller_q05": -24.049999999999997,
+          "seller_q95": 29
+        },
+        "disagreements_id_sha256": "446daed78cc01ee0eaed520d3c41167bae5cf18c38e65f51772dd136630be4ff"
+      },
+      "p_structural": {
+        "all": {
+          "n": 20528,
+          "hits": 18935,
+          "baseline_hits": 19035,
+          "net": -100,
+          "fixes": 221,
+          "breaks": 321,
+          "logloss": 0.19343661316842206,
+          "baseline_logloss": 0.1870499718186812,
+          "seller_q05": -153,
+          "seller_q95": -50
+        },
+        "seen": {
+          "n": 6528,
+          "hits": 6187,
+          "baseline_hits": 6221,
+          "net": -34,
+          "fixes": 50,
+          "breaks": 84,
+          "logloss": 0.13640716137383757,
+          "baseline_logloss": 0.1286127507347373,
+          "seller_q05": -54,
+          "seller_q95": -15
+        },
+        "new": {
+          "n": 14000,
+          "hits": 12748,
+          "baseline_hits": 12814,
+          "net": -66,
+          "fixes": 171,
+          "breaks": 237,
+          "logloss": 0.22002863183378266,
+          "baseline_logloss": 0.21429841319268017,
+          "seller_q05": -114,
+          "seller_q95": -19
+        },
+        "disagreements_id_sha256": "cd5a1fe0d266065e2393f1d5685fca1e3b02263555d89833b630d0bf93c8d287"
+      },
+      "p_line3": {
+        "all": {
+          "n": 20528,
+          "hits": 18935,
+          "baseline_hits": 18942,
+          "net": -7,
+          "fixes": 184,
+          "breaks": 191,
+          "logloss": 0.19343661316842206,
+          "baseline_logloss": 0.19186323669236055,
+          "seller_q05": -47.05,
+          "seller_q95": 33
+        },
+        "seen": {
+          "n": 6528,
+          "hits": 6187,
+          "baseline_hits": 6197,
+          "net": -10,
+          "fixes": 17,
+          "breaks": 27,
+          "logloss": 0.13640716137383757,
+          "baseline_logloss": 0.13248164795390768,
+          "seller_q05": -21,
+          "seller_q95": 1
+        },
+        "new": {
+          "n": 14000,
+          "hits": 12748,
+          "baseline_hits": 12745,
+          "net": 3,
+          "fixes": 167,
+          "breaks": 164,
+          "logloss": 0.22002863183378266,
+          "baseline_logloss": 0.2195520232126906,
+          "seller_q05": -34,
+          "seller_q95": 43
+        },
+        "disagreements_id_sha256": "b060c9d4f46af026d123ae4b91eee4538ec4941f4e7eba083081320fe3ec2624"
+      }
+    },
+    "attributes_history": {
+      "model_sha256": "aa0be7f45be923a491996b7d763f911ec0118c1c2a1870d76b0875a7d66507b5",
+      "p_control": {
+        "all": {
+          "n": 20528,
+          "hits": 19052,
+          "baseline_hits": 18945,
+          "net": 107,
+          "fixes": 328,
+          "breaks": 221,
+          "logloss": 0.18665468667914611,
+          "baseline_logloss": 0.19377533972406855,
+          "seller_q05": 56,
+          "seller_q95": 162
+        },
+        "seen": {
+          "n": 6528,
+          "hits": 6216,
+          "baseline_hits": 6199,
+          "net": 17,
+          "fixes": 71,
+          "breaks": 54,
+          "logloss": 0.1291967557138254,
+          "baseline_logloss": 0.13442784716822953,
+          "seller_q05": -1,
+          "seller_q95": 36
+        },
+        "new": {
+          "n": 14000,
+          "hits": 12836,
+          "baseline_hits": 12746,
+          "net": 90,
+          "fixes": 257,
+          "breaks": 167,
+          "logloss": 0.21344649906068994,
+          "baseline_logloss": 0.22144822768153405,
+          "seller_q05": 40,
+          "seller_q95": 143
+        },
+        "disagreements_id_sha256": "1643ee231ee928a851bbfdbaf3c9e41a099293b9d1d4a67c6f5325af103c8adc"
+      },
+      "p_structural": {
+        "all": {
+          "n": 20528,
+          "hits": 19052,
+          "baseline_hits": 19035,
+          "net": 17,
+          "fixes": 131,
+          "breaks": 114,
+          "logloss": 0.18665468667914611,
+          "baseline_logloss": 0.1870499718186812,
+          "seller_q05": -8,
+          "seller_q95": 43
+        },
+        "seen": {
+          "n": 6528,
+          "hits": 6216,
+          "baseline_hits": 6221,
+          "net": -5,
+          "fixes": 15,
+          "breaks": 20,
+          "logloss": 0.1291967557138254,
+          "baseline_logloss": 0.1286127507347373,
+          "seller_q05": -15,
+          "seller_q95": 5
+        },
+        "new": {
+          "n": 14000,
+          "hits": 12836,
+          "baseline_hits": 12814,
+          "net": 22,
+          "fixes": 116,
+          "breaks": 94,
+          "logloss": 0.21344649906068994,
+          "baseline_logloss": 0.21429841319268017,
+          "seller_q05": -2,
+          "seller_q95": 44
+        },
+        "disagreements_id_sha256": "61cb903ae4d863b4c098ee9185736bbb7cfac4666e2b205956ced5098c34b05d"
+      },
+      "p_line3": {
+        "all": {
+          "n": 20528,
+          "hits": 19052,
+          "baseline_hits": 18942,
+          "net": 110,
+          "fixes": 347,
+          "breaks": 237,
+          "logloss": 0.18665468667914611,
+          "baseline_logloss": 0.19186323669236055,
+          "seller_q05": 52,
+          "seller_q95": 176
+        },
+        "seen": {
+          "n": 6528,
+          "hits": 6216,
+          "baseline_hits": 6197,
+          "net": 19,
+          "fixes": 68,
+          "breaks": 49,
+          "logloss": 0.1291967557138254,
+          "baseline_logloss": 0.13248164795390768,
+          "seller_q05": 1,
+          "seller_q95": 37
+        },
+        "new": {
+          "n": 14000,
+          "hits": 12836,
+          "baseline_hits": 12745,
+          "net": 91,
+          "fixes": 279,
+          "breaks": 188,
+          "logloss": 0.21344649906068994,
+          "baseline_logloss": 0.2195520232126906,
+          "seller_q05": 34,
+          "seller_q95": 153
+        },
+        "disagreements_id_sha256": "a8252c18e78029d9d99842f67ab658e6b04ee71d180ee07ab119fa95adf081f7"
+      }
+    }
+  },
+  "pairs_sha256": "dcd3af6035f5e31fe15009e3ca35cf9bd85cd0f926bfa5fd4b7d91ce2545e2de",
+  "ledger_reconciliation": {
+    "cutoff": "2026-11-02",
+    "ledger_entries": 83,
+    "ledger_unique_keys": 81,
+    "ledger_entries_matching_name_and_score": 83,
+    "catalog_scored_with_vector": 86,
+    "catalog_scored_without_vector": 7,
+    "catalog_errors": 2,
+    "catalog_drafts": 17,
+    "scored_rows_outside_ledger": 12,
+    "outside_aliases": 8,
+    "outside_without_vector": 4,
+    "raw_kaggle_106_reconciled": false,
+    "source_ref": "098008b4d571fa3bdfaafc69a5ab5fa17cdd3b32",
+    "sources": [
+      "results/intensive_20261030/submission_ledger_master_83.json",
+      "results/canonical_ledger_rebuild_20261106/canonical_events_catalog.json"
+    ]
+  }
+}
