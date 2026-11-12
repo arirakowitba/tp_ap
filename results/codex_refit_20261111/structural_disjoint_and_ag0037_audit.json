@@ -1,0 +1,107 @@
+{
+  "fit_rows": 58918,
+  "validation_rows": 9173,
+  "omitted_rows": 1909,
+  "past_validation_ids": 38622,
+  "holdout_overlap": 0,
+  "archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+  "split_sha256": "fe058fd8a0cd001057ba6e10c605ec3e1b868b5aca8ba21243950ff70947f071",
+  "runner_sha256": "24d08bf1e2092b5ed25218a5e0039a53b67f19aeef6f57a711c28ac72c2870d9",
+  "earlier_pairs_sha256": [
+    "304a703d77b2a978254072028ea39538d3a3b227dddc044c90f11642d3d66d99",
+    "cac323e81ad9cb589e88fddad205a5ac5685c5eedb54b938253ad322ff5e190e",
+    "daee2cb05c732a0be8bcccca4916d96dbf03b7fb83c107eb89794e81b6ce8f00"
+  ],
+  "pairs_sha256": "b806773a876f3b047039512217689f13766777baafcec079601114a0d1cf389e",
+  "attributes_model_sha256": "fd75fd59ef1268c2698a378fa5f5acf5a51798628b8f45a513420e5849a00d13",
+  "vs_control": {
+    "all": {
+      "n": 9173,
+      "hits": 8397,
+      "baseline_hits": 8351,
+      "net": 46,
+      "fixes": 138,
+      "breaks": 92,
+      "logloss": 0.21588844677476993,
+      "baseline_logloss": 0.2242346862378306,
+      "seller_q05": 18,
+      "seller_q95": 74
+    },
+    "seen": {
+      "n": 860,
+      "hits": 822,
+      "baseline_hits": 822,
+      "net": 0,
+      "fixes": 4,
+      "breaks": 4,
+      "logloss": 0.1048641605574664,
+      "baseline_logloss": 0.10534042872799002,
+      "seller_q05": -4,
+      "seller_q95": 5
+    },
+    "new": {
+      "n": 8313,
+      "hits": 7575,
+      "baseline_hits": 7529,
+      "net": 46,
+      "fixes": 134,
+      "breaks": 88,
+      "logloss": 0.22737417829731066,
+      "baseline_logloss": 0.23653458536672062,
+      "seller_q05": 19,
+      "seller_q95": 73
+    },
+    "disagreement_ids_sha256": "fa95b65a214d10d662c0f1e2fecb827d8349aa577dd689d3c3297c38baa67154"
+  },
+  "vs_line3": {
+    "all": {
+      "n": 9173,
+      "hits": 8397,
+      "baseline_hits": 8374,
+      "net": 23,
+      "fixes": 140,
+      "breaks": 117,
+      "logloss": 0.21588844677476993,
+      "baseline_logloss": 0.21962099706179308,
+      "seller_q05": -7,
+      "seller_q95": 53
+    },
+    "seen": {
+      "n": 860,
+      "hits": 822,
+      "baseline_hits": 821,
+      "net": 1,
+      "fixes": 4,
+      "breaks": 3,
+      "logloss": 0.1048641605574664,
+      "baseline_logloss": 0.10333428760117531,
+      "seller_q05": -3,
+      "seller_q95": 5
+    },
+    "new": {
+      "n": 8313,
+      "hits": 7575,
+      "baseline_hits": 7553,
+      "net": 22,
+      "fixes": 136,
+      "breaks": 114,
+      "logloss": 0.22737417829731066,
+      "baseline_logloss": 0.2316511390245179,
+      "seller_q05": -6,
+      "seller_q95": 52
+    },
+    "disagreement_ids_sha256": "6e278f953509f5cb09fb1f3a2786b47e3416373e4da47f9b18d8847bc29750fe"
+  },
+  "ag0037_day4": {
+    "file_count": 10,
+    "s57_changes": 20,
+    "s75_changes": 5,
+    "union": 25,
+    "common": 0,
+    "planned_changes": 6,
+    "uncovered": 19,
+    "unexpected": 0,
+    "direction_discrepancies": 0
+  },
+  "scope": "Disjoint from the three archived validation panels by row. Rows may have appeared in earlier fits. No public-score forecast."
+}
