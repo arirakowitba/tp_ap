@@ -1,0 +1,681 @@
+{
+  "original": {
+    "fit_n": 50108,
+    "val_n": 19892,
+    "cache_sha256": "0d4d75de49d9623ef00e50631e17f56e07ffee6ce8a2d14480f954138acacf75",
+    "overlap_with_other_cut": 10452,
+    "arms": {
+      "physical_and_listing": {
+        "p_control": {
+          "all": {
+            "n": 19892,
+            "hits": 18496,
+            "baseline_hits": 18418,
+            "net": 78,
+            "fixes": 249,
+            "breaks": 171,
+            "logloss": 0.18256094979857307,
+            "baseline_logloss": 0.18803552669864684,
+            "seller_q05": 40,
+            "seller_q95": 115
+          },
+          "seen": {
+            "n": 6584,
+            "hits": 6263,
+            "baseline_hits": 6252,
+            "net": 11,
+            "fixes": 42,
+            "breaks": 31,
+            "logloss": 0.13560962053592998,
+            "baseline_logloss": 0.13954802697869412,
+            "seller_q05": -5,
+            "seller_q95": 25
+          },
+          "new": {
+            "n": 13308,
+            "hits": 12233,
+            "baseline_hits": 12166,
+            "net": 67,
+            "fixes": 207,
+            "breaks": 140,
+            "logloss": 0.20578965072021735,
+            "baseline_logloss": 0.21202423260157507,
+            "seller_q05": 32,
+            "seller_q95": 103
+          },
+          "exclusive_to_cut": {
+            "n": 9440,
+            "hits": 8673,
+            "baseline_hits": 8648,
+            "net": 25,
+            "fixes": 119,
+            "breaks": 94,
+            "logloss": 0.20621256043751407,
+            "baseline_logloss": 0.20982213519049317,
+            "seller_q05": -6,
+            "seller_q95": 55
+          },
+          "disagreement_ids_sha256": "c8cee01b2591e6bf25ef101b7256147dd20b153a1500f0c6d1745f67bbf2d30f"
+        },
+        "p_line3": {
+          "all": {
+            "n": 19892,
+            "hits": 18496,
+            "baseline_hits": 18449,
+            "net": 47,
+            "fixes": 240,
+            "breaks": 193,
+            "logloss": 0.18256094979857307,
+            "baseline_logloss": 0.1844797713167727,
+            "seller_q05": 7,
+            "seller_q95": 88
+          },
+          "seen": {
+            "n": 6584,
+            "hits": 6263,
+            "baseline_hits": 6257,
+            "net": 6,
+            "fixes": 35,
+            "breaks": 29,
+            "logloss": 0.13560962053592998,
+            "baseline_logloss": 0.13443058287526044,
+            "seller_q05": -7,
+            "seller_q95": 18
+          },
+          "new": {
+            "n": 13308,
+            "hits": 12233,
+            "baseline_hits": 12192,
+            "net": 41,
+            "fixes": 205,
+            "breaks": 164,
+            "logloss": 0.20578965072021735,
+            "baseline_logloss": 0.2092411071071933,
+            "seller_q05": 4,
+            "seller_q95": 81
+          },
+          "exclusive_to_cut": {
+            "n": 9440,
+            "hits": 8673,
+            "baseline_hits": 8649,
+            "net": 24,
+            "fixes": 131,
+            "breaks": 107,
+            "logloss": 0.20621256043751407,
+            "baseline_logloss": 0.2077533750441785,
+            "seller_q05": -11,
+            "seller_q95": 57
+          },
+          "disagreement_ids_sha256": "9a5144792eb50b5594ab699786835fde2dd53f113e37a790bb343d36888eace3"
+        }
+      },
+      "additional_seller_history": {
+        "p_control": {
+          "all": {
+            "n": 19892,
+            "hits": 18435,
+            "baseline_hits": 18418,
+            "net": 17,
+            "fixes": 181,
+            "breaks": 164,
+            "logloss": 0.18693001412109228,
+            "baseline_logloss": 0.18803552669864684,
+            "seller_q05": -16,
+            "seller_q95": 47
+          },
+          "seen": {
+            "n": 6584,
+            "hits": 6281,
+            "baseline_hits": 6252,
+            "net": 29,
+            "fixes": 85,
+            "breaks": 56,
+            "logloss": 0.13372538370215167,
+            "baseline_logloss": 0.13954802697869412,
+            "seller_q05": 10,
+            "seller_q95": 49
+          },
+          "new": {
+            "n": 13308,
+            "hits": 12154,
+            "baseline_hits": 12166,
+            "net": -12,
+            "fixes": 96,
+            "breaks": 108,
+            "logloss": 0.21325247329439445,
+            "baseline_logloss": 0.21202423260157507,
+            "seller_q05": -36,
+            "seller_q95": 12
+          },
+          "exclusive_to_cut": {
+            "n": 9440,
+            "hits": 8637,
+            "baseline_hits": 8648,
+            "net": -11,
+            "fixes": 59,
+            "breaks": 70,
+            "logloss": 0.211229879453253,
+            "baseline_logloss": 0.20982213519049317,
+            "seller_q05": -28,
+            "seller_q95": 7
+          },
+          "disagreement_ids_sha256": "857a621d20d7ed0b2c021346e29fda128454c3bf4eec636dafa6adf7cb22ecbd"
+        },
+        "p_line3": {
+          "all": {
+            "n": 19892,
+            "hits": 18435,
+            "baseline_hits": 18449,
+            "net": -14,
+            "fixes": 191,
+            "breaks": 205,
+            "logloss": 0.18693001412109228,
+            "baseline_logloss": 0.1844797713167727,
+            "seller_q05": -52,
+            "seller_q95": 22
+          },
+          "seen": {
+            "n": 6584,
+            "hits": 6281,
+            "baseline_hits": 6257,
+            "net": 24,
+            "fixes": 69,
+            "breaks": 45,
+            "logloss": 0.13372538370215167,
+            "baseline_logloss": 0.13443058287526044,
+            "seller_q05": 8,
+            "seller_q95": 42
+          },
+          "new": {
+            "n": 13308,
+            "hits": 12154,
+            "baseline_hits": 12192,
+            "net": -38,
+            "fixes": 122,
+            "breaks": 160,
+            "logloss": 0.21325247329439445,
+            "baseline_logloss": 0.2092411071071933,
+            "seller_q05": -68.05,
+            "seller_q95": -6
+          },
+          "exclusive_to_cut": {
+            "n": 9440,
+            "hits": 8637,
+            "baseline_hits": 8649,
+            "net": -12,
+            "fixes": 88,
+            "breaks": 100,
+            "logloss": 0.211229879453253,
+            "baseline_logloss": 0.2077533750441785,
+            "seller_q05": -37,
+            "seller_q95": 12
+          },
+          "disagreement_ids_sha256": "288ba0f5e25b945ab1f9d3dd5802c24bfb0252fc91e4ccd4c96869919f001a29"
+        }
+      },
+      "both_no_new_clocks": {
+        "p_control": {
+          "all": {
+            "n": 19892,
+            "hits": 18509,
+            "baseline_hits": 18418,
+            "net": 91,
+            "fixes": 292,
+            "breaks": 201,
+            "logloss": 0.18090831860654116,
+            "baseline_logloss": 0.18803552669864684,
+            "seller_q05": 49,
+            "seller_q95": 130
+          },
+          "seen": {
+            "n": 6584,
+            "hits": 6275,
+            "baseline_hits": 6252,
+            "net": 23,
+            "fixes": 77,
+            "breaks": 54,
+            "logloss": 0.13128399970991386,
+            "baseline_logloss": 0.13954802697869412,
+            "seller_q05": 4,
+            "seller_q95": 42
+          },
+          "new": {
+            "n": 13308,
+            "hits": 12234,
+            "baseline_hits": 12166,
+            "net": 68,
+            "fixes": 215,
+            "breaks": 147,
+            "logloss": 0.20545945443577124,
+            "baseline_logloss": 0.21202423260157507,
+            "seller_q05": 32,
+            "seller_q95": 103.04999999999995
+          },
+          "exclusive_to_cut": {
+            "n": 9440,
+            "hits": 8673,
+            "baseline_hits": 8648,
+            "net": 25,
+            "fixes": 125,
+            "breaks": 100,
+            "logloss": 0.20582973267066992,
+            "baseline_logloss": 0.20982213519049317,
+            "seller_q05": -5,
+            "seller_q95": 55.049999999999955
+          },
+          "disagreement_ids_sha256": "140b0ba83f4008aab3c0cbf5240bccab93f69413a9adee662995458486a0324a"
+        },
+        "p_line3": {
+          "all": {
+            "n": 19892,
+            "hits": 18509,
+            "baseline_hits": 18449,
+            "net": 60,
+            "fixes": 280,
+            "breaks": 220,
+            "logloss": 0.18090831860654116,
+            "baseline_logloss": 0.1844797713167727,
+            "seller_q05": 19,
+            "seller_q95": 102.04999999999995
+          },
+          "seen": {
+            "n": 6584,
+            "hits": 6275,
+            "baseline_hits": 6257,
+            "net": 18,
+            "fixes": 66,
+            "breaks": 48,
+            "logloss": 0.13128399970991386,
+            "baseline_logloss": 0.13443058287526044,
+            "seller_q05": 1,
+            "seller_q95": 35
+          },
+          "new": {
+            "n": 13308,
+            "hits": 12234,
+            "baseline_hits": 12192,
+            "net": 42,
+            "fixes": 214,
+            "breaks": 172,
+            "logloss": 0.20545945443577124,
+            "baseline_logloss": 0.2092411071071933,
+            "seller_q05": 4,
+            "seller_q95": 80
+          },
+          "exclusive_to_cut": {
+            "n": 9440,
+            "hits": 8673,
+            "baseline_hits": 8649,
+            "net": 24,
+            "fixes": 136,
+            "breaks": 112,
+            "logloss": 0.20582973267066992,
+            "baseline_logloss": 0.2077533750441785,
+            "seller_q05": -10,
+            "seller_q95": 57
+          },
+          "disagreement_ids_sha256": "b79b64d229efa29f52976b5847ffcafe9fcc3e5971563677fe077bd1a8be6278"
+        }
+      }
+    },
+    "pairs_sha256": "1921b6b728483b2d7b3db25d80a6beba289154de91059810244418893773423f"
+  },
+  "replica": {
+    "fit_n": 49472,
+    "val_n": 20528,
+    "cache_sha256": "cce0bf31ba7e3251e8f567877f00e27c9aedb9a23918aea37461e3822f32734f",
+    "overlap_with_other_cut": 10452,
+    "arms": {
+      "physical_and_listing": {
+        "p_control": {
+          "all": {
+            "n": 20528,
+            "hits": 19042,
+            "baseline_hits": 18945,
+            "net": 97,
+            "fixes": 275,
+            "breaks": 178,
+            "logloss": 0.18791727270168596,
+            "baseline_logloss": 0.19377533972406855,
+            "seller_q05": 50,
+            "seller_q95": 149
+          },
+          "seen": {
+            "n": 6528,
+            "hits": 6208,
+            "baseline_hits": 6199,
+            "net": 9,
+            "fixes": 34,
+            "breaks": 25,
+            "logloss": 0.13397715436553798,
+            "baseline_logloss": 0.13442784716822953,
+            "seller_q05": -4,
+            "seller_q95": 21
+          },
+          "new": {
+            "n": 14000,
+            "hits": 12834,
+            "baseline_hits": 12746,
+            "net": 88,
+            "fixes": 241,
+            "breaks": 153,
+            "logloss": 0.21306877930871268,
+            "baseline_logloss": 0.22144822768153405,
+            "seller_q05": 39,
+            "seller_q95": 140
+          },
+          "exclusive_to_cut": {
+            "n": 10076,
+            "hits": 9204,
+            "baseline_hits": 9144,
+            "net": 60,
+            "fixes": 169,
+            "breaks": 109,
+            "logloss": 0.2150673737784932,
+            "baseline_logloss": 0.22373798929475075,
+            "seller_q05": 19,
+            "seller_q95": 102.04999999999995
+          },
+          "disagreement_ids_sha256": "2a6c1d1d8a871b4cf87815a1b989da135fcbe47a7b5fc5a802a1b2985a7ed9dd"
+        },
+        "p_line3": {
+          "all": {
+            "n": 20528,
+            "hits": 19042,
+            "baseline_hits": 18942,
+            "net": 100,
+            "fixes": 298,
+            "breaks": 198,
+            "logloss": 0.18791727270168596,
+            "baseline_logloss": 0.19186323669236055,
+            "seller_q05": 41,
+            "seller_q95": 161.04999999999995
+          },
+          "seen": {
+            "n": 6528,
+            "hits": 6208,
+            "baseline_hits": 6197,
+            "net": 11,
+            "fixes": 32,
+            "breaks": 21,
+            "logloss": 0.13397715436553798,
+            "baseline_logloss": 0.13248164795390768,
+            "seller_q05": -1,
+            "seller_q95": 22
+          },
+          "new": {
+            "n": 14000,
+            "hits": 12834,
+            "baseline_hits": 12745,
+            "net": 89,
+            "fixes": 266,
+            "breaks": 177,
+            "logloss": 0.21306877930871268,
+            "baseline_logloss": 0.2195520232126906,
+            "seller_q05": 34,
+            "seller_q95": 147.04999999999995
+          },
+          "exclusive_to_cut": {
+            "n": 10076,
+            "hits": 9204,
+            "baseline_hits": 9157,
+            "net": 47,
+            "fixes": 178,
+            "breaks": 131,
+            "logloss": 0.2150673737784932,
+            "baseline_logloss": 0.22071507291848746,
+            "seller_q05": 2,
+            "seller_q95": 100.04999999999995
+          },
+          "disagreement_ids_sha256": "bbc71a2a533021dbdd658002ba08ff34bab8ad6e6d0b48630ab47bbcc8a32b85"
+        }
+      },
+      "additional_seller_history": {
+        "p_control": {
+          "all": {
+            "n": 20528,
+            "hits": 18970,
+            "baseline_hits": 18945,
+            "net": 25,
+            "fixes": 191,
+            "breaks": 166,
+            "logloss": 0.19169674711782472,
+            "baseline_logloss": 0.19377533972406855,
+            "seller_q05": -6,
+            "seller_q95": 56
+          },
+          "seen": {
+            "n": 6528,
+            "hits": 6209,
+            "baseline_hits": 6199,
+            "net": 10,
+            "fixes": 64,
+            "breaks": 54,
+            "logloss": 0.12796976277654779,
+            "baseline_logloss": 0.13442784716822953,
+            "seller_q05": -8,
+            "seller_q95": 29
+          },
+          "new": {
+            "n": 14000,
+            "hits": 12761,
+            "baseline_hits": 12746,
+            "net": 15,
+            "fixes": 127,
+            "breaks": 112,
+            "logloss": 0.22141172953067156,
+            "baseline_logloss": 0.22144822768153405,
+            "seller_q05": -10,
+            "seller_q95": 44
+          },
+          "exclusive_to_cut": {
+            "n": 10076,
+            "hits": 9165,
+            "baseline_hits": 9144,
+            "net": 21,
+            "fixes": 96,
+            "breaks": 75,
+            "logloss": 0.2236460537592106,
+            "baseline_logloss": 0.22373798929475075,
+            "seller_q05": -1,
+            "seller_q95": 43
+          },
+          "disagreement_ids_sha256": "7124389f380f70d67140505dc5f8b16ac15b393456ba26fdcf734bd6be4dcab1"
+        },
+        "p_line3": {
+          "all": {
+            "n": 20528,
+            "hits": 18970,
+            "baseline_hits": 18942,
+            "net": 28,
+            "fixes": 244,
+            "breaks": 216,
+            "logloss": 0.19169674711782472,
+            "baseline_logloss": 0.19186323669236055,
+            "seller_q05": -16,
+            "seller_q95": 75
+          },
+          "seen": {
+            "n": 6528,
+            "hits": 6209,
+            "baseline_hits": 6197,
+            "net": 12,
+            "fixes": 63,
+            "breaks": 51,
+            "logloss": 0.12796976277654779,
+            "baseline_logloss": 0.13248164795390768,
+            "seller_q05": -6,
+            "seller_q95": 31
+          },
+          "new": {
+            "n": 14000,
+            "hits": 12761,
+            "baseline_hits": 12745,
+            "net": 16,
+            "fixes": 181,
+            "breaks": 165,
+            "logloss": 0.22141172953067156,
+            "baseline_logloss": 0.2195520232126906,
+            "seller_q05": -26,
+            "seller_q95": 60
+          },
+          "exclusive_to_cut": {
+            "n": 10076,
+            "hits": 9165,
+            "baseline_hits": 9157,
+            "net": 8,
+            "fixes": 126,
+            "breaks": 118,
+            "logloss": 0.2236460537592106,
+            "baseline_logloss": 0.22071507291848746,
+            "seller_q05": -26,
+            "seller_q95": 42
+          },
+          "disagreement_ids_sha256": "2ceaf98c32e397d7cce3ef38e2d53af0582a463da80abba066f6caaa37c9f5eb"
+        }
+      },
+      "both_no_new_clocks": {
+        "p_control": {
+          "all": {
+            "n": 20528,
+            "hits": 19052,
+            "baseline_hits": 18945,
+            "net": 107,
+            "fixes": 328,
+            "breaks": 221,
+            "logloss": 0.18665468667914611,
+            "baseline_logloss": 0.19377533972406855,
+            "seller_q05": 56,
+            "seller_q95": 162
+          },
+          "seen": {
+            "n": 6528,
+            "hits": 6216,
+            "baseline_hits": 6199,
+            "net": 17,
+            "fixes": 71,
+            "breaks": 54,
+            "logloss": 0.1291967557138254,
+            "baseline_logloss": 0.13442784716822953,
+            "seller_q05": -1,
+            "seller_q95": 36
+          },
+          "new": {
+            "n": 14000,
+            "hits": 12836,
+            "baseline_hits": 12746,
+            "net": 90,
+            "fixes": 257,
+            "breaks": 167,
+            "logloss": 0.21344649906068994,
+            "baseline_logloss": 0.22144822768153405,
+            "seller_q05": 40,
+            "seller_q95": 143
+          },
+          "exclusive_to_cut": {
+            "n": 10076,
+            "hits": 9227,
+            "baseline_hits": 9144,
+            "net": 83,
+            "fixes": 189,
+            "breaks": 106,
+            "logloss": 0.21396689903157579,
+            "baseline_logloss": 0.22373798929475075,
+            "seller_q05": 43,
+            "seller_q95": 126
+          },
+          "disagreement_ids_sha256": "1643ee231ee928a851bbfdbaf3c9e41a099293b9d1d4a67c6f5325af103c8adc"
+        },
+        "p_line3": {
+          "all": {
+            "n": 20528,
+            "hits": 19052,
+            "baseline_hits": 18942,
+            "net": 110,
+            "fixes": 347,
+            "breaks": 237,
+            "logloss": 0.18665468667914611,
+            "baseline_logloss": 0.19186323669236055,
+            "seller_q05": 52,
+            "seller_q95": 176
+          },
+          "seen": {
+            "n": 6528,
+            "hits": 6216,
+            "baseline_hits": 6197,
+            "net": 19,
+            "fixes": 68,
+            "breaks": 49,
+            "logloss": 0.1291967557138254,
+            "baseline_logloss": 0.13248164795390768,
+            "seller_q05": 1,
+            "seller_q95": 37
+          },
+          "new": {
+            "n": 14000,
+            "hits": 12836,
+            "baseline_hits": 12745,
+            "net": 91,
+            "fixes": 279,
+            "breaks": 188,
+            "logloss": 0.21344649906068994,
+            "baseline_logloss": 0.2195520232126906,
+            "seller_q05": 34,
+            "seller_q95": 153
+          },
+          "exclusive_to_cut": {
+            "n": 10076,
+            "hits": 9227,
+            "baseline_hits": 9157,
+            "net": 70,
+            "fixes": 199,
+            "breaks": 129,
+            "logloss": 0.21396689903157579,
+            "baseline_logloss": 0.22071507291848746,
+            "seller_q05": 24.950000000000003,
+            "seller_q95": 126.04999999999995
+          },
+          "disagreement_ids_sha256": "a8252c18e78029d9d99842f67ab658e6b04ee71d180ee07ab119fa95adf081f7"
+        }
+      }
+    },
+    "pairs_sha256": "2bfc9fbbae3caadfeb998c360b9b7bbb8d8a70d178df6d549b80807f9ed935b0"
+  },
+  "history_added_to_physical": {
+    "original": {
+      "all": {
+        "net": 13,
+        "q05": -16,
+        "q95": 42
+      },
+      "seen": {
+        "net": 12,
+        "q05": -5,
+        "q95": 30
+      },
+      "new": {
+        "net": 1,
+        "q05": -23,
+        "q95": 23
+      }
+    },
+    "replica": {
+      "all": {
+        "net": 10,
+        "q05": -20,
+        "q95": 40
+      },
+      "seen": {
+        "net": 8,
+        "q05": -11,
+        "q95": 26
+      },
+      "new": {
+        "net": 2,
+        "q05": -22,
+        "q95": 25
+      }
+    }
+  },
+  "scope": "development reused; holdouts overlap; no public score forecast"
+}
