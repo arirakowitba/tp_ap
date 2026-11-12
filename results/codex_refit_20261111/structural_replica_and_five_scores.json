@@ -1,0 +1,312 @@
+{
+  "replica": {
+    "fit_n": 49472,
+    "val_n": 20528,
+    "seen_n": 6528,
+    "old_holdout_overlap": 10452,
+    "archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+    "code_sha256": "37f6ea681824566f9fb55dcaa38ab8d61b1c5ed6c4c1668b03e719ee1eea2489",
+    "structural_source_sha256": "aa418fe714c108b83b1592a859e9564a77527460875453ccb46cfd6ee59b0d03",
+    "pairs_sha256": "cac323e81ad9cb589e88fddad205a5ac5685c5eedb54b938253ad322ff5e190e",
+    "disagreement_id_sha256": "12a6588018ef90e73ccedf5c4e15a38ba533a6521446a4ba91c788f29c315d39",
+    "model_sha256": "d07d5bd099ea45689685c45cad2a3bb301d6c886b1ebbe0938d561f2c3f20290",
+    "vs_control": {
+      "all": {
+        "n": 20528,
+        "hits": 19035,
+        "baseline_hits": 18945,
+        "net": 90,
+        "fixes": 312,
+        "breaks": 222,
+        "logloss": 0.1870499718186812,
+        "baseline_logloss": 0.19377533972406852,
+        "seller_q05": 40.0,
+        "seller_q95": 143.0
+      },
+      "seen": {
+        "n": 6528,
+        "hits": 6221,
+        "baseline_hits": 6199,
+        "net": 22,
+        "fixes": 75,
+        "breaks": 53,
+        "logloss": 0.1286127507347373,
+        "baseline_logloss": 0.1344278471682295,
+        "seller_q05": 3.0,
+        "seller_q95": 40.0
+      },
+      "new": {
+        "n": 14000,
+        "hits": 12814,
+        "baseline_hits": 12746,
+        "net": 68,
+        "fixes": 237,
+        "breaks": 169,
+        "logloss": 0.21429841319268014,
+        "baseline_logloss": 0.22144822768153405,
+        "seller_q05": 20.0,
+        "seller_q95": 121.0
+      }
+    },
+    "vs_line3": {
+      "all": {
+        "n": 20528,
+        "hits": 19035,
+        "baseline_hits": 18942,
+        "net": 93,
+        "fixes": 329,
+        "breaks": 236,
+        "logloss": 0.1870499718186812,
+        "baseline_logloss": 0.19186323586114373,
+        "seller_q05": 35.0,
+        "seller_q95": 155.0
+      },
+      "seen": {
+        "n": 6528,
+        "hits": 6221,
+        "baseline_hits": 6197,
+        "net": 24,
+        "fixes": 73,
+        "breaks": 49,
+        "logloss": 0.1286127507347373,
+        "baseline_logloss": 0.1324816471056923,
+        "seller_q05": 6.0,
+        "seller_q95": 43.0
+      },
+      "new": {
+        "n": 14000,
+        "hits": 12814,
+        "baseline_hits": 12745,
+        "net": 69,
+        "fixes": 256,
+        "breaks": 187,
+        "logloss": 0.21429841319268014,
+        "baseline_logloss": 0.21955202238939994,
+        "seller_q05": 17.0,
+        "seller_q95": 126.04999999999995
+      }
+    }
+  },
+  "outside_original": {
+    "rows": 10076,
+    "net_vs_line3": 52,
+    "fixes": 178,
+    "breaks": 126
+  },
+  "outside_both": {
+    "rows": 8496,
+    "net_vs_line3": 43,
+    "fixes": 151,
+    "breaks": 108
+  },
+  "parallel_replica_overlap": 6928,
+  "score_audit": {
+    "anchor": 0.94766,
+    "n_public_assumed": 20998,
+    "required_net": 50,
+    "events": {
+      "ap_20261111_01_consenso_ruteado": {
+        "score": 0.94214,
+        "sha256": "ce0174ed6976660d87d3606d632c5bf7a1c590c98cc1d0beb87d1f0fae313c25",
+        "flips": 498,
+        "public_net": -116,
+        "public_fixes_bounds": [
+          0,
+          191
+        ],
+        "public_breaks_bounds": [
+          116,
+          307
+        ],
+        "seen": 301,
+        "new_to_used": 273
+      },
+      "ap_proxima_disjunta_104": {
+        "score": 0.94652,
+        "sha256": "3d2dad883ef57f2fef929883b407d16bb0f664f9ee6547bbbf66b1b6d7d71176",
+        "flips": 104,
+        "public_net": -24,
+        "public_fixes_bounds": [
+          0,
+          40
+        ],
+        "public_breaks_bounds": [
+          24,
+          64
+        ],
+        "seen": 35,
+        "new_to_used": 39
+      },
+      "ap_quinta_catboost_disjunta": {
+        "score": 0.94509,
+        "sha256": "574d059502567b36f670b3bb816703ebe3f41cd39bb89999c3a4af8ad324deb9",
+        "flips": 189,
+        "public_net": -54,
+        "public_fixes_bounds": [
+          0,
+          67
+        ],
+        "public_breaks_bounds": [
+          54,
+          121
+        ],
+        "seen": 128,
+        "new_to_used": 92
+      },
+      "ap_probe_A_refit_exclusivo": {
+        "score": 0.94538,
+        "sha256": "ee5674c17b75c8af95da44ec252a37aff6f5a37e48341c21966a243dfceb4647",
+        "flips": 168,
+        "public_net": -48,
+        "public_fixes_bounds": [
+          0,
+          60
+        ],
+        "public_breaks_bounds": [
+          48,
+          108
+        ],
+        "seen": 88,
+        "new_to_used": 62
+      },
+      "ap_probe_B_ag_exclusivo": {
+        "score": 0.9448,
+        "sha256": "955c94597db005af365625047b49f517989280110b73e017fb074c09b34ef349",
+        "flips": 199,
+        "public_net": -60,
+        "public_fixes_bounds": [
+          0,
+          69
+        ],
+        "public_breaks_bounds": [
+          60,
+          129
+        ],
+        "seen": 117,
+        "new_to_used": 100
+      }
+    },
+    "overlap_matrix": [
+      [
+        498,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        104,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        189,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        168,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        199
+      ]
+    ],
+    "union_flips": 1158,
+    "union_delta": -302,
+    "union_score": 0.9332793599390418,
+    "history_constraints": 53,
+    "quarantined": {
+      "EVT-022": "distance",
+      "EVT-005": "distance",
+      "EVT-004": "distance",
+      "EVT-001": "distance"
+    },
+    "conflicts": [],
+    "incompatible": [
+      "EVT-018",
+      "EVT-052"
+    ],
+    "certificate": {
+      "groups": 571,
+      "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "flips": 0,
+      "lower_hits": 0.0
+    },
+    "positive_pair_bounds": 0
+  },
+  "bounds": {
+    "constraints": 53,
+    "public_n_assumed": 20998,
+    "vectors": {
+      "ap_20261111_02_refit_ruteado": {
+        "flips": 986,
+        "sha256": "cd371ccb24d48e3720c7a60c79710f8b9f97a102a697d8d7de4544aa88cb1aa7",
+        "overlap": {
+          "ap_20261111_01_consenso_ruteado": 463,
+          "ap_proxima_disjunta_104": 104,
+          "ap_quinta_catboost_disjunta": 186,
+          "ap_probe_A_refit_exclusivo": 168,
+          "ap_probe_B_ag_exclusivo": 0
+        },
+        "net_bounds_five": [
+          -345.0,
+          -139.0
+        ],
+        "net_bounds_all_compatible": [
+          -345.0,
+          -139.0
+        ]
+      },
+      "ap_20261111_03_especialistas_ag": {
+        "flips": 785,
+        "sha256": "0f2b2d2c6db69dde66a9eae5f66c61b51ed2d0bdd62cd9862dcf97b39805de28",
+        "overlap": {
+          "ap_20261111_01_consenso_ruteado": 428,
+          "ap_proxima_disjunta_104": 104,
+          "ap_quinta_catboost_disjunta": 0,
+          "ap_probe_A_refit_exclusivo": 0,
+          "ap_probe_B_ag_exclusivo": 199
+        },
+        "net_bounds_five": [
+          -324.0,
+          -76.0
+        ],
+        "net_bounds_all_compatible": [
+          -324.0,
+          -78.0
+        ]
+      },
+      "ap_20261112_structural_exploratorio": {
+        "flips": 250,
+        "sha256": "e6e39b1dd797c38425d11c1cfea005db8781a6c74fb3fc60be257ba10030a9fd",
+        "overlap": {
+          "ap_20261111_01_consenso_ruteado": 8,
+          "ap_proxima_disjunta_104": 0,
+          "ap_quinta_catboost_disjunta": 3,
+          "ap_probe_A_refit_exclusivo": 0,
+          "ap_probe_B_ag_exclusivo": 24
+        },
+        "net_bounds_five": [
+          -250.0,
+          250.0
+        ],
+        "net_bounds_all_compatible": [
+          -250.0,
+          250.0
+        ]
+      }
+    }
+  }
+}
