@@ -1,0 +1,88 @@
+{
+  "events": 54,
+  "consistent_events": 50,
+  "accepted_ids": [
+    "ap_proxima_disjunta_104",
+    "ap_20261111_01_consenso_ruteado",
+    "S5",
+    "S3",
+    "S2",
+    "S1",
+    "EVT-143",
+    "EVT-142",
+    "EVT-141",
+    "EVT-140",
+    "EVT-139",
+    "EVT-138",
+    "EVT-137",
+    "EVT-136",
+    "EVT-135",
+    "EVT-134",
+    "EVT-133",
+    "EVT-132",
+    "EVT-131",
+    "EVT-130",
+    "EVT-129",
+    "EVT-128",
+    "EVT-127",
+    "EVT-126",
+    "EVT-124",
+    "EVT-123",
+    "EVT-122",
+    "EVT-121",
+    "EVT-120",
+    "EVT-118",
+    "EVT-072",
+    "EVT-069",
+    "EVT-068",
+    "EVT-067",
+    "EVT-063",
+    "EVT-054",
+    "EVT-053",
+    "EVT-051",
+    "EVT-045",
+    "EVT-028",
+    "EVT-027",
+    "EVT-026",
+    "EVT-025",
+    "EVT-024",
+    "EVT-023",
+    "EVT-021",
+    "EVT-020",
+    "EVT-019",
+    "EVT-006",
+    "EVT-002"
+  ],
+  "quarantined": [
+    {
+      "id": "EVT-022",
+      "reason": "anchor distance bound"
+    },
+    {
+      "id": "EVT-005",
+      "reason": "pair distance bound"
+    },
+    {
+      "id": "EVT-004",
+      "reason": "pair distance bound"
+    },
+    {
+      "id": "EVT-001",
+      "reason": "pair distance bound"
+    }
+  ],
+  "conflicts": [],
+  "incompatible": [
+    "EVT-018",
+    "EVT-052"
+  ],
+  "pair_blocks": 0,
+  "best_pair_blocks": [],
+  "aggregate": {
+    "groups": 480,
+    "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "flips": 0,
+    "lower_hits": 0.0
+  },
+  "n_public_assumed": 20998
+}
