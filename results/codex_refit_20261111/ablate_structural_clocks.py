@@ -1,4 +1,5 @@
 """Frozen two-factor ablation on the CX-0172 seller-group development split."""
+import hashlib
 import json
 from pathlib import Path
 import sys
@@ -28,7 +29,6 @@ def main():
     val = pd.Index(df.id).get_indexer(paired.id)
     assert (val >= 0).all() and np.array_equal(df.y.to_numpy()[val], paired.y)
     fit = np.setdiff1d(np.arange(len(df)), val)
-    import hashlib
     cache_key = hashlib.sha256(np.r_[fit, val].tobytes()).hexdigest()[:16]
     cache = prior / f"text_{cache_key}.npz"
     assert cache.is_file()
@@ -41,7 +41,7 @@ def main():
     hist = add_history(df, fit, np.r_[fit, val])
     t = [7, 8, 9]  # creation minus start, update minus creation, creation time-of-day
     other = [i for i in range(extras.shape[1]) if i not in t]
-    assert extras.shape[1] == 19
+    assert extras.shape[1] == 20
     added = {
         "clocks_only": (extras[fit][:, t], extras[val][:, t]),
         "attributes_history": (np.column_stack([extras[fit][:, other], hist[:len(fit)]]),
