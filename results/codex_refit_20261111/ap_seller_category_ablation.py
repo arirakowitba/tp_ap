@@ -22,26 +22,21 @@ def add_history(frame, fit, query):
     all_price = np.log1p(frame.price.to_numpy().clip(0))
     for keys in [("seller_id", "category_id"), ("seller_id", "brand_val"),
                  ("seller_id", "listing_type_id")]:
-        history = {}
-        table = frame.iloc[fit].assign(log_price=all_price[fit])
-        for key, rows in table.groupby(list(keys), sort=False):
-            bins = rows.groupby("start_time").agg(n=("y", "size"), used=("y", "sum"),
-                                                  price=("log_price", "sum"))
-            history[key] = (bins.index.to_numpy(), np.r_[0, bins.n.cumsum()],
-                            np.r_[0, bins.used.cumsum()], np.r_[0, bins.price.cumsum()])
-        cols = np.full((len(query), 3), np.nan, dtype=np.float32)
-        cols[:, 0] = 0
-        for j, (key, stamp, price) in enumerate(zip(
-                frame.iloc[query][list(keys)].itertuples(index=False, name=None),
-                frame.start_time.iloc[query], all_price[query], strict=True)):
-            if key in history:
-                times, n, used, prices = history[key]
-                i = np.searchsorted(times, stamp, side="left")
-                cols[j, 0] = np.log1p(n[i])
-                if n[i]:
-                    cols[j, 1] = (used[i] + 2) / (n[i] + 4)
-                    cols[j, 2] = price - prices[i] / n[i]
-        blocks.append(cols)
+        key_list = list(keys)
+        fields = [*key_list, "start_time"]
+        table = frame.iloc[fit][[*fields, "y"]].assign(log_price=all_price[fit])
+        bins = table.groupby(fields, as_index=False).agg(
+            n=("y", "size"), used=("y", "sum"), sum_price=("log_price", "sum"))
+        bins = bins.sort_values("start_time", kind="stable")
+        values = ["n", "used", "sum_price"]
+        bins[values] = bins.groupby(key_list, sort=False)[values].cumsum()
+        targets = frame.iloc[query][fields].assign(position=np.arange(len(query)))
+        linked = pd.merge_asof(targets.sort_values("start_time", kind="stable"), bins,
+                               on="start_time", by=key_list, allow_exact_matches=False)
+        linked = linked.sort_values("position", kind="stable")
+        blocks.append(np.column_stack((np.log1p(linked.n.fillna(0)),
+                                       (linked.used + 2) / (linked.n + 4),
+                                       all_price[query] - linked.sum_price / linked.n)).astype(np.float32))
     return np.column_stack(blocks)
 
 
