@@ -1,0 +1,275 @@
+{
+  "warm_heavy": {
+    "train_rows": 46157,
+    "validation_rows": 23843,
+    "seen_rows": 15809,
+    "fresh_rows": 3902,
+    "fresh_seen_rows": 2355,
+    "archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+    "split_sha256": "7c8664785a315314e21970f9c52dd49df97fa8cdea97a69ea889d40cc4817ff6",
+    "runner_sha256": "e8052ad4b898827f3888459efd94a437d421b8a79bea85eddeaf5d7c47faaaca",
+    "prior_pairs": [
+      {
+        "file": "line3_today/pairs.csv",
+        "sha256": "304a703d77b2a978254072028ea39538d3a3b227dddc044c90f11642d3d66d99"
+      },
+      {
+        "file": "model_today/pairs.csv",
+        "sha256": "f5284361148ec5b1854324571aadcdd3bd891c996e643b0721d455041d8dc407"
+      },
+      {
+        "file": "5f1fcd4a32e7/structural_replication.csv",
+        "sha256": "daee2cb05c732a0be8bcccca4916d96dbf03b7fb83c107eb89794e81b6ce8f00"
+      },
+      {
+        "file": "seller_category_result/pairs_private.csv",
+        "sha256": "5bb6c7841115d81687af81d0a5184339091393e58310c22f2851db9bf0df0e2f"
+      },
+      {
+        "file": "media_link_result/pairs_private.csv",
+        "sha256": "bfdd25cca991f7739832ff22117635d96ae35b532ce1c652f4a403435d97be49"
+      },
+      {
+        "file": "structural_replica/pairs_private.csv",
+        "sha256": "cac323e81ad9cb589e88fddad205a5ac5685c5eedb54b938253ad322ff5e190e"
+      },
+      {
+        "file": "structural_disjoint/pairs_private.csv",
+        "sha256": "b806773a876f3b047039512217689f13766777baafcec079601114a0d1cf389e"
+      },
+      {
+        "file": "structural_heldout_confirm/pairs_private.csv",
+        "sha256": "58802bbc00921ff48d4ffba556c41ab58b3485c81e5c872815f9888220829987"
+      }
+    ],
+    "protocol": "Fixed LightGBM settings and threshold; validate latest listings causally for warm sellers; cold sellers disjoint; exclusive cohort excludes archived local validation IDs.",
+    "metrics": {
+      "all": {
+        "n": 23843,
+        "hits": 22623,
+        "baseline_hits": 22603,
+        "net": 20,
+        "fixes": 109,
+        "breaks": 89,
+        "logloss": 0.1380679626056111,
+        "baseline_logloss": 0.13916943181268707,
+        "seller_q05_q95": [
+          -4.0,
+          43.0
+        ],
+        "seller_category_q05_q95": [
+          -20.049999999999997,
+          62.0
+        ]
+      },
+      "seen": {
+        "n": 15809,
+        "hits": 15231,
+        "baseline_hits": 15222,
+        "net": 9,
+        "fixes": 53,
+        "breaks": 44,
+        "logloss": 0.1047834350087098,
+        "baseline_logloss": 0.10609346716334447,
+        "seller_q05_q95": [
+          -7.0,
+          24.0
+        ],
+        "seller_category_q05_q95": [
+          -19.0,
+          36.04999999999973
+        ]
+      },
+      "new": {
+        "n": 8034,
+        "hits": 7392,
+        "baseline_hits": 7381,
+        "net": 11,
+        "fixes": 56,
+        "breaks": 45,
+        "logloss": 0.2035639915798969,
+        "baseline_logloss": 0.20425505854177065,
+        "seller_q05_q95": [
+          -6.0,
+          28.0
+        ],
+        "seller_category_q05_q95": [
+          -18.0,
+          40.0
+        ]
+      },
+      "fresh": {
+        "n": 3902,
+        "hits": 3685,
+        "baseline_hits": 3687,
+        "net": -2,
+        "fixes": 13,
+        "breaks": 15,
+        "logloss": 0.14007079034900102,
+        "baseline_logloss": 0.1407668046320189,
+        "seller_q05_q95": [
+          -12.0,
+          7.0
+        ],
+        "seller_category_q05_q95": [
+          -18.0,
+          13.0
+        ]
+      },
+      "fresh_seen": {
+        "n": 2355,
+        "hits": 2289,
+        "baseline_hits": 2290,
+        "net": -1,
+        "fixes": 4,
+        "breaks": 5,
+        "logloss": 0.0850565115543575,
+        "baseline_logloss": 0.08752545413308238,
+        "seller_q05_q95": [
+          -7.0,
+          4.0
+        ],
+        "seller_category_q05_q95": [
+          -10.0,
+          7.0
+        ]
+      },
+      "fresh_new": {
+        "n": 1547,
+        "hits": 1396,
+        "baseline_hits": 1397,
+        "net": -1,
+        "fixes": 9,
+        "breaks": 10,
+        "logloss": 0.22381909452572082,
+        "baseline_logloss": 0.22181617788670252,
+        "seller_q05_q95": [
+          -9.0,
+          7.0
+        ],
+        "seller_category_q05_q95": [
+          -14.0,
+          12.0
+        ]
+      }
+    },
+    "disagreement_ids_sha256": "415c8bbdd16f314810d17c8b17c878aaf3c51c76fdec851f31a4fb5e15bc2116",
+    "pairs_sha256": "92ce80f21cd3f6be30149194064af3f0d22fa703d6e43d0fe19ee95b49960037",
+    "model_sha256": {
+      "attributes": "67c4cfb4fb389d7bde45555323e64a0951f232e90cdcf4c33dc3f06100123b09",
+      "recent_history": "8e9b168c227baf64890f625d987425401b07a4de299ac4a53ae6b4284016e86a"
+    }
+  },
+  "cx0177_replay": {
+    "scope": "Reused CX-0177 evaluation. No public projection.",
+    "fit_rows": 60394,
+    "validation_rows": 7632,
+    "split_sha256": "aeb858e0fd5a4e4edc1813f9e306977eba977da278c12eb1b7217eec6be7fa16",
+    "pairs_sha256": "51be023e37e9f32b4b51cf37a5b2af4222e6301c9bf3faac970efe1084e654ea",
+    "reference_pairs_sha256": "58802bbc00921ff48d4ffba556c41ab58b3485c81e5c872815f9888220829987",
+    "runner_sha256": "5b246bd761db2801d2dbab5704333b2cbf572e30eb35efd5678df710c32fca72",
+    "model_sha256": "171730b3b6f20c4ebbf8653d4b2ddb52627f6c6daf613ed62c3218b9ea768ff4",
+    "disagreement_ids_sha256": "ba49b5464775290d4e8f374f0b709f862c482ffb5b25e061940179526dfc9ccf",
+    "metrics": {
+      "all": {
+        "n": 7632,
+        "hits": 7007,
+        "baseline_hits": 7013,
+        "net": -6,
+        "fixes": 48,
+        "breaks": 54,
+        "logloss": 0.2124015290650003,
+        "baseline_logloss": 0.21422698786784905,
+        "seller_q05_q95": [
+          -23.0,
+          11.0
+        ],
+        "seller_category_q05_q95": [
+          -35.0,
+          22.0
+        ]
+      },
+      "seen": {
+        "n": 496,
+        "hits": 482,
+        "baseline_hits": 482,
+        "net": 0,
+        "fixes": 1,
+        "breaks": 1,
+        "logloss": 0.07191914226469932,
+        "baseline_logloss": 0.07888015416367225,
+        "seller_q05_q95": [
+          -2.0,
+          2.0
+        ],
+        "seller_category_q05_q95": [
+          -4.0,
+          4.0
+        ]
+      },
+      "new": {
+        "n": 7136,
+        "hits": 6525,
+        "baseline_hits": 6531,
+        "net": -6,
+        "fixes": 47,
+        "breaks": 53,
+        "logloss": 0.22216599989641136,
+        "baseline_logloss": 0.22363450321500034,
+        "seller_q05_q95": [
+          -23.0,
+          12.0
+        ],
+        "seller_category_q05_q95": [
+          -34.0,
+          23.0
+        ]
+      }
+    }
+  },
+  "logloss_improvement": {
+    "warm_heavy_all": {
+      "sellers": 7219,
+      "mean": 0.0011014692070760047,
+      "seller_q05_q95": [
+        6.746516716441247e-05,
+        0.0021018980442503044
+      ]
+    },
+    "warm_heavy_fresh_seen": {
+      "sellers": 409,
+      "mean": 0.0024689425787248562,
+      "seller_q05_q95": [
+        1.556760848942801e-05,
+        0.005327764676981913
+      ]
+    },
+    "replay_all": {
+      "sellers": 3985,
+      "mean": 0.001825458802848744,
+      "seller_q05_q95": [
+        -0.00014000582620432228,
+        0.003911324343680855
+      ]
+    },
+    "replay_seen": {
+      "sellers": 440,
+      "mean": 0.006961011898972952,
+      "seller_q05_q95": [
+        0.0012344228656726087,
+        0.013201435560865617
+      ]
+    }
+  },
+  "logloss_bootstrap": "Use paired per-row baseline loss minus candidate loss, clip probabilities at 1e-7. Group rows by seller. Resample sellers uniformly with replacement (2500 draws, seed 28111215 independently per cohort), and divide each draw by resampled row count.",
+  "versions": {
+    "lightgbm": "4.7.0",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "execution": [
+    "python -u validate_recent_seller_history.py \"$AP_ARCHIVE\" \"$AP_OLD_RUNNER\" \"$AP_SELLER_RUNNER\" \"$AP_STRUCTURAL_HELPER\" <eight archived pair files in prior_pairs order>",
+    "python -u replay_recent_seller_history.py \"$AP_ARCHIVE\" \"$AP_OLD_RUNNER\" \"$AP_SELLER_RUNNER\" \"$AP_STRUCTURAL_HELPER\" <seven CX-0177 historical panels in order>"
+  ],
+  "scope": "Train-only; warm-heavy full panel overlaps earlier evaluations. Its exclusive subset and the CX-0177 replay have disjoint evaluation IDs. No public inference."
+}
