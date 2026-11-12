@@ -1,0 +1,45 @@
+{
+  "train_rows": 46157,
+  "validation_rows": 23843,
+  "seen_rows": 15809,
+  "fresh_rows": 3902,
+  "fresh_seen_rows": 2355,
+  "archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+  "split_sha256": "7c8664785a315314e21970f9c52dd49df97fa8cdea97a69ea889d40cc4817ff6",
+  "runner_sha256": "e8052ad4b898827f3888459efd94a437d421b8a79bea85eddeaf5d7c47faaaca",
+  "prior_pairs": [
+    {
+      "file": "line3_today/pairs.csv",
+      "sha256": "304a703d77b2a978254072028ea39538d3a3b227dddc044c90f11642d3d66d99"
+    },
+    {
+      "file": "model_today/pairs.csv",
+      "sha256": "f5284361148ec5b1854324571aadcdd3bd891c996e643b0721d455041d8dc407"
+    },
+    {
+      "file": "5f1fcd4a32e7/structural_replication.csv",
+      "sha256": "daee2cb05c732a0be8bcccca4916d96dbf03b7fb83c107eb89794e81b6ce8f00"
+    },
+    {
+      "file": "seller_category_result/pairs_private.csv",
+      "sha256": "5bb6c7841115d81687af81d0a5184339091393e58310c22f2851db9bf0df0e2f"
+    },
+    {
+      "file": "media_link_result/pairs_private.csv",
+      "sha256": "bfdd25cca991f7739832ff22117635d96ae35b532ce1c652f4a403435d97be49"
+    },
+    {
+      "file": "structural_replica/pairs_private.csv",
+      "sha256": "cac323e81ad9cb589e88fddad205a5ac5685c5eedb54b938253ad322ff5e190e"
+    },
+    {
+      "file": "structural_disjoint/pairs_private.csv",
+      "sha256": "b806773a876f3b047039512217689f13766777baafcec079601114a0d1cf389e"
+    },
+    {
+      "file": "structural_heldout_confirm/pairs_private.csv",
+      "sha256": "58802bbc00921ff48d4ffba556c41ab58b3485c81e5c872815f9888220829987"
+    }
+  ],
+  "protocol": "Fixed LightGBM settings and threshold; validate latest listings causally for warm sellers; cold sellers disjoint; exclusive cohort excludes archived local validation IDs."
+}
