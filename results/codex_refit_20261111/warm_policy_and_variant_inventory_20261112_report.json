@@ -1,0 +1,508 @@
+{
+  "warm_history_policy": {
+    "scope": "Development replay from archived paired scores. Meta-fit sellers and IDs disjoint from warm evaluation; base fits of the two panels can overlap, and prior global evaluations may have used these rows.",
+    "archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+    "runner_sha256": "2188a33a508a6525373c3e8cf72a1c9987a2e17e491b1aac62a8d9ada0519534",
+    "input_sha256": [
+      "92ce80f21cd3f6be30149194064af3f0d22fa703d6e43d0fe19ee95b49960037",
+      "51be023e37e9f32b4b51cf37a5b2af4222e6301c9bf3faac970efe1084e654ea"
+    ],
+    "tune_rows": 10972,
+    "tune_sellers": 3090,
+    "warm_confirm_seller_overlap_with_tune": 0,
+    "selected_weight": 0.5,
+    "weight_logloss": [
+      [
+        0.0,
+        0.10647376231682594
+      ],
+      [
+        0.25,
+        0.10564913893669506
+      ],
+      [
+        0.5,
+        0.10535552838392168
+      ],
+      [
+        0.75,
+        0.10553948168998446
+      ],
+      [
+        1.0,
+        0.1062526397235643
+      ]
+    ],
+    "meta_threshold": 0.5299640517645717,
+    "meta_parameters": {
+      "intercept": [
+        -0.17331230001421202
+      ],
+      "coef": [
+        [
+          0.8390381793404637,
+          0.347510417703382
+        ]
+      ]
+    },
+    "meta_oof_logloss": 0.10254924231058957,
+    "metrics": {
+      "exclusive": {
+        "fixed_50": {
+          "all": {
+            "n": 3902,
+            "hits": 3687,
+            "baseline_hits": 3687,
+            "net": 0,
+            "fixes": 1,
+            "breaks": 1,
+            "logloss": 0.1394572471700122,
+            "baseline_logloss": 0.1407668046320189,
+            "seller_q05_q95": [
+              -2.0,
+              2.0
+            ],
+            "seller_category_q05_q95": [
+              -4.0,
+              4.0
+            ]
+          },
+          "seen": {
+            "n": 2355,
+            "hits": 2290,
+            "baseline_hits": 2290,
+            "net": 0,
+            "fixes": 1,
+            "breaks": 1,
+            "logloss": 0.08535564809624581,
+            "baseline_logloss": 0.08752545413308237,
+            "seller_q05_q95": [
+              -2.0,
+              2.0
+            ],
+            "seller_category_q05_q95": [
+              -4.0,
+              4.0
+            ]
+          },
+          "disagreement_ids_sha256": "8604903dedf0811a0048f21174d8e0a5503c212c34750c7a102d32d2083fe909"
+        },
+        "selected_weight": {
+          "all": {
+            "n": 3902,
+            "hits": 3687,
+            "baseline_hits": 3687,
+            "net": 0,
+            "fixes": 1,
+            "breaks": 1,
+            "logloss": 0.1394572471700122,
+            "baseline_logloss": 0.1407668046320189,
+            "seller_q05_q95": [
+              -2.0,
+              2.0
+            ],
+            "seller_category_q05_q95": [
+              -4.0,
+              4.0
+            ]
+          },
+          "seen": {
+            "n": 2355,
+            "hits": 2290,
+            "baseline_hits": 2290,
+            "net": 0,
+            "fixes": 1,
+            "breaks": 1,
+            "logloss": 0.08535564809624581,
+            "baseline_logloss": 0.08752545413308237,
+            "seller_q05_q95": [
+              -2.0,
+              2.0
+            ],
+            "seller_category_q05_q95": [
+              -4.0,
+              4.0
+            ]
+          },
+          "disagreement_ids_sha256": "8604903dedf0811a0048f21174d8e0a5503c212c34750c7a102d32d2083fe909"
+        },
+        "logistic": {
+          "all": {
+            "n": 3902,
+            "hits": 3688,
+            "baseline_hits": 3687,
+            "net": 1,
+            "fixes": 3,
+            "breaks": 2,
+            "logloss": 0.13778379256601386,
+            "baseline_logloss": 0.1407668046320189,
+            "seller_q05_q95": [
+              -3.0,
+              5.0
+            ],
+            "seller_category_q05_q95": [
+              -5.0,
+              7.0
+            ]
+          },
+          "seen": {
+            "n": 2355,
+            "hits": 2291,
+            "baseline_hits": 2290,
+            "net": 1,
+            "fixes": 3,
+            "breaks": 2,
+            "logloss": 0.08258290080758275,
+            "baseline_logloss": 0.08752545413308237,
+            "seller_q05_q95": [
+              -3.0,
+              5.0
+            ],
+            "seller_category_q05_q95": [
+              -5.0,
+              7.0
+            ]
+          },
+          "disagreement_ids_sha256": "eea97125dbbc4e2b82be2e0e675b5b41fecdfc586b6a7705aab92a8d159f3e84"
+        }
+      },
+      "replay": {
+        "fixed_50": {
+          "all": {
+            "n": 7632,
+            "hits": 7014,
+            "baseline_hits": 7013,
+            "net": 1,
+            "fixes": 1,
+            "breaks": 0,
+            "logloss": 0.213950760148039,
+            "baseline_logloss": 0.21422698786784905,
+            "seller_q05_q95": [
+              0.0,
+              3.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              4.0
+            ]
+          },
+          "seen": {
+            "n": 496,
+            "hits": 483,
+            "baseline_hits": 482,
+            "net": 1,
+            "fixes": 1,
+            "breaks": 0,
+            "logloss": 0.07462981150724007,
+            "baseline_logloss": 0.07888015416367225,
+            "seller_q05_q95": [
+              0.0,
+              3.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              4.0
+            ]
+          },
+          "disagreement_ids_sha256": "bf14962d4f6ee69d904cbafeed61d6e159c249f58f706bcdd32b126b2ce36025"
+        },
+        "selected_weight": {
+          "all": {
+            "n": 7632,
+            "hits": 7014,
+            "baseline_hits": 7013,
+            "net": 1,
+            "fixes": 1,
+            "breaks": 0,
+            "logloss": 0.213950760148039,
+            "baseline_logloss": 0.21422698786784905,
+            "seller_q05_q95": [
+              0.0,
+              3.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              4.0
+            ]
+          },
+          "seen": {
+            "n": 496,
+            "hits": 483,
+            "baseline_hits": 482,
+            "net": 1,
+            "fixes": 1,
+            "breaks": 0,
+            "logloss": 0.07462981150724007,
+            "baseline_logloss": 0.07888015416367225,
+            "seller_q05_q95": [
+              0.0,
+              3.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              4.0
+            ]
+          },
+          "disagreement_ids_sha256": "bf14962d4f6ee69d904cbafeed61d6e159c249f58f706bcdd32b126b2ce36025"
+        },
+        "logistic": {
+          "all": {
+            "n": 7632,
+            "hits": 7010,
+            "baseline_hits": 7013,
+            "net": -3,
+            "fixes": 1,
+            "breaks": 4,
+            "logloss": 0.21437657033110466,
+            "baseline_logloss": 0.21422698786784905,
+            "seller_q05_q95": [
+              -7.0,
+              1.0
+            ],
+            "seller_category_q05_q95": [
+              -10.0,
+              2.0
+            ]
+          },
+          "seen": {
+            "n": 496,
+            "hits": 479,
+            "baseline_hits": 482,
+            "net": -3,
+            "fixes": 1,
+            "breaks": 4,
+            "logloss": 0.08118179400150852,
+            "baseline_logloss": 0.07888015416367225,
+            "seller_q05_q95": [
+              -7.0,
+              0.0
+            ],
+            "seller_category_q05_q95": [
+              -10.0,
+              2.0
+            ]
+          },
+          "disagreement_ids_sha256": "274be4b4d36c53a92d9316a7ff8ed7cb17e2e4388b802407466074a1b4e3eff2"
+        }
+      }
+    },
+    "private_pairs_sha256": {
+      "exclusive": "87f0e0bc4c7d085eac51bff8c00e6aec404b004b8d2fe0153428d6a8ac65509f",
+      "replay": "c027079c8dfe0ad2c212a62aca6ced2286e9e39ecbd3b6943ed5d02b8012ad10"
+    }
+  },
+  "variant_inventory": {
+    "scope": "Two archived development panels. The warm exclusive cohort excludes the earlier panel IDs. Threshold fixed at .5, routed only for existing variants; outside support reuses the baseline.",
+    "archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+    "runner_sha256": "0669291c625579eecef055df828de9f7970107eeee19e701ee8e87faefad0afb",
+    "panels": {
+      "recent_seller_history": {
+        "split_sha256": "7c8664785a315314e21970f9c52dd49df97fa8cdea97a69ea889d40cc4817ff6",
+        "baseline_pairs_sha256": "92ce80f21cd3f6be30149194064af3f0d22fa703d6e43d0fe19ee95b49960037",
+        "pairs_sha256": "3242ae4471a246eae85712a32582789c491649a9c029be8b28520808c8fd6ed3",
+        "model_sha256": "4d60ef608b3b4243d8404b3b528d4eb458622cf2e3cebc78c8ec73abb05a7832",
+        "disagreement_ids_sha256": "90df2d2dcf6ce2579a6a29690bc18b302484c23a6faf5eb0c276eff387d3efc8",
+        "metrics": {
+          "all": {
+            "n": 23843,
+            "hits": 22603,
+            "baseline_hits": 22603,
+            "net": 0,
+            "fixes": 16,
+            "breaks": 16,
+            "logloss": 0.13942625189198637,
+            "baseline_logloss": 0.13916943181268707,
+            "seller_q05_q95": [
+              -10.0,
+              11.0
+            ],
+            "seller_category_q05_q95": [
+              -17.0,
+              19.0
+            ]
+          },
+          "variations": {
+            "n": 1469,
+            "hits": 1351,
+            "baseline_hits": 1351,
+            "net": 0,
+            "fixes": 16,
+            "breaks": 16,
+            "logloss": 0.18994144086971546,
+            "baseline_logloss": 0.1857730534287812,
+            "seller_q05_q95": [
+              -11.0,
+              11.0
+            ],
+            "seller_category_q05_q95": [
+              -17.0,
+              19.0
+            ]
+          },
+          "fresh": {
+            "n": 3902,
+            "hits": 3684,
+            "baseline_hits": 3687,
+            "net": -3,
+            "fixes": 3,
+            "breaks": 6,
+            "logloss": 0.14180811524643616,
+            "baseline_logloss": 0.1407668046320189,
+            "seller_q05_q95": [
+              -8.0,
+              2.0
+            ],
+            "seller_category_q05_q95": [
+              -12.0,
+              5.0
+            ]
+          },
+          "fresh_variations": {
+            "n": 218,
+            "hits": 190,
+            "baseline_hits": 193,
+            "net": -3,
+            "fixes": 3,
+            "breaks": 6,
+            "logloss": 0.265501924499208,
+            "baseline_logloss": 0.24686341983197804,
+            "seller_q05_q95": [
+              -8.0,
+              2.0
+            ],
+            "seller_category_q05_q95": [
+              -12.0,
+              5.0
+            ]
+          },
+          "fresh_seen": {
+            "n": 2355,
+            "hits": 2290,
+            "baseline_hits": 2290,
+            "net": 0,
+            "fixes": 0,
+            "breaks": 0,
+            "logloss": 0.08817778560341986,
+            "baseline_logloss": 0.08752545413308237,
+            "seller_q05_q95": [
+              0.0,
+              0.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "structural_heldout_confirm": {
+        "split_sha256": "aeb858e0fd5a4e4edc1813f9e306977eba977da278c12eb1b7217eec6be7fa16",
+        "baseline_pairs_sha256": "58802bbc00921ff48d4ffba556c41ab58b3485c81e5c872815f9888220829987",
+        "pairs_sha256": "36d0b01ffe01531687ef9133ff051565d57b40fff14fcb5c3753322b15dd8c50",
+        "model_sha256": "c575db2acbbdf68f90a613e7d78a4a469cf16dc1e505ceccad3a0b51eec58db1",
+        "disagreement_ids_sha256": "31b9de4e2e5c107b2a59acf879acc82799cceb89686cb771ed390a855cd8b388",
+        "metrics": {
+          "all": {
+            "n": 7632,
+            "hits": 7010,
+            "baseline_hits": 7013,
+            "net": -3,
+            "fixes": 4,
+            "breaks": 7,
+            "logloss": 0.2146039029918142,
+            "baseline_logloss": 0.21422698786784905,
+            "seller_q05_q95": [
+              -8.0,
+              2.0
+            ],
+            "seller_category_q05_q95": [
+              -13.0,
+              6.0
+            ]
+          },
+          "variations": {
+            "n": 592,
+            "hits": 541,
+            "baseline_hits": 544,
+            "net": -3,
+            "fixes": 4,
+            "breaks": 7,
+            "logloss": 0.19804107880749333,
+            "baseline_logloss": 0.1931819297769157,
+            "seller_q05_q95": [
+              -8.0,
+              2.0
+            ],
+            "seller_category_q05_q95": [
+              -13.0,
+              6.0
+            ]
+          },
+          "fresh": {
+            "n": 7632,
+            "hits": 7010,
+            "baseline_hits": 7013,
+            "net": -3,
+            "fixes": 4,
+            "breaks": 7,
+            "logloss": 0.2146039029918142,
+            "baseline_logloss": 0.21422698786784905,
+            "seller_q05_q95": [
+              -8.0,
+              2.0
+            ],
+            "seller_category_q05_q95": [
+              -13.0,
+              6.0
+            ]
+          },
+          "fresh_variations": {
+            "n": 592,
+            "hits": 541,
+            "baseline_hits": 544,
+            "net": -3,
+            "fixes": 4,
+            "breaks": 7,
+            "logloss": 0.19804107880749333,
+            "baseline_logloss": 0.1931819297769157,
+            "seller_q05_q95": [
+              -8.0,
+              2.0
+            ],
+            "seller_category_q05_q95": [
+              -13.0,
+              6.0
+            ]
+          },
+          "fresh_seen": {
+            "n": 496,
+            "hits": 482,
+            "baseline_hits": 482,
+            "net": 0,
+            "fixes": 0,
+            "breaks": 0,
+            "logloss": 0.0788078562188327,
+            "baseline_logloss": 0.07888015416367225,
+            "seller_q05_q95": [
+              0.0,
+              0.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    }
+  },
+  "execution": [
+    "python -u tune_warm_history_policy.py \"$AP_ARCHIVE\"",
+    "python -u validate_variant_inventory.py \"$AP_ARCHIVE\" \"$AP_OLD_RUNNER\" \"$AP_SELLER_RUNNER\" \"$AP_STRUCTURAL_HELPER\" <eight prior pair files in CX-0178 order>"
+  ],
+  "checks": "Nested features tested on empty and single-variation records, quantity reconciliation and invariance to condition. Model predictions only compared on train labels. Data and paired disagreements remain local.",
+  "versions": {
+    "lightgbm": "4.7.0",
+    "python": "3.12.14"
+  }
+}
