@@ -1,0 +1,199 @@
+{
+  "text_model": {
+    "scope": "Train-only replay of two archived panels, fixed parameters and threshold. The exclusive warm-heavy subset and CX-0177 have disjoint IDs. No public forecast.",
+    "archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+    "runner_sha256": "116d74820cdd5cbf7e71e47c0f3288e43b92d3eb763e59a0becedd1253e04348",
+    "shared_runner_sha256": "81d5736e3ad671567a06a3f7d5c2df57ed2abfa9b86e28a9979a8c90f53fe3f6",
+    "phrase_coverage": {
+      "title": 1476,
+      "subtitle": 0,
+      "warranty": 4120
+    },
+    "panels": {
+      "recent_seller_history": {
+        "split_sha256": "7c8664785a315314e21970f9c52dd49df97fa8cdea97a69ea889d40cc4817ff6",
+        "baseline_pairs_sha256": "92ce80f21cd3f6be30149194064af3f0d22fa703d6e43d0fe19ee95b49960037",
+        "pairs_sha256": "776e0f444dcc191d16bf6cf6db233d2d18b2fc4ba75a532f570a5f3d23d0b82a",
+        "model_sha256": "30c62d9e3cf1ba7717e370e9c6dd53309cf86a5a7f0627046dfcb6609503ab61",
+        "disagreement_ids_sha256": "07f815d3d93e4ecf6cd818fd9cbdf5e2797404acb300f6aa9f8c68d263407af3",
+        "metrics": {
+          "all": {
+            "n": 23843,
+            "hits": 22608,
+            "baseline_hits": 22603,
+            "net": 5,
+            "fixes": 82,
+            "breaks": 77,
+            "logloss": 0.13883867215979348,
+            "baseline_logloss": 0.13916943181268707,
+            "seller_q05_q95": [
+              -14.0,
+              26.049999999999727
+            ],
+            "seller_category_q05_q95": [
+              -30.0,
+              41.0
+            ]
+          },
+          "fresh": {
+            "n": 3902,
+            "hits": 3689,
+            "baseline_hits": 3687,
+            "net": 2,
+            "fixes": 14,
+            "breaks": 12,
+            "logloss": 0.1418817048324078,
+            "baseline_logloss": 0.1407668046320189,
+            "seller_q05_q95": [
+              -7.0,
+              12.0
+            ],
+            "seller_category_q05_q95": [
+              -13.0,
+              18.0
+            ]
+          },
+          "fresh_seen": {
+            "n": 2355,
+            "hits": 2288,
+            "baseline_hits": 2290,
+            "net": -2,
+            "fixes": 1,
+            "breaks": 3,
+            "logloss": 0.08791815037665947,
+            "baseline_logloss": 0.08752545413308237,
+            "seller_q05_q95": [
+              -5.0,
+              1.0
+            ],
+            "seller_category_q05_q95": [
+              -8.0,
+              3.0
+            ]
+          }
+        }
+      },
+      "structural_heldout_confirm": {
+        "split_sha256": "aeb858e0fd5a4e4edc1813f9e306977eba977da278c12eb1b7217eec6be7fa16",
+        "baseline_pairs_sha256": "58802bbc00921ff48d4ffba556c41ab58b3485c81e5c872815f9888220829987",
+        "pairs_sha256": "3537d8a6a2bf23d51434811770b704bcde3ab6d625f296017b18085665440388",
+        "model_sha256": "90b53f7217dafa1848c2b1e5b03b275188c903cbd7fe2be2f82667aeb0738cf0",
+        "disagreement_ids_sha256": "dd3adac218f831ba8fb404163979666ff269d37832f6c331e1077ef1221c1ffe",
+        "metrics": {
+          "all": {
+            "n": 7632,
+            "hits": 7013,
+            "baseline_hits": 7013,
+            "net": 0,
+            "fixes": 51,
+            "breaks": 51,
+            "logloss": 0.2131311684920851,
+            "baseline_logloss": 0.21422698786784905,
+            "seller_q05_q95": [
+              -17.0,
+              16.0
+            ],
+            "seller_category_q05_q95": [
+              -29.0,
+              27.0
+            ]
+          },
+          "fresh": {
+            "n": 7632,
+            "hits": 7013,
+            "baseline_hits": 7013,
+            "net": 0,
+            "fixes": 51,
+            "breaks": 51,
+            "logloss": 0.2131311684920851,
+            "baseline_logloss": 0.21422698786784905,
+            "seller_q05_q95": [
+              -17.0,
+              16.0
+            ],
+            "seller_category_q05_q95": [
+              -29.0,
+              27.0
+            ]
+          },
+          "fresh_seen": {
+            "n": 496,
+            "hits": 482,
+            "baseline_hits": 482,
+            "net": 0,
+            "fixes": 0,
+            "breaks": 0,
+            "logloss": 0.08168368183883483,
+            "baseline_logloss": 0.07888015416367225,
+            "seller_q05_q95": [
+              0.0,
+              0.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    "reproduction": "PYTHONPATH=\"$AP_OLD_RUNNER\" OMP_NUM_THREADS=6 OPENBLAS_NUM_THREADS=2 python -u validate_condition_phrases.py \"$AP_ARCHIVE\" \"$AP_OLD_RUNNER\" \"$AP_SELLER_RUNNER\" \"$AP_STRUCTURAL_HELPER\" <eight prior pair files in CX-0178 order>",
+    "checks": "Accent normalization, phrase boundaries, warranty negation and duration checked."
+  },
+  "historical_score_replay": {
+    "scope": "Retrospective day-block replay using catalog dates, deduplicated exact aggregate masks. No prospective proof, no outcome-derived row labels, no extrapolation to future candidate families.",
+    "matched_rows": 48,
+    "conflicting_masks_removed": 0,
+    "evaluated_events": 30,
+    "evaluated_day_counts": {
+      "2026-10-27": 1,
+      "2026-10-29": 3,
+      "2026-10-31": 2,
+      "2026-11-05": 9,
+      "2026-11-07": 10,
+      "2026-11-10": 5
+    },
+    "metrics": {
+      "zero": {
+        "mae_hits": 26.766666666666666,
+        "bias_actual_minus_pred": -18.233333333333334,
+        "n_interval_events": 15,
+        "covered_90": 11,
+        "predicted_improvements": 0,
+        "real_improvements": 20,
+        "correct_predicted_improvements": 0
+      },
+      "nearest": {
+        "mae_hits": 49.666666666666664,
+        "bias_actual_minus_pred": 11.8,
+        "n_interval_events": 15,
+        "covered_90": 11,
+        "predicted_improvements": 0,
+        "real_improvements": 20,
+        "correct_predicted_improvements": 0
+      },
+      "shrinkage": {
+        "mae_hits": 44.135263346441285,
+        "bias_actual_minus_pred": 2.319162304785272,
+        "n_interval_events": 15,
+        "covered_90": 10,
+        "predicted_improvements": 0,
+        "real_improvements": 20,
+        "correct_predicted_improvements": 0
+      }
+    },
+    "input_sha256": {
+      "ledger.000": "676d9c39e96189e452bcd62af01af04ad7e26b62a9760e8ea87d6c011c8882d4",
+      "ledger.001": "d4a1a4f95648b197e3da4c9840883432d3f7839b23ab4513449a657d36eeada8",
+      "block_vectors_0.json": "77b7907e767a2842ef780523ad73e3cf58373d1e47afb553cba6ebde8b304d2e",
+      "block_vectors_16.json": "e9e016ad510b2064163af541b9b6a73b5eb66d3ee198de855e23ae56c3138fe4",
+      "block_vectors_24.json": "1f51ab8267f458b97eb865892aba32f97dd82485dfa7329bc1ea12e81464b5c4",
+      "block_vectors_32.json": "32cd8ae19e765efc217e9d1c629b0f9cd4c7242557229d3f25ffb7dc4e56f61e",
+      "block_vectors_40.json": "e4654d836989565ccec89ae035f4697bbbf91d69bc456756fe15a55198508e9b",
+      "block_vectors_48.json": "5b9701c7371cddce9e01306a884d9a7eb00fb57618dcfc228d6e9b5af13f4512",
+      "block_vectors_8.json": "6003684a4cac38a17b4b7aeb3ce4ebf60994872867438edf312ca83a2ac2521f"
+    },
+    "reproduction": "python audit_aggregate_transfer.py \"$AP_HISTORICAL_INPUTS\"",
+    "limitation": "Each comparator is constrained to nonpositive gains because its input scores are bounded by the previous observed best. MAE and interval coverage are descriptive baselines only. No probability of surpassing S4 is estimated."
+  }
+}
