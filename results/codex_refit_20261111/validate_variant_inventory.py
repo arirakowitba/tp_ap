@@ -43,7 +43,7 @@ def ids(paths):
     return out
 
 
-def run(df, extra, features, source, paths, warm):
+def run(df, extra, features, source, paths, warm, output="variant_inventory"):
     manifest = json.loads((source / "report.json").read_text())
     prior = manifest["prior_pairs" if warm else "historical_panels"]
     assert [sha(p) for p in paths] == [x["sha256"] for x in prior]
@@ -60,6 +60,8 @@ def run(df, extra, features, source, paths, warm):
     assert np.array_equal(pairs.id, df.id.to_numpy()[val])
     assert np.array_equal(pairs.y, df.y.to_numpy()[val])
     assert np.array_equal(pairs.seen, seen)
+    if callable(features):
+        features = features(df, fit, val)
     tr = ag.precompute_item_intrinsic_arrays(df)
     ag.compute_causal_seller_features = causal_features([tr["start_time"][val]])
     inner = list(StratifiedGroupKFold(4, shuffle=True, random_state=61111).split(
@@ -77,7 +79,7 @@ def run(df, extra, features, source, paths, warm):
     y, s, c = pairs.y.to_numpy(), tr["seller_id"][val], tr["category_id"][val]
     cohorts = {"all": np.ones(len(y), bool), "variations": supported, "fresh": fresh,
                "fresh_variations": fresh & supported, "fresh_seen": fresh & seen}
-    out = Path("variant_inventory") / source.name
+    out = Path(output) / source.name
     out.mkdir(parents=True, exist_ok=True)
     checkpoint = out / "model.txt"
     model.booster_.save_model(str(checkpoint))
