@@ -1,0 +1,252 @@
+{
+  "model": {
+    "scope": "Archived local development panels. Frozen rule: seller/category, last 40 strictly earlier fit records, Jaccard >= .25, up to 5 weighted neighbors, fallback to baseline without support. No public projection.",
+    "archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+    "runner_sha256": "4532d32d7a441a2008735efcd8e7772778060a05613d1fc13accd858e9456266",
+    "shared_runner_sha256": "81d5736e3ad671567a06a3f7d5c2df57ed2abfa9b86e28a9979a8c90f53fe3f6",
+    "panels": {
+      "recent_seller_history": {
+        "split_sha256": "7c8664785a315314e21970f9c52dd49df97fa8cdea97a69ea889d40cc4817ff6",
+        "baseline_pairs_sha256": "92ce80f21cd3f6be30149194064af3f0d22fa703d6e43d0fe19ee95b49960037",
+        "pairs_sha256": "73bace5cffb01389cb31827551262b65533011f9d653425d93181bae62dec9e4",
+        "model_sha256": "f6ffb0faee8006debe34d1019cebe0be6a7c8a6231b991add7d835a9e4951a3a",
+        "disagreement_ids_sha256": "2a8ed327ca65c8d526f61b98d660c1900a1bdcdfa2613d5b0e2a5190b928c126",
+        "metrics": {
+          "all": {
+            "n": 23843,
+            "hits": 22609,
+            "baseline_hits": 22603,
+            "net": 6,
+            "fixes": 9,
+            "breaks": 3,
+            "logloss": 0.13939324805330225,
+            "baseline_logloss": 0.13916943181268707,
+            "seller_q05_q95": [
+              0.0,
+              13.0
+            ],
+            "seller_category_q05_q95": [
+              -3.0,
+              18.0
+            ]
+          },
+          "fresh": {
+            "n": 3902,
+            "hits": 3688,
+            "baseline_hits": 3687,
+            "net": 1,
+            "fixes": 1,
+            "breaks": 0,
+            "logloss": 0.14048425485008897,
+            "baseline_logloss": 0.1407668046320189,
+            "seller_q05_q95": [
+              0.0,
+              3.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              4.0
+            ]
+          },
+          "fresh_seen": {
+            "n": 2355,
+            "hits": 2291,
+            "baseline_hits": 2290,
+            "net": 1,
+            "fixes": 1,
+            "breaks": 0,
+            "logloss": 0.0870572973394133,
+            "baseline_logloss": 0.08752545413308237,
+            "seller_q05_q95": [
+              0.0,
+              3.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              4.0
+            ]
+          },
+          "title_neighbors": {
+            "n": 1916,
+            "hits": 1878,
+            "baseline_hits": 1872,
+            "net": 6,
+            "fixes": 9,
+            "breaks": 3,
+            "logloss": 0.06380879734939356,
+            "baseline_logloss": 0.06102359347413932,
+            "seller_q05_q95": [
+              0.0,
+              13.0
+            ],
+            "seller_category_q05_q95": [
+              -3.0,
+              18.0
+            ]
+          },
+          "fresh_title_neighbors": {
+            "n": 325,
+            "hits": 321,
+            "baseline_hits": 320,
+            "net": 1,
+            "fixes": 1,
+            "breaks": 0,
+            "logloss": 0.03823090838499838,
+            "baseline_logloss": 0.04162324453604661,
+            "seller_q05_q95": [
+              0.0,
+              3.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              4.0
+            ]
+          }
+        }
+      },
+      "structural_heldout_confirm": {
+        "split_sha256": "aeb858e0fd5a4e4edc1813f9e306977eba977da278c12eb1b7217eec6be7fa16",
+        "baseline_pairs_sha256": "58802bbc00921ff48d4ffba556c41ab58b3485c81e5c872815f9888220829987",
+        "pairs_sha256": "cb799a211b8b446aa7c650af98546d566a0463a3dec660e41a81a24903fa727a",
+        "model_sha256": "044792110d403b939e9de8c4a79794548a048296c0d65b5a37e5aa40aa757002",
+        "disagreement_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "metrics": {
+          "all": {
+            "n": 7632,
+            "hits": 7013,
+            "baseline_hits": 7013,
+            "net": 0,
+            "fixes": 0,
+            "breaks": 0,
+            "logloss": 0.2141959664298829,
+            "baseline_logloss": 0.21422698786784905,
+            "seller_q05_q95": [
+              0.0,
+              0.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              0.0
+            ]
+          },
+          "fresh": {
+            "n": 7632,
+            "hits": 7013,
+            "baseline_hits": 7013,
+            "net": 0,
+            "fixes": 0,
+            "breaks": 0,
+            "logloss": 0.2141959664298829,
+            "baseline_logloss": 0.21422698786784905,
+            "seller_q05_q95": [
+              0.0,
+              0.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              0.0
+            ]
+          },
+          "fresh_seen": {
+            "n": 496,
+            "hits": 482,
+            "baseline_hits": 482,
+            "net": 0,
+            "fixes": 0,
+            "breaks": 0,
+            "logloss": 0.07840282429561213,
+            "baseline_logloss": 0.07888015416367225,
+            "seller_q05_q95": [
+              0.0,
+              0.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              0.0
+            ]
+          },
+          "title_neighbors": {
+            "n": 44,
+            "hits": 44,
+            "baseline_hits": 44,
+            "net": 0,
+            "fixes": 0,
+            "breaks": 0,
+            "logloss": 0.004541419140855941,
+            "baseline_logloss": 0.009922228562624601,
+            "seller_q05_q95": [
+              0.0,
+              0.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              0.0
+            ]
+          },
+          "fresh_title_neighbors": {
+            "n": 44,
+            "hits": 44,
+            "baseline_hits": 44,
+            "net": 0,
+            "fixes": 0,
+            "breaks": 0,
+            "logloss": 0.004541419140855941,
+            "baseline_logloss": 0.009922228562624601,
+            "seller_q05_q95": [
+              0.0,
+              0.0
+            ],
+            "seller_category_q05_q95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    "reproduce": "PYTHONPATH=\"$AP_OLD_RUNNER\" OMP_NUM_THREADS=6 OPENBLAS_NUM_THREADS=2 python -u validate_causal_title_neighbors.py \"$AP_ARCHIVE\" \"$AP_OLD_RUNNER\" \"$AP_SELLER_RUNNER\" \"$AP_STRUCTURAL_HELPER\" <eight prior pair files in CX-0178 order>",
+    "checks": "Synthetic checks verified strict past timestamps, seller scope, accent normalization and invariance to evaluation labels.",
+    "versions": {
+      "lightgbm": "4.7.0",
+      "catboost": "1.2.10"
+    }
+  },
+  "public_denominator": {
+    "scope": "Aggregate accuracy only; conditional on common denominator and five-decimal round-half-up. Ledger scores have not been reconciled to official submission IDs.",
+    "historical_rows": 54,
+    "distinct_five_decimal_scores_with_recent": 41,
+    "short_precision_rows_omitted": 3,
+    "recent_and_anchor_compatible": [
+      10490,
+      20980,
+      20998,
+      23748,
+      23766
+    ],
+    "all_compatible": [
+      20998
+    ],
+    "one_score_discard_compatible": [
+      20998
+    ],
+    "two_score_discard_compatible": [
+      20998
+    ],
+    "exact_results": {
+      "20998": {
+        "anchor_hits": 19899,
+        "target_hits": 20033,
+        "gain_to_target": 134
+      }
+    },
+    "historical_input_sha256": {
+      "block_vectors_0.json": "77b7907e767a2842ef780523ad73e3cf58373d1e47afb553cba6ebde8b304d2e",
+      "block_vectors_16.json": "e9e016ad510b2064163af541b9b6a73b5eb66d3ee198de855e23ae56c3138fe4",
+      "block_vectors_24.json": "1f51ab8267f458b97eb865892aba32f97dd82485dfa7329bc1ea12e81464b5c4",
+      "block_vectors_32.json": "32cd8ae19e765efc217e9d1c629b0f9cd4c7242557229d3f25ffb7dc4e56f61e",
+      "block_vectors_40.json": "e4654d836989565ccec89ae035f4697bbbf91d69bc456756fe15a55198508e9b",
+      "block_vectors_48.json": "5b9701c7371cddce9e01306a884d9a7eb00fb57618dcfc228d6e9b5af13f4512",
+      "block_vectors_8.json": "6003684a4cac38a17b4b7aeb3ce4ebf60994872867438edf312ca83a2ac2521f"
+    }
+  }
+}
