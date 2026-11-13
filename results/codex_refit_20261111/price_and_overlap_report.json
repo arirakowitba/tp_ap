@@ -1,0 +1,200 @@
+{
+  "model": {
+    "scope": "Train-only archived development panels. Label-conditioned price references are fit seller-group OOF on train and frozen on evaluation. Published condition attribute is an input; hidden labels are never inputs.",
+    "archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+    "runner_sha256": "d80733915df135e53162727da371d7b443f0f7a0d361cf9753be942780994a2f",
+    "shared_runner_sha256": "81d5736e3ad671567a06a3f7d5c2df57ed2abfa9b86e28a9979a8c90f53fe3f6",
+    "panels": {
+      "recent_seller_history": {
+        "split_sha256": "7c8664785a315314e21970f9c52dd49df97fa8cdea97a69ea889d40cc4817ff6",
+        "baseline_pairs_sha256": "92ce80f21cd3f6be30149194064af3f0d22fa703d6e43d0fe19ee95b49960037",
+        "pairs_sha256": "eb4fd7478f44427c1e317f8ccb43e00c131944029ab9ce684eb354d6c7f2bc31",
+        "model_sha256": "d15c076f83e8cc43ac16d60079f1d1ef5ce6af7575fb7182d42bcf3daf478ba8",
+        "disagreement_ids_sha256": "8e6cd0a30448b23676e0241b651214377d9e303738e8029649d36c4df0d82a71",
+        "metrics": {
+          "all": {
+            "n": 23843,
+            "hits": 22616,
+            "baseline_hits": 22603,
+            "net": 13,
+            "fixes": 99,
+            "breaks": 86,
+            "logloss": 0.13851598367865897,
+            "baseline_logloss": 0.13916943181268707,
+            "seller_q05_q95": [
+              -10.0,
+              36.0
+            ],
+            "seller_category_q05_q95": [
+              -26.0,
+              53.0
+            ]
+          },
+          "fresh": {
+            "n": 3902,
+            "hits": 3689,
+            "baseline_hits": 3687,
+            "net": 2,
+            "fixes": 16,
+            "breaks": 14,
+            "logloss": 0.13990075158824805,
+            "baseline_logloss": 0.1407668046320189,
+            "seller_q05_q95": [
+              -8.0,
+              11.0
+            ],
+            "seller_category_q05_q95": [
+              -14.0,
+              18.0
+            ]
+          },
+          "fresh_seen": {
+            "n": 2355,
+            "hits": 2287,
+            "baseline_hits": 2290,
+            "net": -3,
+            "fixes": 3,
+            "breaks": 6,
+            "logloss": 0.08642197150290577,
+            "baseline_logloss": 0.08752545413308237,
+            "seller_q05_q95": [
+              -8.0,
+              2.0
+            ],
+            "seller_category_q05_q95": [
+              -13.0,
+              5.0
+            ]
+          }
+        }
+      },
+      "structural_heldout_confirm": {
+        "split_sha256": "aeb858e0fd5a4e4edc1813f9e306977eba977da278c12eb1b7217eec6be7fa16",
+        "baseline_pairs_sha256": "58802bbc00921ff48d4ffba556c41ab58b3485c81e5c872815f9888220829987",
+        "pairs_sha256": "d0a38e1d259b2bf9b5827d47c996c22c441127b7d81f308c8962fbeeea2e0faf",
+        "model_sha256": "c0b9b7a312fa9c825e757a53f8f4c86bba8e4cbf90bfc9a55822d0697dc71bd5",
+        "disagreement_ids_sha256": "d4d524ad0e76f4cc66e464ff9126c170696c49c079ec539f4b54967d40ef9fc2",
+        "metrics": {
+          "all": {
+            "n": 7632,
+            "hits": 7010,
+            "baseline_hits": 7013,
+            "net": -3,
+            "fixes": 64,
+            "breaks": 67,
+            "logloss": 0.21398306119238936,
+            "baseline_logloss": 0.21422698786784905,
+            "seller_q05_q95": [
+              -23.0,
+              17.0
+            ],
+            "seller_category_q05_q95": [
+              -36.0,
+              30.049999999999727
+            ]
+          },
+          "fresh": {
+            "n": 7632,
+            "hits": 7010,
+            "baseline_hits": 7013,
+            "net": -3,
+            "fixes": 64,
+            "breaks": 67,
+            "logloss": 0.21398306119238936,
+            "baseline_logloss": 0.21422698786784905,
+            "seller_q05_q95": [
+              -23.0,
+              17.0
+            ],
+            "seller_category_q05_q95": [
+              -36.0,
+              30.049999999999727
+            ]
+          },
+          "fresh_seen": {
+            "n": 496,
+            "hits": 481,
+            "baseline_hits": 482,
+            "net": -1,
+            "fixes": 1,
+            "breaks": 2,
+            "logloss": 0.07960779440048008,
+            "baseline_logloss": 0.07888015416367225,
+            "seller_q05_q95": [
+              -4.0,
+              2.0
+            ],
+            "seller_category_q05_q95": [
+              -6.0,
+              3.0
+            ]
+          }
+        }
+      }
+    }
+  },
+  "aggregate_replay": {
+    "scope": "Retrospective day-block replay; catalogue dates and vectors lack prospective certification.",
+    "model": "Signed difference Gram kernel around the contemporaneous anchor, fixed ridge 50.",
+    "matched_rows": 48,
+    "evaluated_days": [
+      [
+        "2026-10-27",
+        1
+      ],
+      [
+        "2026-10-29",
+        3
+      ],
+      [
+        "2026-10-31",
+        2
+      ],
+      [
+        "2026-11-05",
+        9
+      ],
+      [
+        "2026-11-07",
+        10
+      ],
+      [
+        "2026-11-10",
+        5
+      ]
+    ],
+    "observed_improvements": 20,
+    "metrics": {
+      "zero": {
+        "positives": 0,
+        "true_positives": 0,
+        "eligible_intervals": 15,
+        "covered": 11,
+        "mae_hits": 26.766666666666666
+      },
+      "overlap_ridge": {
+        "positives": 0,
+        "true_positives": 0,
+        "eligible_intervals": 15,
+        "covered": 11,
+        "mae_hits": 37.0556118128943
+      }
+    },
+    "input_sha256": {
+      "ledger.000": "676d9c39e96189e452bcd62af01af04ad7e26b62a9760e8ea87d6c011c8882d4",
+      "ledger.001": "d4a1a4f95648b197e3da4c9840883432d3f7839b23ab4513449a657d36eeada8",
+      "block_vectors_0.json": "77b7907e767a2842ef780523ad73e3cf58373d1e47afb553cba6ebde8b304d2e",
+      "block_vectors_16.json": "e9e016ad510b2064163af541b9b6a73b5eb66d3ee198de855e23ae56c3138fe4",
+      "block_vectors_24.json": "1f51ab8267f458b97eb865892aba32f97dd82485dfa7329bc1ea12e81464b5c4",
+      "block_vectors_32.json": "32cd8ae19e765efc217e9d1c629b0f9cd4c7242557229d3f25ffb7dc4e56f61e",
+      "block_vectors_40.json": "e4654d836989565ccec89ae035f4697bbbf91d69bc456756fe15a55198508e9b",
+      "block_vectors_48.json": "5b9701c7371cddce9e01306a884d9a7eb00fb57618dcfc228d6e9b5af13f4512",
+      "block_vectors_8.json": "6003684a4cac38a17b4b7aeb3ce4ebf60994872867438edf312ca83a2ac2521f"
+    }
+  },
+  "execution": [
+    "python -u validate_price_distributions.py \"$AP_ARCHIVE\" \"$AP_OLD_RUNNER\" \"$AP_SELLER_RUNNER\" \"$AP_STRUCTURAL_HELPER\" <eight prior pair files in CX-0178 order>",
+    "python replay_aggregate_overlap_kernel.py \"$AP_HISTORICAL_INPUTS\""
+  ],
+  "checks": "Verified evaluation label invariance and smoothed rank range. Model checkpoints and paired rows stay private."
+}
