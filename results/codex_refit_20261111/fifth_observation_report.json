@@ -1,0 +1,58 @@
+{
+  "score_source": "Ariel reported the latest score; attachment matches the candidate SHA. Kaggle submission ID pending.",
+  "file_sha256": "dfff80fce8ccd08e122395115b24e4518585d53375de9c12dae3c9d618622f81",
+  "historical_inputs_sha256": "35152c07e841fa4cd2017f2ad5e8d6590a8c117449c4f15ee32484086877772b",
+  "public_n_assumed": 20998,
+  "score": 0.94361,
+  "hits": 19814,
+  "anchor": 0.94766,
+  "delta_hits": -85,
+  "changes": 268,
+  "total_disjoint_changes": 1782,
+  "total_disjoint_net": -492,
+  "top_reported_score_net_gaps": {
+    "0.94790": 5,
+    "0.94838": 15,
+    "0.94871": 22,
+    "0.94876": 23,
+    "0.95095": 69,
+    "0.95485": 151,
+    "0.95552": 165
+  },
+  "subgroups": {
+    "line3_agrees_with_s4": {
+      "changes": 205,
+      "before": [
+        -205.0,
+        203.0
+      ],
+      "after": [
+        -145.0,
+        -22.0
+      ]
+    },
+    "line3_differs_from_s4": {
+      "changes": 63,
+      "before": [
+        -63.0,
+        60.0
+      ],
+      "after": [
+        -63.0,
+        60.0
+      ]
+    },
+    "previously_touched": {
+      "changes": 198,
+      "before": [
+        -198.0,
+        190.0
+      ],
+      "after": [
+        -155.0,
+        -15.0
+      ]
+    }
+  },
+  "scope": "Linear relaxation for whole subsets. A feasible system does not verify provenance or individual labels."
+}
