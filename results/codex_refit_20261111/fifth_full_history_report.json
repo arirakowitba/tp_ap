@@ -1,0 +1,454 @@
+{
+  "history": {
+    "catalog_rows": 143,
+    "catalog_with_score": 123,
+    "catalog_category_counts": {
+      "scored_with_vector": 116,
+      "scored_no_vector": 7,
+      "error_no_score": 2,
+      "draft_offline": 18
+    },
+    "reconstructed_hash_verified": 50,
+    "new_vectors_vs_previous_audit": 50,
+    "issues": {},
+    "duplicate_vectors": 1,
+    "accepted": 106,
+    "covered_ids": 3523,
+    "uncovered_ids": 26477,
+    "rejected": {
+      "EVT-052": "incompatible precision",
+      "EVT-022": "pair distance contradiction",
+      "EVT-018": "incompatible precision",
+      "EVT-011": "incompatible precision",
+      "EVT-005": "pair distance contradiction",
+      "EVT-004": "pair distance contradiction",
+      "EVT-001": "pair distance contradiction"
+    },
+    "positive_pair_bounds": 0,
+    "max_pair_lower_bound": 0,
+    "aggregate_certificate": {
+      "groups": 1292,
+      "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "flips": 0,
+      "lower_hits": 0.0
+    }
+  },
+  "model": {
+    "cold": {
+      "pairs_sha256": "329e7f274d9b89b1815bae879343083ee3bbeac273027b38abc7d752605e3baf",
+      "model_sha256": [
+        "601c5eb808e40ed7f15fedbb54f251f784298152947b25d9f61bead8ae107948",
+        "78631fe78f1cbb1e09761085b66389d1c17cc3c617eb0c3113e67b44ee7ab05c"
+      ],
+      "metrics": {
+        "all": {
+          "n": 7632,
+          "hits": 7017,
+          "baseline_hits": 7013,
+          "net": 4,
+          "fixes": 69,
+          "breaks": 65,
+          "logloss": 0.2105721292208187,
+          "baseline_logloss": 0.21422698786784905,
+          "seller_q05_q95": [
+            -16.0,
+            23.0
+          ],
+          "seller_category_q05_q95": [
+            -29.0,
+            34.0
+          ]
+        },
+        "fresh": {
+          "n": 7632,
+          "hits": 7017,
+          "baseline_hits": 7013,
+          "net": 4,
+          "fixes": 69,
+          "breaks": 65,
+          "logloss": 0.2105721292208187,
+          "baseline_logloss": 0.21422698786784905,
+          "seller_q05_q95": [
+            -16.0,
+            23.0
+          ],
+          "seller_category_q05_q95": [
+            -29.0,
+            34.0
+          ]
+        },
+        "seen": {
+          "n": 496,
+          "hits": 481,
+          "baseline_hits": 482,
+          "net": -1,
+          "fixes": 0,
+          "breaks": 1,
+          "logloss": 0.07729881368343401,
+          "baseline_logloss": 0.07888015416367225,
+          "seller_q05_q95": [
+            -3.0,
+            0.0
+          ],
+          "seller_category_q05_q95": [
+            -4.0,
+            0.0
+          ]
+        },
+        "new": {
+          "n": 7136,
+          "hits": 6536,
+          "baseline_hits": 6531,
+          "net": 5,
+          "fixes": 69,
+          "breaks": 64,
+          "logloss": 0.21983552110794632,
+          "baseline_logloss": 0.22363450321500034,
+          "seller_q05_q95": [
+            -14.0,
+            23.0
+          ],
+          "seller_category_q05_q95": [
+            -25.049999999999997,
+            39.0
+          ]
+        }
+      }
+    },
+    "warm": {
+      "pairs_sha256": "4b17f283ea99bf5c0dd4d90af05d99abba88a481105295073f1156c4f0147993",
+      "model_sha256": [
+        "a3a16c6a65a1b692f5e28d99b75104623681e6eac424d3d21a7b42ee1f45680c",
+        "15d9a6509dc599fbe39046389ea591db483bea989779702fece917beebcc3e53"
+      ],
+      "metrics": {
+        "all": {
+          "n": 23843,
+          "hits": 22623,
+          "baseline_hits": 22603,
+          "net": 20,
+          "fixes": 129,
+          "breaks": 109,
+          "logloss": 0.13660189891552627,
+          "baseline_logloss": 0.13916943181268707,
+          "seller_q05_q95": [
+            -5.049999999999997,
+            47.0
+          ],
+          "seller_category_q05_q95": [
+            -27.0,
+            68.0
+          ]
+        },
+        "fresh": {
+          "n": 3902,
+          "hits": 3691,
+          "baseline_hits": 3687,
+          "net": 4,
+          "fixes": 22,
+          "breaks": 18,
+          "logloss": 0.13905385059729375,
+          "baseline_logloss": 0.1407668046320189,
+          "seller_q05_q95": [
+            -6.0,
+            15.0
+          ],
+          "seller_category_q05_q95": [
+            -14.0,
+            22.0
+          ]
+        },
+        "seen": {
+          "n": 15809,
+          "hits": 15229,
+          "baseline_hits": 15222,
+          "net": 7,
+          "fixes": 54,
+          "breaks": 47,
+          "logloss": 0.10373417842884754,
+          "baseline_logloss": 0.10609346716334447,
+          "seller_q05_q95": [
+            -9.0,
+            24.0
+          ],
+          "seller_category_q05_q95": [
+            -22.0,
+            37.0
+          ]
+        },
+        "new": {
+          "n": 8034,
+          "hits": 7394,
+          "baseline_hits": 7381,
+          "net": 13,
+          "fixes": 75,
+          "breaks": 62,
+          "logloss": 0.20127775069221335,
+          "baseline_logloss": 0.20425505854177067,
+          "seller_q05_q95": [
+            -9.0,
+            34.0
+          ],
+          "seller_category_q05_q95": [
+            -21.049999999999997,
+            51.049999999999955
+          ]
+        }
+      }
+    },
+    "full": {
+      "pairs_sha256": "8a1098d60b86f4254ed32f279580528e30369d3c3e99347e842d0e84a3dff34a",
+      "model_sha256": [
+        "96f669979d347c6744cc1d80dc87980de1c47729db83577032bafa96a4a96f61",
+        "347c03f81cdf5cc40c02e531a86dd250afe635d6ef097e16db0f4ffb3556322c"
+      ]
+    }
+  },
+  "selection": {
+    "scope": "Exploratory selection used both reused development panels. Exact probabilities are conditional on independent correctness given fixed cell rates and a uniform public subset. No estimate of S4-relative off-proxy accuracy is available. The off-proxy rate is varied explicitly. Ranks are not prospective.",
+    "history_constraints": 106,
+    "policies": 413,
+    "shortlisted": 45,
+    "weights": [
+      1,
+      0,
+      0
+    ],
+    "thresholds_seen_new": [
+      0.65,
+      0.35
+    ],
+    "mode": "add_previous",
+    "flips": 268,
+    "proxy_calibrated": 176,
+    "off_proxy": 92,
+    "history_touched": 198,
+    "bounds": [
+      -268,
+      260
+    ],
+    "conditional_tail": {
+      "0.4": [
+        0.00015316927054487295,
+        1.7256167138973946e-06
+      ],
+      "0.45": [
+        0.000890947577573912,
+        1.6027943946963754e-05
+      ],
+      "0.5": [
+        0.004054290108814187,
+        0.00011441768880365424
+      ],
+      "0.55": [
+        0.01477458338924736,
+        0.0006449654428699965
+      ],
+      "0.6": [
+        0.04390387426403629,
+        0.002930288290992269
+      ]
+    },
+    "previous_conditional_tail": {
+      "0.4": [
+        4.213159567944303e-12,
+        8.597011670330737e-14
+      ],
+      "0.45": [
+        2.6099437327835714e-10,
+        6.767007594722162e-12
+      ],
+      "0.5": [
+        9.766064794005767e-09,
+        3.21369616735209e-10
+      ],
+      "0.55": [
+        2.38702307300187e-07,
+        9.981288430645317e-09
+      ],
+      "0.6": [
+        4.032330143765545e-06,
+        2.150078843352215e-07
+      ]
+    },
+    "candidate_sha256": "dfff80fce8ccd08e122395115b24e4518585d53375de9c12dae3c9d618622f81",
+    "replaces_previous": true
+  },
+  "seller_disjoint_selection": {
+    "scope": "Selection in reused warm development rows and scenario-only evaluation on ID-disjoint held-out panels. Proxy equals Line3 (cold) or attributes (warm); neither is S4. Six-point penalty for off-proxy mask share per cell and 0/5/10/15 point shifts. Rates fixed per simulation scenario. Conditional uniform public draw and independent outcomes given cell rates. No real probability calibrated.",
+    "development_rows": 15603,
+    "development_sellers": 4825,
+    "selection_grid_size": 74,
+    "shortlist": 30,
+    "weights_schema_context_attributes": [
+      0.33,
+      0.34,
+      0.33
+    ],
+    "threshold_seen_new": [
+      0.56,
+      0.44
+    ],
+    "mask_scope": "all",
+    "flips": 70,
+    "seen": 30,
+    "historically_touched": 65,
+    "history_constraint_count": 106,
+    "aggregate_net_bounds": [
+      -70,
+      67
+    ],
+    "target_sha256": "478a80000684ae8f7092289b1772c9e74f94a4b03d79cf466d5461cb001004bd",
+    "development": {
+      "0.0": {
+        "p": 0.0,
+        "mean": 4.803166666666667,
+        "q05": -7.0,
+        "draws": 6000
+      },
+      "0.05": {
+        "p": 0.0,
+        "mean": -0.1675,
+        "q05": -12.0,
+        "draws": 6000
+      },
+      "0.1": {
+        "p": 0.0,
+        "mean": -4.979833333333334,
+        "q05": -16.0,
+        "draws": 6000
+      },
+      "0.15": {
+        "p": 0.0,
+        "mean": -10.041833333333333,
+        "q05": -21.0,
+        "draws": 6000
+      }
+    },
+    "holdouts": {
+      "cold": {
+        "metrics": {
+          "0.0": {
+            "p": 0.0,
+            "mean": 6.958688,
+            "q05": -5.0,
+            "draws": 250000
+          },
+          "0.05": {
+            "p": 0.0,
+            "mean": 2.077448,
+            "q05": -9.0,
+            "draws": 250000
+          },
+          "0.1": {
+            "p": 0.0,
+            "mean": -2.834904,
+            "q05": -14.0,
+            "draws": 250000
+          },
+          "0.15": {
+            "p": 0.0,
+            "mean": -7.739336,
+            "q05": -19.0,
+            "draws": 250000
+          }
+        },
+        "n": [
+          15,
+          86,
+          87,
+          28,
+          2,
+          0,
+          0,
+          1
+        ],
+        "correct": [
+          9,
+          53,
+          53,
+          19,
+          0,
+          0,
+          0,
+          1
+        ],
+        "conditional_p": [
+          0.6087912087912087,
+          0.5561103047895501,
+          0.580352264557872,
+          0.5922435897435898,
+          0.5461072261072262,
+          0.5553846153846154,
+          0.5553846153846154,
+          0.5736996336996338
+        ]
+      },
+      "warm_exclusive": {
+        "metrics": {
+          "0.0": {
+            "p": 0.0,
+            "mean": -8.80996,
+            "q05": -20.0,
+            "draws": 250000
+          },
+          "0.05": {
+            "p": 0.0,
+            "mean": -13.715888,
+            "q05": -25.0,
+            "draws": 250000
+          },
+          "0.1": {
+            "p": 0.0,
+            "mean": -18.613232,
+            "q05": -29.0,
+            "draws": 250000
+          },
+          "0.15": {
+            "p": 0.0,
+            "mean": -23.510136,
+            "q05": -34.0,
+            "draws": 250000
+          }
+        },
+        "n": [
+          1,
+          2,
+          24,
+          0,
+          3,
+          0,
+          0,
+          1
+        ],
+        "correct": [
+          0,
+          2,
+          10,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "conditional_p": [
+          0.43290043290043284,
+          0.44413223140495867,
+          0.40388429752066113,
+          0.3945454545454545,
+          0.4254018445322793,
+          0.3945454545454545,
+          0.3945454545454545,
+          0.42051948051948046
+        ]
+      }
+    },
+    "source_sha256": {
+      "ap_history_nov13/constraints_private.json": "35152c07e841fa4cd2017f2ad5e8d6590a8c117449c4f15ee32484086877772b",
+      "fifth_context/model_report.json": "8c4af7124429b89e2d2329048bf5211a0fa86ca41f218fbe52c6d6223ad07698",
+      "fifth_schema/model_report.json": "08785568c91d3132b77f660f2a21f233249c64529cd6ce4c3c09564e1c802f84"
+    }
+  },
+  "scope": "Aggregate reports only. The 268-row recommendation was selected using both local panels as development evidence. The separate 70-row seller-disjoint policy was not promoted because it produced zero successes in 250,000 scenario draws per panel.",
+  "rounding": "Npub 20998. S4 19899 hits. Strictly greater than 0.95 requires 19949 hits, a gain of 50."
+}
