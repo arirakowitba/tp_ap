@@ -28,4 +28,8 @@ results/intensive_20261030/**/lgb_*_tc.txt
 *.log
 results/**/*.log
 *.npz
+results/*_private.csv
+results/**/*_private.csv
+
+
 
