@@ -1,0 +1,746 @@
+{
+  "observation": {
+    "score_source": "Ariel reported the latest score; attachment matches the candidate SHA. Kaggle submission ID pending.",
+    "file_sha256": "dfff80fce8ccd08e122395115b24e4518585d53375de9c12dae3c9d618622f81",
+    "historical_inputs_sha256": "35152c07e841fa4cd2017f2ad5e8d6590a8c117449c4f15ee32484086877772b",
+    "public_n_assumed": 20998,
+    "score": 0.94361,
+    "hits": 19814,
+    "anchor": 0.94766,
+    "delta_hits": -85,
+    "changes": 268,
+    "total_disjoint_changes": 1782,
+    "total_disjoint_net": -492,
+    "top_reported_score_net_gaps": {
+      "0.94790": 5,
+      "0.94838": 15,
+      "0.94871": 22,
+      "0.94876": 23,
+      "0.95095": 69,
+      "0.95485": 151,
+      "0.95552": 165
+    },
+    "subgroups": {
+      "line3_agrees_with_s4": {
+        "changes": 205,
+        "before": [
+          -205.0,
+          203.0
+        ],
+        "after": [
+          -145.0,
+          -22.0
+        ]
+      },
+      "line3_differs_from_s4": {
+        "changes": 63,
+        "before": [
+          -63.0,
+          60.0
+        ],
+        "after": [
+          -63.0,
+          60.0
+        ]
+      },
+      "previously_touched": {
+        "changes": 198,
+        "before": [
+          -198.0,
+          190.0
+        ],
+        "after": [
+          -155.0,
+          -15.0
+        ]
+      }
+    },
+    "scope": "Linear relaxation for whole subsets. A feasible system does not verify provenance or individual labels."
+  },
+  "batch_diagnostic": {
+    "scope": "Offline batch classification diagnostic using labels from fit only; includes later fit listings from the same seller. Cold sellers disjoint, warm holdout is interleaved. Full panel is development.",
+    "fit_rows": 44054,
+    "validation_rows": 25946,
+    "archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+    "split_sha256": "9c7a6a9a1305ec3f281f5ac8a07a1f9f9410bdaef6dc101aa56f51b6393e51a5",
+    "runner_sha256": "37d5f87c09dd2c1a3a9af55b7aed97bce8088e5aad80163b6b7787434c9ca403",
+    "pairs_sha256": "fd6738aa49a8db8a2380b117f5c7f74c4562d4c20fd7f353fdab666567c83d26",
+    "checkpoint_sha256": {
+      "causal": "92a3b1b7cef37fb13c00e7ff6884c396e8364216ff1b55b693e5845f8b95b6c7",
+      "batch": "12b44a52131af82b625164bdaa865495fe6925ce9d87d0a5ce72f23f23a3105f"
+    },
+    "disagreement_ids_sha256": "ea1fc97dd5f86414c704296f7fdc9633ce57570d6859c3b09f725025befc283f",
+    "metrics": {
+      "all": {
+        "n": 25946,
+        "hits": 24457,
+        "baseline_hits": 24433,
+        "net": 24,
+        "fixes": 246,
+        "breaks": 222,
+        "logloss": 0.1532438255661725,
+        "baseline_logloss": 0.1547001901073616,
+        "seller_q05_q95": [
+          -21.0,
+          66.0
+        ],
+        "seller_category_q05_q95": [
+          -41.0,
+          88.0
+        ]
+      },
+      "seen": {
+        "n": 13102,
+        "hits": 12616,
+        "baseline_hits": 12570,
+        "net": 46,
+        "fixes": 129,
+        "breaks": 83,
+        "logloss": 0.1032083666889862,
+        "baseline_logloss": 0.11149169256829615,
+        "seller_q05_q95": [
+          14.0,
+          78.0
+        ],
+        "seller_category_q05_q95": [
+          1.0,
+          95.0
+        ]
+      },
+      "new": {
+        "n": 12844,
+        "hits": 11841,
+        "baseline_hits": 11863,
+        "net": -22,
+        "fixes": 117,
+        "breaks": 139,
+        "logloss": 0.2042843567253826,
+        "baseline_logloss": 0.19877662538895888,
+        "seller_q05_q95": [
+          -51.0,
+          6.0
+        ],
+        "seller_category_q05_q95": [
+          -70.0,
+          26.0
+        ]
+      },
+      "fresh": {
+        "n": 3601,
+        "hits": 3406,
+        "baseline_hits": 3388,
+        "net": 18,
+        "fixes": 42,
+        "breaks": 24,
+        "logloss": 0.139857243123195,
+        "baseline_logloss": 0.14541248562912032,
+        "seller_q05_q95": [
+          5.0,
+          31.0
+        ],
+        "seller_category_q05_q95": [
+          -3.0,
+          41.0
+        ]
+      },
+      "fresh_seen": {
+        "n": 1676,
+        "hits": 1617,
+        "baseline_hits": 1600,
+        "net": 17,
+        "fixes": 22,
+        "breaks": 5,
+        "logloss": 0.10576983714752416,
+        "baseline_logloss": 0.11658433848859297,
+        "seller_q05_q95": [
+          9.0,
+          26.0
+        ],
+        "seller_category_q05_q95": [
+          3.0,
+          33.0
+        ]
+      },
+      "fresh_new": {
+        "n": 1925,
+        "hits": 1789,
+        "baseline_hits": 1788,
+        "net": 1,
+        "fixes": 20,
+        "breaks": 19,
+        "logloss": 0.16953542100123364,
+        "baseline_logloss": 0.17051169321744442,
+        "seller_q05_q95": [
+          -9.0,
+          11.0
+        ],
+        "seller_category_q05_q95": [
+          -17.0,
+          19.0
+        ]
+      }
+    }
+  },
+  "batch_replication": {
+    "scope": "Offline batch classification diagnostic using labels from fit only; includes later fit listings from the same seller. Cold sellers disjoint, warm holdout is interleaved. Full panel is development.",
+    "seed": 28111323,
+    "policy": "Use batch history only when labeled fit listings bracket the query time.",
+    "fit_rows": 44877,
+    "validation_rows": 25123,
+    "archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+    "split_sha256": "f12c37841f86aca88b7255d3d1d3200f049058fa2e0f07c226ebf68c49702cfa",
+    "runner_sha256": "d4359a1bf06c2c8d7c97c405bbcbab8e59dd6d7dba42debca9686eb35b86bb1e",
+    "pairs_sha256": "ee587cea6b47908cd7147bf98dfe56fc117e049f7e92087f6fe7be007b2ba75f",
+    "checkpoint_sha256": {
+      "causal": "f66b70641deaf633a32cbb11e2ca5d7ad39981c38296f2f98fc6a66dd99608b1",
+      "batch": "1bf94f1d8132226e7d89e1108a71374df3c0098edd30e2a08ee2c63b20d0ac57"
+    },
+    "disagreement_ids_sha256": "ad57c0b00201274cbdcf602fe3e27381c246f736c536471970caa4989c1429f1",
+    "metrics": {
+      "all": {
+        "n": 25123,
+        "hits": 23673,
+        "baseline_hits": 23649,
+        "net": 24,
+        "fixes": 131,
+        "breaks": 107,
+        "logloss": 0.15350898990023618,
+        "baseline_logloss": 0.15738784212234613,
+        "seller_q05_q95": [
+          -3.0,
+          52.0
+        ],
+        "seller_category_q05_q95": [
+          -21.0,
+          72.04999999999973
+        ]
+      },
+      "seen": {
+        "n": 14135,
+        "hits": 13612,
+        "baseline_hits": 13588,
+        "net": 24,
+        "fixes": 131,
+        "breaks": 107,
+        "logloss": 0.10556726921892501,
+        "baseline_logloss": 0.11246139050481599,
+        "seller_q05_q95": [
+          -4.049999999999997,
+          53.0
+        ],
+        "seller_category_q05_q95": [
+          -22.049999999999997,
+          76.0
+        ]
+      },
+      "new": {
+        "n": 10988,
+        "hits": 10061,
+        "baseline_hits": 10061,
+        "net": 0,
+        "fixes": 0,
+        "breaks": 0,
+        "logloss": 0.2151813799466808,
+        "baseline_logloss": 0.2151813799466808,
+        "seller_q05_q95": [
+          0.0,
+          0.0
+        ],
+        "seller_category_q05_q95": [
+          0.0,
+          0.0
+        ]
+      },
+      "fresh": {
+        "n": 1907,
+        "hits": 1751,
+        "baseline_hits": 1747,
+        "net": 4,
+        "fixes": 11,
+        "breaks": 7,
+        "logloss": 0.2035811678469755,
+        "baseline_logloss": 0.20858579877114786,
+        "seller_q05_q95": [
+          -3.0,
+          11.049999999999727
+        ],
+        "seller_category_q05_q95": [
+          -9.0,
+          17.0
+        ]
+      },
+      "fresh_seen": {
+        "n": 752,
+        "hits": 722,
+        "baseline_hits": 718,
+        "net": 4,
+        "fixes": 11,
+        "breaks": 7,
+        "logloss": 0.10459482610291547,
+        "baseline_logloss": 0.11728609095982596,
+        "seller_q05_q95": [
+          -3.0,
+          11.0
+        ],
+        "seller_category_q05_q95": [
+          -8.0,
+          18.0
+        ]
+      },
+      "fresh_new": {
+        "n": 1155,
+        "hits": 1029,
+        "baseline_hits": 1029,
+        "net": 0,
+        "fixes": 0,
+        "breaks": 0,
+        "logloss": 0.2680294180560951,
+        "baseline_logloss": 0.2680294180560951,
+        "seller_q05_q95": [
+          0.0,
+          0.0
+        ],
+        "seller_category_q05_q95": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "private_refit": {
+    "train_rows": 70000,
+    "test_rows": 30000,
+    "bracketed": 14117,
+    "test_sellers_seen": 21487,
+    "test_with_later_fit": 17668,
+    "test_with_earlier_fit": 17621,
+    "archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+    "probabilities_sha256": "d0115e0d2895f850c9cf0497a2e7a5646366abcb1f6480872d4ca9206c63ab79",
+    "checkpoint_sha256": "73d369ed6bd52c44f08e2690b5309f0e4bade1de9f85b68df84e46b611193a3f",
+    "runner_sha256": "ac1d93e5fe107ed50574dad38cf443510c416e7f12b50a42fb1b08ff86b9e1aa",
+    "scope": "Private prediction checkpoint. No public transfer claimed."
+  },
+  "native_categories": {
+    "cold": {
+      "pairs_sha256": "9b5e15154f2bd7843e9fd307bcc30f2dc3242aabb0d6d06271d5155f524f26a9",
+      "model_sha256": [
+        "c30e07f2bd570d9bb38f83dd85b3fcae8e30a9f357f360403bd1509ea981570b"
+      ],
+      "metrics": {
+        "all": {
+          "n": 7632,
+          "hits": 7034,
+          "baseline_hits": 7013,
+          "net": 21,
+          "fixes": 98,
+          "breaks": 77,
+          "logloss": 0.2216137923064985,
+          "baseline_logloss": 0.21422698786784905,
+          "seller_q05_q95": [
+            -4.0,
+            46.0
+          ],
+          "seller_category_q05_q95": [
+            -18.0,
+            64.0
+          ]
+        },
+        "fresh": {
+          "n": 7632,
+          "hits": 7034,
+          "baseline_hits": 7013,
+          "net": 21,
+          "fixes": 98,
+          "breaks": 77,
+          "logloss": 0.2216137923064985,
+          "baseline_logloss": 0.21422698786784905,
+          "seller_q05_q95": [
+            -4.0,
+            46.0
+          ],
+          "seller_category_q05_q95": [
+            -18.0,
+            64.0
+          ]
+        },
+        "seen": {
+          "n": 496,
+          "hits": 484,
+          "baseline_hits": 482,
+          "net": 2,
+          "fixes": 4,
+          "breaks": 2,
+          "logloss": 0.0797846821501592,
+          "baseline_logloss": 0.07888015416367225,
+          "seller_q05_q95": [
+            -2.0,
+            6.0
+          ],
+          "seller_category_q05_q95": [
+            -5.0,
+            9.0
+          ]
+        },
+        "new": {
+          "n": 7136,
+          "hits": 6550,
+          "baseline_hits": 6531,
+          "net": 19,
+          "fixes": 94,
+          "breaks": 75,
+          "logloss": 0.23147186946983153,
+          "baseline_logloss": 0.22363450321500034,
+          "seller_q05_q95": [
+            -5.049999999999997,
+            44.0
+          ],
+          "seller_category_q05_q95": [
+            -21.0,
+            59.0
+          ]
+        }
+      }
+    },
+    "warm": {
+      "pairs_sha256": "eeac7c186934d0233211dab527ba2227436a54290357fb661ac528339b6fd6cc",
+      "model_sha256": [
+        "0a280e2a9cec34d8816bbab0ee1e16f10e951e40cb71ed706e77f636f31217db"
+      ],
+      "metrics": {
+        "all": {
+          "n": 23843,
+          "hits": 22619,
+          "baseline_hits": 22603,
+          "net": 16,
+          "fixes": 170,
+          "breaks": 154,
+          "logloss": 0.13719380459924183,
+          "baseline_logloss": 0.13916943181268707,
+          "seller_q05_q95": [
+            -16.0,
+            46.0
+          ],
+          "seller_category_q05_q95": [
+            -35.05,
+            70.0
+          ]
+        },
+        "fresh": {
+          "n": 3902,
+          "hits": 3684,
+          "baseline_hits": 3687,
+          "net": -3,
+          "fixes": 25,
+          "breaks": 28,
+          "logloss": 0.1395075887997518,
+          "baseline_logloss": 0.1407668046320189,
+          "seller_q05_q95": [
+            -14.049999999999997,
+            9.0
+          ],
+          "seller_category_q05_q95": [
+            -23.049999999999997,
+            18.0
+          ]
+        },
+        "seen": {
+          "n": 15809,
+          "hits": 15242,
+          "baseline_hits": 15222,
+          "net": 20,
+          "fixes": 81,
+          "breaks": 61,
+          "logloss": 0.10301400734225134,
+          "baseline_logloss": 0.10609346716334447,
+          "seller_q05_q95": [
+            0.0,
+            40.0
+          ],
+          "seller_category_q05_q95": [
+            -14.0,
+            56.049999999999955
+          ]
+        },
+        "new": {
+          "n": 8034,
+          "hits": 7377,
+          "baseline_hits": 7381,
+          "net": -4,
+          "fixes": 89,
+          "breaks": 93,
+          "logloss": 0.2044515112006561,
+          "baseline_logloss": 0.20425505854177067,
+          "seller_q05_q95": [
+            -26.0,
+            18.0
+          ],
+          "seller_category_q05_q95": [
+            -46.0,
+            34.0
+          ]
+        }
+      }
+    }
+  },
+  "native_equal_blend": {
+    "scope": "Fixed equal-weight blend on two reused, ID-disjoint validation cohorts.",
+    "metrics": {
+      "cold": {
+        "all": {
+          "n": 7632,
+          "hits": 7020,
+          "baseline_hits": 7013,
+          "net": 7,
+          "fixes": 38,
+          "breaks": 31,
+          "logloss": 0.2148508553341925,
+          "baseline_logloss": 0.21422698786784905,
+          "seller_q05_q95": [
+            -8.0,
+            22.0
+          ],
+          "seller_category_q05_q95": [
+            -17.0,
+            31.0
+          ]
+        },
+        "seen": {
+          "n": 496,
+          "hits": 484,
+          "baseline_hits": 482,
+          "net": 2,
+          "fixes": 3,
+          "breaks": 1,
+          "logloss": 0.07825423325204472,
+          "baseline_logloss": 0.07888015416367225,
+          "seller_q05_q95": [
+            -1.0,
+            6.0
+          ],
+          "seller_category_q05_q95": [
+            -3.0,
+            8.0
+          ]
+        },
+        "new": {
+          "n": 7136,
+          "hits": 6536,
+          "baseline_hits": 6531,
+          "net": 5,
+          "fixes": 35,
+          "breaks": 30,
+          "logloss": 0.22434523938026105,
+          "baseline_logloss": 0.22363450321500034,
+          "seller_q05_q95": [
+            -9.0,
+            19.0
+          ],
+          "seller_category_q05_q95": [
+            -17.049999999999997,
+            29.0
+          ]
+        }
+      },
+      "warm_exclusive": {
+        "all": {
+          "n": 3902,
+          "hits": 3687,
+          "baseline_hits": 3687,
+          "net": 0,
+          "fixes": 12,
+          "breaks": 12,
+          "logloss": 0.1378995675011021,
+          "baseline_logloss": 0.1407668046320189,
+          "seller_q05_q95": [
+            -8.0,
+            9.0
+          ],
+          "seller_category_q05_q95": [
+            -13.0,
+            14.0
+          ]
+        },
+        "seen": {
+          "n": 2355,
+          "hits": 2288,
+          "baseline_hits": 2290,
+          "net": -2,
+          "fixes": 1,
+          "breaks": 3,
+          "logloss": 0.08552730382376383,
+          "baseline_logloss": 0.08752545413308237,
+          "seller_q05_q95": [
+            -5.0,
+            0.0
+          ],
+          "seller_category_q05_q95": [
+            -8.0,
+            2.0
+          ]
+        },
+        "new": {
+          "n": 1547,
+          "hits": 1399,
+          "baseline_hits": 1397,
+          "net": 2,
+          "fixes": 11,
+          "breaks": 9,
+          "logloss": 0.21762592881986856,
+          "baseline_logloss": 0.22181617788670252,
+          "seller_q05_q95": [
+            -6.0,
+            11.0
+          ],
+          "seller_category_q05_q95": [
+            -11.0,
+            15.049999999999727
+          ]
+        }
+      }
+    },
+    "input_sha256": {
+      "cold": "9b5e15154f2bd7843e9fd307bcc30f2dc3242aabb0d6d06271d5155f524f26a9",
+      "warm": "eeac7c186934d0233211dab527ba2227436a54290357fb661ac528339b6fd6cc"
+    }
+  },
+  "causal_profiles": {
+    "scope": "Reused train-only panels; exclusive subsets disjoint by ID; no public projection.",
+    "runner_sha256": "19ccf7866402da01961db61d0b755c12ed4dd542a85f1f5652c77434ff07a0e7",
+    "archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+    "panels": {
+      "recent_seller_history": {
+        "split_sha256": "7c8664785a315314e21970f9c52dd49df97fa8cdea97a69ea889d40cc4817ff6",
+        "baseline_pairs_sha256": "92ce80f21cd3f6be30149194064af3f0d22fa703d6e43d0fe19ee95b49960037",
+        "pairs_sha256": "4b708f374510417ffd40807db4d98e533e54a00e80690f76b14642554c9903c3",
+        "model_sha256": "d7bda3b0ec54df63ccd2449d810c5bf3fa31d856f9b5e24c2c037cde5073a2ed",
+        "disagreement_ids_sha256": "8cf3e9f197aec433951cd809e43b38c1d4a8b7eed914ff40bd2ba909f5b67913",
+        "metrics": {
+          "all": {
+            "n": 23843,
+            "hits": 22615,
+            "baseline_hits": 22603,
+            "net": 12,
+            "fixes": 117,
+            "breaks": 105,
+            "logloss": 0.13784225287077526,
+            "baseline_logloss": 0.13916943181268707,
+            "seller_q05_q95": [
+              -14.0,
+              37.0
+            ],
+            "seller_category_q05_q95": [
+              -30.0,
+              55.0
+            ]
+          },
+          "fresh": {
+            "n": 3902,
+            "hits": 3689,
+            "baseline_hits": 3687,
+            "net": 2,
+            "fixes": 19,
+            "breaks": 17,
+            "logloss": 0.1393814557808662,
+            "baseline_logloss": 0.1407668046320189,
+            "seller_q05_q95": [
+              -9.0,
+              14.0
+            ],
+            "seller_category_q05_q95": [
+              -15.0,
+              21.0
+            ]
+          },
+          "fresh_seen": {
+            "n": 2355,
+            "hits": 2286,
+            "baseline_hits": 2290,
+            "net": -4,
+            "fixes": 3,
+            "breaks": 7,
+            "logloss": 0.08542598005416016,
+            "baseline_logloss": 0.08752545413308237,
+            "seller_q05_q95": [
+              -10.0,
+              2.0
+            ],
+            "seller_category_q05_q95": [
+              -15.0,
+              5.0
+            ]
+          }
+        }
+      },
+      "structural_heldout_confirm": {
+        "split_sha256": "aeb858e0fd5a4e4edc1813f9e306977eba977da278c12eb1b7217eec6be7fa16",
+        "baseline_pairs_sha256": "58802bbc00921ff48d4ffba556c41ab58b3485c81e5c872815f9888220829987",
+        "pairs_sha256": "bb0ab611c5fd416a13a4044f20a3932bc4f8b8ba9b5f8358a8941ef543a939ac",
+        "model_sha256": "aca70fdcf11195dd5654fe3639985881317b1c2f866b675333ee6768f6b5201c",
+        "disagreement_ids_sha256": "924a4e38a3a76fbed6de4d2b1f4153b2940f602190ddfdbf86cc871d80b39575",
+        "metrics": {
+          "all": {
+            "n": 7632,
+            "hits": 7016,
+            "baseline_hits": 7013,
+            "net": 3,
+            "fixes": 52,
+            "breaks": 49,
+            "logloss": 0.21234204480388677,
+            "baseline_logloss": 0.21422698786784905,
+            "seller_q05_q95": [
+              -15.0,
+              21.0
+            ],
+            "seller_category_q05_q95": [
+              -28.0,
+              33.0
+            ]
+          },
+          "fresh": {
+            "n": 7632,
+            "hits": 7016,
+            "baseline_hits": 7013,
+            "net": 3,
+            "fixes": 52,
+            "breaks": 49,
+            "logloss": 0.21234204480388677,
+            "baseline_logloss": 0.21422698786784905,
+            "seller_q05_q95": [
+              -15.0,
+              21.0
+            ],
+            "seller_category_q05_q95": [
+              -28.0,
+              33.0
+            ]
+          },
+          "fresh_seen": {
+            "n": 496,
+            "hits": 481,
+            "baseline_hits": 482,
+            "net": -1,
+            "fixes": 1,
+            "breaks": 2,
+            "logloss": 0.0738226966369348,
+            "baseline_logloss": 0.07888015416367225,
+            "seller_q05_q95": [
+              -4.0,
+              2.0
+            ],
+            "seller_category_q05_q95": [
+              -6.0,
+              4.0
+            ]
+          }
+        }
+      }
+    }
+  },
+  "candidate_support": {
+    "raw_bracketed_disagreements_vs_s4": 170,
+    "outside_ten_negative_blocks": 24,
+    "aligned_structural_proxy_and_outside_ten_blocks": 24,
+    "outside_all_history_and_aligned": 15
+  },
+  "decision": "Batch model is a specialist. At most 24 gains on filtered support. No credible podium-scale public candidate from this experiment. Audit benchmark with separate fit-only batch-history arm. No submission created."
+}
