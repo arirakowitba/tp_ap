@@ -1,0 +1,75 @@
+{
+  "source": "Four Nov 13 scores reported by Ariel. Submission IDs and timestamps not independently reconciled.",
+  "anchor_score": 0.94766,
+  "n_public_assumed": 20998,
+  "net_to_exceed_095": 50,
+  "today": {
+    "A": {
+      "score": 0.94576,
+      "flips": 141,
+      "net": -40,
+      "sha256": "6083bdeba62a8df8414854eaec47ab6156a0393c9641cb649c41f847a960fcde"
+    },
+    "B": {
+      "score": 0.94642,
+      "flips": 61,
+      "net": -26,
+      "sha256": "437a27e18e5938e6f4ab9cea0a3459113ae833bac1b6e5417f6669c27622f986"
+    },
+    "C": {
+      "score": 0.9469,
+      "flips": 53,
+      "net": -16,
+      "sha256": "93ba09b3c165fe31e8f15c5457c501229bb6977696259298a4a05577bc8b2573"
+    },
+    "D": {
+      "score": 0.94657,
+      "flips": 101,
+      "net": -23,
+      "sha256": "b6ce1b03c0072b69e8b1a2fb8c66984c266e7805cb1b0bbc1770dd5e8adef92b"
+    }
+  },
+  "today_union_net": -105,
+  "today_union_score": 0.9426612058291266,
+  "nine_union_net": -407,
+  "nine_union_support": 1514,
+  "historical_aggregate_constraints_including_nine": 57,
+  "historical_quarantine": {
+    "incompatible": [
+      "EVT-018",
+      "EVT-052"
+    ],
+    "same_vector_conflicts": [],
+    "rejected": [
+      "EVT-022",
+      "EVT-005",
+      "EVT-004",
+      "EVT-001"
+    ]
+  },
+  "candidates": {
+    "ap_20261113_R_consenso_fuera_proxy.csv": {
+      "flips": 33,
+      "bounds": [
+        -33.0,
+        33.0
+      ],
+      "sha256": "8d0c96d549d955dd63830be13cd51a4ca3e82f79bf31698c79aa8f1f61847418",
+      "support_only_ceiling_score": 0.9492332603105058,
+      "compatible_history_ceiling_score": 0.9492332603105058,
+      "optimistic_uniform_public_tail": 0.0
+    },
+    "ap_20261113_05_consenso_cruzado.csv": {
+      "flips": 58,
+      "bounds": [
+        -58.0,
+        56.0
+      ],
+      "sha256": "2d28fb5f16b9083595e1ad3624774be1fdb0c36b29c00f141dd0810a298551c6",
+      "support_only_ceiling_score": 0.9504238498904658,
+      "compatible_history_ceiling_score": 0.9503286027240689,
+      "optimistic_uniform_public_tail": 0.0034008668231247778
+    }
+  },
+  "method": "Linear relaxation of signed net contributions per membership pattern. No individual labels or public membership recovered. Optimistic tail assumes every flip is correct and a uniform public subset. It is not a calibrated estimate."
+}
