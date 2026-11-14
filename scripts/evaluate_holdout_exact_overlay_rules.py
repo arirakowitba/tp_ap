@@ -25,7 +25,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import TruncatedSVD
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, log_loss
+from sklearn.metrics import accuracy_score, log_loss, brier_score_loss
 from lightgbm import LGBMClassifier
 
 sys.path.append(os.path.abspath("."))
@@ -442,7 +442,13 @@ def main():
     c_rule_c[(p_batch_ho >= 0.70) & warm_ho_m] = True
     c_rule_c[(p_batch_ho <= 0.30) & warm_ho_m] = False
 
+    # Rule Clean (AG-0223): tau=0.90 on warm, 0 on cold
+    c_rule_clean = c_base_ho.copy()
+    c_rule_clean[(p_batch_ho >= 0.90) & warm_ho_m] = True
+    c_rule_clean[(p_batch_ho <= 0.10) & warm_ho_m] = False
+
     rules = {
+        "Rule_Clean (tau=0.90 Warm, 0 Cold) [Analog of Clean Candidate, 161 flips]": c_rule_clean,
         "Rule_A (tau=0.80 Warm, 0 Cold) [Analog of Cand A, 303 flips]": c_rule_a,
         "Rule_B (Warm + Cold tau=0.70) [Analog of Cand B, 379 flips]": c_rule_b,
         "Rule_C (tau=0.70 Warm, 0 Cold) [Analog of Cand C, 483 flips]": c_rule_c,
@@ -459,19 +465,44 @@ def main():
         net_all = fixes_all - breaks_all
         prec_all = fixes_all / n_flips if n_flips > 0 else 0.0
 
-        # Construct calibrated probability for logloss
-        p_eval = p_base_ho.copy()
-        if "Rule_A" in rule_name or "Rule_C" in rule_name:
-            p_eval[warm_ho_m] = p_batch_ho[warm_ho_m]
+        # Construct coherent probability policy for overlay:
+        # Probabilities are altered ONLY on rows where the discrete flip was triggered.
+        p_eval_overlay = p_base_ho.copy()
+        if "Rule_A" in rule_name or "Rule_C" in rule_name or "Rule_Clean" in rule_name:
+            p_eval_overlay[flips_all] = p_batch_ho[flips_all]
         elif "Rule_B" in rule_name:
-            p_eval[warm_ho_m] = p_batch_ho[warm_ho_m]
-            p_eval[cold_ho_m] = p_cold_ho[cold_ho_m]
-        ll_rule = float(log_loss(y_ho, p_eval))
+            p_eval_overlay[flips_all & warm_ho_m] = p_batch_ho[flips_all & warm_ho_m]
+            p_eval_overlay[flips_all & cold_ho_m] = p_cold_ho[flips_all & cold_ho_m]
+
+        ll_overlay = float(log_loss(y_ho, p_eval_overlay))
+        brier_overlay = float(brier_score_loss(y_ho, p_eval_overlay))
+        brier_base = float(brier_score_loss(y_ho, p_base_ho))
+
+        # Conditional metrics on the flip support itself
+        if n_flips > 0:
+            ll_flips_base = float(log_loss(y_ho[flips_all], p_base_ho[flips_all], labels=[0, 1]))
+            ll_flips_cand = float(log_loss(y_ho[flips_all], p_eval_overlay[flips_all], labels=[0, 1]))
+            brier_flips_base = float(brier_score_loss(y_ho[flips_all], p_base_ho[flips_all]))
+            brier_flips_cand = float(brier_score_loss(y_ho[flips_all], p_eval_overlay[flips_all]))
+        else:
+            ll_flips_base = 0.0
+            ll_flips_cand = 0.0
+            brier_flips_base = 0.0
+            brier_flips_cand = 0.0
+
+        # Also reference global continuous replacement of warm (which AG-0224 previously reported)
+        p_batch_all_warm = p_base_ho.copy()
+        p_batch_all_warm[warm_ho_m] = p_batch_ho[warm_ho_m]
+        ll_continuous_warm = float(log_loss(y_ho, p_batch_all_warm, labels=[0, 1]))
 
         print(f"\n=======================================================")
         print(f"{rule_name}:")
         print(f"  Total Flips vs Base: {n_flips} | Net Delta: {net_all:+d} (Fixes={fixes_all}, Breaks={breaks_all}) | Prec={prec_all:.1%}")
-        print(f"  LogLoss: {ll_rule:.4f} vs Base {ll_base_ho:.4f} (Delta: {ll_rule - ll_base_ho:+.4f})")
+        print(f"  Overlay LogLoss: {ll_overlay:.6f} vs Base {ll_base_ho:.6f} (Delta: {ll_overlay - ll_base_ho:+.6f})")
+        print(f"  Overlay Brier:   {brier_overlay:.6f} vs Base {brier_base:.6f} (Delta: {brier_overlay - brier_base:+.6f})")
+        if n_flips > 0:
+            print(f"  Conditional on Flips (N={n_flips}): Brier={brier_flips_cand:.4f} vs Base {brier_flips_base:.4f} | LL={ll_flips_cand:.4f} vs {ll_flips_base:.4f}")
+        print(f"  [Ref] Continuous Warm Model LogLoss: {ll_continuous_warm:.4f} (NOT the overlay)")
 
         # Breakdown by 5 regimes
         regime_eval = {}
@@ -484,9 +515,11 @@ def main():
             br_r = int(np.sum(diff_r < 0))
             net_r = fx_r - br_r
             pr_r = fx_r / n_fl_r if n_fl_r > 0 else 0.0
-            ll_r_base = float(log_loss(y_ho[rmask], p_base_ho[rmask]))
-            ll_r_cand = float(log_loss(y_ho[rmask], p_eval[rmask]))
+            ll_r_base = float(log_loss(y_ho[rmask], p_base_ho[rmask], labels=[0, 1]))
+            ll_r_cand = float(log_loss(y_ho[rmask], p_eval_overlay[rmask], labels=[0, 1]))
+            eval_status = "EVALUADA" if n_fl_r > 0 else "NO_EVALUADA_CERO_FLIPS"
             regime_eval[rname] = {
+                "eval_status": eval_status,
                 "n_rows": int(rmask.sum()),
                 "flips": n_fl_r,
                 "net_delta": net_r,
@@ -496,7 +529,8 @@ def main():
                 "logloss_base": round(ll_r_base, 4),
                 "logloss_cand": round(ll_r_cand, 4),
             }
-            print(f"    {rname:25}: Flips={n_fl_r:3d} | Net={net_r:+3d} (Fix={fx_r:2d}, Brk={br_r:2d}) | Prec={pr_r:5.1%} | LL: {ll_r_cand:.4f} vs {ll_r_base:.4f}")
+            status_str = f"Flips={n_fl_r:3d}" if n_fl_r > 0 else "CERO FLIPS (NO EVALUADA)"
+            print(f"    {rname:25}: {status_str:25} | Net={net_r:+3d} (Fix={fx_r:2d}, Brk={br_r:2d}) | Prec={pr_r:5.1%}")
 
         # Bootstraps
         print("  Running Bootstraps (Seller, Category, Multiway, Temporal)...")
@@ -520,8 +554,15 @@ def main():
             "fixes": fixes_all,
             "breaks": breaks_all,
             "precision": round(prec_all, 4),
-            "logloss": round(ll_rule, 4),
-            "logloss_base": round(ll_base_ho, 4),
+            "logloss_overlay": round(ll_overlay, 6),
+            "logloss_base": round(ll_base_ho, 6),
+            "brier_overlay": round(brier_overlay, 6),
+            "brier_base": round(brier_base, 6),
+            "conditional_flips_brier_cand": round(brier_flips_cand, 6),
+            "conditional_flips_brier_base": round(brier_flips_base, 6),
+            "conditional_flips_ll_cand": round(ll_flips_cand, 6),
+            "conditional_flips_ll_base": round(ll_flips_base, 6),
+            "reference_continuous_warm_logloss": round(ll_continuous_warm, 4),
             "by_regime": regime_eval,
             "bootstraps": boot_res
         }

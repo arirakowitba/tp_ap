@@ -1,0 +1,207 @@
+{
+  "timestamp_iso": "2026-11-14T16:37:51.731185",
+  "runner": "scratch/run_retrospective_historical_census_summary.py",
+  "methodology_disclaimer": "Resumen descriptivo retrospectivo, no prequential. Evaluado ex-post contra ancla S4.",
+  "total_historical_events": 128,
+  "scored_events": 128,
+  "family_summary": [
+    {
+      "family": "algebraic_block_b_n2u",
+      "n_submissions": 1,
+      "mean_delta_vs_s4": -0.04,
+      "median_delta_vs_s4": -0.04,
+      "min_delta_vs_s4": -0.04,
+      "max_delta_vs_s4": -0.04,
+      "n_losses": 1,
+      "n_gains": 0,
+      "loss_rate": 1.0,
+      "worst_event": "EVT-154 (Delta=-0, Flips=0.0)"
+    },
+    {
+      "family": "catboost_depth8_proxy_overlay_rejected",
+      "n_submissions": 1,
+      "mean_delta_vs_s4": -98.94,
+      "median_delta_vs_s4": -98.94,
+      "min_delta_vs_s4": -98.94,
+      "max_delta_vs_s4": -98.94,
+      "n_losses": 1,
+      "n_gains": 0,
+      "loss_rate": 1.0,
+      "worst_event": "EVT-155 (Delta=-99, Flips=250.0)"
+    },
+    {
+      "family": "hybrid_seen_router",
+      "n_submissions": 1,
+      "mean_delta_vs_s4": -349.02,
+      "median_delta_vs_s4": -349.02,
+      "min_delta_vs_s4": -349.02,
+      "max_delta_vs_s4": -349.02,
+      "n_losses": 1,
+      "n_gains": 0,
+      "loss_rate": 1.0,
+      "worst_event": "EVT-142 (Delta=-349, Flips=754.0)"
+    },
+    {
+      "family": "lexical_probe",
+      "n_submissions": 22,
+      "mean_delta_vs_s4": -39.89,
+      "median_delta_vs_s4": -29.54,
+      "min_delta_vs_s4": -106.92,
+      "max_delta_vs_s4": -5.91,
+      "n_losses": 22,
+      "n_gains": 0,
+      "loss_rate": 1.0,
+      "worst_event": "EVT-098 (Delta=-107, Flips=273.0)"
+    },
+    {
+      "family": "meta_stacker",
+      "n_submissions": 1,
+      "mean_delta_vs_s4": -115.94,
+      "median_delta_vs_s4": -115.94,
+      "min_delta_vs_s4": -115.94,
+      "max_delta_vs_s4": -115.94,
+      "n_losses": 1,
+      "n_gains": 0,
+      "loss_rate": 1.0,
+      "worst_event": "EVT-141 (Delta=-116, Flips=643.0)"
+    },
+    {
+      "family": "portfolio_ladder",
+      "n_submissions": 19,
+      "mean_delta_vs_s4": -11.34,
+      "median_delta_vs_s4": -9.9,
+      "min_delta_vs_s4": -30.06,
+      "max_delta_vs_s4": -2.98,
+      "n_losses": 19,
+      "n_gains": 0,
+      "loss_rate": 1.0,
+      "worst_event": "EVT-073 (Delta=-30, Flips=128.0)"
+    },
+    {
+      "family": "residual_tree_leakage_failed",
+      "n_submissions": 1,
+      "mean_delta_vs_s4": -47.07,
+      "median_delta_vs_s4": -47.07,
+      "min_delta_vs_s4": -47.07,
+      "max_delta_vs_s4": -47.07,
+      "n_losses": 1,
+      "n_gains": 0,
+      "loss_rate": 1.0,
+      "worst_event": "EVT-151 (Delta=-47, Flips=153.0)"
+    },
+    {
+      "family": "surgical_deconfounding_block_a_u2n",
+      "n_submissions": 1,
+      "mean_delta_vs_s4": -2.98,
+      "median_delta_vs_s4": -2.98,
+      "min_delta_vs_s4": -2.98,
+      "max_delta_vs_s4": -2.98,
+      "n_losses": 1,
+      "n_gains": 0,
+      "loss_rate": 1.0,
+      "worst_event": "EVT-153 (Delta=-3, Flips=6.0)"
+    },
+    {
+      "family": "surgical_lexical_uncalibrated_failed",
+      "n_submissions": 1,
+      "mean_delta_vs_s4": -1.93,
+      "median_delta_vs_s4": -1.93,
+      "min_delta_vs_s4": -1.93,
+      "max_delta_vs_s4": -1.93,
+      "n_losses": 1,
+      "n_gains": 0,
+      "loss_rate": 1.0,
+      "worst_event": "EVT-152 (Delta=-2, Flips=3.0)"
+    },
+    {
+      "family": "surgical_quad",
+      "n_submissions": 1,
+      "mean_delta_vs_s4": -1.09,
+      "median_delta_vs_s4": -1.09,
+      "min_delta_vs_s4": -1.09,
+      "max_delta_vs_s4": -1.09,
+      "n_losses": 1,
+      "n_gains": 0,
+      "loss_rate": 1.0,
+      "worst_event": "EVT-143 (Delta=-1, Flips=3.0)"
+    },
+    {
+      "family": "tabular_tree_heuristic",
+      "n_submissions": 79,
+      "mean_delta_vs_s4": -53.27,
+      "median_delta_vs_s4": -40.98,
+      "min_delta_vs_s4": -375.9,
+      "max_delta_vs_s4": -18.09,
+      "n_losses": 79,
+      "n_gains": 0,
+      "loss_rate": 1.0,
+      "worst_event": "EVT-032 (Delta=-376, Flips=1217.0)"
+    }
+  ],
+  "major_drawdowns": [
+    {
+      "event_id": "EVT-032",
+      "public_score": 0.92976,
+      "hits": 19523.10048,
+      "delta_vs_s4": -375.89951999999903,
+      "flips_vs_s4_count": 1217.0,
+      "policy_family": "tabular_tree_heuristic"
+    },
+    {
+      "event_id": "EVT-142",
+      "public_score": 0.93104,
+      "hits": 19549.97792,
+      "delta_vs_s4": -349.0220799999988,
+      "flips_vs_s4_count": 754.0,
+      "policy_family": "hybrid_seen_router"
+    },
+    {
+      "event_id": "EVT-072",
+      "public_score": 0.93695,
+      "hits": 19674.0761,
+      "delta_vs_s4": -224.9239000000016,
+      "flips_vs_s4_count": 970.0,
+      "policy_family": "tabular_tree_heuristic"
+    },
+    {
+      "event_id": "EVT-056",
+      "public_score": 0.94114,
+      "hits": 19762.05772,
+      "delta_vs_s4": -136.9422799999993,
+      "flips_vs_s4_count": NaN,
+      "policy_family": "tabular_tree_heuristic"
+    },
+    {
+      "event_id": "EVT-141",
+      "public_score": 0.94214,
+      "hits": 19783.05572,
+      "delta_vs_s4": -115.94427999999971,
+      "flips_vs_s4_count": 643.0,
+      "policy_family": "meta_stacker"
+    },
+    {
+      "event_id": "EVT-010",
+      "public_score": 0.94228,
+      "hits": 19785.99544,
+      "delta_vs_s4": -113.00456000000122,
+      "flips_vs_s4_count": 618.0,
+      "policy_family": "tabular_tree_heuristic"
+    },
+    {
+      "event_id": "EVT-098",
+      "public_score": 0.94257,
+      "hits": 19792.08486,
+      "delta_vs_s4": -106.91514000000097,
+      "flips_vs_s4_count": 273.0,
+      "policy_family": "lexical_probe"
+    },
+    {
+      "event_id": "EVT-049",
+      "public_score": 0.94257,
+      "hits": 19792.08486,
+      "delta_vs_s4": -106.91514000000097,
+      "flips_vs_s4_count": 273.0,
+      "policy_family": "tabular_tree_heuristic"
+    }
+  ]
+}

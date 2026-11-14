@@ -1,5 +1,5 @@
 {
-  "timestamp_iso": "2026-11-14T15:57:01.863125",
+  "timestamp_iso": "2026-11-14T16:39:47.802503",
   "runner": "scripts/evaluate_holdout_exact_overlay_rules.py",
   "structural_declaration": "No es posible reconstruir una regla OOF fiel a S4 en train; S4 es un artefacto puntuado en test. Se eval\u00faan las reglas exactas sobre holdout end-to-end.",
   "confirm_rows_frozen": 14075,
@@ -65,16 +65,24 @@
     }
   },
   "exact_rules_evaluation_holdout": {
-    "Rule_A (tau=0.80 Warm, 0 Cold) [Analog of Cand A, 303 flips]": {
-      "total_flips": 6,
-      "net_delta": 6,
-      "fixes": 6,
+    "Rule_Clean (tau=0.90 Warm, 0 Cold) [Analog of Clean Candidate, 161 flips]": {
+      "total_flips": 2,
+      "net_delta": 2,
+      "fixes": 2,
       "breaks": 0,
       "precision": 1.0,
-      "logloss": 0.2994,
-      "logloss_base": 0.3039,
+      "logloss_overlay": 0.303854,
+      "logloss_base": 0.303935,
+      "brier_overlay": 0.091407,
+      "brier_base": 0.091439,
+      "conditional_flips_brier_cand": 0.00337,
+      "conditional_flips_brier_base": 0.287181,
+      "conditional_flips_ll_cand": 0.057545,
+      "conditional_flips_ll_base": 0.767671,
+      "reference_continuous_warm_logloss": 0.2994,
       "by_regime": {
         "bracketed (Warm)": {
+          "eval_status": "NO_EVALUADA_CERO_FLIPS",
           "n_rows": 23,
           "flips": 0,
           "net_delta": 0,
@@ -82,29 +90,32 @@
           "breaks": 0,
           "precision": 0.0,
           "logloss_base": 0.4968,
-          "logloss_cand": 0.4692
+          "logloss_cand": 0.4968
         },
         "same_timestamp (Warm)": {
+          "eval_status": "EVALUADA",
           "n_rows": 322,
-          "flips": 5,
-          "net_delta": 5,
-          "fixes": 5,
+          "flips": 2,
+          "net_delta": 2,
+          "fixes": 2,
           "breaks": 0,
           "precision": 1.0,
           "logloss_base": 0.3514,
-          "logloss_cand": 0.2609
+          "logloss_cand": 0.3469
         },
         "before_train (Warm)": {
+          "eval_status": "NO_EVALUADA_CERO_FLIPS",
           "n_rows": 43,
-          "flips": 1,
-          "net_delta": 1,
-          "fixes": 1,
+          "flips": 0,
+          "net_delta": 0,
+          "fixes": 0,
           "breaks": 0,
-          "precision": 1.0,
+          "precision": 0.0,
           "logloss_base": 0.1822,
-          "logloss_cand": 0.11
+          "logloss_cand": 0.1822
         },
         "after_train (Warm)": {
+          "eval_status": "NO_EVALUADA_CERO_FLIPS",
           "n_rows": 8836,
           "flips": 0,
           "net_delta": 0,
@@ -112,9 +123,114 @@
           "breaks": 0,
           "precision": 0.0,
           "logloss_base": 0.197,
-          "logloss_cand": 0.1917
+          "logloss_cand": 0.197
         },
         "new_seller (Cold)": {
+          "eval_status": "NO_EVALUADA_CERO_FLIPS",
+          "n_rows": 8323,
+          "flips": 0,
+          "net_delta": 0,
+          "fixes": 0,
+          "breaks": 0,
+          "precision": 0.0,
+          "logloss_base": 0.4157,
+          "logloss_cand": 0.4157
+        }
+      },
+      "bootstraps": {
+        "multiway": {
+          "mean": 1.9,
+          "std": 2.31,
+          "q05": 0.0,
+          "median": 1.06,
+          "q95": 6.36
+        },
+        "seller_cluster": {
+          "mean": 2.0,
+          "std": 1.39,
+          "q05": 0.0,
+          "median": 1.98,
+          "q95": 4.19
+        },
+        "category_cluster": {
+          "mean": 2.05,
+          "std": 1.43,
+          "q05": 0.0,
+          "median": 1.98,
+          "q95": 4.77
+        },
+        "temporal_block": {
+          "mean": 2.0,
+          "std": 1.4,
+          "q05": 0.0,
+          "median": 1.89,
+          "q95": 4.56
+        },
+        "worst_case_q05": 0.0
+      }
+    },
+    "Rule_A (tau=0.80 Warm, 0 Cold) [Analog of Cand A, 303 flips]": {
+      "total_flips": 6,
+      "net_delta": 6,
+      "fixes": 6,
+      "breaks": 0,
+      "precision": 1.0,
+      "logloss_overlay": 0.303671,
+      "logloss_base": 0.303935,
+      "brier_overlay": 0.091326,
+      "brier_base": 0.091439,
+      "conditional_flips_brier_cand": 0.015259,
+      "conditional_flips_brier_base": 0.346139,
+      "conditional_flips_ll_cand": 0.122387,
+      "conditional_flips_ll_base": 0.892992,
+      "reference_continuous_warm_logloss": 0.2994,
+      "by_regime": {
+        "bracketed (Warm)": {
+          "eval_status": "NO_EVALUADA_CERO_FLIPS",
+          "n_rows": 23,
+          "flips": 0,
+          "net_delta": 0,
+          "fixes": 0,
+          "breaks": 0,
+          "precision": 0.0,
+          "logloss_base": 0.4968,
+          "logloss_cand": 0.4968
+        },
+        "same_timestamp (Warm)": {
+          "eval_status": "EVALUADA",
+          "n_rows": 322,
+          "flips": 5,
+          "net_delta": 5,
+          "fixes": 5,
+          "breaks": 0,
+          "precision": 1.0,
+          "logloss_base": 0.3514,
+          "logloss_cand": 0.3404
+        },
+        "before_train (Warm)": {
+          "eval_status": "EVALUADA",
+          "n_rows": 43,
+          "flips": 1,
+          "net_delta": 1,
+          "fixes": 1,
+          "breaks": 0,
+          "precision": 1.0,
+          "logloss_base": 0.1822,
+          "logloss_cand": 0.1567
+        },
+        "after_train (Warm)": {
+          "eval_status": "NO_EVALUADA_CERO_FLIPS",
+          "n_rows": 8836,
+          "flips": 0,
+          "net_delta": 0,
+          "fixes": 0,
+          "breaks": 0,
+          "precision": 0.0,
+          "logloss_base": 0.197,
+          "logloss_cand": 0.197
+        },
+        "new_seller (Cold)": {
+          "eval_status": "NO_EVALUADA_CERO_FLIPS",
           "n_rows": 8323,
           "flips": 0,
           "net_delta": 0,
@@ -163,10 +279,18 @@
       "fixes": 13,
       "breaks": 7,
       "precision": 0.65,
-      "logloss": 0.3065,
-      "logloss_base": 0.3039,
+      "logloss_overlay": 0.303768,
+      "logloss_base": 0.303935,
+      "brier_overlay": 0.091371,
+      "brier_base": 0.091439,
+      "conditional_flips_brier_cand": 0.220024,
+      "conditional_flips_brier_base": 0.279772,
+      "conditional_flips_ll_cand": 0.610448,
+      "conditional_flips_ll_base": 0.756796,
+      "reference_continuous_warm_logloss": 0.2994,
       "by_regime": {
         "bracketed (Warm)": {
+          "eval_status": "NO_EVALUADA_CERO_FLIPS",
           "n_rows": 23,
           "flips": 0,
           "net_delta": 0,
@@ -174,9 +298,10 @@
           "breaks": 0,
           "precision": 0.0,
           "logloss_base": 0.4968,
-          "logloss_cand": 0.4692
+          "logloss_cand": 0.4968
         },
         "same_timestamp (Warm)": {
+          "eval_status": "EVALUADA",
           "n_rows": 322,
           "flips": 5,
           "net_delta": 5,
@@ -184,9 +309,10 @@
           "breaks": 0,
           "precision": 1.0,
           "logloss_base": 0.3514,
-          "logloss_cand": 0.2609
+          "logloss_cand": 0.3404
         },
         "before_train (Warm)": {
+          "eval_status": "EVALUADA",
           "n_rows": 43,
           "flips": 1,
           "net_delta": 1,
@@ -194,9 +320,10 @@
           "breaks": 0,
           "precision": 1.0,
           "logloss_base": 0.1822,
-          "logloss_cand": 0.11
+          "logloss_cand": 0.1567
         },
         "after_train (Warm)": {
+          "eval_status": "NO_EVALUADA_CERO_FLIPS",
           "n_rows": 8836,
           "flips": 0,
           "net_delta": 0,
@@ -204,9 +331,10 @@
           "breaks": 0,
           "precision": 0.0,
           "logloss_base": 0.197,
-          "logloss_cand": 0.1917
+          "logloss_cand": 0.197
         },
         "new_seller (Cold)": {
+          "eval_status": "EVALUADA",
           "n_rows": 8323,
           "flips": 14,
           "net_delta": 0,
@@ -214,7 +342,7 @@
           "breaks": 7,
           "precision": 0.5,
           "logloss_base": 0.4157,
-          "logloss_cand": 0.4306
+          "logloss_cand": 0.4159
         }
       },
       "bootstraps": {
@@ -255,10 +383,18 @@
       "fixes": 14,
       "breaks": 3,
       "precision": 0.8235,
-      "logloss": 0.2994,
-      "logloss_base": 0.3039,
+      "logloss_overlay": 0.303518,
+      "logloss_base": 0.303935,
+      "brier_overlay": 0.091253,
+      "brier_base": 0.091439,
+      "conditional_flips_brier_cand": 0.129007,
+      "conditional_flips_brier_base": 0.320723,
+      "conditional_flips_ll_cand": 0.409965,
+      "conditional_flips_ll_base": 0.840066,
+      "reference_continuous_warm_logloss": 0.2994,
       "by_regime": {
         "bracketed (Warm)": {
+          "eval_status": "NO_EVALUADA_CERO_FLIPS",
           "n_rows": 23,
           "flips": 0,
           "net_delta": 0,
@@ -266,9 +402,10 @@
           "breaks": 0,
           "precision": 0.0,
           "logloss_base": 0.4968,
-          "logloss_cand": 0.4692
+          "logloss_cand": 0.4968
         },
         "same_timestamp (Warm)": {
+          "eval_status": "EVALUADA",
           "n_rows": 322,
           "flips": 13,
           "net_delta": 9,
@@ -276,9 +413,10 @@
           "breaks": 2,
           "precision": 0.8462,
           "logloss_base": 0.3514,
-          "logloss_cand": 0.2609
+          "logloss_cand": 0.3331
         },
         "before_train (Warm)": {
+          "eval_status": "EVALUADA",
           "n_rows": 43,
           "flips": 1,
           "net_delta": 1,
@@ -286,9 +424,10 @@
           "breaks": 0,
           "precision": 1.0,
           "logloss_base": 0.1822,
-          "logloss_cand": 0.11
+          "logloss_cand": 0.1567
         },
         "after_train (Warm)": {
+          "eval_status": "EVALUADA",
           "n_rows": 8836,
           "flips": 3,
           "net_delta": 1,
@@ -296,9 +435,10 @@
           "breaks": 1,
           "precision": 0.6667,
           "logloss_base": 0.197,
-          "logloss_cand": 0.1917
+          "logloss_cand": 0.197
         },
         "new_seller (Cold)": {
+          "eval_status": "NO_EVALUADA_CERO_FLIPS",
           "n_rows": 8323,
           "flips": 0,
           "net_delta": 0,
@@ -343,5 +483,5 @@
     }
   },
   "coordination_claude": "CL-0017 ACK registrado en 18d3bbc; no se duplica entrenamiento cold ni holdout externo de Claude.",
-  "elapsed_seconds": 58.37
+  "elapsed_seconds": 60.92
 }
