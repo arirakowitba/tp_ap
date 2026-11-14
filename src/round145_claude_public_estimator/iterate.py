@@ -38,21 +38,24 @@ for b in [.25, .5, .75, 1.0]:
     mae[b] = float(np.mean(err))
 B = min(mae, key=mae.get); print('LOO MAE by b:', {k: round(v, 2) for k, v in mae.items()}, '-> b =', B)
 Fs = {k: fit(sharp(p, B), others) for k, p in P.items()}; F25 = fit(sharp(hp, .25), others)
+# CL-0034: on model-selected overlays b=1 was optimistic (mean err -11.3 over 3) and b=0.25 nearly unbiased (-2.0) -> rank/decide with b=0.25
+P25 = {'stack': st, 'havg_plus': hp, 'blend_fix': bl}; G25 = {k: fit(sharp(p, .25), others) for k, p in P25.items()}
 span = ((Vf - base) != 0).any(0); PW = []
-for F in Fs.values():
+for F in G25.values():
     py = np.clip(.5 + pm(F) / (2 * fr), 0, 1); PW.append(np.where(base == 1, 1 - py, py))
 e1010 = np.load(f'{ST}/v_1010_original.npy').astype(float); S4v = Vf[[m[0] for m in meta].index('TODAY_S4')]
-rev = (S4v != e1010) & (base == S4v)  # flipping here would undo a probe-era correction of S4 (CC-0029/CL-0031): excluded
+rev = ((S4v != e1010) & (base == S4v)) | (base != S4v)  # exclude reverting probe-era S4 corrections (CC-0029) and protect the base's scored flips vs S4 (CL-0034)
 pmin = np.where(span & ~rev, np.array(PW).min(0), 0); o = np.argsort(-pmin); print('in-span rows P>0.5:', int((pmin > .5).sum()), '>0.6:', int((pmin > .6).sum()))
 best = None; res = {}
-for K in [20, 50, 100]:
+for K in [10, 20, 50]:
     if (pmin > .5).sum() < K: continue
-    v = base.copy(); s = o[:K]; v[s] = 1 - v[s]; e1 = min(pred(F, v)[0] for F in Fs.values()); sd = 2.0 * pred(Fs['stack'], v)[1]; e25 = pred(F25, v)[0]
+    v = base.copy(); s = o[:K]; v[s] = 1 - v[s]; e1 = min(pred(F, v)[0] for F in Fs.values()); sd = 2.0 * pred(G25['stack'], v)[1]; e25 = min(pred(F, v)[0] for F in G25.values())
     corr = e1 - .12 * K; txt = 'ID,condition\n' + ''.join(f'{i+1},{"used" if v[i] else "new"}\n' for i in range(30000))
     fn = f'iter_base_{meta[ib][0]}_top{K}.csv'; open(f'{OUT}/{fn}', 'w').write(txt)
     res[fn] = dict(K=K, pmin=round(float(pmin[s].min()), 3), E_selected_b=round(float(e1), 1), E_bias_corr=round(float(corr), 1), E_pess=round(float(e25), 1), sd=round(float(sd), 1),
                    sha256=hashlib.sha256(txt.encode()).hexdigest(), min_dist_scored=int((Vf != v).sum(1).min()), ids=[int(i + 1) for i in sorted(s)])
     print(fn, {k: v for k, v in res[fn].items() if k != 'ids'})
-    if res[fn]['min_dist_scored'] > 0 and (best is None or corr / sd > best[1]): best = (fn, corr / sd)
+    score_ = (e25 - 2.0) / sd  # decision: b=0.25 min over priors minus observed residual bias (-2/overlay), per SD
+    if res[fn]['min_dist_scored'] > 0 and e25 - 2.0 > 1 and (best is None or score_ > best[1]): best = (fn, score_)
 json.dump(dict(base=meta[ib][0], b=B, loo_mae=mae, candidates=res, recommended=best[0] if best else None), open(f'{OUT}/iterate_manifest_{meta[ib][0]}.json', 'w'), indent=1)
 print('RECOMMENDED:', best[0] if best else 'none (keep base)')
