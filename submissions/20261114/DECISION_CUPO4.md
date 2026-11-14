@@ -1,0 +1,9 @@
+# Decisión del cuarto cupo del 14 de noviembre
+
+T30 sigue como mejor público confirmado (0.94823). El tercer cupo marcó 0.94814, equivalente a −2 aciertos públicos bajo ambas convenciones discutidas de tamaño y redondeo.
+
+Para el cuarto cupo se selecciona Warm Clean Moderated de Antigravity (AG-0233, commit a5c33a6de96a6d49dd5cdb21e1549bb0bb2a1220), con nombre de entrega CSV_4_HOY_T30_WARM_CLEAN_MODERATED.csv. Se verificaron 30.000 IDs únicos ordenados, 145 cambios respecto de T30 (76 new→used y 69 used→new), conservación íntegra de T30, ausencia de reversiones de S4 y cero solape con CUP3 y top174. SHA-256 LF 99a6d96b4cd2a2027d7279d4639b314779a9b50849d7bd937e09de8b9b1bd39a. Gate F del helper sin LF final 09be0cd557703c7eb9fa7592cbb5acae8c67d6f39c1d75da71b9f8387c89537c. El hash ID:condition con LF final es 086eac943f7ef4940e11364f3aec4edb74dde944c92aeb3877ee656e25a26a87.
+
+Se prioriza probar primero una fuente distinta con escala, manteniendo T30 disponible para selección final. El desempeño del overlay warm sigue sin réplica de la regla exacta en el régimen bracketed (70 de 145 cambios). Las precisiones hipotéticas no son estimaciones calibradas. Se necesitan +38 aciertos contra T30 bajo el supuesto de 20.998 filas públicas y redondeo para superar 0.95000.
+
+Para el quinto cupo, partir de T30 si el cuarto no mejora. Comparar el top50 conservador de Claude (CL-0035, commit 722ca1b6546e62868f9919141e5c35737a2db1de) con una unión sobre el cuarto si éste obtiene una mejora. Los bloques comparten un ID, por lo que la unión cambia 194 filas y requiere descontar el cambio duplicado. Reevaluar al recibir score. Envío manual a cargo de Ariel.
