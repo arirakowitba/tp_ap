@@ -3,3 +3,5 @@ end sparse_fix 1794680154 sparse_fix C 1.0 OOF acc 0.92816
 start d_lgb_fix 1794680154
 end d_lgb_fix 1794680224 d_lgb_fix OOF acc 0.94061 ll 0.15291 its [231, 420, 347, 393, 410] nfeat 167 t 68s
 start b_fix_noso_b 1794680224
+end b_fix_noso_b 1794681112 b_fix_noso_b OOF(5 folds) acc 0.94841 logloss 0.13564
+chain2 done 1794681112

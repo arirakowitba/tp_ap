@@ -2,3 +2,5 @@ b_fix_noso_b fold 0 acc 0.9457 ll 0.1444 it 1462 t 135s
 b_fix_noso_b fold 1 acc 0.9463 ll 0.1425 it 1302 t 257s
 b_fix_noso_b fold 2 acc 0.9507 ll 0.1291 it 3307 t 531s
 b_fix_noso_b fold 3 acc 0.9477 ll 0.1349 it 2297 t 724s
+b_fix_noso_b fold 4 acc 0.9517 ll 0.1273 it 2011 t 887s
+b_fix_noso_b OOF(5 folds) acc 0.94841 logloss 0.13564
