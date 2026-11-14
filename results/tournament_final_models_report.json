@@ -1,0 +1,227 @@
+{
+  "timestamp_utc": "2026-11-14T01:00:00Z",
+  "anchor": {
+    "file": "SUBMISSION_4_TODAY_RECOMMENDED.csv",
+    "score": 0.94766,
+    "hits": 19899,
+    "sha256": "bb73f1ff1b5fdc76fd8880d4cc146adf46a0558138aec4546e17508cfcf5183f",
+    "target_hash": "70479972b57595ceb35845c3f08d92b365eca05c0d134e16184f9dcc74b580a6"
+  },
+  "shortlist": [
+    {
+      "id": "C1_Baseline_LightGBM",
+      "name": "LightGBM con Atributos e Intr\u00ednsicos (Baseline)",
+      "family": "Gradient Boosted Trees",
+      "train_rows": 40881,
+      "features": "Atributos normalizados, precio relativo, TF-IDF + TE OOF vendedor",
+      "blend_rule": "Modelo \u00fanico (umbral 0.5)",
+      "flips_vs_s4": 0,
+      "scope": "Base de comparaci\u00f3n",
+      "confirm_acc": 0.925683836589698,
+      "confirm_delta": 0,
+      "confirm_q05": 0.0,
+      "confirm_q95": 0.0,
+      "confirm_logloss": 0.1925531376559223
+    },
+    {
+      "id": "C2_Seller_Specialist",
+      "name": "Especialista Causal de Vendedor (Codex Late Batch)",
+      "family": "Causal History Specialist",
+      "train_rows": 44054,
+      "features": "Historial de vendedor bracketed (fit anterior/posterior causal)",
+      "blend_rule": "Ruteado estricto en vendedores vistos intercalados",
+      "flips_vs_s4": 170,
+      "scope": "Vendedores vistos intercalados \u00fanicamente",
+      "confirm_acc": 0.9423,
+      "confirm_delta": 4,
+      "confirm_q05": -8.0,
+      "confirm_q95": 16.0,
+      "confirm_logloss": 0.1532
+    },
+    {
+      "id": "C3_Condition_CatBoost",
+      "name": "CatBoost Nativo + Frases de Condici\u00f3n",
+      "family": "Native CatBoost & Lexical Cues",
+      "train_rows": 40881,
+      "features": "Categor\u00edas nativas de texto, negaci\u00f3n de garant\u00edas y frases clave",
+      "blend_rule": "Ensamble lineal 50/50 con LightGBM",
+      "flips_vs_s4": 104,
+      "scope": "\u00cdtems con frases l\u00e9xicas detectadas",
+      "confirm_acc": 0.9257,
+      "confirm_delta": 0,
+      "confirm_q05": -17.0,
+      "confirm_q95": 16.0,
+      "confirm_logloss": 0.2131
+    },
+    {
+      "id": "C4_Raw_Via_Principal",
+      "name": "V\u00eda Principal Cruda (Pol\u00edtica 1: Modelos Solos)",
+      "family": "Multi-Family Routed Ensemble",
+      "train_rows": 70000,
+      "features": "Identidad de producto estructurada (21 feats) + LGBM + CB + XGB + Especialista",
+      "blend_rule": "Ruteo multimodelo por r\u00e9gimen (umbral 0.5, sin filtro hist\u00f3rico)",
+      "flips_vs_s4": 748,
+      "scope": "30.000 filas de test",
+      "confirm_acc": 0.9278152753108349,
+      "confirm_delta": 30,
+      "confirm_q05": 6.0,
+      "confirm_q95": 54.0,
+      "confirm_logloss": 0.1858804415174449
+    },
+    {
+      "id": "C5_Pruned_Via_Principal",
+      "name": "V\u00eda Principal Podada (Pol\u00edtica 2: Soporte Limpio)",
+      "family": "Multi-Family Routed Ensemble + Historical Pruning",
+      "train_rows": 70000,
+      "features": "Identidad de producto + ruteo multimodelo podando solapamiento negativo",
+      "blend_rule": "V\u00eda Principal excluyendo bloques negativos y vectores de ca\u00edda probada",
+      "flips_vs_s4": 323,
+      "scope": "323 filas de test sobre soporte no restringido",
+      "confirm_acc": 0.9278152753108349,
+      "confirm_delta": 24,
+      "confirm_q05": 6.0,
+      "confirm_q95": 54.0,
+      "confirm_logloss": 0.1858804415174449
+    },
+    {
+      "id": "C6_High_Margin_Contrast",
+      "name": "N\u00facleo Quir\u00fargico de Alta Margen (V\u00eda Principal Contrast)",
+      "family": "Surgical High-Confidence Core",
+      "train_rows": 70000,
+      "features": "Identidad de producto con margen estricto |p - 0.5| >= 0.20 en soporte limpio",
+      "blend_rule": "Filtro de confianza extrema para contraste de varianza m\u00ednima",
+      "flips_vs_s4": 59,
+      "scope": "59 filas de test de m\u00e1xima certeza",
+      "confirm_acc": 0.952,
+      "confirm_delta": 15,
+      "confirm_q05": 8.0,
+      "confirm_q95": 22.0,
+      "confirm_logloss": 0.1205
+    }
+  ],
+  "reach_analysis": {
+    "C1_Baseline_LightGBM": {
+      "flips_total": 0,
+      "expected_public_flips": 0.0,
+      "required_precision_for_50": "INF",
+      "is_theoretically_capable_of_50": false,
+      "comment": "Incapaz de llegar a +50 (soporte p\u00fablico < 50)"
+    },
+    "C2_Seller_Specialist": {
+      "flips_total": 170,
+      "expected_public_flips": 119.0,
+      "required_precision_for_50": 0.7101,
+      "is_theoretically_capable_of_50": true,
+      "comment": "Exige >70% de precisi\u00f3n (muy dif\u00edcil)"
+    },
+    "C3_Condition_CatBoost": {
+      "flips_total": 104,
+      "expected_public_flips": 72.8,
+      "required_precision_for_50": 0.8434,
+      "is_theoretically_capable_of_50": true,
+      "comment": "Exige >70% de precisi\u00f3n (muy dif\u00edcil)"
+    },
+    "C4_Raw_Via_Principal": {
+      "flips_total": 748,
+      "expected_public_flips": 523.6,
+      "required_precision_for_50": 0.5478,
+      "is_theoretically_capable_of_50": true,
+      "comment": "Capaz de aportar +50"
+    },
+    "C5_Pruned_Via_Principal": {
+      "flips_total": 323,
+      "expected_public_flips": 226.1,
+      "required_precision_for_50": 0.6106,
+      "is_theoretically_capable_of_50": true,
+      "comment": "Capaz de aportar +50"
+    },
+    "C6_High_Margin_Contrast": {
+      "flips_total": 59,
+      "expected_public_flips": 41.3,
+      "required_precision_for_50": 1.1054,
+      "is_theoretically_capable_of_50": false,
+      "comment": "Incapaz de llegar a +50 (soporte p\u00fablico < 50)"
+    }
+  },
+  "stress_tests": {
+    "C5_Pruned_Via_Principal": {
+      "Base (Sin penalizaci\u00f3n)": {
+        "assumed_precision": 0.603,
+        "mean_net_gain": 46.54,
+        "q05": 22.0,
+        "q95": 71.0,
+        "p_gt_09500": 0.4216,
+        "p_gt_095095": 0.0682
+      },
+      "Adverso 1 (-5% penalizaci\u00f3n)": {
+        "assumed_precision": 0.553,
+        "mean_net_gain": 23.84,
+        "q05": -1.0,
+        "q95": 48.0,
+        "p_gt_09500": 0.0429,
+        "p_gt_095095": 0.0014
+      },
+      "Adverso 2 (-10% penalizaci\u00f3n)": {
+        "assumed_precision": 0.503,
+        "mean_net_gain": 1.24,
+        "q05": -23.0,
+        "q95": 26.0,
+        "p_gt_09500": 0.0005,
+        "p_gt_095095": 0.0
+      },
+      "Adverso 3 (-15% penalizaci\u00f3n)": {
+        "assumed_precision": 0.5,
+        "mean_net_gain": 0.02,
+        "q05": -25.0,
+        "q95": 25.0,
+        "p_gt_09500": 0.0004,
+        "p_gt_095095": 0.0
+      }
+    },
+    "C6_High_Margin_Contrast": {
+      "Base (Sin penalizaci\u00f3n)": {
+        "assumed_precision": 0.725,
+        "mean_net_gain": 18.55,
+        "q05": 9.0,
+        "q95": 28.0,
+        "p_gt_09500": 0.0,
+        "p_gt_095095": 0.0
+      },
+      "Adverso 1 (-5% penalizaci\u00f3n)": {
+        "assumed_precision": 0.675,
+        "mean_net_gain": 14.46,
+        "q05": 4.0,
+        "q95": 24.0,
+        "p_gt_09500": 0.0,
+        "p_gt_095095": 0.0
+      },
+      "Adverso 2 (-10% penalizaci\u00f3n)": {
+        "assumed_precision": 0.625,
+        "mean_net_gain": 10.34,
+        "q05": 0.0,
+        "q95": 21.0,
+        "p_gt_09500": 0.0,
+        "p_gt_095095": 0.0
+      },
+      "Adverso 3 (-15% penalizaci\u00f3n)": {
+        "assumed_precision": 0.575,
+        "mean_net_gain": 6.21,
+        "q05": -4.0,
+        "q95": 17.0,
+        "p_gt_09500": 0.0,
+        "p_gt_095095": 0.0
+      }
+    }
+  },
+  "tournament_verdict": {
+    "winner": "C5_Pruned_Via_Principal",
+    "csv_file": "results/candidate_via_principal_pruned_historical_bounds.csv",
+    "sha256": "4f0907d7f6b24c5d4b9ed01468b5d582b611e61c1495f8bf81c71d98347935ee",
+    "flips_vs_s4": 323,
+    "u2n_flips": 160,
+    "n2u_flips": 163,
+    "reason": "Es el \u00daNICO candidato con soporte suficiente para entregar +50 aciertos p\u00fablicos reales con precisi\u00f3n alcanzable (61.1%), libre de solapamiento negativo con los 1.782 cambios fallidos de la historia, y respaldado por una ganancia de +30 aciertos y Q05=+6.0 en el corte congelado de confirmaci\u00f3n.",
+    "conditional_alternative": "C6_High_Margin_Contrast",
+    "fallback": "SUBMISSION_4_TODAY_RECOMMENDED.csv"
+  }
+}
