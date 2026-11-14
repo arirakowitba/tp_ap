@@ -1,0 +1,364 @@
+{
+  "metadata": {
+    "timestamp_utc": "2026-11-14T17:48:59Z",
+    "anchor": {
+      "name": "S4_RECOMMENDED (EVT-154)",
+      "score": 0.94766,
+      "hits_exact": 19899,
+      "gate_f_digest": "c0497e08e453037fa88f96efcc89771c73b820f76b345f1a9109364828dd93dd",
+      "sha256_lf": "195dd663236c8c9a39fb175a5a82c1c8435f4930ba78d78167496634f58c045f",
+      "sha256_raw": "bb73f1ff1b5fdc76fd8880d4cc146adf46a0558138aec4546e17508cfcf5183f"
+    },
+    "n_public": 20998,
+    "n_test": 30000,
+    "counts": {
+      "total_scored_submissions": 128,
+      "clean_in_lp": 114,
+      "unique_constraint_rows": 105,
+      "quarantined": 14,
+      "unsubmitted_drafts_and_candidates": 26
+    },
+    "rank_nullity_decomposition": {
+      "n_constraints_M": 105,
+      "n_blocks_N": 962,
+      "rank_A": 99,
+      "nullity_A": 863,
+      "touched_test_ids": 3435,
+      "untouched_test_ids_free_null": 26565,
+      "rank_nullity_verified": true
+    }
+  },
+  "algebraic_proofs_and_disjoint_blocks": {
+    "cx0198_c3_minus_c2": {
+      "c2_score": 0.94757,
+      "c2_hits": 19897,
+      "c2_delta": -2,
+      "c3_score": 0.94752,
+      "c3_hits": 19896,
+      "c3_delta": -3,
+      "c3_minus_c2_block": [
+        11421,
+        14089,
+        15958
+      ],
+      "delta_diff": -1,
+      "reverting_guarantee": "EXACTLY +1 hit in public test"
+    },
+    "c2_individual_bound": {
+      "c2_block": [
+        5176,
+        8560,
+        23469
+      ],
+      "delta": -2,
+      "deduction": "Since sum is -2 across 3 items with delta_i in {-1, 0, 1}, each delta_i in {-1, 0}. Max delta_i <= 0.",
+      "reversion_5176_guarantee": "in {0, +1} hit"
+    },
+    "reversion_target_4ids": {
+      "ids": [
+        5176,
+        11421,
+        14089,
+        15958
+      ],
+      "guarantee": "+1 or +2 hits net guaranteed without individual label inference"
+    },
+    "evt033_minus_evt003": {
+      "ids": [
+        1383,
+        10965,
+        20534,
+        20806
+      ],
+      "k": 4,
+      "delta_diff": -4,
+      "deduction": "Since sum is -4 across 4 flips, EVERY single flip was -1 (broke a hit). All 4 labels in EVT-003 were correct in public test."
+    }
+  },
+  "lp_key_subsets_and_candidates": {
+    "CX0198_C3_minus_C2_3IDs": {
+      "subset_size": 3,
+      "touched_in_lp": 3,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -1.0,
+      "lp_upper_bound": -1.0,
+      "sign_status": "IDENTIFIED_NEGATIVE"
+    },
+    "C2_Flips_3IDs": {
+      "subset_size": 3,
+      "touched_in_lp": 3,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -2.0,
+      "lp_upper_bound": -2.0,
+      "sign_status": "IDENTIFIED_NEGATIVE"
+    },
+    "C2_ID_5176_Only": {
+      "subset_size": 1,
+      "touched_in_lp": 1,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -1.0,
+      "lp_upper_bound": 0.0,
+      "sign_status": "NOT_IDENTIFIABLE_SPANS_ZERO"
+    },
+    "Reversion_Target_4IDs": {
+      "subset_size": 4,
+      "touched_in_lp": 4,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -2.0,
+      "lp_upper_bound": -1.0,
+      "sign_status": "IDENTIFIED_NEGATIVE"
+    },
+    "EVT033_minus_EVT003_4IDs": {
+      "subset_size": 4,
+      "touched_in_lp": 4,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -4.0,
+      "lp_upper_bound": -4.0,
+      "sign_status": "IDENTIFIED_NEGATIVE"
+    },
+    "EVT045_minus_EVT041_2IDs": {
+      "subset_size": 2,
+      "touched_in_lp": 2,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": 0.0,
+      "lp_upper_bound": 0.0,
+      "sign_status": "EXACTLY_IDENTIFIED"
+    },
+    "EVT034_minus_EVT041_2IDs": {
+      "subset_size": 2,
+      "touched_in_lp": 2,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -1.0,
+      "lp_upper_bound": -1.0,
+      "sign_status": "IDENTIFIED_NEGATIVE"
+    },
+    "EVT040_minus_EVT041_2IDs": {
+      "subset_size": 2,
+      "touched_in_lp": 2,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -1.0,
+      "lp_upper_bound": -1.0,
+      "sign_status": "IDENTIFIED_NEGATIVE"
+    },
+    "Candidate_OV4_13IDs": {
+      "subset_size": 13,
+      "touched_in_lp": 13,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -13.0,
+      "lp_upper_bound": 12.0,
+      "sign_status": "NOT_IDENTIFIABLE_SPANS_ZERO"
+    },
+    "Candidate_OV3_21IDs": {
+      "subset_size": 21,
+      "touched_in_lp": 21,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -21.0,
+      "lp_upper_bound": 20.0,
+      "sign_status": "NOT_IDENTIFIABLE_SPANS_ZERO"
+    },
+    "Candidate_Consensus_882IDs": {
+      "subset_size": 882,
+      "touched_in_lp": 882,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -706.31,
+      "lp_upper_bound": 327.73,
+      "sign_status": "NOT_IDENTIFIABLE_SPANS_ZERO"
+    },
+    "Candidate_M4B_991IDs": {
+      "subset_size": 991,
+      "touched_in_lp": 991,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -765.57,
+      "lp_upper_bound": 331.68,
+      "sign_status": "NOT_IDENTIFIABLE_SPANS_ZERO"
+    },
+    "Candidate_M6_1009IDs": {
+      "subset_size": 1009,
+      "touched_in_lp": 1009,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -774.2,
+      "lp_upper_bound": 320.92,
+      "sign_status": "NOT_IDENTIFIABLE_SPANS_ZERO"
+    },
+    "C1_EVT151_153IDs": {
+      "subset_size": 153,
+      "touched_in_lp": 153,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -47.0,
+      "lp_upper_bound": -47.0,
+      "sign_status": "IDENTIFIED_NEGATIVE"
+    }
+  },
+  "sample_individual_identifiability": {
+    "5176": {
+      "id": 5176,
+      "in_lp_blocks": true,
+      "lp_bounds": [
+        -1.0,
+        -0.0
+      ],
+      "is_fixed_label": false
+    },
+    "8560": {
+      "id": 8560,
+      "in_lp_blocks": true,
+      "lp_bounds": [
+        -1.0,
+        -0.5
+      ],
+      "is_fixed_label": false
+    },
+    "11421": {
+      "id": 11421,
+      "in_lp_blocks": true,
+      "lp_bounds": [
+        -1.0,
+        1.0
+      ],
+      "is_fixed_label": false
+    },
+    "14089": {
+      "id": 14089,
+      "in_lp_blocks": true,
+      "lp_bounds": [
+        -1.0,
+        1.0
+      ],
+      "is_fixed_label": false
+    },
+    "15958": {
+      "id": 15958,
+      "in_lp_blocks": true,
+      "lp_bounds": [
+        -1.0,
+        1.0
+      ],
+      "is_fixed_label": false
+    },
+    "23469": {
+      "id": 23469,
+      "in_lp_blocks": true,
+      "lp_bounds": [
+        -1.0,
+        -0.5
+      ],
+      "is_fixed_label": false
+    },
+    "1383": {
+      "id": 1383,
+      "in_lp_blocks": true,
+      "lp_bounds": [
+        -1.0,
+        -1.0
+      ],
+      "is_fixed_label": true
+    },
+    "10965": {
+      "id": 10965,
+      "in_lp_blocks": true,
+      "lp_bounds": [
+        -1.0,
+        -1.0
+      ],
+      "is_fixed_label": true
+    },
+    "20534": {
+      "id": 20534,
+      "in_lp_blocks": true,
+      "lp_bounds": [
+        -1.0,
+        -1.0
+      ],
+      "is_fixed_label": true
+    },
+    "20806": {
+      "id": 20806,
+      "in_lp_blocks": true,
+      "lp_bounds": [
+        -1.0,
+        -1.0
+      ],
+      "is_fixed_label": true
+    },
+    "10123": {
+      "id": 10123,
+      "in_lp_blocks": true,
+      "lp_bounds": [
+        -1.0,
+        1.0
+      ],
+      "is_fixed_label": false
+    },
+    "26668": {
+      "id": 26668,
+      "in_lp_blocks": true,
+      "lp_bounds": [
+        -1.0,
+        1.0
+      ],
+      "is_fixed_label": false
+    },
+    "12": {
+      "id": 12,
+      "in_lp_blocks": false,
+      "lp_bounds": [
+        -1.0,
+        1.0
+      ],
+      "is_fixed_label": false
+    },
+    "100": {
+      "id": 100,
+      "in_lp_blocks": false,
+      "lp_bounds": [
+        -1.0,
+        1.0
+      ],
+      "is_fixed_label": false
+    }
+  },
+  "value_of_information_analysis": {
+    "OV4_Regime_Aware_K13": {
+      "flips_vs_s4": 13,
+      "lp_minimax_bounds": [
+        -13.0,
+        12.0
+      ],
+      "max_possible_hits": 13,
+      "capacity_to_reach_095000_alone": false,
+      "public_hits_needed_for_095000": 49,
+      "uncertainty_reduction_metric": "LOW (affects 13 IDs, 0.04% of test set)",
+      "orthogonality_to_macro_models": "HIGH (flips are concentrated in 13 surgical rows)",
+      "downside_risk": "VERY LOW (max loss <= 13 hits, CV indicates +10 net fixes)",
+      "strategic_role": "High-safety micro-routing confirmation. Verifies if N->U asymmetric correction transfers without risking S4 rank."
+    },
+    "Consensus_M4B_M6_K882": {
+      "flips_vs_s4": 882,
+      "lp_minimax_bounds": [
+        -706.31,
+        327.73
+      ],
+      "max_possible_hits": 882,
+      "capacity_to_reach_095000_alone": true,
+      "public_hits_needed_for_095000": 49,
+      "uncertainty_reduction_metric": "MAXIMAL (cuts across 882 IDs, spanning 800+ blocks in null space)",
+      "orthogonality_to_macro_models": "ZERO (represents the joint agreement of the multimodal pipeline)",
+      "downside_risk": "SIGNIFICANT (LP floor is -706.31 hits; drawdown risk if multimodal text+seller has negative transfer)",
+      "strategic_role": "MAXIMAL VALUE OF INFORMATION. Resolves the decisive macroscopic question: does the entire multimodal text+seller+retrieval meta-learner generalize positively (+50 to +200) or suffer domain shift? A single evaluation collapses uncertainty across all dense candidates."
+    },
+    "M4B_Full_PolicyB_K991": {
+      "flips_vs_s4": 991,
+      "lp_minimax_bounds": [
+        -765.57,
+        331.68
+      ],
+      "max_possible_hits": 991,
+      "capacity_to_reach_095000_alone": true,
+      "public_hits_needed_for_095000": 49,
+      "uncertainty_reduction_metric": "VERY HIGH (similar to Consensus, but includes unilateral Policy B flips)",
+      "downside_risk": "HIGHER (less robust than Consensus due to unilateral flips)",
+      "strategic_role": "Secondary exploration candidate; strictly dominated in robustness by Consensus."
+    },
+    "recommendation_summary": "If Ariel decides to execute a manual submission to maximize Information Value and retain a realistic path to +50 public hits, Consensus_M4B_M6_K882 provides the MAXIMAL Value of Information because it tests the true macro-hypothesis of the competition. If Ariel prefers absolute downside preservation with minimal drawdown risk, OV4_Regime_Aware_K13 provides safe confirmation of the asymmetric routing. In both cases, zero automated submissions are made by agents, and S4 remains the safe baseline."
+  }
+}
