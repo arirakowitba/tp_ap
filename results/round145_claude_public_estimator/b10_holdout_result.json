@@ -1,0 +1,4 @@
+{"holdout": "random 14000 of train (rng 777), fit on other 56000, inference via test path (b10_eval.py full)",
+ "b10_holdout_acc": 0.94243, "seen_acc": 0.96284, "seen_frac": 0.694, "new_acc": 0.89617,
+ "reweighted_to_test_seen_0.7162": 0.94392, "b10_public_known": 0.94428,
+ "conclusion": "holdout path reproduces public within ~0.04 pp; random 5-fold OOF of round126/127 (0.9526) is not comparable"}
