@@ -1,0 +1,414 @@
+{
+ "holdout_regime_counts": {
+  "cold": 4286,
+  "before": 1264,
+  "bracketed": 5269,
+  "ties": 1956,
+  "after": 1225
+ },
+ "holdout_pairs": {
+  "sparse_all->sparse_fix (b_cat_noso_b -> b_fix_noso_b)": {
+   "fixes": 331,
+   "breaks": 141,
+   "net": 190,
+   "ci95_q05_seller": [
+    147,
+    155,
+    233
+   ],
+   "ci95_q05_category": [
+    147,
+    154,
+    238
+   ],
+   "by_regime": {
+    "cold": {
+     "n": 4286,
+     "net": 89,
+     "acc_a": 0.87564,
+     "acc_b": 0.89641
+    },
+    "before": {
+     "n": 1264,
+     "net": 14,
+     "acc_a": 0.95095,
+     "acc_b": 0.96203
+    },
+    "bracketed": {
+     "n": 5269,
+     "net": 40,
+     "acc_a": 0.96394,
+     "acc_b": 0.97153
+    },
+    "ties": {
+     "n": 1956,
+     "net": 20,
+     "acc_a": 0.95194,
+     "acc_b": 0.96217
+    },
+    "after": {
+     "n": 1225,
+     "net": 27,
+     "acc_a": 0.93714,
+     "acc_b": 0.95918
+    }
+   }
+  },
+  "b10 -> b_fix_noso_b": {
+   "fixes": 194,
+   "breaks": 154,
+   "net": 40,
+   "ci95_q05_seller": [
+    4,
+    10,
+    78
+   ],
+   "ci95_q05_category": [
+    3,
+    9,
+    78
+   ],
+   "by_regime": {
+    "cold": {
+     "n": 4286,
+     "net": 1,
+     "acc_a": 0.89617,
+     "acc_b": 0.89641
+    },
+    "before": {
+     "n": 1264,
+     "net": 3,
+     "acc_a": 0.95965,
+     "acc_b": 0.96203
+    },
+    "bracketed": {
+     "n": 5269,
+     "net": 9,
+     "acc_a": 0.96982,
+     "acc_b": 0.97153
+    },
+    "ties": {
+     "n": 1956,
+     "net": 8,
+     "acc_a": 0.95808,
+     "acc_b": 0.96217
+    },
+    "after": {
+     "n": 1225,
+     "net": 19,
+     "acc_a": 0.94367,
+     "acc_b": 0.95918
+    }
+   }
+  },
+  "b10 -> blend_fix": {
+   "fixes": 105,
+   "breaks": 51,
+   "net": 54,
+   "ci95_q05_seller": [
+    29,
+    33,
+    79
+   ],
+   "ci95_q05_category": [
+    31,
+    35,
+    78
+   ],
+   "by_regime": {
+    "cold": {
+     "n": 4286,
+     "net": 28,
+     "acc_a": 0.89617,
+     "acc_b": 0.90271
+    },
+    "before": {
+     "n": 1264,
+     "net": 0,
+     "acc_a": 0.95965,
+     "acc_b": 0.95965
+    },
+    "bracketed": {
+     "n": 5269,
+     "net": 14,
+     "acc_a": 0.96982,
+     "acc_b": 0.97248
+    },
+    "ties": {
+     "n": 1956,
+     "net": 4,
+     "acc_a": 0.95808,
+     "acc_b": 0.96012
+    },
+    "after": {
+     "n": 1225,
+     "net": 8,
+     "acc_a": 0.94367,
+     "acc_b": 0.9502
+    }
+   }
+  }
+ },
+ "holdout_calibration": {
+  "b10": {
+   "cold": {
+    "mean_p": 0.4866,
+    "rate_used": 0.4893
+   },
+   "before": {
+    "mean_p": 0.356,
+    "rate_used": 0.3608
+   },
+   "bracketed": {
+    "mean_p": 0.5169,
+    "rate_used": 0.5105
+   },
+   "ties": {
+    "mean_p": 0.4506,
+    "rate_used": 0.4514
+   },
+   "after": {
+    "mean_p": 0.336,
+    "rate_used": 0.3339
+   }
+  },
+  "b_cat_noso_b_sparse_all": {
+   "cold": {
+    "mean_p": 0.5247,
+    "rate_used": 0.4893
+   },
+   "before": {
+    "mean_p": 0.3777,
+    "rate_used": 0.3608
+   },
+   "bracketed": {
+    "mean_p": 0.5298,
+    "rate_used": 0.5105
+   },
+   "ties": {
+    "mean_p": 0.465,
+    "rate_used": 0.4514
+   },
+   "after": {
+    "mean_p": 0.3616,
+    "rate_used": 0.3339
+   }
+  },
+  "b_fix_noso_b": {
+   "cold": {
+    "mean_p": 0.4891,
+    "rate_used": 0.4893
+   },
+   "before": {
+    "mean_p": 0.3556,
+    "rate_used": 0.3608
+   },
+   "bracketed": {
+    "mean_p": 0.5142,
+    "rate_used": 0.5105
+   },
+   "ties": {
+    "mean_p": 0.448,
+    "rate_used": 0.4514
+   },
+   "after": {
+    "mean_p": 0.3347,
+    "rate_used": 0.3339
+   }
+  },
+  "blend_fix": {
+   "cold": {
+    "mean_p": 0.4878,
+    "rate_used": 0.4893
+   },
+   "before": {
+    "mean_p": 0.3558,
+    "rate_used": 0.3608
+   },
+   "bracketed": {
+    "mean_p": 0.5155,
+    "rate_used": 0.5105
+   },
+   "ties": {
+    "mean_p": 0.4493,
+    "rate_used": 0.4514
+   },
+   "after": {
+    "mean_p": 0.3353,
+    "rate_used": 0.3339
+   }
+  }
+ },
+ "test_regime_counts": {
+  "cold": 8513,
+  "before": 2549,
+  "bracketed": 12012,
+  "ties": 4383,
+  "after": 2543
+ },
+ "test_vs_S4": {
+  "S4": {
+   "lf_sha256": "195dd663236c8c9a39fb175a5a82c1c8435f4930ba78d78167496634f58c045f",
+   "canonical_id_condition_sha256": "70479972b57595ceb35845c3f08d92b365eca05c0d134e16184f9dcc74b580a6",
+   "n_diff": 0,
+   "used_to_new": 0,
+   "new_to_used": 0,
+   "seen": 0,
+   "new_seller": 0,
+   "in_historical_contrast_span": 0,
+   "outside_span": 0,
+   "by_regime": {
+    "cold": 0,
+    "before": 0,
+    "bracketed": 0,
+    "ties": 0,
+    "after": 0
+   }
+  },
+  "b10_pure": {
+   "lf_sha256": "42ef474c0bf1babc6a5ed19894c67e0dd9be52e95f79bfe052644480585a6624",
+   "canonical_id_condition_sha256": "48ec1c36eb24b1d68eaa24bb87ed27a1e48d3c7226f0c2d0c13b3c554e36f2e4",
+   "n_diff": 364,
+   "used_to_new": 211,
+   "new_to_used": 153,
+   "seen": 154,
+   "new_seller": 210,
+   "in_historical_contrast_span": 308,
+   "outside_span": 56,
+   "by_regime": {
+    "cold": 210,
+    "before": 34,
+    "bracketed": 58,
+    "ties": 43,
+    "after": 19
+   }
+  },
+  "b_fix_pure": {
+   "lf_sha256": "667c332ebb6435b477ecd029ca431f84b6a909a36eeaf0f00ce9a632499c53c1",
+   "canonical_id_condition_sha256": "a02c1e7a073bdf6ca180cc836d1dd91300a62dfa9fd9e3508ec307856ad81af4",
+   "n_diff": 883,
+   "used_to_new": 522,
+   "new_to_used": 361,
+   "seen": 440,
+   "new_seller": 443,
+   "in_historical_contrast_span": 678,
+   "outside_span": 205,
+   "by_regime": {
+    "cold": 443,
+    "before": 110,
+    "bracketed": 120,
+    "ties": 120,
+    "after": 90
+   }
+  },
+  "blend_fix_pure": {
+   "lf_sha256": "43d37bfd2c7e0ec3d4f423185d46667c05786531cead7a692f51625a5916335c",
+   "canonical_id_condition_sha256": "4fae992b1a4155bdac9f6ee0ff3a6beab9af868ed40490101bcf8d8cc8893561",
+   "n_diff": 466,
+   "used_to_new": 248,
+   "new_to_used": 218,
+   "seen": 208,
+   "new_seller": 258,
+   "in_historical_contrast_span": 408,
+   "outside_span": 58,
+   "by_regime": {
+    "cold": 258,
+    "before": 46,
+    "bracketed": 74,
+    "ties": 57,
+    "after": 31
+   }
+  },
+  "claude_blendfix_posterior_top30_sobre_S4.csv": {
+   "lf_sha256": "7f2a1c3d4ea047a44e663f3892e6d1c66f164ba491636fda52f26344fb5d6ae4",
+   "canonical_id_condition_sha256": "315d55a34a48acc307f031b1b3261382888d47e23bf18aea144768839e7591b5",
+   "n_diff": 30,
+   "used_to_new": 14,
+   "new_to_used": 16,
+   "seen": 11,
+   "new_seller": 19,
+   "in_historical_contrast_span": 30,
+   "outside_span": 0,
+   "by_regime": {
+    "cold": 19,
+    "before": 1,
+    "bracketed": 5,
+    "ties": 1,
+    "after": 4
+   }
+  },
+  "claude_blendfix_posterior_top174_sobre_S4.csv": {
+   "lf_sha256": "7c3f873121bed85e3a642ddec549e7982c7fdcf49786cec4e186a2b6e1145280",
+   "canonical_id_condition_sha256": "16229c209bc92d61ff4eb3547953c0466c2a2e4da835771fa3e007cfad7cb87f",
+   "n_diff": 174,
+   "used_to_new": 82,
+   "new_to_used": 92,
+   "seen": 48,
+   "new_seller": 126,
+   "in_historical_contrast_span": 116,
+   "outside_span": 58,
+   "by_regime": {
+    "cold": 126,
+    "before": 8,
+    "bracketed": 23,
+    "ties": 9,
+    "after": 8
+   }
+  },
+  "claude_posterior_opt_top30_sobre_S4.csv": {
+   "lf_sha256": "3a21aecf62d9bf83084e2147fc8e827066d16fd17101cace48b86ca6b97ad1f5",
+   "canonical_id_condition_sha256": "3550e3b9397b1ae56065da31872fd8c848d65242d5d090ca618daae393e9be1b",
+   "n_diff": 30,
+   "used_to_new": 15,
+   "new_to_used": 15,
+   "seen": 9,
+   "new_seller": 21,
+   "in_historical_contrast_span": 30,
+   "outside_span": 0,
+   "by_regime": {
+    "cold": 21,
+    "before": 2,
+    "bracketed": 3,
+    "ties": 1,
+    "after": 3
+   }
+  },
+  "claude_posterior_opt_top131_sobre_S4.csv": {
+   "lf_sha256": "a112b71e808ef1606f0e9fb9be87c8e52ce5c23188d18d0841be65ca9c7e6fc8",
+   "canonical_id_condition_sha256": "0505d0fe11232f427bfc68d7b5fae49eecab6a7b366d96909203e9983c92b4f2",
+   "n_diff": 131,
+   "used_to_new": 59,
+   "new_to_used": 72,
+   "seen": 32,
+   "new_seller": 99,
+   "in_historical_contrast_span": 113,
+   "outside_span": 18,
+   "by_regime": {
+    "cold": 99,
+    "before": 8,
+    "bracketed": 13,
+    "ties": 6,
+    "after": 5
+   }
+  },
+  "claude_blendfix_pure_model.csv": {
+   "lf_sha256": "43d37bfd2c7e0ec3d4f423185d46667c05786531cead7a692f51625a5916335c",
+   "canonical_id_condition_sha256": "4fae992b1a4155bdac9f6ee0ff3a6beab9af868ed40490101bcf8d8cc8893561",
+   "n_diff": 466,
+   "used_to_new": 248,
+   "new_to_used": 218,
+   "seen": 208,
+   "new_seller": 258,
+   "in_historical_contrast_span": 408,
+   "outside_span": 58,
+   "by_regime": {
+    "cold": 258,
+    "before": 46,
+    "bracketed": 74,
+    "ties": 57,
+    "after": 31
+   }
+  }
+ },
+ "historical_contrast_span_rows": 2345
+}

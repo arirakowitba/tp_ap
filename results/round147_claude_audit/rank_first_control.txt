@@ -1,0 +1,2 @@
+F (100000, 117) ntr 70000
+rank(first) on train+test as in sparse_raw.py/stack_perfold.py: numeric cols 107 | cols with test rows in train-unseen bins 80 | total test cells affected 1780000 | cols where some value gets test-only bins 9
