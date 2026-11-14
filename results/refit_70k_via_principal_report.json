@@ -1,0 +1,19 @@
+{
+  "experiment": "full_70k_refit_via_principal",
+  "timestamp_utc": "2026-11-14T00:08:05Z",
+  "elapsed_seconds": 380.65,
+  "total_train_rows": 70000,
+  "total_test_rows": 30000,
+  "features_count": 165,
+  "test_seen_bracketed_rows": 14117,
+  "test_cold_new_rows": 15883,
+  "s4_disagreements": {
+    "total": 748,
+    "flips_to_new": 373,
+    "flips_to_used": 375
+  },
+  "candidate_submission_sha256": "3802586b2ce5ee4a3444a8b2d9c02be7ff3cf2557df84445052698c9ec9b08e6",
+  "private_probabilities_sha256": "e86828a57d777e49c590d951885ad82a1da23e9a7dee2b0a8338dc4b1faf2666",
+  "status": "DEVELOPMENT_ONLY",
+  "public_probability_claims": "NO_IDENTIFIABLE"
+}
