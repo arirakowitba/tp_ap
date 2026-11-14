@@ -3,7 +3,8 @@ usage: python iterate.py STATE_DIR OUT_DIR [NEW_CSV NEW_SCORE NEW_NAME]
  1) optionally appends the newly scored vector (dup/quarantine check) to STATE_DIR/V5.npy + V5_meta.json
  2) base = best observed public vector (ties -> latest)
  3) re-selects prior sharpness b in {0.25,0.5,0.75,1.0} on the stack prior by LOO MAE over all vectors
- 4) P(base wrong) per in-span row = min over priors {stack, blend_fix, mean_all} at selected b
+ 4) rows where flipping would revert a probe-era S4 correction back to the 10-10 original are excluded;
+    P(base wrong) per in-span row = min over priors {stack, blend_fix, mean_all} at selected b
  5) writes next candidates top{20,50,100} over base with E (selected b, min over priors), bias-corrected E (-0.12/flip,
     from top174 backtest) and pessimistic E (b=0.25 H-AVG-Plus); prints the recommendation (max bias-corrected E per SD).
 Never uploads; candidate CSVs are DEVELOPMENT_ONLY."""
@@ -40,7 +41,9 @@ Fs = {k: fit(sharp(p, B), others) for k, p in P.items()}; F25 = fit(sharp(hp, .2
 span = ((Vf - base) != 0).any(0); PW = []
 for F in Fs.values():
     py = np.clip(.5 + pm(F) / (2 * fr), 0, 1); PW.append(np.where(base == 1, 1 - py, py))
-pmin = np.where(span, np.array(PW).min(0), 0); o = np.argsort(-pmin); print('in-span rows P>0.5:', int((pmin > .5).sum()), '>0.6:', int((pmin > .6).sum()))
+e1010 = np.load(f'{ST}/v_1010_original.npy').astype(float); S4v = Vf[[m[0] for m in meta].index('TODAY_S4')]
+rev = (S4v != e1010) & (base == S4v)  # flipping here would undo a probe-era correction of S4 (CC-0029/CL-0031): excluded
+pmin = np.where(span & ~rev, np.array(PW).min(0), 0); o = np.argsort(-pmin); print('in-span rows P>0.5:', int((pmin > .5).sum()), '>0.6:', int((pmin > .6).sum()))
 best = None; res = {}
 for K in [20, 50, 100]:
     if (pmin > .5).sum() < K: continue
