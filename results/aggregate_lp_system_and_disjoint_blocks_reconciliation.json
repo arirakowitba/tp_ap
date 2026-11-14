@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp_utc": "2026-11-14T17:48:59Z",
+    "timestamp_utc": "2026-11-14T18:23:28Z",
     "anchor": {
       "name": "S4_RECOMMENDED (EVT-154)",
       "score": 0.94766,
@@ -16,15 +16,15 @@
       "clean_in_lp": 114,
       "unique_constraint_rows": 105,
       "quarantined": 14,
-      "unsubmitted_drafts_and_candidates": 26
+      "unsubmitted_drafts_and_candidates": 29
     },
     "rank_nullity_decomposition": {
       "n_constraints_M": 105,
       "n_blocks_N": 962,
       "rank_A": 99,
       "nullity_A": 863,
-      "touched_test_ids": 3435,
-      "untouched_test_ids_free_null": 26565,
+      "touched_test_ids": 3548,
+      "untouched_test_ids_free_null": 26452,
       "rank_nullity_verified": true
     }
   },
@@ -178,6 +178,30 @@
       "fresh_outside_lp": 0,
       "lp_lower_bound": -774.2,
       "lp_upper_bound": 320.92,
+      "sign_status": "NOT_IDENTIFIABLE_SPANS_ZERO"
+    },
+    "Portfolio_Cand_A_303IDs": {
+      "subset_size": 303,
+      "touched_in_lp": 303,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -281.19,
+      "lp_upper_bound": 112.45,
+      "sign_status": "NOT_IDENTIFIABLE_SPANS_ZERO"
+    },
+    "Portfolio_Cand_B_379IDs": {
+      "subset_size": 379,
+      "touched_in_lp": 379,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -355.29,
+      "lp_upper_bound": 172.64,
+      "sign_status": "NOT_IDENTIFIABLE_SPANS_ZERO"
+    },
+    "Portfolio_Cand_C_483IDs": {
+      "subset_size": 483,
+      "touched_in_lp": 483,
+      "fresh_outside_lp": 0,
+      "lp_lower_bound": -428.04,
+      "lp_upper_bound": 183.84,
       "sign_status": "NOT_IDENTIFIABLE_SPANS_ZERO"
     },
     "C1_EVT151_153IDs": {

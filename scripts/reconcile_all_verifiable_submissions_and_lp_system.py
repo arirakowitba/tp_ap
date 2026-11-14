@@ -268,6 +268,9 @@ def run_full_reconciliation():
 
     # Add candidate vectors from results/ and rejected/ to unsubmitted catalog
     new_candidate_specs = [
+        ("Candidate_A_Warm_Route", "results/CANDIDATE_A_WARM_SELLER_ROUTE.csv", "PORTFOLIO_CANDIDATE_A"),
+        ("Candidate_B_Warm_Cold_Composite", "results/CANDIDATE_B_WARM_COLD_COMPOSITE.csv", "PORTFOLIO_CANDIDATE_B"),
+        ("Candidate_C_VoI_Frontier", "results/CANDIDATE_C_VOI_FRONTIER.csv", "PORTFOLIO_CANDIDATE_C"),
         ("OV4_Regime_Aware", "results/CANDIDATE_OV4_Regime_Aware_Routing_Corrected_CX0198.csv", "FROZEN_CANDIDATE_GATE_H"),
         ("OV3_M6_Asymm_Used_Tau92", "results/CANDIDATE_OV3_M6_Asymm_Used_Tau92_Corrected_CX0198.csv", "FROZEN_CANDIDATE_GATE_H"),
         ("Consensus_M4B_M6", "results/CANDIDATE_Consensus_M4B_M6_Corrected_CX0198.csv", "FROZEN_CANDIDATE_GATE_H"),
@@ -318,10 +321,11 @@ def run_full_reconciliation():
 
     # Include candidate flip sets in block decomposition
     candidate_vectors_eval = {}
-    for c_id, c_rel_path, _ in new_candidate_specs[:5]:
+    for c_id, c_rel_path, _ in new_candidate_specs:
         p = ROOT / c_rel_path
-        df_c = pd.read_csv(p).sort_values("ID")
-        candidate_vectors_eval[c_id] = set(np.where(df_c["condition"].eq("used").to_numpy() != s4_used)[0] + 1)
+        if p.exists():
+            df_c = pd.read_csv(p).sort_values("ID")
+            candidate_vectors_eval[c_id] = set(np.where(df_c["condition"].eq("used").to_numpy() != s4_used)[0] + 1)
 
     all_touched_ids = set()
     for ev in unique_events:
@@ -388,11 +392,14 @@ def run_full_reconciliation():
         "EVT045_minus_EVT041_2IDs": set([25148, 25588]),
         "EVT034_minus_EVT041_2IDs": set([13583, 25426]),
         "EVT040_minus_EVT041_2IDs": set([8532, 22635]),
-        "Candidate_OV4_13IDs": candidate_vectors_eval["OV4_Regime_Aware"],
-        "Candidate_OV3_21IDs": candidate_vectors_eval["OV3_M6_Asymm_Used_Tau92"],
-        "Candidate_Consensus_882IDs": candidate_vectors_eval["Consensus_M4B_M6"],
-        "Candidate_M4B_991IDs": candidate_vectors_eval["M4B_Full_PolicyB"],
-        "Candidate_M6_1009IDs": candidate_vectors_eval["M6_Meta_Stacker"],
+        "Candidate_OV4_13IDs": candidate_vectors_eval.get("OV4_Regime_Aware", set()),
+        "Candidate_OV3_21IDs": candidate_vectors_eval.get("OV3_M6_Asymm_Used_Tau92", set()),
+        "Candidate_Consensus_882IDs": candidate_vectors_eval.get("Consensus_M4B_M6", set()),
+        "Candidate_M4B_991IDs": candidate_vectors_eval.get("M4B_Full_PolicyB", set()),
+        "Candidate_M6_1009IDs": candidate_vectors_eval.get("M6_Meta_Stacker", set()),
+        "Portfolio_Cand_A_303IDs": candidate_vectors_eval.get("Candidate_A_Warm_Route", set()),
+        "Portfolio_Cand_B_379IDs": candidate_vectors_eval.get("Candidate_B_Warm_Cold_Composite", set()),
+        "Portfolio_Cand_C_483IDs": candidate_vectors_eval.get("Candidate_C_VoI_Frontier", set()),
         "C1_EVT151_153IDs": [set(r["flips_ids"]) for r in clean_in_lp if r["event_id"] == "EVT-151"][0] if any(r["event_id"] == "EVT-151" for r in clean_in_lp) else set(),
     }
 

@@ -1,0 +1,68 @@
+{
+  "A": {
+    "candidate_label": "A",
+    "csv_path": "results/CANDIDATE_A_WARM_SELLER_ROUTE.csv",
+    "description": "Ruta Warm de Vendedor (tau=0.80, 0 cold flips, CX-0198 corr)",
+    "raw_sha256": "1cdaca5936c735668f0101d2213ad78a11da35ca796ccdbe54061059c247ba63",
+    "id_target_hash": "67ad731901731cabfd98805bd123028d9c88f08804a2d0dea5f2770195d552a8",
+    "total_flips_vs_s4": 303,
+    "flips_new_to_used": 192,
+    "flips_used_to_new": 111,
+    "regime_breakdown": {
+      "bracketed": 128,
+      "same_timestamp": 52,
+      "before_train": 60,
+      "after_train": 63,
+      "new_seller": 0
+    },
+    "gate_g_validation": {
+      "rows": 30000,
+      "used_rate": 0.4749
+    },
+    "target_4_ids_overlap": []
+  },
+  "B": {
+    "candidate_label": "B",
+    "csv_path": "results/CANDIDATE_B_WARM_COLD_COMPOSITE.csv",
+    "description": "Combinaci\u00f3n Warm (tau=0.80) + Cold Specialist (tau=0.70) / Ranura Claude",
+    "raw_sha256": "84dff651a83855f038960e029ab17eb7fcbd7bf4c725174f82b38a0a977698c3",
+    "id_target_hash": "306c5da1e12b57dba87923a549f2ab0a36578df99391dca8eefbcf47221a4657",
+    "total_flips_vs_s4": 379,
+    "flips_new_to_used": 236,
+    "flips_used_to_new": 143,
+    "regime_breakdown": {
+      "bracketed": 128,
+      "same_timestamp": 52,
+      "before_train": 60,
+      "after_train": 63,
+      "new_seller": 76
+    },
+    "gate_g_validation": {
+      "rows": 30000,
+      "used_rate": 0.4753
+    },
+    "target_4_ids_overlap": []
+  },
+  "C": {
+    "candidate_label": "C",
+    "csv_path": "results/CANDIDATE_C_VOI_FRONTIER.csv",
+    "description": "Candidato Amplio de Informaci\u00f3n (tau=0.70, 0 cold flips, CX-0198 corr)",
+    "raw_sha256": "bd0482ee3ea2e956b807ea7be40cb4a38baf124185e52885dd5b32cdb1a2552b",
+    "id_target_hash": "cc43c6c481b0ab8efdd7ecc313be75d6a762100050e1cf4a8eeeae56a4b0cbe0",
+    "total_flips_vs_s4": 483,
+    "flips_new_to_used": 311,
+    "flips_used_to_new": 172,
+    "regime_breakdown": {
+      "bracketed": 192,
+      "same_timestamp": 79,
+      "before_train": 106,
+      "after_train": 106,
+      "new_seller": 0
+    },
+    "gate_g_validation": {
+      "rows": 30000,
+      "used_rate": 0.47683
+    },
+    "target_4_ids_overlap": []
+  }
+}

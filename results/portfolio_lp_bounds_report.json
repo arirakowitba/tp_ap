@@ -1,0 +1,35 @@
+{
+  "Candidate_A": {
+    "flips_total": 303,
+    "touched_in_historical_lp": 229,
+    "fresh_in_null_space": 74,
+    "lp_bound_lower": -313.38,
+    "lp_bound_upper": 145.15,
+    "overlap_c3_minus_c2": 0,
+    "overlap_c2": 1,
+    "overlap_target_4ids": 0,
+    "overlap_evt033_minus_003": 0
+  },
+  "Candidate_B": {
+    "flips_total": 379,
+    "touched_in_historical_lp": 295,
+    "fresh_in_null_space": 84,
+    "lp_bound_lower": -383.26,
+    "lp_bound_upper": 189.02,
+    "overlap_c3_minus_c2": 0,
+    "overlap_c2": 1,
+    "overlap_target_4ids": 0,
+    "overlap_evt033_minus_003": 0
+  },
+  "Candidate_C": {
+    "flips_total": 483,
+    "touched_in_historical_lp": 334,
+    "fresh_in_null_space": 149,
+    "lp_bound_lower": -529.71,
+    "lp_bound_upper": 297.92,
+    "overlap_c3_minus_c2": 0,
+    "overlap_c2": 1,
+    "overlap_target_4ids": 0,
+    "overlap_evt033_minus_003": 0
+  }
+}
