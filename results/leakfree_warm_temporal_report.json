@@ -1,0 +1,121 @@
+{
+  "timestamp_iso": "2026-11-14T15:51:41.862052",
+  "runner": "scripts/train_leakfree_warm_and_regimes.py",
+  "confirm_rows_frozen": 14075,
+  "dev_pool_rows": 55925,
+  "test_seller_accounting": {
+    "test_unique_sellers": 15019,
+    "test_sellers_in_dev": 6226,
+    "test_sellers_confirm_only": 827,
+    "test_rows_warm_dev": 19096,
+    "test_rows_cold_dev": 10904,
+    "test_rows_confirm_only_leak_audited": 2391
+  },
+  "inner_tune_selection": {
+    "grid": {
+      "0.60": {
+        "tau": 0.6,
+        "flips": 42,
+        "net": 8,
+        "fixes": 25,
+        "breaks": 17,
+        "precision": 0.5952
+      },
+      "0.65": {
+        "tau": 0.65,
+        "flips": 19,
+        "net": 7,
+        "fixes": 13,
+        "breaks": 6,
+        "precision": 0.6842
+      },
+      "0.70": {
+        "tau": 0.7,
+        "flips": 14,
+        "net": 4,
+        "fixes": 9,
+        "breaks": 5,
+        "precision": 0.6429
+      },
+      "0.75": {
+        "tau": 0.75,
+        "flips": 6,
+        "net": 2,
+        "fixes": 4,
+        "breaks": 2,
+        "precision": 0.6667
+      },
+      "0.80": {
+        "tau": 0.8,
+        "flips": 3,
+        "net": 1,
+        "fixes": 2,
+        "breaks": 1,
+        "precision": 0.6667
+      },
+      "0.85": {
+        "tau": 0.85,
+        "flips": 3,
+        "net": 1,
+        "fixes": 2,
+        "breaks": 1,
+        "precision": 0.6667
+      },
+      "0.90": {
+        "tau": 0.9,
+        "flips": 1,
+        "net": 1,
+        "fixes": 1,
+        "breaks": 0,
+        "precision": 1.0
+      }
+    },
+    "frozen_tau": 0.9,
+    "frozen_tau_net": 1
+  },
+  "outer_val_evaluation": {
+    "standard_flips": 1,
+    "standard_net": -1,
+    "guarded_flips": 0,
+    "guarded_net": 0,
+    "bootstrap_cgm": {
+      "multiway": {
+        "mean": 0.0,
+        "std": 0.0,
+        "q05": 0.0,
+        "median": 0.0,
+        "q95": 0.0
+      },
+      "marginal_seller": {
+        "mean": 0.0,
+        "std": 0.0,
+        "q05": 0.0,
+        "median": 0.0,
+        "q95": 0.0
+      },
+      "marginal_category": {
+        "mean": 0.0,
+        "std": 0.0,
+        "q05": 0.0,
+        "median": 0.0,
+        "q95": 0.0
+      },
+      "worst_case_q05": 0.0
+    }
+  },
+  "clean_candidate": {
+    "csv_path": "results/CANDIDATE_WARM_LEAKFREE_CLEAN.csv",
+    "raw_sha256": "8f17f37016d8cdf5b13f8781e22f00f1c0bf8ed9b68d568de30cdb0995d010e4",
+    "id_target_hash": "baf9e989108a0f687590be3c91cd7a04a2c29d2418e6062c4e13a3a5072b4839",
+    "total_flips": 161,
+    "warm_flips": 161,
+    "cold_flips": 0,
+    "flips_new_to_used": 83,
+    "flips_used_to_new": 78,
+    "k_public_expected": 112.7,
+    "precision_required_plus50": 72.2,
+    "status": "DEVELOPMENT_ONLY",
+    "p_plus50_calibrated": "NO_IDENTIFIABLE"
+  },
+  "elapsed_seconds": 73.09
+}

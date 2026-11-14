@@ -1,0 +1,9 @@
+{
+  "candidate_file": "results/CANDIDATE_WARM_LEAKFREE_CLEAN.csv",
+  "total_flips": 161,
+  "overlap_with_historical_touched": 161,
+  "fresh_ids": 37,
+  "lp_min_delta": -112.69,
+  "lp_max_delta": 112.69,
+  "effective_interval": "[-112.69, +112.69]"
+}
