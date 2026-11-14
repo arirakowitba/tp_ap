@@ -39,3 +39,11 @@ SUBDIR=../submissions/claude_20261114/ python opt2.py   # reestima y reordena; c
 - Vectores idénticos con scores distintos van a cuarentena (el script se detiene).
 - El estimador es razonable para overlays chicos dentro del span: cobertura prequencial del 93 % a 2 SD.
 - Es optimista para vectores grandes o fuera del span: EVT-142 dio −288 contra −68 estimado, y top174 −9 contra +11,8. No usarlo para promover vectores con muchos flips fuera del span.
+
+## Actualización tras el 2.º cupo (top30-blendfix = 0,94823, +12)
+
+- Nueva ancla pública: top30-blendfix, 19.911 aciertos. Estado V3 (55 vectores) y `estimator3.py`, con base = top30.
+- **3.er cupo propuesto:** `claude_T30_mas_U58_blendfix_noprobado.csv` (58 flips no sondeados de blend_fix sobre el top30). Pronóstico congelado +12 según el holdout.
+  - Si Δ ≥ +6, el 4.º cupo es `claude_T30_mas_U58_mas_F86_bfix_noprobado.csv`.
+  - Si Δ ≤ −4, se vuelve al top30 y se abandona la línea de filas no sondeadas.
+- Detalle en CL-0023. Al recibir el score: `python add_score.py <csv> <score> <evento>` sobre `state/V3*` (ajustar los nombres de archivo dentro del script de V2 a V3).
