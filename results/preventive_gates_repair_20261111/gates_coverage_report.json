@@ -145,14 +145,14 @@
           "fixture_type": "NEGATIVE",
           "name": "Rejected CSV left inside active submissions/",
           "outcome": "REJECTED_AS_EXPECTED",
-          "detail": "Gate D: Rejected artifact 'C:\\Users\\arira\\AppData\\Local\\Temp\\tmpfaukr39c\\submissions\\SUBMISSION_CANDIDATE_3_CONSERVATIVE_OVERLAY_K15.csv' found inside active submissions/!"
+          "detail": "Gate D: Rejected artifact 'C:\\Users\\arira\\AppData\\Local\\Temp\\tmps61wr8sk\\submissions\\SUBMISSION_CANDIDATE_3_CONSERVATIVE_OVERLAY_K15.csv' found inside active submissions/!"
         },
         {
           "gate": "Gate D",
           "fixture_type": "NEGATIVE",
           "name": "Active manifest listing REJECTED_NET_NEGATIVE_MINUS64 entry",
           "outcome": "REJECTED_AS_EXPECTED",
-          "detail": "Gate D: Active manifest 'C:\\Users\\arira\\AppData\\Local\\Temp\\tmpfaukr39c\\active_manifest.json' contains rejected/degraded entry 'opt2.csv' (REJECTED_NET_NEGATIVE_MINUS64)"
+          "detail": "Gate D: Active manifest 'C:\\Users\\arira\\AppData\\Local\\Temp\\tmps61wr8sk\\active_manifest.json' contains rejected/degraded entry 'opt2.csv' (REJECTED_NET_NEGATIVE_MINUS64)"
         }
       ]
     },

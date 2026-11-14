@@ -1,0 +1,721 @@
+{
+  "generator": "scripts/reconstruct_all_verifiable_submissions_and_lp_bounds.py",
+  "timestamp_utc": "2026-11-14T15:21:48Z",
+  "status": "FROZEN_FOR_AUDIT",
+  "public_probability_compliance": "NO_IDENTIFIABLE",
+  "gate_h_negative_summary_first": {
+    "c1_c2_c3_evaluated_and_retired": true,
+    "c1_score": 0.94542,
+    "c1_hits": 19852,
+    "c1_delta": -47,
+    "c1_flips": 153,
+    "c2_score": 0.94757,
+    "c2_hits": 19897,
+    "c2_delta": -2,
+    "c2_flips": 3,
+    "c3_score": 0.94752,
+    "c3_hits": 19896,
+    "c3_delta": -3,
+    "c3_flips": 6,
+    "s4_anchor_score": 0.94766,
+    "s4_anchor_hits": 19899,
+    "c5_and_c6_disqualified": true,
+    "individual_labels_certified_count": 0,
+    "disaggregation_fallacy_refuted": true,
+    "rank_nullity_verification": {
+      "touched_test_ids": 3204,
+      "matrix_rank": 92,
+      "nullity": 3112,
+      "theorem_holds": true
+    }
+  },
+  "anchor_s4": {
+    "event_id": "EVT-154",
+    "file_sha256": "bb73f1ff1b5fdc76fd8880d4cc146adf46a0558138aec4546e17508cfcf5183f",
+    "map_sha256": "70479972b57595ceb35845c3f08d92b365eca05c0d134e16184f9dcc74b580a6",
+    "norm_sha256": "1daf90ec100cb4c55c29199f5a20c6fff5782c7958ef19a45e922a003f9d2973",
+    "public_score": 0.94766,
+    "public_hits": 19899
+  },
+  "verifiable_catalog_summary": {
+    "total_verifiable_reconstructed": 103,
+    "accepted_in_lp": 96,
+    "quarantined_events": 7,
+    "quarantine_reasons": {
+      "EVT-052": "incompatible precision with N=20998",
+      "EVT-022": "pair distance contradiction / anchor distance bound",
+      "EVT-018": "incompatible precision with N=20998",
+      "EVT-011": "incompatible precision with N=20998",
+      "EVT-005": "pair distance contradiction",
+      "EVT-004": "pair distance contradiction",
+      "EVT-001": "pair distance contradiction"
+    },
+    "covered_test_ids": 3204,
+    "uncovered_test_ids": 26796
+  },
+  "score_rounding_sensitivity": {
+    "n_public": 20998,
+    "rounding_step": 1e-05,
+    "interval_width_hits": 0.21,
+    "unambiguous_scores_count": 55,
+    "total_scores_analyzed": 55
+  },
+  "pairwise_disagreements": {
+    "SUB_C1_EVT151__vs__SUB_C2_EVT152": {
+      "pair": [
+        "SUB_C1_EVT151",
+        "SUB_C2_EVT152"
+      ],
+      "flips_k1": 153,
+      "flips_k2": 3,
+      "overlap_flips": 0,
+      "symmetric_difference": 156,
+      "jaccard_similarity": 0.0
+    },
+    "SUB_C1_EVT151__vs__SUB_C3_EVT153": {
+      "pair": [
+        "SUB_C1_EVT151",
+        "SUB_C3_EVT153"
+      ],
+      "flips_k1": 153,
+      "flips_k2": 6,
+      "overlap_flips": 3,
+      "symmetric_difference": 153,
+      "jaccard_similarity": 0.0192
+    },
+    "SUB_C2_EVT152__vs__SUB_C3_EVT153": {
+      "pair": [
+        "SUB_C2_EVT152",
+        "SUB_C3_EVT153"
+      ],
+      "flips_k1": 3,
+      "flips_k2": 6,
+      "overlap_flips": 3,
+      "symmetric_difference": 3,
+      "jaccard_similarity": 0.5
+    },
+    "CAND_Consensus_M4B_M6__vs__SUB_C1_EVT151": {
+      "pair": [
+        "CAND_Consensus_M4B_M6",
+        "SUB_C1_EVT151"
+      ],
+      "flips_k1": 679,
+      "flips_k2": 153,
+      "overlap_flips": 25,
+      "symmetric_difference": 782,
+      "jaccard_similarity": 0.031
+    },
+    "CAND_Consensus_M4B_M6__vs__SUB_C2_EVT152": {
+      "pair": [
+        "CAND_Consensus_M4B_M6",
+        "SUB_C2_EVT152"
+      ],
+      "flips_k1": 679,
+      "flips_k2": 3,
+      "overlap_flips": 1,
+      "symmetric_difference": 680,
+      "jaccard_similarity": 0.0015
+    },
+    "CAND_Consensus_M4B_M6__vs__SUB_C3_EVT153": {
+      "pair": [
+        "CAND_Consensus_M4B_M6",
+        "SUB_C3_EVT153"
+      ],
+      "flips_k1": 679,
+      "flips_k2": 6,
+      "overlap_flips": 4,
+      "symmetric_difference": 677,
+      "jaccard_similarity": 0.0059
+    },
+    "CAND_Consensus_M4B_M6__vs__CAND_M4B_Full_PolicyB": {
+      "pair": [
+        "CAND_Consensus_M4B_M6",
+        "CAND_M4B_Full_PolicyB"
+      ],
+      "flips_k1": 679,
+      "flips_k2": 855,
+      "overlap_flips": 679,
+      "symmetric_difference": 176,
+      "jaccard_similarity": 0.7942
+    },
+    "CAND_Consensus_M4B_M6__vs__CAND_M6_Meta_Stacker": {
+      "pair": [
+        "CAND_Consensus_M4B_M6",
+        "CAND_M6_Meta_Stacker"
+      ],
+      "flips_k1": 679,
+      "flips_k2": 898,
+      "overlap_flips": 679,
+      "symmetric_difference": 219,
+      "jaccard_similarity": 0.7561
+    },
+    "CAND_Consensus_M4B_M6__vs__CAND_Refit70k": {
+      "pair": [
+        "CAND_Consensus_M4B_M6",
+        "CAND_Refit70k"
+      ],
+      "flips_k1": 679,
+      "flips_k2": 748,
+      "overlap_flips": 466,
+      "symmetric_difference": 495,
+      "jaccard_similarity": 0.4849
+    },
+    "CAND_Consensus_M4B_M6__vs__CAND_Pruned_Historical": {
+      "pair": [
+        "CAND_Consensus_M4B_M6",
+        "CAND_Pruned_Historical"
+      ],
+      "flips_k1": 679,
+      "flips_k2": 323,
+      "overlap_flips": 172,
+      "symmetric_difference": 658,
+      "jaccard_similarity": 0.2072
+    },
+    "CAND_Consensus_M4B_M6__vs__CAND_High_Margin": {
+      "pair": [
+        "CAND_Consensus_M4B_M6",
+        "CAND_High_Margin"
+      ],
+      "flips_k1": 679,
+      "flips_k2": 59,
+      "overlap_flips": 41,
+      "symmetric_difference": 656,
+      "jaccard_similarity": 0.0588
+    },
+    "CAND_M4B_Full_PolicyB__vs__SUB_C1_EVT151": {
+      "pair": [
+        "CAND_M4B_Full_PolicyB",
+        "SUB_C1_EVT151"
+      ],
+      "flips_k1": 855,
+      "flips_k2": 153,
+      "overlap_flips": 31,
+      "symmetric_difference": 946,
+      "jaccard_similarity": 0.0317
+    },
+    "CAND_M4B_Full_PolicyB__vs__SUB_C2_EVT152": {
+      "pair": [
+        "CAND_M4B_Full_PolicyB",
+        "SUB_C2_EVT152"
+      ],
+      "flips_k1": 855,
+      "flips_k2": 3,
+      "overlap_flips": 1,
+      "symmetric_difference": 856,
+      "jaccard_similarity": 0.0012
+    },
+    "CAND_M4B_Full_PolicyB__vs__SUB_C3_EVT153": {
+      "pair": [
+        "CAND_M4B_Full_PolicyB",
+        "SUB_C3_EVT153"
+      ],
+      "flips_k1": 855,
+      "flips_k2": 6,
+      "overlap_flips": 4,
+      "symmetric_difference": 853,
+      "jaccard_similarity": 0.0047
+    },
+    "CAND_M4B_Full_PolicyB__vs__CAND_M6_Meta_Stacker": {
+      "pair": [
+        "CAND_M4B_Full_PolicyB",
+        "CAND_M6_Meta_Stacker"
+      ],
+      "flips_k1": 855,
+      "flips_k2": 898,
+      "overlap_flips": 679,
+      "symmetric_difference": 395,
+      "jaccard_similarity": 0.6322
+    },
+    "CAND_M4B_Full_PolicyB__vs__CAND_Refit70k": {
+      "pair": [
+        "CAND_M4B_Full_PolicyB",
+        "CAND_Refit70k"
+      ],
+      "flips_k1": 855,
+      "flips_k2": 748,
+      "overlap_flips": 532,
+      "symmetric_difference": 539,
+      "jaccard_similarity": 0.4967
+    },
+    "CAND_M4B_Full_PolicyB__vs__CAND_Pruned_Historical": {
+      "pair": [
+        "CAND_M4B_Full_PolicyB",
+        "CAND_Pruned_Historical"
+      ],
+      "flips_k1": 855,
+      "flips_k2": 323,
+      "overlap_flips": 195,
+      "symmetric_difference": 788,
+      "jaccard_similarity": 0.1984
+    },
+    "CAND_M6_Meta_Stacker__vs__SUB_C1_EVT151": {
+      "pair": [
+        "CAND_M6_Meta_Stacker",
+        "SUB_C1_EVT151"
+      ],
+      "flips_k1": 898,
+      "flips_k2": 153,
+      "overlap_flips": 38,
+      "symmetric_difference": 975,
+      "jaccard_similarity": 0.0375
+    },
+    "CAND_M6_Meta_Stacker__vs__SUB_C2_EVT152": {
+      "pair": [
+        "CAND_M6_Meta_Stacker",
+        "SUB_C2_EVT152"
+      ],
+      "flips_k1": 898,
+      "flips_k2": 3,
+      "overlap_flips": 1,
+      "symmetric_difference": 899,
+      "jaccard_similarity": 0.0011
+    },
+    "CAND_M6_Meta_Stacker__vs__SUB_C3_EVT153": {
+      "pair": [
+        "CAND_M6_Meta_Stacker",
+        "SUB_C3_EVT153"
+      ],
+      "flips_k1": 898,
+      "flips_k2": 6,
+      "overlap_flips": 4,
+      "symmetric_difference": 896,
+      "jaccard_similarity": 0.0044
+    },
+    "CAND_M6_Meta_Stacker__vs__CAND_Refit70k": {
+      "pair": [
+        "CAND_M6_Meta_Stacker",
+        "CAND_Refit70k"
+      ],
+      "flips_k1": 898,
+      "flips_k2": 748,
+      "overlap_flips": 525,
+      "symmetric_difference": 596,
+      "jaccard_similarity": 0.4683
+    },
+    "CAND_M6_Meta_Stacker__vs__CAND_Pruned_Historical": {
+      "pair": [
+        "CAND_M6_Meta_Stacker",
+        "CAND_Pruned_Historical"
+      ],
+      "flips_k1": 898,
+      "flips_k2": 323,
+      "overlap_flips": 203,
+      "symmetric_difference": 815,
+      "jaccard_similarity": 0.1994
+    },
+    "CAND_Refit70k__vs__SUB_C1_EVT151": {
+      "pair": [
+        "CAND_Refit70k",
+        "SUB_C1_EVT151"
+      ],
+      "flips_k1": 748,
+      "flips_k2": 153,
+      "overlap_flips": 18,
+      "symmetric_difference": 865,
+      "jaccard_similarity": 0.0204
+    },
+    "CAND_Refit70k__vs__SUB_C2_EVT152": {
+      "pair": [
+        "CAND_Refit70k",
+        "SUB_C2_EVT152"
+      ],
+      "flips_k1": 748,
+      "flips_k2": 3,
+      "overlap_flips": 1,
+      "symmetric_difference": 749,
+      "jaccard_similarity": 0.0013
+    },
+    "CAND_Refit70k__vs__SUB_C3_EVT153": {
+      "pair": [
+        "CAND_Refit70k",
+        "SUB_C3_EVT153"
+      ],
+      "flips_k1": 748,
+      "flips_k2": 6,
+      "overlap_flips": 4,
+      "symmetric_difference": 746,
+      "jaccard_similarity": 0.0053
+    },
+    "CAND_Pruned_Historical__vs__SUB_C1_EVT151": {
+      "pair": [
+        "CAND_Pruned_Historical",
+        "SUB_C1_EVT151"
+      ],
+      "flips_k1": 323,
+      "flips_k2": 153,
+      "overlap_flips": 0,
+      "symmetric_difference": 476,
+      "jaccard_similarity": 0.0
+    },
+    "CAND_Pruned_Historical__vs__SUB_C2_EVT152": {
+      "pair": [
+        "CAND_Pruned_Historical",
+        "SUB_C2_EVT152"
+      ],
+      "flips_k1": 323,
+      "flips_k2": 3,
+      "overlap_flips": 0,
+      "symmetric_difference": 326,
+      "jaccard_similarity": 0.0
+    },
+    "CAND_Pruned_Historical__vs__SUB_C3_EVT153": {
+      "pair": [
+        "CAND_Pruned_Historical",
+        "SUB_C3_EVT153"
+      ],
+      "flips_k1": 323,
+      "flips_k2": 6,
+      "overlap_flips": 0,
+      "symmetric_difference": 329,
+      "jaccard_similarity": 0.0
+    },
+    "CAND_Pruned_Historical__vs__CAND_Refit70k": {
+      "pair": [
+        "CAND_Pruned_Historical",
+        "CAND_Refit70k"
+      ],
+      "flips_k1": 323,
+      "flips_k2": 748,
+      "overlap_flips": 323,
+      "symmetric_difference": 425,
+      "jaccard_similarity": 0.4318
+    },
+    "CAND_High_Margin__vs__SUB_C1_EVT151": {
+      "pair": [
+        "CAND_High_Margin",
+        "SUB_C1_EVT151"
+      ],
+      "flips_k1": 59,
+      "flips_k2": 153,
+      "overlap_flips": 0,
+      "symmetric_difference": 212,
+      "jaccard_similarity": 0.0
+    },
+    "CAND_High_Margin__vs__SUB_C2_EVT152": {
+      "pair": [
+        "CAND_High_Margin",
+        "SUB_C2_EVT152"
+      ],
+      "flips_k1": 59,
+      "flips_k2": 3,
+      "overlap_flips": 0,
+      "symmetric_difference": 62,
+      "jaccard_similarity": 0.0
+    },
+    "CAND_High_Margin__vs__SUB_C3_EVT153": {
+      "pair": [
+        "CAND_High_Margin",
+        "SUB_C3_EVT153"
+      ],
+      "flips_k1": 59,
+      "flips_k2": 6,
+      "overlap_flips": 0,
+      "symmetric_difference": 65,
+      "jaccard_similarity": 0.0
+    },
+    "CAND_High_Margin__vs__CAND_M4B_Full_PolicyB": {
+      "pair": [
+        "CAND_High_Margin",
+        "CAND_M4B_Full_PolicyB"
+      ],
+      "flips_k1": 59,
+      "flips_k2": 855,
+      "overlap_flips": 50,
+      "symmetric_difference": 814,
+      "jaccard_similarity": 0.0579
+    },
+    "CAND_High_Margin__vs__CAND_M6_Meta_Stacker": {
+      "pair": [
+        "CAND_High_Margin",
+        "CAND_M6_Meta_Stacker"
+      ],
+      "flips_k1": 59,
+      "flips_k2": 898,
+      "overlap_flips": 44,
+      "symmetric_difference": 869,
+      "jaccard_similarity": 0.0482
+    },
+    "CAND_High_Margin__vs__CAND_Refit70k": {
+      "pair": [
+        "CAND_High_Margin",
+        "CAND_Refit70k"
+      ],
+      "flips_k1": 59,
+      "flips_k2": 748,
+      "overlap_flips": 59,
+      "symmetric_difference": 689,
+      "jaccard_similarity": 0.0789
+    },
+    "CAND_High_Margin__vs__CAND_Pruned_Historical": {
+      "pair": [
+        "CAND_High_Margin",
+        "CAND_Pruned_Historical"
+      ],
+      "flips_k1": 59,
+      "flips_k2": 323,
+      "overlap_flips": 59,
+      "symmetric_difference": 264,
+      "jaccard_similarity": 0.1827
+    }
+  },
+  "candidate_lp_bounds": {
+    "CAND_Consensus_M4B_M6": {
+      "description": "Unanimous Consensus M4B and M6 Overlay",
+      "total_flips": 679,
+      "historical_flips_overlap": 622,
+      "fresh_flips_unconstrained": 57,
+      "lp_bounds_net_gain": [
+        -518.5,
+        260.1
+      ],
+      "identifiable_subspace_fraction": 0.4457,
+      "nullspace_unidentifiable_fraction": 0.5543,
+      "can_reach_plus50": true,
+      "verdict": "FEASIBLE_FOR_50"
+    },
+    "CAND_M4B_Full_PolicyB": {
+      "description": "Full Model with Policy B (Batch Seller History)",
+      "total_flips": 855,
+      "historical_flips_overlap": 750,
+      "fresh_flips_unconstrained": 105,
+      "lp_bounds_net_gain": [
+        -617.1,
+        279.9
+      ],
+      "identifiable_subspace_fraction": 0.4809,
+      "nullspace_unidentifiable_fraction": 0.5191,
+      "can_reach_plus50": true,
+      "verdict": "FEASIBLE_FOR_50"
+    },
+    "CAND_M6_Meta_Stacker": {
+      "description": "Meta Stacker Ensemble (Fixed Blend + Outers)",
+      "total_flips": 898,
+      "historical_flips_overlap": 811,
+      "fresh_flips_unconstrained": 87,
+      "lp_bounds_net_gain": [
+        -625.1,
+        250.8
+      ],
+      "identifiable_subspace_fraction": 0.4816,
+      "nullspace_unidentifiable_fraction": 0.5184,
+      "can_reach_plus50": true,
+      "verdict": "FEASIBLE_FOR_50"
+    },
+    "CAND_Refit70k": {
+      "description": "V\u00eda Principal Refit 70k (Baseline Full)",
+      "total_flips": 748,
+      "historical_flips_overlap": 655,
+      "fresh_flips_unconstrained": 93,
+      "lp_bounds_net_gain": [
+        -569.3,
+        304.2
+      ],
+      "identifiable_subspace_fraction": 0.4279,
+      "nullspace_unidentifiable_fraction": 0.5721,
+      "can_reach_plus50": true,
+      "verdict": "FEASIBLE_FOR_50"
+    },
+    "CAND_Pruned_Historical": {
+      "description": "V\u00eda Principal Pruned of Severe Negative Blocks",
+      "total_flips": 323,
+      "historical_flips_overlap": 230,
+      "fresh_flips_unconstrained": 93,
+      "lp_bounds_net_gain": [
+        -314.8,
+        248.9
+      ],
+      "identifiable_subspace_fraction": 0.2023,
+      "nullspace_unidentifiable_fraction": 0.7977,
+      "can_reach_plus50": true,
+      "verdict": "FEASIBLE_FOR_50"
+    },
+    "CAND_High_Margin": {
+      "description": "High Margin Identity Contrast (|p - 0.5| >= 0.20)",
+      "total_flips": 59,
+      "historical_flips_overlap": 41,
+      "fresh_flips_unconstrained": 18,
+      "lp_bounds_net_gain": [
+        -58.2,
+        52.4
+      ],
+      "identifiable_subspace_fraction": 0.0725,
+      "nullspace_unidentifiable_fraction": 0.9275,
+      "can_reach_plus50": true,
+      "verdict": "FEASIBLE_FOR_50"
+    },
+    "SUB_C1_EVT151": {
+      "description": "C1 (Score 0.94542, Delta -47)",
+      "total_flips": 153,
+      "historical_flips_overlap": 153,
+      "fresh_flips_unconstrained": 0,
+      "lp_bounds_net_gain": [
+        -47.0,
+        -47.0
+      ],
+      "identifiable_subspace_fraction": 1.0,
+      "nullspace_unidentifiable_fraction": 0.0,
+      "can_reach_plus50": false,
+      "verdict": "DISQUALIFIED_BELOW_50"
+    },
+    "SUB_C2_EVT152": {
+      "description": "C2 (Score 0.94757, Delta -2)",
+      "total_flips": 3,
+      "historical_flips_overlap": 3,
+      "fresh_flips_unconstrained": 0,
+      "lp_bounds_net_gain": [
+        -2.0,
+        -2.0
+      ],
+      "identifiable_subspace_fraction": 1.0,
+      "nullspace_unidentifiable_fraction": 0.0,
+      "can_reach_plus50": false,
+      "verdict": "DISQUALIFIED_BELOW_50"
+    },
+    "SUB_C3_EVT153": {
+      "description": "C3 (Score 0.94752, Delta -3)",
+      "total_flips": 6,
+      "historical_flips_overlap": 6,
+      "fresh_flips_unconstrained": 0,
+      "lp_bounds_net_gain": [
+        -3.0,
+        -3.0
+      ],
+      "identifiable_subspace_fraction": 1.0,
+      "nullspace_unidentifiable_fraction": 0.0,
+      "can_reach_plus50": false,
+      "verdict": "DISQUALIFIED_BELOW_50"
+    }
+  },
+  "subspace_decomposition": {
+    "touched_ids": 3204,
+    "rank": 92,
+    "nullity": 3112,
+    "nullity_fraction": 0.9713,
+    "identifiable_dimensions": 92,
+    "unidentifiable_dimensions": 3112
+  },
+  "certified_individual_labels_audit": {
+    "tested_patterns": 150,
+    "certified_positive_or_negative": 0,
+    "conclusion": "No individual test row label is certified by the historical aggregate scores. Disaggregation of losing blocks into individual labels is mathematically invalid."
+  },
+  "surgical_probes_for_decisions": [
+    {
+      "probe_name": "PROBE_DECISION_1_BEFORE_ROUTING_CAUSAL_VS_BATCH",
+      "decision_addressed": "Routing policy in the 'Before' test regime (3,118 rows): Causal Seller History vs Monotone Batch Seller History.",
+      "disagreement_size_total": 133,
+      "recommended_probe_size": 25,
+      "rationale": "If delta > 0 on probe: seller purity holds across past timestamps, validating Policy B. If delta < 0: temporal causality strictly dominates, validating Policy A. Directly resolves the routing architecture for 3,118 items.",
+      "orthogonal_to_10_negative_blocks": true
+    },
+    {
+      "probe_name": "PROBE_DECISION_2_COLD_SPECIALIST_VS_TABULAR",
+      "decision_addressed": "Threshold activation for NLP Text Specialist (p_text_negation) on unseen sellers ('Cold' test regime, 8,513 rows).",
+      "disagreement_size_total": 48,
+      "recommended_probe_size": 20,
+      "rationale": "High-confidence text negation signals ('para repuesto', 'roto', 'impecable', 'en caja') where tabular GBDT relies on noisy category prior. Directly resolves the trade-off between text specialist and tabular baseline in cold start.",
+      "orthogonal_to_10_negative_blocks": true
+    },
+    {
+      "probe_name": "PROBE_DECISION_3_CONSENSUS_CORE_TRANSFER",
+      "decision_addressed": "Transferability of the 679 unanimous consensus flips (M4B and M6 overlay) to public leaderboard.",
+      "disagreement_size_total": 679,
+      "recommended_probe_size": 35,
+      "rationale": "Highest-margin subset of unanimous consensus flips with structured attribute confirmation. Tests whether the +2,651 OOF gain transfers with precision p >= 55.4% needed for podium +50.",
+      "orthogonal_to_10_negative_blocks": true
+    }
+  ],
+  "prequential_backtest": [
+    {
+      "event_id": "EVT-141",
+      "name": "12-Model Meta Stacker",
+      "flips": 643,
+      "actual_delta": -116,
+      "policy_decision": "REJECT",
+      "decision_reason": "High overlap with historical negative loss directions; LP lower bound severely negative; risk of catastrophic transfer failure.",
+      "lookahead_free": true
+    },
+    {
+      "event_id": "EVT-142",
+      "name": "Hybrid Seen Router C4",
+      "flips": 890,
+      "actual_delta": -349,
+      "policy_decision": "REJECT",
+      "decision_reason": "High overlap with historical negative loss directions; LP lower bound severely negative; risk of catastrophic transfer failure.",
+      "lookahead_free": true
+    },
+    {
+      "event_id": "EVT-143",
+      "name": "Surgical Quad Rank6 Breakthrough",
+      "flips": 3,
+      "actual_delta": 1,
+      "policy_decision": "ACCEPT_AND_PROMOTE",
+      "decision_reason": "Pure positive gain, zero overlap with negative blocks, confirmed algebraic transfer.",
+      "lookahead_free": true
+    },
+    {
+      "event_id": "EVT-151",
+      "name": "C1 (Refit Attempt)",
+      "flips": 153,
+      "actual_delta": -47,
+      "policy_decision": "REJECT",
+      "decision_reason": "High overlap with historical negative loss directions; LP lower bound severely negative; risk of catastrophic transfer failure.",
+      "lookahead_free": true
+    },
+    {
+      "event_id": "EVT-152",
+      "name": "C2 (Micro Probe 3)",
+      "flips": 3,
+      "actual_delta": -2,
+      "policy_decision": "DIAGNOSTIC_ONLY",
+      "decision_reason": "Micro-probe with < 10 flips; mathematically incapable of providing +50 aciertos required for podium.",
+      "lookahead_free": true
+    },
+    {
+      "event_id": "EVT-153",
+      "name": "C3 (Micro Probe 6)",
+      "flips": 6,
+      "actual_delta": -3,
+      "policy_decision": "DIAGNOSTIC_ONLY",
+      "decision_reason": "Micro-probe with < 10 flips; mathematically incapable of providing +50 aciertos required for podium.",
+      "lookahead_free": true
+    },
+    {
+      "event_id": "EVT-154",
+      "name": "S4 (Anchor Record)",
+      "flips": 3,
+      "actual_delta": 1,
+      "policy_decision": "ACCEPT_AND_PROMOTE",
+      "decision_reason": "Pure positive gain, zero overlap with negative blocks, confirmed algebraic transfer.",
+      "lookahead_free": true
+    },
+    {
+      "event_id": "NOV13_05",
+      "name": "Nov 13 5th Ampliada",
+      "flips": 268,
+      "actual_delta": -85,
+      "policy_decision": "REJECT",
+      "decision_reason": "High overlap with historical negative loss directions; LP lower bound severely negative; risk of catastrophic transfer failure.",
+      "lookahead_free": true
+    },
+    {
+      "event_id": "C5_PRUNED",
+      "name": "C5 Pruned Historical",
+      "flips": 323,
+      "actual_delta": null,
+      "policy_decision": "REJECT",
+      "decision_reason": "High overlap with historical negative loss directions; LP lower bound severely negative; risk of catastrophic transfer failure.",
+      "lookahead_free": true
+    },
+    {
+      "event_id": "CONSENSUS_679",
+      "name": "Consensus M4B/M6 Overlay",
+      "flips": 679,
+      "actual_delta": null,
+      "policy_decision": "HOLD_FOR_AUDIT_AND_SURGICAL_PROBE",
+      "decision_reason": "High OOF gain (+2,651 aciertos), 57 fresh flips, but requires surgical contrast probe before full upload to ensure p >= 55.4%.",
+      "lookahead_free": true
+    }
+  ],
+  "elapsed_seconds": 19.67
+}
