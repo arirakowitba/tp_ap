@@ -1,0 +1,14 @@
+IDs flipped vs S4; cell = |A∩B| (diagonal = size); unprobed = outside the 2.345-ID historical span before 14-11
+             top30(+1 blk144(-      U58     in86      F86   cons10   cons30 AG_CLEAN     AG_A     AG_B     AG_C
+top30(+12)         30        0        0        0        0        8       14        1        2        5        2
+blk144(-21)         0      144       58       86        0        0        1        1        2       13        3
+U58                 0       58       58        0        0        0        0        0        0        0        0
+in86                0       86        0       86        0        0        1        1        2       13        3
+F86                 0        0        0        0       86        0        0        0        0        0        1
+cons10              8        0        0        0        0       10       10        0        0        1        0
+cons30             14        1        0        1        0       10       30        1        0        5        0
+AG_CLEAN            1        1        0        1        0        0        1      161      106      106      128
+AG_A                2        2        0        2        0        0        0      106      303      303      303
+AG_B                5       13        0       13        0        1        5      106      303      379      303
+AG_C                2        3        0        3        1        0        0      128      303      303      483
+unprobed share: {'top30(+12)': 0, 'blk144(-21)': 58, 'U58': 58, 'in86': 0, 'F86': 86, 'cons10': 0, 'cons30': 0, 'AG_CLEAN': 37, 'AG_A': 75, 'AG_B': 87, 'AG_C': 151}
