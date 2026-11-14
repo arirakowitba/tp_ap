@@ -1,0 +1,62 @@
+{
+  "Slot1_Primary_C5": {
+    "id": "Slot1_Primary_C5",
+    "filename": "candidate_via_principal_pruned_historical_bounds.csv",
+    "filepath": "results\\candidate_via_principal_pruned_historical_bounds.csv",
+    "file_sha256": "4f0907d7f6b24c5d4b9ed01468b5d582b611e61c1495f8bf81c71d98347935ee",
+    "target_map_hash": "5e427663c138d1c2d5de79951823c53399fb20c1b55f39f0a7a0f0ef2aa8c7cc",
+    "role": "Primer Cupo / Apuesta Principal para superar 0.95000",
+    "model": "Multi-Family Routed Ensemble (LGBM + CB + XGB + Especialista) podado contra historial",
+    "anchor": "S4 (0.94766)",
+    "flips_total": 323,
+    "flips_u2n": 160,
+    "flips_n2u": 163,
+    "expected_net_gain": 53.25,
+    "ci90": [
+      29.0,
+      77.0
+    ],
+    "p_gt_09500": 0.6028,
+    "p_gt_095095": 0.1503
+  },
+  "Slot_Contrast_C6": {
+    "id": "Slot_Contrast_C6",
+    "filename": "candidate_via_principal_high_margin_contrast.csv",
+    "filepath": "results\\candidate_via_principal_high_margin_contrast.csv",
+    "file_sha256": "1401901d1a14e81f0bed6b8540c26d1b00554e7b4cd5815c505f1046376d638a",
+    "target_map_hash": "0876032b867c66a4189a1b472c96f93864c2b6d8d272d66ac630d20077c5a42b",
+    "role": "Contraste de Riesgo M\u00ednimo / Alta Certeza",
+    "model": "V\u00eda Principal sobre soporte limpio con margen |p - 0.5| >= 0.20",
+    "anchor": "S4 (0.94766)",
+    "flips_total": 59,
+    "flips_u2n": 26,
+    "flips_n2u": 33,
+    "expected_net_gain": 22.68,
+    "ci90": [
+      13.0,
+      32.0
+    ],
+    "p_gt_09500": 0.0,
+    "p_gt_095095": 0.0
+  },
+  "Fallback_S4": {
+    "id": "Fallback_S4",
+    "filename": "SUBMISSION_4_TODAY_RECOMMENDED.csv",
+    "filepath": "submissions\\SUBMISSION_4_TODAY_RECOMMENDED.csv",
+    "file_sha256": "bb73f1ff1b5fdc76fd8880d4cc146adf46a0558138aec4546e17508cfcf5183f",
+    "target_map_hash": "70479972b57595ceb35845c3f08d92b365eca05c0d134e16184f9dcc74b580a6",
+    "role": "Fallback Seguro / L\u00ednea Base Confirmada",
+    "model": "Ensamble Hist\u00f3rico S4",
+    "anchor": "S4 (Auto)",
+    "flips_total": 0,
+    "flips_u2n": 0,
+    "flips_n2u": 0,
+    "expected_net_gain": 0.0,
+    "ci90": [
+      0.0,
+      0.0
+    ],
+    "p_gt_09500": 0.0,
+    "p_gt_095095": 0.0
+  }
+}
