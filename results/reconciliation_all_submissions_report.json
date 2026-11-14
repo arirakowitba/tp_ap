@@ -1,0 +1,416 @@
+{
+  "anchor": {
+    "name": "S4_EVT_154",
+    "score": 0.94766,
+    "hits": 19899,
+    "file_sha256": "bb73f1ff1b5fdc76fd8880d4cc146adf46a0558138aec4546e17508cfcf5183f",
+    "map_sha256": "70479972b57595ceb35845c3f08d92b365eca05c0d134e16184f9dcc74b580a6"
+  },
+  "assumptions": {
+    "n_public": 20998,
+    "hits_for_095000": 19949,
+    "delta_for_095000": 50,
+    "hits_for_095095": 19968,
+    "delta_for_095095": 69,
+    "hits_for_095552": 20064,
+    "delta_for_095552": 165
+  },
+  "catalog_summary": {
+    "total_rows": 143,
+    "with_score": 123,
+    "aliases_with_score": 16,
+    "unique_scored_events": 107,
+    "quarantined_events": 7
+  },
+  "ag_events_accepted": {
+    "count": 91,
+    "covered_test_ids": 3201,
+    "uncovered_test_ids": 26799,
+    "quarantined_count": 7
+  },
+  "codex_restrictions_reconciled": {
+    "count_before_fifth": 106,
+    "covered_ids_before_fifth": 3523,
+    "count_with_fifth": 107,
+    "covered_ids_with_fifth": 3593,
+    "history_sha256": "35152c07e841fa4cd2017f2ad5e8d6590a8c117449c4f15ee32484086877772b"
+  },
+  "ten_disjoint_negative_blocks": {
+    "total_changes": 1782,
+    "total_net_hits": -492,
+    "blocks": [
+      {
+        "name": "ap_20261111_01_consenso_ruteado",
+        "score": 0.94214,
+        "hits": 19783,
+        "delta": -116,
+        "changes": 218,
+        "date": "2026-11-11"
+      },
+      {
+        "name": "ap_proxima_disjunta_104",
+        "score": 0.94652,
+        "hits": 19875,
+        "delta": -24,
+        "changes": 104,
+        "date": "2026-11-11"
+      },
+      {
+        "name": "ap_quinta_catboost_disjunta",
+        "score": 0.94509,
+        "hits": 19845,
+        "delta": -54,
+        "changes": 120,
+        "date": "2026-11-12"
+      },
+      {
+        "name": "ap_probe_A_refit_exclusivo",
+        "score": 0.94538,
+        "hits": 19851,
+        "delta": -48,
+        "changes": 115,
+        "date": "2026-11-12"
+      },
+      {
+        "name": "ap_probe_B_ag_exclusivo",
+        "score": 0.9448,
+        "hits": 19839,
+        "delta": -60,
+        "changes": 132,
+        "date": "2026-11-12"
+      },
+      {
+        "name": "A",
+        "score": 0.94576,
+        "hits": 19859,
+        "delta": -40,
+        "changes": 185,
+        "date": "2026-11-13"
+      },
+      {
+        "name": "B",
+        "score": 0.94642,
+        "hits": 19873,
+        "delta": -26,
+        "changes": 190,
+        "date": "2026-11-13"
+      },
+      {
+        "name": "C",
+        "score": 0.9469,
+        "hits": 19883,
+        "delta": -16,
+        "changes": 210,
+        "date": "2026-11-13"
+      },
+      {
+        "name": "D",
+        "score": 0.94657,
+        "hits": 19876,
+        "delta": -23,
+        "changes": 240,
+        "date": "2026-11-13"
+      },
+      {
+        "name": "ap_20261113_05_ampliada",
+        "score": 0.94361,
+        "hits": 19814,
+        "delta": -85,
+        "changes": 268,
+        "date": "2026-11-13",
+        "sha256": "dfff80fce8ccd08e122395115b24e4518585d53375de9c12dae3c9d618622f81",
+        "subgroups": {
+          "line3_agrees_with_s4": {
+            "changes": 205,
+            "lp_bounds": [
+              -145.0,
+              -22.0
+            ]
+          },
+          "line3_differs_from_s4": {
+            "changes": 63,
+            "lp_bounds": [
+              -63.0,
+              60.0
+            ]
+          },
+          "previously_touched": {
+            "changes": 198,
+            "lp_bounds": [
+              -155.0,
+              -15.0
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "fifth_submission_audit": {
+    "file_name": "ap_20261113_05_ampliada.csv",
+    "sha256": "dfff80fce8ccd08e122395115b24e4518585d53375de9c12dae3c9d618622f81",
+    "score": 0.94361,
+    "hits": 19814,
+    "delta_vs_s4": -85,
+    "flips_vs_s4": 268,
+    "line3_agrees_with_s4_subblock": {
+      "changes": 205,
+      "lp_bounds_net_gain": [
+        -145.0,
+        -22.0
+      ],
+      "conclusion": "Perdi\u00f3 como m\u00ednimo 22 aciertos netos en el subbloque donde Line3 y S4 coincid\u00edan."
+    }
+  },
+  "enumerated_differences": [
+    {
+      "category": "Reconstrucci\u00f3n desde D1+D2 (5 eventos)",
+      "events": [
+        "EVT-082",
+        "EVT-083",
+        "EVT-084",
+        "EVT-085",
+        "EVT-086"
+      ],
+      "scores": [
+        0.94633,
+        0.94623,
+        0.94661,
+        0.94661,
+        0.94642
+      ],
+      "flips_vs_d1d2": [
+        80,
+        40,
+        40,
+        20,
+        10
+      ],
+      "source": "results/forensic_ledger_20261104/submission_ledger_master_85vec.json",
+      "rationale": "AG s\u00f3lo reconstruy\u00f3 autom\u00e1ticamente los vectores prefijados con 'reconstructed_from_48_'. Codex incorpor\u00f3 tanto la base 48 como las 5 sondas D1+D2."
+    },
+    {
+      "category": "Env\u00edos Nocturnos Disjuntos del 11-12 Noviembre (5 restricciones)",
+      "events": [
+        "ap_20261111_01_consenso_ruteado (EVT-141)",
+        "ap_proxima_disjunta_104",
+        "ap_quinta_catboost_disjunta",
+        "ap_probe_A_refit_exclusivo",
+        "ap_probe_B_ag_exclusivo"
+      ],
+      "scores": [
+        0.94214,
+        0.94652,
+        0.94509,
+        0.94538,
+        0.9448
+      ],
+      "deltas": [
+        -116,
+        -24,
+        -54,
+        -48,
+        -60
+      ],
+      "source": "coordination/codex_to_antigravity/CX-0185.md y results/codex_refit_20261111/late_ap_nov13_report.json",
+      "rationale": "En AG fueron reportados en texto pero no ingresados como filas directas en solve_full_history_and_evaluate_policies.py. Codex los incorpor\u00f3 formalmente en OLDER."
+    },
+    {
+      "category": "Submissions Diurnas del 13 de Noviembre (4 restricciones)",
+      "events": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "scores": [
+        0.94576,
+        0.94642,
+        0.9469,
+        0.94657
+      ],
+      "deltas": [
+        -40,
+        -26,
+        -16,
+        -23
+      ],
+      "changes": [
+        185,
+        190,
+        210,
+        240
+      ],
+      "source": "results/codex_refit_20261111/late_ap_nov13_report.json (SCORES en audit_nov13_outcomes.py)",
+      "rationale": "Env\u00edos diurnos de exploraci\u00f3n ejecutados el 13/11. En AG se registraron en la narrativa pero no en la matriz LP. Codex los incorpor\u00f3 como restricciones primarias."
+    },
+    {
+      "category": "EVT-151 (1 restricci\u00f3n)",
+      "events": [
+        "EVT-151"
+      ],
+      "scores": [
+        0.94752
+      ],
+      "source": "ap_history_nov13/comprehensive",
+      "rationale": "Vector reconstruido y verificado por SHA-256 en Codex (chunks de evt151); en AG no ten\u00eda archivo CSV f\u00edsico con ese nombre can\u00f3nico."
+    },
+    {
+      "category": "Quinta Submission del 13 de Noviembre (1 restricci\u00f3n)",
+      "events": [
+        "ap_20261113_05_ampliada (nov13_fifth)"
+      ],
+      "scores": [
+        0.94361
+      ],
+      "delta": -85,
+      "changes": 268,
+      "sha256": "dfff80fce8ccd08e122395115b24e4518585d53375de9c12dae3c9d618622f81",
+      "source": "results/codex_refit_20261111/ag_closing_bounds.json y CX-0185/CX-0188",
+      "rationale": "Reportada por Ariel tras la corrida de AG-0188. Completa la restricci\u00f3n 107 en Codex (3.593 IDs cubiertos)."
+    }
+  ],
+  "catalog_aliases": [
+    {
+      "event_id": "EVT-041",
+      "display_name": "48",
+      "score": 0.94633,
+      "canonical_alias_of": null,
+      "date": "2026-10-25"
+    },
+    {
+      "event_id": "EVT-044",
+      "display_name": "57",
+      "score": 0.94633,
+      "canonical_alias_of": null,
+      "date": "2026-10-27"
+    },
+    {
+      "event_id": "EVT-055",
+      "display_name": "76",
+      "score": 0.94633,
+      "canonical_alias_of": null,
+      "date": "2026-10-29"
+    },
+    {
+      "event_id": "EVT-064",
+      "display_name": "probe_d2_new16",
+      "score": 0.94638,
+      "canonical_alias_of": "D2_sonda2_new_virgin16",
+      "date": "2026-10-31"
+    },
+    {
+      "event_id": "EVT-065",
+      "display_name": "probe_d1_seen7",
+      "score": 0.94647,
+      "canonical_alias_of": "D1_sonda1_seen_virgin7",
+      "date": "2026-10-31"
+    },
+    {
+      "event_id": "EVT-066",
+      "display_name": "havg_variant_c_full70k",
+      "score": 0.94514,
+      "canonical_alias_of": "havg_b10_variant_c_full70k",
+      "date": "2026-10-18"
+    },
+    {
+      "event_id": "EVT-071",
+      "display_name": "submission_final_reconfirmation_d1_d2",
+      "score": 0.94652,
+      "canonical_alias_of": "candidate_d1_d2_combined_on48",
+      "date": "2026-10-31"
+    },
+    {
+      "event_id": "EVT-090",
+      "display_name": "submission_04_probe_low_post_10flip.csv",
+      "score": 0.94457,
+      "canonical_alias_of": "4",
+      "date": "2026-10-18"
+    },
+    {
+      "event_id": "EVT-091",
+      "display_name": "submission_05_probe_mid_post_10flip.csv",
+      "score": 0.94447,
+      "canonical_alias_of": "5",
+      "date": "2026-10-18"
+    },
+    {
+      "event_id": "EVT-092",
+      "display_name": "submission_06_probe_high_post_10flip.csv",
+      "score": 0.94457,
+      "canonical_alias_of": "6",
+      "date": "2026-10-18"
+    },
+    {
+      "event_id": "EVT-093",
+      "display_name": "base07_labels_1_to_30000.txt",
+      "score": 0.94476,
+      "canonical_alias_of": "7",
+      "date": "2026-10-18"
+    },
+    {
+      "event_id": "EVT-095",
+      "display_name": "submission_59_subset_nuevos_26_sobre48.csv",
+      "score": 0.94619,
+      "canonical_alias_of": "probe_59_new_seller",
+      "date": "2026-10-28"
+    },
+    {
+      "event_id": "EVT-096",
+      "display_name": "submission_59_subset_vistos_to_new_27_sobre48.csv",
+      "score": 0.9459,
+      "canonical_alias_of": "probe_59_seen_to_new",
+      "date": "2026-10-28"
+    },
+    {
+      "event_id": "EVT-097",
+      "display_name": "probe_fin_stack_new_unprobed150_sobre48.csv",
+      "score": 0.94495,
+      "canonical_alias_of": "fin_stack_new150",
+      "date": "2026-10-28"
+    },
+    {
+      "event_id": "EVT-098",
+      "display_name": "probe_fin_stack_seen_unprobed150_sobre48.csv",
+      "score": 0.94257,
+      "canonical_alias_of": "fin_stack_seen150",
+      "date": "2026-10-28"
+    },
+    {
+      "event_id": "EVT-125",
+      "display_name": "submission_20261106_02_calibrated_empirical_top15.csv",
+      "score": 0.9469,
+      "canonical_alias_of": null,
+      "date": "2026-11-05"
+    }
+  ],
+  "quarantined_details": [
+    {
+      "event_id": "EVT-052",
+      "reason": "incompatible precision with N=20998"
+    },
+    {
+      "event_id": "EVT-022",
+      "reason": "pair distance contradiction / anchor distance bound"
+    },
+    {
+      "event_id": "EVT-018",
+      "reason": "incompatible precision with N=20998"
+    },
+    {
+      "event_id": "EVT-011",
+      "reason": "incompatible precision with N=20998"
+    },
+    {
+      "event_id": "EVT-005",
+      "reason": "pair distance contradiction"
+    },
+    {
+      "event_id": "EVT-004",
+      "reason": "pair distance contradiction"
+    },
+    {
+      "event_id": "EVT-001",
+      "reason": "pair distance contradiction"
+    }
+  ]
+}
