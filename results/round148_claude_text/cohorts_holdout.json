@@ -1,0 +1,38 @@
+{
+ "negacion (no/sin/nunca usad)": {
+  "n": 35,
+  "b10_err": 0.1429,
+  "used_rate": 0.486,
+  "blend_net": -2
+ },
+ "como nuevo": {
+  "n": 44,
+  "b10_err": 0.0227,
+  "used_rate": 0.977,
+  "blend_net": 0
+ },
+ "repuesto/accesorio": {
+  "n": 79,
+  "b10_err": 0.0253,
+  "used_rate": 0.304,
+  "blend_net": 1
+ },
+ "dice usado": {
+  "n": 147,
+  "b10_err": 0.034,
+  "used_rate": 0.918,
+  "blend_net": 2
+ },
+ "dice nuevo": {
+  "n": 792,
+  "b10_err": 0.0568,
+  "used_rate": 0.173,
+  "blend_net": 5
+ },
+ "sin pistas lexicas": {
+  "n": 12978,
+  "b10_err": 0.0579,
+  "used_rate": 0.481,
+  "blend_net": 4
+ }
+}
