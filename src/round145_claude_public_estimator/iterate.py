@@ -1,7 +1,7 @@
 """One-step iteration for the manual cup sequence (Claude, 14-11).
 usage: python iterate.py STATE_DIR OUT_DIR [NEW_CSV NEW_SCORE NEW_NAME]
  1) optionally appends the newly scored vector (dup/quarantine check) to STATE_DIR/V5.npy + V5_meta.json
- 2) base = best observed public vector (ties -> latest)
+ 2) base = best observed public vector (ties -> earliest, i.e. keep the established anchor)
  3) re-selects prior sharpness b in {0.25,0.5,0.75,1.0} on the stack prior by LOO MAE over all vectors
  4) rows where flipping would revert a probe-era S4 correction back to the 10-10 original are excluded;
     P(base wrong) per in-span row = min over priors {stack, blend_fix, mean_all} at selected b
@@ -18,7 +18,7 @@ if len(sys.argv) > 5:
     V = np.vstack([V, v]); meta.append([nm, os.path.basename(csv), 'user_reported', sc, round(sc * NP), 'ariel'])
     np.save(f'{ST}/V5.npy', V); json.dump(meta, open(f'{ST}/V5_meta.json', 'w')); print('added', nm, sc, 'hits', round(sc * NP))
 Vf = V.astype(float); h = np.array([round(m[3] * NP) for m in meta], float)
-ib = int(max(range(len(meta)), key=lambda i: (h[i], i))); base = Vf[ib]; print('base =', meta[ib][0], meta[ib][3])
+ib = int(max(range(len(meta)), key=lambda i: (h[i], -i))); base = Vf[ib]; print('base =', meta[ib][0], meta[ib][3])  # ties -> earliest (established) vector
 others = [i for i in range(len(V)) if i != ib]
 def fit(p, idx, R=0.35):
     mu = fr * (2 * p - 1); s2 = fr - mu ** 2; D = Vf[idx] - base; d = h[idx] - h[ib]; cols = np.where(np.abs(D).sum(0) > 0)[0]; Dc = D[:, cols]
