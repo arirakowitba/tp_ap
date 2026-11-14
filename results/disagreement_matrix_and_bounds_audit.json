@@ -1,0 +1,96 @@
+{
+  "anchor": {
+    "name": "S4_EVT_154",
+    "score": 0.94766,
+    "hits": 19899,
+    "file_sha256": "bb73f1ff1b5fdc76fd8880d4cc146adf46a0558138aec4546e17508cfcf5183f",
+    "map_sha256": "195dd663236c8c9a39fb175a5a82c1c8435f4930ba78d78167496634f58c045f"
+  },
+  "disagreement_matrix_summary": {
+    "total_test_rows": 30000,
+    "history_covered_rows": 3593,
+    "ten_negative_blocks_changes": 1782,
+    "ten_negative_blocks_net": -492,
+    "fifth_changes": 268,
+    "fifth_delta": -85,
+    "subset_hierarchy": {
+      "c6_subset_of_c5": true,
+      "c5_subset_of_c4": true,
+      "c6_flips": 59,
+      "c5_flips": 323,
+      "c4_flips": 748
+    }
+  },
+  "candidate_overlap_breakdown": {
+    "C5_pruned_historical_bounds": {
+      "total_flips": 323,
+      "overlap_ten_negative_blocks": 288,
+      "overlap_fifth_submission": 22,
+      "fresh_flips_outside_negative_blocks": 35,
+      "overlap_all_history": 302,
+      "fresh_flips_outside_all_history": 21,
+      "public_lp_bounds": [
+        -321.0,
+        318.0
+      ],
+      "mathematical_impossibility_proof": {
+        "max_possible_gain_from_fresh_flips": 24.5,
+        "expected_loss_from_negative_overlap": -55.64,
+        "upper_bound_net_expectation": -31.14,
+        "required_gain_for_095000": 50,
+        "conclusion": "F\u00edsicamente imposible alcanzar +50 aciertos p\u00fablicos. Con solo 35 flips frescos (m\u00e1ximo te\u00f3rico +24.5 aciertos en LB) y 288 flips solapantes con expectativa de p\u00e9rdida de -55.6 aciertos, C5 queda formalmente descalificado."
+      }
+    },
+    "C6_high_margin_contrast": {
+      "total_flips": 59,
+      "overlap_ten_negative_blocks": 59,
+      "overlap_fifth_submission": 4,
+      "fresh_flips_outside_negative_blocks": 0,
+      "overlap_all_history": 59,
+      "fresh_flips_outside_all_history": 0,
+      "public_lp_bounds": [
+        -59.0,
+        59.0
+      ],
+      "conclusion": "100% de los 59 flips solapan con los bloques negativos perdedores. 0 flips frescos independientes. Descalificado."
+    },
+    "C4_refit_70k": {
+      "total_flips": 748,
+      "overlap_ten_negative_blocks": 686,
+      "overlap_fifth_submission": 51,
+      "fresh_flips_outside_negative_blocks": 62,
+      "overlap_all_history": 727,
+      "fresh_flips_outside_all_history": 21,
+      "public_lp_bounds": [
+        -685.0,
+        398.0
+      ],
+      "conclusion": "686 de 748 flips (91.71%) solapan con bloques negativos. Retenido \u00fanicamente como diagn\u00f3stico offline de desarrollo."
+    }
+  },
+  "fifth_submission_forced_loss": {
+    "line3_agrees_with_s4_changes": 205,
+    "line3_agrees_with_s4_lp_bounds": [
+      -145.0,
+      -22.0
+    ],
+    "line3_differs_from_s4_changes": 63,
+    "line3_differs_from_s4_lp_bounds": [
+      -63.0,
+      60.0
+    ],
+    "previously_touched_changes": 198,
+    "previously_touched_lp_bounds": [
+      -155.0,
+      -15.0
+    ],
+    "key_takeaway": "El subbloque donde Line3 y S4 coincid\u00edan perdi\u00f3 como m\u00ednimo 22 aciertos netos. La coincidencia con S4 no es suficiente para asegurar transferencia."
+  },
+  "methodological_commitments": {
+    "scores_as_aggregate_constraints_only": true,
+    "no_pseudo_labels_from_scores": true,
+    "training_labels": "Original 70,000 ground truth training labels only (df_train.y)",
+    "test_leakage_prevented": true,
+    "evaluation_state": "FROZEN"
+  }
+}
