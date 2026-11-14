@@ -1,0 +1,269 @@
+{
+  "generator": "scripts/audit_seller_history_by_regime.py",
+  "timestamp_utc": "2026-11-14T05:48:58.548044+00:00",
+  "status": "DEVELOPMENT_ONLY",
+  "public_probability_claims": "NO_IDENTIFIABLE",
+  "provenance": {
+    "split_manifest_sha256": "6afe07abc3fa2a93437dc544af5e709d7e84d3b6e8eaf9bcadac29912ef5b133",
+    "data_pkl_sha256": "f97cc4f04de13c243b007398160ec57470cde1346c2358fd02facc1bdbffbf3b",
+    "pairs_private_csv": "results\\seller_regimes_routing_tune_pairs_private.csv",
+    "pairs_private_sha256": "677f3fbf1344d2418a4c6b3d0cd738ae2d30a79ded5c89bad7e68b878752cbf8"
+  },
+  "canonical_tune_evaluation": {
+    "n_total": 15044,
+    "tune_cold_new": {
+      "n_items": 8758,
+      "optimal_unseen_model": {
+        "n_rows": 8758,
+        "hits": 8027,
+        "accuracy": 0.916533,
+        "logloss": 0.202739,
+        "brier_score": 0.060096
+      },
+      "misrouted_warm_model": {
+        "n_rows": 8758,
+        "hits": 8021,
+        "accuracy": 0.915848,
+        "logloss": 0.210591,
+        "brier_score": 0.062192
+      },
+      "damage_warm_on_cold_hits": 6
+    },
+    "tune_seen_bracketed": {
+      "n_items": 6286,
+      "historial_causal": {
+        "n_rows": 6286,
+        "hits": 6063,
+        "accuracy": 0.964524,
+        "logloss": 0.099542,
+        "brier_score": 0.02749
+      },
+      "historial_batch_loo": {
+        "n_rows": 6286,
+        "hits": 6087,
+        "accuracy": 0.968342,
+        "logloss": 0.095782,
+        "brier_score": 0.026043
+      },
+      "causal_model_with_batch_features": {
+        "n_rows": 6286,
+        "hits": 6084,
+        "accuracy": 0.967865,
+        "logloss": 0.095884,
+        "brier_score": 0.025957
+      },
+      "ausencia_de_historial": {
+        "n_rows": 6286,
+        "hits": 5963,
+        "accuracy": 0.948616,
+        "logloss": 0.144248,
+        "brier_score": 0.040595
+      },
+      "misrouting_damage_cold_on_seen_hits": 100,
+      "lookahead_leakage_apparent_gain_hits": 21
+    },
+    "routing_policy_frozen_tune": {
+      "rule": "If seller unseen in fit -> route to Cold Specialist; If seller seen in fit -> route to Seen Causal Model with strictly causal features",
+      "routed_ensemble": {
+        "n_rows": 15044,
+        "hits": 14090,
+        "accuracy": 0.936586,
+        "logloss": 0.159619,
+        "brier_score": 0.046472
+      },
+      "uniform_cold_fallback": {
+        "n_rows": 15044,
+        "hits": 13990,
+        "accuracy": 0.929939,
+        "logloss": 0.178299,
+        "brier_score": 0.051948
+      },
+      "uniform_causal_model": {
+        "n_rows": 15044,
+        "hits": 14084,
+        "accuracy": 0.936187,
+        "logloss": 0.16419,
+        "brier_score": 0.047692
+      },
+      "net_damage_uniform_cold_hits": 100,
+      "net_damage_uniform_causal_hits": 6
+    }
+  },
+  "comprehensive_5_regimes_inner_fit": {
+    "n_val": 12264,
+    "regimes_breakdown": {
+      "fr\u00edo": {
+        "n_items": 5182,
+        "share": 0.42253750815394653,
+        "causal": {
+          "n_rows": 5182,
+          "hits": 3973,
+          "accuracy": 0.766692,
+          "logloss": 0.627865,
+          "brier_score": 0.179622
+        },
+        "batch": {
+          "n_rows": 5182,
+          "hits": 3952,
+          "accuracy": 0.76264,
+          "logloss": 0.640506,
+          "brier_score": 0.18166
+        },
+        "cold_fallback": {
+          "n_rows": 5182,
+          "hits": 3957,
+          "accuracy": 0.763605,
+          "logloss": 0.62531,
+          "brier_score": 0.178983
+        },
+        "lookahead_gain_batch_over_causal": -21,
+        "loss_cold_vs_causal": 16
+      },
+      "intercalado": {
+        "n_items": 3226,
+        "share": 0.26304631441617743,
+        "causal": {
+          "n_rows": 3226,
+          "hits": 2992,
+          "accuracy": 0.927464,
+          "logloss": 0.206087,
+          "brier_score": 0.056735
+        },
+        "batch": {
+          "n_rows": 3226,
+          "hits": 2994,
+          "accuracy": 0.928084,
+          "logloss": 0.200526,
+          "brier_score": 0.053879
+        },
+        "cold_fallback": {
+          "n_rows": 3226,
+          "hits": 2804,
+          "accuracy": 0.869188,
+          "logloss": 0.347929,
+          "brier_score": 0.100379
+        },
+        "lookahead_gain_batch_over_causal": 2,
+        "loss_cold_vs_causal": 188
+      },
+      "despu\u00e9s": {
+        "n_items": 1656,
+        "share": 0.1350293542074364,
+        "causal": {
+          "n_rows": 1656,
+          "hits": 1486,
+          "accuracy": 0.897343,
+          "logloss": 0.266306,
+          "brier_score": 0.078362
+        },
+        "batch": {
+          "n_rows": 1656,
+          "hits": 1491,
+          "accuracy": 0.900362,
+          "logloss": 0.273458,
+          "brier_score": 0.079574
+        },
+        "cold_fallback": {
+          "n_rows": 1656,
+          "hits": 1374,
+          "accuracy": 0.82971,
+          "logloss": 0.438901,
+          "brier_score": 0.128474
+        },
+        "lookahead_gain_batch_over_causal": 5,
+        "loss_cold_vs_causal": 112
+      },
+      "antes": {
+        "n_items": 1690,
+        "share": 0.1378016960208741,
+        "causal": {
+          "n_rows": 1690,
+          "hits": 1368,
+          "accuracy": 0.809467,
+          "logloss": 0.498185,
+          "brier_score": 0.14733
+        },
+        "batch": {
+          "n_rows": 1690,
+          "hits": 1490,
+          "accuracy": 0.881657,
+          "logloss": 0.323846,
+          "brier_score": 0.093444
+        },
+        "cold_fallback": {
+          "n_rows": 1690,
+          "hits": 1374,
+          "accuracy": 0.813018,
+          "logloss": 0.490703,
+          "brier_score": 0.142665
+        },
+        "lookahead_gain_batch_over_causal": 122,
+        "loss_cold_vs_causal": -6
+      },
+      "empate": {
+        "n_items": 510,
+        "share": 0.041585127201565555,
+        "causal": {
+          "n_rows": 510,
+          "hits": 443,
+          "accuracy": 0.868627,
+          "logloss": 0.396924,
+          "brier_score": 0.117088
+        },
+        "batch": {
+          "n_rows": 510,
+          "hits": 469,
+          "accuracy": 0.919608,
+          "logloss": 0.215972,
+          "brier_score": 0.06262
+        },
+        "cold_fallback": {
+          "n_rows": 510,
+          "hits": 425,
+          "accuracy": 0.833333,
+          "logloss": 0.438969,
+          "brier_score": 0.128758
+        },
+        "lookahead_gain_batch_over_causal": 26,
+        "loss_cold_vs_causal": 18
+      }
+    },
+    "lookahead_leakage_in_antes_proof": {
+      "regime": "antes",
+      "causal_hits": 1368,
+      "batch_hits": 1490,
+      "cold_hits": 1374,
+      "false_lookahead_advantage_hits": 122,
+      "explanation": "Items in 'antes' occurred strictly before all fit items of that seller. In causal reality, 0 prior sales exist (N_prior = 0). Batch LOO leaks 100% future items, creating an illusion of +122 false hits that will fail in out-of-sample deployment."
+    }
+  },
+  "test_set_regime_mapping": {
+    "n_test": 30000,
+    "distribution": {
+      "cold_new": {
+        "count": 8513,
+        "share": 0.283767
+      },
+      "seen_bracketed": {
+        "count": 14117,
+        "share": 0.470567
+      },
+      "after": {
+        "count": 3121,
+        "share": 0.104033
+      },
+      "before": {
+        "count": 3118,
+        "share": 0.103933
+      },
+      "ties": {
+        "count": 1131,
+        "share": 0.0377
+      }
+    },
+    "projected_misrouting_risks": {
+      "risk_of_discarding_history_on_warm": "Extrapolating from tune seen (101 hits lost in 6,286 rows), applying cold fallback across all 18,369 warm items (bracketed + after + ties) would cause an estimated loss of >300 to 500 hits.",
+      "risk_of_batch_lookahead_on_before": "Treating the 3,118 'before' items in test as having batch history introduces severe future leakage, artificially inflating expectations by ~225 false hits that cannot be realized."
+    }
+  }
+}
