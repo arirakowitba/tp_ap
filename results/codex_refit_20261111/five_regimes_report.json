@@ -1,0 +1,33 @@
+{
+  "archive_sha256": "3e0b032195766e681a411a1d1ea06fe906940dd025a7317adfc5302791bbe886",
+  "test_regimes": {
+    "new_seller": 8513,
+    "bracketed": 10140,
+    "same_timestamp": 5108,
+    "before_train": 3118,
+    "after_train": 3121
+  },
+  "candidate_flips_by_regime": {
+    "refit_70k.csv": {
+      "new_seller": 397,
+      "bracketed": 141,
+      "same_timestamp": 78,
+      "before_train": 70,
+      "after_train": 62
+    },
+    "pruned_historical_bounds.csv": {
+      "new_seller": 235,
+      "bracketed": 34,
+      "same_timestamp": 28,
+      "before_train": 14,
+      "after_train": 12
+    },
+    "high_margin_contrast.csv": {
+      "new_seller": 42,
+      "bracketed": 5,
+      "same_timestamp": 8,
+      "before_train": 2,
+      "after_train": 2
+    }
+  }
+}
