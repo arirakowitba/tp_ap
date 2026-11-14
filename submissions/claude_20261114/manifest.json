@@ -489,6 +489,154 @@
    "est_public": 0.94607,
    "sha256": "43d37bfd2c7e0ec3d4f423185d46667c05786531cead7a692f51625a5916335c",
    "note": "0.5 B10 + 0.5 b_fix_noso_b, pure model"
+  },
+  "claude_post174_consenso_top10_sobre_S4.csv": {
+   "flips": 10,
+   "u2n": 8,
+   "n2u": 2,
+   "est_by_prior": {
+    "havg_plus_b0.25": [
+     5.7,
+     6.0
+    ],
+    "havg_plus_b0.5": [
+     5.4,
+     6.0
+    ],
+    "blend_fix_b0.25": [
+     5.7,
+     6.0
+    ],
+    "blend_fix_b0.5": [
+     5.4,
+     6.0
+    ]
+   },
+   "sha256": "20b5e8196a43d9266adc153da0e57ffbe0a2c3a06227de24a66d1e0cc13b0b6f",
+   "canonical": "55a5cf463fb66b6a2d4913268ebc283c5dba477cc645ba7c2b3771f97ba95dd1",
+   "overlap_with_top30": 8,
+   "rule": "positive posterior gain under BOTH priors (H-AVG-Plus, blend_fix; b=0.25) and inside historical contrast span; 54 vectors incl. top174=0.94723",
+   "ids": [
+    1823,
+    4997,
+    5844,
+    8661,
+    14353,
+    22494,
+    22549,
+    25906,
+    28301,
+    29372
+   ]
+  },
+  "claude_post174_consenso_top20_sobre_S4.csv": {
+   "flips": 20,
+   "u2n": 14,
+   "n2u": 6,
+   "est_by_prior": {
+    "havg_plus_b0.25": [
+     6.5,
+     8.8
+    ],
+    "havg_plus_b0.5": [
+     5.9,
+     8.8
+    ],
+    "blend_fix_b0.25": [
+     6.4,
+     8.8
+    ],
+    "blend_fix_b0.5": [
+     5.7,
+     8.7
+    ]
+   },
+   "sha256": "4846ed6de5caf847b117aeb09e45e6ec5234ad9a33cfb74a0a03daca634e86c0",
+   "canonical": "e4acc3d3234b8a533658bb8783a75ffca0f9e05e4f276440c60492617bc7852e",
+   "overlap_with_top30": 9,
+   "rule": "positive posterior gain under BOTH priors (H-AVG-Plus, blend_fix; b=0.25) and inside historical contrast span; 54 vectors incl. top174=0.94723",
+   "ids": [
+    1823,
+    4997,
+    5513,
+    5844,
+    6534,
+    8661,
+    9147,
+    14353,
+    14705,
+    16983,
+    17915,
+    18830,
+    21160,
+    21937,
+    22494,
+    22549,
+    25906,
+    28301,
+    29308,
+    29372
+   ]
+  },
+  "claude_post174_consenso_top30_sobre_S4.csv": {
+   "flips": 30,
+   "u2n": 17,
+   "n2u": 13,
+   "est_by_prior": {
+    "havg_plus_b0.25": [
+     6.9,
+     10.7
+    ],
+    "havg_plus_b0.5": [
+     6.3,
+     10.6
+    ],
+    "blend_fix_b0.25": [
+     6.7,
+     10.7
+    ],
+    "blend_fix_b0.5": [
+     5.8,
+     10.6
+    ]
+   },
+   "sha256": "307a40187ed7f3adccfb99fb0219dea52cd8c17600d37bb0404f27429198e1dc",
+   "canonical": "65679905a21d720acfa3693fb9c992867e5a36afbfb502bf123802b78dbed57d",
+   "overlap_with_top30": 14,
+   "rule": "positive posterior gain under BOTH priors (H-AVG-Plus, blend_fix; b=0.25) and inside historical contrast span; 54 vectors incl. top174=0.94723",
+   "ids": [
+    815,
+    1823,
+    1873,
+    4831,
+    4918,
+    4997,
+    5513,
+    5844,
+    6534,
+    8661,
+    9147,
+    14353,
+    14589,
+    14705,
+    16983,
+    17915,
+    18830,
+    19410,
+    20714,
+    21160,
+    21937,
+    22494,
+    22549,
+    25490,
+    25906,
+    26115,
+    26469,
+    28301,
+    29308,
+    29372
+   ]
   }
- }
+ },
+ "note_20261114_top174": "top174 scored 0.94723 (-9 vs S4) user-reported; estimator had +11.8 -> residual -20.8; constraint added (V2)"
 }
