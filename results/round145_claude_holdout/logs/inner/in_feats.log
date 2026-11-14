@@ -1,0 +1,15 @@
+/home/claude/tp_ap/src/round126_modelos/feats.py:137: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  F["freq_" + c] = F[c].map(F[c].value_counts()).astype(float)
+/home/claude/tp_ap/src/round126_modelos/feats.py:137: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  F["freq_" + c] = F[c].map(F[c].value_counts()).astype(float)
+/home/claude/tp_ap/src/round126_modelos/feats.py:138: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  F["seller_n_cats"] = F.groupby("seller_id", observed=True)["category_id"].transform("nunique")
+/home/claude/tp_ap/src/round126_modelos/feats.py:139: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  F["seller_mean_logprice"] = F.groupby("seller_id", observed=True)["log_price"].transform("mean")
+/home/claude/tp_ap/src/round126_modelos/feats.py:140: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  F["seller_mean_init_q"] = F.groupby("seller_id", observed=True)["initial_quantity"].transform("mean")
+/home/claude/tp_ap/src/round126_modelos/feats.py:141: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  F["cat_med_logprice"] = F.groupby("category_id", observed=True)["log_price"].transform("median")
+/home/claude/tp_ap/src/round126_modelos/feats.py:142: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  F["rel_price_cat"] = F.log_price - F.cat_med_logprice
+(56000, 117)
