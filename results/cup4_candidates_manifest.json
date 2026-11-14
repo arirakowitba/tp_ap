@@ -1,0 +1,126 @@
+{
+  "event": "EVT-159_PREPARATION_CUP4",
+  "timestamp": "2026-11-14T20:06:00-03:00",
+  "anchor_official": {
+    "name": "TOP30_ANCHOR",
+    "path": "submissions/claude_20261114/claude_blendfix_posterior_top30_sobre_S4.csv",
+    "flips_vs_top30": 0,
+    "flips_vs_s4": 30,
+    "n2u": 16,
+    "u2n": 14,
+    "lf_sha256": "7f2a1c3d4ea047a44e663f3892e6d1c66f164ba491636fda52f26344fb5d6ae4",
+    "gate_f_hash": "55e972047264fbfb849e221e7013d97c17f41ee9958fc4ac9495fd612f3e6bb9",
+    "gate_g_status": "PASS",
+    "rows": 30000,
+    "used_rate": 0.47227,
+    "preserves_top30": true,
+    "reverts_1010": false,
+    "regimes_full70k": {
+      "cold": 19,
+      "bracketed": 5,
+      "ties": 1,
+      "before": 1,
+      "after": 4
+    },
+    "regimes_dev35k": {
+      "cold": 20,
+      "bracketed": 5,
+      "ties": 0,
+      "before": 1,
+      "after": 4
+    }
+  },
+  "candidate_principal_moderated": {
+    "name": "CANDIDATE_T30_PLUS_WARM_CLEAN_MODERATED",
+    "path": "results/CANDIDATE_T30_PLUS_WARM_CLEAN_MODERATED.csv",
+    "flips_vs_top30": 145,
+    "flips_vs_s4": 175,
+    "n2u": 76,
+    "u2n": 69,
+    "lf_sha256": "99a6d96b4cd2a2027d7279d4639b314779a9b50849d7bd937e09de8b9b1bd39a",
+    "gate_f_hash": "09be0cd557703c7eb9fa7592cbb5acae8c67d6f39c1d75da71b9f8387c89537c",
+    "gate_g_status": "PASS",
+    "rows": 30000,
+    "used_rate": 0.4725,
+    "preserves_top30": true,
+    "reverts_1010": false,
+    "regimes_full70k": {
+      "cold": 0,
+      "bracketed": 70,
+      "ties": 28,
+      "before": 25,
+      "after": 22
+    },
+    "regimes_dev35k": {
+      "cold": 0,
+      "bracketed": 70,
+      "ties": 28,
+      "before": 25,
+      "after": 22
+    }
+  },
+  "candidate_alternative_k35": {
+    "name": "CANDIDATE_T30_PLUS_WARM_SURGICAL_K35",
+    "path": "results/CANDIDATE_T30_PLUS_WARM_SURGICAL_K35.csv",
+    "flips_vs_top30": 35,
+    "flips_vs_s4": 65,
+    "n2u": 24,
+    "u2n": 11,
+    "lf_sha256": "3ebb4c5fc0f505ffaf5cfb1153a3c01ae992d004cbd42d9eb8cb97274e9b4a64",
+    "gate_f_hash": "467d513e5767dc6d331a8b36ecefa49bd8c4bd8a5c9743832e86f100ac05cb45",
+    "gate_g_status": "PASS",
+    "rows": 30000,
+    "used_rate": 0.4727,
+    "preserves_top30": true,
+    "reverts_1010": false,
+    "regimes_full70k": {
+      "cold": 0,
+      "bracketed": 26,
+      "ties": 7,
+      "before": 1,
+      "after": 1
+    },
+    "regimes_dev35k": {
+      "cold": 0,
+      "bracketed": 26,
+      "ties": 7,
+      "before": 1,
+      "after": 1
+    }
+  },
+  "candidate_alternative_k50": {
+    "name": "CANDIDATE_T30_PLUS_WARM_SURGICAL_K50",
+    "path": "results/CANDIDATE_T30_PLUS_WARM_SURGICAL_K50.csv",
+    "flips_vs_top30": 50,
+    "flips_vs_s4": 80,
+    "n2u": 33,
+    "u2n": 17,
+    "lf_sha256": "8acbe7a2f3ff9870823db87d4323733153421859ad423694ed7d44a8989fe729",
+    "gate_f_hash": "88995dbdc9cce24ac17ff69cdc0a3019473274e038106c6417d2923ba6780798",
+    "gate_g_status": "PASS",
+    "rows": 30000,
+    "used_rate": 0.4728,
+    "preserves_top30": true,
+    "reverts_1010": false,
+    "regimes_full70k": {
+      "cold": 0,
+      "bracketed": 40,
+      "ties": 8,
+      "before": 1,
+      "after": 1
+    },
+    "regimes_dev35k": {
+      "cold": 0,
+      "bracketed": 40,
+      "ties": 8,
+      "before": 1,
+      "after": 1
+    }
+  },
+  "recommendations": {
+    "cupo_4_best": "CANDIDATE_T30_PLUS_WARM_CLEAN_MODERATED.csv",
+    "cupo_4_conservative": "CANDIDATE_T30_PLUS_WARM_SURGICAL_K35.csv",
+    "cupo_5_contingency_if_delta4_positive": "Expand to complementary warm or Claude keepT30_top20",
+    "cupo_5_contingency_if_delta4_nonpositive": "Revert to Top30 (0.94823) and seal final submissions"
+  }
+}
