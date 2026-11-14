@@ -1,7 +1,7 @@
 """Linear-Gaussian public-score estimator. hits(v) = A + v.w, w_i = m_i(2y_i-1). Condition prior w ~ N(mu, diag s2) on all
 scored vectors (differences vs S4). Predict any candidate's public hits delta vs S4 with SD. LOO calibration over scored vectors."""
 import json, numpy as np
-V = np.load('/home/claude/work/r145/V2.npy').astype(float); meta = json.load(open('/home/claude/work/r145/V2_meta.json'))
+V = np.load('V2.npy').astype(float); meta = json.load(open('V2_meta.json'))
 h = np.array([m[4] for m in meta], float); i4 = [m[0] for m in meta].index('TODAY_S4'); s4 = V[i4]
 def build(p, frac=20998/30000):
     mu = frac * (2 * p - 1); s2 = frac - mu ** 2; return mu, s2

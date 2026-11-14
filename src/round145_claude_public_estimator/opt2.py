@@ -1,6 +1,6 @@
 import numpy as np, pandas as pd, json, hashlib, os
 from estimator2 import V, h, i4, s4, fit, predict
-others=[i for i in range(len(V)) if i!=i4]; sub='/home/claude/tp_ap/submissions/claude_20261114/'
+others=[i for i in range(len(V)) if i!=i4]; import os; sub=os.environ.get('SUBDIR','../submissions/claude_20261114/')
 span=((V-s4)!=0).any(0)
 t30=(pd.read_csv(sub+'claude_blendfix_posterior_top30_sobre_S4.csv').condition.values=='used').astype(float)
 priors={'havg_plus':np.load('p_havg_plus.npy'),'blend_fix':np.load('p_blend_fix.npy')}

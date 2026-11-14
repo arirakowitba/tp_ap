@@ -30,9 +30,9 @@ Primer cupo observado: `claude_blendfix_posterior_top174_sobre_S4.csv` = 0,94723
 ## Procedimiento al recibir cada score (antes del cupo siguiente)
 
 ```bash
-cd /home/claude/work/r145          # en otra máquina: copiar V2.npy/V2_meta.json, p_*.npy y los .py de src/round145_claude_public_estimator/
-python /home/claude/tp_ap/src/round145_claude_public_estimator/add_score.py <csv enviado> <score> <nombre_evento>
-python opt2.py                      # reestima y reordena; congelar la salida en un CL antes del siguiente envío
+mkdir -p w && cp results/round145_claude_public_estimator/state/* src/round145_claude_public_estimator/*.py w/ && cd w   # estado congelado en el repo
+python add_score.py <csv enviado> <score> <nombre_evento>
+SUBDIR=../submissions/claude_20261114/ python opt2.py   # reestima y reordena; congelar la salida en un CL antes del siguiente envío
 ```
 
 - Registrar siempre el LF SHA256 del archivo efectivamente subido y el score tal como lo informa Ariel.
