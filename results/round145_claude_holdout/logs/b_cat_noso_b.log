@@ -1,0 +1,6 @@
+b_cat_noso_b fold 0 acc 0.9430 ll 0.1486 it 1520 t 138s
+b_cat_noso_b fold 1 acc 0.9460 ll 0.1457 it 1054 t 243s
+b_cat_noso_b fold 2 acc 0.9513 ll 0.1290 it 3190 t 481s
+b_cat_noso_b fold 3 acc 0.9434 ll 0.1419 it 1506 t 606s
+b_cat_noso_b fold 4 acc 0.9536 ll 0.1227 it 2718 t 820s
+b_cat_noso_b OOF(5 folds) acc 0.94746 logloss 0.13758

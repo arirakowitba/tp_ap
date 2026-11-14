@@ -1,0 +1,20 @@
+sparse_all done 1794678543 sparse_all C 1.0 OOF acc 0.92404
+start nbsvm 1794678543
+end nbsvm 1794678581 nbsvm OOF acc 0.83154
+start knn_title 1794678581
+end knn_title 1794678682 knn_mean10 OOF acc 0.7849
+start d_lgb_all 1794678682
+end d_lgb_all 1794678756 d_lgb_all OOF acc 0.93986 ll 0.15369 its [311, 391, 411, 294, 475] nfeat 167 t 71s
+start d_lgb_fixed 1794678756
+end d_lgb_fixed 1794678839 d_lgb_fixed OOF acc 0.93998 ll 0.15499 its [700, 700, 700, 700, 700] nfeat 167 t 82s
+start d_lgb_nostk 1794678839
+end d_lgb_nostk 1794678924 d_lgb_nostk OOF acc 0.93791 ll 0.15620 its [353, 534, 437, 447, 588] nfeat 165 t 83s
+start d_lgb_noknn 1794678924
+end d_lgb_noknn 1794678979 d_lgb_noknn OOF acc 0.94002 ll 0.15448 its [238, 241, 298, 361, 456] nfeat 147 t 54s
+start d_lgb_note 1794678979
+end d_lgb_note 1794679052 d_lgb_note OOF acc 0.93625 ll 0.16200 its [399, 446, 489, 460, 396] nfeat 159 t 71s
+start d_lgb_nolabel 1794679052
+end d_lgb_nolabel 1794679198 d_lgb_nolabel OOF acc 0.92564 ll 0.18577 its [990, 1054, 1433, 1690, 1429] nfeat 137 t 145s
+start b_cat_noso_b 1794679198
+end b_cat_noso_b 1794680020 b_cat_noso_b OOF(5 folds) acc 0.94746 logloss 0.13758
+chain1 done 1794680020
