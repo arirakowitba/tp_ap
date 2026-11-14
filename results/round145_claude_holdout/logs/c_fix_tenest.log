@@ -1,0 +1,6 @@
+c_fix_tenest fold 0 acc 0.9390 ll 0.1593 it 773 t 76s
+c_fix_tenest fold 1 acc 0.9398 ll 0.1546 it 904 t 159s
+c_fix_tenest fold 2 acc 0.9431 ll 0.1500 it 331 t 207s
+c_fix_tenest fold 3 acc 0.9395 ll 0.1535 it 871 t 287s
+c_fix_tenest fold 4 acc 0.9429 ll 0.1475 it 461 t 342s
+c_fix_tenest OOF(5 folds) acc 0.94086 logloss 0.15300

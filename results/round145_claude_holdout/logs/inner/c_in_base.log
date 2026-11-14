@@ -1,0 +1,6 @@
+c_in_base fold 0 acc 0.9445 ll 0.1396 it 2897 t 184s
+c_in_base fold 1 acc 0.9485 ll 0.1382 it 2182 t 331s
+c_in_base fold 2 acc 0.9432 ll 0.1499 it 850 t 405s
+c_in_base fold 3 acc 0.9454 ll 0.1401 it 2863 t 589s
+c_in_base fold 4 acc 0.9448 ll 0.1392 it 2102 t 729s
+c_in_base OOF(5 folds) acc 0.94529 logloss 0.14140

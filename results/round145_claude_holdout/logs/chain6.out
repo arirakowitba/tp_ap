@@ -1,3 +1,15 @@
 start in_feats 1794683379 avail_MB=7282
 end in_feats 1794683389 (56000, 117)
 start in_sparse_fix 1794683389 avail_MB=7218
+end in_sparse_fix 1794683474 sparse_fix C 1.0 OOF acc 0.92415
+start in_nbsvm 1794683474 avail_MB=7358
+end in_nbsvm 1794683498 nbsvm OOF acc 0.8246
+start in_knn_title 1794683498 avail_MB=7369
+end in_knn_title 1794683563 knn_mean10 OOF acc 0.7812
+start in_sknn 1794683563 avail_MB=7359
+end in_sknn 1794683573 sknn done 9 s; train rows with candidate 0.6435 acc lab1 there 0.918
+start c_in_base 1794683573 avail_MB=7300
+end c_in_base 1794684304 c_in_base OOF(5 folds) acc 0.94529 logloss 0.14140
+start c_in_sknn 1794684304 avail_MB=7404
+end c_in_sknn 1794685005 c_in_sknn OOF(5 folds) acc 0.94801 logloss 0.13570
+start c_fix_s2 1794685005 avail_MB=7392

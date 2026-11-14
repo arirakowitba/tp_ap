@@ -1,0 +1,7 @@
+start c_fix_sknn_nest 1794685014 avail_MB=7386
+end c_fix_sknn_nest 1794685516 c_fix_sknn_nest OOF(5 folds) acc 0.94311 logloss 0.14512
+start c_fix_tenest 1794685516 avail_MB=7395
+end c_fix_tenest 1794685859 c_fix_tenest OOF(5 folds) acc 0.94086 logloss 0.15300
+start c_fix_s2 1794685859 avail_MB=7428
+end c_fix_s2 1794686716 c_fix_s2 OOF(5 folds) acc 0.94770 logloss 0.13629
+chain8 done 1794686716

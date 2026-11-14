@@ -1,0 +1,6 @@
+c_fix_sknn_nest fold 0 acc 0.9438 ll 0.1490 it 1344 t 117s
+c_fix_sknn_nest fold 1 acc 0.9421 ll 0.1472 it 1640 t 252s
+c_fix_sknn_nest fold 2 acc 0.9442 ll 0.1413 it 1006 t 341s
+c_fix_sknn_nest fold 3 acc 0.9413 ll 0.1470 it 834 t 420s
+c_fix_sknn_nest fold 4 acc 0.9441 ll 0.1412 it 893 t 500s
+c_fix_sknn_nest OOF(5 folds) acc 0.94311 logloss 0.14512

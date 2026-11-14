@@ -1,0 +1,6 @@
+c_in_sknn fold 0 acc 0.9473 ll 0.1351 it 2517 t 174s
+c_in_sknn fold 1 acc 0.9503 ll 0.1307 it 2203 t 319s
+c_in_sknn fold 2 acc 0.9465 ll 0.1401 it 1792 t 441s
+c_in_sknn fold 3 acc 0.9490 ll 0.1362 it 2195 t 586s
+c_in_sknn fold 4 acc 0.9469 ll 0.1364 it 1732 t 699s
+c_in_sknn OOF(5 folds) acc 0.94801 logloss 0.13570

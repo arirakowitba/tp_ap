@@ -1,0 +1,7 @@
+fold done 9
+fold done 18
+fold done 27
+fold done 36
+fold done 45
+test done 60
+knn_mean10 OOF acc 0.7812

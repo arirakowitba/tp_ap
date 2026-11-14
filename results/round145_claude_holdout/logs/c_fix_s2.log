@@ -1,0 +1,6 @@
+c_fix_s2 fold 0 acc 0.9456 ll 0.1442 it 2141 t 161s
+c_fix_s2 fold 1 acc 0.9450 ll 0.1424 it 1616 t 295s
+c_fix_s2 fold 2 acc 0.9504 ll 0.1297 it 3083 t 519s
+c_fix_s2 fold 3 acc 0.9451 ll 0.1395 it 1618 t 651s
+c_fix_s2 fold 4 acc 0.9524 ll 0.1256 it 2840 t 856s
+c_fix_s2 OOF(5 folds) acc 0.94770 logloss 0.13629
