@@ -1,0 +1,185 @@
+{
+  "Candidate_A_Warm_Route": {
+    "flips_test_total": 303,
+    "flips_by_regime_test": {
+      "bracketed": 128,
+      "same_timestamp": 52,
+      "before_train": 60,
+      "after_train": 63,
+      "new_seller": 0
+    },
+    "scenarios": {
+      "S1_Optimistic_Raw_OOF": {
+        "expected_public_delta": 65.26,
+        "median_public_delta": 65.0,
+        "q05": 42.0,
+        "q25": 56.0,
+        "q75": 75.0,
+        "q95": 88.0,
+        "p_gt_0": 1.0,
+        "p_ge_50_modeled_conditional": 0.8683,
+        "p_ge_50_calibrated_status": "NO_IDENTIFIABLE (Gate C: Uncalibrated public tail)"
+      },
+      "S2_Baseline_Adjusted": {
+        "expected_public_delta": 48.94,
+        "median_public_delta": 49.0,
+        "q05": 26.0,
+        "q25": 39.0,
+        "q75": 59.0,
+        "q95": 72.0,
+        "p_gt_0": 0.9996,
+        "p_ge_50_modeled_conditional": 0.4832,
+        "p_ge_50_calibrated_status": "NO_IDENTIFIABLE (Gate C: Uncalibrated public tail)"
+      },
+      "S3_Prequential_Stress": {
+        "expected_public_delta": 31.77,
+        "median_public_delta": 32.0,
+        "q05": 8.0,
+        "q25": 22.0,
+        "q75": 42.0,
+        "q95": 56.0,
+        "p_gt_0": 0.9844,
+        "p_ge_50_modeled_conditional": 0.1096,
+        "p_ge_50_calibrated_status": "NO_IDENTIFIABLE (Gate C: Uncalibrated public tail)"
+      },
+      "S4_Severe_Adverse": {
+        "expected_public_delta": 13.38,
+        "median_public_delta": 13.0,
+        "q05": -11.0,
+        "q25": 4.0,
+        "q75": 23.0,
+        "q95": 37.0,
+        "p_gt_0": 0.8136,
+        "p_ge_50_modeled_conditional": 0.0067,
+        "p_ge_50_calibrated_status": "NO_IDENTIFIABLE (Gate C: Uncalibrated public tail)"
+      }
+    },
+    "required_precision_for_confidence_levels": {
+      "p_for_50pct": 61.8,
+      "p_for_80pct": 64.6,
+      "p_for_95pct": 67.1
+    }
+  },
+  "Candidate_B_Warm_Cold_Composite": {
+    "flips_test_total": 379,
+    "flips_by_regime_test": {
+      "bracketed": 128,
+      "same_timestamp": 52,
+      "before_train": 60,
+      "after_train": 63,
+      "new_seller": 76
+    },
+    "scenarios": {
+      "S1_Optimistic_Raw_OOF": {
+        "expected_public_delta": 71.33,
+        "median_public_delta": 71.0,
+        "q05": 45.0,
+        "q25": 61.0,
+        "q75": 82.0,
+        "q95": 97.0,
+        "p_gt_0": 1.0,
+        "p_ge_50_modeled_conditional": 0.9163,
+        "p_ge_50_calibrated_status": "NO_IDENTIFIABLE (Gate C: Uncalibrated public tail)"
+      },
+      "S2_Baseline_Adjusted": {
+        "expected_public_delta": 52.02,
+        "median_public_delta": 52.0,
+        "q05": 26.0,
+        "q25": 41.0,
+        "q75": 63.0,
+        "q95": 78.0,
+        "p_gt_0": 0.9993,
+        "p_ge_50_modeled_conditional": 0.5622,
+        "p_ge_50_calibrated_status": "NO_IDENTIFIABLE (Gate C: Uncalibrated public tail)"
+      },
+      "S3_Prequential_Stress": {
+        "expected_public_delta": 32.87,
+        "median_public_delta": 33.0,
+        "q05": 6.0,
+        "q25": 22.0,
+        "q75": 44.0,
+        "q95": 59.0,
+        "p_gt_0": 0.9771,
+        "p_ge_50_modeled_conditional": 0.1513,
+        "p_ge_50_calibrated_status": "NO_IDENTIFIABLE (Gate C: Uncalibrated public tail)"
+      },
+      "S4_Severe_Adverse": {
+        "expected_public_delta": 12.5,
+        "median_public_delta": 13.0,
+        "q05": -14.0,
+        "q25": 1.0,
+        "q75": 23.0,
+        "q95": 39.0,
+        "p_gt_0": 0.7694,
+        "p_ge_50_modeled_conditional": 0.011,
+        "p_ge_50_calibrated_status": "NO_IDENTIFIABLE (Gate C: Uncalibrated public tail)"
+      }
+    },
+    "required_precision_for_confidence_levels": {
+      "p_for_50pct": 59.5,
+      "p_for_80pct": 62.0,
+      "p_for_95pct": 64.3
+    }
+  },
+  "Candidate_C_VoI_Frontier": {
+    "flips_test_total": 483,
+    "flips_by_regime_test": {
+      "bracketed": 192,
+      "same_timestamp": 79,
+      "before_train": 106,
+      "after_train": 106,
+      "new_seller": 0
+    },
+    "scenarios": {
+      "S1_Optimistic_Raw_OOF": {
+        "expected_public_delta": 105.14,
+        "median_public_delta": 105.0,
+        "q05": 76.0,
+        "q25": 93.0,
+        "q75": 117.0,
+        "q95": 134.0,
+        "p_gt_0": 1.0,
+        "p_ge_50_modeled_conditional": 0.999,
+        "p_ge_50_calibrated_status": "NO_IDENTIFIABLE (Gate C: Uncalibrated public tail)"
+      },
+      "S2_Baseline_Adjusted": {
+        "expected_public_delta": 78.81,
+        "median_public_delta": 79.0,
+        "q05": 50.0,
+        "q25": 67.0,
+        "q75": 91.0,
+        "q95": 108.0,
+        "p_gt_0": 1.0,
+        "p_ge_50_modeled_conditional": 0.9517,
+        "p_ge_50_calibrated_status": "NO_IDENTIFIABLE (Gate C: Uncalibrated public tail)"
+      },
+      "S3_Prequential_Stress": {
+        "expected_public_delta": 51.44,
+        "median_public_delta": 51.0,
+        "q05": 22.0,
+        "q25": 39.0,
+        "q75": 64.0,
+        "q95": 81.0,
+        "p_gt_0": 0.9977,
+        "p_ge_50_modeled_conditional": 0.5416,
+        "p_ge_50_calibrated_status": "NO_IDENTIFIABLE (Gate C: Uncalibrated public tail)"
+      },
+      "S4_Severe_Adverse": {
+        "expected_public_delta": 22.01,
+        "median_public_delta": 22.0,
+        "q05": -8.0,
+        "q25": 10.0,
+        "q75": 34.0,
+        "q95": 52.0,
+        "p_gt_0": 0.8799,
+        "p_ge_50_modeled_conditional": 0.066,
+        "p_ge_50_calibrated_status": "NO_IDENTIFIABLE (Gate C: Uncalibrated public tail)"
+      }
+    },
+    "required_precision_for_confidence_levels": {
+      "p_for_50pct": 57.4,
+      "p_for_80pct": 59.7,
+      "p_for_95pct": 61.8
+    }
+  }
+}
