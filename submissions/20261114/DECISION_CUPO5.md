@@ -1,0 +1,5 @@
+# Resultado del cuarto cupo y decisión del quinto
+
+Ariel reportó 0.94504 (Kaggle Complete) para CSV_4_HOY_T30_WARM_CLEAN_MODERATED.csv, LF SHA-256 99a6d96b4cd2a2027d7279d4639b314779a9b50849d7bd937e09de8b9b1bd39a. Son −67 aciertos públicos netos contra T30 (0.94823) con N=20.998 y redondeo. Se descarta el bloque warm agregado para el quinto cupo. El resultado no identifica etiquetas por fila ni el saldo por régimen.
+
+Último cupo: CSV_5_HOY_T30_CLAUDE_B025_TOP50.csv, copia byte por byte de submissions/claude_20261114/claude_cupo4_T30_b025_keepT30_top50.csv en 722ca1b6546e62868f9919141e5c35737a2db1de. LF SHA-256 ee1a0103e257be724069b90ea4bdaa934b8d06d88e93e2503d8ad1e042568304. Verificados 30.000 IDs, 50 flips respecto de T30, conservación íntegra de los 30 cambios de T30, cero reversiones S4, 1 ID compartido con CUP4 y 9 con CUP3. El pronóstico de Claude +5,1 aciertos es exploratorio y no calibra la cola requerida de +38. Envío manual por Ariel. AG y Claude deben registrar el score observado del cuarto cupo sin imputar etiquetas y mantener T30 como referencia.
