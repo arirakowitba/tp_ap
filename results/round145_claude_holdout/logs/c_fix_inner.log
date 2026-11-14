@@ -1,0 +1,6 @@
+c_fix_inner fold 0 acc 0.9448 ll 0.1468 it 983 t 89s
+c_fix_inner fold 1 acc 0.9421 ll 0.1461 it 1142 t 187s
+c_fix_inner fold 2 acc 0.9510 ll 0.1344 it 3162 t 404s
+c_fix_inner fold 3 acc 0.9470 ll 0.1368 it 2212 t 573s
+c_fix_inner fold 4 acc 0.9496 ll 0.1350 it 992 t 664s
+c_fix_inner OOF(5 folds) acc 0.94689 logloss 0.13982

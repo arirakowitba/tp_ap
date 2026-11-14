@@ -1,1 +1,7 @@
 start sknn 1794681118
+end sknn 1794681129 sknn done 9 s; train rows with candidate 0.6694 acc lab1 there 0.9221
+start d_lgb_fix_sknn 1794681129
+end d_lgb_fix_sknn 1794681196 d_lgb_fix_sknn OOF acc 0.94116 ll 0.15217 its [248, 409, 285, 313, 399] nfeat 176 t 66s
+start d_lgb_fix_nostk 1794681196
+end d_lgb_fix_nostk 1794681277 d_lgb_fix_nostk OOF acc 0.93791 ll 0.15620 its [353, 534, 437, 447, 588] nfeat 165 t 80s
+chain3 done 1794681277

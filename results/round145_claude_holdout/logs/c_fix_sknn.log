@@ -1,0 +1,6 @@
+c_fix_sknn fold 0 acc 0.9503 ll 0.1333 it 2888 t 233s
+c_fix_sknn fold 1 acc 0.9487 ll 0.1333 it 2426 t 448s
+c_fix_sknn fold 2 acc 0.9524 ll 0.1240 it 3264 t 726s
+c_fix_sknn fold 3 acc 0.9491 ll 0.1293 it 1847 t 882s
+c_fix_sknn fold 4 acc 0.9532 ll 0.1234 it 2565 t 1086s
+c_fix_sknn OOF(5 folds) acc 0.95075 logloss 0.12867
