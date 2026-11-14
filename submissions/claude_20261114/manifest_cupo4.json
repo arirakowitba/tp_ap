@@ -1,0 +1,136 @@
+{
+ "claude_cupo4_T30_b025_top10.csv": {
+  "lf_sha256": "c1080d8b04a965871d22be0373463543c75ea5f9f07f94536aa4ad3097f3f6f8",
+  "gate_f": "c9e6b2f589df310dfc2ec0a3ac561657911b6deb0f88332c43c969914aa4ed1a",
+  "flips_vs_T30": 10,
+  "u2n": 7,
+  "n2u": 3,
+  "overlap_cup3": 5,
+  "reverts_S4_corrections": 0,
+  "keeps_T30": false,
+  "min_dist_scored": 10,
+  "ids": [
+   686,
+   4661,
+   9880,
+   10127,
+   12528,
+   17321,
+   25656,
+   25906,
+   29206,
+   29372
+  ]
+ },
+ "claude_cupo4_T30_b025_top20.csv": {
+  "lf_sha256": "b9145239f3b4e363c83aaab11bf46bccc706bb1e4c2d345ec45f98caf046257d",
+  "gate_f": "6cff2c53512f27b1938dbe439b2a65467df44c74676c3d2810a1f44a22a5c899",
+  "flips_vs_T30": 20,
+  "u2n": 14,
+  "n2u": 6,
+  "overlap_cup3": 6,
+  "reverts_S4_corrections": 0,
+  "keeps_T30": false,
+  "min_dist_scored": 20,
+  "ids": [
+   686,
+   3597,
+   4661,
+   5644,
+   9880,
+   10127,
+   11046,
+   12528,
+   13199,
+   16333,
+   17321,
+   21907,
+   23885,
+   25394,
+   25656,
+   25906,
+   26307,
+   28700,
+   29206,
+   29372
+  ]
+ },
+ "claude_cupo4_T30_b025_keepT30_top10.csv": {
+  "lf_sha256": "4c153ebf58245aab5f146bd4f9aed26ce80f36d06d9cc42ec792929da8934901",
+  "gate_f": "fc99067d7a0be0e571c841eea5d82566d5de07b3aceb09ec21e581c639482a21",
+  "flips_vs_T30": 10,
+  "u2n": 7,
+  "n2u": 3,
+  "overlap_cup3": 5,
+  "reverts_S4_corrections": 0,
+  "keeps_T30": true,
+  "min_dist_scored": 10,
+  "E_b025": [
+   2.8,
+   2.9,
+   2.7
+  ],
+  "E_b1": [
+   1.6,
+   1.9,
+   1.2
+  ],
+  "sd": 4.3,
+  "ids": [
+   686,
+   4661,
+   9880,
+   10127,
+   11046,
+   12528,
+   17321,
+   25906,
+   29206,
+   29372
+  ]
+ },
+ "claude_cupo4_T30_b025_keepT30_top20.csv": {
+  "lf_sha256": "ee5aa427928ec8ab5bfadd2f5cd4d3d456753f4750c896644ae738c4c878adb0",
+  "gate_f": "641bd18c195eb6a89bc37524d5762e252c01254283824f23664c2c3a40340eaf",
+  "flips_vs_T30": 20,
+  "u2n": 14,
+  "n2u": 6,
+  "overlap_cup3": 6,
+  "reverts_S4_corrections": 0,
+  "keeps_T30": true,
+  "min_dist_scored": 20,
+  "E_b025": [
+   4.4,
+   4.4,
+   4.3
+  ],
+  "E_b1": [
+   2.8,
+   2.7,
+   2.4
+  ],
+  "sd": 6.5,
+  "ids": [
+   686,
+   3597,
+   3690,
+   4661,
+   5644,
+   9880,
+   10127,
+   11046,
+   12528,
+   13199,
+   16333,
+   17321,
+   21907,
+   23885,
+   25394,
+   25906,
+   26307,
+   28700,
+   29206,
+   29372
+  ]
+ }
+}
