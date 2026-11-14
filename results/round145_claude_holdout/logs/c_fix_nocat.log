@@ -2,3 +2,5 @@ c_fix_nocat fold 0 acc 0.9386 ll 0.1595 it 829 t 54s
 c_fix_nocat fold 1 acc 0.9396 ll 0.1558 it 801 t 109s
 c_fix_nocat fold 2 acc 0.9425 ll 0.1476 it 1193 t 183s
 c_fix_nocat fold 3 acc 0.9401 ll 0.1524 it 617 t 239s
+c_fix_nocat fold 4 acc 0.9423 ll 0.1459 it 1439 t 323s
+c_fix_nocat OOF(5 folds) acc 0.94061 logloss 0.15226

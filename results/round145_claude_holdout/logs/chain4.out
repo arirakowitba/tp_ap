@@ -3,3 +3,5 @@ end c_fix_inner 1794681962 c_fix_inner OOF(5 folds) acc 0.94689 logloss 0.13982
 start c_fix_sknn 1794681962 avail_MB=6534
 end c_fix_sknn 1794683049 c_fix_sknn OOF(5 folds) acc 0.95075 logloss 0.12867
 start c_fix_nocat 1794683049 avail_MB=6541
+end c_fix_nocat 1794683374 c_fix_nocat OOF(5 folds) acc 0.94061 logloss 0.15226
+chain4 done 1794683374
