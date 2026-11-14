@@ -1,0 +1,307 @@
+{
+ "holdout_14k": {
+  "U": {
+   "n": 156,
+   "fixes": 105,
+   "breaks": 51,
+   "net": 54,
+   "boot_seller": [
+    29,
+    33,
+    54,
+    79
+   ],
+   "boot_category": [
+    31,
+    35,
+    55,
+    78
+   ],
+   "by_regime": {
+    "cold": [
+     98,
+     28
+    ],
+    "before": [
+     8,
+     0
+    ],
+    "bracketed": [
+     30,
+     14
+    ],
+    "ties": [
+     8,
+     4
+    ],
+    "after": [
+     12,
+     8
+    ]
+   },
+   "seen_new": [
+    26,
+    28
+   ]
+  },
+  "F": {
+   "n": 281,
+   "fixes": 164,
+   "breaks": 117,
+   "net": 47,
+   "boot_seller": [
+    14,
+    19,
+    47,
+    81
+   ],
+   "boot_category": [
+    12,
+    18,
+    47,
+    82
+   ],
+   "by_regime": {
+    "cold": [
+     168,
+     14
+    ],
+    "before": [
+     20,
+     8
+    ],
+    "bracketed": [
+     41,
+     3
+    ],
+    "ties": [
+     25,
+     1
+    ],
+    "after": [
+     27,
+     21
+    ]
+   },
+   "seen_new": [
+    33,
+    14
+   ]
+  },
+  "union": {
+   "n": 363,
+   "net": 101,
+   "boot_seller": [
+    54,
+    61,
+    101,
+    152
+   ],
+   "boot_category": [
+    54,
+    62,
+    101,
+    152
+   ]
+  },
+  "F_overlap_omitted_by_exclusion": 147
+ },
+ "transfer_simulation": {
+  "U": {
+   "q05": -1.0,
+   "q50": 7.0,
+   "q95": 15.0,
+   "mean": 7.1,
+   "P_pos": 0.895
+  },
+  "F": {
+   "q05": -11.0,
+   "q50": 4.0,
+   "q95": 19.0,
+   "mean": 4.1,
+   "P_pos": 0.653
+  },
+  "union": {
+   "q05": -6.0,
+   "q50": 11.0,
+   "q95": 29.0,
+   "mean": 11.2,
+   "P_pos": 0.843
+  },
+  "U_shift0.05": {
+   "q05": -4.0,
+   "q50": 5.0,
+   "q95": 14.0,
+   "mean": 4.8,
+   "P_pos": 0.785
+  },
+  "F_shift0.05": {
+   "q05": -16.049999999999997,
+   "q50": -2.0,
+   "q95": 13.0,
+   "mean": -1.6,
+   "P_pos": 0.419
+  },
+  "U_shift0.1": {
+   "q05": -7.0,
+   "q50": 2.0,
+   "q95": 11.0,
+   "mean": 2.1,
+   "P_pos": 0.61
+  },
+  "F_shift0.1": {
+   "q05": -22.0,
+   "q50": -8.0,
+   "q95": 8.0,
+   "mean": -8.0,
+   "P_pos": 0.173
+  },
+  "union_shift0.05": {
+   "q05": -16.0,
+   "q50": 3.0,
+   "q95": 21.0,
+   "mean": 3.2,
+   "P_pos": 0.605
+  },
+  "union_shift0.1": {
+   "q05": -24.0,
+   "q50": -6.0,
+   "q95": 13.0,
+   "mean": -5.9,
+   "P_pos": 0.281
+  }
+ },
+ "test_representation": {
+  "U": {
+   "test_cells_vs_holdout_rows": {
+    "0.05|cold": [
+     10,
+     26
+    ],
+    "0.05|ties": [
+     1,
+     3
+    ],
+    "0|cold": [
+     11,
+     47
+    ],
+    "0.1|after": [
+     1,
+     3
+    ],
+    "0.05|bracketed": [
+     1,
+     10
+    ],
+    "0|bracketed": [
+     5,
+     15
+    ],
+    "0.05|before": [
+     1,
+     1
+    ],
+    "0|before": [
+     1,
+     3
+    ],
+    "0|ties": [
+     3,
+     5
+    ],
+    "0.1|bracketed": [
+     1,
+     5
+    ],
+    "0.1|cold": [
+     1,
+     25
+    ]
+   },
+   "test_regimes": {
+    "cold": 22,
+    "before": 2,
+    "bracketed": 7,
+    "ties": 4,
+    "after": 1
+   },
+   "test_seen": 14,
+   "test_categories_present_in_holdout_rule": 0.19444444444444445
+  },
+  "F": {
+   "test_cells_vs_holdout_rows": {
+    "0.05|after": [
+     5,
+     9
+    ],
+    "0.05|cold": [
+     18,
+     39
+    ],
+    "0.1|before": [
+     5,
+     6
+    ],
+    "0.05|bracketed": [
+     5,
+     8
+    ],
+    "0.2|ties": [
+     2,
+     2
+    ],
+    "0.05|before": [
+     8,
+     5
+    ],
+    "0.2|before": [
+     5,
+     4
+    ],
+    "0.1|after": [
+     4,
+     3
+    ],
+    "0.1|cold": [
+     17,
+     46
+    ],
+    "0.2|cold": [
+     5,
+     32
+    ],
+    "0.2|after": [
+     2,
+     3
+    ],
+    "0.05|ties": [
+     4,
+     7
+    ],
+    "0.1|ties": [
+     1,
+     2
+    ],
+    "0.1|bracketed": [
+     4,
+     11
+    ],
+    "0.2|bracketed": [
+     1,
+     7
+    ]
+   },
+   "test_regimes": {
+    "cold": 40,
+    "before": 18,
+    "bracketed": 10,
+    "ties": 7,
+    "after": 11
+   },
+   "test_seen": 46,
+   "test_categories_present_in_holdout_rule": 0.20930232558139536
+  }
+ },
+ "selection_note": "threshold |p-.5|>=.05 for F and fallback<15 were chosen after viewing the 14k holdout band table: DEVELOPMENT selection; inner_cut_11k (seed 145, disjoint evaluation rows) is the replication"
+}
