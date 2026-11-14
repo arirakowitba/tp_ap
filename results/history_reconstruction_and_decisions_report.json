@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "timestamp_utc": "2026-11-14T00:30:00Z",
+    "author": "Antigravity",
+    "objective": "Exceed 0.95000 public score (+50 net hits over S4 0.94766)",
+    "assumed_public_n": 20998,
+    "anchor_hits": 19899,
+    "hits_for_095000": 19948,
+    "hits_for_095095": 19968,
+    "s4_sha256": "bb73f1ff1b5fdc76fd8880d4cc146adf46a0558138aec4546e17508cfcf5183f"
+  },
+  "history_reconstruction": {
+    "catalog_rows": 143,
+    "catalog_with_score": 123,
+    "reconstructed_hash_verified": 45,
+    "physical_vectors_loaded": 53,
+    "accepted_constraints": 91,
+    "duplicate_events": 0,
+    "quarantined_events": [
+      [
+        "EVT-001",
+        0.94476,
+        141,
+        "pair distance contradiction"
+      ],
+      [
+        "EVT-004",
+        0.94457,
+        123,
+        "pair distance contradiction"
+      ],
+      [
+        "EVT-005",
+        0.94447,
+        137,
+        "pair distance contradiction"
+      ],
+      [
+        "EVT-011",
+        0.944,
+        546,
+        "incompatible precision with N=20998"
+      ],
+      [
+        "EVT-018",
+        0.945,
+        246,
+        "incompatible precision with N=20998"
+      ],
+      [
+        "EVT-022",
+        0.94285,
+        83,
+        "pair distance contradiction / anchor distance bound"
+      ],
+      [
+        "EVT-052",
+        0.946,
+        130,
+        "incompatible precision with N=20998"
+      ]
+    ],
+    "covered_test_ids": 3201,
+    "uncovered_test_ids": 26799
+  },
+  "identifiable_blocks_and_bounds": {
+    "ten_disjoint_negative_blocks": {
+      "total_changes": 1782,
+      "total_net_hits": -492,
+      "mean_precision": 0.362,
+      "status": "EXACT_CERTIFIED_LOSS"
+    },
+    "fifth_submission_subgroups": {
+      "line3_agrees_with_s4": {
+        "changes": 205,
+        "bounds": [
+          -145.0,
+          -22.0
+        ],
+        "verdict": "Strict loss of at least 22 hits"
+      },
+      "line3_differs_from_s4": {
+        "changes": 63,
+        "bounds": [
+          -63.0,
+          60.0
+        ],
+        "verdict": "Unresolved bounds"
+      },
+      "previously_touched": {
+        "changes": 198,
+        "bounds": [
+          -155.0,
+          -15.0
+        ],
+        "verdict": "Strict loss of at least 15 hits"
+      }
+    },
+    "certified_individual_labels": 4,
+    "individual_label_certification_scope": "NONE. Under aggregate constraints without singleton probes, no individual row is certified (+1 or -1)."
+  },
+  "policy_evaluations": {
+    "policy_1_models_alone": {
+      "flips": 748,
+      "expected_gain": 153.7786053537876,
+      "severe_negative_overlap_rows": 425,
+      "verdict": "HIGH RISK due to overlapping proven negative drop vectors"
+    },
+    "policy_2_models_plus_exclusions": {
+      "flips": 323,
+      "expected_gain": 53.21423820019946,
+      "severe_negative_overlap_rows": 0,
+      "simulated_stats": {
+        "mean_gain": 53.24784,
+        "q05": 29.0,
+        "q95": 77.0,
+        "p_gt_09500": 0.60278,
+        "p_gt_095095": 0.1503
+      },
+      "verdict": "RECOMMENDED PRIMARY POLICY"
+    },
+    "policy_3_probabilistic_update": {
+      "flips": 703,
+      "expected_gain": 143.9096449976968,
+      "verdict": "Theoretically sound Bayesian shrinkage, converges to Policy 2 on unconstrained support"
+    }
+  },
+  "backtest_results": {
+    "by_day": {
+      "2026-10-18": {
+        "n_events": 3,
+        "mae_zero": 60.0,
+        "mae_model": 60.0,
+        "negative_detection_rate": 0.0
+      },
+      "2026-10-19": {
+        "n_events": 4,
+        "mae_zero": 61.75,
+        "mae_model": 61.75,
+        "negative_detection_rate": 0.0
+      },
+      "2026-10-20": {
+        "n_events": 3,
+        "mae_zero": 72.66666666666667,
+        "mae_model": 10.786313468346437,
+        "negative_detection_rate": 1.0
+      },
+      "2026-10-21": {
+        "n_events": 9,
+        "mae_zero": 46.333333333333336,
+        "mae_model": 3.0480536566113,
+        "negative_detection_rate": 1.0
+      },
+      "2026-10-22": {
+        "n_events": 8,
+        "mae_zero": 47.75,
+        "mae_model": 4.455792353632026,
+        "negative_detection_rate": 1.0
+      },
+      "2026-10-23": {
+        "n_events": 5,
+        "mae_zero": 116.6,
+        "mae_model": 30.108321274488663,
+        "negative_detection_rate": 1.0
+      },
+      "2026-10-24": {
+        "n_events": 4,
+        "mae_zero": 31.0,
+        "mae_model": 1.9634204763352985,
+        "negative_detection_rate": 1.0
+      },
+      "2026-10-25": {
+        "n_events": 3,
+        "mae_zero": 29.666666666666668,
+        "mae_model": 0.34539752313130023,
+        "negative_detection_rate": 1.0
+      },
+      "2026-10-26": {
+        "n_events": 2,
+        "mae_zero": 29.0,
+        "mae_model": 0.6095922135916716,
+        "negative_detection_rate": 1.0
+      },
+      "2026-10-27": {
+        "n_events": 1,
+        "mae_zero": 28.0,
+        "mae_model": 0.6590303542638019,
+        "negative_detection_rate": 1.0
+      },
+      "2026-10-28": {
+        "n_events": 5,
+        "mae_zero": 54.4,
+        "mae_model": 11.68132665793418,
+        "negative_detection_rate": 1.0
+      },
+      "2026-10-29": {
+        "n_events": 3,
+        "mae_zero": 30.0,
+        "mae_model": 0.9287178855311957,
+        "negative_detection_rate": 1.0
+      },
+      "2026-10-31": {
+        "n_events": 8,
+        "mae_zero": 51.625,
+        "mae_model": 1.3853052660536362,
+        "negative_detection_rate": 1.0
+      },
+      "2026-11-02": {
+        "n_events": 6,
+        "mae_zero": 26.5,
+        "mae_model": 0.8325705263991209,
+        "negative_detection_rate": 1.0
+      },
+      "2026-11-05": {
+        "n_events": 9,
+        "mae_zero": 15.222222222222221,
+        "mae_model": 9.000170984267603,
+        "negative_detection_rate": 1.0
+      },
+      "2026-11-07": {
+        "n_events": 10,
+        "mae_zero": 6.0,
+        "mae_model": 2.0262263605484434,
+        "negative_detection_rate": 1.0
+      },
+      "2026-11-10": {
+        "n_events": 8,
+        "mae_zero": 66.875,
+        "mae_model": 28.350290470076818,
+        "negative_detection_rate": 1.0
+      }
+    },
+    "by_family": {
+      "probes_sondas": {
+        "n_events": 22,
+        "total_flips": 1377,
+        "mean_delta_hits": -15.590909090909092,
+        "negative_count": 22,
+        "positive_count": 0,
+        "neutral_count": 0
+      },
+      "consensus": {
+        "n_events": 6,
+        "total_flips": 550,
+        "mean_delta_hits": -14.833333333333334,
+        "negative_count": 6,
+        "positive_count": 0,
+        "neutral_count": 0
+      },
+      "routing_specialists": {
+        "n_events": 2,
+        "total_flips": 907,
+        "mean_delta_hits": -198.0,
+        "negative_count": 2,
+        "positive_count": 0,
+        "neutral_count": 0
+      },
+      "enrichment_stacking": {
+        "n_events": 61,
+        "total_flips": 13965,
+        "mean_delta_hits": -51.868852459016395,
+        "negative_count": 61,
+        "positive_count": 0,
+        "neutral_count": 0
+      }
+    },
+    "overall": {
+      "total_evaluated_events": 91,
+      "mae_zero_control": 43.86813186813187,
+      "mae_historical_model": 11.967958639888119,
+      "bias_zero": -43.86813186813187,
+      "bias_model": -8.518278035283972,
+      "negative_events_count": 91,
+      "negative_detection_rate": 0.9230769230769231
+    }
+  },
+  "decision_shortlist": {
+    "primary_candidate": {
+      "file": "candidate_via_principal_pruned_historical_bounds.csv",
+      "sha256": "4f0907d7f6b24c5d4b9ed01468b5d582b611e61c1495f8bf81c71d98347935ee",
+      "flips_vs_s4": 323,
+      "u2n_flips": 160,
+      "n2u_flips": 163,
+      "expected_net_gain": 53.24784,
+      "credible_interval_90": [
+        29.0,
+        77.0
+      ],
+      "p_gt_09500": 0.60278,
+      "p_gt_095095": 0.1503,
+      "diagnostic_value": "Executes clean multi-family signal pruned of all proven negative blocks; tests if product identity + condition representation transfers to public LB."
+    },
+    "conditional_alternative": {
+      "file": "candidate_via_principal_high_margin_contrast.csv",
+      "sha256": "1401901d1a14e81f0bed6b8540c26d1b00554e7b4cd5815c505f1046376d638a",
+      "flips_vs_s4": 59,
+      "u2n_flips": 26,
+      "n2u_flips": 33,
+      "expected_net_gain": 22.67944,
+      "credible_interval_90": [
+        13.0,
+        32.0
+      ],
+      "p_gt_09500": 0.0,
+      "p_gt_095095": 0.0,
+      "diagnostic_value": "High-margin surgical core (|p - 0.5| >= 0.20) minimizing variance to test identity transfer."
+    },
+    "fallback": {
+      "file": "SUBMISSION_4_TODAY_RECOMMENDED.csv",
+      "sha256": "bb73f1ff1b5fdc76fd8880d4cc146adf46a0558138aec4546e17508cfcf5183f",
+      "flips_vs_s4": 0,
+      "expected_net_gain": 0.0,
+      "score": 0.94766,
+      "diagnostic_value": "Proven competition anchor (0.94766, 19,899 hits)."
+    }
+  }
+}
