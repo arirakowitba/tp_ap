@@ -1,0 +1,53 @@
+{
+  "anchor_sha256": "195dd663236c8c9a39fb175a5a82c1c8435f4930ba78d78167496634f58c045f",
+  "history_sha256": "35152c07e841fa4cd2017f2ad5e8d6590a8c117449c4f15ee32484086877772b",
+  "fifth_sha256": "dfff80fce8ccd08e122395115b24e4518585d53375de9c12dae3c9d618622f81",
+  "event_constraints": 107,
+  "duplicate_constraints": 0,
+  "covered_rows": 3593,
+  "fifth_changes": 268,
+  "fifth_delta": -85,
+  "public_size_assumption": 20998,
+  "anchor_hits": 19899,
+  "candidates": {
+    "pruned_historical_bounds.csv": {
+      "sha256": "4f0907d7f6b24c5d4b9ed01468b5d582b611e61c1495f8bf81c71d98347935ee",
+      "map_sha256": "5e427663c138d1c2d5de79951823c53399fb20c1b55f39f0a7a0f0ef2aa8c7cc",
+      "flips": 323,
+      "all_history_overlap": 302,
+      "ten_negative_blocks_overlap": 288,
+      "fifth_overlap": 22,
+      "same_vector_in_history": false,
+      "public_net_lp_bounds": [
+        -321.0,
+        318.0
+      ]
+    },
+    "high_margin_contrast.csv": {
+      "sha256": "1401901d1a14e81f0bed6b8540c26d1b00554e7b4cd5815c505f1046376d638a",
+      "map_sha256": "0876032b867c66a4189a1b472c96f93864c2b6d8d272d66ac630d20077c5a42b",
+      "flips": 59,
+      "all_history_overlap": 59,
+      "ten_negative_blocks_overlap": 59,
+      "fifth_overlap": 4,
+      "same_vector_in_history": false,
+      "public_net_lp_bounds": [
+        -59.0,
+        59.0
+      ]
+    },
+    "refit_70k.csv": {
+      "sha256": "a0d0ac592924e363e6b102c7dbacdaf50340455d1e99c52dc17f89b72b635b2b",
+      "map_sha256": "c8804fabf5ee42a542b2568a438ef54ff23e905fd7bdd39d385b1c6768855fc1",
+      "flips": 748,
+      "all_history_overlap": 727,
+      "ten_negative_blocks_overlap": 686,
+      "fifth_overlap": 51,
+      "same_vector_in_history": false,
+      "public_net_lp_bounds": [
+        -685.0,
+        398.0
+      ]
+    }
+  }
+}
