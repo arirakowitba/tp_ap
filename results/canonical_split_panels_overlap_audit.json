@@ -1,0 +1,77 @@
+{
+  "split_manifest": {
+    "csv_path": "data\\splits\\canonical_3way_splits.csv",
+    "csv_sha256": "2c27b06e39ed79066e2fe82b53f19e7c03b1032ade7358c9954b3185544556ec",
+    "train_pkl_sha256": "f97cc4f04de13c243b007398160ec57470cde1346c2358fd02facc1bdbffbf3b",
+    "test_pkl_sha256": "170383ff930d565a8efd1812865d404b39c049e787f16218d2a203df43ce55a3",
+    "total_rows": 70000,
+    "fit_rows": 40881,
+    "tune_rows": 15044,
+    "tune_cold_rows": 8758,
+    "tune_seen_bracketed_rows": 6286,
+    "confirm_rows": 14075,
+    "confirm_cold_rows": 7875,
+    "confirm_seen_bracketed_rows": 6200
+  },
+  "test_regimes_30k": {
+    "cold_new": 8513,
+    "bracketed_interleaved": 14117,
+    "after_all_history": 3121,
+    "before_all_history": 3118,
+    "ties_extrema": 1131,
+    "total": 30000,
+    "shares": {
+      "cold_new": 0.2838,
+      "bracketed_interleaved": 0.4706,
+      "after_all_history": 0.104,
+      "before_all_history": 0.1039,
+      "ties_extrema": 0.0377
+    }
+  },
+  "historical_panels_cross": {
+    "late_batch_seller_28111322": {
+      "total_rows": 25946,
+      "confirm_overlap": 6455,
+      "confirm_overlap_share": 0.4586
+    },
+    "late_batch_seller_28111323": {
+      "total_rows": 25123,
+      "confirm_overlap": 6256,
+      "confirm_overlap_share": 0.4445
+    },
+    "recent_seller_history": {
+      "total_rows": 23843,
+      "confirm_overlap": 5564,
+      "confirm_overlap_share": 0.3953
+    },
+    "structural_replica": {
+      "total_rows": 20528,
+      "confirm_overlap": 3534,
+      "confirm_overlap_share": 0.2511
+    },
+    "structural_disjoint": {
+      "total_rows": 9173,
+      "confirm_overlap": 2247,
+      "confirm_overlap_share": 0.1596
+    },
+    "structural_heldout_confirm": {
+      "total_rows": 7632,
+      "confirm_overlap": 1491,
+      "confirm_overlap_share": 0.1059
+    },
+    "union_six_panels": {
+      "total_unique_ids": 58931,
+      "confirm_overlap": 12504,
+      "confirm_overlap_share": 0.8884,
+      "fresh_intact_rows": 1571,
+      "fresh_intact_share": 0.1116
+    }
+  },
+  "methodological_consequences": {
+    "confirm_retrospective_development_rows": 12504,
+    "confirm_fresh_intact_rows": 1571,
+    "status": "EVALUATION_FROZEN",
+    "reference_anchor": "S4_EVT_154_0_94766",
+    "public_probability_claim": "NO_IDENTIFIABLE"
+  }
+}
