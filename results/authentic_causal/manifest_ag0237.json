@@ -1,0 +1,133 @@
+{
+  "Candidate_1_Priority_Causal": {
+    "path": "submissions/20261115/CANDIDATE_1_PRIORITY_AG_CAUSAL_AUTHENTIC.csv",
+    "sha256_lf": "3b724a8757ea84372a67a8480c7cb69b5cd1f337f04efd21ada55d479ed9c62e",
+    "gate_f_canonical_hash": "2bc14e2de80e90a4a24409589fac8dbea02ef9b8ed074d6011dd7a3d5a27c86c",
+    "gate_g_verified": true,
+    "used_rate": 0.4660666666666667,
+    "diffs_vs_references": {
+      "S4": {
+        "flips": 1522,
+        "used_to_new": 853,
+        "new_to_used": 669
+      },
+      "Top174": {
+        "flips": 1540,
+        "used_to_new": 867,
+        "new_to_used": 673
+      },
+      "Top30": {
+        "flips": 1524,
+        "used_to_new": 855,
+        "new_to_used": 669
+      },
+      "Cupo3": {
+        "flips": 1518,
+        "used_to_new": 848,
+        "new_to_used": 670
+      },
+      "Cupo4": {
+        "flips": 1521,
+        "used_to_new": 857,
+        "new_to_used": 664
+      },
+      "Cupo5": {
+        "flips": 1526,
+        "used_to_new": 849,
+        "new_to_used": 677
+      }
+    },
+    "overlap_with_cupo4_disaster_flips": "74 / 1524",
+    "overlap_with_cupo5_flips": "24 / 1524"
+  },
+  "Candidate_2_Reserve_Tabular_Base": {
+    "path": "submissions/20261115/CANDIDATE_2_RESERVE_AG_TABULAR_BASE.csv",
+    "sha256_lf": "c99e4f9503b46e8468ed67df9a16a76b3aa1ad79aabaf8ce0b9734fa7208a017",
+    "gate_f_canonical_hash": "f8e0bf3cb0c8d1c568df2dcac653489b30cf4d0299eeb4ffad068f1f5524be05",
+    "gate_g_verified": true,
+    "used_rate": 0.4673,
+    "diffs_vs_references": {
+      "S4": {
+        "flips": 1947,
+        "used_to_new": 1047,
+        "new_to_used": 900
+      },
+      "Top174": {
+        "flips": 1979,
+        "used_to_new": 1068,
+        "new_to_used": 911
+      },
+      "Top30": {
+        "flips": 1949,
+        "used_to_new": 1049,
+        "new_to_used": 900
+      },
+      "Cupo3": {
+        "flips": 1943,
+        "used_to_new": 1042,
+        "new_to_used": 901
+      },
+      "Cupo4": {
+        "flips": 1944,
+        "used_to_new": 1050,
+        "new_to_used": 894
+      },
+      "Cupo5": {
+        "flips": 1949,
+        "used_to_new": 1042,
+        "new_to_used": 907
+      }
+    },
+    "overlap_with_cupo4_disaster_flips": "75 / 1949",
+    "overlap_with_cupo5_flips": "25 / 1949"
+  },
+  "Candidate_3_Surgical_Causal_on_T30": {
+    "path": "submissions/20261115/CANDIDATE_3_SURGICAL_CAUSAL_ON_T30.csv",
+    "sha256_lf": "81e071312e3838c1ced5ceb1a00e359b7113f6bd4c99284756fe2226dffbf6ff",
+    "gate_f_canonical_hash": "dc8c82a16a898270ff5654d51496213d1b4ebcfb413b37f101b74a47acf868ca",
+    "gate_g_verified": true,
+    "used_rate": 0.47103333333333336,
+    "diffs_vs_references": {
+      "S4": {
+        "flips": 431,
+        "used_to_new": 233,
+        "new_to_used": 198
+      },
+      "Top174": {
+        "flips": 531,
+        "used_to_new": 288,
+        "new_to_used": 243
+      },
+      "Top30": {
+        "flips": 421,
+        "used_to_new": 229,
+        "new_to_used": 192
+      },
+      "Cupo3": {
+        "flips": 445,
+        "used_to_new": 237,
+        "new_to_used": 208
+      },
+      "Cupo4": {
+        "flips": 494,
+        "used_to_new": 269,
+        "new_to_used": 225
+      },
+      "Cupo5": {
+        "flips": 453,
+        "used_to_new": 238,
+        "new_to_used": 215
+      }
+    },
+    "overlap_with_cupo4_disaster_flips": "36 / 421",
+    "overlap_with_cupo5_flips": "9 / 421"
+  },
+  "artifacts_hashes": {
+    "oof_probabilities_causal_with_folds.csv": "caa6f86c0eb270b673d1ef647a0f4a51ae884cdc346308b2b9bb8c478652b4a7",
+    "test_p_ag_causal_authentic.npy": "d00c9a0e06cc58f0ead99c4527971db0145c60c7fb8717f4aaaf96acdd7191a8",
+    "test_p_ag_tabular_base.npy": "e7511739315b0791fcf9ff7561cdb68d68836a0c1ef6d415a8a07754664bb720",
+    "test_p_claude_text.npy": "4fcb684e21d8feaa7961ef4caaba8b93ebe97d493a32f6019b8e6c8259f6bff5",
+    "canonical_3way_splits.csv": "2c27b06e39ed79066e2fe82b53f19e7c03b1032ade7358c9954b3185544556ec",
+    "canonical_nested_dual_regime_splits.csv": "91ee8fd2dc9e16ac52c5df19286e71d9bbfae9cede4a6394d342e698ed76c7fb"
+  }
+}
