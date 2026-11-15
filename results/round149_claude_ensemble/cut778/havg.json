@@ -1,0 +1,58 @@
+{
+ "p_vc_s2026_vs_B10": {
+  "acc_havg": 0.94464,
+  "acc_ref": 0.94486,
+  "fixes": 79,
+  "breaks": 82,
+  "net": -3,
+  "net_seen": -5,
+  "net_new": 2,
+  "q_seller": [
+   -25,
+   -3,
+   18
+  ]
+ },
+ "p_vc_s2026_vs_vc": {
+  "acc_havg": 0.94464,
+  "acc_ref": 0.94343,
+  "fixes": 72,
+  "breaks": 55,
+  "net": 17,
+  "net_seen": 1,
+  "net_new": 16,
+  "q_seller": [
+   -2,
+   17,
+   35
+  ]
+ },
+ "p_vc_s314159_vs_B10": {
+  "acc_havg": 0.945,
+  "acc_ref": 0.94486,
+  "fixes": 83,
+  "breaks": 81,
+  "net": 2,
+  "net_seen": 1,
+  "net_new": 1,
+  "q_seller": [
+   -19,
+   2,
+   23
+  ]
+ },
+ "p_vc_s314159_vs_vc": {
+  "acc_havg": 0.945,
+  "acc_ref": 0.94307,
+  "fixes": 85,
+  "breaks": 58,
+  "net": 27,
+  "net_seen": 15,
+  "net_new": 12,
+  "q_seller": [
+   7,
+   27,
+   47
+  ]
+ }
+}
