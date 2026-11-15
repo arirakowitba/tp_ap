@@ -1,0 +1,100 @@
+{
+ "all_b0.25": {
+  "AG_warm_14-11": {
+   "count": 1,
+   "mean": -13.9,
+   "MAE": 13.9
+  },
+  "other_ledger": {
+   "count": 58,
+   "mean": -3.6,
+   "MAE": 8.7
+  },
+  "overlay_14-11_model_selected": {
+   "count": 4,
+   "mean": -4.9,
+   "MAE": 8.4
+  },
+  "provisional": {
+   "count": 8,
+   "mean": 1.4,
+   "MAE": 4.8
+  },
+  "reconstructed_04-58": {
+   "count": 21,
+   "mean": -6.6,
+   "MAE": 13.1
+  }
+ },
+ "all_b1.0": {
+  "AG_warm_14-11": {
+   "count": 1,
+   "mean": -2.4,
+   "MAE": 2.4
+  },
+  "other_ledger": {
+   "count": 58,
+   "mean": 0.6,
+   "MAE": 7.1
+  },
+  "overlay_14-11_model_selected": {
+   "count": 4,
+   "mean": -4.4,
+   "MAE": 7.8
+  },
+  "provisional": {
+   "count": 8,
+   "mean": -5.0,
+   "MAE": 6.1
+  },
+  "reconstructed_04-58": {
+   "count": 21,
+   "mean": 2.1,
+   "MAE": 4.4
+  }
+ },
+ "excl_8_provisional_b0.25": {
+  "AG_warm_14-11": {
+   "count": 1,
+   "mean": -14.6,
+   "MAE": 14.6
+  },
+  "other_ledger": {
+   "count": 58,
+   "mean": -3.5,
+   "MAE": 8.8
+  },
+  "overlay_14-11_model_selected": {
+   "count": 4,
+   "mean": -3.8,
+   "MAE": 7.5
+  },
+  "reconstructed_04-58": {
+   "count": 21,
+   "mean": -6.6,
+   "MAE": 13.1
+  }
+ },
+ "excl_8_provisional_b1.0": {
+  "AG_warm_14-11": {
+   "count": 1,
+   "mean": -2.3,
+   "MAE": 2.3
+  },
+  "other_ledger": {
+   "count": 58,
+   "mean": 0.3,
+   "MAE": 7.2
+  },
+  "overlay_14-11_model_selected": {
+   "count": 4,
+   "mean": -4.4,
+   "MAE": 7.7
+  },
+  "reconstructed_04-58": {
+   "count": 21,
+   "mean": 2.1,
+   "MAE": 4.4
+  }
+ }
+}
