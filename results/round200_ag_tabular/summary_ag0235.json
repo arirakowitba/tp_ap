@@ -1,0 +1,644 @@
+{
+  "timestamp_iso": "2026-11-15T15:01:16Z",
+  "protocol": "CX-0219 / CX-0220",
+  "zero_kaggle_verified": true,
+  "part1_cold_seller_group_cv": {
+    "folds": 5,
+    "total_items": 70000,
+    "accuracy": 0.9170714285714285,
+    "log_loss": 0.2097526008710968,
+    "hits": 64195
+  },
+  "part2_tune_evaluations": {
+    "AG_Tabular_Base": {
+      "accuracy": 0.9284764690241957,
+      "log_loss": 0.18145383530306566,
+      "fixes": 0,
+      "breaks": 0,
+      "net": 0,
+      "bootstrap": {
+        "multiway": {
+          "median": 0.0,
+          "q05": 0.0,
+          "q95": 0.0,
+          "p_gt_0": 0.0
+        },
+        "marginal_seller": {
+          "median": 0.0,
+          "q05": 0.0,
+          "q95": 0.0,
+          "p_gt_0": 0.0
+        },
+        "marginal_category": {
+          "median": 0.0,
+          "q05": 0.0,
+          "q95": 0.0,
+          "p_gt_0": 0.0
+        }
+      },
+      "by_regime": {
+        "all": {
+          "n": 15044,
+          "acc": 0.9284764690241957,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        },
+        "cold": {
+          "n": 8758,
+          "acc": 0.9148207353277004,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        },
+        "all_warm": {
+          "n": 6286,
+          "acc": 0.9475023862551702,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        },
+        "bracketed": {
+          "n": 5280,
+          "acc": 0.946969696969697,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        },
+        "ties": {
+          "n": 1006,
+          "acc": 0.9502982107355865,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        },
+        "before": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        },
+        "after": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        }
+      }
+    },
+    "AG_Tabular_Causal": {
+      "accuracy": 0.9335283169369848,
+      "log_loss": 0.16894860262672667,
+      "fixes": 250,
+      "breaks": 174,
+      "net": 76,
+      "bootstrap": {
+        "multiway": {
+          "median": 76.0,
+          "q05": 39.9,
+          "q95": 114.0,
+          "p_gt_0": 0.9995
+        },
+        "marginal_seller": {
+          "median": 76.0,
+          "q05": 28.0,
+          "q95": 122.0,
+          "p_gt_0": 0.9955
+        },
+        "marginal_category": {
+          "median": 76.0,
+          "q05": 42.0,
+          "q95": 112.0,
+          "p_gt_0": 1.0
+        }
+      },
+      "by_regime": {
+        "all": {
+          "n": 15044,
+          "acc": 0.9335283169369848,
+          "fixes": 250,
+          "breaks": 174,
+          "net": 76
+        },
+        "cold": {
+          "n": 8758,
+          "acc": 0.9100251198903859,
+          "fixes": 67,
+          "breaks": 109,
+          "net": -42
+        },
+        "all_warm": {
+          "n": 6286,
+          "acc": 0.9662742602608972,
+          "fixes": 183,
+          "breaks": 65,
+          "net": 118
+        },
+        "bracketed": {
+          "n": 5280,
+          "acc": 0.9659090909090909,
+          "fixes": 160,
+          "breaks": 60,
+          "net": 100
+        },
+        "ties": {
+          "n": 1006,
+          "acc": 0.9681908548707754,
+          "fixes": 23,
+          "breaks": 5,
+          "net": 18
+        },
+        "before": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        },
+        "after": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        }
+      }
+    },
+    "AG_Tabular_Batch": {
+      "accuracy": 0.9302047327838341,
+      "log_loss": 0.1737634435439597,
+      "fixes": 275,
+      "breaks": 249,
+      "net": 26,
+      "bootstrap": {
+        "multiway": {
+          "median": 26.0,
+          "q05": -18.0,
+          "q95": 70.0,
+          "p_gt_0": 0.8285
+        },
+        "marginal_seller": {
+          "median": 26.0,
+          "q05": -36.0,
+          "q95": 86.0,
+          "p_gt_0": 0.7425
+        },
+        "marginal_category": {
+          "median": 26.0,
+          "q05": -10.1,
+          "q95": 64.0,
+          "p_gt_0": 0.859
+        }
+      },
+      "by_regime": {
+        "all": {
+          "n": 15044,
+          "acc": 0.9302047327838341,
+          "fixes": 275,
+          "breaks": 249,
+          "net": 26
+        },
+        "cold": {
+          "n": 8758,
+          "acc": 0.9039735099337748,
+          "fixes": 81,
+          "breaks": 176,
+          "net": -95
+        },
+        "all_warm": {
+          "n": 6286,
+          "acc": 0.9667515112949412,
+          "fixes": 194,
+          "breaks": 73,
+          "net": 121
+        },
+        "bracketed": {
+          "n": 5280,
+          "acc": 0.9666666666666667,
+          "fixes": 169,
+          "breaks": 65,
+          "net": 104
+        },
+        "ties": {
+          "n": 1006,
+          "acc": 0.967196819085487,
+          "fixes": 25,
+          "breaks": 8,
+          "net": 17
+        },
+        "before": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        },
+        "after": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        }
+      }
+    },
+    "Claude_Text_Alone": {
+      "accuracy": 0.8495745812283967,
+      "log_loss": 0.3573304237189955,
+      "fixes": 430,
+      "breaks": 1617,
+      "net": -1187,
+      "bootstrap": {
+        "multiway": {
+          "median": -1188.0,
+          "q05": -1314.0,
+          "q95": -1069.9,
+          "p_gt_0": 0.0
+        },
+        "marginal_seller": {
+          "median": -1186.0,
+          "q05": -1378.0,
+          "q95": -992.0,
+          "p_gt_0": 0.0
+        },
+        "marginal_category": {
+          "median": -1186.0,
+          "q05": -1400.0,
+          "q95": -976.0,
+          "p_gt_0": 0.0
+        }
+      },
+      "by_regime": {
+        "all": {
+          "n": 15044,
+          "acc": 0.8495745812283967,
+          "fixes": 430,
+          "breaks": 1617,
+          "net": -1187
+        },
+        "cold": {
+          "n": 8758,
+          "acc": 0.8298698332952729,
+          "fixes": 312,
+          "breaks": 1056,
+          "net": -744
+        },
+        "all_warm": {
+          "n": 6286,
+          "acc": 0.8770283168946866,
+          "fixes": 118,
+          "breaks": 561,
+          "net": -443
+        },
+        "bracketed": {
+          "n": 5280,
+          "acc": 0.8770833333333333,
+          "fixes": 108,
+          "breaks": 477,
+          "net": -369
+        },
+        "ties": {
+          "n": 1006,
+          "acc": 0.8767395626242545,
+          "fixes": 10,
+          "breaks": 84,
+          "net": -74
+        },
+        "before": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        },
+        "after": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        }
+      }
+    },
+    "Blend_AG_Causal_Claude_w0.2": {
+      "accuracy": 0.934126562084552,
+      "log_loss": 0.1706077869003807,
+      "fixes": 271,
+      "breaks": 186,
+      "net": 85,
+      "bootstrap": {
+        "multiway": {
+          "median": 84.0,
+          "q05": 45.9,
+          "q95": 124.0,
+          "p_gt_0": 0.9995
+        },
+        "marginal_seller": {
+          "median": 84.0,
+          "q05": 36.0,
+          "q95": 130.0,
+          "p_gt_0": 0.9965
+        },
+        "marginal_category": {
+          "median": 85.0,
+          "q05": 50.0,
+          "q95": 122.0,
+          "p_gt_0": 1.0
+        }
+      },
+      "by_regime": {
+        "all": {
+          "n": 15044,
+          "acc": 0.934126562084552,
+          "fixes": 271,
+          "breaks": 186,
+          "net": 85
+        },
+        "cold": {
+          "n": 8758,
+          "acc": 0.9109385704498744,
+          "fixes": 95,
+          "breaks": 129,
+          "net": -34
+        },
+        "all_warm": {
+          "n": 6286,
+          "acc": 0.9664333439389119,
+          "fixes": 176,
+          "breaks": 57,
+          "net": 119
+        },
+        "bracketed": {
+          "n": 5280,
+          "acc": 0.9666666666666667,
+          "fixes": 155,
+          "breaks": 51,
+          "net": 104
+        },
+        "ties": {
+          "n": 1006,
+          "acc": 0.9652087475149106,
+          "fixes": 21,
+          "breaks": 6,
+          "net": 15
+        },
+        "before": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        },
+        "after": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        }
+      }
+    },
+    "Blend_AG_Causal_Claude_w0.3": {
+      "accuracy": 0.9336612603031109,
+      "log_loss": 0.17469949974794358,
+      "fixes": 281,
+      "breaks": 203,
+      "net": 78,
+      "bootstrap": {
+        "multiway": {
+          "median": 78.0,
+          "q05": 36.0,
+          "q95": 120.0,
+          "p_gt_0": 0.9975
+        },
+        "marginal_seller": {
+          "median": 78.0,
+          "q05": 28.0,
+          "q95": 124.0,
+          "p_gt_0": 0.9935
+        },
+        "marginal_category": {
+          "median": 78.0,
+          "q05": 39.9,
+          "q95": 118.0,
+          "p_gt_0": 1.0
+        }
+      },
+      "by_regime": {
+        "all": {
+          "n": 15044,
+          "acc": 0.9336612603031109,
+          "fixes": 281,
+          "breaks": 203,
+          "net": 78
+        },
+        "cold": {
+          "n": 8758,
+          "acc": 0.9108243891299383,
+          "fixes": 115,
+          "breaks": 150,
+          "net": -35
+        },
+        "all_warm": {
+          "n": 6286,
+          "acc": 0.965478841870824,
+          "fixes": 166,
+          "breaks": 53,
+          "net": 113
+        },
+        "bracketed": {
+          "n": 5280,
+          "acc": 0.9655303030303031,
+          "fixes": 146,
+          "breaks": 48,
+          "net": 98
+        },
+        "ties": {
+          "n": 1006,
+          "acc": 0.9652087475149106,
+          "fixes": 20,
+          "breaks": 5,
+          "net": 15
+        },
+        "before": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        },
+        "after": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        }
+      }
+    },
+    "Blend_AG_Causal_Claude_w0.5": {
+      "accuracy": 0.9303376761499601,
+      "log_loss": 0.1926032437862523,
+      "fixes": 323,
+      "breaks": 295,
+      "net": 28,
+      "bootstrap": {
+        "multiway": {
+          "median": 27.0,
+          "q05": -26.0,
+          "q95": 80.0,
+          "p_gt_0": 0.78
+        },
+        "marginal_seller": {
+          "median": 28.0,
+          "q05": -36.0,
+          "q95": 88.0,
+          "p_gt_0": 0.749
+        },
+        "marginal_category": {
+          "median": 28.0,
+          "q05": -24.0,
+          "q95": 82.0,
+          "p_gt_0": 0.795
+        }
+      },
+      "by_regime": {
+        "all": {
+          "n": 15044,
+          "acc": 0.9303376761499601,
+          "fixes": 323,
+          "breaks": 295,
+          "net": 28
+        },
+        "cold": {
+          "n": 8758,
+          "acc": 0.9072847682119205,
+          "fixes": 170,
+          "breaks": 236,
+          "net": -66
+        },
+        "all_warm": {
+          "n": 6286,
+          "acc": 0.962456251988546,
+          "fixes": 153,
+          "breaks": 59,
+          "net": 94
+        },
+        "bracketed": {
+          "n": 5280,
+          "acc": 0.9628787878787879,
+          "fixes": 136,
+          "breaks": 52,
+          "net": 84
+        },
+        "ties": {
+          "n": 1006,
+          "acc": 0.9602385685884692,
+          "fixes": 17,
+          "breaks": 7,
+          "net": 10
+        },
+        "before": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        },
+        "after": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        }
+      }
+    },
+    "Blend_AG_Base_Claude_w0.2": {
+      "accuracy": 0.929872374368519,
+      "log_loss": 0.18383493701367365,
+      "fixes": 79,
+      "breaks": 58,
+      "net": 21,
+      "bootstrap": {
+        "multiway": {
+          "median": 20.0,
+          "q05": 0.0,
+          "q95": 42.0,
+          "p_gt_0": 0.937
+        },
+        "marginal_seller": {
+          "median": 20.0,
+          "q05": 0.0,
+          "q95": 42.0,
+          "p_gt_0": 0.931
+        },
+        "marginal_category": {
+          "median": 22.0,
+          "q05": -2.0,
+          "q95": 44.0,
+          "p_gt_0": 0.9205
+        }
+      },
+      "by_regime": {
+        "all": {
+          "n": 15044,
+          "acc": 0.929872374368519,
+          "fixes": 79,
+          "breaks": 58,
+          "net": 21
+        },
+        "cold": {
+          "n": 8758,
+          "acc": 0.9163050924868692,
+          "fixes": 55,
+          "breaks": 42,
+          "net": 13
+        },
+        "all_warm": {
+          "n": 6286,
+          "acc": 0.9487750556792873,
+          "fixes": 24,
+          "breaks": 16,
+          "net": 8
+        },
+        "bracketed": {
+          "n": 5280,
+          "acc": 0.9484848484848485,
+          "fixes": 22,
+          "breaks": 14,
+          "net": 8
+        },
+        "ties": {
+          "n": 1006,
+          "acc": 0.9502982107355865,
+          "fixes": 2,
+          "breaks": 2,
+          "net": 0
+        },
+        "before": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        },
+        "after": {
+          "n": 0,
+          "acc": NaN,
+          "fixes": 0,
+          "breaks": 0,
+          "net": 0
+        }
+      }
+    }
+  },
+  "hashes": {
+    "oof_cold_70k_sha256": "93f51331bdf8a3ebe44c35f6cffae70f57f9255f97c69e665d710d21cef4eef7",
+    "test_p_ag_tabular_sha256": "a93d5ce99d5f5bc654e1ecfdfc8be175216096af3d24c7d6783e101e6f94df61",
+    "tune_p_ag_causal_sha256": "821e3ecb4bedbf03ee21d5fb29ea60fad7f05652227129dca20f8701fb97a453",
+    "tune_p_claude_text_sha256": "acec4f19b0bd9b82f30b9077298767987b0f884aa50d2fe0891938f7fa4986c1"
+  }
+}
