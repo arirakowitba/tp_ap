@@ -1,0 +1,47 @@
+{
+  "timestamp_utc": "2026-11-15 15:01:00",
+  "elapsed_seconds": 187.44,
+  "metrics_oof_70k": {
+    "line1_tabular_acc": 0.90137,
+    "line1_tabular_ll": 0.2417,
+    "line2_causal_acc": 0.8979,
+    "line2_causal_ll": 0.24974
+  },
+  "metrics_tune_15k": {
+    "line1_acc": 0.91984,
+    "line2_acc": 0.92196,
+    "fixes": 7480,
+    "breaks": 790,
+    "net": 6690
+  },
+  "metrics_confirm_14k": {
+    "line1_acc": 0.92,
+    "line2_acc": 0.92334,
+    "fixes": 7042,
+    "breaks": 840,
+    "net": 6202,
+    "q05_seller": -11.0
+  },
+  "csv_candidates": [
+    {
+      "name": "CANDIDATE_LINE1_TABULAR_PURO",
+      "path": "results\\tabular_causal_lgbm\\CANDIDATE_LINE1_TABULAR_PURO.csv",
+      "rows": 30000,
+      "used_rate": 0.47563,
+      "diff_vs_t30": 1585,
+      "lf_sha256": "8b98a03f3869a81122cee2ec4bc150d9877e6b24531fbe7e21a5edd4396f92ef",
+      "gate_f_no_lf": "a4f372096fbdb0283991bf7cb0e3701509bb2fe71c27955ed21e8300b955ccd2",
+      "gate_f_with_lf": "27711bf63ca1c3bf0a64cc5814f3e514d2f59785b6dd9c414ae3889e48419c9b"
+    },
+    {
+      "name": "CANDIDATE_LINE2_CAUSAL_TABULAR",
+      "path": "results\\tabular_causal_lgbm\\CANDIDATE_LINE2_CAUSAL_TABULAR.csv",
+      "rows": 30000,
+      "used_rate": 0.4749,
+      "diff_vs_t30": 1287,
+      "lf_sha256": "60b8bb26ca056c60ce4534969d72cac4a718893ab2ddde4de59d07a8d8483b99",
+      "gate_f_no_lf": "6710aa5267b86a4b478cfd349501782749bb94d7756ba7c34975dc8e60dca04e",
+      "gate_f_with_lf": "b35a2ba40bd8aab191b589ddf7e69b3a6330594d73d3ef1210d784518ec9ae3c"
+    }
+  ]
+}

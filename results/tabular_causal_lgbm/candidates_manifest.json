@@ -1,0 +1,32 @@
+[
+  {
+    "name": "CANDIDATE_LINE1_TABULAR_PURO",
+    "path": "results\\tabular_causal_lgbm\\CANDIDATE_LINE1_TABULAR_PURO.csv",
+    "rows": 30000,
+    "used_rate": 0.47563,
+    "diff_vs_t30": 1585,
+    "lf_sha256": "8b98a03f3869a81122cee2ec4bc150d9877e6b24531fbe7e21a5edd4396f92ef",
+    "gate_f_no_lf": "a4f372096fbdb0283991bf7cb0e3701509bb2fe71c27955ed21e8300b955ccd2",
+    "gate_f_with_lf": "27711bf63ca1c3bf0a64cc5814f3e514d2f59785b6dd9c414ae3889e48419c9b"
+  },
+  {
+    "name": "CANDIDATE_LINE2_CAUSAL_TABULAR",
+    "path": "results\\tabular_causal_lgbm\\CANDIDATE_LINE2_CAUSAL_TABULAR.csv",
+    "rows": 30000,
+    "used_rate": 0.4749,
+    "diff_vs_t30": 1287,
+    "lf_sha256": "60b8bb26ca056c60ce4534969d72cac4a718893ab2ddde4de59d07a8d8483b99",
+    "gate_f_no_lf": "6710aa5267b86a4b478cfd349501782749bb94d7756ba7c34975dc8e60dca04e",
+    "gate_f_with_lf": "b35a2ba40bd8aab191b589ddf7e69b3a6330594d73d3ef1210d784518ec9ae3c"
+  },
+  {
+    "name": "CANDIDATE_LINE3_GATED_HYBRID",
+    "path": "results\\tabular_causal_lgbm\\CANDIDATE_LINE3_GATED_HYBRID.csv",
+    "rows": 30000,
+    "used_rate": 0.47577,
+    "diff_vs_t30": 1299,
+    "lf_sha256": "0c6026ae3f0de210cf71f91c715ad4389ff1f8ac9d316c83782db3e95be03b98",
+    "gate_f_no_lf": "324c87d1bd30a3f25f837414a84ea964f79afc1daffc52379f33db57922db8bf",
+    "gate_f_with_lf": "dcfbe9f07c50595fa22fceaede03d52b3d0561d86c3e93a27cde772f1cedf2a9"
+  }
+]
