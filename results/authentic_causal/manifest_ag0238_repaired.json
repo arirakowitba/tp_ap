@@ -1,0 +1,173 @@
+{
+  "verified_historical_ledger": {
+    "S4": {
+      "path": "submissions/portfolio_s5_historical_and_models/candidate_1_s4_only.csv",
+      "score": 0.94766,
+      "expected_lf_hash": "195dd663236c8c9a39fb175a5a82c1c8435f4930ba78d78167496634f58c045f"
+    },
+    "Top174": {
+      "path": "submissions/claude_20261114/claude_blendfix_posterior_top174_sobre_S4.csv",
+      "score": 0.94723,
+      "expected_lf_hash": "7c3f873121bed85e3a642ddec549e7982c7fdcf49786cec4e186a2b6e1145280"
+    },
+    "Top30": {
+      "path": "submissions/claude_20261114/claude_blendfix_posterior_top30_sobre_S4.csv",
+      "score": 0.94823,
+      "expected_lf_hash": "7f2a1c3d4ea047a44e663f3892e6d1c66f164ba491636fda52f26344fb5d6ae4"
+    },
+    "Cupo3": {
+      "path": "submissions/20261114/CSV_3_HOY_T30_STACK_TOP50_SINREV.csv",
+      "score": 0.94814,
+      "expected_lf_hash": "7be0b22c52ff83c996344e0777902c1f01750faa111d3b7dbf9d33a042e53f9b"
+    },
+    "Cupo4": {
+      "path": "results/CANDIDATE_T30_PLUS_WARM_CLEAN_MODERATED.csv",
+      "score": 0.94504,
+      "expected_lf_hash": "99a6d96b4cd2a2027d7279d4639b314779a9b50849d7bd937e09de8b9b1bd39a"
+    },
+    "Cupo5": {
+      "path": "submissions/claude_20261114/claude_cupo4_T30_b025_keepT30_top50.csv",
+      "score": 0.9479,
+      "expected_lf_hash": "ee1a0103e257be724069b90ea4bdaa934b8d06d88e93e2503d8ad1e042568304"
+    }
+  },
+  "candidates": {
+    "CANDIDATE_1_PRIORITY_AG_CAUSAL_AUTHENTIC": {
+      "path": "submissions/20261115/CANDIDATE_1_PRIORITY_AG_CAUSAL_AUTHENTIC.csv",
+      "gate_g": true,
+      "used_rate": 0.47286666666666666,
+      "lf_sha256": "d6ad7fb5d7689f62d624181052ca7180beb28383f1c9fc6b778ea8be9655fb8b",
+      "gate_f_with_lf": "514854bc9336228df73a69478238a49ef3261c2016e84ea77eda931843453b8c",
+      "gate_f_without_lf": "cf46564bf6a0046db94b49db1ff22a616362f5194331e1550d65f659fd78cfbe",
+      "gate_f_json": "e0f80b9038081ea5e66a589140384865679f580ff94395c5cb5cb3c8384fa0ff",
+      "diffs_vs_historical": {
+        "S4": {
+          "flips": 1058,
+          "used_to_new": 519,
+          "new_to_used": 539
+        },
+        "Top174": {
+          "flips": 1084,
+          "used_to_new": 537,
+          "new_to_used": 547
+        },
+        "Top30": {
+          "flips": 1056,
+          "used_to_new": 519,
+          "new_to_used": 537
+        },
+        "Cupo3": {
+          "flips": 1048,
+          "used_to_new": 511,
+          "new_to_used": 537
+        },
+        "Cupo4": {
+          "flips": 1091,
+          "used_to_new": 540,
+          "new_to_used": 551
+        },
+        "Cupo5": {
+          "flips": 1056,
+          "used_to_new": 512,
+          "new_to_used": 544
+        }
+      },
+      "overlap_cupo4": "55 / 1056",
+      "overlap_cupo5": "25 / 1056"
+    },
+    "CANDIDATE_2_RESERVE_AG_TABULAR_BASE": {
+      "path": "submissions/20261115/CANDIDATE_2_RESERVE_AG_TABULAR_BASE.csv",
+      "gate_g": true,
+      "used_rate": 0.47756666666666664,
+      "lf_sha256": "227900387fe32ba914675f9db88032ef7023c7209ec1cc21339088be5357635a",
+      "gate_f_with_lf": "7c4184be3ba7857fc5e9dc5815d98cfeed8affbc29dd9473d8b217984db30636",
+      "gate_f_without_lf": "25684e8c9456dc703a6221125ef7374f5d13f7d10cd19cd5b004de34f53c1fb5",
+      "gate_f_json": "b9480688175d111c42f613da2f4df28f21709090dce39609a9408e51ffe873a5",
+      "diffs_vs_historical": {
+        "S4": {
+          "flips": 1457,
+          "used_to_new": 648,
+          "new_to_used": 809
+        },
+        "Top174": {
+          "flips": 1475,
+          "used_to_new": 662,
+          "new_to_used": 813
+        },
+        "Top30": {
+          "flips": 1449,
+          "used_to_new": 645,
+          "new_to_used": 804
+        },
+        "Cupo3": {
+          "flips": 1445,
+          "used_to_new": 639,
+          "new_to_used": 806
+        },
+        "Cupo4": {
+          "flips": 1480,
+          "used_to_new": 664,
+          "new_to_used": 816
+        },
+        "Cupo5": {
+          "flips": 1455,
+          "used_to_new": 641,
+          "new_to_used": 814
+        }
+      },
+      "overlap_cupo4": "57 / 1449",
+      "overlap_cupo5": "22 / 1449"
+    },
+    "CANDIDATE_3_SURGICAL_CAUSAL_ON_T30": {
+      "path": "submissions/20261115/CANDIDATE_3_SURGICAL_CAUSAL_ON_T30.csv",
+      "gate_g": true,
+      "used_rate": 0.4724333333333333,
+      "lf_sha256": "3827ab1542eb151f9b707a0026848d855c3efe27074ff86a64e56bb7fbd6dd47",
+      "gate_f_with_lf": "16d6330ef6517565bde7b9c1e25d3dd96dd6dae6295ba2313e9bd93255773448",
+      "gate_f_without_lf": "b0987ab0003d5dfbfb087b884a8b083bb8ac0d78b60e95d71a84921ab45c1509",
+      "gate_f_json": "101df45c8dde5d278404be9a661bf5563c94f890c7d7e8a098d568ddd550b299",
+      "diffs_vs_historical": {
+        "S4": {
+          "flips": 135,
+          "used_to_new": 64,
+          "new_to_used": 71
+        },
+        "Top174": {
+          "flips": 245,
+          "used_to_new": 124,
+          "new_to_used": 121
+        },
+        "Top30": {
+          "flips": 113,
+          "used_to_new": 54,
+          "new_to_used": 59
+        },
+        "Cupo3": {
+          "flips": 153,
+          "used_to_new": 70,
+          "new_to_used": 83
+        },
+        "Cupo4": {
+          "flips": 226,
+          "used_to_new": 114,
+          "new_to_used": 112
+        },
+        "Cupo5": {
+          "flips": 161,
+          "used_to_new": 71,
+          "new_to_used": 90
+        }
+      },
+      "overlap_cupo4": "16 / 113",
+      "overlap_cupo5": "1 / 113"
+    }
+  },
+  "artifacts": {
+    "oof_probabilities_causal_with_folds": "2ca80775dbf57f2565d93a6800774a7e6e674179051368947ec51fad6f83e61b",
+    "test_p_ag_causal_authentic": "1831fb393a3df88eb300e576a6f6f7892e843784abef27c0d2c9dd48153e650e",
+    "test_p_ag_tabular_base": "5d08c648efdeef5ccb5c3352bdf852d35e8d05d4ad2a53d3776bc6c10f69e8c4",
+    "test_p_claude_text": "6c28b5217f361e0823f8f54497893fe53152a8f71bb072c1842b3cb4c6ff40ad",
+    "splits_3way": "da5f0982c5b2280b95113fb929941cc9627a6b90208599db0b73e976a328143b",
+    "splits_nested": "d9d9cad322bf4694def30389d2a5e0f200799987bd912afbcd9b6ee145957238"
+  }
+}
